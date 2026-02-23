@@ -30,7 +30,7 @@ export default defineConfig([
       // Optionally, add this for stylistic rules
       tseslint.configs.stylisticTypeChecked,
 <!-- Trigger Cloudflare build -->
-      // Other configs...
+      <!-- Build v2 -->
     ],
     languageOptions: {
       parserOptions: {
