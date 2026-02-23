@@ -1,10 +1,9 @@
-/* Import Tailwind CSS - This provides all base, components, and utilities */
-@import "tailwindcss";
+@import "tailwindcss" source("../app");
 
 /* Import custom fonts */
 @import './fonts.css';
 
-/* Import custom theme variables and overrides */
+/* Custom theme variables */
 @custom-variant dark (&:is(.dark *));
 
 :root {
