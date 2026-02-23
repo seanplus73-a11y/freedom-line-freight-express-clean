@@ -2,7 +2,7 @@
   /* Background colors */
   --color-background: #0a0a0a;
   --color-surface: #1a1a1a;
-  
+
   /* Brand colors */
   --color-primary: #f97316;
   --color-primary-hover: #ea580c;
@@ -38,3 +38,4 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* Force cache refresh v3 */
