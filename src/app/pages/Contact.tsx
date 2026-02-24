@@ -1,182 +1,340 @@
-import { Mail, MessageSquare, MapPin, Clock, Phone, Video } from "lucide-react";
+import { useState } from "react";
+import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
 
-/**
- * Contact Page - Freedom Line Freight Express
- * Contact information and communication methods
- */
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    pickupLocation: "",
+    deliveryLocation: "",
+    vehicleType: "",
+    message: "",
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real application, you would send the form data to your backend
+    console.log("Form submitted:", formData);
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        pickupLocation: "",
+        deliveryLocation: "",
+        vehicleType: "",
+        message: "",
+      });
+    }, 3000);
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
-      {/* Header Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Get In Touch
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Have questions or ready to schedule your vehicle transport? I'm here to help. 
-            Reach out using your preferred method of communication.
-          </p>
+    <div className="bg-neutral-900">
+      {/* Hero Section */}
+      <section className="relative bg-black text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Contact <span className="text-orange-500">Freedom Line</span>
+            </h1>
+            <p className="text-xl text-gray-300">
+              Call via relay, text, or email. I personally respond to every inquiry.
+            </p>
+          </div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Methods */}
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-8">Contact Methods</h2>
-            
-            <div className="space-y-6">
-              {/* Text/SMS */}
-              <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors">
-                <div className="flex items-start gap-4">
-                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MessageSquare className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2">Text Message (Preferred)</h3>
-                    <p className="text-gray-300 mb-3">
-                      Text messaging is the fastest way to reach me. I respond promptly to all text inquiries.
-                    </p>
-                    <p className="text-orange-500 font-semibold">
-                      Contact via Request Pickup form for phone number
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors">
-                <div className="flex items-start gap-4">
-                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-                    <p className="text-gray-300 mb-3">
-                      Send detailed inquiries, quotes, or documentation via email. I typically respond within 24 hours.
-                    </p>
-                    <p className="text-orange-500 font-semibold">
-                      Use the Request Pickup form for email quotes
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Phone/Voice */}
-              <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors">
-                <div className="flex items-start gap-4">
-                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2">Phone (Text Preferred)</h3>
-                    <p className="text-gray-300 mb-3">
-                      While I can receive voice calls, text messages are strongly preferred for clear communication.
-                    </p>
-                    <p className="text-gray-400 text-sm">
-                      For voice calls, please use video relay services or leave a detailed voicemail
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Video Relay Service */}
-              <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors">
-                <div className="flex items-start gap-4">
-                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Video className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2">Video Relay Service (VRS)</h3>
-                    <p className="text-gray-300 mb-3">
-                      Video relay services are available for those who prefer real-time video communication.
-                    </p>
-                    <p className="text-gray-400 text-sm">
-                      Contact me via text or email to schedule a VRS call
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Business Information */}
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-8">Business Information</h2>
-
-            {/* Location */}
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 mb-6">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Service Area</h3>
-                  <p className="text-gray-300 mb-4">
-                    Based in Arizona, serving the entire Southwest region
-                  </p>
-                  <ul className="space-y-2 text-gray-400">
-                    <li>• Arizona (home base)</li>
-                    <li>• Nevada</li>
-                    <li>• New Mexico</li>
-                    <li>• Utah</li>
-                    <li>• Southern California</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Hours */}
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 mb-6">
-              <div className="flex items-start gap-4">
-                <Clock className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Response Times</h3>
-                  <p className="text-gray-300 mb-3">
-                    I strive to respond to all inquiries as quickly as possible.
-                  </p>
-                  <ul className="space-y-2 text-gray-400">
-                    <li>• Text messages: Within a few hours</li>
-                    <li>• Email: Within 24 hours</li>
-                    <li>• Quote requests: 1-2 business days</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Deaf-Owned Business */}
-            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Deaf-Owned & Operated Business
-              </h3>
-              <p className="text-gray-300 mb-3">
-                Freedom Line Freight Express is proudly deaf-owned and operated. I bring 
-                professionalism, reliability, and personalized service to every transport job.
+      {/* Contact Section */}
+      <section className="py-20 bg-neutral-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Contact Information */}
+            <div className="lg:col-span-1">
+              <h2 className="text-2xl font-bold text-white mb-6">
+                Contact Information
+              </h2>
+              <p className="text-gray-400 mb-8">
+                Have a question or ready to schedule a pickup? We're here to help.
               </p>
-              <p className="text-gray-300">
-                Communication accessibility is a priority, and I work with all customers 
-                to ensure clear, effective communication throughout the transport process.
-              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 border border-orange-500/20">
+                    <Phone className="text-orange-500" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-1">Phone (Relay Service)</h3>
+                    <p className="text-gray-300">480-919-8088</p>
+                    <p className="text-gray-400 text-sm">Relay service supported</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 border border-orange-500/20">
+                    <Phone className="text-orange-500" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-1">Text Number</h3>
+                    <p className="text-gray-300">480-742-8553</p>
+                    <p className="text-gray-400 text-sm">Text preferred for fastest response</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 border border-orange-500/20">
+                    <Mail className="text-orange-500" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-1">Email</h3>
+                    <p className="text-gray-300">dispatch@flfreightco.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 border border-orange-500/20">
+                    <MapPin className="text-orange-500" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-1">Service Area</h3>
+                    <p className="text-gray-300">Based in Arizona</p>
+                    <p className="text-gray-300">Serving the Southwest</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 p-6 bg-neutral-900 rounded-lg border border-neutral-700">
+                <h3 className="font-bold text-white mb-2">Business Hours</h3>
+                <div className="space-y-1 text-sm text-gray-300">
+                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                  <p>Saturday: 10:00 AM - 4:00 PM</p>
+                  <p>Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Send Us a <span className="text-orange-500">Message</span>
+                </h2>
+
+                {isSubmitted ? (
+                  <div className="bg-orange-500/10 border border-orange-500/30 text-white p-6 rounded-lg text-center">
+                    <div className="text-orange-500 mb-3">
+                      <Send size={48} className="mx-auto" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">Thank You!</h3>
+                    <p className="text-gray-300">Your message has been sent successfully. We'll get back to you soon.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-bold text-white mb-2"
+                        >
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          placeholder="John Doe"
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-bold text-white mb-2"
+                        >
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          placeholder="john@example.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-bold text-white mb-2"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                        placeholder="(555) 123-4567"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label
+                          htmlFor="pickupLocation"
+                          className="block text-sm font-bold text-white mb-2"
+                        >
+                          Pickup Location
+                        </label>
+                        <input
+                          type="text"
+                          id="pickupLocation"
+                          name="pickupLocation"
+                          value={formData.pickupLocation}
+                          onChange={handleChange}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          placeholder="Enter pickup location"
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="deliveryLocation"
+                          className="block text-sm font-bold text-white mb-2"
+                        >
+                          Delivery Location
+                        </label>
+                        <input
+                          type="text"
+                          id="deliveryLocation"
+                          name="deliveryLocation"
+                          value={formData.deliveryLocation}
+                          onChange={handleChange}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          placeholder="Enter delivery location"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="vehicleType"
+                        className="block text-sm font-bold text-white mb-2"
+                      >
+                        Vehicle Type
+                      </label>
+                      <input
+                        type="text"
+                        id="vehicleType"
+                        name="vehicleType"
+                        value={formData.vehicleType}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                        placeholder="e.g., Sedan, SUV, F-250"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-bold text-white mb-2"
+                      >
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={6}
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                        placeholder="Tell us about your vehicle transport needs..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-orange-500 text-white px-8 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors flex items-center justify-center"
+                    >
+                      Send Message
+                      <Send className="ml-2" size={20} />
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Quick Contact CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Schedule Your Transport?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            The easiest way to get started is to fill out the pickup request form. 
-            I'll review your needs and provide a custom quote.
-          </p>
-          <a 
-            href="/request-pickup" 
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-block"
-          >
-            Request a Pickup
-          </a>
+      {/* Service Area Section */}
+      <section className="bg-neutral-900 py-16 border-t border-neutral-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Our <span className="text-orange-500">Service Area</span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Based in Arizona, proudly serving the Southwest region
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-neutral-800 rounded-lg border border-orange-500/30 p-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+                <div className="flex items-center justify-center">
+                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg font-bold text-white">Arizona (Statewide)</span>
+                </div>
+                <div className="flex items-center justify-center">
+                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg font-bold text-white">Nevada</span>
+                </div>
+                <div className="flex items-center justify-center">
+                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg font-bold text-white">New Mexico</span>
+                </div>
+                <div className="flex items-center justify-center">
+                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg font-bold text-white">Utah</span>
+                </div>
+                <div className="flex items-center justify-center sm:col-span-2 md:col-span-2">
+                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg font-bold text-white">Southern California</span>
+                </div>
+              </div>
+
+              <div className="border-t border-neutral-700 pt-6 text-center">
+                <p className="text-gray-300">
+                  <strong className="text-white">Professional vehicle transport</strong> for sedans, SUVs, small heavy-duty trucks, and luxury vehicles throughout the Southwest.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
