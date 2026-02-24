@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+mport { Link } from "react-router";
 import { Truck, Heart, Shield, Users, Award, MapPin, ArrowRight } from "lucide-react";
 
 /**
@@ -6,6 +6,7 @@ import { Truck, Heart, Shield, Users, Award, MapPin, ArrowRight } from "lucide-r
  * Information about the business, owner, and values
  */
 export default function About() {
+  return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
       {/* Header Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
