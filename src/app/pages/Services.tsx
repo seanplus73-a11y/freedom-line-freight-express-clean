@@ -1,7 +1,7 @@
-import image_47e91680f4739ce476b191e7eaabf97fa6c91cdd from 'figma:asset/47e91680f4739ce476b191e7eaabf97fa6c91cdd.png'
-import dealerAuctionImage from 'figma:asset/cd71b8184e8856e9d4ac3f5d40f92ff82473dc88.png'
-import regionalTransportImage from 'figma:asset/771f3e74a09b2ec4f7801a1bd4951117ff219944.png'
-import personalVehicleImage from 'figma:asset/6a0046126172a925406de851f5274fa1f35f5003.png'
+const dealerAuctionImg = "/images/dealer-auction-pickup.jpg";
+const regionalTransportImg = "/images/regional-transport.jpg";
+const personalVehicleImg = "/images/personal-vehicle-transport.jpg";
+const localAzDeliveryImg = "/images/local-az-delivery.jpg";
 import { Link } from "react-router";
 import {
   Car,
