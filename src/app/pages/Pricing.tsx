@@ -1,10 +1,6 @@
 import { Link } from "react-router";
 import { Check, ArrowRight, Car, X, Truck } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-const sedanImage = "/images/sedan.jpg";            // use your real filename
-const suvImage = "/images/suv.jpg";                // use your real filename
-const luxuryVehicleImage = "/images/luxury.jpg";    // use your real filename
-const smallTruckImage = "/images/small-heavy-duty-truck.jpg"; // if used
 
 export default function Pricing() {
   const faqs = [
@@ -118,7 +114,7 @@ export default function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src={sedanImage}
+                      src="/images/sedan.jpg"
                       alt="Sedans"
                       className="w-full h-32 object-cover rounded"
                     />
@@ -146,7 +142,7 @@ export default function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src={heavyDutyTruckImage}
+                      src="/images/heavy-duty-truck.jpg"
                       alt="Small Heavy-Duty Trucks"
                       className="w-full h-32 object-cover rounded"
                     />
@@ -193,7 +189,7 @@ export default function Pricing() {
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Semi-Trucks</h3>
-                    <p className="text-sm text-gray-400">18-wheelers, tractor-trailers, or large commercial trucks</p>
+                    <p className="text-sm text-gray-400">18-wheelers, tractor-trailers, or heavy commercial haulers</p>
                   </div>
                 </div>
 
@@ -201,14 +197,30 @@ export default function Pricing() {
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Freight Cargo</h3>
-                    <p className="text-sm text-gray-400">Palletized goods, shipping containers, or commercial freight</p>
+                    <p className="text-sm text-gray-400">General freight, palletized goods, or cargo shipments</p>
+                  </div>
+                </div>
+
+                <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
+                  <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
+                  <div>
+                    <h3 className="font-bold text-white">Heavy Equipment</h3>
+                    <p className="text-sm text-gray-400">Construction equipment, tractors, or industrial machinery</p>
+                  </div>
+                </div>
+
+                <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
+                  <Truck className="text-red-500 mr-3 flex-shrink-0" size={24} />
+                  <div>
+                    <h3 className="font-bold text-white">Oversized Heavy-Duty Trucks</h3>
+                    <p className="text-sm text-gray-400">Trucks larger than F-250 / 2500 class (e.g., F-350, F-450, 3500+)</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 bg-orange-500/10 border-l-4 border-orange-500 p-4 rounded">
-                <p className="text-sm text-gray-300">
-                  We specialize in safely moving personal and light-duty vehicles. We do not handle commercial freight operations.
+              <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4 mt-6">
+                <p className="text-sm text-orange-200 font-semibold">
+                  ✓ We specialize in personal and light commercial vehicles only. For heavy-duty or commercial freight needs, we recommend specialized freight carriers.
                 </p>
               </div>
             </div>
@@ -216,179 +228,88 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Pricing Cards Section */}
-      <section className="py-20 bg-neutral-800">
+      {/* Pricing Factors Section */}
+      <section className="py-16 bg-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-4 text-center">
-            Distance-Based <span className="text-orange-500">Pricing</span>
-          </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-            Clear, upfront pricing based on how far your vehicle needs to go. All prices include insurance and door-to-door service.
-          </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              How We Calculate <span className="text-orange-500">Your Quote</span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Transparent pricing based on distance, vehicle type, and scheduling. No hidden fees.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Local (0-25 Miles) */}
-            <div className="bg-neutral-900 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors p-8 flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Local
-              </h3>
-              <p className="text-gray-400 mb-6">0–25 Miles</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$75</span>
-                <span className="text-gray-400 ml-2 block text-sm mt-1">starting at</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-neutral-900 rounded-lg p-6 border border-neutral-700">
+              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
+                <Car className="text-orange-500" size={24} />
               </div>
-              <p className="text-sm font-bold text-white mb-4">Includes:</p>
-              <ul className="space-y-3 mb-8 flex-grow">
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Door-to-door vehicle pickup</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Same-day availability (when possible)</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Secure vehicle handling</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Photo documentation</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Delivery confirmation</span>
-                </li>
-              </ul>
-              <Link
-                to="/request-pickup"
-                className="w-full bg-orange-500 text-white py-3 px-6 rounded-md font-bold hover:bg-orange-600 transition-colors text-center flex items-center justify-center"
-              >
-                Request a Pickup
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
+              <h3 className="text-xl font-bold text-white mb-3">Distance</h3>
+              <p className="text-gray-400">
+                Base pricing determined by total mileage from pickup to delivery location.
+              </p>
             </div>
 
-            {/* Extended Local (25-50 Miles) */}
-            <div className="bg-neutral-900 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors p-8 flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Extended Local
-              </h3>
-              <p className="text-gray-400 mb-6">25–50 Miles</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$125</span>
-                <span className="text-gray-400 ml-2 block text-sm mt-1">starting at</span>
+            <div className="bg-neutral-900 rounded-lg p-6 border border-neutral-700">
+              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
+                <Truck className="text-orange-500" size={24} />
               </div>
-              <p className="text-sm font-bold text-white mb-4">Includes everything in Local, plus:</p>
-              <ul className="space-y-3 mb-8 flex-grow">
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Flexible scheduling</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Business-to-business transport</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Priority booking options</span>
-                </li>
-              </ul>
-              <Link
-                to="/request-pickup"
-                className="w-full bg-orange-500 text-white py-3 px-6 rounded-md font-bold hover:bg-orange-600 transition-colors text-center flex items-center justify-center"
-              >
-                Request a Pickup
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
+              <h3 className="text-xl font-bold text-white mb-3">Vehicle Type</h3>
+              <p className="text-gray-400">
+                Sedans, SUVs, trucks, and luxury vehicles may have different pricing tiers.
+              </p>
             </div>
 
-            {/* Regional (50-150 Miles) */}
-            <div className="bg-neutral-900 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors p-8 flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Regional
-              </h3>
-              <p className="text-gray-400 mb-6">50–150 Miles</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$250</span>
-                <span className="text-gray-400 ml-2 block text-sm mt-1">starting at</span>
+            <div className="bg-neutral-900 rounded-lg p-6 border border-neutral-700">
+              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
+                <Check className="text-orange-500" size={24} />
               </div>
-              <p className="text-sm font-bold text-white mb-4">Includes everything in Extended Local, plus:</p>
-              <ul className="space-y-3 mb-8 flex-grow">
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Dedicated vehicle transport</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Multi-vehicle scheduling</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Volume discounts available</span>
-                </li>
-              </ul>
-              <Link
-                to="/request-pickup"
-                className="w-full bg-orange-500 text-white py-3 px-6 rounded-md font-bold hover:bg-orange-600 transition-colors text-center flex items-center justify-center"
-              >
-                Request a Pickup
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
+              <h3 className="text-xl font-bold text-white mb-3">Schedule Flexibility</h3>
+              <p className="text-gray-400">
+                Same-day, next-day, or flexible scheduling options to meet your needs.
+              </p>
             </div>
+          </div>
 
-            {/* Long Distance (150+ Miles) */}
-            <div className="bg-neutral-900 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors p-8 flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Long Distance
-              </h3>
-              <p className="text-gray-400 mb-6">150+ Miles</p>
-              <div className="mb-6">
-                <span className="text-3xl font-bold text-white">Custom Quote</span>
-                <span className="text-gray-400 ml-2 block text-sm mt-1">(Rate Per Mile)</span>
-              </div>
-              <p className="text-sm font-bold text-white mb-4">Includes:</p>
-              <ul className="space-y-3 mb-8 flex-grow">
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Cross-state vehicle transport</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Scheduled delivery window</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-gray-300">Custom pricing based on distance</span>
-                </li>
-              </ul>
-              <Link
-                to="/request-pickup"
-                className="w-full bg-orange-500 text-white py-3 px-6 rounded-md font-bold hover:bg-orange-600 transition-colors text-center flex items-center justify-center"
-              >
-                Request a Pickup
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
+          <div className="max-w-3xl mx-auto bg-gradient-to-r from-orange-600/20 to-orange-500/20 border-2 border-orange-500/50 rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Request Your Custom Quote
+            </h3>
+            <p className="text-lg text-gray-300 mb-6">
+              Every transport is different. Contact us for a personalized quote based on your specific pickup and delivery needs.
+            </p>
+            <Link
+              to="/request-pickup"
+              className="inline-flex items-center justify-center bg-orange-500 text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
+            >
+              Get Your Quote
+              <ArrowRight className="ml-2" size={20} />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-neutral-900">
+      <section className="py-16 bg-neutral-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-            Frequently Asked <span className="text-orange-500">Questions</span>
-          </h2>
-          <div className="space-y-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Frequently Asked <span className="text-orange-500">Questions</span>
+            </h2>
+          </div>
+
+          <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-neutral-700 pb-8 last:border-b-0">
-                <h3 className="text-xl font-bold text-white mb-3">
+              <div
+                key={index}
+                className="bg-neutral-800 rounded-lg p-6 border border-neutral-700 hover:border-orange-500 transition-colors"
+              >
+                <h3 className="text-xl font-bold text-white mb-3 flex items-start">
+                  <Check className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
                   {faq.question}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  {faq.answer}
-                </p>
+                <p className="text-gray-400 pl-8">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -396,24 +317,29 @@ export default function Pricing() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
+      <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Schedule Your Vehicle Pickup?
+            Ready to Get Started?
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Get an instant quote and secure your pickup in minutes.
+            Request a quote today for professional, insured vehicle transport across Arizona and the Southwest.
           </p>
-          <Link
-            to="/request-pickup"
-            className="inline-flex items-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
-          >
-            Get My Instant Quote
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
-          <p className="text-orange-100 text-sm mt-6 font-semibold">
-            Fully Insured • Professional Driver • Direct Communication
-          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/request-pickup"
+              className="inline-flex items-center justify-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Request a Quote
+              <ArrowRight className="ml-2" size={20} />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-orange-600 transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
     </div>
