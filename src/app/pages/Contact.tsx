@@ -5,6 +5,7 @@ import { Mail, MessageSquare, MapPin, Clock, Phone, Video } from "lucide-react";
  * Contact information and communication methods
  */
 export default function Contact() {
+  return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
       {/* Header Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
