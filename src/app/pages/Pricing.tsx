@@ -5,7 +5,7 @@ import { DollarSign, MapPin, Truck, Calendar, Shield, ArrowRight, Info } from "l
  * Pricing Page - Freedom Line Freight Express
  * Custom quote-based pricing - no public per-mile rates
  */
-export function Pricing() {
+export default function Pricing() {
   const pricingFactors = [
     {
       icon: MapPin,
