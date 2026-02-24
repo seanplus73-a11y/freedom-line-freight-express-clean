@@ -5,7 +5,7 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 export default function Home() {
   return (
     <div className="bg-neutral-900">
-       {/* Hero Section */}
+      {/* Hero Section */}
       <section className="relative bg-black text-white">
         <div className="absolute inset-0 opacity-50">
           <ImageWithFallback
@@ -55,10 +55,6 @@ export default function Home() {
               >
                 View Pricing
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
             </div>
           </div>
         </div>
