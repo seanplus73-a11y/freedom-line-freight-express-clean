@@ -36,7 +36,7 @@ export default function Home() {
               Professional Vehicle Transport <span className="text-orange-500">You Can Trust</span>
             </h1>
             <p className="text-xl md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
-              Door-to-door vehicle pickup and delivery for sedans, SUVs, and luxury cars. Owner-operated. Fully insured. We do not transport commercial trucks.
+              Door-to-door vehicle pickup and delivery for sedans, SUVs, and luxury cars. Owner-operated. Fully insured. I do not transport commercial trucks.
             </p>
             <p className="text-lg md:text-xl mb-10 text-orange-400 font-bold leading-relaxed max-w-3xl">
               I personally drive your vehicle from pickup to delivery. It is never towed or transported on a trailer.
