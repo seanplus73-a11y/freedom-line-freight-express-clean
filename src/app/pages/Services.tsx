@@ -1,7 +1,3 @@
-const personalVehicleImage = "/images/personal-vehicle-transport.jpg";
-const dealerAuctionImage = "/images/dealer-auction-pickup.jpg";
-const localAzImage = "/images/local-az-delivery.jpg";
-const regionalTransportImage = "/images/regional-transport.jpg";
 import { Link } from "react-router";
 import {
   Car,
@@ -22,7 +18,7 @@ export default function Services() {
       icon: Car,
       title: "Personal Vehicle Transport",
       description: "Door-to-door pickup and delivery of cars, SUVs, and light trucks. Handled with professional care and secure transport from start to finish.",
-      image: personalVehicleImage,
+      image: "/images/personal-vehicle-transport.jpg",
       features: [
         "Sedans, SUVs, and light trucks (F-250/2500 class)",
         "Door-to-door service",
@@ -34,7 +30,7 @@ export default function Services() {
       icon: Building2,
       title: "Dealer & Auction Pickup",
       description: "Reliable vehicle pickup and delivery for dealerships and auction locations. Fast scheduling and professional handling.",
-      image: dealerAuctionImage,
+      image: "/images/dealer-auction-pickup.jpg",
       features: [
         "Dealer-to-dealer transfers",
         "Auction pickup and delivery",
@@ -46,7 +42,7 @@ export default function Services() {
       icon: MapPin,
       title: "Local AZ Delivery",
       description: "Next-day vehicle delivery across the Arizona metro area and statewide routes.",
-      image: image_47e91680f4739ce476b191e7eaabf97fa6c91cdd,
+      image: "/images/local-az-delivery.jpg",
       features: [
         "Phoenix metro and statewide coverage",
         "Flexible scheduling",
@@ -58,7 +54,7 @@ export default function Services() {
       icon: Map,
       title: "Regional Transport",
       description: "Dependable multi-state vehicle transport across Arizona, Nevada, California, New Mexico, Utah, and surrounding states.",
-      image: regionalTransportImage,
+      image: "/images/regional-transport.jpg",
       features: [
         "Southwest regional coverage",
         "Cross-state transport",
