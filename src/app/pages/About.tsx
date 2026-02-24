@@ -5,8 +5,7 @@ import { Truck, Heart, Shield, Users, Award, MapPin, ArrowRight } from "lucide-r
  * About Page - Freedom Line Freight Express
  * Information about the business, owner, and values
  */
-export function About() {
-  return (
+export default function About() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
       {/* Header Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
