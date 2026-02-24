@@ -1,4 +1,5 @@
-@import "tailwindcss";)
+@import "tailwindcss";
+@source "../app";
 /* Import custom fonts */
 @import './fonts.css';
 
