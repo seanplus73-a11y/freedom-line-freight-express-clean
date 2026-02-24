@@ -1,8 +1,10 @@
 import { Link } from "react-router";
 import { Check, ArrowRight, Car, X, Truck } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-const sedansImg = "/images/sedans.jpg";
-const smallHeavyDutyTrucksImg = "/images/small-heavy-duty-trucks.jpg";
+const sedanImage = "/images/sedan.jpg";            // use your real filename
+const suvImage = "/images/suv.jpg";                // use your real filename
+const luxuryVehicleImage = "/images/luxury.jpg";    // use your real filename
+const smallTruckImage = "/images/small-heavy-duty-truck.jpg"; // if used
 
 export default function Pricing() {
   const faqs = [
