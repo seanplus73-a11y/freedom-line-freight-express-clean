@@ -5,8 +5,7 @@ import { Truck, Package, Calendar, Shield, MapPin, CheckCircle, ArrowRight } fro
  * Services Page - Freedom Line Freight Express
  * Details about vehicle transport services offered
  */
-export function Services() {
-  const services = [
+export default function About() {
     {
       icon: Truck,
       title: "Vehicle Pickup & Delivery",
