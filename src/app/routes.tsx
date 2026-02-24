@@ -1,12 +1,13 @@
 import { createBrowserRouter, Outlet } from "react-router";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Services } from "./pages/Services";
-import { Contact } from "./pages/Contact";
-import { Pricing } from "./pages/Pricing";
-import { RequestPickup } from "./pages/RequestPickup";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Pricing from "./pages/Pricing";
+import RequestPickup from "./pages/RequestPickup";
+
 
 // Freedom Line routing configuration
 // Root layout component
