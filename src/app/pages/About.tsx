@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { CheckCircle, Award, Users, TrendingUp } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-const ourStoryImg = "/images/our-story.jpg";
+const ourStoryImage = "/images/our-story.jpg";
 
 export default function About() {
   return (
