@@ -1,7 +1,7 @@
-const dealerAuctionImg = "/images/dealer-auction-pickup.jpg";
-const regionalTransportImg = "/images/regional-transport.jpg";
-const personalVehicleImg = "/images/personal-vehicle-transport.jpg";
-const localAzDeliveryImg = "/images/local-az-delivery.jpg";
+const personalVehicleImage = "/images/personal-vehicle-transport.jpg";
+const dealerAuctionImage = "/images/dealer-auction-pickup.jpg";
+const localAzImage = "/images/local-az-delivery.jpg";
+const regionalTransportImage = "/images/regional-transport.jpg";
 import { Link } from "react-router";
 import {
   Car,
