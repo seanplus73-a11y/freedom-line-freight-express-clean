@@ -1,350 +1,491 @@
 import { useState } from "react";
-import { Truck, MapPin, Calendar, MessageSquare, CheckCircle } from "lucide-react";
+import { Car, MapPin, Calendar, Send, Shield, Clock, CheckCircle } from "lucide-react";
 
-/**
- * Request Pickup Page - Freedom Line Freight Express
- * Form for customers to request vehicle transport quotes
- */
 export default function RequestPickup() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    vehicleType: "",
+    vehicleMake: "",
+    vehicleModel: "",
+    vehicleYear: "",
+    vehicleCondition: "",
+    pickupAddress: "",
+    pickupCity: "",
+    pickupState: "",
+    pickupZip: "",
+    deliveryAddress: "",
+    deliveryCity: "",
+    deliveryState: "",
+    deliveryZip: "",
+    pickupDate: "",
+    name: "",
+    email: "",
+    phone: "",
+    notes: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send the form data to a backend
-    setFormSubmitted(true);
-    // Reset form after 5 seconds
+    // In a real application, you would send the form data to your backend
+    console.log("Pickup request submitted:", formData);
+    setIsSubmitted(true);
     setTimeout(() => {
-      setFormSubmitted(false);
-      (e.target as HTMLFormElement).reset();
-    }, 5000);
+      setIsSubmitted(false);
+      setFormData({
+        vehicleType: "",
+        vehicleMake: "",
+        vehicleModel: "",
+        vehicleYear: "",
+        vehicleCondition: "",
+        pickupAddress: "",
+        pickupCity: "",
+        pickupState: "",
+        pickupZip: "",
+        deliveryAddress: "",
+        deliveryCity: "",
+        deliveryState: "",
+        deliveryZip: "",
+        pickupDate: "",
+        name: "",
+        email: "",
+        phone: "",
+        notes: "",
+      });
+    }, 3000);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
-      {/* Header Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Request a Pickup
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Fill out the form below to receive a custom quote for your vehicle transport needs. 
-            I'll respond with pricing and availability as soon as possible.
-          </p>
+    <div className="bg-neutral-900">
+      {/* Hero Section */}
+      <section className="bg-black text-white py-20 border-b border-neutral-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Request Vehicle <span className="text-orange-500">Pickup & Delivery</span>
+            </h1>
+            <p className="text-xl text-gray-300">
+              Get an instant mileage-based quote in seconds. Fill out the form below and we'll calculate your rate based on distance and vehicle type.
+            </p>
+          </div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Form Section */}
-          <div className="lg:col-span-2">
-            {formSubmitted ? (
-              <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-8 text-center">
-                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h2 className="text-2xl font-bold text-white mb-3">
-                  Request Submitted Successfully!
-                </h2>
-                <p className="text-gray-300">
-                  Thank you for your request. I'll review your information and get back to you 
-                  with a custom quote as soon as possible.
+      {/* Form Section */}
+      <section className="py-20 bg-neutral-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-neutral-800 rounded-lg border border-neutral-700 p-8">
+            {isSubmitted ? (
+              <div className="bg-green-900/30 border border-green-600 text-green-100 p-8 rounded-lg text-center">
+                <div className="text-green-400 mb-4">
+                  <Send size={56} className="mx-auto" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Request Submitted!</h3>
+                <p className="text-lg">
+                  Thank you for your pickup request. We'll send you a detailed quote within 30 minutes based on your mileage and vehicle details.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg border border-gray-700">
-                <h2 className="text-2xl font-bold text-white mb-6">Transport Details</h2>
-
-                {/* Contact Information */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-white mb-4">Contact Information</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-gray-300 mb-2">
-                        First Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        required
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-gray-300 mb-2">
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        required
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                    <div>
-                      <label htmlFor="email" className="block text-gray-300 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-gray-300 mb-2">
-                        Phone Number (Text Preferred) *
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Location Information */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-white mb-4">Pickup & Delivery Locations</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="pickupLocation" className="block text-gray-300 mb-2">
-                        Pickup Location (City, State) *
-                      </label>
-                      <input
-                        type="text"
-                        id="pickupLocation"
-                        name="pickupLocation"
-                        required
-                        placeholder="e.g., Phoenix, AZ"
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="deliveryLocation" className="block text-gray-300 mb-2">
-                        Delivery Location (City, State) *
-                      </label>
-                      <input
-                        type="text"
-                        id="deliveryLocation"
-                        name="deliveryLocation"
-                        required
-                        placeholder="e.g., Las Vegas, NV"
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-
+              <form onSubmit={handleSubmit}>
                 {/* Vehicle Information */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-white mb-4">Vehicle Information</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <label htmlFor="vehicleYear" className="block text-gray-300 mb-2">
-                        Year *
-                      </label>
-                      <input
-                        type="text"
-                        id="vehicleYear"
-                        name="vehicleYear"
-                        required
-                        placeholder="2020"
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      />
+                <div className="mb-10">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                      <Car className="text-white" size={20} />
                     </div>
+                    <h2 className="text-2xl font-bold text-white">Vehicle Information</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="vehicleMake" className="block text-gray-300 mb-2">
+                      <label htmlFor="vehicleType" className="block text-sm font-bold text-gray-300 mb-2">
+                        Vehicle Type *
+                      </label>
+                      <select
+                        id="vehicleType"
+                        name="vehicleType"
+                        value={formData.vehicleType}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      >
+                        <option value="">Select vehicle type</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="truck">Light Truck (F-250/2500 class)</option>
+                        <option value="luxury">Luxury Vehicle</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="vehicleCondition" className="block text-sm font-bold text-gray-300 mb-2">
+                        Vehicle Condition *
+                      </label>
+                      <select
+                        id="vehicleCondition"
+                        name="vehicleCondition"
+                        value={formData.vehicleCondition}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      >
+                        <option value="">Select condition</option>
+                        <option value="running">Running/Operable</option>
+                        <option value="inoperable">Inoperable</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="vehicleMake" className="block text-sm font-bold text-gray-300 mb-2">
                         Make *
                       </label>
                       <input
                         type="text"
                         id="vehicleMake"
                         name="vehicleMake"
+                        value={formData.vehicleMake}
+                        onChange={handleChange}
                         required
-                        placeholder="Toyota"
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="Toyota, Ford, etc."
                       />
                     </div>
+
                     <div>
-                      <label htmlFor="vehicleModel" className="block text-gray-300 mb-2">
+                      <label htmlFor="vehicleModel" className="block text-sm font-bold text-gray-300 mb-2">
                         Model *
                       </label>
                       <input
                         type="text"
                         id="vehicleModel"
                         name="vehicleModel"
+                        value={formData.vehicleModel}
+                        onChange={handleChange}
                         required
-                        placeholder="Camry"
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="Camry, F-150, etc."
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="vehicleYear" className="block text-sm font-bold text-gray-300 mb-2">
+                        Year *
+                      </label>
+                      <input
+                        type="number"
+                        id="vehicleYear"
+                        name="vehicleYear"
+                        value={formData.vehicleYear}
+                        onChange={handleChange}
+                        required
+                        min="1900"
+                        max="2026"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="2020"
                       />
                     </div>
                   </div>
-                  <div className="mt-4">
-                    <label htmlFor="vehicleType" className="block text-gray-300 mb-2">
-                      Vehicle Type *
-                    </label>
-                    <select
-                      id="vehicleType"
-                      name="vehicleType"
-                      required
-                      className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                    >
-                      <option value="">Select vehicle type</option>
-                      <option value="car">Car</option>
-                      <option value="truck">Truck</option>
-                      <option value="suv">SUV</option>
-                      <option value="motorcycle">Motorcycle</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div className="mt-4">
-                    <label htmlFor="vehicleCondition" className="block text-gray-300 mb-2">
-                      Vehicle Condition
-                    </label>
-                    <select
-                      id="vehicleCondition"
-                      name="vehicleCondition"
-                      className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                    >
-                      <option value="running">Running/Operable</option>
-                      <option value="not-running">Not Running/Inoperable</option>
-                    </select>
-                  </div>
                 </div>
 
-                {/* Timeline */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-white mb-4">Timeline</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Pickup Information */}
+                <div className="mb-10">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                      <MapPin className="text-white" size={20} />
+                    </div>
+                    <h2 className="text-2xl font-bold text-white">Pickup Location</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-6">
                     <div>
-                      <label htmlFor="pickupDate" className="block text-gray-300 mb-2">
-                        Preferred Pickup Date
+                      <label htmlFor="pickupAddress" className="block text-sm font-bold text-gray-300 mb-2">
+                        Street Address *
+                      </label>
+                      <input
+                        type="text"
+                        id="pickupAddress"
+                        name="pickupAddress"
+                        value={formData.pickupAddress}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="123 Main Street"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div>
+                        <label htmlFor="pickupCity" className="block text-sm font-bold text-gray-300 mb-2">
+                          City *
+                        </label>
+                        <input
+                          type="text"
+                          id="pickupCity"
+                          name="pickupCity"
+                          value={formData.pickupCity}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="Phoenix"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="pickupState" className="block text-sm font-bold text-gray-300 mb-2">
+                          State *
+                        </label>
+                        <input
+                          type="text"
+                          id="pickupState"
+                          name="pickupState"
+                          value={formData.pickupState}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="AZ"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="pickupZip" className="block text-sm font-bold text-gray-300 mb-2">
+                          ZIP Code *
+                        </label>
+                        <input
+                          type="text"
+                          id="pickupZip"
+                          name="pickupZip"
+                          value={formData.pickupZip}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="85001"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="pickupDate" className="block text-sm font-bold text-gray-300 mb-2">
+                        Preferred Pickup Date *
                       </label>
                       <input
                         type="date"
                         id="pickupDate"
                         name="pickupDate"
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
+                        value={formData.pickupDate}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       />
-                    </div>
-                    <div>
-                      <label htmlFor="timeline" className="block text-gray-300 mb-2">
-                        Timeline Flexibility
-                      </label>
-                      <select
-                        id="timeline"
-                        name="timeline"
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                      >
-                        <option value="asap">ASAP</option>
-                        <option value="flexible">Flexible (1-2 weeks)</option>
-                        <option value="very-flexible">Very Flexible (2+ weeks)</option>
-                      </select>
                     </div>
                   </div>
                 </div>
 
-                {/* Additional Information */}
-                <div className="mb-8">
-                  <label htmlFor="additionalInfo" className="block text-gray-300 mb-2">
-                    Additional Information or Special Requests
-                  </label>
-                  <textarea
-                    id="additionalInfo"
-                    name="additionalInfo"
-                    rows={4}
-                    placeholder="Any additional details about your transport needs..."
-                    className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"
-                  />
+                {/* Delivery Information */}
+                <div className="mb-10">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                      <MapPin className="text-white" size={20} />
+                    </div>
+                    <h2 className="text-2xl font-bold text-white">Delivery Location</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-6">
+                    <div>
+                      <label htmlFor="deliveryAddress" className="block text-sm font-bold text-gray-300 mb-2">
+                        Street Address *
+                      </label>
+                      <input
+                        type="text"
+                        id="deliveryAddress"
+                        name="deliveryAddress"
+                        value={formData.deliveryAddress}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="456 Oak Avenue"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div>
+                        <label htmlFor="deliveryCity" className="block text-sm font-bold text-gray-300 mb-2">
+                          City *
+                        </label>
+                        <input
+                          type="text"
+                          id="deliveryCity"
+                          name="deliveryCity"
+                          value={formData.deliveryCity}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="Tucson"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="deliveryState" className="block text-sm font-bold text-gray-300 mb-2">
+                          State *
+                        </label>
+                        <input
+                          type="text"
+                          id="deliveryState"
+                          name="deliveryState"
+                          value={formData.deliveryState}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="AZ"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="deliveryZip" className="block text-sm font-bold text-gray-300 mb-2">
+                          ZIP Code *
+                        </label>
+                        <input
+                          type="text"
+                          id="deliveryZip"
+                          name="deliveryZip"
+                          value={formData.deliveryZip}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="85701"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Submit Button */}
+                {/* Contact Information */}
+                <div className="mb-8">
+                  <h2 className="text-2xl font-bold text-white mb-6">Your Contact Information</h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-bold text-gray-300 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="John Doe"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-bold text-gray-300 mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-bold text-gray-300 mb-2">
+                        Phone *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="(555) 123-4567"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mt-6">
+                    <label htmlFor="notes" className="block text-sm font-bold text-gray-300 mb-2">
+                      Additional Notes
+                    </label>
+                    <textarea
+                      id="notes"
+                      name="notes"
+                      value={formData.notes}
+                      onChange={handleChange}
+                      rows={4}
+                      className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      placeholder="Special instructions, gate codes, or other details..."
+                    />
+                  </div>
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+                  className="w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center"
                 >
-                  Submit Request for Quote
+                  Get Instant Quote
+                  <Send className="ml-2" size={20} />
                 </button>
-
-                <p className="text-gray-400 text-sm mt-4 text-center">
-                  * Required fields. I'll respond to your request as soon as possible.
-                </p>
               </form>
             )}
           </div>
+        </div>
+      </section>
 
-          {/* Sidebar Info */}
-          <div className="lg:col-span-1">
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 mb-6">
-              <h3 className="text-xl font-bold text-white mb-4">What Happens Next?</h3>
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <div className="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white text-sm mb-1">Review</h4>
-                    <p className="text-gray-400 text-sm">
-                      I'll review your transport details
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white text-sm mb-1">Quote</h4>
-                    <p className="text-gray-400 text-sm">
-                      Receive your custom pricing quote
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white text-sm mb-1">Schedule</h4>
-                    <p className="text-gray-400 text-sm">
-                      Coordinate pickup and delivery
-                    </p>
-                  </div>
-                </div>
+      {/* Info Section */}
+      <section className="py-16 bg-black border-t border-neutral-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="text-white" size={32} />
               </div>
+              <h3 className="text-xl font-bold text-white mb-2">Fast Response</h3>
+              <p className="text-gray-400">
+                Receive your mileage-based quote within 30 minutes of submission.
+              </p>
             </div>
 
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 mb-6">
-              <Truck className="w-8 h-8 text-orange-500 mb-3" />
-              <h3 className="font-bold text-white mb-2">Service Areas</h3>
-              <ul className="text-gray-400 text-sm space-y-1">
-                <li>• Arizona</li>
-                <li>• Nevada</li>
-                <li>• New Mexico</li>
-                <li>• Utah</li>
-                <li>• Southern California</li>
-              </ul>
+            <div>
+              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="text-white" size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Fully Insured</h3>
+              <p className="text-gray-400">
+                Every vehicle is fully insured during pickup, transport, and delivery.
+              </p>
             </div>
 
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
-              <MessageSquare className="w-8 h-8 text-orange-500 mb-3" />
-              <h3 className="font-bold text-white mb-2">Preferred Contact</h3>
-              <p className="text-gray-400 text-sm">
-                Text messages and email are the preferred methods of communication. 
-                Video relay services are also available.
+            <div>
+              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Door-to-Door Service</h3>
+              <p className="text-gray-400">
+                Convenient pickup and delivery directly to your specified locations.
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
