@@ -5,7 +5,7 @@ import { Truck, MapPin, Calendar, MessageSquare, CheckCircle } from "lucide-reac
  * Request Pickup Page - Freedom Line Freight Express
  * Form for customers to request vehicle transport quotes
  */
-export function RequestPickup() {
+export default function RequestPickup() {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
