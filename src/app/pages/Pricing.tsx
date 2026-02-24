@@ -100,8 +100,186 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* What We Transport Section */}
+      {/* Distance-Based Pricing Section */}
       <section className="py-16 bg-neutral-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Distance-Based <span className="text-orange-500">Pricing</span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Clear, upfront pricing based on how far your vehicle needs to go. All prices include insurance and door-to-door service.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Local */}
+            <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+              <h3 className="text-2xl font-bold text-white mb-2">Local</h3>
+              <p className="text-gray-400 text-sm mb-4">0–25 Miles</p>
+              
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-orange-500">$75</span>
+                <p className="text-sm text-gray-400 mt-1">starting at</p>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-white mb-3">Includes:</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Door-to-door vehicle pickup</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Same-day availability (when possible)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Secure vehicle handling</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Photo documentation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Delivery confirmation</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Link
+                to="/request-pickup"
+                className="w-full inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Request a Pickup
+                <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </div>
+
+            {/* Extended Local */}
+            <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+              <h3 className="text-2xl font-bold text-white mb-2">Extended Local</h3>
+              <p className="text-gray-400 text-sm mb-4">25–50 Miles</p>
+              
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-orange-500">$125</span>
+                <p className="text-sm text-gray-400 mt-1">starting at</p>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-white mb-3">Includes everything in Local, plus:</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Flexible scheduling</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Business-to-business transport</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Priority booking options</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Link
+                to="/request-pickup"
+                className="w-full inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Request a Pickup
+                <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </div>
+
+            {/* Regional */}
+            <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+              <h3 className="text-2xl font-bold text-white mb-2">Regional</h3>
+              <p className="text-gray-400 text-sm mb-4">50–150 Miles</p>
+              
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-orange-500">$250</span>
+                <p className="text-sm text-gray-400 mt-1">starting at</p>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-white mb-3">Includes everything in Extended Local, plus:</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Dedicated vehicle transport</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Multi-vehicle scheduling</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Volume discounts available</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Link
+                to="/request-pickup"
+                className="w-full inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Request a Pickup
+                <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </div>
+
+            {/* Long Distance */}
+            <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+              <h3 className="text-2xl font-bold text-white mb-2">Long Distance</h3>
+              <p className="text-gray-400 text-sm mb-4">150+ Miles</p>
+              
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-white">Custom Quote</span>
+                <p className="text-sm text-gray-400 mt-1">(Rate Per Day)</p>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-white mb-3">Includes:</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Cross-state vehicle transport</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Scheduled delivery window</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Custom pricing based on distance</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Link
+                to="/request-pickup"
+                className="w-full inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Request a Pickup
+                <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-400 italic">
+              * Prices shown are starting rates for standard sedans. Final pricing may vary based on vehicle type, specific route, and scheduling requirements.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Transport Section */}
+      <section className="py-16 bg-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* We Transport */}
@@ -111,7 +289,7 @@ export default function Pricing() {
                 We Transport
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+                <div className="bg-neutral-900 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
                       src="/images/sedan.jpg"
@@ -125,7 +303,7 @@ export default function Pricing() {
                   </h3>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+                <div className="bg-neutral-900 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
                       src="https://images.unsplash.com/photo-1767749995450-7b63ab7cd4fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTVVYlMjBsdXh1cnklMjB2ZWhpY2xlfGVufDF8fHx8MTc3MTU2NjkxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -139,7 +317,7 @@ export default function Pricing() {
                   </h3>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+                <div className="bg-neutral-900 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
                       src="/images/heavy-duty-truck.jpg"
@@ -154,7 +332,7 @@ export default function Pricing() {
                   <p className="text-sm text-gray-400 mt-1">F-250 / 2500 class</p>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+                <div className="bg-neutral-900 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
                       src="https://images.unsplash.com/photo-1622701578810-67534f6e6d2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBdWRpJTIwQTYlMjBibGFjayUyMHNpbHZlcnxlbnwxfHx8fDE3NzE2NTM5MjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -177,7 +355,7 @@ export default function Pricing() {
                 We Do NOT Transport
               </h2>
               <div className="space-y-4">
-                <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
+                <div className="bg-neutral-900 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Commercial Trucks</h3>
@@ -185,7 +363,7 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
+                <div className="bg-neutral-900 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Semi-Trucks</h3>
@@ -193,7 +371,7 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
+                <div className="bg-neutral-900 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Freight Cargo</h3>
@@ -201,7 +379,7 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
+                <div className="bg-neutral-900 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Heavy Equipment</h3>
@@ -209,7 +387,7 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
+                <div className="bg-neutral-900 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
                   <Truck className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Oversized Heavy-Duty Trucks</h3>
@@ -229,7 +407,7 @@ export default function Pricing() {
       </section>
 
       {/* Pricing Factors Section */}
-      <section className="py-16 bg-neutral-800">
+      <section className="py-16 bg-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
@@ -241,7 +419,7 @@ export default function Pricing() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-neutral-900 rounded-lg p-6 border border-neutral-700">
+            <div className="bg-neutral-800 rounded-lg p-6 border border-neutral-700">
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Car className="text-orange-500" size={24} />
               </div>
@@ -251,7 +429,7 @@ export default function Pricing() {
               </p>
             </div>
 
-            <div className="bg-neutral-900 rounded-lg p-6 border border-neutral-700">
+            <div className="bg-neutral-800 rounded-lg p-6 border border-neutral-700">
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Truck className="text-orange-500" size={24} />
               </div>
@@ -261,7 +439,7 @@ export default function Pricing() {
               </p>
             </div>
 
-            <div className="bg-neutral-900 rounded-lg p-6 border border-neutral-700">
+            <div className="bg-neutral-800 rounded-lg p-6 border border-neutral-700">
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Check className="text-orange-500" size={24} />
               </div>
@@ -291,7 +469,7 @@ export default function Pricing() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-neutral-900">
+      <section className="py-16 bg-neutral-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
@@ -303,7 +481,7 @@ export default function Pricing() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-neutral-800 rounded-lg p-6 border border-neutral-700 hover:border-orange-500 transition-colors"
+                className="bg-neutral-900 rounded-lg p-6 border border-neutral-700 hover:border-orange-500 transition-colors"
               >
                 <h3 className="text-xl font-bold text-white mb-3 flex items-start">
                   <Check className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
