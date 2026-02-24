@@ -6,6 +6,7 @@ import { Truck, Package, Calendar, Shield, MapPin, CheckCircle, ArrowRight } fro
  * Details about vehicle transport services offered
  */
 export default function Services() {
+  const services = [
     {
       icon: Truck,
       title: "Vehicle Pickup & Delivery",
