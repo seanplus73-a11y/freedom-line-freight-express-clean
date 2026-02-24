@@ -1,4 +1,4 @@
-mport { Link } from "react-router";
+import { Link } from "react-router";
 import { Truck, Heart, Shield, Users, Award, MapPin, ArrowRight } from "lucide-react";
 
 /**
