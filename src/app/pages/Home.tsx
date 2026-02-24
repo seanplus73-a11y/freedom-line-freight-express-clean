@@ -5,7 +5,7 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 export default function Home() {
   return (
     <div className="bg-neutral-900">
-      {/* Hero Section */}
+       {/* Hero Section */}
       <section className="relative bg-black text-white">
         <div className="absolute inset-0 opacity-50">
           <ImageWithFallback
@@ -35,9 +35,8 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Professional Vehicle Transport <span className="text-orange-500">You Can Trust</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-gray-300 leading-relaxed max-w-3xl">
-              <p className="text-xl md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
-              Door-to-door vehicle pickup and delivery for sedans, SUVs, and luxury cars. Owner-operated. Fully insured. I do not transport commercial trucks.
+            <p className="text-xl md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
+              Door-to-door vehicle pickup and delivery for sedans, SUVs, and luxury cars. Owner-operated. Fully insured. We do not transport commercial trucks.
             </p>
             <p className="text-lg md:text-xl mb-10 text-orange-400 font-bold leading-relaxed max-w-3xl">
               I personally drive your vehicle from pickup to delivery. It is never towed or transported on a trailer.
@@ -56,6 +55,10 @@ export default function Home() {
               >
                 View Pricing
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
             </div>
           </div>
         </div>
