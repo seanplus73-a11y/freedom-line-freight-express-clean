@@ -32,7 +32,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         error: `Missing required fields: ${missingFields.join(', ')}` 
       }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       });
     }
 
@@ -44,11 +47,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         error: 'You must confirm the vehicle is operable' 
       }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       });
     }
 
-    // Prepare Airtable payload (matching your Lead table structure)
+    // Prepare Airtable payload
     const airtablePayload = {
       records: [
         {
@@ -105,7 +111,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         details: airtableData 
       }), {
         status: airtableResponse.status,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       });
     }
 
@@ -118,7 +127,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       recordId: airtableData.records[0].id
     }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
     });
 
   } catch (error) {
@@ -129,7 +141,22 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       details: error.message 
     }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
     });
   }
+};
+
+// Handle OPTIONS for CORS preflight
+export const onRequestOptions: PagesFunction = async () => {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    }
+  });
 };
