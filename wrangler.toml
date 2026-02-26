@@ -1,0 +1,6 @@
+name = "freedom-line-freight-express"
+compatibility_date = "2024-01-01"
+
+# Tell Cloudflare Pages to not route /api/* to the SPA
+[routes]
+exclude = ["/api/*"]
