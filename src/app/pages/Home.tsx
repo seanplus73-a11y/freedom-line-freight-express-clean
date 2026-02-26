@@ -36,7 +36,7 @@ export default function Home() {
               Professional Vehicle Transport <span className="text-orange-500">You Can Trust</span>
             </h1>
             <p className="text-xl md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
-              Door-to-door vehicle pickup and delivery for sedans, SUVs, and luxury cars. Owner-operated. Fully insured. I do not transport commercial trucks.
+              Door to door vehicle pickup and delivery for sedans, SUVs, and luxury cars. Owner operated. Fully insured. I do not transport commercial trucks.
             </p>
             <p className="text-lg md:text-xl mb-10 text-orange-400 font-bold leading-relaxed max-w-3xl">
               I personally drive your vehicle from pickup to delivery. It is never towed or transported on a trailer.
@@ -146,7 +146,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Schedule Pickup</h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                We coordinate directly with your home, dealership, or auction.
+                I coordinate directly with your home, dealership, or auction.
               </p>
             </div>
 
@@ -154,7 +154,7 @@ export default function Home() {
               <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold text-white mx-auto mb-6">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">In-Transit Updates</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">In Transit Updates</h3>
               <p className="text-gray-400 text-lg leading-relaxed">
                 You receive direct communication during transport.
               </p>
