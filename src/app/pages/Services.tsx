@@ -77,9 +77,14 @@ export default function Services() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Professional Vehicle <span className="text-orange-500">Transport Services</span>
             </h1>
-            <p className="text-xl text-gray-300">
-              Reliable, insured vehicle pickup and delivery across the Southwest. From personal cars to dealer transfers, we handle your vehicles with professional care.
+            <p className="text-xl text-gray-300 mb-4">
+              Reliable, insured vehicle pickup and delivery across the Southwest. From personal cars to dealer transfers, I handle your vehicles with professional care.
             </p>
+            <div className="mt-4 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
+              <p className="text-orange-100 font-semibold text-lg">
+                I drive your vehicle. I do not tow or trailer it.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -142,7 +147,7 @@ export default function Services() {
               What's Included with <span className="text-orange-500">Every Transport</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Professional service standards on every vehicle we transport.
+              Professional service standards on every vehicle I transport.
             </p>
           </div>
 
