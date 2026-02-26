@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Check, AlertCircle } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,6 +13,8 @@ export default function Contact() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -23,23 +25,48 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send the form data to your backend
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        pickupLocation: "",
-        deliveryLocation: "",
-        vehicleType: "",
-        message: "",
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit form');
+      }
+
+      console.log('Contact form success:', data);
+      setIsSubmitted(true);
+      
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          pickupLocation: "",
+          deliveryLocation: "",
+          vehicleType: "",
+          message: "",
+        });
+      }, 5000);
+
+    } catch (err: any) {
+      console.error('Contact form error:', err);
+      setError(err.message || 'Failed to submit form. Please try again or contact me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -68,7 +95,7 @@ export default function Contact() {
                 Contact Information
               </h2>
               <p className="text-gray-400 mb-8">
-                Have a question or ready to schedule a pickup? We're here to help.
+                Have a question or ready to schedule a pickup? I'm here to help.
               </p>
 
               <div className="space-y-6">
@@ -130,19 +157,41 @@ export default function Contact() {
             <div className="lg:col-span-2">
               <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
                 <h2 className="text-2xl font-bold text-white mb-6">
-                  Send Us a <span className="text-orange-500">Message</span>
+                  Send Me a <span className="text-orange-500">Message</span>
                 </h2>
 
                 {isSubmitted ? (
-                  <div className="bg-orange-500/10 border border-orange-500/30 text-white p-6 rounded-lg text-center">
-                    <div className="text-orange-500 mb-3">
-                      <Send size={48} className="mx-auto" />
+                  <div className="bg-green-900/30 border border-green-600 text-green-100 p-8 rounded-lg text-center">
+                    <div className="text-green-400 mb-4">
+                      <Check size={56} className="mx-auto" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">Thank You!</h3>
-                    <p className="text-gray-300">Your message has been sent successfully. We'll get back to you soon.</p>
+                    <h3 className="text-2xl font-bold mb-3">Message Sent!</h3>
+                    <p className="text-lg">
+                      Thank you for contacting me. I'll respond within a few hours during business hours.
+                    </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {error && (
+                      <div className="bg-red-900/30 border border-red-600 text-red-100 p-4 rounded-lg flex items-start">
+                        <AlertCircle className="text-red-400 mr-3 flex-shrink-0 mt-0.5" size={20} />
+                        <div>
+                          <p className="font-bold mb-1">Submission Error</p>
+                          <p className="text-sm">{error}</p>
+                          <p className="text-sm mt-2">
+                            You can also reach me directly at{" "}
+                            <a href="mailto:dispatch@flfreightco.com" className="underline text-orange-400">
+                              dispatch@flfreightco.com
+                            </a>
+                            {" "}or text{" "}
+                            <a href="sms:480-742-8553" className="underline text-orange-400">
+                              480-742-8553
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label
@@ -158,7 +207,8 @@ export default function Contact() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
                           placeholder="John Doe"
                         />
                       </div>
@@ -177,7 +227,8 @@ export default function Contact() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -196,7 +247,8 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
                         placeholder="(555) 123-4567"
                       />
                     </div>
@@ -215,7 +267,8 @@ export default function Contact() {
                           name="pickupLocation"
                           value={formData.pickupLocation}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
                           placeholder="Enter pickup location"
                         />
                       </div>
@@ -233,7 +286,8 @@ export default function Contact() {
                           name="deliveryLocation"
                           value={formData.deliveryLocation}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
                           placeholder="Enter delivery location"
                         />
                       </div>
@@ -252,7 +306,8 @@ export default function Contact() {
                         name="vehicleType"
                         value={formData.vehicleType}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
                         placeholder="e.g., Sedan, SUV, F-250"
                       />
                     </div>
@@ -270,18 +325,28 @@ export default function Contact() {
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                         rows={6}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
-                        placeholder="Tell us about your vehicle transport needs..."
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
+                        placeholder="Tell me about your vehicle transport needs..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full bg-orange-500 text-white px-8 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors flex items-center justify-center"
+                      disabled={isSubmitting}
+                      className="w-full bg-orange-500 text-white px-8 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
-                      <Send className="ml-2" size={20} />
+                      {isSubmitting ? (
+                        <>
+                          <span className="animate-pulse">Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="ml-2" size={20} />
+                        </>
+                      )}
                     </button>
                   </form>
                 )}
@@ -296,7 +361,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Our <span className="text-orange-500">Service Area</span>
+              My <span className="text-orange-500">Service Area</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Based in Arizona, proudly serving the Southwest region
