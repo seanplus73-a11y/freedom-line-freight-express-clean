@@ -3,24 +3,25 @@ import { Car, MapPin, Calendar, Send, Shield, Clock, CheckCircle } from "lucide-
 
 export default function RequestPickup() {
   const [formData, setFormData] = useState({
-    vehicleType: "",
+    customerName: "",
+    customerEmail: "",
+    customerPhone: "",
+    serviceType: "",
     vehicleMake: "",
     vehicleModel: "",
     vehicleYear: "",
-    vehicleCondition: "",
+    vinNumber: "",
+    vehicleCondition: "Runs and Drives (Fully Operable)",
     pickupAddress: "",
     pickupCity: "",
     pickupState: "",
     pickupZip: "",
-    deliveryAddress: "",
-    deliveryCity: "",
-    deliveryState: "",
-    deliveryZip: "",
-    pickupDate: "",
-    name: "",
-    email: "",
-    phone: "",
+    dropoffAddress: "",
+    dropoffCity: "",
+    dropoffState: "",
+    dropoffZip: "",
     notes: "",
+    operableConfirmation: false,
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -28,9 +29,10 @@ export default function RequestPickup() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    const { name, value, type } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     });
   };
 
@@ -42,24 +44,25 @@ export default function RequestPickup() {
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
-        vehicleType: "",
+        customerName: "",
+        customerEmail: "",
+        customerPhone: "",
+        serviceType: "",
         vehicleMake: "",
         vehicleModel: "",
         vehicleYear: "",
-        vehicleCondition: "",
+        vinNumber: "",
+        vehicleCondition: "Runs and Drives (Fully Operable)",
         pickupAddress: "",
         pickupCity: "",
         pickupState: "",
         pickupZip: "",
-        deliveryAddress: "",
-        deliveryCity: "",
-        deliveryState: "",
-        deliveryZip: "",
-        pickupDate: "",
-        name: "",
-        email: "",
-        phone: "",
+        dropoffAddress: "",
+        dropoffCity: "",
+        dropoffState: "",
+        dropoffZip: "",
         notes: "",
+        operableConfirmation: false,
       });
     }, 3000);
   };
@@ -74,8 +77,13 @@ export default function RequestPickup() {
               Request Vehicle <span className="text-orange-500">Pickup & Delivery</span>
             </h1>
             <p className="text-xl text-gray-300">
-              Get an instant mileage-based quote in seconds. Fill out the form below and we'll calculate your rate based on distance and vehicle type.
+              Get an instant mileage based quote in seconds. Fill out the form below and I'll calculate your rate based on distance and vehicle type.
             </p>
+            <div className="mt-6 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
+              <p className="text-orange-100 font-semibold text-lg">
+                I drive your vehicle. I do not tow or trailer it.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -91,11 +99,19 @@ export default function RequestPickup() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Request Submitted!</h3>
                 <p className="text-lg">
-                  Thank you for your pickup request. We'll send you a detailed quote within 30 minutes based on your mileage and vehicle details.
+                  Thank you for your pickup request. I'll send you a detailed quote within 30 minutes based on your mileage and vehicle details.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
+                {/* Important Notice */}
+                <div className="mb-8 bg-orange-900/20 border border-orange-500 p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-orange-400 mb-2">Important: Operable Vehicles Only</h3>
+                  <p className="text-orange-100 text-lg">
+                    I drive your vehicle. I do not tow or trailer it.
+                  </p>
+                </div>
+
                 {/* Vehicle Information */}
                 <div className="mb-10">
                   <div className="flex items-center mb-6">
@@ -107,22 +123,23 @@ export default function RequestPickup() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="vehicleType" className="block text-sm font-bold text-gray-300 mb-2">
-                        Vehicle Type *
+                      <label htmlFor="serviceType" className="block text-sm font-bold text-gray-300 mb-2">
+                        Service Type *
                       </label>
                       <select
-                        id="vehicleType"
-                        name="vehicleType"
-                        value={formData.vehicleType}
+                        id="serviceType"
+                        name="serviceType"
+                        value={formData.serviceType}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       >
-                        <option value="">Select vehicle type</option>
-                        <option value="sedan">Sedan</option>
-                        <option value="suv">SUV</option>
-                        <option value="truck">Light Truck (F-250/2500 class)</option>
-                        <option value="luxury">Luxury Vehicle</option>
+                        <option value="">Select service type</option>
+                        <option value="local">Local Vehicle Transport (0 to 50 miles)</option>
+                        <option value="long_distance">Long Distance Vehicle Transport (Interstate)</option>
+                        <option value="dealer_auction">Dealer or Auction Pickup</option>
+                        <option value="private_party">Private Party Vehicle Transport</option>
+                        <option value="multi_vehicle">Multi Vehicle Transport</option>
                       </select>
                     </div>
 
@@ -136,12 +153,12 @@ export default function RequestPickup() {
                         value={formData.vehicleCondition}
                         onChange={handleChange}
                         required
+                        disabled
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       >
-                        <option value="">Select condition</option>
-                        <option value="running">Running/Operable</option>
-                        <option value="inoperable">Inoperable</option>
+                        <option value="Runs and Drives (Fully Operable)">Runs and Drives (Fully Operable)</option>
                       </select>
+                      <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
                     </div>
 
                     <div>
@@ -191,6 +208,21 @@ export default function RequestPickup() {
                         max="2026"
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                         placeholder="2020"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="vinNumber" className="block text-sm font-bold text-gray-300 mb-2">
+                        VIN Number
+                      </label>
+                      <input
+                        type="text"
+                        id="vinNumber"
+                        name="vinNumber"
+                        value={formData.vinNumber}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="1HGCM82633A004352"
                       />
                     </div>
                   </div>
@@ -271,21 +303,6 @@ export default function RequestPickup() {
                         />
                       </div>
                     </div>
-
-                    <div>
-                      <label htmlFor="pickupDate" className="block text-sm font-bold text-gray-300 mb-2">
-                        Preferred Pickup Date *
-                      </label>
-                      <input
-                        type="date"
-                        id="pickupDate"
-                        name="pickupDate"
-                        value={formData.pickupDate}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      />
-                    </div>
                   </div>
                 </div>
 
@@ -300,14 +317,14 @@ export default function RequestPickup() {
 
                   <div className="grid grid-cols-1 gap-6">
                     <div>
-                      <label htmlFor="deliveryAddress" className="block text-sm font-bold text-gray-300 mb-2">
+                      <label htmlFor="dropoffAddress" className="block text-sm font-bold text-gray-300 mb-2">
                         Street Address *
                       </label>
                       <input
                         type="text"
-                        id="deliveryAddress"
-                        name="deliveryAddress"
-                        value={formData.deliveryAddress}
+                        id="dropoffAddress"
+                        name="dropoffAddress"
+                        value={formData.dropoffAddress}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -317,14 +334,14 @@ export default function RequestPickup() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
-                        <label htmlFor="deliveryCity" className="block text-sm font-bold text-gray-300 mb-2">
+                        <label htmlFor="dropoffCity" className="block text-sm font-bold text-gray-300 mb-2">
                           City *
                         </label>
                         <input
                           type="text"
-                          id="deliveryCity"
-                          name="deliveryCity"
-                          value={formData.deliveryCity}
+                          id="dropoffCity"
+                          name="dropoffCity"
+                          value={formData.dropoffCity}
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -333,14 +350,14 @@ export default function RequestPickup() {
                       </div>
 
                       <div>
-                        <label htmlFor="deliveryState" className="block text-sm font-bold text-gray-300 mb-2">
+                        <label htmlFor="dropoffState" className="block text-sm font-bold text-gray-300 mb-2">
                           State *
                         </label>
                         <input
                           type="text"
-                          id="deliveryState"
-                          name="deliveryState"
-                          value={formData.deliveryState}
+                          id="dropoffState"
+                          name="dropoffState"
+                          value={formData.dropoffState}
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -349,14 +366,14 @@ export default function RequestPickup() {
                       </div>
 
                       <div>
-                        <label htmlFor="deliveryZip" className="block text-sm font-bold text-gray-300 mb-2">
+                        <label htmlFor="dropoffZip" className="block text-sm font-bold text-gray-300 mb-2">
                           ZIP Code *
                         </label>
                         <input
                           type="text"
-                          id="deliveryZip"
-                          name="deliveryZip"
-                          value={formData.deliveryZip}
+                          id="dropoffZip"
+                          name="dropoffZip"
+                          value={formData.dropoffZip}
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -373,14 +390,14 @@ export default function RequestPickup() {
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-bold text-gray-300 mb-2">
+                      <label htmlFor="customerName" className="block text-sm font-bold text-gray-300 mb-2">
                         Full Name *
                       </label>
                       <input
                         type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        id="customerName"
+                        name="customerName"
+                        value={formData.customerName}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -389,14 +406,14 @@ export default function RequestPickup() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-bold text-gray-300 mb-2">
+                      <label htmlFor="customerEmail" className="block text-sm font-bold text-gray-300 mb-2">
                         Email *
                       </label>
                       <input
                         type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
+                        id="customerEmail"
+                        name="customerEmail"
+                        value={formData.customerEmail}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -405,14 +422,14 @@ export default function RequestPickup() {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-bold text-gray-300 mb-2">
+                      <label htmlFor="customerPhone" className="block text-sm font-bold text-gray-300 mb-2">
                         Phone *
                       </label>
                       <input
                         type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
+                        id="customerPhone"
+                        name="customerPhone"
+                        value={formData.customerPhone}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -434,6 +451,29 @@ export default function RequestPickup() {
                       className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       placeholder="Special instructions, gate codes, or other details..."
                     />
+                  </div>
+                </div>
+
+                {/* Required Confirmation Checkbox */}
+                <div className="mb-8 bg-neutral-700/50 p-6 rounded-lg border-2 border-orange-500/50">
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="operableConfirmation"
+                      name="operableConfirmation"
+                      checked={formData.operableConfirmation}
+                      onChange={handleChange}
+                      required
+                      className="mt-1 w-5 h-5 text-orange-500 bg-neutral-900 border-neutral-600 rounded focus:ring-orange-500 focus:ring-2"
+                    />
+                    <label htmlFor="operableConfirmation" className="ml-3 block">
+                      <span className="text-white font-bold text-lg">
+                        I confirm the vehicle starts, steers, brakes, and drives safely. Operable vehicles only. *
+                      </span>
+                      <p className="text-gray-300 mt-2">
+                        Vehicle must be fully operable, road legal, and safe to drive.
+                      </p>
+                    </label>
                   </div>
                 </div>
 
