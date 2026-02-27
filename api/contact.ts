@@ -39,7 +39,7 @@ if (!name || !email) {
     // Build Airtable fields (adjust field names to match your Airtable exactly)
     // IMPORTANT: Field names must match Airtable column names.
     const commonFields = {
-      "Full Name": fullName,
+      "Full Name": name,
       "Email": email,
       "Phone": (data.phone || data.phoneNumber || "").toString().trim(),
       "Pickup Location": (data.pickupLocation || data.pickupAddress || "").trim(),
