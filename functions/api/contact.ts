@@ -62,6 +62,16 @@ export async function onRequestPost(context) {
     const AIRTABLE_BASE_ID = context.env.AIRTABLE_BASE_ID;
     const AIRTABLE_TABLE_CONTACTS = context.env.AIRTABLE_TABLE_CONTACTS;
 
+    // Debug: Log what we can see (DO NOT log actual values in production!)
+    console.log('=== ENVIRONMENT VARIABLE DEBUG ===');
+    console.log('context.env type:', typeof context.env);
+    console.log('context.env keys:', Object.keys(context.env));
+    console.log('AIRTABLE_TOKEN exists:', !!AIRTABLE_TOKEN);
+    console.log('AIRTABLE_TOKEN type:', typeof AIRTABLE_TOKEN);
+    console.log('AIRTABLE_BASE_ID exists:', !!AIRTABLE_BASE_ID);
+    console.log('AIRTABLE_TABLE_CONTACTS exists:', !!AIRTABLE_TABLE_CONTACTS);
+    console.log('=== END DEBUG ===');
+
     // Check if environment variables are set
     if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_CONTACTS) {
       console.error('Missing Airtable environment variables');
