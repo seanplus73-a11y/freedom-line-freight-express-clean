@@ -1,9 +1,4 @@
 {
-  "version": 1,
-  "include": [
-    "/*"
-  ],
-  "exclude": [
-    "/api/*"
-  ]
+  "include": ["/api/*"],  // ONLY /api/* invokes Functions
+  "exclude": []           // No exclusions needed
 }
