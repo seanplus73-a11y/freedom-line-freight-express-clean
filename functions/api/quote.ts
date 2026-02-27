@@ -93,6 +93,10 @@ export async function onRequestPost(context) {
     // Check if environment variables are set
     if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_LEADS) {
       console.error('Missing Airtable environment variables');
+      console.error('AIRTABLE_TOKEN exists:', !!AIRTABLE_TOKEN);
+      console.error('AIRTABLE_BASE_ID exists:', !!AIRTABLE_BASE_ID);
+      console.error('AIRTABLE_TABLE_LEADS exists:', !!AIRTABLE_TABLE_LEADS);
+      console.error('Available env vars:', Object.keys(context.env));
       return new Response(
         JSON.stringify({ 
           success: false, 
@@ -211,4 +215,3 @@ export async function onRequestPost(context) {
     );
   }
 }
-
