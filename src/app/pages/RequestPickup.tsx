@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Car, MapPin, Calendar, Send, Shield, Clock, CheckCircle } from "lucide-react";
+import { Car, MapPin, Calendar, Send, Shield, Clock, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function RequestPickup() {
   const [formData, setFormData] = useState({
@@ -25,6 +25,8 @@ export default function RequestPickup() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -36,35 +38,72 @@ export default function RequestPickup() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send the form data to your backend
-    console.log("Pickup request submitted:", formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        customerName: "",
-        customerEmail: "",
-        customerPhone: "",
-        serviceType: "",
-        vehicleMake: "",
-        vehicleModel: "",
-        vehicleYear: "",
-        vinNumber: "",
-        vehicleCondition: "Runs and Drives (Fully Operable)",
-        pickupAddress: "",
-        pickupCity: "",
-        pickupState: "",
-        pickupZip: "",
-        dropoffAddress: "",
-        dropoffCity: "",
-        dropoffState: "",
-        dropoffZip: "",
-        notes: "",
-        operableConfirmation: false,
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      // Debug: Check response
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+      
+      // Check if response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        console.error('Non-JSON response:', text.substring(0, 500));
+        throw new Error('Server returned invalid response. Please try again or contact me directly.');
+      }
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit quote request');
+      }
+
+      console.log('Quote form success:', data);
+      setIsSubmitted(true);
+      
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          customerName: "",
+          customerEmail: "",
+          customerPhone: "",
+          serviceType: "",
+          vehicleMake: "",
+          vehicleModel: "",
+          vehicleYear: "",
+          vinNumber: "",
+          vehicleCondition: "Runs and Drives (Fully Operable)",
+          pickupAddress: "",
+          pickupCity: "",
+          pickupState: "",
+          pickupZip: "",
+          dropoffAddress: "",
+          dropoffCity: "",
+          dropoffState: "",
+          dropoffZip: "",
+          notes: "",
+          operableConfirmation: false,
+        });
+      }, 5000);
+
+    } catch (err: any) {
+      console.error('Quote form error:', err);
+      setError(err.message || 'Failed to submit quote request. Please try again or contact me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -477,11 +516,24 @@ export default function RequestPickup() {
                   </div>
                 </div>
 
+                {error && (
+                  <div className="bg-red-900/30 border border-red-600 text-red-100 p-8 rounded-lg text-center mb-8">
+                    <div className="text-red-400 mb-4">
+                      <AlertCircle size={56} className="mx-auto" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">Error!</h3>
+                    <p className="text-lg">
+                      {error}
+                    </p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
                   className="w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center"
+                  disabled={isSubmitting}
                 >
-                  Get Instant Quote
+                  {isSubmitting ? 'Submitting...' : 'Get Instant Quote'}
                   <Send className="ml-2" size={20} />
                 </button>
               </form>
