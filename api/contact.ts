@@ -10,12 +10,13 @@ export default async function handler(req, res) {
     const data = req.body || {};
 
     // Basic validation
-    const fullName = (data.fullName || "").trim();
-    const email = (data.email || "").trim();
+    const { name, email, phone, message } = req.body;
 
-    if (!fullName || !email) {
-      return res.status(400).json({ error: "Missing required fields: fullName, email" });
-    }
+if (!name || !email) {
+  return res.status(400).json({
+    error: 'Missing required fields: name, email'
+  });
+}
 
     // ENV variables (you already have these set)
     const token = process.env.AIRTABLE_TOKEN;
