@@ -1,0 +1,40 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // Only allow GET requests
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Check environment variables
+  const envCheck = {
+    AIRTABLE_TOKEN: {
+      exists: !!process.env.AIRTABLE_TOKEN,
+      length: process.env.AIRTABLE_TOKEN?.length || 0,
+      startsWithPat: process.env.AIRTABLE_TOKEN?.startsWith('pat') || false,
+      preview: process.env.AIRTABLE_TOKEN 
+        ? `${process.env.AIRTABLE_TOKEN.substring(0, 10)}...${process.env.AIRTABLE_TOKEN.substring(process.env.AIRTABLE_TOKEN.length - 4)}`
+        : 'NOT SET'
+    },
+    AIRTABLE_BASE_ID: {
+      exists: !!process.env.AIRTABLE_BASE_ID,
+      value: process.env.AIRTABLE_BASE_ID || 'NOT SET',
+      startsWithApp: process.env.AIRTABLE_BASE_ID?.startsWith('app') || false
+    },
+    AIRTABLE_TABLE_LEADS: {
+      exists: !!process.env.AIRTABLE_TABLE_LEADS,
+      value: process.env.AIRTABLE_TABLE_LEADS || 'NOT SET'
+    },
+    AIRTABLE_TABLE_CONTACTS: {
+      exists: !!process.env.AIRTABLE_TABLE_CONTACTS,
+      value: process.env.AIRTABLE_TABLE_CONTACTS || 'NOT SET'
+    }
+  };
+
+  return res.status(200).json({
+    message: 'Environment Variable Debug Check',
+    timestamp: new Date().toISOString(),
+    environment: envCheck,
+    allVariablesSet: Object.values(envCheck).every(v => v.exists)
+  });
+}
