@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Send, Check, AlertCircle } from "lucide-react";
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
+    companyName: "",
     email: "",
     phone: "",
     pickupLocation: "",
@@ -64,6 +65,7 @@ export default function Contact() {
         setIsSubmitted(false);
         setFormData({
           name: "",
+          companyName: "",
           email: "",
           phone: "",
           pickupLocation: "",
@@ -222,6 +224,25 @@ export default function Contact() {
                           disabled={isSubmitting}
                           className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
                           placeholder="John Doe"
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="companyName"
+                          className="block text-sm font-bold text-white mb-2"
+                        >
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          id="companyName"
+                          name="companyName"
+                          value={formData.companyName}
+                          onChange={handleChange}
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
+                          placeholder="Your Company Name"
                         />
                       </div>
 
