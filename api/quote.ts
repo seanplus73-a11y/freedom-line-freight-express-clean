@@ -96,16 +96,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             "Make": formData.vehicleMake,
             "Model": formData.vehicleModel,
             "Year": String(formData.vehicleYear),
-            "VIN Number": formData.vinNumber || "",
-            "Vehicle Condition": formData.vehicleCondition,
             "pickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
             "deliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
-            "Additional Notes": formData.notes || "",
             "Lead Source": "Website"
           }
         }
       ]
     };
+    
+    // Add optional fields only if they have values
+    if (formData.vinNumber) {
+      airtablePayload.records[0].fields["VIN Number"] = formData.vinNumber;
+    }
+    if (formData.notes) {
+      airtablePayload.records[0].fields["Additional Notes"] = formData.notes;
+    }
+    if (formData.vehicleCondition) {
+      airtablePayload.records[0].fields["Vehicle Condition"] = formData.vehicleCondition;
+    }
 
     console.log('Sending to Airtable Leads table...');
 
