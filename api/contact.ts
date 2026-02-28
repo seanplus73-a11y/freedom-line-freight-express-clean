@@ -74,11 +74,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       records: [
         {
           fields: {
-            "name": formData.name,
-            "email": formData.email,
-            "phone": formData.phone || "",
-            "Notes": formData.message,
-            "Lead Source": "Website"
+            "L_FullName": formData.name,
+            "L_Email": formData.email,
+            "L_Phone": formData.phone || "",
+            "L_Company": formData.companyName || "",
+            "Q_Notes": formData.message,
+            "L_Source": "Website"
           }
         }
       ]
