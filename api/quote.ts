@@ -89,26 +89,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       records: [
         {
           fields: {
-            "Customer Name": formData.customerName,
-            "Customer Email": formData.customerEmail,
-            "Customer Phone": formData.customerPhone,
-            "Service Type": formData.serviceType,
-            "Vehicle Make": formData.vehicleMake,
-            "Vehicle Model": formData.vehicleModel,
-            "Vehicle Year": String(formData.vehicleYear),
+            "source": formData.serviceType,
+            "name": formData.customerName,
+            "email": formData.customerEmail,
+            "phone": formData.customerPhone,
+            "Make": formData.vehicleMake,
+            "Model": formData.vehicleModel,
+            "Year": String(formData.vehicleYear),
             "VIN Number": formData.vinNumber || "",
             "Vehicle Condition": formData.vehicleCondition,
-            "Pickup Address": formData.pickupAddress,
-            "Pickup City": formData.pickupCity,
-            "Pickup State": formData.pickupState,
-            "Pickup Zip": formData.pickupZip,
-            "Dropoff Address": formData.dropoffAddress,
-            "Dropoff City": formData.dropoffCity,
-            "Dropoff State": formData.dropoffState,
-            "Dropoff Zip": formData.dropoffZip,
-            "Notes": formData.notes || "",
-            "Operable Confirmed": true,
-            "Submitted At": new Date().toISOString()
+            "pickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
+            "deliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
+            "Additional Notes": formData.notes || "",
+            "Lead Source": "Website Quote Form"
           }
         }
       ]
