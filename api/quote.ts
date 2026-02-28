@@ -89,10 +89,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       records: [
         {
           fields: {
-            "source": formData.serviceType,
             "name": formData.customerName,
             "email": formData.customerEmail,
             "phone": formData.customerPhone,
+            "source": formData.serviceType,
             "Make": formData.vehicleMake,
             "Model": formData.vehicleModel,
             "Year": String(formData.vehicleYear),
@@ -101,7 +101,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             "pickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
             "deliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
             "Additional Notes": formData.notes || "",
-            "Lead Source": "Website Quote Form"
+            "Lead Source": "Website"
           }
         }
       ]
