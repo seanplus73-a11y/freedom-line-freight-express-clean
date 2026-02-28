@@ -51,17 +51,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Get environment variables
     const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
     const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
-    const AIRTABLE_TABLE_CONTACTS = process.env.AIRTABLE_TABLE_CONTACTS;
+    const AIRTABLE_TABLE_LEADS = process.env.AIRTABLE_TABLE_LEADS;
 
     // Debug: Log what we can see
     console.log('=== ENVIRONMENT VARIABLE DEBUG ===');
     console.log('AIRTABLE_TOKEN exists:', !!AIRTABLE_TOKEN);
     console.log('AIRTABLE_BASE_ID exists:', !!AIRTABLE_BASE_ID);
-    console.log('AIRTABLE_TABLE_CONTACTS exists:', !!AIRTABLE_TABLE_CONTACTS);
+    console.log('AIRTABLE_TABLE_LEADS exists:', !!AIRTABLE_TABLE_LEADS);
     console.log('=== END DEBUG ===');
 
     // Check if environment variables are set
-    if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_CONTACTS) {
+    if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_LEADS) {
       console.error('Missing Airtable environment variables');
       return res.status(500).json({
         success: false,
@@ -74,24 +74,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       records: [
         {
           fields: {
-            "Name": formData.name,
-            "Email": formData.email,
-            "Phone": formData.phone || "",
-            "Pickup Location": formData.pickupLocation || "",
-            "Delivery Location": formData.deliveryLocation || "",
-            "Vehicle Type": formData.vehicleType || "",
-            "Message": formData.message,
-            "Submitted At": new Date().toISOString()
+            "source": "Contact Form",
+            "name": formData.name,
+            "email": formData.email,
+            "phone": formData.phone || "",
+            "Notes": formData.message,
+            "Lead Source": "Website Contact Form"
           }
         }
       ]
     };
 
-    console.log('Sending to Airtable Contacts table...');
+    console.log('Sending to Airtable Leads table...');
 
     // Send to Airtable
     const airtableResponse = await fetch(
-      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_CONTACTS}`,
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_LEADS}`,
       {
         method: 'POST',
         headers: {
