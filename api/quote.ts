@@ -86,35 +86,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Prepare Airtable payload (matching your Lead table structure)
     const fields: Record<string, any> = {
-      "name": formData.customerName,
-      "email": formData.customerEmail,
-      "phone": formData.customerPhone,
-      "Make": formData.vehicleMake,
-      "Model": formData.vehicleModel,
-      "Year": String(formData.vehicleYear),
-      "pickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
-      "deliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
-      "Lead Source": "Website"
+      "L_FullName": formData.customerName,
+      "L_Email": formData.customerEmail,
+      "L_Phone": formData.customerPhone,
+      "L_Company": formData.companyName || "",
+      "Q_Make": formData.vehicleMake,
+      "Q_Model": formData.vehicleModel,
+      "Q_Year": String(formData.vehicleYear),
+      "Q_PickupAddress": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
+      "Q_DeliveryAddress": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
+      "Q_ServiceType": formData.serviceType,
+      "Q_VehicleCondition": formData.vehicleCondition,
+      "L_Source": "Website"
     };
     
     // Add optional fields only if they have values
     if (formData.vinNumber) {
-      fields["VIN Number"] = formData.vinNumber;
+      fields["Q_VIN"] = formData.vinNumber;
     }
     
-    // Add service type and notes together
-    let notesText = "";
-    if (formData.serviceType) {
-      notesText = `Service Type: ${formData.serviceType}`;
-    }
-    if (formData.vehicleCondition) {
-      notesText += (notesText ? "\n" : "") + `Vehicle Condition: ${formData.vehicleCondition}`;
-    }
+    // Add additional notes if provided
     if (formData.notes) {
-      notesText += (notesText ? "\n\n" : "") + formData.notes;
-    }
-    if (notesText) {
-      fields["Additional Notes"] = notesText;
+      fields["Q_Notes"] = formData.notes;
     }
     
     const airtablePayload = {
