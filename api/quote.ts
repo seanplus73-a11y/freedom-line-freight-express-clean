@@ -85,36 +85,34 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // Prepare Airtable payload (matching your Lead table structure)
-    const airtablePayload = {
-      records: [
-        {
-          fields: {
-            "name": formData.customerName,
-            "email": formData.customerEmail,
-            "phone": formData.customerPhone,
-            "source": formData.serviceType,
-            "Make": formData.vehicleMake,
-            "Model": formData.vehicleModel,
-            "Year": String(formData.vehicleYear),
-            "pickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
-            "deliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
-            "Lead Source": "Website"
-          }
-        }
-      ]
+    const fields: Record<string, any> = {
+      "name": formData.customerName,
+      "email": formData.customerEmail,
+      "phone": formData.customerPhone,
+      "source": formData.serviceType,
+      "Make": formData.vehicleMake,
+      "Model": formData.vehicleModel,
+      "Year": String(formData.vehicleYear),
+      "pickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
+      "deliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
+      "Lead Source": "Website"
     };
     
     // Add optional fields only if they have values
     if (formData.vinNumber) {
-      airtablePayload.records[0].fields["VIN Number"] = formData.vinNumber;
+      fields["VIN Number"] = formData.vinNumber;
     }
     if (formData.notes) {
-      airtablePayload.records[0].fields["Additional Notes"] = formData.notes;
+      fields["Additional Notes"] = formData.notes;
     }
     if (formData.vehicleCondition) {
-      airtablePayload.records[0].fields["Vehicle Condition"] = formData.vehicleCondition;
+      fields["Vehicle Condition"] = formData.vehicleCondition;
     }
-
+    
+    const airtablePayload = {
+      records: [{ fields }]
+    };
+    
     console.log('Sending to Airtable Leads table...');
 
     // Send to Airtable
