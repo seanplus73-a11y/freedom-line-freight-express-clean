@@ -107,15 +107,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (formData.serviceType) {
       notesText = `Service Type: ${formData.serviceType}`;
     }
+    if (formData.vehicleCondition) {
+      notesText += (notesText ? "\n" : "") + `Vehicle Condition: ${formData.vehicleCondition}`;
+    }
     if (formData.notes) {
       notesText += (notesText ? "\n\n" : "") + formData.notes;
     }
     if (notesText) {
       fields["Additional Notes"] = notesText;
-    }
-    
-    if (formData.vehicleCondition) {
-      fields["Vehicle Condition"] = formData.vehicleCondition;
     }
     
     const airtablePayload = {
