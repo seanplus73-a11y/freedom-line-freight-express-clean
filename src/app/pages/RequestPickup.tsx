@@ -4,6 +4,7 @@ import { Car, MapPin, Calendar, Send, Shield, Clock, CheckCircle, AlertCircle } 
 export default function RequestPickup() {
   const [formData, setFormData] = useState({
     customerName: "",
+    companyName: "",
     customerEmail: "",
     customerPhone: "",
     serviceType: "",
@@ -77,6 +78,7 @@ export default function RequestPickup() {
         setIsSubmitted(false);
         setFormData({
           customerName: "",
+          companyName: "",
           customerEmail: "",
           customerPhone: "",
           serviceType: "",
@@ -441,6 +443,21 @@ export default function RequestPickup() {
                         required
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                         placeholder="John Doe"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="companyName" className="block text-sm font-bold text-gray-300 mb-2">
+                        Company Name
+                      </label>
+                      <input
+                        type="text"
+                        id="companyName"
+                        name="companyName"
+                        value={formData.companyName}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="ABC Company"
                       />
                     </div>
 
