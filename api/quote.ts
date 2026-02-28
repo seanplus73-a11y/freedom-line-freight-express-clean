@@ -1,5 +1,19 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+interface AirtableRecord {
+  id: string;
+  createdTime: string;
+  fields: Record<string, any>;
+}
+
+interface AirtableResponse {
+  records: AirtableRecord[];
+  error?: {
+    type: string;
+    message: string;
+  };
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Handle CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -115,7 +129,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
     );
 
-    const airtableData = await airtableResponse.json();
+    const airtableData = await airtableResponse.json() as AirtableResponse;
 
     console.log('Airtable response status:', airtableResponse.status);
 
@@ -128,13 +142,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    console.log('Quote saved successfully. Record ID:', airtableData.records[0].id);
+    console.log('Quote saved successfully. Record ID:', airtableData.records[0]?.id);
 
     // Return success
     return res.status(200).json({
       success: true,
       message: 'Quote request submitted successfully',
-      recordId: airtableData.records[0].id
+      recordId: airtableData.records[0]?.id
     });
 
   } catch (error) {
