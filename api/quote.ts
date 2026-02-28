@@ -89,7 +89,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       "name": formData.customerName,
       "email": formData.customerEmail,
       "phone": formData.customerPhone,
-      "source": formData.serviceType,
       "Make": formData.vehicleMake,
       "Model": formData.vehicleModel,
       "Year": String(formData.vehicleYear),
@@ -102,9 +101,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (formData.vinNumber) {
       fields["VIN Number"] = formData.vinNumber;
     }
-    if (formData.notes) {
-      fields["Additional Notes"] = formData.notes;
+    
+    // Add service type and notes together
+    let notesText = "";
+    if (formData.serviceType) {
+      notesText = `Service Type: ${formData.serviceType}`;
     }
+    if (formData.notes) {
+      notesText += (notesText ? "\n\n" : "") + formData.notes;
+    }
+    if (notesText) {
+      fields["Additional Notes"] = notesText;
+    }
+    
     if (formData.vehicleCondition) {
       fields["Vehicle Condition"] = formData.vehicleCondition;
     }
