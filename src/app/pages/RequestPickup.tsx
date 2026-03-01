@@ -176,11 +176,11 @@ export default function RequestPickup() {
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       >
                         <option value="">Select service type</option>
-                        <option value="local">Local Vehicle Transport (0 to 50 miles)</option>
-                        <option value="long_distance">Long Distance Vehicle Transport (Interstate)</option>
-                        <option value="dealer_auction">Dealer or Auction Pickup</option>
-                        <option value="private_party">Private Party Vehicle Transport</option>
-                        <option value="multi_vehicle">Multi Vehicle Transport</option>
+                        <option value="Local Vehicle Transport (0 to 50 miles)">Local Vehicle Transport (0 to 50 miles)</option>
+                        <option value="Long Distance Vehicle Transport (Interstate)">Long Distance Vehicle Transport (Interstate)</option>
+                        <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
+                        <option value="Private Party Vehicle Transport">Private Party Vehicle Transport</option>
+                        <option value="Multi Vehicle Transport">Multi Vehicle Transport</option>
                       </select>
                     </div>
 
