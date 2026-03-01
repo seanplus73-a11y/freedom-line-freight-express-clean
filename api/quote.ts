@@ -108,7 +108,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fields["Q_VIN"] = formData.vinNumber;
     }
     
-    // Add select fields with exact Airtable option values
+    // Send service type and vehicle condition directly to Airtable
     if (formData.serviceType) {
       fields["Q_ServiceType"] = formData.serviceType;
     }
@@ -117,6 +117,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fields["Q_VehicleCondition"] = formData.vehicleCondition;
     }
     
+    // Add additional notes if provided
     if (formData.notes) {
       fields["Q_Notes"] = formData.notes;
     }
