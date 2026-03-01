@@ -88,27 +88,40 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const fields: Record<string, any> = {
       "L_FullName": formData.customerName,
       "L_Email": formData.customerEmail,
-      "L_Phone": formData.customerPhone,
-      "L_Company": formData.companyName || "",
+      "Q_PickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
+      "Q_DeliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
       "Q_Make": formData.vehicleMake,
       "Q_Model": formData.vehicleModel,
-      "Q_Year": String(formData.vehicleYear),
-      "Q_PickupAddress": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
-      "Q_DeliveryAddress": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`,
-      "Q_ServiceType": formData.serviceType,
-      "Q_VehicleCondition": formData.vehicleCondition,
-      "L_Source": "Website"
+      "Q_Year": String(formData.vehicleYear)
     };
     
     // Add optional fields only if they have values
+    if (formData.customerPhone) {
+      fields["L_Phone"] = formData.customerPhone;
+    }
+    
+    if (formData.companyName) {
+      fields["L_Company"] = formData.companyName;
+    }
+    
     if (formData.vinNumber) {
       fields["Q_VIN"] = formData.vinNumber;
     }
     
-    // Add additional notes if provided
+    if (formData.serviceType) {
+      fields["Q_ServiceType"] = formData.serviceType;
+    }
+    
+    if (formData.vehicleCondition) {
+      fields["Q_VehicleCondition"] = formData.vehicleCondition;
+    }
+    
     if (formData.notes) {
       fields["Q_Notes"] = formData.notes;
     }
+    
+    // Always set lead source
+    fields["L_Source"] = "Website";
     
     const airtablePayload = {
       records: [{ fields }]
