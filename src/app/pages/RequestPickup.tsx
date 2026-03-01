@@ -21,6 +21,7 @@ export default function RequestPickup() {
     dropoffCity: "",
     dropoffState: "",
     dropoffZip: "",
+    preferredPickupDate: "",
     notes: "",
     operableConfirmation: false,
   });
@@ -95,6 +96,7 @@ export default function RequestPickup() {
           dropoffCity: "",
           dropoffState: "",
           dropoffZip: "",
+          preferredPickupDate: "",
           notes: "",
           operableConfirmation: false,
         });
@@ -507,6 +509,24 @@ export default function RequestPickup() {
                       className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       placeholder="Special instructions, gate codes, or other details..."
                     />
+                  </div>
+
+                  <div className="mt-6">
+                    <label htmlFor="preferredPickupDate" className="block text-sm font-bold text-gray-300 mb-2">
+                      Preferred Pickup Date (Optional)
+                    </label>
+                    <input
+                      type="date"
+                      id="preferredPickupDate"
+                      name="preferredPickupDate"
+                      value={formData.preferredPickupDate}
+                      onChange={handleChange}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    />
+                    <p className="text-sm text-gray-400 mt-1">
+                      This helps us plan scheduling and route availability. It's only a preferred date request (not guaranteed).
+                    </p>
                   </div>
                 </div>
 
