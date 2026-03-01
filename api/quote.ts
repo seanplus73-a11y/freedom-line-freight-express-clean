@@ -120,8 +120,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fields["Q_Notes"] = formData.notes;
     }
     
-    // Always set lead source
-    fields["L_Source"] = "Website";
+    // L_Source field removed - doesn't exist in current Airtable structure
     
     const airtablePayload = {
       records: [{ fields }]
