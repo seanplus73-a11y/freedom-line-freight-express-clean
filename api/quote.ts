@@ -108,6 +108,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fields["Q_VIN"] = formData.vinNumber;
     }
     
+    // Add select fields with exact Airtable option values
     if (formData.serviceType) {
       fields["Q_ServiceType"] = formData.serviceType;
     }
@@ -119,8 +120,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (formData.notes) {
       fields["Q_Notes"] = formData.notes;
     }
-    
-    // L_Source field removed - doesn't exist in current Airtable structure
     
     const airtablePayload = {
       records: [{ fields }]
