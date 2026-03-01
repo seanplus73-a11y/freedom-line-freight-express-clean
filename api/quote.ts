@@ -117,6 +117,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fields["Q_VehicleCondition"] = formData.vehicleCondition;
     }
     
+    // Add preferred pickup date if provided
+    if (formData.preferredPickupDate) {
+      fields["Q_PreferredPickupDate"] = formData.preferredPickupDate;
+    }
+    
     // Add additional notes if provided
     if (formData.notes) {
       fields["Q_Notes"] = formData.notes;
