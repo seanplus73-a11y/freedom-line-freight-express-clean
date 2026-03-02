@@ -72,9 +72,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Prepare Airtable payload (matching your Lead table structure)
     const fields: Record<string, any> = {
       "L_FullName": formData.name,
-      "L_Email": formData.email,
-      "Q_Notes": formData.message
+      "L_Email": formData.email
     };
+    
+    // Build notes field with message and optional vehicle type
+    let notesContent = formData.message;
+    if (formData.vehicleType) {
+      notesContent = `Vehicle Type: ${formData.vehicleType}\n\n${formData.message}`;
+    }
+    fields["Q_Notes"] = notesContent;
     
     // Add optional fields only if they have values
     if (formData.phone) {
@@ -91,10 +97,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     
     if (formData.deliveryLocation) {
       fields["Q_DeliveryLocation"] = formData.deliveryLocation;
-    }
-    
-    if (formData.vehicleType) {
-      fields["Q_VehicleType"] = formData.vehicleType;
     }
     
     const airtablePayload = {
