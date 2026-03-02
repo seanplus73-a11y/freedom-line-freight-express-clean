@@ -73,7 +73,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const fields: Record<string, any> = {
       "L_FullName": formData.name,
       "L_Email": formData.email,
-      "Q_AdditionalNotes": formData.message
+      "Q_Notes": formData.message
     };
     
     // Add optional fields only if they have values
