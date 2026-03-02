@@ -73,7 +73,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const fields: Record<string, any> = {
       "L_FullName": formData.name,
       "L_Email": formData.email,
-      "Q_Notes": formData.message
+      "Q_AdditionalNotes": formData.message
     };
     
     // Add optional fields only if they have values
@@ -83,6 +83,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     
     if (formData.companyName) {
       fields["L_Company"] = formData.companyName;
+    }
+    
+    if (formData.pickupLocation) {
+      fields["Q_PickupLocation"] = formData.pickupLocation;
+    }
+    
+    if (formData.deliveryLocation) {
+      fields["Q_DeliveryLocation"] = formData.deliveryLocation;
+    }
+    
+    if (formData.vehicleType) {
+      fields["Q_VehicleType"] = formData.vehicleType;
     }
     
     const airtablePayload = {
