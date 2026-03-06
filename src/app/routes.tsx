@@ -7,7 +7,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import RequestPickup from "./pages/RequestPickup";
-
+import AcceptQuote from "./pages/AcceptQuote";
 
 // Freedom Line routing configuration
 // Root layout component
@@ -77,10 +77,15 @@ export const router = createBrowserRouter([
         path: "request-pickup",
         element: <RequestPickup />,
       },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
     ],
+  },
+  // Hidden page - not in main navigation
+  {
+    path: "/accept",
+    element: <AcceptQuote />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
