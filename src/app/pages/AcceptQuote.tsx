@@ -1,12 +1,61 @@
-import { useState } from "react";
-import { CheckCircle, Send, AlertCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { CheckCircle, Send, AlertCircle, Loader2 } from "lucide-react";
+import { useSearchParams } from "react-router";
+
+interface QuoteDetails {
+  customerName: string;
+  pickupLocation: string;
+  deliveryLocation: string;
+  vehicle: string;
+}
 
 export default function AcceptQuote() {
+  const [searchParams] = useSearchParams();
+  const quoteId = searchParams.get('quoteId');
+  
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [quoteDetails, setQuoteDetails] = useState<QuoteDetails | null>(null);
+
+  // Fetch quote details when page loads
+  useEffect(() => {
+    if (!quoteId) {
+      setError("No quote ID provided. Please use the link from your quote email.");
+      setIsLoading(false);
+      return;
+    }
+
+    fetchQuoteDetails();
+  }, [quoteId]);
+
+  const fetchQuoteDetails = async () => {
+    try {
+      const response = await fetch(`/api/accept-quote?quoteId=${quoteId}`);
+      
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to load quote details');
+      }
+
+      const data = await response.json();
+      setQuoteDetails(data.quoteDetails);
+      setIsLoading(false);
+
+    } catch (err: any) {
+      console.error('Failed to fetch quote:', err);
+      setError(err.message || 'Failed to load quote details. Please contact me directly.');
+      setIsLoading(false);
+    }
+  };
 
   const handleConfirm = async () => {
+    if (!quoteId) {
+      setError("No quote ID provided.");
+      return;
+    }
+
     setIsSubmitting(true);
     setError("");
 
@@ -17,6 +66,7 @@ export default function AcceptQuote() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          quoteId,
           timestamp: new Date().toISOString(),
           userAgent: navigator.userAgent,
         }),
@@ -50,7 +100,32 @@ export default function AcceptQuote() {
             <div className="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
           </div>
 
-          {isSubmitted ? (
+          {isLoading ? (
+            // Loading State
+            <div className="text-center py-12">
+              <Loader2 className="text-orange-500 animate-spin mx-auto mb-4" size={48} />
+              <p className="text-gray-400">Loading quote details...</p>
+            </div>
+          ) : error && !quoteDetails ? (
+            // Error State (no quote found)
+            <div className="text-center py-8">
+              <div className="bg-red-900/30 border border-red-600 text-red-100 p-6 rounded-lg">
+                <AlertCircle className="text-red-400 mx-auto mb-4" size={48} />
+                <p className="font-bold mb-2">Unable to Load Quote</p>
+                <p className="text-sm mb-4">{error}</p>
+                <p className="text-sm mt-4">
+                  Please contact me directly at{" "}
+                  <a href="mailto:quotes@flfreightco.com" className="underline text-orange-400">
+                    quotes@flfreightco.com
+                  </a>
+                  {" "}or text{" "}
+                  <a href="sms:480-742-8553" className="underline text-orange-400">
+                    480-742-8553
+                  </a>
+                </p>
+              </div>
+            </div>
+          ) : isSubmitted ? (
             // Success Message
             <div className="text-center py-8">
               <div className="text-green-400 mb-6">
@@ -86,7 +161,7 @@ export default function AcceptQuote() {
               </div>
             </div>
           ) : (
-            // Confirmation Form
+            // Confirmation Form with Quote Details
             <>
               <div className="text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -100,6 +175,33 @@ export default function AcceptQuote() {
                 </p>
               </div>
 
+              {/* Quote Details Summary */}
+              {quoteDetails && (
+                <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 mb-8">
+                  <h3 className="text-lg font-bold text-white mb-4">Quote Details</h3>
+                  <div className="space-y-3 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Customer:</span>
+                      <span className="text-white font-semibold">{quoteDetails.customerName}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Vehicle:</span>
+                      <span className="text-white font-semibold">{quoteDetails.vehicle}</span>
+                    </div>
+                    <div className="border-t border-neutral-700 pt-3 mt-3">
+                      <div className="mb-2">
+                        <span className="text-gray-400 block mb-1">Pickup:</span>
+                        <span className="text-white">{quoteDetails.pickupLocation}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-400 block mb-1">Delivery:</span>
+                        <span className="text-white">{quoteDetails.deliveryLocation}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {error && (
                 <div className="bg-red-900/30 border border-red-600 text-red-100 p-4 rounded-lg flex items-start mb-6">
                   <AlertCircle className="text-red-400 mr-3 flex-shrink-0 mt-0.5" size={20} />
@@ -108,8 +210,8 @@ export default function AcceptQuote() {
                     <p className="text-sm">{error}</p>
                     <p className="text-sm mt-2">
                       Please contact me directly at{" "}
-                      <a href="mailto:dispatch@flfreightco.com" className="underline text-orange-400">
-                        dispatch@flfreightco.com
+                      <a href="mailto:quotes@flfreightco.com" className="underline text-orange-400">
+                        quotes@flfreightco.com
                       </a>
                       {" "}or text{" "}
                       <a href="sms:480-742-8553" className="underline text-orange-400">
@@ -145,10 +247,10 @@ export default function AcceptQuote() {
                 <p className="text-sm text-gray-400 mb-2">Questions about your quote?</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
                   <a 
-                    href="mailto:dispatch@flfreightco.com"
+                    href="mailto:quotes@flfreightco.com"
                     className="text-orange-500 hover:text-orange-400"
                   >
-                    dispatch@flfreightco.com
+                    quotes@flfreightco.com
                   </a>
                   <span className="hidden sm:inline text-gray-600">|</span>
                   <a 
