@@ -119,7 +119,7 @@ export default function Pricing() {
               <p className="text-gray-400 text-sm mb-4">0–25 Miles</p>
               
               <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$75</span>
+                <span className="text-4xl font-bold text-orange-500">$85</span>
                 <p className="text-sm text-gray-400 mt-1">starting at</p>
               </div>
 
@@ -164,7 +164,7 @@ export default function Pricing() {
               <p className="text-gray-400 text-sm mb-4">25–50 Miles</p>
               
               <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$125</span>
+                <span className="text-4xl font-bold text-orange-500">$140</span>
                 <p className="text-sm text-gray-400 mt-1">starting at</p>
               </div>
 
@@ -201,7 +201,7 @@ export default function Pricing() {
               <p className="text-gray-400 text-sm mb-4">50–150 Miles</p>
               
               <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$250</span>
+                <span className="text-4xl font-bold text-orange-500">$285</span>
                 <p className="text-sm text-gray-400 mt-1">starting at</p>
               </div>
 
