@@ -5,7 +5,9 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Checkbox } from '../components/ui/checkbox';
 import { toast } from 'sonner';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
+
+// API endpoint - Uses relative URL (works in dev and production)
+const VERCEL_API_URL = '/api/confirm-booking';
 
 interface LeadData {
   recordId: string;
@@ -21,6 +23,16 @@ interface LeadData {
   L_Status?: string;
 }
 
+// DIAGNOSTIC: Add detailed response tracking
+interface ConfirmResponse {
+  success: boolean;
+  message: string;
+  airtableUpdated: boolean;
+  newStatus: string;
+  recordId: string;
+  emailNote?: string;
+}
+
 export function ConfirmBooking() {
   const { recordId } = useParams<{ recordId: string }>();
   const navigate = useNavigate();
@@ -31,6 +43,15 @@ export function ConfirmBooking() {
   const [agreementChecked, setAgreementChecked] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  
+  // DIAGNOSTIC: Track actual Airtable response
+  const [diagnostics, setDiagnostics] = useState<{
+    requestSent: boolean;
+    airtableResponse: any;
+    statusBefore: string;
+    statusAfter: string;
+    updateVerified: boolean;
+  } | null>(null);
 
   // Fetch lead data on mount
   useEffect(() => {
@@ -39,12 +60,12 @@ export function ConfirmBooking() {
         setLoading(true);
         console.log('📥 Fetching lead data for recordId:', recordId);
         
+        // CALL VERCEL API - Simple GET request
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/api/lead/${recordId}`,
+          `${VERCEL_API_URL}?recordId=${recordId}`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -83,17 +104,19 @@ export function ConfirmBooking() {
       setSubmitting(true);
       console.log('📤 Submitting booking confirmation for:', recordId);
 
+      // CALL VERCEL API - Simple POST request
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/api/confirm-booking/${recordId}`,
+        `${VERCEL_API_URL}?recordId=${recordId}`,
         {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
+            action: 'confirm',
             customerName: leadData?.L_Customer_Name,
             customerEmail: leadData?.L_Customer_Email,
+            customerPhone: leadData?.L_Customer_Phone,
             pickupLocation: leadData?.L_Pickup_Location,
             dropoffLocation: leadData?.L_Dropoff_Location,
             totalAmount: leadData?.L_Total_Quote_Amount,
@@ -106,13 +129,21 @@ export function ConfirmBooking() {
         throw new Error(errorData.error || 'Failed to confirm booking');
       }
 
-      const result = await response.json();
+      const result = await response.json() as ConfirmResponse;
       console.log('✅ Booking confirmed successfully:', result);
+      console.log('✅ Airtable updated:', result.airtableUpdated);
+      console.log('✅ New status:', result.newStatus);
+      console.log('📧 Email note:', result.emailNote);
+      
+      // Validate that Airtable was actually updated
+      if (!result.airtableUpdated) {
+        throw new Error('Airtable update failed - please contact support');
+      }
       
       setSuccess(true);
-      toast.success('🎉 Booking confirmed successfully!');
+      toast.success('🎉 Booking confirmed! Your quote has been accepted.');
       
-      // Redirect to success page after 2 seconds
+      // Redirect to success page after 3 seconds
       setTimeout(() => {
         navigate('/');
       }, 3000);
