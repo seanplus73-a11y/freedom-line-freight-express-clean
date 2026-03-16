@@ -1,13 +1,10 @@
-import { RouterProvider } from 'react-router';
-import { router } from './routes';
-import { Toaster } from './components/ui/sonner';
+import { RouterProvider } from "react-router";
+import { router } from "./routes";
 
-// Force clean rebuild - routes.tsx renamed from routes.ts
+/**
+ * Freedom Line Freight Express - Vehicle Transport Application
+ * Main entry point using React Router
+ */
 export default function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-      <Toaster position="top-right" richColors />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
