@@ -5,8 +5,10 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { toast } from 'sonner';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { InvoiceDocument } from '../components/InvoiceDocument';
+
+// Use Vercel API endpoint instead of Supabase
+const API_BASE = import.meta.env.PROD ? '/api' : 'http://localhost:3000/api';
 
 interface ShipmentData {
   id: string;
@@ -131,12 +133,7 @@ export function InvoicePreview() {
       }
 
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/shipments/${shipmentId}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-        }
+        `${API_BASE}/shipments/${shipmentId}`
       );
 
       if (!response.ok) {
@@ -160,12 +157,11 @@ export function InvoicePreview() {
     try {
       // Call the generate-invoice function (correct endpoint)
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/generate-invoice`,
+        `${API_BASE}/generate-invoice`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
           },
           body: JSON.stringify({
             shipmentCode: shipment.ShipmentCode,
@@ -201,12 +197,11 @@ export function InvoicePreview() {
       // Update Airtable with PDF URL (only if not in demo mode)
       if (!shipmentId?.startsWith('demo')) {
         await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/shipments/${shipmentId}/update`,
+          `${API_BASE}/shipments/${shipmentId}/update`,
           {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${publicAnonKey}`,
             },
             body: JSON.stringify({
               InvoiceURL: data.pdfUrl,
@@ -245,12 +240,11 @@ export function InvoicePreview() {
     setSending(true);
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/send-invoice`,
+        `${API_BASE}/send-invoice`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
           },
           body: JSON.stringify({
             shipmentId: shipment.id,

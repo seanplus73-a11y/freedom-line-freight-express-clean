@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Mail, CheckCircle, XCircle, Loader2, Send, AlertTriangle } from 'lucide-react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
+
+// Use Vercel API endpoint instead of Supabase
+const API_BASE = import.meta.env.PROD ? '/api' : 'http://localhost:3000/api';
 
 export function TestEmail() {
   const [testing, setTesting] = useState(false);
@@ -26,12 +28,11 @@ export function TestEmail() {
         : { depositPaid: 300, finalPaymentPaid: 700, remainingBalance: 0, paymentStatus: 'Paid in Full' };
 
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/generate-invoice`,
+        `${API_BASE}/generate-invoice`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`
           },
           body: JSON.stringify({
             shipmentCode: 'TEST-EMAIL-001',
@@ -92,12 +93,11 @@ export function TestEmail() {
         : { depositAmount: 300, balanceDue: 0 };
 
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/send-invoice`,
+        `${API_BASE}/send-invoice`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`
           },
           body: JSON.stringify({
             customerEmail: email,

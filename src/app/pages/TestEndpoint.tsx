@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { FileText, CheckCircle, XCircle, Loader2 } from 'lucide-react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
+
+// Use Vercel API endpoint instead of Supabase
+const API_BASE = import.meta.env.PROD ? '/api' : 'http://localhost:3000/api';
 
 export function TestEndpoint() {
   const [testing, setTesting] = useState(false);
@@ -22,12 +24,11 @@ export function TestEndpoint() {
         : { depositPaid: 300, finalPaymentPaid: 700, remainingBalance: 0, paymentStatus: 'Paid in Full' };
 
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-6e6166b5/generate-invoice`,
+        `${API_BASE}/generate-invoice`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`
           },
           body: JSON.stringify({
             shipmentCode: 'TEST-001',
@@ -92,13 +93,7 @@ export function TestEndpoint() {
             <div>
               <span className="font-semibold text-blue-800">URL:</span>{' '}
               <code className="bg-blue-100 px-2 py-1 rounded text-xs break-all">
-                https://{projectId}.supabase.co/functions/v1/make-server-6e6166b5/generate-invoice
-              </code>
-            </div>
-            <div>
-              <span className="font-semibold text-blue-800">Auth:</span>{' '}
-              <code className="bg-blue-100 px-2 py-1 rounded text-xs">
-                Bearer {publicAnonKey.substring(0, 20)}...
+                {API_BASE}/generate-invoice
               </code>
             </div>
           </div>
