@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
       { index: true, Component: Dashboard },
       { path: "invoice/:shipmentId", Component: InvoicePreview },
       { path: "confirm-booking/:recordId", Component: ConfirmBooking },
-      { path: "confirm_booking/:recordId", Component: ConfirmBooking }, // Support underscore too
+      { path: "confirm_booking/:recordId", Component: ConfirmBooking },
       { path: "diagnostics", Component: DiagnosticsPage },
       { path: "test-endpoint", Component: TestEndpoint },
       { path: "test-email", Component: TestEmail },
