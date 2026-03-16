@@ -211,21 +211,21 @@ export default function Home() {
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
               <h3 className="text-xl font-bold text-white mb-2">Local</h3>
               <p className="text-gray-400 mb-4">0–25 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">$75</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">$85</div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
               <h3 className="text-xl font-bold text-white mb-2">Extended Local</h3>
               <p className="text-gray-400 mb-4">25–50 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">$125</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">$140</div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
               <h3 className="text-xl font-bold text-white mb-2">Regional</h3>
               <p className="text-gray-400 mb-4">50–150 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">$250</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">$285</div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
