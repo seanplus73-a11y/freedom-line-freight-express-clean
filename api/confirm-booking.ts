@@ -71,10 +71,10 @@ export default async function handler(
     // POST: Confirm booking
     if (req.method === 'POST' && recordId && action === 'confirm') {
       console.log('📝 Confirming booking for:', recordId);
-      console.log('📝 Will set L_Status to: "Quote Accepted"');
+      console.log('📝 Will set L_Status to: "Booked"');
 
-      // SIMPLIFIED: Just update Airtable L_Status
-      // Airtable automation will handle the email notification
+      // Update Airtable L_Status to "Booked"
+      // This triggers the Airtable automation for deposit invoice
       const airtableResponse = await fetch(
         `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}/${recordId}`,
         {
@@ -85,7 +85,7 @@ export default async function handler(
           },
           body: JSON.stringify({
             fields: {
-              'L_Status': 'Quote Accepted',  // This triggers Airtable automation
+              'L_Status': 'Booked',  // This triggers deposit invoice automation
               'Agreement Accepted': new Date().toISOString()
             }
           })
@@ -106,7 +106,7 @@ export default async function handler(
       console.log('✅ Airtable updated successfully!');
       console.log('✅ New L_Status:', updatedRecord.fields?.L_Status);
       console.log('✅ Agreement Accepted:', updatedRecord.fields?.['Agreement Accepted']);
-      console.log('📧 Airtable automation should now send the business email');
+      console.log('📧 Airtable automation should now send deposit invoice email');
 
       return res.status(200).json({
         success: true,
@@ -114,8 +114,8 @@ export default async function handler(
         airtableUpdated: true,
         newStatus: updatedRecord.fields?.L_Status,
         recordId: updatedRecord.id,
-        // Email will be sent by Airtable automation
-        emailNote: 'Email will be sent by Airtable automation when L_Status changes to Quote Accepted'
+        // Deposit invoice email sent by Airtable automation
+        emailNote: 'Deposit invoice email triggered by Airtable automation when L_Status changes to Booked'
       });
     }
 

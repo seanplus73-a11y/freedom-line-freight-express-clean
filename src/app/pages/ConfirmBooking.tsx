@@ -211,8 +211,8 @@ export function ConfirmBooking() {
           <CardContent className="space-y-4">
             <div className="bg-green-50 border border-green-200 rounded-lg p-4">
               <p className="text-sm text-green-800">
-                ✅ Airtable updated to "Confirm Requested"<br />
-                ✅ Notification sent to quotes@flfreightco.com
+                ✅ Airtable updated to "Booked"<br />
+                ✅ Deposit invoice email sent automatically
               </p>
             </div>
             <p className="text-gray-700">
