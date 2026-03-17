@@ -62,25 +62,27 @@ export default async function handler(
       });
     }
 
-    // Map form data to Airtable fields
+    // Map form data to Airtable fields - EXACT field names from Leads table
     const airtableFields: any = {
+      // Customer information (L_ prefix)
       'L_FullName': body.customerName || '',
       'L_Email': body.customerEmail,
       'L_Phone': body.customerPhone || '',
-      'L_CompanyName': body.companyName || '',
-      'L_ServiceType': body.serviceType || '',
-      'L_PickupLocation': formatLocation(body.pickupAddress, body.pickupCity, body.pickupState, body.pickupZip),
-      'L_DeliveryLocation': formatLocation(body.dropoffAddress, body.dropoffCity, body.dropoffState, body.dropoffZip),
-      'L_PickupDate': body.preferredPickupDate || '',
-      'L_Notes': body.notes || '',
       'L_Status': 'New Lead',
-      'Vehicle_Make': body.vehicleMake || '',
-      'Vehicle_Model': body.vehicleModel || '',
-      'Vehicle_Year': body.vehicleYear || '',
-      'Vehicle_VIN': body.vinNumber || '',
-      'Vehicle_Type': body.vehicleCondition || 'Runs and Drives (Fully Operable)',
-      'Lead_Source': 'Website Quote Form',
-      'Created_Date': new Date().toISOString()
+      
+      // Quote/Location fields (Q_ prefix)
+      'Q_PickupLocation': formatLocation(body.pickupAddress, body.pickupCity, body.pickupState, body.pickupZip),
+      'Q_DeliveryLocation': formatLocation(body.dropoffAddress, body.dropoffCity, body.dropoffState, body.dropoffZip),
+      'Q_PreferredPickupDate': body.preferredPickupDate || '',
+      'Q_ServiceType': body.serviceType || '',
+      'Q_Notes': body.notes || '',
+      'Q_VehicleCondition': body.vehicleCondition || 'Runs and Drives (Fully Operable)',
+      'Q_VIN': body.vinNumber || '',
+      
+      // Vehicle fields (with spaces, not underscores!)
+      'Vehicle Make': body.vehicleMake || '',
+      'Vehicle Model': body.vehicleModel || '',
+      'Vehicle Year': body.vehicleYear || ''
     };
 
     console.log('📝 Mapped Airtable fields:', JSON.stringify(airtableFields, null, 2));
