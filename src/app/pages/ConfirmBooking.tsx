@@ -163,12 +163,12 @@ export function ConfirmBooking() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
+      <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md bg-neutral-800 border-neutral-700">
           <CardContent className="pt-6">
             <div className="flex flex-col items-center gap-4">
-              <Loader2 className="w-12 h-12 text-blue-600 animate-spin" />
-              <p className="text-gray-600">Loading booking details...</p>
+              <Loader2 className="w-12 h-12 text-orange-500 animate-spin" />
+              <p className="text-gray-300">Loading booking details...</p>
             </div>
           </CardContent>
         </Card>
@@ -244,29 +244,29 @@ export function ConfirmBooking() {
   // Success state
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50 flex items-center justify-center p-4">
-        <Card className="w-full max-w-md border-green-200">
+      <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md border-green-600 bg-neutral-800">
           <CardHeader>
             <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-12 h-12 text-green-600" />
+              <CheckCircle2 className="w-12 h-12 text-green-500" />
               <div>
-                <CardTitle className="text-green-900">Booking Confirmed!</CardTitle>
-                <CardDescription>We've received your confirmation</CardDescription>
+                <CardTitle className="text-green-400">Booking Confirmed!</CardTitle>
+                <CardDescription className="text-gray-400">We've received your confirmation</CardDescription>
               </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-              <p className="text-sm text-green-800">
+            <div className="bg-green-900/20 border border-green-700 rounded-lg p-4">
+              <p className="text-sm text-green-300">
                 ✅ Airtable updated to "Booked"<br />
                 ✅ Deposit invoice email sent automatically
               </p>
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Our team will contact you shortly to finalize the details.
             </p>
             <p className="text-sm text-gray-500">
-              Redirecting to dashboard...
+              Redirecting to home page...
             </p>
           </CardContent>
         </Card>
@@ -276,22 +276,22 @@ export function ConfirmBooking() {
 
   // Main confirmation form
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-12 px-4">
+    <div className="min-h-screen bg-neutral-900 py-12 px-4">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Truck className="w-10 h-10 text-blue-600" />
-            <h1 className="text-4xl font-bold text-gray-900">Freedom Line Freight Express</h1>
+            <Truck className="w-10 h-10 text-orange-500" />
+            <h1 className="text-4xl font-bold text-white">Freedom Line Freight Express</h1>
           </div>
-          <p className="text-xl text-gray-600">Confirm Your Booking</p>
+          <p className="text-xl text-gray-300">Confirm Your Booking</p>
         </div>
 
         {/* Main Card */}
-        <Card className="border-2 border-blue-200 shadow-xl">
-          <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
+        <Card className="border-2 border-orange-600 shadow-2xl bg-neutral-800">
+          <CardHeader className="bg-gradient-to-r from-black via-neutral-900 to-orange-900 text-white rounded-t-lg border-b-2 border-orange-600">
             <CardTitle className="text-2xl">Review Your Shipment Details</CardTitle>
-            <CardDescription className="text-blue-100">
+            <CardDescription className="text-gray-300">
               Please review the information below and confirm your booking
             </CardDescription>
           </CardHeader>
@@ -299,50 +299,50 @@ export function ConfirmBooking() {
           <CardContent className="pt-6 space-y-6">
             {/* Customer Information */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                <Package className="w-5 h-5 text-blue-600" />
+              <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                <Package className="w-5 h-5 text-orange-500" />
                 Customer Information
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 rounded-lg p-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-neutral-700/50 rounded-lg p-4 border border-neutral-600">
                 <div>
-                  <p className="text-sm text-gray-600">Name</p>
-                  <p className="font-semibold text-gray-900">{leadData.L_Customer_Name || 'N/A'}</p>
+                  <p className="text-sm text-gray-400">Name</p>
+                  <p className="font-semibold text-white">{leadData.L_Customer_Name || 'N/A'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Email</p>
-                  <p className="font-semibold text-gray-900">{leadData.L_Customer_Email || 'N/A'}</p>
+                  <p className="text-sm text-gray-400">Email</p>
+                  <p className="font-semibold text-white">{leadData.L_Customer_Email || 'N/A'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Phone</p>
-                  <p className="font-semibold text-gray-900">{leadData.L_Customer_Phone || 'N/A'}</p>
+                  <p className="text-sm text-gray-400">Phone</p>
+                  <p className="font-semibold text-white">{leadData.L_Customer_Phone || 'N/A'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Commodity</p>
-                  <p className="font-semibold text-gray-900">{leadData.L_Commodity || 'N/A'}</p>
+                  <p className="text-sm text-gray-400">Commodity</p>
+                  <p className="font-semibold text-white">{leadData.L_Commodity || 'N/A'}</p>
                 </div>
               </div>
             </div>
 
             {/* Shipment Details */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-blue-600" />
+              <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-orange-500" />
                 Shipment Details
               </h3>
-              <div className="space-y-3 bg-gray-50 rounded-lg p-4">
+              <div className="space-y-3 bg-neutral-700/50 rounded-lg p-4 border border-neutral-600">
                 <div className="flex items-start gap-3">
                   <div className="w-3 h-3 rounded-full bg-green-500 mt-1.5"></div>
                   <div className="flex-1">
-                    <p className="text-sm text-gray-600">Pickup Location</p>
-                    <p className="font-semibold text-gray-900">{leadData.L_Pickup_Location || 'N/A'}</p>
+                    <p className="text-sm text-gray-400">Pickup Location</p>
+                    <p className="font-semibold text-white">{leadData.L_Pickup_Location || 'N/A'}</p>
                   </div>
                 </div>
-                <div className="border-l-2 border-gray-300 ml-1.5 h-6"></div>
+                <div className="border-l-2 border-orange-500 ml-1.5 h-6"></div>
                 <div className="flex items-start gap-3">
-                  <div className="w-3 h-3 rounded-full bg-red-500 mt-1.5"></div>
+                  <div className="w-3 h-3 rounded-full bg-orange-500 mt-1.5"></div>
                   <div className="flex-1">
-                    <p className="text-sm text-gray-600">Dropoff Location</p>
-                    <p className="font-semibold text-gray-900">{leadData.L_Dropoff_Location || 'N/A'}</p>
+                    <p className="text-sm text-gray-400">Dropoff Location</p>
+                    <p className="font-semibold text-white">{leadData.L_Dropoff_Location || 'N/A'}</p>
                   </div>
                 </div>
               </div>
@@ -350,21 +350,21 @@ export function ConfirmBooking() {
 
             {/* Pricing Information */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-blue-600" />
+              <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-orange-500" />
                 Pricing
               </h3>
-              <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
+              <div className="bg-orange-900/20 border-2 border-orange-600 rounded-lg p-4">
                 <div className="flex justify-between items-center mb-2">
-                  <p className="text-gray-700">Total Quote Amount</p>
-                  <p className="text-2xl font-bold text-blue-900">
+                  <p className="text-gray-300">Total Quote Amount</p>
+                  <p className="text-2xl font-bold text-orange-400">
                     ${leadData.L_Total_Quote_Amount?.toFixed(2) || '0.00'}
                   </p>
                 </div>
                 {leadData.L_Deposit_Amount && leadData.L_Deposit_Amount > 0 && (
                   <div className="flex justify-between items-center text-sm">
-                    <p className="text-gray-600">Deposit Required</p>
-                    <p className="font-semibold text-gray-900">
+                    <p className="text-gray-400">Deposit Required</p>
+                    <p className="font-semibold text-white">
                       ${leadData.L_Deposit_Amount.toFixed(2)}
                     </p>
                   </div>
@@ -375,21 +375,21 @@ export function ConfirmBooking() {
             {/* Pickup Date */}
             {leadData.L_Pickup_Date && (
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-blue-600" />
+                <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-orange-500" />
                   Pickup Date
                 </h3>
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <p className="font-semibold text-gray-900">{leadData.L_Pickup_Date}</p>
+                <div className="bg-neutral-700/50 rounded-lg p-4 border border-neutral-600">
+                  <p className="font-semibold text-white">{leadData.L_Pickup_Date}</p>
                 </div>
               </div>
             )}
 
             {/* Terms and Conditions */}
-            <div className="border-t-2 border-gray-200 pt-6">
-              <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4 mb-4">
-                <h4 className="font-semibold text-yellow-900 mb-2">Important Notice</h4>
-                <ul className="text-sm text-yellow-800 space-y-1 list-disc list-inside">
+            <div className="border-t-2 border-neutral-700 pt-6">
+              <div className="bg-orange-900/20 border-2 border-orange-700 rounded-lg p-4 mb-4">
+                <h4 className="font-semibold text-orange-400 mb-2">Important Notice</h4>
+                <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
                   <li>By confirming, you agree to the quoted price and terms</li>
                   <li>Our team will contact you within 24 hours to finalize details</li>
                   <li>Pickup dates are subject to carrier availability</li>
@@ -402,9 +402,9 @@ export function ConfirmBooking() {
                   id="agreement"
                   checked={agreementChecked}
                   onCheckedChange={(checked) => setAgreementChecked(checked as boolean)}
-                  className="mt-1"
+                  className="mt-1 border-orange-500 data-[state=checked]:bg-orange-600 data-[state=checked]:border-orange-600"
                 />
-                <label htmlFor="agreement" className="text-sm text-gray-700 cursor-pointer">
+                <label htmlFor="agreement" className="text-sm text-gray-300 cursor-pointer">
                   I have reviewed all the details above and agree to proceed with this booking. I understand that 
                   Freedom Line Freight Express will contact me to finalize the shipment arrangements.
                 </label>
@@ -413,7 +413,7 @@ export function ConfirmBooking() {
               <Button
                 onClick={handleConfirmBooking}
                 disabled={!agreementChecked || submitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-6 text-lg font-semibold"
+                className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white py-6 text-lg font-semibold shadow-lg"
               >
                 {submitting ? (
                   <>
@@ -432,8 +432,8 @@ export function ConfirmBooking() {
         </Card>
 
         {/* Footer */}
-        <div className="text-center mt-8 text-sm text-gray-600">
-          <p>Questions? Contact us at <a href="mailto:quotes@flfreightco.com" className="text-blue-600 hover:underline">quotes@flfreightco.com</a></p>
+        <div className="text-center mt-8 text-sm text-gray-400">
+          <p>Questions? Contact us at <a href="mailto:quotes@flfreightco.com" className="text-orange-500 hover:text-orange-400 underline">quotes@flfreightco.com</a></p>
         </div>
       </div>
     </div>
