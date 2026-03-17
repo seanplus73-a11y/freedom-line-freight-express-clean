@@ -94,6 +94,8 @@ export default async function handler(
       const data = await response.json();
       console.log('✅ Lead data fetched successfully');
       console.log('📊 Current L_Status:', data.fields?.L_Status);
+      console.log('🔍 DIAGNOSTIC - All Airtable fields:', JSON.stringify(data.fields, null, 2));
+      console.log('🔍 DIAGNOSTIC - Field names:', Object.keys(data.fields || {}));
 
       return res.status(200).json({
         recordId: data.id,
@@ -120,7 +122,7 @@ export default async function handler(
           body: JSON.stringify({
             fields: {
               'L_Status': 'Booked',  // This triggers deposit invoice automation
-              'Agreement Accepted': new Date().toISOString()
+              'Agreement Accepted': true  // Checkbox field must be true/false, not a date
             }
           })
         }
