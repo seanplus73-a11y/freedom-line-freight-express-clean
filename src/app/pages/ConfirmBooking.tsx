@@ -180,7 +180,7 @@ export function ConfirmBooking() {
   if (error || !leadData) {
     return (
       <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
-        <Card className="w-full max-w-md border-red-900 bg-neutral-800">
+        <Card className="w-full max-w-2xl border-red-900 bg-neutral-800">
           <CardHeader>
             <div className="flex items-center gap-3">
               <XCircle className="w-8 h-8 text-red-500" />
@@ -189,22 +189,44 @@ export function ConfirmBooking() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="bg-red-900/20 border border-red-800 rounded-lg p-4">
-              <p className="text-red-300 text-sm mb-2">{error || 'Could not load booking information'}</p>
+              <p className="text-red-300 text-sm mb-2 font-semibold">{error || 'Could not load booking information'}</p>
               
               {error?.includes('Authentication') && (
-                <div className="mt-3 pt-3 border-t border-red-800">
-                  <p className="text-orange-300 text-xs font-semibold mb-1">⚠️ Configuration Issue</p>
-                  <p className="text-gray-400 text-xs">
-                    The booking system is not fully configured. Please contact Freedom Line Freight Express 
-                    at <a href="tel:4809198088" className="text-orange-400 hover:underline">(480) 919-8088</a> or 
-                    <a href="mailto:dispatch@flfreightco.com" className="text-orange-400 hover:underline ml-1">dispatch@flfreightco.com</a>
+                <div className="mt-4 pt-4 border-t border-red-800 space-y-3">
+                  <p className="text-orange-300 text-sm font-semibold">⚠️ Configuration Issue - Environment Variables Missing</p>
+                  <p className="text-gray-400 text-xs leading-relaxed">
+                    The Vercel API is missing required Airtable credentials. Please add these environment variables in Vercel:
                   </p>
+                  <div className="bg-neutral-900 rounded p-3 font-mono text-xs text-gray-300 space-y-1">
+                    <div>• <span className="text-orange-400">AIRTABLE_API_KEY</span> (Personal Access Token)</div>
+                    <div>• <span className="text-orange-400">AIRTABLE_BASE_ID</span> (Your base ID)</div>
+                    <div>• <span className="text-orange-400">AIRTABLE_TABLE_NAME</span> = "Leads"</div>
+                  </div>
+                  <p className="text-gray-500 text-xs">
+                    📖 See <span className="text-orange-400 font-mono">/VERCEL_CONFIG_REQUIRED.md</span> for complete setup instructions.
+                  </p>
+                  <div className="pt-2">
+                    <p className="text-gray-400 text-xs">Meanwhile, contact us directly:</p>
+                    <div className="flex gap-4 mt-2">
+                      <a href="tel:4809198088" className="text-orange-400 hover:text-orange-300 text-sm">
+                        📞 (480) 919-8088
+                      </a>
+                      <a href="mailto:dispatch@flfreightco.com" className="text-orange-400 hover:text-orange-300 text-sm">
+                        📧 dispatch@flfreightco.com
+                      </a>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
             
-            <div className="space-y-2">
-              <p className="text-gray-400 text-sm">Record ID: <span className="text-orange-400 font-mono">{recordId}</span></p>
+            <div className="space-y-2 text-sm">
+              <p className="text-gray-400">
+                Record ID: <span className="text-orange-400 font-mono">{recordId}</span>
+              </p>
+              <p className="text-gray-500 text-xs">
+                This ID can be used to look up your quote in Airtable.
+              </p>
             </div>
             
             <Button 
