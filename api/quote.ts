@@ -76,14 +76,14 @@ export default async function handler(
       'L_ServiceType': body.serviceType || '',
       'L_Notes': body.notes || '',
       
-      // Vehicle fields (with spaces, not underscores!)
-      'Vehicle Make': body.vehicleMake || '',
-      'Vehicle Model': body.vehicleModel || '',
-      'Vehicle Year': body.vehicleYear || '',
+      // Vehicle fields (Q_ prefix as shown in Airtable screenshot)
+      'Q_Make': body.vehicleMake || '',
+      'Q_Model': body.vehicleModel || '',
+      'Q_VehicleYear': body.vehicleYear || '',
       // Map vehicle condition to match Airtable select options exactly
       // Common options: "Operable", "Runs and Drives", "Inoperable", "Non-Running"
-      'Vehicle Condition': mapVehicleCondition(body.vehicleCondition),
-      'VIN': body.vinNumber || ''
+      'Q_VehicleCondition': mapVehicleCondition(body.vehicleCondition),
+      'Q_VIN': body.vinNumber || ''
     };
 
     // NOTE: Pickup date field temporarily removed - need correct field name from Airtable
