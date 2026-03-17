@@ -8,6 +8,7 @@ import { Contact } from "./pages/Contact";
 import { RequestPickup } from "./pages/RequestPickup";
 import { ConfirmBooking } from "./pages/ConfirmBooking";
 import { LegacyRedirect } from "./pages/LegacyRedirect";
+import { SystemCheck } from "./pages/SystemCheck";
 
 /**
  * Freedom Line Freight Express - Router Configuration
@@ -33,6 +34,7 @@ export const router = createBrowserRouter([
       { path: "confirm-booking/:recordId", Component: ConfirmBooking },
       { path: "confirm_booking/:recordId", Component: ConfirmBooking }, // Legacy support
       { path: "accept", Component: LegacyRedirect }, // Redirect old /accept?quoteId=... links
+      { path: "system-check", Component: SystemCheck }, // Diagnostic page
     ],
   },
 ]);

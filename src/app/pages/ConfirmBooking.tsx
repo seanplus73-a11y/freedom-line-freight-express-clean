@@ -179,18 +179,39 @@ export function ConfirmBooking() {
   // Error state
   if (error || !leadData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 flex items-center justify-center p-4">
-        <Card className="w-full max-w-md border-red-200">
+      <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md border-red-900 bg-neutral-800">
           <CardHeader>
             <div className="flex items-center gap-3">
-              <XCircle className="w-8 h-8 text-red-600" />
-              <CardTitle className="text-red-900">Booking Not Found</CardTitle>
+              <XCircle className="w-8 h-8 text-red-500" />
+              <CardTitle className="text-red-400">Booking Not Found</CardTitle>
             </div>
           </CardHeader>
-          <CardContent>
-            <p className="text-gray-700 mb-4">{error || 'Could not load booking information'}</p>
-            <Button onClick={() => navigate('/')} variant="outline" className="w-full">
-              Go to Dashboard
+          <CardContent className="space-y-4">
+            <div className="bg-red-900/20 border border-red-800 rounded-lg p-4">
+              <p className="text-red-300 text-sm mb-2">{error || 'Could not load booking information'}</p>
+              
+              {error?.includes('Authentication') && (
+                <div className="mt-3 pt-3 border-t border-red-800">
+                  <p className="text-orange-300 text-xs font-semibold mb-1">⚠️ Configuration Issue</p>
+                  <p className="text-gray-400 text-xs">
+                    The booking system is not fully configured. Please contact Freedom Line Freight Express 
+                    at <a href="tel:4809198088" className="text-orange-400 hover:underline">(480) 919-8088</a> or 
+                    <a href="mailto:dispatch@flfreightco.com" className="text-orange-400 hover:underline ml-1">dispatch@flfreightco.com</a>
+                  </p>
+                </div>
+              )}
+            </div>
+            
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm">Record ID: <span className="text-orange-400 font-mono">{recordId}</span></p>
+            </div>
+            
+            <Button 
+              onClick={() => navigate('/')} 
+              className="w-full bg-orange-600 hover:bg-orange-700 text-white"
+            >
+              Return to Home
             </Button>
           </CardContent>
         </Card>
