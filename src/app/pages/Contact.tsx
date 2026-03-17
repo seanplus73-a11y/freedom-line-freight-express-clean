@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Check, AlertCircle } from "lucide-react";
 
-export default function Contact() {
+export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     companyName: "",
@@ -265,25 +265,25 @@ export default function Contact() {
                           placeholder="john@example.com"
                         />
                       </div>
-                    </div>
 
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-bold text-white mb-2"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        disabled={isSubmitting}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
-                        placeholder="(555) 123-4567"
-                      />
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-bold text-white mb-2"
+                        >
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
+                          placeholder="(555) 123-4567"
+                        />
+                      </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -438,3 +438,5 @@ export default function Contact() {
     </div>
   );
 }
+
+export default Contact;

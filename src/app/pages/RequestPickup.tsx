@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Car, MapPin, Calendar, Send, Shield, Clock, CheckCircle, AlertCircle } from "lucide-react";
 
-export default function RequestPickup() {
+export function RequestPickup() {
   const [formData, setFormData] = useState({
     customerName: "",
     companyName: "",
@@ -197,7 +197,7 @@ export default function RequestPickup() {
                         onChange={handleChange}
                         required
                         disabled
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 opacity-75"
                       >
                         <option value="Runs and Drives (Fully Operable)">Runs and Drives (Fully Operable)</option>
                       </select>
@@ -248,7 +248,7 @@ export default function RequestPickup() {
                         onChange={handleChange}
                         required
                         min="1900"
-                        max="2026"
+                        max="2027"
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                         placeholder="2020"
                       />
@@ -567,7 +567,7 @@ export default function RequestPickup() {
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center"
+                  className="w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Get Instant Quote'}
@@ -618,3 +618,5 @@ export default function RequestPickup() {
     </div>
   );
 }
+
+export default RequestPickup;

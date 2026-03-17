@@ -30,7 +30,11 @@ interface ConfirmResponse {
   airtableUpdated: boolean;
   newStatus: string;
   recordId: string;
-  emailNote?: string;
+  emailsSent?: {
+    businessNotification: boolean;
+    customerConfirmation: boolean;
+    depositInvoice: string;
+  };
 }
 
 export function ConfirmBooking() {
@@ -133,7 +137,7 @@ export function ConfirmBooking() {
       console.log('✅ Booking confirmed successfully:', result);
       console.log('✅ Airtable updated:', result.airtableUpdated);
       console.log('✅ New status:', result.newStatus);
-      console.log('📧 Email note:', result.emailNote);
+      console.log('📧 Email note:', result.emailsSent);
       
       // Validate that Airtable was actually updated
       if (!result.airtableUpdated) {
@@ -392,3 +396,5 @@ export function ConfirmBooking() {
     </div>
   );
 }
+
+export default ConfirmBooking;
