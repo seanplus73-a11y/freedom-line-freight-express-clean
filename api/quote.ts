@@ -73,7 +73,6 @@ export default async function handler(
       // Location fields (L_ prefix, NOT Q_!)
       'L_PickupLocation': formatLocation(body.pickupAddress, body.pickupCity, body.pickupState, body.pickupZip),
       'L_DeliveryLocation': formatLocation(body.dropoffAddress, body.dropoffCity, body.dropoffState, body.dropoffZip),
-      'L_PickupDate': body.preferredPickupDate || '',
       'L_ServiceType': body.serviceType || '',
       'L_Notes': body.notes || '',
       
@@ -84,6 +83,13 @@ export default async function handler(
       'Vehicle Condition': body.vehicleCondition || 'Runs and Drives (Fully Operable)',
       'VIN': body.vinNumber || ''
     };
+
+    // NOTE: Pickup date field temporarily removed - need correct field name from Airtable
+    // Possible field names: 'L_PickupDate', 'L_Pickup Date', 'L_PreferredPickupDate', 'Pickup Date'
+    // Uncomment when correct name is confirmed:
+    // if (body.preferredPickupDate) {
+    //   airtableFields['CORRECT_FIELD_NAME_HERE'] = body.preferredPickupDate;
+    // }
 
     console.log('📝 Mapped Airtable fields:', JSON.stringify(airtableFields, null, 2));
 
