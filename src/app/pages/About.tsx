@@ -1,9 +1,11 @@
 import { Link } from "react-router";
 import { CheckCircle, Award, Users, TrendingUp } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-const ourStoryImage = "/images/our-story.jpg";
 
-export default function About() {
+// Import about page image
+import carKeysImg from "figma:asset/7273271631aee1d77995e230c03c9023c962f3d3.png";
+
+export function About() {
   return (
     <div className="bg-neutral-900">
       {/* Hero Section */}
@@ -58,7 +60,7 @@ export default function About() {
             </div>
             <div className="rounded-lg overflow-hidden border border-neutral-700 h-[400px] md:h-[500px]">
               <ImageWithFallback
-                src={ourStoryImage}
+                src={carKeysImg}
                 alt="Professional vehicle key handover and delivery service"
                 className="w-full h-full object-cover"
               />

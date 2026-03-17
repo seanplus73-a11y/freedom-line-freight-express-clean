@@ -1,8 +1,12 @@
 import { Link } from "react-router";
-import { Check, ArrowRight, Car, X, Truck } from "lucide-react";
+import { Check, ArrowRight, Car, X } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-export default function Pricing() {
+// Import vehicle images
+import sedanImg from "figma:asset/b6510c7bd5eaffd6c025c5abedca127b023db107.png";
+import heavyDutyTruckImg from "figma:asset/7d8360a64e356f26e640d35af6091a3f4188b4d1.png";
+
+export function Pricing() {
   const faqs = [
     {
       question: "How is pricing calculated?",
@@ -292,7 +296,7 @@ export default function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src="/images/sedans.jpg"
+                      src={sedanImg}
                       alt="Sedans"
                       className="w-full h-32 object-cover rounded"
                     />
@@ -320,7 +324,7 @@ export default function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src="/images/small-heavy-duty-truck.jpg"
+                      src={heavyDutyTruckImg}
                       alt="Small Heavy-Duty Trucks"
                       className="w-full h-32 object-cover rounded"
                     />

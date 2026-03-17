@@ -2,14 +2,14 @@ import { Link } from "react-router";
 import { ArrowRight, Truck, Clock, Shield, MapPin, CheckCircle, Star, Users, MessageSquare } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-export default function Home() {
+export function Home() {
   return (
     <div className="bg-neutral-900">
       {/* Hero Section */}
       <section className="relative bg-black text-white">
         <div className="absolute inset-0 opacity-50">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RraikiMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Professional vehicle pickup and delivery service"
             className="w-full h-full object-cover"
           />

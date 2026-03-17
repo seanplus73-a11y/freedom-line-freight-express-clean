@@ -12,13 +12,19 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-export default function Services() {
+// Import service images
+import personalVehicleImg from "figma:asset/47e91680f4739ce476b191e7eaabf97fa6c91cdd.png";
+import dealerAuctionImg from "figma:asset/cd71b8184e8856e9d4ac3f5d40f92ff82473dc88.png";
+import localAZImg from "figma:asset/6a0046126172a925406de851f5274fa1f35f5003.png";
+import regionalTransportImg from "figma:asset/62012ee30157a6f384258a0d4743706e80ab1ee6.png";
+
+export function Services() {
   const services = [
     {
       icon: Car,
       title: "Personal Vehicle Transport",
       description: "Door-to-door pickup and delivery of cars, SUVs, and light trucks. Handled with professional care and secure transport from start to finish.",
-      image: "/images/personal-vehicle-transport.jpg",
+      image: personalVehicleImg,
       features: [
         "Sedans, SUVs, and light trucks (F-250/2500 class)",
         "Door-to-door service",
@@ -30,7 +36,7 @@ export default function Services() {
       icon: Building2,
       title: "Dealer & Auction Pickup",
       description: "Reliable vehicle pickup and delivery for dealerships and auction locations. Fast scheduling and professional handling.",
-      image: "/images/dealer-auction-pickup.jpg",
+      image: dealerAuctionImg,
       features: [
         "Dealer-to-dealer transfers",
         "Auction pickup and delivery",
@@ -42,7 +48,7 @@ export default function Services() {
       icon: MapPin,
       title: "Local AZ Delivery",
       description: "Next-day vehicle delivery across the Arizona metro area and statewide routes.",
-      image: "/images/Local-az-delivery.jpg",
+      image: localAZImg,
       features: [
         "Phoenix metro and statewide coverage",
         "Flexible scheduling",
@@ -54,7 +60,7 @@ export default function Services() {
       icon: Map,
       title: "Regional Transport",
       description: "Dependable multi-state vehicle transport across Arizona, Nevada, California, New Mexico, Utah, and surrounding states.",
-      image: "/images/regional-transport.jpg",
+      image: regionalTransportImg,
       features: [
         "Southwest regional coverage",
         "Cross-state transport",
