@@ -7,9 +7,10 @@ import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { RequestPickup } from "./pages/RequestPickup";
 import { ConfirmBooking } from "./pages/ConfirmBooking";
-import { AdminRoot } from "./pages/AdminRoot";
-import { Dashboard } from "./pages/Dashboard";
-import { InvoicePreview } from "./pages/InvoicePreview";
+// Temporarily removed admin imports to fix build
+// import { AdminRoot } from "./pages/AdminRoot";
+// import { Dashboard } from "./pages/Dashboard";
+// import { InvoicePreview } from "./pages/InvoicePreview";
 
 /**
  * Freedom Line Freight Express - Router Configuration
@@ -38,15 +39,15 @@ export const router = createBrowserRouter([
       { path: "confirm_booking/:recordId", Component: ConfirmBooking }, // Legacy support
     ],
   },
-  // Admin Dashboard Routes
-  {
-    path: "/admin",
-    Component: AdminRoot,
-    children: [
-      { index: true, Component: Dashboard },
-      { path: "invoices", Component: Dashboard }, // Reuse Dashboard for now
-      { path: "shipments", Component: Dashboard }, // Reuse Dashboard for now
-      { path: "invoice/:shipmentId", Component: InvoicePreview },
-    ],
-  },
+  // Admin Dashboard Routes - Temporarily disabled for deployment
+  // {
+  //   path: "/admin",
+  //   Component: AdminRoot,
+  //   children: [
+  //     { index: true, Component: Dashboard },
+  //     { path: "invoices", Component: Dashboard }, // Reuse Dashboard for now
+  //     { path: "shipments", Component: Dashboard }, // Reuse Dashboard for now
+  //     { path: "invoice/:shipmentId", Component: InvoicePreview },
+  //   ],
+  // },
 ]);
