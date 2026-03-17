@@ -190,7 +190,6 @@ export function RequestPickup() {
                         <option value="Long Distance Vehicle Transport (Interstate)">Long Distance Vehicle Transport (Interstate)</option>
                         <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
                         <option value="Private Party Vehicle Transport">Private Party Vehicle Transport</option>
-                        <option value="Multi Vehicle Transport">Multi Vehicle Transport</option>
                       </select>
                     </div>
 
