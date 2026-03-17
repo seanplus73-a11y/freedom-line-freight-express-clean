@@ -11,16 +11,26 @@ const VERCEL_API_URL = '/api/confirm-booking';
 
 interface LeadData {
   recordId: string;
-  L_Customer_Name?: string;
-  L_Customer_Email?: string;
-  L_Customer_Phone?: string;
-  L_Pickup_Location?: string;
-  L_Dropoff_Location?: string;
-  L_Total_Quote_Amount?: number;
-  L_Deposit_Amount?: number;
-  L_Commodity?: string;
-  L_Pickup_Date?: string;
+  // Exact Airtable field names from Leads table
+  L_FullName?: string;
+  L_Email?: string;
+  L_Phone?: string;
   L_Status?: string;
+  L_Commodity?: string;
+  L_Deposit_Amount?: number;
+  // Quote fields - EXACT field names
+  Q_PickupLocation?: string;
+  Q_DeliveryLocation?: string;
+  Q_FinalPrice?: number;
+  Q_PickupDate?: string;
+  Q_PreferredPickupDate?: string;
+  Q_ServiceType?: string;
+  // Vehicle details
+  Vehicle_Make?: string;
+  Vehicle_Model?: string;
+  Vehicle_Year?: string;
+  // Allow any additional fields from Airtable
+  [key: string]: any;
 }
 
 // DIAGNOSTIC: Add detailed response tracking
@@ -82,6 +92,17 @@ export function ConfirmBooking() {
 
         const data = await response.json();
         console.log('✅ Lead data received:', data);
+        console.log('🔍 DIAGNOSTIC - All field names:', Object.keys(data));
+        console.log('🔍 DIAGNOSTIC - Sample values:', {
+          recordId: data.recordId,
+          customerName: data.L_FullName || data['Customer Name'] || data.Name,
+          email: data.L_Email || data['Customer Email'] || data.Email,
+          phone: data.L_Phone || data['Customer Phone'] || data.Phone,
+          pickup: data.Q_PickupLocation || data['Pickup Location'] || data.Pickup,
+          dropoff: data.Q_DropoffLocation || data['Dropoff Location'] || data.Dropoff,
+          total: data.Q_QuotePrice || data['Total Quote Amount'] || data['Final Price'] || data.Total
+        });
+        
         setLeadData(data);
         setError(null);
       } catch (err) {
@@ -118,12 +139,12 @@ export function ConfirmBooking() {
           },
           body: JSON.stringify({
             action: 'confirm',
-            customerName: leadData?.L_Customer_Name,
-            customerEmail: leadData?.L_Customer_Email,
-            customerPhone: leadData?.L_Customer_Phone,
-            pickupLocation: leadData?.L_Pickup_Location,
-            dropoffLocation: leadData?.L_Dropoff_Location,
-            totalAmount: leadData?.L_Total_Quote_Amount,
+            customerName: leadData?.L_FullName,
+            customerEmail: leadData?.L_Email,
+            customerPhone: leadData?.L_Phone,
+            pickupLocation: leadData?.Q_PickupLocation,
+            dropoffLocation: leadData?.Q_DeliveryLocation,
+            totalAmount: leadData?.Q_FinalPrice,
           }),
         }
       );
@@ -306,15 +327,15 @@ export function ConfirmBooking() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-neutral-700/50 rounded-lg p-4 border border-neutral-600">
                 <div>
                   <p className="text-sm text-gray-400">Name</p>
-                  <p className="font-semibold text-white">{leadData.L_Customer_Name || 'N/A'}</p>
+                  <p className="font-semibold text-white">{leadData.L_FullName || 'N/A'}</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Email</p>
-                  <p className="font-semibold text-white">{leadData.L_Customer_Email || 'N/A'}</p>
+                  <p className="font-semibold text-white">{leadData.L_Email || 'N/A'}</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Phone</p>
-                  <p className="font-semibold text-white">{leadData.L_Customer_Phone || 'N/A'}</p>
+                  <p className="font-semibold text-white">{leadData.L_Phone || 'N/A'}</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Commodity</p>
@@ -334,7 +355,7 @@ export function ConfirmBooking() {
                   <div className="w-3 h-3 rounded-full bg-green-500 mt-1.5"></div>
                   <div className="flex-1">
                     <p className="text-sm text-gray-400">Pickup Location</p>
-                    <p className="font-semibold text-white">{leadData.L_Pickup_Location || 'N/A'}</p>
+                    <p className="font-semibold text-white">{leadData.Q_PickupLocation || 'N/A'}</p>
                   </div>
                 </div>
                 <div className="border-l-2 border-orange-500 ml-1.5 h-6"></div>
@@ -342,7 +363,7 @@ export function ConfirmBooking() {
                   <div className="w-3 h-3 rounded-full bg-orange-500 mt-1.5"></div>
                   <div className="flex-1">
                     <p className="text-sm text-gray-400">Dropoff Location</p>
-                    <p className="font-semibold text-white">{leadData.L_Dropoff_Location || 'N/A'}</p>
+                    <p className="font-semibold text-white">{leadData.Q_DeliveryLocation || 'N/A'}</p>
                   </div>
                 </div>
               </div>
@@ -358,7 +379,7 @@ export function ConfirmBooking() {
                 <div className="flex justify-between items-center mb-2">
                   <p className="text-gray-300">Total Quote Amount</p>
                   <p className="text-2xl font-bold text-orange-400">
-                    ${leadData.L_Total_Quote_Amount?.toFixed(2) || '0.00'}
+                    ${leadData.Q_FinalPrice?.toFixed(2) || '0.00'}
                   </p>
                 </div>
                 {leadData.L_Deposit_Amount && leadData.L_Deposit_Amount > 0 && (
@@ -373,14 +394,14 @@ export function ConfirmBooking() {
             </div>
 
             {/* Pickup Date */}
-            {leadData.L_Pickup_Date && (
+            {leadData.Q_PickupDate && (
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-white flex items-center gap-2">
                   <Calendar className="w-5 h-5 text-orange-500" />
                   Pickup Date
                 </h3>
                 <div className="bg-neutral-700/50 rounded-lg p-4 border border-neutral-600">
-                  <p className="font-semibold text-white">{leadData.L_Pickup_Date}</p>
+                  <p className="font-semibold text-white">{leadData.Q_PickupDate}</p>
                 </div>
               </div>
             )}
