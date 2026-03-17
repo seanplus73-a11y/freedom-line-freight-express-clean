@@ -227,9 +227,9 @@ export default async function handler(
               subject: 'Booking Confirmation - Freedom Line Freight Express',
               html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                  <div style="background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                  <div style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
                     <h1 style="color: white; margin: 0;">Booking Confirmed!</h1>
-                    <p style="color: #dbeafe; margin: 10px 0 0 0;">Freedom Line Freight Express</p>
+                    <p style="color: #FF6600; margin: 10px 0 0 0; font-weight: 600;">Freedom Line Freight Express</p>
                   </div>
 
                   <div style="background-color: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px;">
@@ -256,13 +256,13 @@ export default async function handler(
                         </tr>
                         <tr>
                           <td style="padding: 10px 0; color: #6b7280;">Total Amount:</td>
-                          <td style="padding: 10px 0; color: #1e40af; text-align: right; font-size: 18px;"><strong>$${totalAmount?.toFixed(2)}</strong></td>
+                          <td style="padding: 10px 0; color: #FF6600; text-align: right; font-size: 18px;"><strong>$${totalAmount?.toFixed(2)}</strong></td>
                         </tr>
                       </table>
                     </div>
 
-                    <div style="background-color: #dbeafe; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                      <h3 style="margin-top: 0; color: #1e40af;">What Happens Next?</h3>
+                    <div style="background-color: #fff7ed; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #FF6600;">
+                      <h3 style="margin-top: 0; color: #000000;">What Happens Next?</h3>
                       <ol style="color: #1f2937; line-height: 1.8; margin: 10px 0;">
                         <li>You'll receive a deposit invoice shortly</li>
                         <li>Our team will contact you within 24 hours</li>
@@ -283,8 +283,8 @@ export default async function handler(
 
                     <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e5e7eb; text-align: center;">
                       <p style="margin: 0 0 10px 0; color: #6b7280;">Contact Us</p>
-                      <p style="margin: 5px 0; color: #1e40af;"><strong>📞 (480) 919-8088</strong></p>
-                      <p style="margin: 5px 0; color: #1e40af;"><strong>📧 dispatch@flfreightco.com</strong></p>
+                      <p style="margin: 5px 0; color: #FF6600;"><strong>📞 (480) 919-8088</strong></p>
+                      <p style="margin: 5px 0; color: #FF6600;"><strong>📧 dispatch@flfreightco.com</strong></p>
                     </div>
 
                     <p style="color: #4b5563; line-height: 1.6;">
