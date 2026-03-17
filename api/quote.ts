@@ -106,10 +106,24 @@ export default async function handler(
     if (!airtableResponse.ok) {
       const errorText = await airtableResponse.text();
       console.error('❌ Airtable API error:', airtableResponse.status, errorText);
+      
+      // Parse error to get specific field name
+      let errorDetails = errorText;
+      try {
+        const errorJson = JSON.parse(errorText);
+        errorDetails = JSON.stringify(errorJson, null, 2);
+        console.error('❌ Parsed error:', errorDetails);
+      } catch (e) {
+        console.error('❌ Could not parse error as JSON');
+      }
+      
       return res.status(500).json({ 
         success: false,
         error: `Failed to save quote request: ${airtableResponse.status}`,
-        details: errorText
+        airtableError: errorText,
+        details: errorDetails,
+        fieldsSent: Object.keys(airtableFields),
+        helpText: 'Check which field name Airtable rejected above'
       });
     }
 

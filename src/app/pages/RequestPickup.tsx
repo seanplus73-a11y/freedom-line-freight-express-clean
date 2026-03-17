@@ -69,7 +69,15 @@ export function RequestPickup() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit quote request');
+        // Log full error details for debugging
+        console.error('❌ Full error response:', data);
+        console.error('❌ Airtable error:', data.airtableError);
+        console.error('❌ Fields sent:', data.fieldsSent);
+        
+        // Show error with details
+        const errorMessage = data.error || 'Failed to submit quote request';
+        const detailsMessage = data.airtableError ? `\n\nDetails: ${data.airtableError}` : '';
+        throw new Error(errorMessage + detailsMessage);
       }
 
       console.log('Quote form success:', data);
