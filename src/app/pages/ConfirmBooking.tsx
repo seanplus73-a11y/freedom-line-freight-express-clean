@@ -337,10 +337,16 @@ export function ConfirmBooking() {
                   <p className="text-sm text-gray-400">Phone</p>
                   <p className="font-semibold text-white">{leadData.L_Phone || 'N/A'}</p>
                 </div>
-                <div>
-                  <p className="text-sm text-gray-400">Commodity</p>
-                  <p className="font-semibold text-white">{leadData.L_Commodity || 'N/A'}</p>
-                </div>
+                {(leadData.L_Commodity || leadData.Vehicle_Year || leadData.Vehicle_Make || leadData.Vehicle_Model) && (
+                  <div>
+                    <p className="text-sm text-gray-400">Vehicle Type</p>
+                    <p className="font-semibold text-white">
+                      {leadData.L_Commodity || 
+                       `${leadData.Vehicle_Year || ''} ${leadData.Vehicle_Make || ''} ${leadData.Vehicle_Model || ''}`.trim() || 
+                       'N/A'}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
 
