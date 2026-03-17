@@ -2,9 +2,6 @@ import { Link } from "react-router";
 import { CheckCircle, Award, Users, TrendingUp } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-// Import about page image
-import carKeysImg from "figma:asset/7273271631aee1d77995e230c03c9023c962f3d3.png";
-
 export function About() {
   return (
     <div className="bg-neutral-900">
@@ -50,121 +47,193 @@ export function About() {
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-300">Direct Driver Communication</span>
+                  <span className="text-gray-300">Direct Communication</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-300">Reliable Local & Regional Service</span>
+                  <span className="text-gray-300">Door-to-Door Service</span>
                 </div>
               </div>
             </div>
-            <div className="rounded-lg overflow-hidden border border-neutral-700 h-[400px] md:h-[500px]">
-              <ImageWithFallback
-                src={carKeysImg}
-                alt="Professional vehicle key handover and delivery service"
-                className="w-full h-full object-cover"
-              />
+            <div className="order-first md:order-last">
+              <div className="rounded-lg overflow-hidden shadow-2xl border border-neutral-700">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1586723540699-05b680d75ae6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBrZXlzJTIwaGFuZG92ZXIlMjBkZWxpdmVyeXxlbnwxfHx8fDE3NzM3MTk5ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  alt="Professional vehicle delivery service"
+                  className="w-full h-[500px] object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Why Choose Us Section */}
       <section className="py-20 bg-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our Core <span className="text-orange-500">Values</span>
+              Why <span className="text-orange-500">Choose Us</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              The principles that guide every delivery we make.
+              Professional vehicle transport with a personal touch. Here's what makes Freedom Line different.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
-                <CheckCircle className="text-orange-500" size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Integrity</h3>
-              <p className="text-gray-400">
-                We believe in honest pricing, clear expectations, and delivering exactly what we promise. No hidden fees. No surprises.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
-                <Users className="text-orange-500" size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Direct Responsibility</h3>
-              <p className="text-gray-400">
-                Your vehicle is handled directly by us from pickup to drop-off. No brokers. No carrier networks. Just straightforward, accountable service.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
                 <Award className="text-orange-500" size={32} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Professional Care</h3>
-              <p className="text-gray-400">
-                Every vehicle is treated with attention and respect, whether it is a sedan, SUV, small heavy-duty truck, or luxury vehicle.
+              <h3 className="text-2xl font-bold text-white mb-4">Professional Experience</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Experienced owner-operator with extensive knowledge of vehicle transport, logistics, and customer service.
               </p>
             </div>
 
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
+                <Users className="text-orange-500" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Direct Communication</h3>
+              <p className="text-gray-400 leading-relaxed">
+                You work directly with the driver—no brokers, no confusion. Clear updates from pickup to delivery.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
                 <TrendingUp className="text-orange-500" size={32} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Reliability</h3>
-              <p className="text-gray-400">
-                We value punctuality, preparedness, and consistent communication. Every delivery matters, and every client deserves dependable service.
+              <h3 className="text-2xl font-bold text-white mb-4">Flexible Service</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Same-day, next-day, or scheduled pickups. One vehicle or multiple vehicles—we adapt to your needs.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Licensed & Insured */}
+      {/* What We Stand For Section */}
       <section className="py-20 bg-neutral-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            What We <span className="text-orange-500">Stand For</span>
+          </h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-8">
+            At Freedom Line Freight Express, we're committed to providing reliable, safe, and professional vehicle transport services with integrity and accountability.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <div className="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center">
+                <CheckCircle className="text-orange-500 mr-3" size={20} />
+                Reliability
+              </h3>
+              <p className="text-gray-400">
+                We show up when we say we will. Your vehicles are picked up and delivered on schedule.
+              </p>
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center">
+                <CheckCircle className="text-orange-500 mr-3" size={20} />
+                Transparency
+              </h3>
+              <p className="text-gray-400">
+                Clear pricing, clear communication, and clear documentation every step of the way.
+              </p>
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center">
+                <CheckCircle className="text-orange-500 mr-3" size={20} />
+                Safety
+              </h3>
+              <p className="text-gray-400">
+                Fully insured transport with professional handling and photo documentation at every stop.
+              </p>
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center">
+                <CheckCircle className="text-orange-500 mr-3" size={20} />
+                Accountability
+              </h3>
+              <p className="text-gray-400">
+                Owner-operated means you know exactly who is handling your vehicle, and I take full responsibility.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area Section */}
+      <section className="py-20 bg-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Licensed & <span className="text-orange-500">Insured</span>
+              Where We <span className="text-orange-500">Operate</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Operating with proper credentials and coverage for your peace of mind.
+            <p className="text-xl text-gray-300">
+              Proudly serving Arizona and the Southwest region.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <div className="bg-neutral-900 p-6 rounded-lg text-center border border-neutral-700">
-              <div className="font-bold text-white mb-2">Fully Insured</div>
-              <p className="text-sm text-gray-400">Comprehensive Coverage</p>
+          <div className="max-w-4xl mx-auto bg-neutral-800 rounded-lg p-8 border-2 border-orange-500/30">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+              <div className="flex items-center">
+                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-lg font-bold text-white">Arizona (Statewide)</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-lg font-bold text-white">Nevada</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-lg font-bold text-white">New Mexico</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-lg font-bold text-white">Utah</span>
+              </div>
+              <div className="flex items-center sm:col-span-2">
+                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-lg font-bold text-white">Southern California</span>
+              </div>
             </div>
-            <div className="bg-neutral-900 p-6 rounded-lg text-center border border-neutral-700">
-              <div className="font-bold text-white mb-2">Arizona Licensed</div>
-              <p className="text-sm text-gray-400">State Licensed Operations</p>
+            <div className="border-t border-neutral-700 pt-6 text-center">
+              <p className="text-gray-300">
+                <strong className="text-white">Based in Arizona,</strong> we specialize in reliable local and regional vehicle transport throughout the Southwest.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-16">
+      <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Work Directly With Freedom Line
+            Ready to Experience the Freedom Line Difference?
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Trusted by individuals and dealerships across Arizona for reliable vehicle pickup and delivery.
+            Let's get your vehicle where it needs to go—safely, professionally, and on time.
           </p>
-          <Link
-            to="/request-pickup"
-            className="inline-flex items-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
-          >
-            Request Vehicle Pickup
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/request-pickup"
+              className="inline-flex items-center justify-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Request a Pickup
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-orange-600 transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
+          <p className="text-orange-100 text-sm mt-6 font-semibold">
+            Fully Insured • Professional Driver • Owner-Operated
+          </p>
         </div>
       </section>
     </div>

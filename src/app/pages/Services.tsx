@@ -12,19 +12,13 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-// Import service images
-import personalVehicleImg from "figma:asset/47e91680f4739ce476b191e7eaabf97fa6c91cdd.png";
-import dealerAuctionImg from "figma:asset/cd71b8184e8856e9d4ac3f5d40f92ff82473dc88.png";
-import localAZImg from "figma:asset/6a0046126172a925406de851f5274fa1f35f5003.png";
-import regionalTransportImg from "figma:asset/62012ee30157a6f384258a0d4743706e80ab1ee6.png";
-
 export function Services() {
   const services = [
     {
       icon: Car,
       title: "Personal Vehicle Transport",
       description: "Door-to-door pickup and delivery of cars, SUVs, and light trucks. Handled with professional care and secure transport from start to finish.",
-      image: personalVehicleImg,
+      image: "https://images.unsplash.com/photo-1764089859664-30aa6919ef0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzZWRhbiUyMGNhciUyMHRyYW5zcG9ydHxlbnwxfHx8fDE3NzM3MTk5NTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       features: [
         "Sedans, SUVs, and light trucks (F-250/2500 class)",
         "Door-to-door service",
@@ -36,7 +30,7 @@ export function Services() {
       icon: Building2,
       title: "Dealer & Auction Pickup",
       description: "Reliable vehicle pickup and delivery for dealerships and auction locations. Fast scheduling and professional handling.",
-      image: dealerAuctionImg,
+      image: "https://images.unsplash.com/photo-1766524791677-6c6c495e0218?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBkZWFsZXJzaGlwJTIwcGFya2luZyUyMGxvdHxlbnwxfHx8fDE3NzM3MTk5NTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       features: [
         "Dealer-to-dealer transfers",
         "Auction pickup and delivery",
@@ -48,7 +42,7 @@ export function Services() {
       icon: MapPin,
       title: "Local AZ Delivery",
       description: "Next-day vehicle delivery across the Arizona metro area and statewide routes.",
-      image: localAZImg,
+      image: "https://images.unsplash.com/photo-1769925315253-7a5f7e325d6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcml6b25hJTIwaGlnaHdheSUyMHZlaGljbGV8ZW58MXx8fHwxNzczNzE5OTU0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       features: [
         "Phoenix metro and statewide coverage",
         "Flexible scheduling",
@@ -60,7 +54,7 @@ export function Services() {
       icon: Map,
       title: "Regional Transport",
       description: "Dependable multi-state vehicle transport across Arizona, Nevada, California, New Mexico, Utah, and surrounding states.",
-      image: regionalTransportImg,
+      image: "https://images.unsplash.com/photo-1768389533475-edc8b2bb9c7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB2ZWhpY2xlJTIwZGVsaXZlcnl8ZW58MXx8fHwxNzczNzE5OTU0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       features: [
         "Southwest regional coverage",
         "Cross-state transport",
