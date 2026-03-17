@@ -70,19 +70,19 @@ export default async function handler(
       'L_Phone': body.customerPhone || '',
       'L_Status': 'New Lead',
       
-      // Quote/Location fields (Q_ prefix)
-      'Q_PickupLocation': formatLocation(body.pickupAddress, body.pickupCity, body.pickupState, body.pickupZip),
-      'Q_DeliveryLocation': formatLocation(body.dropoffAddress, body.dropoffCity, body.dropoffState, body.dropoffZip),
-      'Q_PreferredPickupDate': body.preferredPickupDate || '',
-      'Q_ServiceType': body.serviceType || '',
-      'Q_Notes': body.notes || '',
-      'Q_VehicleCondition': body.vehicleCondition || 'Runs and Drives (Fully Operable)',
-      'Q_VIN': body.vinNumber || '',
+      // Location fields (L_ prefix, NOT Q_!)
+      'L_PickupLocation': formatLocation(body.pickupAddress, body.pickupCity, body.pickupState, body.pickupZip),
+      'L_DeliveryLocation': formatLocation(body.dropoffAddress, body.dropoffCity, body.dropoffState, body.dropoffZip),
+      'L_PickupDate': body.preferredPickupDate || '',
+      'L_ServiceType': body.serviceType || '',
+      'L_Notes': body.notes || '',
       
       // Vehicle fields (with spaces, not underscores!)
       'Vehicle Make': body.vehicleMake || '',
       'Vehicle Model': body.vehicleModel || '',
-      'Vehicle Year': body.vehicleYear || ''
+      'Vehicle Year': body.vehicleYear || '',
+      'Vehicle Condition': body.vehicleCondition || 'Runs and Drives (Fully Operable)',
+      'VIN': body.vinNumber || ''
     };
 
     console.log('📝 Mapped Airtable fields:', JSON.stringify(airtableFields, null, 2));
