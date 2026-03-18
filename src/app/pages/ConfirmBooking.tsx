@@ -18,14 +18,18 @@ interface LeadData {
   L_Status?: string;
   L_Commodity?: string;
   L_Deposit_Amount?: number;
-  // Quote fields - EXACT field names
-  Q_PickupLocation?: string;
-  Q_DeliveryLocation?: string;
+  // Location fields (L_ prefix)
+  L_PickupLocation?: string;
+  L_DeliveryLocation?: string;
+  // Quote/Vehicle fields (Q_ prefix)
   Q_FinalPrice?: number;
   Q_PickupDate?: string;
   Q_PreferredPickupDate?: string;
   Q_ServiceType?: string;
-  // Vehicle details
+  Q_Make?: string;
+  Q_Model?: string;
+  Q_VehicleYear?: string;
+  // Vehicle details (alternative names)
   Vehicle_Make?: string;
   Vehicle_Model?: string;
   Vehicle_Year?: string;
@@ -98,8 +102,8 @@ export function ConfirmBooking() {
           customerName: data.L_FullName || data['Customer Name'] || data.Name,
           email: data.L_Email || data['Customer Email'] || data.Email,
           phone: data.L_Phone || data['Customer Phone'] || data.Phone,
-          pickup: data.Q_PickupLocation || data['Pickup Location'] || data.Pickup,
-          dropoff: data.Q_DropoffLocation || data['Dropoff Location'] || data.Dropoff,
+          pickup: data.L_PickupLocation || data['Pickup Location'] || data.Pickup,
+          dropoff: data.L_DeliveryLocation || data['Dropoff Location'] || data.Dropoff,
           total: data.Q_QuotePrice || data['Total Quote Amount'] || data['Final Price'] || data.Total
         });
         
@@ -142,8 +146,8 @@ export function ConfirmBooking() {
             customerName: leadData?.L_FullName,
             customerEmail: leadData?.L_Email,
             customerPhone: leadData?.L_Phone,
-            pickupLocation: leadData?.Q_PickupLocation,
-            dropoffLocation: leadData?.Q_DeliveryLocation,
+            pickupLocation: leadData?.L_PickupLocation,
+            dropoffLocation: leadData?.L_DeliveryLocation,
             totalAmount: leadData?.Q_FinalPrice,
           }),
         }
@@ -361,7 +365,7 @@ export function ConfirmBooking() {
                   <div className="w-3 h-3 rounded-full bg-green-500 mt-1.5"></div>
                   <div className="flex-1">
                     <p className="text-sm text-gray-400">Pickup Location</p>
-                    <p className="font-semibold text-white">{leadData.Q_PickupLocation || 'N/A'}</p>
+                    <p className="font-semibold text-white">{leadData.L_PickupLocation || 'N/A'}</p>
                   </div>
                 </div>
                 <div className="border-l-2 border-orange-500 ml-1.5 h-6"></div>
@@ -369,7 +373,7 @@ export function ConfirmBooking() {
                   <div className="w-3 h-3 rounded-full bg-orange-500 mt-1.5"></div>
                   <div className="flex-1">
                     <p className="text-sm text-gray-400">Dropoff Location</p>
-                    <p className="font-semibold text-white">{leadData.Q_DeliveryLocation || 'N/A'}</p>
+                    <p className="font-semibold text-white">{leadData.L_DeliveryLocation || 'N/A'}</p>
                   </div>
                 </div>
               </div>
