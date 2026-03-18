@@ -41,6 +41,13 @@ export default async function handler(
     const INVOICE_API_SECRET = process.env.INVOICE_API_SECRET;
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
     const MOCK_PDF_MODE = process.env.MOCK_PDF_MODE === 'true';
+    
+    // 🔍 DEBUG: Log environment configuration
+    console.log('🔧 Environment configuration:');
+    console.log('  - INVOICE_API_SECRET:', INVOICE_API_SECRET ? '✅ Set' : '❌ Missing');
+    console.log('  - RESEND_API_KEY:', RESEND_API_KEY ? '✅ Set' : '❌ Missing');
+    console.log('  - MOCK_PDF_MODE:', MOCK_PDF_MODE ? '🎭 ENABLED (test mode)' : '📄 DISABLED (production mode)');
+    console.log('  - MOCK_PDF_MODE raw value:', process.env.MOCK_PDF_MODE);
 
     // Extract and validate data
     const invoiceData = {
@@ -81,6 +88,18 @@ export default async function handler(
     // Generate HTML invoice
     console.log('📄 Generating HTML invoice...');
     const htmlContent = generateInvoiceHTML(invoiceData);
+    
+    // 🔍 DEBUG: Log the HTML content length and preview
+    console.log('✅ HTML generated successfully');
+    console.log('📏 HTML content length:', htmlContent.length, 'characters');
+    console.log('🔍 HTML preview (first 500 chars):', htmlContent.substring(0, 500));
+    console.log('🔍 Invoice data being used:', JSON.stringify({
+      quoteID: invoiceData.quoteID,
+      customerName: invoiceData.customerName,
+      totalQuoteAmount: invoiceData.totalQuoteAmount,
+      depositPaid: invoiceData.depositPaid,
+      remainingBalance: invoiceData.remainingBalance
+    }, null, 2));
 
     // ========================================
     // STEP 1: Generate PDF
