@@ -80,9 +80,8 @@ export default async function handler(
       'Q_Make': body.vehicleMake || '',
       'Q_Model': body.vehicleModel || '',
       'Q_VehicleYear': body.vehicleYear || '',
-      // Map vehicle condition to match Airtable select options exactly
-      // Common options: "Operable", "Runs and Drives", "Inoperable", "Non-Running"
-      'Q_VehicleCondition': mapVehicleCondition(body.vehicleCondition),
+      // Send exact vehicle condition from form - no mapping needed
+      'Q_VehicleCondition': body.vehicleCondition || 'Runs and Drives (Fully Operable)',
       'Q_VIN': body.vinNumber || ''
     };
 
@@ -161,37 +160,4 @@ export default async function handler(
 function formatLocation(address?: string, city?: string, state?: string, zip?: string): string {
   const parts = [address, city, state, zip].filter(p => p && p.trim());
   return parts.join(', ');
-}
-
-/**
- * Helper function to map vehicle condition to Airtable select options
- * 
- * IMPORTANT: The value MUST match an existing option in Airtable exactly!
- * Common Airtable options:
- * - "Operable"
- * - "Runs and Drives"
- * - "Inoperable"
- * - "Non-Running"
- * 
- * Update this function to match YOUR exact Airtable select options.
- */
-function mapVehicleCondition(condition?: string): string {
-  // Map form values to Airtable select options
-  const conditionMap: { [key: string]: string } = {
-    'Runs and Drives (Fully Operable)': 'Operable',  // Try "Operable" first
-    'Operable': 'Operable',
-    'Inoperable': 'Inoperable',
-    'Non-Running': 'Non-Running'
-  };
-  
-  // If exact match exists, use it
-  if (condition && conditionMap[condition]) {
-    return conditionMap[condition];
-  }
-  
-  // Default fallback - TRY THESE IN ORDER:
-  // 1. "Operable"
-  // 2. "Runs and Drives"
-  // If both fail, check your Airtable select options and update this!
-  return 'Operable';
 }
