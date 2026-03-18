@@ -44,7 +44,7 @@ export default async function handler(
 
     // Extract and validate data
     const invoiceData = {
-      shipmentCode: body.shipmentCode || 'N/A',
+      quoteID: body.quoteID || body.shipmentCode || 'Q-0000', // Support both Quote ID and legacy shipment code
       customerName: body.customerName || 'Valued Customer',
       customerEmail: body.customerEmail,
       customerPhone: body.customerPhone || 'N/A',
@@ -52,7 +52,10 @@ export default async function handler(
       depositPaid: parseFloat(body.depositPaid) || 0,
       remainingBalance: parseFloat(body.remainingBalance) || 0,
       paymentStatus: body.paymentStatus || 'Pending',
-      invoiceType: body.invoiceType || 'deposit'
+      invoiceType: body.invoiceType || 'deposit',
+      // Payment links
+      stripePaymentLink: body.stripePaymentLink || 'https://book.stripe.com/bJe7sE9B8cr41Gc29ScfK00',
+      paypalPaymentLink: body.paypalPaymentLink || 'https://www.paypal.com/ncp/payment/BMNZCXNFAF2FG'
     };
 
     console.log('✅ Mapped invoice data:', JSON.stringify(invoiceData, null, 2));
@@ -83,7 +86,7 @@ export default async function handler(
     // STEP 1: Generate PDF
     // ========================================
     let pdfBase64: string;
-    const fileName = `FLF-Invoice-${invoiceData.shipmentCode}.pdf`;
+    const fileName = `FLF-Invoice-${invoiceData.quoteID}.pdf`;
 
     if (MOCK_PDF_MODE) {
       console.log('🎭 MOCK PDF MODE - Using test PDF');
@@ -162,8 +165,8 @@ startxref
     // Determine email content based on invoice type
     const depositAmount = invoiceData.depositPaid || (invoiceData.totalQuoteAmount * 0.25);
     const emailSubject = invoiceData.invoiceType === 'deposit'
-      ? `Deposit Invoice ${invoiceData.shipmentCode} - Freedom Line Freight Express`
-      : `Invoice ${invoiceData.shipmentCode} - Freedom Line Freight Express`;
+      ? `Deposit Invoice ${invoiceData.quoteID} - Freedom Line Freight Express`
+      : `Invoice ${invoiceData.quoteID} - Freedom Line Freight Express`;
 
     const emailHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -176,7 +179,7 @@ startxref
           <h2 style="color: #1f2937;">Hello ${invoiceData.customerName},</h2>
           
           <p style="color: #4b5563; line-height: 1.6;">
-            Thank you for choosing Freedom Line Freight Express! Your invoice for shipment <strong>${invoiceData.shipmentCode}</strong> is attached to this email.
+            Thank you for choosing Freedom Line Freight Express! Your invoice for quote <strong>${invoiceData.quoteID}</strong> is attached to this email.
           </p>
 
           ${invoiceData.invoiceType === 'deposit' ? `
@@ -184,9 +187,25 @@ startxref
             <p style="margin: 0 0 10px 0; color: #92400e; font-size: 18px; font-weight: bold;">
               💰 Deposit Amount: $${depositAmount.toFixed(2)}
             </p>
-            <p style="margin: 0; color: #78350f;">
+            <p style="margin: 0 0 15px 0; color: #78350f;">
               Please submit your deposit payment to confirm your booking and secure your transport slot.
             </p>
+            
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #fed7aa;">
+              <p style="margin: 0 0 12px 0; color: #92400e; font-size: 14px; font-weight: bold;">💳 PAY YOUR DEPOSIT NOW:</p>
+              
+              <div style="margin-bottom: 12px;">
+                <p style="margin: 0 0 5px 0; color: #78350f; font-size: 13px;">🔶 Pay with Credit/Debit Card (Stripe)</p>
+                <a href="${invoiceData.stripePaymentLink}" style="color: #FF6600; text-decoration: underline; font-size: 13px;">${invoiceData.stripePaymentLink}</a>
+              </div>
+              
+              <div style="margin-bottom: 12px;">
+                <p style="margin: 0 0 5px 0; color: #78350f; font-size: 13px;">⚫ Pay with PayPal</p>
+                <a href="${invoiceData.paypalPaymentLink}" style="color: #FF6600; text-decoration: underline; font-size: 13px;">${invoiceData.paypalPaymentLink}</a>
+              </div>
+              
+              <p style="margin: 10px 0 0 0; color: #92400e; font-size: 12px;">🔒 Secure payment • Your booking will be confirmed upon payment</p>
+            </div>
           </div>
           ` : ''}
 
@@ -283,7 +302,7 @@ startxref
 // HTML Invoice Template Generator
 // ========================================
 interface InvoiceData {
-  shipmentCode: string;
+  quoteID: string;
   customerName: string;
   customerEmail: string;
   customerPhone: string;
@@ -292,6 +311,9 @@ interface InvoiceData {
   remainingBalance: number;
   paymentStatus: string;
   invoiceType: string;
+  // Payment links
+  stripePaymentLink: string;
+  paypalPaymentLink: string;
 }
 
 function generateInvoiceHTML(data: InvoiceData): string {
@@ -312,7 +334,7 @@ function generateInvoiceHTML(data: InvoiceData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invoice ${data.shipmentCode}</title>
+  <title>Invoice ${data.quoteID}</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; color: #1f2937; line-height: 1.6; }
@@ -355,7 +377,7 @@ function generateInvoiceHTML(data: InvoiceData): string {
     <!-- Invoice Title -->
     <div class="invoice-title">${invoiceTitle}</div>
     <div class="invoice-meta">
-      <strong>Invoice #:</strong> ${data.shipmentCode}<br>
+      <strong>Invoice #:</strong> ${data.quoteID}<br>
       <strong>Date:</strong> ${currentDate}<br>
       <strong>Status:</strong> ${data.paymentStatus}
     </div>
@@ -383,6 +405,22 @@ function generateInvoiceHTML(data: InvoiceData): string {
       <p style="color: #78350f; margin: 0;">
         Please submit your deposit payment to confirm your booking and secure your transport slot.
       </p>
+      
+      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #fed7aa;">
+        <p style="margin: 0 0 12px 0; color: #92400e; font-size: 14px; font-weight: bold;">💳 PAY YOUR DEPOSIT NOW:</p>
+        
+        <div style="margin-bottom: 12px;">
+          <p style="margin: 0 0 5px 0; color: #78350f; font-size: 13px;">🔶 Pay with Credit/Debit Card (Stripe)</p>
+          <a href="${data.stripePaymentLink}" style="color: #FF6600; text-decoration: underline; font-size: 13px;">${data.stripePaymentLink}</a>
+        </div>
+        
+        <div style="margin-bottom: 12px;">
+          <p style="margin: 0 0 5px 0; color: #78350f; font-size: 13px;">⚫ Pay with PayPal</p>
+          <a href="${data.paypalPaymentLink}" style="color: #FF6600; text-decoration: underline; font-size: 13px;">${data.paypalPaymentLink}</a>
+        </div>
+        
+        <p style="margin: 10px 0 0 0; color: #92400e; font-size: 12px;">🔒 Secure payment • Your booking will be confirmed upon payment</p>
+      </div>
     </div>
     ` : ''}
 
