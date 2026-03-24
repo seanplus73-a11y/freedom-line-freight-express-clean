@@ -18,7 +18,7 @@ export function Services() {
       icon: Car,
       title: "Personal Vehicle Transport",
       description: "Door-to-door pickup and delivery of cars, SUVs, and light trucks. Handled with professional care and secure transport from start to finish.",
-      image: "https://images.unsplash.com/photo-1764089859664-30aa6919ef0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzZWRhbiUyMGNhciUyMHRyYW5zcG9ydHxlbnwxfHx8fDE3NzM3MTk5NTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://i.ibb.co/67tDGgGR/personal-vehicle-transport.jpg",
       features: [
         "Sedans, SUVs, and light trucks (F-250/2500 class)",
         "Door-to-door service",
@@ -54,7 +54,7 @@ export function Services() {
       icon: Map,
       title: "Regional Transport",
       description: "Dependable multi-state vehicle transport across Arizona, Nevada, California, New Mexico, Utah, and surrounding states.",
-      image: "https://images.unsplash.com/photo-1768389533475-edc8b2bb9c7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB2ZWhpY2xlJTIwZGVsaXZlcnl8ZW58MXx8fHwxNzczNzE5OTU0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://i.ibb.co/vCHs9jbr/regional-transport.jpg",
       features: [
         "Southwest regional coverage",
         "Cross-state transport",
