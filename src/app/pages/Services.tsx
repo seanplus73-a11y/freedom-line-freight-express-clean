@@ -42,7 +42,7 @@ export function Services() {
       icon: MapPin,
       title: "Local AZ Delivery",
       description: "Next-day vehicle delivery across the Arizona metro area and statewide routes.",
-      image: "https://images.unsplash.com/photo-1769925315253-7a5f7e325d6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcml6b25hJTIwaGlnaHdheSUyMHZlaGljbGV8ZW58MXx8fHwxNzczNzE5OTU0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://i.ibb.co/HTkh8LQ5/Local-az-delivery.jpg",
       features: [
         "Phoenix metro and statewide coverage",
         "Flexible scheduling",
