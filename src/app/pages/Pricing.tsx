@@ -292,7 +292,7 @@ export function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1618354662479-4c2e624f0133?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTVVYlMjBsdXh1cnklMjB2ZWhpY2xlfGVufDF8fHx8MTc3MTU2NjkxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                      src="https://cdn.pixabay.com/photo/2015/08/11/22/33/nissan-885308_1280.jpg"
                       alt="Sedans"
                       className="w-full h-32 object-cover rounded"
                     />
@@ -320,7 +320,7 @@ export function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1618354662479-4c2e624f0133?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTVVYlMjBsdXh1cnklMjB2ZWhpY2xlfGVufDF8fHx8MTc3MTU2NjkxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                      src="https://cdn.pixabay.com/photo/2022/11/05/17/10/f150-7572360_1280.jpg"
                       alt="Small Heavy-Duty Trucks"
                       className="w-full h-32 object-cover rounded"
                     />
