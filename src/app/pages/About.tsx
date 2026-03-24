@@ -58,7 +58,7 @@ export function About() {
             <div className="order-first md:order-last">
               <div className="rounded-lg overflow-hidden shadow-2xl border border-neutral-700">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1586723540699-05b680d75ae6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBrZXlzJTIwaGFuZG92ZXIlMjBkZWxpdmVyeXxlbnwxfHx8fDE3NzM3MTk5ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="https://cdn.pixabay.com/photo/2021/10/07/15/25/car-6688969_1280.jpg"
                   alt="Professional vehicle delivery service"
                   className="w-full h-[500px] object-cover"
                 />
