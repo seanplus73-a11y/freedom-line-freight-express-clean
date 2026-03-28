@@ -304,8 +304,7 @@ export function About() {
           </h2>
 
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Let&apos;s get your vehicle or delivery item where it needs to
-            go—safely, professionally, and on time.
+           Let&apos;s get your vehicle or delivery item where it needs to go safely, professionally, and on time.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
