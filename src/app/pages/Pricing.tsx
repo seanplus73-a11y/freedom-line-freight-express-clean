@@ -582,120 +582,117 @@ export function Pricing() {
         </div>
       </section>
 
-      {/* What We Transport Section */}
-      <section className="py-16 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-3 flex items-center">
-                <Check className="text-green-500 mr-3" size={28} />
-                We Transport
-              </h2>
+     {/* We Transport */}
+<div className="mb-12">
+  <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+    <Check className="text-green-500 mr-2" />
+    We Transport
+  </h2>
 
-              <p className="text-sm text-gray-400 mb-6">
-                We handle vehicles plus select same-day local delivery items.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-                  <div className="overflow-hidden rounded-lg mb-3">
-                    <ImageWithFallback
-                      src="https://cdn.pixabay.com/photo/2015/08/11/22/33/nissan-885308_1280.jpg"
-                      alt="Sedans"
-                      className="w-full h-32 object-cover rounded"
-                    />
-                  </div>
-                  <h3 className="font-bold text-white flex items-center">
-                    <Check className="text-green-500 mr-2" size={18} />
-                    Sedans
-                  </h3>
-                </div>
-
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-                  <div className="overflow-hidden rounded-lg mb-3">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1767749995450-7b63ab7cd4fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTVVYlMjBsdXh1cnklMjB2ZWhpY2xlfGVufDF8fHx8MTc3MTU2NjkxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                      alt="SUVs"
-                      className="w-full h-32 object-cover rounded"
-                    />
-                  </div>
-                  <h3 className="font-bold text-white flex items-center">
-                    <Check className="text-green-500 mr-2" size={18} />
-                    SUVs
-                  </h3>
-                </div>
-
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-                  <div className="overflow-hidden rounded-lg mb-3">
-                    <ImageWithFallback
-                      src="https://cdn.pixabay.com/photo/2022/11/05/17/10/f150-7572360_1280.jpg"
-                      alt="Small Heavy-Duty Trucks"
-                      className="w-full h-32 object-cover rounded"
-                    />
-                  </div>
-                  <h3 className="font-bold text-white flex items-center">
-                    <Check className="text-green-500 mr-2" size={18} />
-                    Small Heavy-Duty Trucks
-                  </h3>
-                  <p className="text-sm text-gray-400 mt-1">
-                    F-250 / 2500 class
-                  </p>
-                </div>
-
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-                  <div className="overflow-hidden rounded-lg mb-3">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1622701578810-67534f6e6d2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBdWRpJTIwQTYlMjBibGFjayUyMHNpbHZlcnxlbnwxfHx8fDE3NzE2NTM5MjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                      alt="Luxury Vehicles"
-                      className="w-full h-32 object-cover rounded"
-                    />
-                  </div>
-                  <h3 className="font-bold text-white flex items-center">
-                    <Check className="text-green-500 mr-2" size={18} />
-                    Luxury Vehicles
-                  </h3>
-                </div>
-
-               <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-  <div className="overflow-hidden rounded-lg mb-3">
-    <ImageWithFallback
-      src="https://images.pexels.com/photos/7820603/pexels-photo-7820603.jpeg?w=800&auto=compress"
-      alt="Luggage & Personal Items"
-      className="w-full h-32 object-cover rounded"
-    />
-  </div>
-  <h3 className="font-bold text-white flex items-center">
-    <Check className="text-green-500 mr-2" size={18} />
-    Luggage & Personal Items
-  </h3>
-  <p className="text-sm text-gray-400 mt-1">
-    Airport bags, suitcases, and personal travel items
+  <p className="text-gray-400 mb-6">
+    We handle vehicles plus select same-day local delivery items.
   </p>
-</div>
 
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-                  <div className="overflow-hidden rounded-lg mb-3">
-                    <ImageWithFallback
-                      src="https://images.pexels.com/photos/13443801/pexels-photo-13443801.jpeg?w=800&auto=compress"
-  alt="Small Packages & Auto Parts"
-/>
-                      className="w-full h-32 object-cover rounded"
-                    />
-                  <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-  <div className="overflow-hidden rounded-lg mb-3">
-    <ImageWithFallback
-      src="https://images.pexels.com/photos/13443801/pexels-photo-13443801.jpeg?w=800&auto=compress"
-      alt="Small Packages & Auto Parts"
-      className="w-full h-32 object-cover rounded"
-    />
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    {/* Sedans */}
+    <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+      <div className="overflow-hidden rounded-lg mb-3">
+        <ImageWithFallback
+          src="/images/sedan.jpg"
+          alt="Sedans"
+          className="w-full h-32 object-cover rounded"
+        />
+      </div>
+      <h3 className="font-bold text-white flex items-center">
+        <Check className="text-green-500 mr-2" size={18} />
+        Sedans
+      </h3>
+    </div>
+
+    {/* SUVs */}
+    <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+      <div className="overflow-hidden rounded-lg mb-3">
+        <ImageWithFallback
+          src="/images/suv.jpg"
+          alt="SUVs"
+          className="w-full h-32 object-cover rounded"
+        />
+      </div>
+      <h3 className="font-bold text-white flex items-center">
+        <Check className="text-green-500 mr-2" size={18} />
+        SUVs
+      </h3>
+    </div>
+
+    {/* Small Trucks */}
+    <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+      <div className="overflow-hidden rounded-lg mb-3">
+        <ImageWithFallback
+          src="/images/truck.jpg"
+          alt="Small Heavy-Duty Trucks"
+          className="w-full h-32 object-cover rounded"
+        />
+      </div>
+      <h3 className="font-bold text-white flex items-center">
+        <Check className="text-green-500 mr-2" size={18} />
+        Small Heavy-Duty Trucks
+      </h3>
+      <p className="text-sm text-gray-400">F-250 / 2500 class</p>
+    </div>
+
+    {/* Luxury */}
+    <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+      <div className="overflow-hidden rounded-lg mb-3">
+        <ImageWithFallback
+          src="/images/luxury.jpg"
+          alt="Luxury Vehicles"
+          className="w-full h-32 object-cover rounded"
+        />
+      </div>
+      <h3 className="font-bold text-white flex items-center">
+        <Check className="text-green-500 mr-2" size={18} />
+        Luxury Vehicles
+      </h3>
+    </div>
+
+    {/* Luggage */}
+    <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+      <div className="overflow-hidden rounded-lg mb-3">
+        <ImageWithFallback
+          src="https://images.pexels.com/photos/7820603/pexels-photo-7820603.jpeg?w=800&auto=compress"
+          alt="Luggage & Personal Items"
+          className="w-full h-32 object-cover rounded"
+        />
+      </div>
+      <h3 className="font-bold text-white flex items-center">
+        <Check className="text-green-500 mr-2" size={18} />
+        Luggage & Personal Items
+      </h3>
+      <p className="text-sm text-gray-400 mt-1">
+        Airport bags, suitcases, and personal travel items
+      </p>
+    </div>
+
+    {/* Small Packages */}
+    <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+      <div className="overflow-hidden rounded-lg mb-3">
+        <ImageWithFallback
+          src="https://images.pexels.com/photos/13443801/pexels-photo-13443801.jpeg?w=800&auto=compress"
+          alt="Small Packages & Auto Parts"
+          className="w-full h-32 object-cover rounded"
+        />
+      </div>
+      <h3 className="font-bold text-white flex items-center">
+        <Check className="text-green-500 mr-2" size={18} />
+        Small Packages & Auto Parts
+      </h3>
+      <p className="text-sm text-gray-400 mt-1">
+        Small boxes, documents, and auto parts delivery
+      </p>
+    </div>
+
   </div>
-  <h3 className="font-bold text-white flex items-center">
-    <Check className="text-green-500 mr-2" size={18} />
-    Small Packages & Auto Parts
-  </h3>
-  <p className="text-sm text-gray-400 mt-1">
-    Small boxes, documents, and auto parts delivery
-  </p>
 </div>
 
             <div>
