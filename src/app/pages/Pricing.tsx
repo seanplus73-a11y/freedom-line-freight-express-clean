@@ -659,9 +659,10 @@ export function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1553531889-56cc480ac5cb?auto=format&fit=crop&w=1200&q=80"
-                      alt="Luggage and Personal Items"
-                      className="w-full h-32 object-cover rounded"
+                       src="https://images.pexels.com/photos/7820603/pexels-photo-7820603.jpeg?w=800&auto=compress"
+  alt="Luggage & Personal Items"
+  className="w-full h-32 object-cover rounded"
+/>
                     />
                   </div>
                   <h3 className="font-bold text-white flex items-center">
@@ -676,8 +677,9 @@ export function Pricing() {
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
-                      alt="Small Packages and Auto Parts"
+                      src="https://images.pexels.com/photos/13443801/pexels-photo-13443801.jpeg?w=800&auto=compress"
+  alt="Small Packages & Auto Parts"
+/>
                       className="w-full h-32 object-cover rounded"
                     />
                   </div>
