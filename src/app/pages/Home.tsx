@@ -54,11 +54,9 @@ export function Home() {
               <span className="text-orange-500">& Local Delivery</span>
             </h1>
 
-            <p className="text-xl md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
-              Vehicle pickup and delivery for sedans, SUVs, small heavy-duty
-              trucks, and luxury vehicles — plus same-day local delivery for
-              luggage, small packages, documents, and auto parts.
-            </p>
+           <p className="text-xl md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
+  Vehicle pickup and delivery for sedans, SUVs, small heavy-duty trucks, and luxury vehicles. We also offer same-day local delivery for luggage, small packages, documents, and auto parts.
+</p>
 
             <p className="text-lg md:text-xl mb-10 text-orange-400 font-bold leading-relaxed max-w-3xl">
               Owner-operated with direct communication, careful handling, and
