@@ -656,23 +656,22 @@ export function Pricing() {
                   </h3>
                 </div>
 
-                <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
-                  <div className="overflow-hidden rounded-lg mb-3">
-                    <ImageWithFallback
-                       src="https://images.pexels.com/photos/7820603/pexels-photo-7820603.jpeg?w=800&auto=compress"
-  alt="Luggage & Personal Items"
-  className="w-full h-32 object-cover rounded"
-/>
-                    />
-                  </div>
-                  <h3 className="font-bold text-white flex items-center">
-                    <Check className="text-green-500 mr-2" size={18} />
-                    Luggage & Personal Items
-                  </h3>
-                  <p className="text-sm text-gray-400 mt-1">
-                    Airport bags, suitcases, and personal travel items
-                  </p>
-                </div>
+               <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+  <div className="overflow-hidden rounded-lg mb-3">
+    <ImageWithFallback
+      src="https://images.pexels.com/photos/7820603/pexels-photo-7820603.jpeg?w=800&auto=compress"
+      alt="Luggage & Personal Items"
+      className="w-full h-32 object-cover rounded"
+    />
+  </div>
+  <h3 className="font-bold text-white flex items-center">
+    <Check className="text-green-500 mr-2" size={18} />
+    Luggage & Personal Items
+  </h3>
+  <p className="text-sm text-gray-400 mt-1">
+    Airport bags, suitcases, and personal travel items
+  </p>
+</div>
 
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
                   <div className="overflow-hidden rounded-lg mb-3">
@@ -682,17 +681,22 @@ export function Pricing() {
 />
                       className="w-full h-32 object-cover rounded"
                     />
-                  </div>
-                  <h3 className="font-bold text-white flex items-center">
-                    <Check className="text-green-500 mr-2" size={18} />
-                    Small Packages & Auto Parts
-                  </h3>
-                  <p className="text-sm text-gray-400 mt-1">
-                    Small boxes, documents, and auto parts delivery
-                  </p>
-                </div>
-              </div>
-            </div>
+                  <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
+  <div className="overflow-hidden rounded-lg mb-3">
+    <ImageWithFallback
+      src="https://images.pexels.com/photos/13443801/pexels-photo-13443801.jpeg?w=800&auto=compress"
+      alt="Small Packages & Auto Parts"
+      className="w-full h-32 object-cover rounded"
+    />
+  </div>
+  <h3 className="font-bold text-white flex items-center">
+    <Check className="text-green-500 mr-2" size={18} />
+    Small Packages & Auto Parts
+  </h3>
+  <p className="text-sm text-gray-400 mt-1">
+    Small boxes, documents, and auto parts delivery
+  </p>
+</div>
 
             <div>
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
