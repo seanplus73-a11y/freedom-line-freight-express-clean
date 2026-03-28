@@ -116,10 +116,9 @@ export function Root() {
                 </div>
                 <h3 className="text-xl font-bold">Freedom Line Freight Express</h3>
               </div>
-              <p className="text-gray-400 mb-4">
-                Professional vehicle transport services across the United States. 
-                Safe, reliable, and affordable shipping you can trust.
-              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+  Professional vehicle transport and same-day local delivery across Arizona and nearby regional routes. Safe, reliable, and owner-operated service you can trust.
+</p>
               <p className="text-gray-400 text-sm">
                 © 2026 Freedom Line Freight Express LLC.<br />
                 All rights reserved.
