@@ -74,15 +74,15 @@ export function Services() {
     },
     {
       icon: Package,
-      title: "Luggage, Packages & Auto Parts",
+      title: "Luggage, Personal Items & Package Delivery",
       description:
-        "Fast same-day local delivery for luggage, personal items, small packages, documents, and auto parts handled with direct communication and care.",
+        "Professional same-day local delivery for luggage, personal items, small packages, documents, and auto parts. Handled with care, reliability, and direct communication from pickup to delivery.",
       image:
         "https://images.pexels.com/photos/13443801/pexels-photo-13443801.jpeg?w=1200&auto=compress",
       features: [
-        "Airport luggage and personal items",
-        "Small packages and documents",
-        "Auto parts delivery",
+        "Airport luggage and personal item delivery",
+        "Small packages and document delivery",
+        "Auto parts pickup and delivery",
         "Same-day local service available",
       ],
       cta: "Request Delivery",
@@ -99,15 +99,22 @@ export function Services() {
               <Car className="mr-2 text-orange-500" size={18} />
               Vehicle Pickup, Delivery & Local Service
             </div>
+
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Professional Vehicle <span className="text-orange-500">Transport Services</span>
+              Professional Vehicle Transport{" "}
+              <span className="text-orange-500">& Delivery Services</span>
             </h1>
+
             <p className="text-xl text-gray-300 mb-4">
-              Reliable vehicle pickup and delivery across Arizona and the Southwest. We also offer same-day local delivery for luggage, personal items, small packages, documents, and auto parts.
+              Reliable, insured vehicle pickup and delivery across the Southwest.
+              We also offer professional same-day local delivery for luggage,
+              personal items, small packages, documents, and auto parts.
             </p>
+
             <div className="mt-4 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                I drive your vehicle. I do not tow or trailer it.
+                I personally drive your vehicle. I do not tow or transport on a
+                trailer.
               </p>
             </div>
           </div>
@@ -176,10 +183,12 @@ export function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What's Included with <span className="text-orange-500">Every Service</span>
+              What's Included with{" "}
+              <span className="text-orange-500">Every Service</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Professional standards for every vehicle transport and local delivery job.
+              Professional standards for every vehicle transport and local
+              delivery job.
             </p>
           </div>
 
@@ -188,9 +197,12 @@ export function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Shield className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Insured Service</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Insured Service
+              </h3>
               <p className="text-gray-400">
-                Every vehicle transport job is insured during pickup, transport, and delivery for added peace of mind.
+                Every vehicle transport job is insured during pickup, transport,
+                and delivery for added peace of mind.
               </p>
             </div>
 
@@ -198,9 +210,12 @@ export function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Camera className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Photo Documentation</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Photo Documentation
+              </h3>
               <p className="text-gray-400">
-                Photo documentation is available at pickup and delivery to support transparency and accountability.
+                Photo documentation is available at pickup and delivery to
+                support transparency and accountability.
               </p>
             </div>
 
@@ -208,9 +223,12 @@ export function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Clock className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Flexible Scheduling</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Flexible Scheduling
+              </h3>
               <p className="text-gray-400">
-                Same-day, next-day, or scheduled service options are available based on route and availability.
+                Same-day, next-day, or scheduled service options are available
+                based on route and availability.
               </p>
             </div>
 
@@ -218,9 +236,12 @@ export function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Car className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Experienced Owner-Operator</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Experienced Owner-Operator
+              </h3>
               <p className="text-gray-400">
-                Your vehicle or delivery item is handled directly by an experienced owner-operator with care and professionalism.
+                Your vehicle or delivery item is handled directly by an
+                experienced owner-operator with care and professionalism.
               </p>
             </div>
 
@@ -228,9 +249,12 @@ export function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <MapPin className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Door-to-Door Service</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Door-to-Door Service
+              </h3>
               <p className="text-gray-400">
-                Convenient pickup from your location and delivery directly to your destination whenever the job type allows.
+                Convenient pickup from your location and delivery directly to
+                your destination whenever the job type allows.
               </p>
             </div>
 
@@ -238,9 +262,12 @@ export function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <CheckCircle className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Delivery Confirmation</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Delivery Confirmation
+              </h3>
               <p className="text-gray-400">
-                Delivery confirmation is provided so you know when your vehicle or item has arrived safely.
+                Delivery confirmation is provided so you know when your vehicle
+                or item has arrived safely.
               </p>
             </div>
           </div>
@@ -255,37 +282,59 @@ export function Services() {
               Our <span className="text-orange-500">Service Area</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Serving Arizona and the Southwest with professional transport and delivery service.
+              Serving Arizona and the Southwest with professional transport and
+              delivery service.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto bg-neutral-900 rounded-lg p-8 border-2 border-orange-500/30">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
               <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                <span className="text-lg font-bold text-white">Arizona (Statewide)</span>
+                <CheckCircle
+                  className="text-orange-500 mr-3 flex-shrink-0"
+                  size={20}
+                />
+                <span className="text-lg font-bold text-white">
+                  Arizona (Statewide)
+                </span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <CheckCircle
+                  className="text-orange-500 mr-3 flex-shrink-0"
+                  size={20}
+                />
                 <span className="text-lg font-bold text-white">Nevada</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <CheckCircle
+                  className="text-orange-500 mr-3 flex-shrink-0"
+                  size={20}
+                />
                 <span className="text-lg font-bold text-white">New Mexico</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <CheckCircle
+                  className="text-orange-500 mr-3 flex-shrink-0"
+                  size={20}
+                />
                 <span className="text-lg font-bold text-white">Utah</span>
               </div>
               <div className="flex items-center sm:col-span-2">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                <span className="text-lg font-bold text-white">Southern California</span>
+                <CheckCircle
+                  className="text-orange-500 mr-3 flex-shrink-0"
+                  size={20}
+                />
+                <span className="text-lg font-bold text-white">
+                  Southern California
+                </span>
               </div>
             </div>
 
             <div className="border-t border-neutral-700 pt-6 text-center">
               <p className="text-gray-300">
-                <strong className="text-white">Based in Arizona,</strong> we specialize in reliable local and regional vehicle transport along with select same-day local delivery services.
+                <strong className="text-white">Based in Arizona,</strong> we
+                specialize in reliable local and regional vehicle transport along
+                with select same-day local delivery services.
               </p>
             </div>
           </div>
@@ -299,7 +348,8 @@ export function Services() {
             Ready to Schedule Your Pickup or Delivery?
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Request a quote for vehicle transport, luggage delivery, small packages, or auto parts service.
+            Request a quote for vehicle transport, luggage delivery, small
+            packages, or auto parts service.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
@@ -310,7 +360,6 @@ export function Services() {
               Request Service
               <ArrowRight className="ml-2" size={20} />
             </Link>
-
             <Link
               to="/pricing"
               className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-orange-600 transition-colors"
