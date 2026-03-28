@@ -17,10 +17,9 @@ export function Footer() {
             <h3 className="text-xl font-bold text-orange-500 mb-4">
               Freedom Line Freight Express
             </h3>
-            <p className="text-gray-400 mb-4">
-              Professional vehicle pickup and delivery service based in Arizona. 
-              Deaf-owned and operated with personalized, reliable transport solutions.
-            </p>
+           <p className="text-gray-400 mb-4">
+  Professional vehicle transport and same-day local delivery across Arizona and nearby regional routes. Safe, reliable, and owner-operated service you can trust.
+</p>
             <div className="flex items-center gap-2 text-gray-400 mb-2">
               <MapPin className="w-5 h-5 text-orange-500" />
               <span>Based in Arizona</span>
