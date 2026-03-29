@@ -1,163 +1,238 @@
 /**
  * Vercel Serverless Function - Quote Request Submission
- * 
+ *
  * Receives quote requests from website form and creates a new Lead in Airtable
  */
 
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  // Enable CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // Handle preflight
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
 
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed. Use POST.' });
+  if (req.method !== "POST") {
+    return res.status(405).json({
+      success: false,
+      error: "Method not allowed. Use POST.",
+    });
   }
 
-  console.log('📥 Quote request received');
+  console.log("📥 Quote request received");
 
   try {
-    const body = req.body;
-    console.log('📦 Request payload:', JSON.stringify(body, null, 2));
+    const body = req.body || {};
+    console.log("📦 Request payload:", JSON.stringify(body, null, 2));
 
-    // Environment variables
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
     const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
-    const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || 'Leads';
+    const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || "Leads";
 
     if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-      console.error('❌ Missing Airtable configuration');
-      return res.status(500).json({ 
+      console.error("❌ Missing Airtable configuration");
+      return res.status(500).json({
         success: false,
-        error: 'Server configuration error. Please contact support.' 
+        error: "Server configuration error. Please contact support.",
       });
     }
 
-    // Validate required fields
     if (!body.customerEmail) {
-      console.error('❌ Missing customer email');
-      return res.status(400).json({ 
+      return res.status(400).json({
         success: false,
-        error: 'Email is required' 
+        error: "Email is required",
       });
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(body.customerEmail)) {
-      console.error('❌ Invalid email format:', body.customerEmail);
-      return res.status(400).json({ 
+      return res.status(400).json({
         success: false,
-        error: `Invalid email format: ${body.customerEmail}` 
+        error: `Invalid email format: ${body.customerEmail}`,
       });
     }
 
-    // Map form data to Airtable fields - EXACT field names from Leads table
-    const airtableFields: any = {
-      // Customer information (L_ prefix)
-      'L_FullName': body.customerName || '',
-      'L_Email': body.customerEmail,
-      'L_Phone': body.customerPhone || '',
-      'L_Status': 'New Lead',
-      
-      // Location fields (L_ prefix, NOT Q_!)
-      'L_PickupLocation': formatLocation(body.pickupAddress, body.pickupCity, body.pickupState, body.pickupZip),
-      'L_DeliveryLocation': formatLocation(body.dropoffAddress, body.dropoffCity, body.dropoffState, body.dropoffZip),
-      'L_ServiceType': body.serviceType || '',
-      'L_Notes': body.notes || '',
-      
-      // Vehicle fields (Q_ prefix as shown in Airtable screenshot)
-      'Q_Make': body.vehicleMake || '',
-      'Q_Model': body.vehicleModel || '',
-      'Q_VehicleYear': body.vehicleYear || '',
-      // Send exact vehicle condition from form - no mapping needed
-      'Q_VehicleCondition': body.vehicleCondition || 'Runs and Drives (Fully Operable)',
-      'Q_VIN': body.vinNumber || ''
+    if (!body.customerName) {
+      return res.status(400).json({
+        success: false,
+        error: "Full name is required",
+      });
+    }
+
+    if (!body.serviceType) {
+      return res.status(400).json({
+        success: false,
+        error: "Service type is required",
+      });
+    }
+
+    const isVehicleService =
+      body.serviceType === "Local Vehicle Transport (0 to 50 miles)" ||
+      body.serviceType === "Regional Vehicle Transport (50 to 150 miles)" ||
+      body.serviceType === "Dealer or Auction Pickup" ||
+      body.serviceType === "Private Party Vehicle Transport";
+
+    const isItemService =
+      body.serviceType === "Same-Day Local Delivery" ||
+      body.serviceType === "Luggage Delivery" ||
+      body.serviceType === "Small Package / Document Delivery" ||
+      body.serviceType === "Auto Parts Delivery";
+
+    if (isVehicleService) {
+      if (!body.vehicleMake || !body.vehicleModel || !body.vehicleYear) {
+        return res.status(400).json({
+          success: false,
+          error: "Vehicle make, model, and year are required for vehicle transport requests.",
+        });
+      }
+
+      if (!body.operableConfirmation) {
+        return res.status(400).json({
+          success: false,
+          error: "Operable vehicle confirmation is required for vehicle transport.",
+        });
+      }
+    }
+
+    if (isItemService) {
+      if (!body.itemType) {
+        return res.status(400).json({
+          success: false,
+          error: "Item type is required for local delivery requests.",
+        });
+      }
+    }
+
+    const pickupLocation = formatLocation(
+      body.pickupAddress,
+      body.pickupCity,
+      body.pickupState,
+      body.pickupZip
+    );
+
+    const deliveryLocation = formatLocation(
+      body.dropoffAddress,
+      body.dropoffCity,
+      body.dropoffState,
+      body.dropoffZip
+    );
+
+    const notesParts: string[] = [];
+
+    if (body.notes) {
+      notesParts.push(`Customer Notes: ${body.notes}`);
+    }
+
+    if (body.preferredPickupDate) {
+      notesParts.push(`Preferred Pickup Date: ${body.preferredPickupDate}`);
+    }
+
+    if (isItemService) {
+      if (body.itemType) {
+        notesParts.push(`Item Type: ${body.itemType}`);
+      }
+      if (body.itemDetails) {
+        notesParts.push(`Item Details: ${body.itemDetails}`);
+      }
+    }
+
+    if (body.companyName) {
+      notesParts.push(`Company Name: ${body.companyName}`);
+    }
+
+    const combinedNotes = notesParts.join("\n\n");
+
+    const airtableFields: Record<string, any> = {
+      L_FullName: body.customerName || "",
+      L_Email: body.customerEmail || "",
+      L_Phone: body.customerPhone || "",
+      L_Status: "New Lead",
+      L_PickupLocation: pickupLocation,
+      L_DeliveryLocation: deliveryLocation,
+      L_ServiceType: body.serviceType || "",
+      L_Notes: combinedNotes,
+      Q_Make: isVehicleService ? body.vehicleMake || "" : "",
+      Q_Model: isVehicleService ? body.vehicleModel || "" : "",
+      Q_VehicleYear: isVehicleService ? body.vehicleYear || "" : "",
+      Q_VehicleCondition: isVehicleService
+        ? body.vehicleCondition || "Runs and Drives (Fully Operable)"
+        : "",
+      Q_VIN: isVehicleService ? body.vinNumber || "" : "",
     };
 
-    // NOTE: Pickup date field temporarily removed - need correct field name from Airtable
-    // Possible field names: 'L_PickupDate', 'L_Pickup Date', 'L_PreferredPickupDate', 'Pickup Date'
-    // Uncomment when correct name is confirmed:
-    // if (body.preferredPickupDate) {
-    //   airtableFields['CORRECT_FIELD_NAME_HERE'] = body.preferredPickupDate;
-    // }
+    console.log("📝 Mapped Airtable fields:", JSON.stringify(airtableFields, null, 2));
 
-    console.log('📝 Mapped Airtable fields:', JSON.stringify(airtableFields, null, 2));
-
-    // Create record in Airtable
     const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
-    
-    console.log('🔗 Posting to Airtable:', airtableUrl);
+
+    console.log("🔗 Posting to Airtable:", airtableUrl);
 
     const airtableResponse = await fetch(airtableUrl, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fields: airtableFields
-      })
+        fields: airtableFields,
+      }),
     });
 
     if (!airtableResponse.ok) {
       const errorText = await airtableResponse.text();
-      console.error('❌ Airtable API error:', airtableResponse.status, errorText);
-      
-      // Parse error to get specific field name
+      console.error("❌ Airtable API error:", airtableResponse.status, errorText);
+
       let errorDetails = errorText;
       try {
         const errorJson = JSON.parse(errorText);
         errorDetails = JSON.stringify(errorJson, null, 2);
-        console.error('❌ Parsed error:', errorDetails);
-      } catch (e) {
-        console.error('❌ Could not parse error as JSON');
+      } catch {
+        console.error("❌ Could not parse Airtable error as JSON");
       }
-      
-      return res.status(500).json({ 
+
+      return res.status(500).json({
         success: false,
         error: `Failed to save quote request: ${airtableResponse.status}`,
         airtableError: errorText,
         details: errorDetails,
         fieldsSent: Object.keys(airtableFields),
-        helpText: 'Check which field name Airtable rejected above'
+        helpText: "Check which Airtable field name was rejected.",
       });
     }
 
     const createdRecord = await airtableResponse.json();
-    console.log('✅ Lead created successfully:', createdRecord.id);
+    console.log("✅ Lead created successfully:", createdRecord.id);
 
     return res.status(200).json({
       success: true,
-      message: 'Quote request submitted successfully',
+      message: "Quote request submitted successfully",
       recordId: createdRecord.id,
-      fields: createdRecord.fields
+      fields: createdRecord.fields,
     });
-
   } catch (error) {
-    console.error('❌ Unexpected error:', error);
+    console.error("❌ Unexpected error:", error);
+
     return res.status(500).json({
       success: false,
-      error: error instanceof Error ? error.message : 'Internal server error',
-      details: error instanceof Error ? error.stack : undefined
+      error: error instanceof Error ? error.message : "Internal server error",
+      details: error instanceof Error ? error.stack : undefined,
     });
   }
 }
 
-/**
- * Helper function to format location string
- */
-function formatLocation(address?: string, city?: string, state?: string, zip?: string): string {
-  const parts = [address, city, state, zip].filter(p => p && p.trim());
-  return parts.join(', ');
+function formatLocation(
+  address?: string,
+  city?: string,
+  state?: string,
+  zip?: string
+): string {
+  const parts = [address, city, state, zip].filter(
+    (part) => typeof part === "string" && part.trim()
+  );
+  return parts.join(", ");
 }
