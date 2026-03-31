@@ -111,9 +111,11 @@ export function RequestPickup() {
       setIsSubmitted(true);
 
       // Track successful form submission in Google Analytics
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'form_submit', {
-          form_name: 'request_pickup'
+      if (data.success && typeof window !== 'undefined' && window.gtag) {
+        console.log('GA quote_submit firing');
+        window.gtag('event', 'quote_submit', {
+          event_category: 'engagement',
+          event_label: 'Quote Form'
         });
       }
 
