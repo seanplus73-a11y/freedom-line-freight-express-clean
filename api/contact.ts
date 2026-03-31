@@ -80,7 +80,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (formData.vehicleType) {
       notesContent = `Vehicle Type: ${formData.vehicleType}\n\n${formData.message}`;
     }
-    fields["Q_Notes"] = notesContent;
+    fields["L_Notes"] = notesContent;
     
     // Add optional fields only if they have values
     if (formData.phone) {
@@ -92,11 +92,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
     
     if (formData.pickupLocation) {
-      fields["Q_PickupLocation"] = formData.pickupLocation;
+      fields["L_PickupLocation"] = formData.pickupLocation;
     }
     
     if (formData.deliveryLocation) {
-      fields["Q_DeliveryLocation"] = formData.deliveryLocation;
+      fields["L_DeliveryLocation"] = formData.deliveryLocation;
     }
     
     const airtablePayload = {
