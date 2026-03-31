@@ -1,7 +1,17 @@
 import { useState } from "react";
-import { Car, MapPin, Calendar, Send, Shield, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Car,
+  Package,
+  MapPin,
+  Calendar,
+  Send,
+  Shield,
+  Clock,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 
-export default function RequestPickup() {
+export function RequestPickup() {
   const [formData, setFormData] = useState({
     customerName: "",
     companyName: "",
@@ -30,6 +40,17 @@ export default function RequestPickup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+  const deliveryServiceTypes = [
+    "Airport Luggage Delivery",
+    "Luggage & Personal Items",
+    "Small Package Delivery",
+    "Document Delivery",
+    "Auto Parts Delivery",
+    "Same-Day Local Delivery",
+  ];
+
+  const isDeliveryService = deliveryServiceTypes.includes(formData.serviceType);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -46,42 +67,46 @@ export default function RequestPickup() {
     setError("");
 
     try {
-      const response = await fetch('/api/quote', {
-        method: 'POST',
+      const response = await fetch("/api/quote", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      // Debug: Check response
-      console.log('Response status:', response.status);
-      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
-      
-      // Check if response is JSON
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
+      console.log("Response status:", response.status);
+      console.log("Response headers:", Object.fromEntries(response.headers.entries()));
+
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
         const text = await response.text();
-        console.error('Non-JSON response:', text.substring(0, 500));
-        throw new Error('Server returned invalid response. Please try again or contact me directly.');
+        console.error("Non-JSON response:", text.substring(0, 500));
+        throw new Error("Server returned invalid response. Please try again or contact me directly.");
       }
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit quote request');
+        console.error("Full error response:", data);
+        console.error("Airtable error:", data.airtableError);
+        console.error("Fields sent:", data.fieldsSent);
+
+        const errorMessage = data.error || "Failed to submit quote request";
+        const detailsMessage = data.airtableError ? `\n\nDetails: ${data.airtableError}` : "";
+        throw new Error(errorMessage + detailsMessage);
       }
 
-      console.log('Quote form success:', data);
+      console.log("Quote form success:", data);
       setIsSubmitted(true);
-      
+
       // Track successful form submission in Google Analytics
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'form_submit', {
           form_name: 'request_pickup'
         });
       }
-      
+
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({
@@ -108,10 +133,9 @@ export default function RequestPickup() {
           operableConfirmation: false,
         });
       }, 5000);
-
     } catch (err: any) {
-      console.error('Quote form error:', err);
-      setError(err.message || 'Failed to submit quote request. Please try again or contact me directly.');
+      console.error("Quote form error:", err);
+      setError(err.message || "Failed to submit quote request. Please try again or contact me directly.");
     } finally {
       setIsSubmitting(false);
     }
@@ -122,16 +146,19 @@ export default function RequestPickup() {
       {/* Hero Section */}
       <section className="bg-black text-white py-20 border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Request Vehicle <span className="text-orange-500">Pickup & Delivery</span>
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Request <span className="text-orange-500">Pickup & Delivery</span>
             </h1>
-            <p className="text-xl text-gray-300">
-              Get an instant mileage based quote in seconds. Fill out the form below and I'll calculate your rate based on distance and vehicle type.
+            <p className="text-xl text-gray-300 mb-4">
+              Get a quote for vehicle transport or same-day local delivery. Fill out the form below and I'll review the details and respond as soon as possible.
+            </p>
+            <p className="text-lg text-orange-400 font-bold mb-6">
+              Sedans, SUVs, small heavy-duty trucks, luggage, personal items, small packages, documents, and auto parts.
             </p>
             <div className="mt-6 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                I drive your vehicle. I do not tow or trailer it.
+                Vehicle transport is for operable vehicles only. I drive your vehicle. I do not tow or trailer it.
               </p>
             </div>
           </div>
@@ -149,26 +176,33 @@ export default function RequestPickup() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Request Submitted!</h3>
                 <p className="text-lg">
-                  Thank you for your pickup request. I'll send you a detailed quote within 30 minutes based on your mileage and vehicle details.
+                  Thank you for your request. I'll review the details and respond with your quote as soon as possible.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                {/* Important Notice */}
-                <div className="mb-8 bg-orange-900/20 border border-orange-500 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-orange-400 mb-2">Important: Operable Vehicles Only</h3>
-                  <p className="text-orange-100 text-lg">
-                    I drive your vehicle. I do not tow or trailer it.
-                  </p>
-                </div>
+                {!isDeliveryService && (
+                  <div className="mb-8 bg-orange-900/20 border border-orange-500 p-6 rounded-lg">
+                    <h3 className="text-xl font-bold text-orange-400 mb-2">
+                      Important: Operable Vehicles Only
+                    </h3>
+                    <p className="text-orange-100 text-lg">
+                      I drive your vehicle. I do not tow or trailer it.
+                    </p>
+                  </div>
+                )}
 
-                {/* Vehicle Information */}
+                {/* Service Information */}
                 <div className="mb-10">
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                      <Car className="text-white" size={20} />
+                      {isDeliveryService ? (
+                        <Package className="text-white" size={20} />
+                      ) : (
+                        <Car className="text-white" size={20} />
+                      )}
                     </div>
-                    <h2 className="text-2xl font-bold text-white">Vehicle Information</h2>
+                    <h2 className="text-2xl font-bold text-white">Service Information</h2>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -185,98 +219,140 @@ export default function RequestPickup() {
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       >
                         <option value="">Select service type</option>
-                        <option value="Local Vehicle Transport (0 to 50 miles)">Local Vehicle Transport (0 to 50 miles)</option>
-                        <option value="Long Distance Vehicle Transport (Interstate)">Long Distance Vehicle Transport (Interstate)</option>
+                        <option value="Local Vehicle Transport (0 to 50 miles)">
+                          Local Vehicle Transport (0 to 50 miles)
+                        </option>
+                        <option value="Long Distance Vehicle Transport (Interstate)">
+                          Long Distance Vehicle Transport (Interstate)
+                        </option>
                         <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
                         <option value="Private Party Vehicle Transport">Private Party Vehicle Transport</option>
-                        <option value="Multi Vehicle Transport">Multi Vehicle Transport</option>
+                        <option value="Airport Luggage Delivery">Airport Luggage Delivery</option>
+                        <option value="Luggage & Personal Items">Luggage & Personal Items</option>
+                        <option value="Small Package Delivery">Small Package Delivery</option>
+                        <option value="Document Delivery">Document Delivery</option>
+                        <option value="Auto Parts Delivery">Auto Parts Delivery</option>
+                        <option value="Same-Day Local Delivery">Same-Day Local Delivery</option>
                       </select>
                     </div>
 
-                    <div>
-                      <label htmlFor="vehicleCondition" className="block text-sm font-bold text-gray-300 mb-2">
-                        Vehicle Condition *
-                      </label>
-                      <select
-                        id="vehicleCondition"
-                        name="vehicleCondition"
-                        value={formData.vehicleCondition}
-                        onChange={handleChange}
-                        required
-                        disabled
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      >
-                        <option value="Runs and Drives (Fully Operable)">Runs and Drives (Fully Operable)</option>
-                      </select>
-                      <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
-                    </div>
-
-                    <div>
-                      <label htmlFor="vehicleMake" className="block text-sm font-bold text-gray-300 mb-2">
-                        Make *
-                      </label>
-                      <input
-                        type="text"
-                        id="vehicleMake"
-                        name="vehicleMake"
-                        value={formData.vehicleMake}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="Toyota, Ford, etc."
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="vehicleModel" className="block text-sm font-bold text-gray-300 mb-2">
-                        Model *
-                      </label>
-                      <input
-                        type="text"
-                        id="vehicleModel"
-                        name="vehicleModel"
-                        value={formData.vehicleModel}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="Camry, F-150, etc."
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="vehicleYear" className="block text-sm font-bold text-gray-300 mb-2">
-                        Year *
-                      </label>
-                      <input
-                        type="number"
-                        id="vehicleYear"
-                        name="vehicleYear"
-                        value={formData.vehicleYear}
-                        onChange={handleChange}
-                        required
-                        min="1900"
-                        max="2026"
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="2020"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="vinNumber" className="block text-sm font-bold text-gray-300 mb-2">
-                        VIN Number
-                      </label>
-                      <input
-                        type="text"
-                        id="vinNumber"
-                        name="vinNumber"
-                        value={formData.vinNumber}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="1HGCM82633A004352"
-                      />
-                    </div>
+                    {!isDeliveryService ? (
+                      <div>
+                        <label htmlFor="vehicleCondition" className="block text-sm font-bold text-gray-300 mb-2">
+                          Vehicle Condition *
+                        </label>
+                        <select
+                          id="vehicleCondition"
+                          name="vehicleCondition"
+                          value={formData.vehicleCondition}
+                          onChange={handleChange}
+                          required
+                          disabled
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 opacity-75"
+                        >
+                          <option value="Runs and Drives (Fully Operable)">
+                            Runs and Drives (Fully Operable)
+                          </option>
+                        </select>
+                        <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
+                      </div>
+                    ) : (
+                      <div>
+                        <label htmlFor="itemDetails" className="block text-sm font-bold text-gray-300 mb-2">
+                          Item Details
+                        </label>
+                        <input
+                          type="text"
+                          id="itemDetails"
+                          name="itemDetails"
+                          value={formData.notes}
+                          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="e.g., 2 suitcases, small box, envelope, brake parts"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
+
+                {/* Vehicle Information */}
+                {!isDeliveryService && (
+                  <div className="mb-10">
+                    <div className="flex items-center mb-6">
+                      <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                        <Car className="text-white" size={20} />
+                      </div>
+                      <h2 className="text-2xl font-bold text-white">Vehicle Information</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="vehicleMake" className="block text-sm font-bold text-gray-300 mb-2">
+                          Make *
+                        </label>
+                        <input
+                          type="text"
+                          id="vehicleMake"
+                          name="vehicleMake"
+                          value={formData.vehicleMake}
+                          onChange={handleChange}
+                          required={!isDeliveryService}
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="Toyota, Ford, etc."
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="vehicleModel" className="block text-sm font-bold text-gray-300 mb-2">
+                          Model *
+                        </label>
+                        <input
+                          type="text"
+                          id="vehicleModel"
+                          name="vehicleModel"
+                          value={formData.vehicleModel}
+                          onChange={handleChange}
+                          required={!isDeliveryService}
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="Camry, F-150, etc."
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="vehicleYear" className="block text-sm font-bold text-gray-300 mb-2">
+                          Year *
+                        </label>
+                        <input
+                          type="number"
+                          id="vehicleYear"
+                          name="vehicleYear"
+                          value={formData.vehicleYear}
+                          onChange={handleChange}
+                          required={!isDeliveryService}
+                          min="1900"
+                          max="2027"
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="2020"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="vinNumber" className="block text-sm font-bold text-gray-300 mb-2">
+                          VIN Number
+                        </label>
+                        <input
+                          type="text"
+                          id="vinNumber"
+                          name="vinNumber"
+                          value={formData.vinNumber}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="1HGCM82633A004352"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* Pickup Information */}
                 <div className="mb-10">
@@ -514,7 +590,11 @@ export default function RequestPickup() {
                       onChange={handleChange}
                       rows={4}
                       className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      placeholder="Special instructions, gate codes, or other details..."
+                      placeholder={
+                        isDeliveryService
+                          ? "Tell me about the luggage, small package, document, or auto parts delivery..."
+                          : "Special instructions, gate codes, or other details..."
+                      }
                     />
                   </div>
 
@@ -528,37 +608,39 @@ export default function RequestPickup() {
                       name="preferredPickupDate"
                       value={formData.preferredPickupDate}
                       onChange={handleChange}
-                      min={new Date().toISOString().split('T')[0]}
+                      min={new Date().toISOString().split("T")[0]}
                       className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
                     <p className="text-sm text-gray-400 mt-1">
-                      This helps us plan scheduling and route availability. It's only a preferred date request (not guaranteed).
+                      This helps us plan scheduling and route availability. It's only a preferred date request.
                     </p>
                   </div>
                 </div>
 
                 {/* Required Confirmation Checkbox */}
-                <div className="mb-8 bg-neutral-700/50 p-6 rounded-lg border-2 border-orange-500/50">
-                  <div className="flex items-start">
-                    <input
-                      type="checkbox"
-                      id="operableConfirmation"
-                      name="operableConfirmation"
-                      checked={formData.operableConfirmation}
-                      onChange={handleChange}
-                      required
-                      className="mt-1 w-5 h-5 text-orange-500 bg-neutral-900 border-neutral-600 rounded focus:ring-orange-500 focus:ring-2"
-                    />
-                    <label htmlFor="operableConfirmation" className="ml-3 block">
-                      <span className="text-white font-bold text-lg">
-                        I confirm the vehicle starts, steers, brakes, and drives safely. Operable vehicles only. *
-                      </span>
-                      <p className="text-gray-300 mt-2">
-                        Vehicle must be fully operable, road legal, and safe to drive.
-                      </p>
-                    </label>
+                {!isDeliveryService && (
+                  <div className="mb-8 bg-neutral-700/50 p-6 rounded-lg border-2 border-orange-500/50">
+                    <div className="flex items-start">
+                      <input
+                        type="checkbox"
+                        id="operableConfirmation"
+                        name="operableConfirmation"
+                        checked={formData.operableConfirmation}
+                        onChange={handleChange}
+                        required={!isDeliveryService}
+                        className="mt-1 w-5 h-5 text-orange-500 bg-neutral-900 border-neutral-600 rounded focus:ring-orange-500 focus:ring-2"
+                      />
+                      <label htmlFor="operableConfirmation" className="ml-3 block">
+                        <span className="text-white font-bold text-lg">
+                          I confirm the vehicle starts, steers, brakes, and drives safely. Operable vehicles only. *
+                        </span>
+                        <p className="text-gray-300 mt-2">
+                          Vehicle must be fully operable, road legal, and safe to drive.
+                        </p>
+                      </label>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {error && (
                   <div className="bg-red-900/30 border border-red-600 text-red-100 p-8 rounded-lg text-center mb-8">
@@ -566,18 +648,16 @@ export default function RequestPickup() {
                       <AlertCircle size={56} className="mx-auto" />
                     </div>
                     <h3 className="text-2xl font-bold mb-3">Error!</h3>
-                    <p className="text-lg">
-                      {error}
-                    </p>
+                    <p className="text-lg whitespace-pre-line">{error}</p>
                   </div>
                 )}
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center"
+                  className="w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Submitting...' : 'Get Instant Quote'}
+                  {isSubmitting ? "Submitting..." : "Get Quote"}
                   <Send className="ml-2" size={20} />
                 </button>
               </form>
@@ -596,7 +676,7 @@ export default function RequestPickup() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Fast Response</h3>
               <p className="text-gray-400">
-                Receive your mileage-based quote within 30 minutes of submission.
+                Quick review and response to quote requests during business hours.
               </p>
             </div>
 
@@ -606,7 +686,7 @@ export default function RequestPickup() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Fully Insured</h3>
               <p className="text-gray-400">
-                Every vehicle is fully insured during pickup, transport, and delivery.
+                Vehicle transport is fully insured during pickup, transport, and delivery.
               </p>
             </div>
 
@@ -614,9 +694,9 @@ export default function RequestPickup() {
               <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="text-white" size={32} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Door-to-Door Service</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Direct Service</h3>
               <p className="text-gray-400">
-                Convenient pickup and delivery directly to your specified locations.
+                Owner-operated service with direct communication and careful handling.
               </p>
             </div>
           </div>
