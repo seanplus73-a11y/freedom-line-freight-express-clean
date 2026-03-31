@@ -66,25 +66,43 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
       );
 
+      console.log('Airtable GET response status:', airtableResponse.status);
+
       if (!airtableResponse.ok) {
         const errorData = await airtableResponse.json();
-        console.error('Airtable fetch error:', errorData);
-        return res.status(404).json({
-          success: false,
-          error: 'Quote not found. Please check your quote link or contact me directly.'
-        });
+        console.error('Airtable fetch error:', JSON.stringify(errorData));
+        
+        // More specific error messages
+        if (airtableResponse.status === 404) {
+          return res.status(404).json({
+            success: false,
+            error: 'Quote not found. The quote may have been deleted or the link is incorrect.'
+          });
+        } else if (airtableResponse.status === 401 || airtableResponse.status === 403) {
+          console.error('Authentication error - check AIRTABLE_TOKEN');
+          return res.status(500).json({
+            success: false,
+            error: 'Server configuration error. Please contact me at quotes@flfreightco.com'
+          });
+        } else {
+          return res.status(500).json({
+            success: false,
+            error: 'Unable to load quote. Please contact me directly.',
+            details: errorData
+          });
+        }
       }
 
       const record = await airtableResponse.json() as AirtableRecord;
-      console.log('Quote record fetched successfully');
+      console.log('Quote record fetched successfully:', record.id);
 
       // Extract and format the quote details
       const fields = record.fields;
       const quoteDetails = {
         customerName: fields.L_FullName || 'Unknown Customer',
-        pickupLocation: fields.Q_PickupLocation || 'Not specified',
-        deliveryLocation: fields.Q_DeliveryLocation || 'Not specified',
-        vehicle: `${fields.Q_Year || ''} ${fields.Q_Make || ''} ${fields.Q_Model || ''}`.trim() || 'Not specified'
+        pickupLocation: fields.L_PickupLocation || 'Not specified',
+        deliveryLocation: fields.L_DeliveryLocation || 'Not specified',
+        vehicle: `${fields.Q_VehicleYear || ''} ${fields.Q_Make || ''} ${fields.Q_Model || ''}`.trim() || 'Not specified'
       };
 
       return res.status(200).json({
@@ -146,12 +164,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const updatePayload = {
         fields: {
           // Add acceptance timestamp and details to notes
-          Q_Notes: existingFields.Q_Notes 
-            ? `${existingFields.Q_Notes}\n\n--- QUOTE ACCEPTED ---\nAccepted: ${timestamp}\nIP: ${req.headers['x-forwarded-for'] || req.socket.remoteAddress}\nUser Agent: ${userAgent}`
+          L_Notes: existingFields.L_Notes 
+            ? `${existingFields.L_Notes}\n\n--- QUOTE ACCEPTED ---\nAccepted: ${timestamp}\nIP: ${req.headers['x-forwarded-for'] || req.socket.remoteAddress}\nUser Agent: ${userAgent}`
             : `--- QUOTE ACCEPTED ---\nAccepted: ${timestamp}\nIP: ${req.headers['x-forwarded-for'] || req.socket.remoteAddress}\nUser Agent: ${userAgent}`,
           
           // You can add a custom field here if you have one in Airtable for quote status
-          // For example: Q_Status: "Accepted"
+          // For example: "Lead Status": "Accepted"
           // Or use a checkbox field: Q_Accepted: true
         }
       };
@@ -197,20 +215,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
               "L_Email": existingFields.L_Email || 'quotes@flfreightco.com',
               "L_Phone": existingFields.L_Phone || '',
               "L_Company": existingFields.L_Company || '',
+              "L_PickupLocation": existingFields.L_PickupLocation || '',
+              "L_DeliveryLocation": existingFields.L_DeliveryLocation || '',
+              "L_ServiceType": existingFields.L_ServiceType || '',
               
               // Quote Information - copy from original record
-              "Q_PickupLocation": existingFields.Q_PickupLocation || '',
-              "Q_DeliveryLocation": existingFields.Q_DeliveryLocation || '',
               "Q_Make": existingFields.Q_Make || '',
               "Q_Model": existingFields.Q_Model || '',
-              "Q_Year": existingFields.Q_Year || '',
+              "Q_VehicleYear": existingFields.Q_VehicleYear || '',
               "Q_VIN": existingFields.Q_VIN || '',
-              "Q_ServiceType": existingFields.Q_ServiceType || '',
               "Q_VehicleCondition": existingFields.Q_VehicleCondition || '',
               "Q_PreferredPickupDate": existingFields.Q_PreferredPickupDate || '',
               
               // Add acceptance status to notes
-              "Q_Notes": `✅ CUSTOMER ACCEPTED TRANSPORT QUOTE ✅
+              "L_Notes": `✅ CUSTOMER ACCEPTED TRANSPORT QUOTE ✅
 
 Original Quote ID: ${quoteId}
 Accepted: ${timestamp}
@@ -223,17 +241,17 @@ Phone: ${existingFields.L_Phone || 'Not provided'}
 ${existingFields.L_Company ? `Company: ${existingFields.L_Company}` : ''}
 
 --- VEHICLE DETAILS ---
-Vehicle: ${existingFields.Q_Year || ''} ${existingFields.Q_Make || ''} ${existingFields.Q_Model || ''}
+Vehicle: ${existingFields.Q_VehicleYear || ''} ${existingFields.Q_Make || ''} ${existingFields.Q_Model || ''}
 VIN: ${existingFields.Q_VIN || 'Not provided'}
 Condition: ${existingFields.Q_VehicleCondition || 'Not specified'}
-Service Type: ${existingFields.Q_ServiceType || 'Not specified'}
+Service Type: ${existingFields.L_ServiceType || 'Not specified'}
 
 --- ROUTE ---
-Pickup: ${existingFields.Q_PickupLocation || 'Not specified'}
-Delivery: ${existingFields.Q_DeliveryLocation || 'Not specified'}
+Pickup: ${existingFields.L_PickupLocation || 'Not specified'}
+Delivery: ${existingFields.L_DeliveryLocation || 'Not specified'}
 ${existingFields.Q_PreferredPickupDate ? `Preferred Pickup Date: ${existingFields.Q_PreferredPickupDate}` : ''}
 
-${existingFields.Q_Notes ? `\n--- ORIGINAL NOTES ---\n${existingFields.Q_Notes}` : ''}`
+${existingFields.L_Notes ? `\n--- ORIGINAL NOTES ---\n${existingFields.L_Notes}` : ''}`
             }
           }
         ]
