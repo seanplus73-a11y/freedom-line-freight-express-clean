@@ -6,7 +6,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import { Contact } from "./pages/Contact";
 import Pricing from "./pages/Pricing";
-import RequestPickup from "./pages/RequestPickup";
+import { RequestPickup } from "./pages/RequestPickup";
 import AcceptQuote from "./pages/AcceptQuote";
 
 // Freedom Line routing configuration
