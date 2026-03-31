@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Check, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Check, AlertCircle, Package, Car } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -95,12 +95,15 @@ export function Contact() {
       {/* Hero Section */}
       <section className="relative bg-black text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Contact <span className="text-orange-500">Freedom Line</span>
             </h1>
-            <p className="text-xl text-gray-300">
-              Call via relay, text, or email. I personally respond to every inquiry.
+            <p className="text-xl text-gray-300 mb-4">
+              Call via relay, text, or email. I personally respond to vehicle transport and local delivery inquiries.
+            </p>
+            <p className="text-lg text-orange-400 font-bold max-w-3xl">
+              Sedans, SUVs, light-duty trucks, luggage, small packages, documents, and auto parts.
             </p>
           </div>
         </div>
@@ -159,17 +162,31 @@ export function Contact() {
                   <div>
                     <h3 className="font-bold text-white mb-1">Service Area</h3>
                     <p className="text-gray-300">Based in Arizona</p>
-                    <p className="text-gray-300">Serving the Southwest</p>
+                    <p className="text-gray-300">Serving Arizona and nearby regional routes</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 p-6 bg-neutral-900 rounded-lg border border-neutral-700">
-                <h3 className="font-bold text-white mb-2">Business Hours</h3>
+                <h3 className="font-bold text-white mb-3">Business Hours</h3>
                 <div className="space-y-1 text-sm text-gray-300">
                   <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                   <p>Saturday: 10:00 AM - 4:00 PM</p>
                   <p>Sunday: Closed</p>
+                </div>
+              </div>
+
+              <div className="mt-8 p-6 bg-neutral-900 rounded-lg border border-neutral-700">
+                <h3 className="font-bold text-white mb-3">What I Handle</h3>
+                <div className="space-y-3 text-sm text-gray-300">
+                  <div className="flex items-start">
+                    <Car className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={18} />
+                    <span>Sedans, SUVs, small heavy-duty trucks, and luxury vehicles</span>
+                  </div>
+                  <div className="flex items-start">
+                    <Package className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={18} />
+                    <span>Luggage, small packages, documents, and auto parts</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -338,7 +355,7 @@ export function Contact() {
                         htmlFor="vehicleType"
                         className="block text-sm font-bold text-white mb-2"
                       >
-                        Vehicle Type
+                        Service Type / Vehicle or Item Type
                       </label>
                       <input
                         type="text"
@@ -348,7 +365,7 @@ export function Contact() {
                         onChange={handleChange}
                         disabled={isSubmitting}
                         className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
-                        placeholder="e.g., Sedan, SUV, F-250"
+                        placeholder="e.g., Sedan, SUV, F-250, luggage, documents, small package, auto parts"
                       />
                     </div>
 
@@ -368,7 +385,7 @@ export function Contact() {
                         disabled={isSubmitting}
                         rows={6}
                         className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
-                        placeholder="Tell me about your vehicle transport needs..."
+                        placeholder="Tell me about your transport or delivery needs..."
                       />
                     </div>
 
@@ -435,7 +452,7 @@ export function Contact() {
 
               <div className="border-t border-neutral-700 pt-6 text-center">
                 <p className="text-gray-300">
-                  <strong className="text-white">Professional vehicle transport</strong> for sedans, SUVs, small heavy-duty trucks, and luxury vehicles throughout the Southwest.
+                  <strong className="text-white">Professional vehicle transport and same-day local delivery</strong> for sedans, SUVs, small heavy-duty trucks, luggage, small packages, documents, and auto parts.
                 </p>
               </div>
             </div>
