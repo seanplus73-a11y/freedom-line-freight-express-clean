@@ -100,8 +100,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const fields: Record<string, any> = {
       "L_FullName": formData.customerName,
       "L_Email": formData.customerEmail,
-      "Q_PickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
-      "Q_DeliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`
+      "L_PickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
+      "L_DeliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`
     };
     
     // Add vehicle information for vehicle services
@@ -117,7 +117,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fields["Q_VehicleYear"] = String(formData.vehicleYear);
     }
     
-    // Add delivery service fields
+    // Add delivery service fields (if they exist in Airtable)
     if (formData.itemType) {
       fields["Q_ItemType"] = formData.itemType;
     }
@@ -139,9 +139,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fields["Q_VIN"] = formData.vinNumber;
     }
     
-    // Send service type and vehicle condition directly to Airtable
+    // Send service type to Leads table field
     if (formData.serviceType) {
-      fields["Q_ServiceType"] = formData.serviceType;
+      fields["L_ServiceType"] = formData.serviceType;
     }
     
     if (formData.vehicleCondition) {
@@ -155,7 +155,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     
     // Add additional notes if provided
     if (formData.notes) {
-      fields["Q_Notes"] = formData.notes;
+      fields["L_Notes"] = formData.notes;
     }
     
     const airtablePayload = {
