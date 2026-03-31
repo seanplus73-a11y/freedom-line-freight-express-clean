@@ -11,6 +11,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 
+// Request Pickup form component with Google Analytics tracking
 export function RequestPickup() {
   const [formData, setFormData] = useState({
     customerName: "",
