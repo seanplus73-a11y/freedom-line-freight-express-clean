@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Check, AlertCircle } from "lucide-react";
 
-export default function Contact() {
+export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     companyName: "",
