@@ -420,39 +420,41 @@ export function Contact() {
             <h2 className="text-3xl font-bold text-white mb-4">
               My <span className="text-orange-500">Service Area</span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Based in Arizona, proudly serving the Southwest region
-            </p>
+            <div className="text-lg text-gray-300 max-w-3xl mx-auto space-y-1">
+              <p className="font-semibold text-white">Primary service area: Arizona (statewide)</p>
+              <p>Nearby states available by request only</p>
+              <p className="text-sm text-gray-400">Out-of-state transport is limited and scheduled based on availability</p>
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-neutral-800 rounded-lg border border-orange-500/30 p-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
                 <div className="flex items-center justify-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Arizona (Statewide)</span>
+                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={24} />
+                  <span className="text-xl font-bold text-orange-500">Arizona (Statewide)</span>
                 </div>
                 <div className="flex items-center justify-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Nevada</span>
+                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg text-gray-300">Nevada</span>
                 </div>
                 <div className="flex items-center justify-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">New Mexico</span>
+                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg text-gray-300">New Mexico</span>
                 </div>
                 <div className="flex items-center justify-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Utah</span>
+                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg text-gray-300">Utah</span>
                 </div>
                 <div className="flex items-center justify-center sm:col-span-2 md:col-span-2">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Southern California</span>
+                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-lg text-gray-300">Southern California</span>
                 </div>
               </div>
 
               <div className="border-t border-neutral-700 pt-6 text-center">
                 <p className="text-gray-300">
-                  <strong className="text-white">Professional vehicle transport and same-day local delivery</strong> for sedans, SUVs, small heavy-duty trucks, luggage, small packages, documents, and auto parts.
+                  Based in Arizona, we specialize in reliable local and regional vehicle transport, with limited out-of-state service available by request.
                 </p>
               </div>
             </div>
