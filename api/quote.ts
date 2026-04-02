@@ -51,7 +51,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const vehicleServiceTypes = [
       "Local Vehicle Transport (0 to 50 miles)",
       "Regional Vehicle Transport (50 to 150 miles)",
-      "Long Distance Vehicle Transport (150+ miles)",
+      "Long Distance (150+ miles) — Custom Quote",
       "Dealer or Auction Pickup",
       "Private Party Vehicle Transport"
     ];
