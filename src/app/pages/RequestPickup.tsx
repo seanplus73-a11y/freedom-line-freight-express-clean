@@ -46,6 +46,7 @@ export function RequestPickup() {
   const vehicleServiceTypes = [
     "Local Vehicle Transport (0 to 50 miles)",
     "Regional Vehicle Transport (50 to 150 miles)",
+    "Long Distance (150+ miles) — Custom Quote",
     "Dealer or Auction Pickup",
     "Private Party Vehicle Transport",
   ];
@@ -165,7 +166,7 @@ export function RequestPickup() {
               Request <span className="text-orange-500">Pickup & Delivery</span>
             </h1>
             <p className="text-xl text-gray-300 mb-4">
-              Request a quote for vehicle transport or same-day local delivery. Fill out the form
+              Request a quote for fast vehicle transport or same-day local delivery. Fill out the form
               below and I'll review your route, service type, and details.
             </p>
             <p className="text-lg text-orange-400 font-bold">
@@ -175,8 +176,7 @@ export function RequestPickup() {
 
             <div className="mt-6 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                Vehicle transport is for operable vehicles only. I drive your vehicle. I do not
-                tow or trailer it.
+                Vehicle transport is for operable vehicles only. Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
               </p>
             </div>
           </div>
@@ -249,6 +249,9 @@ export function RequestPickup() {
                         <option value="Regional Vehicle Transport (50 to 150 miles)">
                           Regional Vehicle Transport (50 to 150 miles)
                         </option>
+                        <option value="Long Distance (150+ miles) — Custom Quote">
+                          Long Distance (150+ miles) — Custom Quote
+                        </option>
                         <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
                         <option value="Private Party Vehicle Transport">
                           Private Party Vehicle Transport
@@ -320,7 +323,7 @@ export function RequestPickup() {
                         Important: Operable Vehicles Only
                       </h3>
                       <p className="text-orange-100 text-lg">
-                        I drive your vehicle. I do not tow or trailer it.
+                        Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
                       </p>
                     </div>
 
