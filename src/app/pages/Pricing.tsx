@@ -54,32 +54,26 @@ export default function Pricing() {
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-neutral-900 rounded-lg border border-orange-500/30 p-8 mb-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center">
                   <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Arizona (Statewide)</span>
-                </div>
-                <div className="flex items-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Nevada</span>
+                  <span className="text-lg font-bold text-white">Arizona (Primary Service Area)</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">New Mexico</span>
+                  <span className="text-lg font-bold text-white">Nearby states available by request only</span>
                 </div>
-                <div className="flex items-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Utah</span>
-                </div>
-                <div className="flex items-center sm:col-span-2 md:col-span-2">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Southern California</span>
-                </div>
+              </div>
+
+              <div className="bg-orange-900/20 border border-orange-500/50 p-4 rounded mb-6">
+                <p className="text-orange-100 text-sm font-semibold">
+                  Out of state transport is limited and scheduled based on availability
+                </p>
               </div>
 
               <div className="border-t border-neutral-700 pt-6">
                 <p className="text-gray-300 mb-4">
-                  <strong className="text-white">Based in Arizona,</strong> we specialize in reliable local and regional vehicle transport throughout the Southwest.
+                  <strong className="text-white">Based in Arizona,</strong> I specialize in reliable local and regional vehicle transport throughout the state.
                 </p>
                 <p className="text-gray-300 mb-4">
                   <strong className="text-white">Door-to-door pickup and delivery available</strong> for sedans, SUVs, small heavy-duty trucks (F-250/2500 class), and luxury vehicles.
@@ -103,7 +97,12 @@ export default function Pricing() {
       {/* Distance-Based Pricing Section */}
       <section className="py-16 bg-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
+            <div className="mb-6 bg-orange-900/30 border-l-4 border-orange-500 p-6 rounded max-w-4xl mx-auto">
+              <p className="text-orange-100 font-semibold text-lg">
+                <strong className="text-orange-400">Need it delivered fast?</strong> My service is designed for customers who do not want to wait days for traditional carriers.
+              </p>
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Distance-Based <span className="text-orange-500">Pricing</span>
             </h2>
