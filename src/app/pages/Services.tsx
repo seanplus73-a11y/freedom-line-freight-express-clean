@@ -47,7 +47,8 @@ export default function Services() {
       title: "Auto Parts Delivery",
       description:
         "Fast pickup and delivery of auto parts between shops, dealerships, warehouses, and customers. Ideal for urgent parts that cannot wait for standard shipping.",
-      image: "https://images.pexels.com/photos/12234109/pexels-photo-12234109.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image:
+        "https://images.pexels.com/photos/12234109/pexels-photo-12234109.jpeg?auto=compress&cs=tinysrgb&w=1200",
       features: [
         "Engines, transmissions, and large parts",
         "Dealership and repair shop delivery",
@@ -60,7 +61,8 @@ export default function Services() {
       title: "Small Packages & Business Delivery",
       description:
         "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Ideal for local businesses needing fast, dependable service.",
-      image: "https://images.pexels.com/photos/13443801/pexels-photo-13443801.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "/images/package-trunk.jpg",
+      secondImage: "/images/package-loading.jpg",
       features: [
         "Business-to-business delivery",
         "Urgent same-day delivery available",
@@ -73,7 +75,7 @@ export default function Services() {
       title: "Local Arizona Delivery",
       description:
         "Same-day and next-day delivery across the Arizona metro area for vehicles, auto parts, and business items. A simple, direct solution for customers who need reliable local service.",
-      image: "/images/Local-az-delivery.jpg",
+      image: "/images/local-az-delivery.jpg",
       features: [
         "Phoenix metro and surrounding areas",
         "Same-day delivery available",
@@ -138,13 +140,29 @@ export default function Services() {
                   key={index}
                   className="bg-neutral-900 border border-neutral-700 rounded-lg overflow-hidden hover:border-orange-500 transition-colors"
                 >
-                  <div className="h-64 overflow-hidden">
-                    <ImageWithFallback
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  {service.secondImage ? (
+                    <div className="grid grid-cols-2 gap-0 h-64 overflow-hidden">
+                      <ImageWithFallback
+                        src={service.image}
+                        alt={`${service.title} main`}
+                        className="w-full h-full object-cover"
+                      />
+                      <ImageWithFallback
+                        src={service.secondImage}
+                        alt={`${service.title} secondary`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-64 overflow-hidden">
+                      <ImageWithFallback
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+
                   <div className="p-8">
                     <div className="bg-orange-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
                       <Icon className="text-orange-500" size={28} />
