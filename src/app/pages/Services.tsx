@@ -16,54 +16,83 @@ export default function Services() {
   const services = [
     {
       icon: Car,
-      title: "Personal Vehicle Transport",
-      description: "Fast door-to-door pickup and delivery of cars, SUVs, and light trucks. No waiting for carrier schedules—your vehicle is transported directly and promptly.",
+      title: "Personal Vehicle Pickup & Delivery",
+      description:
+        "Direct door-to-door pickup and delivery for cars, SUVs, and light trucks across Arizona. Your vehicle is handled one at a time with careful, professional service.",
       image: "/images/personal-vehicle-transport.jpg",
       features: [
-        "Sedans, SUVs, and light trucks (F-250/2500 class)",
-        "Same day or next day delivery available",
-        "No trailers, no loading delays",
-        "Fully insured during transport",
+        "Cars, SUVs, and light trucks",
+        "Same-day or next-day service available",
+        "Direct delivery with no shared carrier schedule",
+        "Insured transport service",
       ],
     },
     {
       icon: Building2,
       title: "Dealer & Auction Pickup",
-      description: "Fast vehicle pickup and delivery for dealerships and auction locations. Direct transport with no waiting on shared carrier routes.",
+      description:
+        "Reliable vehicle pickup and delivery for dealerships, auctions, and auto-related businesses. Fast scheduling and direct service without long carrier wait times.",
       image: "/images/dealer-auction-pickup.jpg",
       features: [
         "Dealer-to-dealer transfers",
         "Auction pickup and delivery",
-        "Fast turnaround times—no delays",
+        "Fast turnaround and flexible scheduling",
         "Professional owner-operated service",
       ],
     },
     {
       icon: MapPin,
-      title: "Local AZ Delivery",
-      description: "Same-day and next-day vehicle delivery across the Arizona metro area. Fast, direct delivery with no waiting.",
+      title: "Local Arizona Delivery",
+      description:
+        "Same-day and next-day vehicle delivery across the Arizona metro area. A simple, direct solution for customers who need reliable local transport.",
       image: "/images/Local-az-delivery.jpg",
       features: [
-        "Phoenix metro and statewide coverage",
+        "Phoenix metro and surrounding areas",
         "Same-day delivery available",
-        "No waiting for truck routes",
+        "Direct point-to-point service",
         "One vehicle at a time, handled with care",
       ],
     },
     {
       icon: Map,
       title: "Regional Transport",
-      description: "Fast vehicle transport across Arizona and nearby states. Direct delivery, no delays. Out-of-state transport available by request only.",
+      description:
+        "Vehicle pickup and delivery throughout Arizona, with nearby out-of-state transport available by request. Ideal for longer-distance moves that still need direct, dependable service.",
       image: "/images/regional-transport.jpg",
       features: [
-        "Arizona statewide coverage",
-        "Nearby states by request only",
-        "Fast scheduled delivery windows",
-        "No shared transport with other vehicles",
+        "Arizona statewide service",
+        "Nearby states available by request",
+        "Scheduled delivery windows",
+        "Direct transport without shared loads",
       ],
     },
   ];
-
+    {
+  icon: Car,
+  title: "Auto Parts Delivery",
+  description:
+    "Fast pickup and delivery of auto parts between shops, dealerships, warehouses, and customers. Ideal for urgent parts that cannot wait for standard shipping.",
+  image: "/images/auto-parts-delivery.jpg",
+  features: [
+    "Engines, transmissions, and large parts",
+    "Dealership and repair shop delivery",
+    "Same-day delivery available",
+    "Careful handling during loading and transport",
+  ],
+},
+{
+  icon: MapPin,
+  title: "Small Packages & Business Delivery",
+  description:
+    "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Perfect for local businesses needing fast service.",
+  image: "/images/package-delivery.jpg",
+  features: [
+    "Business-to-business delivery",
+    "Urgent same-day delivery available",
+    "Flexible pickup and drop-off times",
+    "Handled securely and professionally",
+  ],
+},
   return (
     <div className="bg-neutral-900">
       {/* Hero Section */}
@@ -75,14 +104,20 @@ export default function Services() {
               Vehicle Pickup & Delivery Service
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Professional Vehicle <span className="text-orange-500">Transport Services</span>
+              Professional{" "}
+              <span className="text-orange-500">
+                Vehicle Pickup & Delivery
+              </span>
             </h1>
             <p className="text-xl text-gray-300 mb-4">
-              Fast, reliable vehicle pickup and delivery across Arizona. From personal cars to dealer transfers, I handle your vehicles with professional care and speed.
+              Reliable vehicle pickup and delivery across Arizona. From personal
+              vehicles to dealer transfers, every trip is handled with care,
+              professionalism, and direct service.
             </p>
             <div className="mt-4 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
+                Your vehicle is picked up and delivered directly with no
+                unnecessary transfers and no shared transport schedule.
               </p>
             </div>
           </div>
@@ -111,7 +146,9 @@ export default function Services() {
                     <div className="bg-orange-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
                       <Icon className="text-orange-500" size={28} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                    <h3 className="text-2xl font-bold text-white mb-3">
+                      {service.title}
+                    </h3>
                     <p className="text-gray-400 mb-6">{service.description}</p>
                     <ul className="space-y-3 mb-6">
                       {service.features.map((feature, idx) => (
@@ -144,10 +181,12 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What's Included with <span className="text-orange-500">Every Transport</span>
+              What’s Included with{" "}
+              <span className="text-orange-500">Every Transport</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Professional service standards on every vehicle I transport.
+              Professional standards and dependable service on every pickup and
+              delivery.
             </p>
           </div>
 
@@ -156,9 +195,12 @@ export default function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Shield className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Full Insurance Coverage</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Insured Service
+              </h3>
               <p className="text-gray-400">
-                Every vehicle is fully insured during pickup, transport, and delivery for your peace of mind.
+                Your vehicle is handled with care and protected throughout
+                pickup, transport, and delivery.
               </p>
             </div>
 
@@ -166,9 +208,12 @@ export default function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Camera className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Photo Documentation</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Photo Documentation
+              </h3>
               <p className="text-gray-400">
-                Complete photo documentation at pickup and delivery to ensure transparency and accountability.
+                Vehicle photos can be documented at pickup and delivery for added
+                transparency and peace of mind.
               </p>
             </div>
 
@@ -176,9 +221,12 @@ export default function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Clock className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Fast Scheduling & Same-Day Options</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Flexible Scheduling
+              </h3>
               <p className="text-gray-400">
-                Same-day, next-day, or scheduled transport options—no waiting for shared carrier routes.
+                Same-day, next-day, and scheduled transport options are
+                available based on timing and route availability.
               </p>
             </div>
 
@@ -186,9 +234,12 @@ export default function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <Car className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Experienced Owner-Operator</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Owner-Operated Service
+              </h3>
               <p className="text-gray-400">
-                Experienced, licensed owner-operator handling your vehicle with care and professionalism.
+                Work directly with an owner-operator who values careful handling,
+                communication, and dependable service.
               </p>
             </div>
 
@@ -196,9 +247,12 @@ export default function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <MapPin className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Door-to-Door Service</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Door-to-Door Convenience
+              </h3>
               <p className="text-gray-400">
-                Convenient pickup from your location and delivery directly to your destination.
+                Pickup from your location and delivery to the destination you
+                choose, with a simple and direct process.
               </p>
             </div>
 
@@ -206,9 +260,12 @@ export default function Services() {
               <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
                 <CheckCircle className="text-orange-500" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Delivery Confirmation</h3>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Delivery Confirmation
+              </h3>
               <p className="text-gray-400">
-                Digital delivery confirmation with signature and condition report upon arrival.
+                Clear delivery confirmation helps give customers confidence from
+                pickup to final drop-off.
               </p>
             </div>
           </div>
@@ -220,34 +277,47 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our <span className="text-orange-500">Service Area</span>
+              Service <span className="text-orange-500">Area</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Professional vehicle transport services in Arizona.
+              Reliable vehicle pickup and delivery based in Arizona.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto bg-neutral-900 rounded-lg p-8 border-2 border-orange-500/30">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                <span className="text-lg font-bold text-white">Arizona (Primary Service Area)</span>
+                <CheckCircle
+                  className="text-orange-500 mr-3 flex-shrink-0"
+                  size={20}
+                />
+                <span className="text-lg font-bold text-white">
+                  Arizona (Primary Service Area)
+                </span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                <span className="text-lg font-bold text-white">Nearby states available by request only</span>
+                <CheckCircle
+                  className="text-orange-500 mr-3 flex-shrink-0"
+                  size={20}
+                />
+                <span className="text-lg font-bold text-white">
+                  Nearby states available by request
+                </span>
               </div>
             </div>
 
             <div className="bg-orange-900/20 border border-orange-500/50 p-4 rounded mb-6">
               <p className="text-orange-100 text-sm font-semibold">
-                Out-of-state transport is limited and scheduled based on availability
+                Out-of-state transport is limited and scheduled based on route
+                availability.
               </p>
             </div>
 
             <div className="border-t border-neutral-700 pt-6 text-center">
               <p className="text-gray-300">
-                <strong className="text-white">Based in Arizona,</strong> I specialize in reliable local and regional vehicle transport throughout the state.
+                <strong className="text-white">Based in Arizona,</strong> I
+                provide dependable local and regional vehicle pickup and
+                delivery with direct, owner-operated service.
               </p>
             </div>
           </div>
@@ -261,14 +331,14 @@ export default function Services() {
             Ready to Schedule Your Vehicle Pickup?
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Safe, insured vehicle pickup and delivery across Arizona. Owner-operated and professionally handled.
+            Insured, owner-operated vehicle pickup and delivery across Arizona.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
               to="/request-pickup"
               className="inline-flex items-center justify-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
             >
-              Request a Pickup
+              Request a Quote
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <Link
@@ -281,11 +351,11 @@ export default function Services() {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-orange-50 text-sm font-semibold">
             <div className="flex items-center">
               <CheckCircle className="mr-2" size={16} />
-              <span>Fully Insured</span>
+              <span>Insured Service</span>
             </div>
             <div className="flex items-center">
               <CheckCircle className="mr-2" size={16} />
-              <span>Professional Owner-Operator</span>
+              <span>Owner-Operated</span>
             </div>
             <div className="flex items-center">
               <CheckCircle className="mr-2" size={16} />
