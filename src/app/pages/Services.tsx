@@ -47,7 +47,7 @@ export default function Services() {
       title: "Auto Parts Delivery",
       description:
         "Fast pickup and delivery of auto parts between shops, dealerships, warehouses, and customers. Ideal for urgent parts that cannot wait for standard shipping.",
-      image: "/images/auto-parts-delivery.jpg",
+      image: "/public/images/auto-parts-delivery.jpg",
       features: [
         "Engines, transmissions, and large parts",
         "Dealership and repair shop delivery",
@@ -60,7 +60,7 @@ export default function Services() {
       title: "Small Packages & Business Delivery",
       description:
         "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Ideal for local businesses needing fast, dependable service.",
-      image: "/images/package-delivery.jpg",
+      image: "/public/images/package-delivery.jpg",
       features: [
         "Business-to-business delivery",
         "Urgent same-day delivery available",
