@@ -73,7 +73,7 @@ export default function Services() {
       title: "Local Arizona Delivery",
       description:
         "Same-day and next-day delivery across the Arizona metro area for vehicles, auto parts, and business items. A simple, direct solution for customers who need reliable local service.",
-      image: "/images/local-az-delivery.jpg",
+      image: "/images/Local-az-delivery.jpg",
       features: [
         "Phoenix metro and surrounding areas",
         "Same-day delivery available",
