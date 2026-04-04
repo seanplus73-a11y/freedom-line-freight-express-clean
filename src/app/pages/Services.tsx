@@ -9,6 +9,8 @@ import {
   Shield,
   Clock,
   Camera,
+  Package,
+  Wrench,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
@@ -41,23 +43,49 @@ export default function Services() {
       ],
     },
     {
+      icon: Wrench,
+      title: "Auto Parts Delivery",
+      description:
+        "Fast pickup and delivery of auto parts between shops, dealerships, warehouses, and customers. Ideal for urgent parts that cannot wait for standard shipping.",
+      image: "/images/auto-parts-delivery.jpg",
+      features: [
+        "Engines, transmissions, and large parts",
+        "Dealership and repair shop delivery",
+        "Same-day delivery available",
+        "Careful handling during loading and transport",
+      ],
+    },
+    {
+      icon: Package,
+      title: "Small Packages & Business Delivery",
+      description:
+        "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Ideal for local businesses needing fast, dependable service.",
+      image: "/images/package-delivery.jpg",
+      features: [
+        "Business-to-business delivery",
+        "Urgent same-day delivery available",
+        "Flexible pickup and drop-off times",
+        "Handled securely and professionally",
+      ],
+    },
+    {
       icon: MapPin,
       title: "Local Arizona Delivery",
       description:
-        "Same-day and next-day vehicle delivery across the Arizona metro area. A simple, direct solution for customers who need reliable local transport.",
-      image: "/images/Local-az-delivery.jpg",
+        "Same-day and next-day delivery across the Arizona metro area for vehicles, auto parts, and business items. A simple, direct solution for customers who need reliable local service.",
+      image: "/images/local-az-delivery.jpg",
       features: [
         "Phoenix metro and surrounding areas",
         "Same-day delivery available",
         "Direct point-to-point service",
-        "One vehicle at a time, handled with care",
+        "Handled with care and professionalism",
       ],
     },
     {
       icon: Map,
       title: "Regional Transport",
       description:
-        "Vehicle pickup and delivery throughout Arizona, with nearby out-of-state transport available by request. Ideal for longer-distance moves that still need direct, dependable service.",
+        "Pickup and delivery throughout Arizona, with nearby out-of-state transport available by request. Ideal for longer-distance moves that still need direct, dependable service.",
       image: "/images/regional-transport.jpg",
       features: [
         "Arizona statewide service",
@@ -67,32 +95,7 @@ export default function Services() {
       ],
     },
   ];
-    {
-  icon: Car,
-  title: "Auto Parts Delivery",
-  description:
-    "Fast pickup and delivery of auto parts between shops, dealerships, warehouses, and customers. Ideal for urgent parts that cannot wait for standard shipping.",
-  image: "/images/auto-parts-delivery.jpg",
-  features: [
-    "Engines, transmissions, and large parts",
-    "Dealership and repair shop delivery",
-    "Same-day delivery available",
-    "Careful handling during loading and transport",
-  ],
-},
-{
-  icon: MapPin,
-  title: "Small Packages & Business Delivery",
-  description:
-    "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Perfect for local businesses needing fast service.",
-  image: "/images/package-delivery.jpg",
-  features: [
-    "Business-to-business delivery",
-    "Urgent same-day delivery available",
-    "Flexible pickup and drop-off times",
-    "Handled securely and professionally",
-  ],
-},
+
   return (
     <div className="bg-neutral-900">
       {/* Hero Section */}
@@ -101,23 +104,23 @@ export default function Services() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center bg-neutral-800 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-neutral-700">
               <Car className="mr-2 text-orange-500" size={18} />
-              Vehicle Pickup & Delivery Service
+              Vehicle, Auto Parts & Package Delivery
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Professional{" "}
               <span className="text-orange-500">
-                Vehicle Pickup & Delivery
+                Pickup & Delivery Services
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-4">
-              Reliable vehicle pickup and delivery across Arizona. From personal
-              vehicles to dealer transfers, every trip is handled with care,
-              professionalism, and direct service.
+              Reliable pickup and delivery across Arizona for vehicles, auto
+              parts, and small business packages. Every trip is handled with
+              care, professionalism, and direct service.
             </p>
             <div className="mt-4 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                Your vehicle is picked up and delivered directly with no
-                unnecessary transfers and no shared transport schedule.
+                Direct service with no unnecessary transfers, no shared carrier
+                schedule, and careful handling from pickup to delivery.
               </p>
             </div>
           </div>
@@ -182,7 +185,7 @@ export default function Services() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What’s Included with{" "}
-              <span className="text-orange-500">Every Transport</span>
+              <span className="text-orange-500">Every Delivery</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Professional standards and dependable service on every pickup and
@@ -199,8 +202,8 @@ export default function Services() {
                 Insured Service
               </h3>
               <p className="text-gray-400">
-                Your vehicle is handled with care and protected throughout
-                pickup, transport, and delivery.
+                Your items and vehicle are handled with care throughout pickup,
+                transport, and delivery.
               </p>
             </div>
 
@@ -212,7 +215,7 @@ export default function Services() {
                 Photo Documentation
               </h3>
               <p className="text-gray-400">
-                Vehicle photos can be documented at pickup and delivery for added
+                Photos can be taken at pickup and delivery for added
                 transparency and peace of mind.
               </p>
             </div>
@@ -225,8 +228,8 @@ export default function Services() {
                 Flexible Scheduling
               </h3>
               <p className="text-gray-400">
-                Same-day, next-day, and scheduled transport options are
-                available based on timing and route availability.
+                Same-day, next-day, and scheduled service are available based on
+                timing and route availability.
               </p>
             </div>
 
@@ -238,8 +241,8 @@ export default function Services() {
                 Owner-Operated Service
               </h3>
               <p className="text-gray-400">
-                Work directly with an owner-operator who values careful handling,
-                communication, and dependable service.
+                Work directly with an owner-operator who values careful
+                handling, communication, and dependable service.
               </p>
             </div>
 
@@ -252,7 +255,7 @@ export default function Services() {
               </h3>
               <p className="text-gray-400">
                 Pickup from your location and delivery to the destination you
-                choose, with a simple and direct process.
+                choose with a simple, direct process.
               </p>
             </div>
 
@@ -280,7 +283,7 @@ export default function Services() {
               Service <span className="text-orange-500">Area</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Reliable vehicle pickup and delivery based in Arizona.
+              Reliable pickup and delivery service based in Arizona.
             </p>
           </div>
 
@@ -308,7 +311,7 @@ export default function Services() {
 
             <div className="bg-orange-900/20 border border-orange-500/50 p-4 rounded mb-6">
               <p className="text-orange-100 text-sm font-semibold">
-                Out-of-state transport is limited and scheduled based on route
+                Out-of-state delivery is limited and scheduled based on route
                 availability.
               </p>
             </div>
@@ -316,8 +319,8 @@ export default function Services() {
             <div className="border-t border-neutral-700 pt-6 text-center">
               <p className="text-gray-300">
                 <strong className="text-white">Based in Arizona,</strong> I
-                provide dependable local and regional vehicle pickup and
-                delivery with direct, owner-operated service.
+                provide dependable local and regional pickup and delivery for
+                vehicles, auto parts, and business items.
               </p>
             </div>
           </div>
@@ -328,10 +331,10 @@ export default function Services() {
       <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Schedule Your Vehicle Pickup?
+            Ready to Schedule a Pickup?
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Insured, owner-operated vehicle pickup and delivery across Arizona.
+            Vehicles, auto parts, and small package delivery across Arizona.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
