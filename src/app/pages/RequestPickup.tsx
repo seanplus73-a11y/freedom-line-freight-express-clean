@@ -270,8 +270,9 @@ export function RequestPickup() {
                       </select>
                     </div>
 
-                    {isVehicleService ? (
-                      <div>
+                    const isNonVehicleService =
+  formData.serviceType.includes("Transport") &&
+  !formData.serviceType.includes("Vehicle");
                         <label
                           htmlFor="vehicleCondition"
                           className="block text-sm font-bold text-gray-300 mb-2"
