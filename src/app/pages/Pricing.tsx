@@ -363,25 +363,25 @@ export default function Pricing() {
 </section>
 
       {/* Small Packages */}
-      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
-        <h3 className="text-xl font-bold text-white mb-2">Small Packages & Business Items</h3>
-        <p className="text-gray-400 text-sm mb-4">Local business transport</p>
+<div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+  ...
+</div>
 
-        <div className="mb-4">
-          <span className="text-3xl font-bold text-orange-500">$35+</span>
-        </div>
+{/* Documents */}
+<div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+  ...
+</div>
 
-        <ul className="space-y-2 text-sm text-gray-300 mb-6">
-          <li>• Business-to-business transport</li>
-          <li>• Same-day or scheduled service</li>
-          <li>• Flexible pickup/drop-off</li>
-          <li>• Direct owner-operated service</li>
-        </ul>
+</div>
 
-        <Link to="/request-pickup" className="text-orange-500 font-bold">
-          Request Quote →
-        </Link>
-      </div>
+<div className="mt-8 text-center">
+  <p className="text-sm text-gray-400 italic">
+    Final pricing depends on size, weight, distance, urgency, and scheduling requirements.
+  </p>
+</div>
+
+</div>
+</section>
 
       {/* Documents */}
       <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
