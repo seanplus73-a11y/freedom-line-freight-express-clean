@@ -62,7 +62,7 @@ export default function Services() {
       description:
         "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Ideal for local businesses needing fast, dependable service.",
       image: "/images/package-trunk.jpg",
-      secondImage: "/images/package-loading.jpg",
+      secondImage: "https://images.pexels.com/photos/8931732/pexels-photo-8931732.jpeg?auto=compress&cs=tinysrgb&w=1200",
       features: [
         "Business-to-business delivery",
         "Urgent same-day delivery available",
@@ -75,7 +75,7 @@ export default function Services() {
       title: "Local Arizona Delivery",
       description:
         "Same-day and next-day delivery across the Arizona metro area for vehicles, auto parts, and business items. A simple, direct solution for customers who need reliable local service.",
-      image: "public/images/local-az-delivery.jpg",
+      image: "/images/local-az-delivery.jpg",
       features: [
         "Phoenix metro and surrounding areas",
         "Same-day delivery available",
@@ -141,19 +141,26 @@ export default function Services() {
                   className="bg-neutral-900 border border-neutral-700 rounded-lg overflow-hidden hover:border-orange-500 transition-colors"
                 >
                   {service.secondImage ? (
-                  <div className="h-64 overflow-hidden grid grid-cols-2 gap-2 p-2 bg-neutral-900">
-                  <ImageWithFallback
-                  src={https://images.pexels.com/photos/8931732/pexels-photo-8931732.jpeg?auto=compress&cs=tinysrgb&w=120}
-                  alt={service.title}
-                  className="w-full h-full object-cover rounded"
-               />
-             <ImageWithFallback
-                src={service.secondImage || service.image}
-                alt={`${service.title} secondary`}
-                className="w-full h-full object-cover rounded"
-               />
-               </div>
-
+                    <div className="grid grid-cols-2 gap-0 h-64 overflow-hidden">
+                      <ImageWithFallback
+                        src={service.image}
+                        alt={`${service.title} main`}
+                        className="w-full h-full object-cover"
+                      />
+                      <ImageWithFallback
+                        src={service.secondImage}
+                        alt={`${service.title} secondary`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-64 overflow-hidden">
+                      <ImageWithFallback
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   )}
 
                   <div className="p-8">
