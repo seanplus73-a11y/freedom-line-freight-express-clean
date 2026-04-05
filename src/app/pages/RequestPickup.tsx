@@ -11,7 +11,6 @@ import {
   AlertCircle,
 } from "lucide-react";
 
-// Request Pickup form component with Google Analytics tracking
 export function RequestPickup() {
   const [formData, setFormData] = useState({
     customerName: "",
@@ -98,7 +97,9 @@ export function RequestPickup() {
       if (!response.ok) {
         console.error("Full error response:", data);
         const errorMessage = data.error || "Failed to submit quote request";
-        const detailsMessage = data.airtableError ? `\n\nDetails: ${data.airtableError}` : "";
+        const detailsMessage = data.details?.error?.message
+          ? `\n\nDetails: ${data.details.error.message}`
+          : "";
         throw new Error(errorMessage + detailsMessage);
       }
 
@@ -151,7 +152,6 @@ export function RequestPickup() {
 
   return (
     <div className="bg-neutral-900">
-      {/* Hero Section */}
       <section className="bg-black text-white py-20 border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -178,7 +178,6 @@ export function RequestPickup() {
         </div>
       </section>
 
-      {/* Form Section */}
       <section className="py-20 bg-neutral-900">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-neutral-800 rounded-lg border border-neutral-700 p-8">
@@ -208,7 +207,6 @@ export function RequestPickup() {
                   </div>
                 )}
 
-                {/* Service Information */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -261,56 +259,9 @@ export function RequestPickup() {
                         <option value="Auto Parts Transport">Auto Parts Transport</option>
                       </select>
                     </div>
+
                     {isVehicleService ? (
                       <div>
-                        <label
-                          htmlFor="vehicleCondition"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          Vehicle Condition *
-                        </label>
-                        <select
-                          id="vehicleCondition"
-                          name="vehicleCondition"
-                          value={formData.vehicleCondition}
-                          onChange={handleChange}
-                          required={isVehicleService}
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        >
-                          <option value="Runs and Drives (Fully Operable)">
-                            Runs and Drives (Fully Operable)
-                          </option>
-                        </select>
-                        <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
-                      </div>
-                    ) : isNonVehicleService ? (
-                      <div>
-                        <label
-                          htmlFor="itemType"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          Item Type *
-                        </label>
-                        <select
-                          id="itemType"
-                          name="itemType"
-                          value={formData.itemType}
-                          onChange={handleChange}
-                          required={isNonVehicleService}
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        >
-                          <option value="">Select item type</option>
-                          <option value="Business Items">Business Items</option>
-                          <option value="Luggage / Personal Items">Luggage / Personal Items</option>
-                          <option value="Documents">Documents</option>
-                          <option value="Small Packages">Small Packages</option>
-                          <option value="Auto Parts">Auto Parts</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
-                    ) : (
-                      <div />
-                    )}
                         <label
                           htmlFor="vehicleCondition"
                           className="block text-sm font-bold text-gray-300 mb-2"
@@ -362,7 +313,37 @@ export function RequestPickup() {
                   </div>
                 </div>
 
-                {/* Vehicle Information */}
+                {isNonVehicleService && (
+                  <div>
+                    <div className="flex items-center mb-6">
+                      <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                        <Package className="text-white" size={20} />
+                      </div>
+                      <h2 className="text-2xl font-bold text-white">Transport Item Information</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-6">
+                      <div>
+                        <label
+                          htmlFor="itemDetails"
+                          className="block text-sm font-bold text-gray-300 mb-2"
+                        >
+                          Item Details
+                        </label>
+                        <textarea
+                          id="itemDetails"
+                          name="itemDetails"
+                          value={formData.itemDetails}
+                          onChange={handleChange}
+                          rows={4}
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                          placeholder="Describe items, quantity, size, weight, and any special handling requirements."
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {isVehicleService && (
                   <div>
                     <div className="mb-8 bg-orange-900/20 border border-orange-500 p-6 rounded-lg">
@@ -463,39 +444,6 @@ export function RequestPickup() {
                   </div>
                 )}
 
-                {/* Transport Item Information */}
-                {isNonVehicleService && (
-                  <div>
-                    <div className="flex items-center mb-6">
-                      <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                        <Package className="text-white" size={20} />
-                      </div>
-                      <h2 className="text-2xl font-bold text-white">Transport Item Information</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-6">
-                      <div>
-                        <label
-                          htmlFor="itemDetails"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          Item Details
-                        </label>
-                        <textarea
-                          id="itemDetails"
-                          name="itemDetails"
-                          value={formData.itemDetails}
-                          onChange={handleChange}
-                          rows={4}
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="Describe the item(s), quantity, approximate size, weight, or any special handling notes"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Pickup Information */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -585,7 +533,6 @@ export function RequestPickup() {
                   </div>
                 </div>
 
-                {/* Drop-Off Information */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -675,7 +622,6 @@ export function RequestPickup() {
                   </div>
                 </div>
 
-                {/* Contact Information */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -762,7 +708,6 @@ export function RequestPickup() {
                   </div>
                 </div>
 
-                {/* Notes */}
                 <div>
                   <label htmlFor="notes" className="block text-sm font-bold text-gray-300 mb-2">
                     Additional Notes
@@ -778,7 +723,6 @@ export function RequestPickup() {
                   />
                 </div>
 
-                {/* Preferred Date */}
                 <div>
                   <label
                     htmlFor="preferredPickupDate"
@@ -799,7 +743,6 @@ export function RequestPickup() {
                   </p>
                 </div>
 
-                {/* Vehicle confirmation only for vehicles */}
                 {isVehicleService && (
                   <div className="mb-2 bg-neutral-700/50 p-6 rounded-lg border-2 border-orange-500/50">
                     <div className="flex items-start">
