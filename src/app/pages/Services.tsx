@@ -21,7 +21,7 @@ export default function Services() {
       title: "Personal Vehicle Pickup & Delivery",
       description:
         "Direct pickup and delivery for cars, SUVs, and light-duty trucks across Arizona. Ideal for customers who need reliable, point-to-point service without the delays of larger transport networks.",
-      image: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "https://i.ibb.co/67tDGgGR/personal-vehicle-transport.jpg",
       features: [
         "Cars, SUVs, and light-duty trucks",
         "Same-day or next-day service available",
@@ -60,7 +60,7 @@ export default function Services() {
       title: "Small Packages & Business Delivery",
       description:
         "Reliable delivery for small packages, documents, and business items across Arizona. Perfect for local businesses that need direct service, flexible timing, and dependable handling.",
-      image: "https://images.pexels.com/photos/7363157/pexels-photo-7363157.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "https://images.pexels.com/photos/7363157/pexels-photo-7363157.jpeg,
       features: [
         "Business-to-business delivery",
         "Urgent same-day delivery available",
