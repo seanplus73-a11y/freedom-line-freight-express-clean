@@ -32,9 +32,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Only allow POST
   if (req.method !== "POST") {
-    return res
-      .status(405)
-      .json({ success: false, error: "Method not allowed" });
+    return res.status(405).json({
+      success: false,
+      error: "Method not allowed",
+    });
   }
 
   try {
@@ -73,24 +74,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       timestamp: new Date().toISOString(),
     });
 
-    // Current Airtable single select vehicle service options
+    // Match Airtable single select options exactly
     const vehicleServiceTypes = [
-  "Local Vehicle Transport (0 to 50 miles)",
-  "Regional Vehicle Transport (50 to 150 miles)",
-  "Long Distance Vehicle Transport (Interstate)",
-  "Long Distance (150+ miles) - Custom Quote",
-  "Dealer or Auction Pickup",
-  "Private Party Vehicle Transport"
-];
-  const nonVehicleServiceTypes = [
-  "Direct Business Transport",
-  "Luggage Transport",
-  "Documents & Small Packages",
-  "Auto Parts Transport"
-];
+      "Local Vehicle Transport (0 to 50 miles)",
+      "Regional Vehicle Transport (50 to 150 miles)",
+      "Long Distance Vehicle Transport (Interstate)",
+      "Dealer or Auction Pickup",
+      "Private Party Vehicle Transport",
+    ];
 
-const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType);
+    const nonVehicleServiceTypes = [
+      "Direct Business Transport",
+      "Luggage Transport",
+      "Documents & Small Packages",
+      "Auto Parts Transport",
+    ];
+
     const isVehicleService = vehicleServiceTypes.includes(serviceType);
+    const isNonVehicleService = nonVehicleServiceTypes.includes(serviceType);
 
     // Base required fields
     const requiredFields: Array<{ key: string; value: string | boolean }> = [
@@ -107,15 +108,7 @@ const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType
       { key: "dropoffState", value: dropoffState },
       { key: "dropoffZip", value: dropoffZip },
     ];
-      if (isNonVehicleService) {
-  if (formData.itemType) {
-    fields["Q_ItemType"] = formData.itemType;
-  }
 
-  if (formData.itemDetails) {
-    fields["Q_ItemDetails"] = formData.itemDetails;
-  }
-}
     // Vehicle-only required fields
     if (isVehicleService) {
       requiredFields.push(
@@ -145,7 +138,6 @@ const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType
       });
     }
 
-    // Validate operable confirmation for vehicle services only
     if (isVehicleService && formData.operableConfirmation !== true) {
       console.error("Validation failed: Operable confirmation not checked");
       return res.status(400).json({
@@ -199,13 +191,15 @@ const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType
       if (vinNumber) fields["Q_VIN"] = vinNumber;
     }
 
-    // Non-vehicle / business delivery fields
-    if (itemType) {
-      fields["Q_ItemType"] = itemType;
-    }
+    // Non-vehicle fields
+    if (isNonVehicleService) {
+      if (itemType) {
+        fields["Q_ItemType"] = itemType;
+      }
 
-    if (itemDetails) {
-      fields["Q_ItemDetails"] = itemDetails;
+      if (itemDetails) {
+        fields["Q_ItemDetails"] = itemDetails;
+      }
     }
 
     // Optional preferred pickup date
@@ -225,6 +219,7 @@ const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType
     console.log("Sending to Airtable Leads table...", {
       serviceType,
       isVehicleService,
+      isNonVehicleService,
     });
 
     const airtableResponse = await fetch(
@@ -239,8 +234,7 @@ const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType
       }
     );
 
-    const airtableData =
-      (await airtableResponse.json()) as AirtableResponse;
+    const airtableData = (await airtableResponse.json()) as AirtableResponse;
 
     console.log("Airtable response status:", airtableResponse.status);
 
