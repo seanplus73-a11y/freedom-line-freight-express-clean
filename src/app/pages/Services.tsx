@@ -60,7 +60,7 @@ export default function Services() {
       title: "Small Packages & Business Delivery",
       description:
         "Reliable delivery for small packages, documents, and business items across Arizona. Perfect for local businesses that need direct service, flexible timing, and dependable handling.",
-      image: "https://images.pexels.com/photos/7363157/pexels-photo-7363157.jpeg",
+      image: "https://images.pexels.com/photos/8931732/pexels-photo-8931732.jpeg?auto=compress&cs=tinysrgb&w=1200",
       features: [
         "Business-to-business delivery",
         "Urgent same-day delivery available",
