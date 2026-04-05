@@ -61,8 +61,8 @@ export default function Services() {
       title: "Small Packages & Business Delivery",
       description:
         "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Ideal for local businesses needing fast, dependable service.",
-      image: "https://images.pexels.com/photos/7363157/pexels-photo-7363157.jpeg",
-      secondImage: "https://images.pexels.com/photos/8931732/pexels-photo-8931732.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "/images/package-trunk.jpg",
+      secondImage: "/images/package-loading.jpg",
       features: [
         "Business-to-business delivery",
         "Urgent same-day delivery available",
@@ -75,7 +75,7 @@ export default function Services() {
       title: "Local Arizona Delivery",
       description:
         "Same-day and next-day delivery across the Arizona metro area for vehicles, auto parts, and business items. A simple, direct solution for customers who need reliable local service.",
-      image: "public/images/local-az-delivery.jpg",
+      image: "/images/local-az-delivery.jpg",
       features: [
         "Phoenix metro and surrounding areas",
         "Same-day delivery available",
@@ -141,7 +141,7 @@ export default function Services() {
                   className="bg-neutral-900 border border-neutral-700 rounded-lg overflow-hidden hover:border-orange-500 transition-colors"
                 >
                   {service.secondImage ? (
-                    <div className="grid grid-cols-2 gap-0 h-64 overflow-hidden">
+                    <div className="grid grid-cols-2 h-64 overflow-hidden">
                       <ImageWithFallback
                         src={service.image}
                         alt={`${service.title} main`}
@@ -171,17 +171,19 @@ export default function Services() {
                       {service.title}
                     </h3>
                     <p className="text-gray-400 mb-6">{service.description}</p>
+
                     <ul className="space-y-3 mb-6">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
                           <CheckCircle
-                            className="text-orange-500 mr-3 flex-shrink-0 mt-0.5"
+                            className="text-orange-500 mr-3 mt-0.5"
                             size={20}
                           />
                           <span className="text-gray-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
+
                     <Link
                       to="/request-pickup"
                       className="text-orange-500 font-bold inline-flex items-center hover:text-orange-400 transition-colors"
@@ -193,195 +195,6 @@ export default function Services() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* What's Included */}
-      <section className="py-20 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What’s Included with{" "}
-              <span className="text-orange-500">Every Delivery</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Professional standards and dependable service on every pickup and
-              delivery.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
-                <Shield className="text-orange-500" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Insured Service
-              </h3>
-              <p className="text-gray-400">
-                Your items and vehicle are handled with care throughout pickup,
-                transport, and delivery.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
-                <Camera className="text-orange-500" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Photo Documentation
-              </h3>
-              <p className="text-gray-400">
-                Photos can be taken at pickup and delivery for added
-                transparency and peace of mind.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
-                <Clock className="text-orange-500" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Flexible Scheduling
-              </h3>
-              <p className="text-gray-400">
-                Same-day, next-day, and scheduled service are available based on
-                timing and route availability.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
-                <Car className="text-orange-500" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Owner-Operated Service
-              </h3>
-              <p className="text-gray-400">
-                Work directly with an owner-operator who values careful
-                handling, communication, and dependable service.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
-                <MapPin className="text-orange-500" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Door-to-Door Convenience
-              </h3>
-              <p className="text-gray-400">
-                Pickup from your location and delivery to the destination you
-                choose with a simple, direct process.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20">
-                <CheckCircle className="text-orange-500" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Delivery Confirmation
-              </h3>
-              <p className="text-gray-400">
-                Clear delivery confirmation helps give customers confidence from
-                pickup to final drop-off.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Area */}
-      <section className="py-20 bg-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Service <span className="text-orange-500">Area</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Reliable pickup and delivery service based in Arizona.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto bg-neutral-900 rounded-lg p-8 border-2 border-orange-500/30">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center">
-                <CheckCircle
-                  className="text-orange-500 mr-3 flex-shrink-0"
-                  size={20}
-                />
-                <span className="text-lg font-bold text-white">
-                  Arizona (Primary Service Area)
-                </span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle
-                  className="text-orange-500 mr-3 flex-shrink-0"
-                  size={20}
-                />
-                <span className="text-lg font-bold text-white">
-                  Nearby states available by request
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-orange-900/20 border border-orange-500/50 p-4 rounded mb-6">
-              <p className="text-orange-100 text-sm font-semibold">
-                Out-of-state delivery is limited and scheduled based on route
-                availability.
-              </p>
-            </div>
-
-            <div className="border-t border-neutral-700 pt-6 text-center">
-              <p className="text-gray-300">
-                <strong className="text-white">Based in Arizona,</strong> I
-                provide dependable local and regional pickup and delivery for
-                vehicles, auto parts, and business items.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Schedule a Pickup?
-          </h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Vehicles, auto parts, and small package delivery across Arizona.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Link
-              to="/request-pickup"
-              className="inline-flex items-center justify-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
-            >
-              Request a Quote
-              <ArrowRight className="ml-2" size={20} />
-            </Link>
-            <Link
-              to="/pricing"
-              className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-orange-600 transition-colors"
-            >
-              View Pricing
-            </Link>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-orange-50 text-sm font-semibold">
-            <div className="flex items-center">
-              <CheckCircle className="mr-2" size={16} />
-              <span>Insured Service</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="mr-2" size={16} />
-              <span>Owner-Operated</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="mr-2" size={16} />
-              <span>Flexible Scheduling</span>
-            </div>
           </div>
         </div>
       </section>
