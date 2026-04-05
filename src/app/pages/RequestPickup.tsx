@@ -46,20 +46,20 @@ export function RequestPickup() {
   const vehicleServiceTypes = [
     "Local Vehicle Transport (0 to 50 miles)",
     "Regional Vehicle Transport (50 to 150 miles)",
-    "Long Distance (150+ miles) — Custom Quote",
+    "Long Distance Vehicle Transport (Interstate)",
     "Dealer or Auction Pickup",
     "Private Party Vehicle Transport",
   ];
 
-  const deliveryServiceTypes = [
-    "Same-Day Local Delivery",
-    "Luggage Delivery",
-    "Small Package / Document Delivery",
-    "Auto Parts Delivery",
+  const nonVehicleServiceTypes = [
+    "Direct Business Transport",
+    "Luggage Transport",
+    "Documents & Small Packages",
+    "Auto Parts Transport",
   ];
 
   const isVehicleService = vehicleServiceTypes.includes(formData.serviceType);
-  const isDeliveryService = deliveryServiceTypes.includes(formData.serviceType);
+  const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -112,11 +112,11 @@ export function RequestPickup() {
       setIsSubmitted(true);
 
       // Track successful form submission in Google Analytics
-      if (data.success && typeof window !== 'undefined' && window.gtag) {
-        console.log('GA quote_submit firing');
-        window.gtag('event', 'quote_submit', {
-          event_category: 'engagement',
-          event_label: 'Quote Form'
+      if (data.success && typeof window !== "undefined" && window.gtag) {
+        console.log("GA quote_submit firing");
+        window.gtag("event", "quote_submit", {
+          event_category: "engagement",
+          event_label: "Quote Form",
         });
       }
 
@@ -163,20 +163,20 @@ export function RequestPickup() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Request <span className="text-orange-500">Pickup & Delivery</span>
+              Request <span className="text-orange-500">Pickup & Transport</span>
             </h1>
             <p className="text-xl text-gray-300 mb-4">
-              Request a quote for fast vehicle transport or same-day local delivery. Fill out the form
-              below and I'll review your route, service type, and details.
+              Request a quote for vehicle transport, auto parts transport, or direct business transport.
+              Fill out the form below and I&apos;ll review your route, service type, and details.
             </p>
             <p className="text-lg text-orange-400 font-bold">
-              Sedans, SUVs, small heavy-duty trucks, luggage, personal items, small packages,
-              documents, and auto parts.
+              Sedans, SUVs, small heavy-duty trucks, luggage, personal items, documents,
+              small packages, and auto parts.
             </p>
 
             <div className="mt-6 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                Vehicle transport is for operable vehicles only. Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
+                Vehicle transport is for operable vehicles only. Your vehicle is driven directly to its destination with no trailers, no transfers, and no unnecessary delays.
               </p>
             </div>
           </div>
@@ -194,7 +194,7 @@ export function RequestPickup() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Request Submitted!</h3>
                 <p className="text-lg">
-                  Thank you for your request. I'll review the details and respond with your quote
+                  Thank you for your request. I&apos;ll review the details and respond with your quote
                   as soon as possible.
                 </p>
               </div>
@@ -217,7 +217,7 @@ export function RequestPickup() {
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                      {isDeliveryService ? (
+                      {isNonVehicleService ? (
                         <Package className="text-white" size={20} />
                       ) : (
                         <Car className="text-white" size={20} />
@@ -249,19 +249,21 @@ export function RequestPickup() {
                         <option value="Regional Vehicle Transport (50 to 150 miles)">
                           Regional Vehicle Transport (50 to 150 miles)
                         </option>
-                        <option value="Long Distance (150+ miles) — Custom Quote">
-                          Long Distance (150+ miles) — Custom Quote
+                        <option value="Long Distance Vehicle Transport (Interstate)">
+                          Long Distance Vehicle Transport (Interstate)
                         </option>
                         <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
                         <option value="Private Party Vehicle Transport">
                           Private Party Vehicle Transport
                         </option>
-                        <option value="Same-Day Local Delivery">Same-Day Local Delivery</option>
-                        <option value="Luggage Delivery">Luggage Delivery</option>
-                        <option value="Small Package / Document Delivery">
-                          Small Package / Document Delivery
+                        <option value="Direct Business Transport">
+                          Direct Business Transport
                         </option>
-                        <option value="Auto Parts Delivery">Auto Parts Delivery</option>
+                        <option value="Luggage Transport">Luggage Transport</option>
+                        <option value="Documents & Small Packages">
+                          Documents & Small Packages
+                        </option>
+                        <option value="Auto Parts Transport">Auto Parts Transport</option>
                       </select>
                     </div>
 
@@ -300,13 +302,14 @@ export function RequestPickup() {
                           name="itemType"
                           value={formData.itemType}
                           onChange={handleChange}
-                          required={isDeliveryService}
+                          required={isNonVehicleService}
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                         >
                           <option value="">Select item type</option>
+                          <option value="Business Items">Business Items</option>
                           <option value="Luggage / Personal Items">Luggage / Personal Items</option>
-                          <option value="Small Packages">Small Packages</option>
                           <option value="Documents">Documents</option>
+                          <option value="Small Packages">Small Packages</option>
                           <option value="Auto Parts">Auto Parts</option>
                           <option value="Other">Other</option>
                         </select>
@@ -323,7 +326,7 @@ export function RequestPickup() {
                         Important: Operable Vehicles Only
                       </h3>
                       <p className="text-orange-100 text-lg">
-                        Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
+                        Your vehicle is driven directly to its destination with no trailers, no transfers, and no unnecessary delays.
                       </p>
                     </div>
 
@@ -415,14 +418,14 @@ export function RequestPickup() {
                   </div>
                 )}
 
-                {/* Delivery Item Information */}
-                {isDeliveryService && (
+                {/* Transport Item Information */}
+                {isNonVehicleService && (
                   <div>
                     <div className="flex items-center mb-6">
                       <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
                         <Package className="text-white" size={20} />
                       </div>
-                      <h2 className="text-2xl font-bold text-white">Delivery Item Information</h2>
+                      <h2 className="text-2xl font-bold text-white">Transport Item Information</h2>
                     </div>
 
                     <div className="grid grid-cols-1 gap-6">
