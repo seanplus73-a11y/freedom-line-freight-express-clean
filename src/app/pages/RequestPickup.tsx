@@ -744,7 +744,7 @@ export function RequestPickup() {
                 </div>
 
                 {isVehicleService && (
-                  <div className="mb-2 bg-neutral-700/50 p-6 rounded-lg border-2 border-orange-500/50">
+                  <div className="bg-neutral-700/50 p-6 rounded-lg border-2 border-orange-500/50">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
@@ -753,7 +753,7 @@ export function RequestPickup() {
                         checked={formData.operableConfirmation}
                         onChange={handleChange}
                         required={isVehicleService}
-                        className="mt-1 w-5 h-5 text-orange-500 bg-neutral-900 border-neutral-600 rounded focus:ring-orange-500 focus:ring-2"
+                        className="mt-1 w-5 h-5 text-orange-500 bg-neutral-900 border-neutral-600 rounded focus:ring-orange-500 focus:ring-2 flex-shrink-0"
                       />
                       <label htmlFor="operableConfirmation" className="ml-3 block">
                         <span className="text-white font-bold text-lg">
@@ -770,7 +770,7 @@ export function RequestPickup() {
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="relative z-50 w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Get Quote"}
