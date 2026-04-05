@@ -216,7 +216,12 @@ export function RequestPickup() {
                 {/* Service Information */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
   <div>
-    <label
+    <label>Service Type *</label>
+    <select>...</select>
+  </div>
+
+  {isVehicleService ? (...) : isNonVehicleService ? (...) : <div />}
+</div>
       htmlFor="serviceType"
       className="block text-sm font-bold text-gray-300 mb-2"
     >
