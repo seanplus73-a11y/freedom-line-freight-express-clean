@@ -1,5 +1,16 @@
 import { Link } from "react-router";
-import { ArrowRight, Truck, Clock, Shield, MapPin, CheckCircle, Star, Users, MessageSquare, Car } from "lucide-react";
+import {
+  ArrowRight,
+  Truck,
+  Clock,
+  Shield,
+  CheckCircle,
+  Users,
+  MessageSquare,
+  Car,
+  Package,
+  Briefcase,
+} from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function Home() {
@@ -10,33 +21,43 @@ export default function Home() {
         <div className="absolute inset-0 opacity-50">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Professional vehicle pickup and delivery service"
+            alt="Professional vehicle transport service"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
           <div className="max-w-4xl">
-            {/* Trust Badges - Left Side */}
+            {/* Trust Badges */}
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="flex items-center bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500">
                 <Clock className="text-orange-500 mr-2" size={18} />
-                <span className="text-sm font-semibold text-white">Same Day Available</span>
+                <span className="text-sm font-semibold text-white">
+                  Same Day Available
+                </span>
               </div>
               <div className="flex items-center bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500">
                 <Truck className="text-orange-500 mr-2" size={18} />
-                <span className="text-sm font-semibold text-white">Direct Delivery</span>
+                <span className="text-sm font-semibold text-white">
+                  Direct Transport
+                </span>
               </div>
               <div className="flex items-center bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500">
                 <CheckCircle className="text-orange-500 mr-2" size={18} />
-                <span className="text-sm font-semibold text-white">No Waiting</span>
+                <span className="text-sm font-semibold text-white">
+                  No Waiting
+                </span>
               </div>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Same Day Vehicle Delivery <span className="text-orange-500">No Waiting No Delays</span>
+              Same Day Vehicle Transport{" "}
+              <span className="text-orange-500">
+                Direct Service. No Waiting. No Delays.
+              </span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-gray-300 leading-relaxed max-w-3xl">
-              I personally drive your vehicle directly to its destination with no trailers, no transfers, and no delays.
+              I personally transport your vehicle directly to its destination
+              with no trailers, no transfers, and no unnecessary delays.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -64,21 +85,27 @@ export default function Home() {
             <div>
               <div className="flex items-center justify-center mb-2">
                 <CheckCircle className="text-orange-500 mr-2" size={36} />
-                <div className="text-xl font-bold text-white">Owner-Operated</div>
+                <div className="text-xl font-bold text-white">
+                  Owner-Operated
+                </div>
               </div>
               <div className="text-gray-400 font-semibold">Service</div>
             </div>
             <div>
               <div className="flex items-center justify-center mb-2">
                 <Shield className="text-orange-500 mr-2" size={36} />
-                <div className="text-xl font-bold text-white">Fully Licensed</div>
+                <div className="text-xl font-bold text-white">
+                  Fully Licensed
+                </div>
               </div>
               <div className="text-gray-400 font-semibold">& Insured</div>
             </div>
             <div>
               <div className="flex items-center justify-center mb-2">
                 <Users className="text-orange-500 mr-2" size={36} />
-                <div className="text-xl font-bold text-white">Professional</div>
+                <div className="text-xl font-bold text-white">
+                  Professional
+                </div>
               </div>
               <div className="text-gray-400 font-semibold">Owner-Operator</div>
             </div>
@@ -98,10 +125,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Why Choose <span className="text-orange-500">Freedom Line Freight Express?</span>
+              Why Choose{" "}
+              <span className="text-orange-500">
+                Freedom Line Freight Express?
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
+              Your vehicle is transported directly to its destination with no
+              trailers, no transfers, and no unnecessary delays.
             </p>
           </div>
 
@@ -110,9 +141,11 @@ export default function Home() {
               <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <Clock className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Same Day or Next Day Delivery Available</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Same Day or Next Day Service Available
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Fast turnaround times to meet your urgent transport needs.
+                Fast turnaround times to meet urgent transport needs.
               </p>
             </div>
 
@@ -120,9 +153,12 @@ export default function Home() {
               <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <Truck className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">No Waiting for Truck Routes</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                No Waiting for Carrier Routes
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Your vehicle goes directly where it needs to go without waiting for carrier schedules.
+                Your transport is handled directly without waiting on large
+                carrier schedules.
               </p>
             </div>
 
@@ -130,9 +166,11 @@ export default function Home() {
               <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <CheckCircle className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Direct Delivery with No Loading or Unloading Delays</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Direct Transport with No Unnecessary Delays
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                I drive your vehicle directly. No trailers, no ramps, no waiting.
+                No trailers, no transfers, and no wasted time.
               </p>
             </div>
 
@@ -140,9 +178,12 @@ export default function Home() {
               <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <Car className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">No Multiple Stops with Other Vehicles</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                No Multiple Stops with Other Vehicles
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Your vehicle is the only vehicle I'm transporting, ensuring focused attention.
+                Your vehicle receives focused attention with direct handling from
+                pickup to drop-off.
               </p>
             </div>
 
@@ -150,9 +191,12 @@ export default function Home() {
               <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <MessageSquare className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Real Time Communication with Driver</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Real-Time Communication
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Call or text me directly for updates throughout the entire transport process.
+                Call, text, or email directly for updates throughout the
+                transport process.
               </p>
             </div>
 
@@ -160,9 +204,12 @@ export default function Home() {
               <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <Shield className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Fully Insured & Owner-Operated</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Fully Insured & Owner-Operated
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Licensed, insured, and personally accountable for every delivery.
+                Licensed, insured, and personally accountable on every
+                transport.
               </p>
             </div>
           </div>
@@ -183,9 +230,12 @@ export default function Home() {
               <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold text-white mx-auto mb-6">
                 1
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Schedule Pickup</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Schedule Pickup
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                I coordinate directly with your home, dealership, or auction.
+                I coordinate directly with your home, dealership, auction, shop,
+                or business location.
               </p>
             </div>
 
@@ -193,7 +243,9 @@ export default function Home() {
               <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold text-white mx-auto mb-6">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">In Transit Updates</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                In Transit Updates
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
                 You receive direct communication during transport.
               </p>
@@ -203,9 +255,11 @@ export default function Home() {
               <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold text-white mx-auto mb-6">
                 3
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Secure Delivery</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Secure Delivery
+              </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Vehicle condition confirmed at delivery.
+                Vehicle or item condition is confirmed at delivery.
               </p>
             </div>
           </div>
@@ -219,19 +273,65 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our <span className="text-orange-500">Services</span>
             </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Direct, owner-operated transport with no third-party drivers or
+              app-based delivery.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <h3 className="text-2xl font-bold text-white">Dealership & Auction Transport</h3>
+              <Truck className="text-orange-500 mx-auto mb-4" size={32} />
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Dealership & Auction Transport
+              </h3>
+              <p className="text-gray-400">
+                Direct pickup and transport for dealerships, auctions, and
+                vehicle-related businesses.
+              </p>
             </div>
 
             <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <h3 className="text-2xl font-bold text-white">Private Residential Delivery</h3>
+              <Car className="text-orange-500 mx-auto mb-4" size={32} />
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Private Residential Transport
+              </h3>
+              <p className="text-gray-400">
+                Direct pickup and delivery for personal vehicles from homes,
+                sellers, and private parties.
+              </p>
             </div>
 
             <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <h3 className="text-2xl font-bold text-white">Luxury Vehicle Transport</h3>
+              <Shield className="text-orange-500 mx-auto mb-4" size={32} />
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Luxury Vehicle Transport
+              </h3>
+              <p className="text-gray-400">
+                Careful, direct handling for premium and high-value vehicles.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
+              <Package className="text-orange-500 mx-auto mb-4" size={32} />
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Auto Parts Transport
+              </h3>
+              <p className="text-gray-400">
+                Direct pickup between shops, dealerships, warehouses, and
+                suppliers.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
+              <Briefcase className="text-orange-500 mx-auto mb-4" size={32} />
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Direct Business Transport
+              </h3>
+              <p className="text-gray-400">
+                Priority same-day transport for business items, documents, and
+                small packages.
+              </p>
             </div>
           </div>
         </div>
@@ -244,34 +344,51 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Simple <span className="text-orange-500">Pricing</span>
             </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Clear starting rates for vehicle transport. Auto parts, business
+              items, and documents are quoted separately based on size,
+              distance, and urgency.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
               <h3 className="text-xl font-bold text-white mb-2">Local</h3>
               <p className="text-gray-400 mb-4">0–25 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">$85</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">
+                $85
+              </div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
-              <h3 className="text-xl font-bold text-white mb-2">Extended Local</h3>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Extended Local
+              </h3>
               <p className="text-gray-400 mb-4">25–50 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">$140</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">
+                $140
+              </div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
               <h3 className="text-xl font-bold text-white mb-2">Regional</h3>
               <p className="text-gray-400 mb-4">50–150 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">$285</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">
+                $285
+              </div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
-              <h3 className="text-xl font-bold text-white mb-2">Long Distance</h3>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Long Distance
+              </h3>
               <p className="text-gray-400 mb-4">150+ Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">Custom Quote</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">
+                Custom Quote
+              </div>
               <p className="text-gray-400">Mileage-based pricing</p>
             </div>
           </div>
@@ -294,7 +411,9 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">Get your instant mileage-based quote now. No obligation.</p>
+          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
+            Get your instant mileage-based quote now. No obligation.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/request-pickup"
