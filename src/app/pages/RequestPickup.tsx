@@ -269,7 +269,6 @@ export function RequestPickup() {
                         <option value="Auto Parts Transport">Auto Parts Transport</option>
                       </select>
                     </div>
-
                     {isVehicleService ? (
                       <div>
                         <label
