@@ -44,29 +44,29 @@ export default function Services() {
     },
     {
       icon: Wrench,
-      title: "Auto Parts Delivery",
-      description:
-        "Fast pickup and delivery of auto parts between shops, dealerships, warehouses, and customers. A strong solution for urgent parts that cannot wait on standard shipping.",
+      title: "Auto Parts Transport (Direct Service)",
+description:
+"Direct pickup and transport of auto parts between shops, dealerships, warehouses, and customers. No third-party handling — ideal for urgent, high-value parts that require reliable, same-day service.",
       image: "https://images.pexels.com/photos/12234109/pexels-photo-12234109.jpeg?auto=compress&cs=tinysrgb&w=1200",
       features: [
-        "Engines, transmissions, and large parts",
-        "Repair shop and dealership delivery",
-        "Same-day delivery available",
-        "Careful loading and transport",
-      ],
+  "Engines, transmissions, and large parts",
+  "Repair shop and dealership transport",
+  "Same-day service available",
+  "Handled directly — no middleman",
+],
     },
     {
       icon: Package,
-      title: "Small Packages & Business Delivery",
-      description:
-        "Reliable delivery for small packages, documents, and business items across Arizona. Perfect for local businesses that need direct service, flexible timing, and dependable handling.",
+      title: "Direct Business Transport (Priority Service)",
+description:
+"Direct, priority transport for business items, documents, and equipment across Arizona. No app drivers or transfers — handled personally for speed, security, and reliability.",
       image: "https://images.pexels.com/photos/8931732/pexels-photo-8931732.jpeg?auto=compress&cs=tinysrgb&w=1200",
       features: [
-        "Business-to-business delivery",
-        "Urgent same-day delivery available",
-        "Flexible pickup and drop-off times",
-        "Handled securely and professionally",
-      ],
+  "Business-to-business transport",
+  "Priority same-day service available",
+  "Flexible pickup and drop-off times",
+  "Handled directly by owner — no third-party drivers",
+],
     },
     {
       icon: MapPin,
@@ -104,18 +104,18 @@ export default function Services() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center bg-neutral-800 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-neutral-700">
               <Car className="mr-2 text-orange-500" size={18} />
-              Vehicle, Auto Parts & Business Delivery
+              Vehicle, Auto Parts & Business Transport
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Direct <span className="text-orange-500">Pickup & Delivery</span>{" "}
-              Services Across Arizona
-            </h1>
+           <h1 className="text-4xl md:text-5xl font-bold mb-6">
+  Direct <span className="text-orange-500">Pickup & Transport</span>{" "}
+  Services Across Arizona
+</h1>
             <p className="text-xl text-gray-300 mb-4">
-              Freedom Line Freight Express provides direct, owner-operated pickup
-              and delivery for personal vehicles, auto parts, and business items
-              across Arizona. Every job is handled with care, clear
-              communication, and dependable service from pickup to drop-off.
-            </p>
+  Freedom Line Freight Express provides direct, owner-operated pickup
+  and transport for personal vehicles, auto parts, and business items
+  across Arizona. Every job is handled with care, clear
+  communication, and dependable service from pickup to drop-off.
+</p>
             <div className="mt-4 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
                 Owner-operated. Direct service. No shared loads. No unnecessary
@@ -187,10 +187,10 @@ export default function Services() {
       <section className="py-20 bg-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What You Can Expect with{" "}
-              <span className="text-orange-500">Every Delivery</span>
-            </h2>
+           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+  What You Can Expect with{" "}
+  <span className="text-orange-500">Every Transport</span>
+</h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Freedom Line Freight Express focuses on direct service, careful
               handling, and dependable communication on every job.
@@ -333,13 +333,13 @@ export default function Services() {
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Need a Direct Pickup or Delivery Quote?
-          </h2>
+         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+  Need a Direct Pickup or Transport Quote?
+</h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Get a fast quote for vehicles, auto parts, or business deliveries
-            across Arizona.
-          </p>
+  Get a fast quote for vehicles, auto parts, or business transport services
+  across Arizona.
+</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
