@@ -277,10 +277,94 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* What We Transport Section */}
-      <section className="py-16 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* Business & Parts Transport Pricing */}
+<section className="py-16 bg-neutral-800 border-t border-neutral-700">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div className="text-center mb-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        Business & Parts <span className="text-orange-500">Transport Pricing</span>
+      </h2>
+      <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+        Pricing for auto parts, business items, and documents is separate from vehicle transport. Final quote depends on item size, distance, and urgency.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      {/* Auto Parts */}
+      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2">Auto Parts Transport</h3>
+        <p className="text-gray-400 text-sm mb-4">Engines, transmissions, and shop parts</p>
+
+        <div className="mb-4">
+          <span className="text-3xl font-bold text-orange-500">$45+</span>
+        </div>
+
+        <ul className="space-y-2 text-sm text-gray-300 mb-6">
+          <li>• Shop-to-shop or dealer transport</li>
+          <li>• Same-day service available</li>
+          <li>• Larger parts priced accordingly</li>
+          <li>• Direct handling — no middleman</li>
+        </ul>
+
+        <Link to="/request-pickup" className="text-orange-500 font-bold">
+          Request Quote →
+        </Link>
+      </div>
+
+      {/* Small Packages */}
+      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2">Small Packages & Business Items</h3>
+        <p className="text-gray-400 text-sm mb-4">Local business transport</p>
+
+        <div className="mb-4">
+          <span className="text-3xl font-bold text-orange-500">$35+</span>
+        </div>
+
+        <ul className="space-y-2 text-sm text-gray-300 mb-6">
+          <li>• Business-to-business transport</li>
+          <li>• Same-day or scheduled service</li>
+          <li>• Flexible pickup/drop-off</li>
+          <li>• Direct owner-operated service</li>
+        </ul>
+
+        <Link to="/request-pickup" className="text-orange-500 font-bold">
+          Request Quote →
+        </Link>
+      </div>
+
+      {/* Documents */}
+      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2">Documents & Urgent Deliveries</h3>
+        <p className="text-gray-400 text-sm mb-4">Priority small-item transport</p>
+
+        <div className="mb-4">
+          <span className="text-3xl font-bold text-orange-500">$25+</span>
+        </div>
+
+        <ul className="space-y-2 text-sm text-gray-300 mb-6">
+          <li>• Envelopes, paperwork, checks</li>
+          <li>• Priority same-day delivery</li>
+          <li>• Time-sensitive transport</li>
+          <li>• Fast and direct handling</li>
+        </ul>
+
+        <Link to="/request-pickup" className="text-orange-500 font-bold">
+          Request Quote →
+        </Link>
+      </div>
+
+    </div>
+
+    <div className="mt-8 text-center">
+      <p className="text-sm text-gray-400 italic">
+        Final pricing depends on size, weight, distance, urgency, and scheduling requirements.
+      </p>
+    </div>
+
+  </div>
+</section>
             {/* We Transport */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
