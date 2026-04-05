@@ -111,10 +111,9 @@ export function RequestPickup() {
       console.log("Quote form success:", data);
       setIsSubmitted(true);
 
-      // Track successful form submission in Google Analytics
-      if (data.success && typeof window !== "undefined" && window.gtag) {
+      if (data.success && typeof window !== "undefined" && (window as any).gtag) {
         console.log("GA quote_submit firing");
-        window.gtag("event", "quote_submit", {
+        (window as any).gtag("event", "quote_submit", {
           event_category: "engagement",
           event_label: "Quote Form",
         });
@@ -150,7 +149,9 @@ export function RequestPickup() {
       }, 5000);
     } catch (err: any) {
       console.error("Quote form error:", err);
-      setError(err.message || "Failed to submit quote request. Please try again or contact me directly.");
+      setError(
+        err.message || "Failed to submit quote request. Please try again or contact me directly."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -166,17 +167,19 @@ export function RequestPickup() {
               Request <span className="text-orange-500">Pickup & Transport</span>
             </h1>
             <p className="text-xl text-gray-300 mb-4">
-              Request a quote for vehicle transport, auto parts transport, or direct business transport.
-              Fill out the form below and I&apos;ll review your route, service type, and details.
+              Request a quote for vehicle transport, auto parts transport, or direct business
+              transport. Fill out the form below and I&apos;ll review your route, service type,
+              and details.
             </p>
             <p className="text-lg text-orange-400 font-bold">
-              Sedans, SUVs, small heavy-duty trucks, luggage, personal items, documents,
-              small packages, and auto parts.
+              Sedans, SUVs, small heavy-duty trucks, luggage, personal items, documents, small
+              packages, and auto parts.
             </p>
 
             <div className="mt-6 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                Vehicle transport is for operable vehicles only. Your vehicle is driven directly to its destination with no trailers, no transfers, and no unnecessary delays.
+                Vehicle transport is for operable vehicles only. Your vehicle is driven directly to
+                its destination with no trailers, no transfers, and no unnecessary delays.
               </p>
             </div>
           </div>
@@ -194,8 +197,8 @@ export function RequestPickup() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Request Submitted!</h3>
                 <p className="text-lg">
-                  Thank you for your request. I&apos;ll review the details and respond with your quote
-                  as soon as possible.
+                  Thank you for your request. I&apos;ll review the details and respond with your
+                  quote as soon as possible.
                 </p>
               </div>
             ) : (
@@ -214,103 +217,34 @@ export function RequestPickup() {
                 )}
 
                 {/* Service Information */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-  <div>
-    <label>Service Type *</label>
-    <select>...</select>
-  </div>
+                <div>
+                  <div className="flex items-center mb-6">
+                    <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                      {isNonVehicleService ? (
+                        <Package className="text-white" size={20} />
+                      ) : (
+                        <Car className="text-white" size={20} />
+                      )}
+                    </div>
+                    <h2 className="text-2xl font-bold text-white">Service Information</h2>
+                  </div>
 
-  {isVehicleService ? (...) : isNonVehicleService ? (...) : <div />}
-</div>
-      htmlFor="serviceType"
-      className="block text-sm font-bold text-gray-300 mb-2"
-    >
-      Service Type *
-    </label>
-    <select
-      id="serviceType"
-      name="serviceType"
-      value={formData.serviceType}
-      onChange={handleChange}
-      required
-      className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-    >
-      <option value="">Select service type</option>
-      <option value="Local Vehicle Transport (0 to 50 miles)">
-        Local Vehicle Transport (0 to 50 miles)
-      </option>
-      <option value="Regional Vehicle Transport (50 to 150 miles)">
-        Regional Vehicle Transport (50 to 150 miles)
-      </option>
-      <option value="Long Distance Vehicle Transport (Interstate)">
-        Long Distance Vehicle Transport (Interstate)
-      </option>
-      <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
-      <option value="Private Party Vehicle Transport">
-        Private Party Vehicle Transport
-      </option>
-      <option value="Direct Business Transport">
-        Direct Business Transport
-      </option>
-      <option value="Luggage Transport">Luggage Transport</option>
-      <option value="Documents & Small Packages">
-        Documents & Small Packages
-      </option>
-      <option value="Auto Parts Transport">Auto Parts Transport</option>
-    </select>
-  </div>
-
-  {isVehicleService ? (
-    <div>
-      <label
-        htmlFor="vehicleCondition"
-        className="block text-sm font-bold text-gray-300 mb-2"
-      >
-        Vehicle Condition *
-      </label>
-      <select
-        id="vehicleCondition"
-        name="vehicleCondition"
-        value={formData.vehicleCondition}
-        onChange={handleChange}
-        required
-        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-      >
-        <option value="Runs and Drives (Fully Operable)">
-          Runs and Drives (Fully Operable)
-        </option>
-      </select>
-      <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
-    </div>
-  ) : isNonVehicleService ? (
-    <div>
-      <label
-        htmlFor="itemType"
-        className="block text-sm font-bold text-gray-300 mb-2"
-      >
-        Item Type *
-      </label>
-      <select
-        id="itemType"
-        name="itemType"
-        value={formData.itemType}
-        onChange={handleChange}
-        required={isNonVehicleService}
-        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-      >
-        <option value="">Select item type</option>
-        <option value="Business Items">Business Items</option>
-        <option value="Luggage / Personal Items">Luggage / Personal Items</option>
-        <option value="Documents">Documents</option>
-        <option value="Small Packages">Small Packages</option>
-        <option value="Auto Parts">Auto Parts</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-  ) : (
-    <div />
-  )}
-</div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        htmlFor="serviceType"
+                        className="block text-sm font-bold text-gray-300 mb-2"
+                      >
+                        Service Type *
+                      </label>
+                      <select
+                        id="serviceType"
+                        name="serviceType"
+                        value={formData.serviceType}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      >
                         <option value="">Select service type</option>
                         <option value="Local Vehicle Transport (0 to 50 miles)">
                           Local Vehicle Transport (0 to 50 miles)
@@ -358,7 +292,7 @@ export function RequestPickup() {
                         </select>
                         <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
                       </div>
-                    ) : (
+                    ) : isNonVehicleService ? (
                       <div>
                         <label
                           htmlFor="itemType"
@@ -383,6 +317,8 @@ export function RequestPickup() {
                           <option value="Other">Other</option>
                         </select>
                       </div>
+                    ) : (
+                      <div />
                     )}
                   </div>
                 </div>
@@ -395,7 +331,8 @@ export function RequestPickup() {
                         Important: Operable Vehicles Only
                       </h3>
                       <p className="text-orange-100 text-lg">
-                        Your vehicle is driven directly to its destination with no trailers, no transfers, and no unnecessary delays.
+                        Your vehicle is driven directly to its destination with no trailers, no
+                        transfers, and no unnecessary delays.
                       </p>
                     </div>
 
@@ -609,13 +546,13 @@ export function RequestPickup() {
                   </div>
                 </div>
 
-                {/* Delivery Information */}
+                {/* Drop-Off Information */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
                       <MapPin className="text-white" size={20} />
                     </div>
-                   <h2 className="text-2xl font-bold text-white">Drop-Off Location</h2>
+                    <h2 className="text-2xl font-bold text-white">Drop-Off Location</h2>
                   </div>
 
                   <div className="grid grid-cols-1 gap-6">
@@ -838,7 +775,8 @@ export function RequestPickup() {
                       />
                       <label htmlFor="operableConfirmation" className="ml-3 block">
                         <span className="text-white font-bold text-lg">
-                          I confirm the vehicle starts, steers, brakes, and drives safely. Operable vehicles only. *
+                          I confirm the vehicle starts, steers, brakes, and drives safely. Operable
+                          vehicles only. *
                         </span>
                         <p className="text-gray-300 mt-2">
                           Vehicle must be fully operable, road legal, and safe to drive.
