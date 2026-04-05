@@ -61,7 +61,7 @@ export default function Services() {
       title: "Small Packages & Business Delivery",
       description:
         "Reliable delivery for small packages, business items, and urgent deliveries across Arizona. Ideal for local businesses needing fast, dependable service.",
-      image: "/images/package-trunk.jpg",
+      image: "https://images.pexels.com/photos/7363157/pexels-photo-7363157.jpeg",
       secondImage: "https://images.pexels.com/photos/8931732/pexels-photo-8931732.jpeg?auto=compress&cs=tinysrgb&w=1200",
       features: [
         "Business-to-business delivery",
@@ -75,7 +75,7 @@ export default function Services() {
       title: "Local Arizona Delivery",
       description:
         "Same-day and next-day delivery across the Arizona metro area for vehicles, auto parts, and business items. A simple, direct solution for customers who need reliable local service.",
-      image: "/images/local-az-delivery.jpg",
+      image: "public/images/local-az-delivery.jpg",
       features: [
         "Phoenix metro and surrounding areas",
         "Same-day delivery available",
