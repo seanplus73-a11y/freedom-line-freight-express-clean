@@ -216,7 +216,7 @@ export function RequestPickup() {
                   </div>
                 )}
 
-                {/* Service Information */}
+               {/* Service Information */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -270,8 +270,58 @@ export function RequestPickup() {
                       </select>
                     </div>
 
-                    const isVehicleService = formData.serviceType.startsWith("vehicle");
-const isNonVehicleService = ["business", "parts", "documents", "luggage"].includes(formData.serviceType);
+                    {isVehicleService ? (
+                      <div>
+                        <label
+                          htmlFor="vehicleCondition"
+                          className="block text-sm font-bold text-gray-300 mb-2"
+                        >
+                          Vehicle Condition *
+                        </label>
+                        <select
+                          id="vehicleCondition"
+                          name="vehicleCondition"
+                          value={formData.vehicleCondition}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        >
+                          <option value="Runs and Drives (Fully Operable)">
+                            Runs and Drives (Fully Operable)
+                          </option>
+                        </select>
+                        <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
+                      </div>
+                    ) : isNonVehicleService ? (
+                      <div>
+                        <label
+                          htmlFor="itemType"
+                          className="block text-sm font-bold text-gray-300 mb-2"
+                        >
+                          Item Type *
+                        </label>
+                        <select
+                          id="itemType"
+                          name="itemType"
+                          value={formData.itemType}
+                          onChange={handleChange}
+                          required={isNonVehicleService}
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        >
+                          <option value="">Select item type</option>
+                          <option value="Business Items">Business Items</option>
+                          <option value="Luggage / Personal Items">Luggage / Personal Items</option>
+                          <option value="Documents">Documents</option>
+                          <option value="Small Packages">Small Packages</option>
+                          <option value="Auto Parts">Auto Parts</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    ) : (
+                      <div />
+                    )}
+                  </div>
+                </div>
                           htmlFor="vehicleCondition"
                           className="block text-sm font-bold text-gray-300 mb-2"
                         >
