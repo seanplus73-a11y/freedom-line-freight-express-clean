@@ -141,28 +141,27 @@ export default function Services() {
                   className="bg-neutral-900 border border-neutral-700 rounded-lg overflow-hidden hover:border-orange-500 transition-colors"
                 >
                   {service.secondImage ? (
-                   <div className="grid grid-cols-2 h-56 overflow-hidden">
-  <ImageWithFallback
-    src={service.image}
-    alt={service.title}
-    className="w-full h-full object-cover"
-  />
-  <ImageWithFallback
-    src={service.secondImage || service.image}
-    alt={`${service.title} secondary`}
-    className="w-full h-full object-cover"
-  />
-</div>
-
-                  ) : (
-                    <div className="h-64 overflow-hidden">
-                      <ImageWithFallback
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  )}
+  <div className="grid grid-cols-2 h-56 overflow-hidden">
+    <ImageWithFallback
+      src={service.image}
+      alt={service.title}
+      className="w-full h-full object-cover"
+    />
+    <ImageWithFallback
+      src={service.secondImage}
+      alt={`${service.title} secondary`}
+      className="w-full h-full object-cover object-top"
+    />
+  </div>
+) : (
+  <div className="h-64 overflow-hidden">
+    <ImageWithFallback
+      src={service.image}
+      alt={service.title}
+      className="w-full h-full object-cover"
+    />
+  </div>
+)}
 
                   <div className="p-8">
                     <div className="bg-orange-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
