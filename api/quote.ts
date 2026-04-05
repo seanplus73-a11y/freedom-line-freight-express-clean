@@ -1,4 +1,4 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 interface AirtableRecord {
   id: string;
@@ -7,76 +7,150 @@ interface AirtableRecord {
 }
 
 interface AirtableResponse {
-  records: AirtableRecord[];
+  records?: AirtableRecord[];
   error?: {
     type: string;
     message: string;
   };
 }
 
+function clean(value: any): string {
+  if (value === null || value === undefined) return "";
+  return String(value).trim();
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Handle CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   // Handle OPTIONS request
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     return res.status(204).end();
   }
 
   // Only allow POST
-  if (req.method !== 'POST') {
-    return res.status(405).json({ success: false, error: 'Method not allowed' });
+  if (req.method !== "POST") {
+    return res
+      .status(405)
+      .json({ success: false, error: "Method not allowed" });
   }
 
   try {
-    const formData = req.body;
+    const formData = req.body ?? {};
 
-    console.log('Quote form submission received:', {
-      customerName: formData.customerName,
-      customerEmail: formData.customerEmail,
-      serviceType: formData.serviceType,
-      timestamp: new Date().toISOString()
+    const customerName = clean(formData.customerName);
+    const customerEmail = clean(formData.customerEmail);
+    const customerPhone = clean(formData.customerPhone);
+    const serviceType = clean(formData.serviceType);
+
+    const pickupAddress = clean(formData.pickupAddress);
+    const pickupCity = clean(formData.pickupCity);
+    const pickupState = clean(formData.pickupState);
+    const pickupZip = clean(formData.pickupZip);
+
+    const dropoffAddress = clean(formData.dropoffAddress);
+    const dropoffCity = clean(formData.dropoffCity);
+    const dropoffState = clean(formData.dropoffState);
+    const dropoffZip = clean(formData.dropoffZip);
+
+    const companyName = clean(formData.companyName);
+    const vehicleMake = clean(formData.vehicleMake);
+    const vehicleModel = clean(formData.vehicleModel);
+    const vehicleYear = clean(formData.vehicleYear);
+    const vehicleCondition = clean(formData.vehicleCondition);
+    const vinNumber = clean(formData.vinNumber);
+    const preferredPickupDate = clean(formData.preferredPickupDate);
+    const notes = clean(formData.notes);
+    const itemType = clean(formData.itemType);
+    const itemDetails = clean(formData.itemDetails);
+
+    console.log("Quote form submission received:", {
+      customerName,
+      customerEmail,
+      serviceType,
+      timestamp: new Date().toISOString(),
     });
 
-    // Validate required fields
-    const requiredFields = [
-      'customerName', 'customerEmail', 'customerPhone', 'serviceType',
-      'pickupAddress', 'pickupCity', 'pickupState', 'pickupZip',
-      'dropoffAddress', 'dropoffCity', 'dropoffState', 'dropoffZip'
-    ];
-
-    // For vehicle services, add vehicle-specific required fields
+    // Current Airtable single select vehicle service options
     const vehicleServiceTypes = [
-      "Local Vehicle Transport (0 to 50 miles)",
-      "Regional Vehicle Transport (50 to 150 miles)",
-      "Long Distance (150+ miles) — Custom Quote",
-      "Dealer or Auction Pickup",
-      "Private Party Vehicle Transport"
+  "Local Vehicle Transport (0 to 50 miles)",
+  "Regional Vehicle Transport (50 to 150 miles)",
+  "Long Distance Vehicle Transport (Interstate)",
+  "Long Distance (150+ miles) - Custom Quote",
+  "Dealer or Auction Pickup",
+  "Private Party Vehicle Transport"
+];
+  const nonVehicleServiceTypes = [
+  "Direct Business Transport",
+  "Luggage Transport",
+  "Documents & Small Packages",
+  "Auto Parts Transport"
+];
+
+const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType);
+    const isVehicleService = vehicleServiceTypes.includes(serviceType);
+
+    // Base required fields
+    const requiredFields: Array<{ key: string; value: string | boolean }> = [
+      { key: "customerName", value: customerName },
+      { key: "customerEmail", value: customerEmail },
+      { key: "customerPhone", value: customerPhone },
+      { key: "serviceType", value: serviceType },
+      { key: "pickupAddress", value: pickupAddress },
+      { key: "pickupCity", value: pickupCity },
+      { key: "pickupState", value: pickupState },
+      { key: "pickupZip", value: pickupZip },
+      { key: "dropoffAddress", value: dropoffAddress },
+      { key: "dropoffCity", value: dropoffCity },
+      { key: "dropoffState", value: dropoffState },
+      { key: "dropoffZip", value: dropoffZip },
     ];
-    
-    const isVehicleService = vehicleServiceTypes.includes(formData.serviceType);
-    
+      if (isNonVehicleService) {
+  if (formData.itemType) {
+    fields["Q_ItemType"] = formData.itemType;
+  }
+
+  if (formData.itemDetails) {
+    fields["Q_ItemDetails"] = formData.itemDetails;
+  }
+}
+    // Vehicle-only required fields
     if (isVehicleService) {
-      requiredFields.push('vehicleMake', 'vehicleModel', 'vehicleYear', 'vehicleCondition', 'operableConfirmation');
+      requiredFields.push(
+        { key: "vehicleMake", value: vehicleMake },
+        { key: "vehicleModel", value: vehicleModel },
+        { key: "vehicleYear", value: vehicleYear },
+        { key: "vehicleCondition", value: vehicleCondition },
+        {
+          key: "operableConfirmation",
+          value: formData.operableConfirmation === true,
+        }
+      );
     }
 
-    const missingFields = requiredFields.filter(field => !formData[field] && formData[field] !== false);
+    const missingFields = requiredFields
+      .filter((field) => {
+        if (typeof field.value === "boolean") return field.value !== true;
+        return field.value === "";
+      })
+      .map((field) => field.key);
+
     if (missingFields.length > 0) {
-      console.error('Validation failed. Missing fields:', missingFields.join(', '));
+      console.error("Validation failed. Missing fields:", missingFields.join(", "));
       return res.status(400).json({
         success: false,
-        error: `Missing required fields: ${missingFields.join(', ')}`
+        error: `Missing required fields: ${missingFields.join(", ")}`,
       });
     }
 
     // Validate operable confirmation for vehicle services only
     if (isVehicleService && formData.operableConfirmation !== true) {
-      console.error('Validation failed: Operable confirmation not checked');
+      console.error("Validation failed: Operable confirmation not checked");
       return res.status(400).json({
         success: false,
-        error: 'You must confirm the vehicle is operable'
+        error: "You must confirm the vehicle is operable",
       });
     }
 
@@ -85,127 +159,118 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
     const AIRTABLE_TABLE_LEADS = process.env.AIRTABLE_TABLE_LEADS;
 
-    // Check if environment variables are set
     if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_LEADS) {
-      console.error('Missing Airtable environment variables');
-      console.error('AIRTABLE_TOKEN exists:', !!AIRTABLE_TOKEN);
-      console.error('AIRTABLE_BASE_ID exists:', !!AIRTABLE_BASE_ID);
-      console.error('AIRTABLE_TABLE_LEADS exists:', !!AIRTABLE_TABLE_LEADS);
+      console.error("Missing Airtable environment variables");
+      console.error("AIRTABLE_TOKEN exists:", !!AIRTABLE_TOKEN);
+      console.error("AIRTABLE_BASE_ID exists:", !!AIRTABLE_BASE_ID);
+      console.error("AIRTABLE_TABLE_LEADS exists:", !!AIRTABLE_TABLE_LEADS);
+
       return res.status(500).json({
         success: false,
-        error: 'Server configuration error. Please contact me directly at dispatch@flfreightco.com'
+        error:
+          "Server configuration error. Please contact me directly at dispatch@flfreightco.com",
       });
     }
 
-    // Prepare Airtable payload (matching your Lead table structure)
-    const fields: Record<string, any> = {
-      "L_FullName": formData.customerName,
-      "L_Email": formData.customerEmail,
-      "L_PickupLocation": `${formData.pickupAddress}, ${formData.pickupCity}, ${formData.pickupState} ${formData.pickupZip}`,
-      "L_DeliveryLocation": `${formData.dropoffAddress}, ${formData.dropoffCity}, ${formData.dropoffState} ${formData.dropoffZip}`
-    };
-    
-    // Add vehicle information for vehicle services
-    if (isVehicleService && formData.vehicleMake) {
-      fields["Q_Make"] = formData.vehicleMake;
-    }
-    
-    if (isVehicleService && formData.vehicleModel) {
-      fields["Q_Model"] = formData.vehicleModel;
-    }
-    
-    if (isVehicleService && formData.vehicleYear) {
-      fields["Q_VehicleYear"] = String(formData.vehicleYear);
-    }
-    
-    // Add delivery service fields (if they exist in Airtable)
-    if (formData.itemType) {
-      fields["Q_ItemType"] = formData.itemType;
-    }
-    
-    if (formData.itemDetails) {
-      fields["Q_ItemDetails"] = formData.itemDetails;
-    }
-    
-    // Add optional fields only if they have values
-    if (formData.customerPhone) {
-      fields["L_Phone"] = formData.customerPhone;
-    }
-    
-    if (formData.companyName) {
-      fields["L_Company"] = formData.companyName;
-    }
-    
-    if (formData.vinNumber) {
-      fields["Q_VIN"] = formData.vinNumber;
-    }
-    
-    // Send service type to Leads table field
-    if (formData.serviceType) {
-      fields["L_ServiceType"] = formData.serviceType;
-    }
-    
-    if (formData.vehicleCondition) {
-      fields["Q_VehicleCondition"] = formData.vehicleCondition;
-    }
-    
-    // Add preferred pickup date if provided
-    if (formData.preferredPickupDate) {
-      fields["Q_PreferredPickupDate"] = formData.preferredPickupDate;
-    }
-    
-    // Add additional notes if provided
-    if (formData.notes) {
-      fields["L_Notes"] = formData.notes;
-    }
-    
-    const airtablePayload = {
-      records: [{ fields }]
-    };
-    
-    console.log('Sending to Airtable Leads table...');
+    const pickupLocation = `${pickupAddress}, ${pickupCity}, ${pickupState} ${pickupZip}`;
+    const deliveryLocation = `${dropoffAddress}, ${dropoffCity}, ${dropoffState} ${dropoffZip}`;
 
-    // Send to Airtable
+    // Prepare Airtable payload
+    const fields: Record<string, any> = {
+      L_FullName: customerName,
+      L_Email: customerEmail,
+      L_Phone: customerPhone,
+      L_PickupLocation: pickupLocation,
+      L_DeliveryLocation: deliveryLocation,
+      L_ServiceType: serviceType,
+    };
+
+    // Optional company
+    if (companyName) {
+      fields["L_Company"] = companyName;
+    }
+
+    // Vehicle fields
+    if (isVehicleService) {
+      if (vehicleMake) fields["Q_Make"] = vehicleMake;
+      if (vehicleModel) fields["Q_Model"] = vehicleModel;
+      if (vehicleYear) fields["Q_VehicleYear"] = vehicleYear;
+      if (vehicleCondition) fields["Q_VehicleCondition"] = vehicleCondition;
+      if (vinNumber) fields["Q_VIN"] = vinNumber;
+    }
+
+    // Non-vehicle / business delivery fields
+    if (itemType) {
+      fields["Q_ItemType"] = itemType;
+    }
+
+    if (itemDetails) {
+      fields["Q_ItemDetails"] = itemDetails;
+    }
+
+    // Optional preferred pickup date
+    if (preferredPickupDate) {
+      fields["Q_PreferredPickupDate"] = preferredPickupDate;
+    }
+
+    // Optional notes
+    if (notes) {
+      fields["L_Notes"] = notes;
+    }
+
+    const airtablePayload = {
+      records: [{ fields }],
+    };
+
+    console.log("Sending to Airtable Leads table...", {
+      serviceType,
+      isVehicleService,
+    });
+
     const airtableResponse = await fetch(
       `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_LEADS}`,
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
-          'Content-Type': 'application/json'
+          Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(airtablePayload)
+        body: JSON.stringify(airtablePayload),
       }
     );
 
-    const airtableData = await airtableResponse.json() as AirtableResponse;
+    const airtableData =
+      (await airtableResponse.json()) as AirtableResponse;
 
-    console.log('Airtable response status:', airtableResponse.status);
+    console.log("Airtable response status:", airtableResponse.status);
 
     if (!airtableResponse.ok) {
-      console.error('Airtable error:', JSON.stringify(airtableData));
+      console.error("Airtable error:", JSON.stringify(airtableData));
       return res.status(500).json({
         success: false,
-        error: 'Failed to save quote request. Please try again or contact me directly.',
-        details: airtableData
+        error:
+          "Failed to save quote request. Please try again or contact me directly.",
+        details: airtableData,
       });
     }
 
-    console.log('Quote saved successfully. Record ID:', airtableData.records[0]?.id);
+    console.log(
+      "Quote saved successfully. Record ID:",
+      airtableData.records?.[0]?.id
+    );
 
-    // Return success
     return res.status(200).json({
       success: true,
-      message: 'Quote request submitted successfully',
-      recordId: airtableData.records[0]?.id
+      message: "Quote request submitted successfully",
+      recordId: airtableData.records?.[0]?.id ?? null,
     });
-
   } catch (error) {
-    console.error('Quote form error:', error);
+    console.error("Quote form error:", error);
     return res.status(500).json({
       success: false,
-      error: 'Server error. Please try again or contact me directly at dispatch@flfreightco.com',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      error:
+        "Server error. Please try again or contact me directly at dispatch@flfreightco.com",
+      details: error instanceof Error ? error.message : "Unknown error",
     });
   }
 }
