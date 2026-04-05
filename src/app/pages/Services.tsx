@@ -34,7 +34,7 @@ export default function Services() {
       title: "Dealer & Auction Pickup",
       description:
         "Reliable pickup and delivery for dealerships, auctions, and auto-related businesses. Built for customers who need flexible scheduling, fast turnaround, and dependable communication.",
-      image: "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "https://images.unsplash.com/photo-1766524791677-6c6c495e0218?",
       features: [
         "Dealer-to-dealer transfers",
         "Auction pickup and delivery",
@@ -73,7 +73,7 @@ export default function Services() {
       title: "Local Arizona Delivery",
       description:
         "Same-day and next-day delivery across the Arizona metro area for vehicles, auto parts, and business items. Designed for customers who need local service that is direct, simple, and dependable.",
-      image: "/images/local-az-delivery.jpg",
+      image: "https://i.ibb.co/HTkh8LQ5/Local-az-delivery.jpg",
       features: [
         "Phoenix metro and surrounding areas",
         "Same-day delivery available",
