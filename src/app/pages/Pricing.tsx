@@ -1,24 +1,28 @@
 import { Link } from "react-router";
-import { Check, ArrowRight, Car, X, Truck } from "lucide-react";
+import { Check, ArrowRight, Car, X } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function Pricing() {
   const faqs = [
     {
       question: "How is pricing calculated?",
-      answer: "Based on distance, vehicle type, and scheduling needs. We provide a transparent quote before pickup.",
+      answer:
+        "Based on distance, vehicle type, and scheduling needs. We provide a transparent quote before pickup.",
     },
     {
       question: "Are there hidden fees?",
-      answer: "No. All pricing is confirmed before dispatch. What you see is what you pay.",
+      answer:
+        "No. All pricing is confirmed before dispatch. What you see is what you pay.",
     },
     {
       question: "Is my vehicle insured during transport?",
-      answer: "Yes. All vehicles are fully insured during pickup, transport, and delivery.",
+      answer:
+        "Yes. All vehicles are fully insured during pickup, transport, and delivery.",
     },
     {
       question: "What types of vehicles do you transport?",
-      answer: "We transport sedans, SUVs, small heavy-duty trucks (F-250/2500 class), and luxury vehicles. We do NOT transport commercial trucks, semi-trucks, or freight cargo.",
+      answer:
+        "We transport sedans, SUVs, small heavy-duty trucks (F-250/2500 class), and luxury vehicles. We do NOT transport commercial trucks, semi-trucks, or freight cargo.",
     },
   ];
 
@@ -32,10 +36,12 @@ export default function Pricing() {
             Vehicle Pickup & Delivery Service
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Transparent Vehicle <span className="text-orange-500">Transport Pricing</span>
+            Transparent Vehicle{" "}
+            <span className="text-orange-500">Transport Pricing</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Simple distance-based pricing for safe and professional vehicle pickup and delivery. No hidden fees.
+            Simple distance-based pricing for safe and professional vehicle
+            pickup and delivery. No hidden fees.
           </p>
         </div>
       </section>
@@ -56,30 +62,50 @@ export default function Pricing() {
             <div className="bg-neutral-900 rounded-lg border border-orange-500/30 p-8 mb-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Arizona (Primary Service Area)</span>
+                  <Check
+                    className="text-orange-500 mr-3 flex-shrink-0"
+                    size={20}
+                  />
+                  <span className="text-lg font-bold text-white">
+                    Arizona (Primary Service Area)
+                  </span>
                 </div>
                 <div className="flex items-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg font-bold text-white">Nearby states available by request only</span>
+                  <Check
+                    className="text-orange-500 mr-3 flex-shrink-0"
+                    size={20}
+                  />
+                  <span className="text-lg font-bold text-white">
+                    Nearby states available by request only
+                  </span>
                 </div>
               </div>
 
               <div className="bg-orange-900/20 border border-orange-500/50 p-4 rounded mb-6">
                 <p className="text-orange-100 text-sm font-semibold">
-                  Out of state transport is limited and scheduled based on availability
+                  Out of state transport is limited and scheduled based on
+                  availability
                 </p>
               </div>
 
               <div className="border-t border-neutral-700 pt-6">
                 <p className="text-gray-300 mb-4">
-                  <strong className="text-white">Based in Arizona,</strong> I specialize in reliable local and regional vehicle transport throughout the state.
+                  <strong className="text-white">Based in Arizona,</strong> I
+                  specialize in reliable local and regional vehicle transport
+                  throughout the state.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong className="text-white">Door-to-door pickup and delivery available</strong> for sedans, SUVs, small heavy-duty trucks (F-250/2500 class), and luxury vehicles.
+                  <strong className="text-white">
+                    Door-to-door pickup and delivery available
+                  </strong>{" "}
+                  for sedans, SUVs, small heavy-duty trucks (F-250/2500 class),
+                  and luxury vehicles.
                 </p>
                 <p className="text-gray-300 flex items-start">
-                  <X className="text-red-500 mr-2 flex-shrink-0 mt-0.5" size={18} />
+                  <X
+                    className="text-red-500 mr-2 flex-shrink-0 mt-0.5"
+                    size={18}
+                  />
                   <span>No commercial trucks.</span>
                 </p>
               </div>
@@ -87,7 +113,8 @@ export default function Pricing() {
 
             <div className="text-center">
               <p className="text-gray-400 italic font-semibold">
-                Fully insured and owner-operated, ensuring direct accountability on every transport.
+                Fully insured and owner-operated, ensuring direct accountability
+                on every transport.
               </p>
             </div>
           </div>
@@ -100,14 +127,19 @@ export default function Pricing() {
           <div className="text-center mb-8">
             <div className="mb-6 bg-orange-900/30 border-l-4 border-orange-500 p-6 rounded max-w-4xl mx-auto">
               <p className="text-orange-100 font-semibold text-lg">
-                <strong className="text-orange-400">Need it delivered fast?</strong> My service is designed for customers who do not want to wait days for traditional carriers.
+                <strong className="text-orange-400">
+                  Need it delivered fast?
+                </strong>{" "}
+                My service is designed for customers who do not want to wait
+                days for traditional carriers.
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Distance-Based <span className="text-orange-500">Pricing</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Clear, upfront pricing based on how far your vehicle needs to go. All prices include insurance and door-to-door service.
+              Clear, upfront vehicle transport pricing based on distance. All
+              prices include insurance and door-to-door service.
             </p>
           </div>
 
@@ -116,33 +148,50 @@ export default function Pricing() {
             <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-2">Local</h3>
               <p className="text-gray-400 text-sm mb-4">0–25 Miles</p>
-              
+
               <div className="mb-6">
                 <span className="text-4xl font-bold text-orange-500">$85</span>
                 <p className="text-sm text-gray-400 mt-1">starting at</p>
               </div>
 
               <div className="mb-6 flex-grow">
-                <p className="text-sm font-semibold text-white mb-3">Includes:</p>
+                <p className="text-sm font-semibold text-white mb-3">
+                  Includes:
+                </p>
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Door-to-door vehicle pickup</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Same-day availability (when possible)</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Secure vehicle handling</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Photo documentation</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Delivery confirmation</span>
                   </li>
                 </ul>
@@ -159,27 +208,42 @@ export default function Pricing() {
 
             {/* Extended Local */}
             <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-2">Extended Local</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Extended Local
+              </h3>
               <p className="text-gray-400 text-sm mb-4">25–50 Miles</p>
-              
+
               <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$140</span>
+                <span className="text-4xl font-bold text-orange-500">
+                  $140
+                </span>
                 <p className="text-sm text-gray-400 mt-1">starting at</p>
               </div>
 
               <div className="mb-6 flex-grow">
-                <p className="text-sm font-semibold text-white mb-3">Includes everything in Local, plus:</p>
+                <p className="text-sm font-semibold text-white mb-3">
+                  Includes everything in Local, plus:
+                </p>
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Flexible scheduling</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Business-to-business transport</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Priority booking options</span>
                   </li>
                 </ul>
@@ -198,25 +262,38 @@ export default function Pricing() {
             <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-2">Regional</h3>
               <p className="text-gray-400 text-sm mb-4">50–150 Miles</p>
-              
+
               <div className="mb-6">
-                <span className="text-4xl font-bold text-orange-500">$285</span>
+                <span className="text-4xl font-bold text-orange-500">
+                  $285
+                </span>
                 <p className="text-sm text-gray-400 mt-1">starting at</p>
               </div>
 
               <div className="mb-6 flex-grow">
-                <p className="text-sm font-semibold text-white mb-3">Includes everything in Extended Local, plus:</p>
+                <p className="text-sm font-semibold text-white mb-3">
+                  Includes everything in Extended Local, plus:
+                </p>
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Dedicated vehicle transport</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Multi-vehicle scheduling</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Volume discounts available</span>
                   </li>
                 </ul>
@@ -233,27 +310,42 @@ export default function Pricing() {
 
             {/* Long Distance */}
             <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-2">Long Distance</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Long Distance
+              </h3>
               <p className="text-gray-400 text-sm mb-4">150+ Miles</p>
-              
+
               <div className="mb-6">
-                <span className="text-3xl font-bold text-white">Custom Quote</span>
+                <span className="text-3xl font-bold text-white">
+                  Custom Quote
+                </span>
                 <p className="text-sm text-gray-400 mt-1">(Rate Per Day)</p>
               </div>
 
               <div className="mb-6 flex-grow">
-                <p className="text-sm font-semibold text-white mb-3">Includes:</p>
+                <p className="text-sm font-semibold text-white mb-3">
+                  Includes:
+                </p>
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Cross-state vehicle transport</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Scheduled delivery window</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-orange-500 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <Check
+                      className="text-orange-500 mr-2 flex-shrink-0 mt-0.5"
+                      size={16}
+                    />
                     <span>Custom pricing based on distance</span>
                   </li>
                 </ul>
@@ -271,149 +363,134 @@ export default function Pricing() {
 
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-400 italic">
-              * Prices shown are starting rates for standard sedans. Final pricing may vary based on vehicle type, specific route, and scheduling requirements.
+              * Prices shown are starting rates for standard sedans. Final
+              pricing may vary based on vehicle type, specific route, and
+              scheduling requirements.
             </p>
           </div>
         </div>
       </section>
 
       {/* Business & Parts Transport Pricing */}
-<section className="py-16 bg-neutral-800 border-t border-neutral-700">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-10">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-        Business & Parts <span className="text-orange-500">Transport Pricing</span>
-      </h2>
-      <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-        Pricing for auto parts, business items, and documents is separate from vehicle transport. Final quote depends on item size, distance, and urgency.
-      </p>
-    </div>
+      <section className="py-16 bg-neutral-800 border-t border-neutral-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Business & Parts{" "}
+              <span className="text-orange-500">Transport Pricing</span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Pricing for auto parts, business items, and documents is separate
+              from vehicle transport. Final quote depends on item size,
+              distance, and urgency.
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
-        <h3 className="text-xl font-bold text-white mb-2">Auto Parts Transport</h3>
-        <p className="text-gray-400 text-sm mb-4">Engines, transmissions, and shop parts</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Auto Parts Transport
+              </h3>
+              <p className="text-gray-400 text-sm mb-4">
+                Engines, transmissions, and shop parts
+              </p>
 
-        <div className="mb-4">
-          <span className="text-3xl font-bold text-orange-500">$45+</span>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-orange-500">
+                  $45+
+                </span>
+              </div>
+
+              <ul className="space-y-2 text-sm text-gray-300 mb-6">
+                <li>• Shop-to-shop or dealer transport</li>
+                <li>• Same-day service available</li>
+                <li>• Larger parts priced accordingly</li>
+                <li>• Direct handling — no middleman</li>
+              </ul>
+
+              <Link
+                to="/request-pickup"
+                className="text-orange-500 font-bold inline-flex items-center"
+              >
+                Request Quote
+                <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </div>
+
+            <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Small Packages & Business Items
+              </h3>
+              <p className="text-gray-400 text-sm mb-4">
+                Local business transport
+              </p>
+
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-orange-500">
+                  $35+
+                </span>
+              </div>
+
+              <ul className="space-y-2 text-sm text-gray-300 mb-6">
+                <li>• Business-to-business transport</li>
+                <li>• Same-day or scheduled service</li>
+                <li>• Flexible pickup and drop-off</li>
+                <li>• Direct owner-operated service</li>
+              </ul>
+
+              <Link
+                to="/request-pickup"
+                className="text-orange-500 font-bold inline-flex items-center"
+              >
+                Request Quote
+                <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </div>
+
+            <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Documents & Urgent Deliveries
+              </h3>
+              <p className="text-gray-400 text-sm mb-4">
+                Priority small-item transport
+              </p>
+
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-orange-500">
+                  $25+
+                </span>
+              </div>
+
+              <ul className="space-y-2 text-sm text-gray-300 mb-6">
+                <li>• Envelopes, paperwork, checks</li>
+                <li>• Priority same-day delivery</li>
+                <li>• Time-sensitive transport</li>
+                <li>• Fast and direct handling</li>
+              </ul>
+
+              <Link
+                to="/request-pickup"
+                className="text-orange-500 font-bold inline-flex items-center"
+              >
+                Request Quote
+                <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-400 italic">
+              Final pricing depends on size, weight, distance, urgency, and
+              scheduling requirements.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <ul className="space-y-2 text-sm text-gray-300 mb-6">
-          <li>• Shop-to-shop or dealer transport</li>
-          <li>• Same-day service available</li>
-          <li>• Larger parts priced accordingly</li>
-          <li>• Direct handling — no middleman</li>
-        </ul>
-
-        <Link to="/request-pickup" className="text-orange-500 font-bold inline-flex items-center">
-          Request Quote
-          <ArrowRight className="ml-2" size={16} />
-        </Link>
-      </div>
-
-      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
-        <h3 className="text-xl font-bold text-white mb-2">Small Packages & Business Items</h3>
-        <p className="text-gray-400 text-sm mb-4">Local business transport</p>
-
-        <div className="mb-4">
-          <span className="text-3xl font-bold text-orange-500">$35+</span>
-        </div>
-
-        <ul className="space-y-2 text-sm text-gray-300 mb-6">
-          <li>• Business-to-business transport</li>
-          <li>• Same-day or scheduled service</li>
-          <li>• Flexible pickup and drop-off</li>
-          <li>• Direct owner-operated service</li>
-        </ul>
-
-        <Link to="/request-pickup" className="text-orange-500 font-bold inline-flex items-center">
-          Request Quote
-          <ArrowRight className="ml-2" size={16} />
-        </Link>
-      </div>
-
-      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
-        <h3 className="text-xl font-bold text-white mb-2">Documents & Urgent Deliveries</h3>
-        <p className="text-gray-400 text-sm mb-4">Priority small-item transport</p>
-
-        <div className="mb-4">
-          <span className="text-3xl font-bold text-orange-500">$25+</span>
-        </div>
-
-        <ul className="space-y-2 text-sm text-gray-300 mb-6">
-          <li>• Envelopes, paperwork, checks</li>
-          <li>• Priority same-day delivery</li>
-          <li>• Time-sensitive transport</li>
-          <li>• Fast and direct handling</li>
-        </ul>
-
-        <Link to="/request-pickup" className="text-orange-500 font-bold inline-flex items-center">
-          Request Quote
-          <ArrowRight className="ml-2" size={16} />
-        </Link>
-      </div>
-    </div>
-
-    <div className="mt-8 text-center">
-      <p className="text-sm text-gray-400 italic">
-        Final pricing depends on size, weight, distance, urgency, and scheduling requirements.
-      </p>
-    </div>
-  </div>
-</section>
-
-      {/* Small Packages */}
-<div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
-  ...
-</div>
-
-{/* Documents */}
-<div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
-  ...
-</div>
-
-</div>
-
-<div className="mt-8 text-center">
-  <p className="text-sm text-gray-400 italic">
-    Final pricing depends on size, weight, distance, urgency, and scheduling requirements.
-  </p>
-</div>
-
-</div>
-</section>
-
-      {/* Documents */}
-      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
-        <h3 className="text-xl font-bold text-white mb-2">Documents & Urgent Deliveries</h3>
-        <p className="text-gray-400 text-sm mb-4">Priority small-item transport</p>
-
-        <div className="mb-4">
-          <span className="text-3xl font-bold text-orange-500">$25+</span>
-        </div>
-
-        <ul className="space-y-2 text-sm text-gray-300 mb-6">
-          <li>• Envelopes, paperwork, checks</li>
-          <li>• Priority same-day delivery</li>
-          <li>• Time-sensitive transport</li>
-          <li>• Fast and direct handling</li>
-        </ul>
-
-        <Link to="/request-pickup" className="text-orange-500 font-bold">
-          Request Quote →
-        </Link>
-      </div>
-
-    </div>
-
-    <div className="mt-8 text-center">
-      <p className="text-sm text-gray-400 italic">
-        Final pricing depends on size, weight, distance, urgency, and scheduling requirements.
-      </p>
-    </div>
-
-  </div>
-</section>
+      {/* What We Transport Section */}
+      <section className="py-16 bg-neutral-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* We Transport */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
@@ -461,7 +538,9 @@ export default function Pricing() {
                     <Check className="text-green-500 mr-2" size={18} />
                     Small Heavy-Duty Trucks
                   </h3>
-                  <p className="text-sm text-gray-400 mt-1">F-250 / 2500 class</p>
+                  <p className="text-sm text-gray-400 mt-1">
+                    F-250 / 2500 class
+                  </p>
                 </div>
 
                 <div className="bg-neutral-800 border-2 border-green-500/30 rounded-lg p-4">
@@ -490,8 +569,12 @@ export default function Pricing() {
                 <div className="bg-neutral-800 border-2 border-red-500/30 rounded-lg p-4 flex items-center">
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
-                    <h3 className="font-bold text-white">Commercial Trucks</h3>
-                    <p className="text-sm text-gray-400">Box trucks, delivery trucks, or commercial fleet vehicles</p>
+                    <h3 className="font-bold text-white">
+                      Commercial Trucks
+                    </h3>
+                    <p className="text-sm text-gray-400">
+                      Box trucks, delivery trucks, or commercial fleet vehicles
+                    </p>
                   </div>
                 </div>
 
@@ -499,7 +582,9 @@ export default function Pricing() {
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Semi-Trucks</h3>
-                    <p className="text-sm text-gray-400">18-wheelers, tractor-trailers, or large commercial trucks</p>
+                    <p className="text-sm text-gray-400">
+                      18-wheelers, tractor-trailers, or large commercial trucks
+                    </p>
                   </div>
                 </div>
 
@@ -507,14 +592,18 @@ export default function Pricing() {
                   <X className="text-red-500 mr-3 flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-bold text-white">Freight Cargo</h3>
-                    <p className="text-sm text-gray-400">Palletized goods, shipping containers, or commercial freight</p>
+                    <p className="text-sm text-gray-400">
+                      Palletized goods, shipping containers, or commercial
+                      freight
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 bg-orange-500/10 border-l-4 border-orange-500 p-4 rounded">
                 <p className="text-sm text-gray-300">
-                  We specialize in safely moving personal and light-duty vehicles. We do not handle commercial freight operations.
+                  We specialize in safely moving personal and light-duty
+                  vehicles. We do not handle commercial freight operations.
                 </p>
               </div>
             </div>
@@ -526,17 +615,19 @@ export default function Pricing() {
       <section className="py-20 bg-neutral-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-            Frequently Asked <span className="text-orange-500">Questions</span>
+            Frequently Asked{" "}
+            <span className="text-orange-500">Questions</span>
           </h2>
           <div className="space-y-8">
             {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-neutral-700 pb-8 last:border-b-0">
+              <div
+                key={index}
+                className="border-b border-neutral-700 pb-8 last:border-b-0"
+              >
                 <h3 className="text-xl font-bold text-white mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  {faq.answer}
-                </p>
+                <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
