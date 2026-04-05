@@ -214,46 +214,98 @@ export function RequestPickup() {
                 )}
 
                 {/* Service Information */}
-                <div>
-                  <div className="flex items-center mb-6">
-                    <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                      {isNonVehicleService ? (
-                        <Package className="text-white" size={20} />
-                      ) : (
-                        <Car className="text-white" size={20} />
-                      )}
-                    </div>
-                    <h2 className="text-2xl font-bold text-white">Service Information</h2>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {isNonVehicleService && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
   <div>
     <label
-      htmlFor="itemType"
+      htmlFor="serviceType"
       className="block text-sm font-bold text-gray-300 mb-2"
     >
-      Item Type *
+      Service Type *
     </label>
-
     <select
-      id="itemType"
-      name="itemType"
-      value={formData.itemType}
+      id="serviceType"
+      name="serviceType"
+      value={formData.serviceType}
       onChange={handleChange}
-      required={isNonVehicleService}
+      required
       className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
     >
-      <option value="">Select item type</option>
-      <option value="Business Items">Business Items</option>
-      <option value="Luggage / Personal Items">Luggage / Personal Items</option>
-      <option value="Documents">Documents</option>
-      <option value="Small Packages">Small Packages</option>
-      <option value="Auto Parts">Auto Parts</option>
-      <option value="Other">Other</option>
+      <option value="">Select service type</option>
+      <option value="Local Vehicle Transport (0 to 50 miles)">
+        Local Vehicle Transport (0 to 50 miles)
+      </option>
+      <option value="Regional Vehicle Transport (50 to 150 miles)">
+        Regional Vehicle Transport (50 to 150 miles)
+      </option>
+      <option value="Long Distance Vehicle Transport (Interstate)">
+        Long Distance Vehicle Transport (Interstate)
+      </option>
+      <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
+      <option value="Private Party Vehicle Transport">
+        Private Party Vehicle Transport
+      </option>
+      <option value="Direct Business Transport">
+        Direct Business Transport
+      </option>
+      <option value="Luggage Transport">Luggage Transport</option>
+      <option value="Documents & Small Packages">
+        Documents & Small Packages
+      </option>
+      <option value="Auto Parts Transport">Auto Parts Transport</option>
     </select>
   </div>
-)}
+
+  {isVehicleService ? (
+    <div>
+      <label
+        htmlFor="vehicleCondition"
+        className="block text-sm font-bold text-gray-300 mb-2"
+      >
+        Vehicle Condition *
+      </label>
+      <select
+        id="vehicleCondition"
+        name="vehicleCondition"
+        value={formData.vehicleCondition}
+        onChange={handleChange}
+        required
+        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+      >
+        <option value="Runs and Drives (Fully Operable)">
+          Runs and Drives (Fully Operable)
+        </option>
+      </select>
+      <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
+    </div>
+  ) : isNonVehicleService ? (
+    <div>
+      <label
+        htmlFor="itemType"
+        className="block text-sm font-bold text-gray-300 mb-2"
+      >
+        Item Type *
+      </label>
+      <select
+        id="itemType"
+        name="itemType"
+        value={formData.itemType}
+        onChange={handleChange}
+        required={isNonVehicleService}
+        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+      >
+        <option value="">Select item type</option>
+        <option value="Business Items">Business Items</option>
+        <option value="Luggage / Personal Items">Luggage / Personal Items</option>
+        <option value="Documents">Documents</option>
+        <option value="Small Packages">Small Packages</option>
+        <option value="Auto Parts">Auto Parts</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  ) : (
+    <div />
+  )}
+</div>
                         <option value="">Select service type</option>
                         <option value="Local Vehicle Transport (0 to 50 miles)">
                           Local Vehicle Transport (0 to 50 miles)
