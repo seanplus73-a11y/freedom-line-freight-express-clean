@@ -280,7 +280,6 @@ export default function Pricing() {
       {/* Business & Parts Transport Pricing */}
 <section className="py-16 bg-neutral-800 border-t border-neutral-700">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
     <div className="text-center mb-10">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
         Business & Parts <span className="text-orange-500">Transport Pricing</span>
@@ -291,8 +290,6 @@ export default function Pricing() {
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      {/* Auto Parts */}
       <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
         <h3 className="text-xl font-bold text-white mb-2">Auto Parts Transport</h3>
         <p className="text-gray-400 text-sm mb-4">Engines, transmissions, and shop parts</p>
@@ -308,10 +305,62 @@ export default function Pricing() {
           <li>• Direct handling — no middleman</li>
         </ul>
 
-        <Link to="/request-pickup" className="text-orange-500 font-bold">
-          Request Quote →
+        <Link to="/request-pickup" className="text-orange-500 font-bold inline-flex items-center">
+          Request Quote
+          <ArrowRight className="ml-2" size={16} />
         </Link>
       </div>
+
+      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2">Small Packages & Business Items</h3>
+        <p className="text-gray-400 text-sm mb-4">Local business transport</p>
+
+        <div className="mb-4">
+          <span className="text-3xl font-bold text-orange-500">$35+</span>
+        </div>
+
+        <ul className="space-y-2 text-sm text-gray-300 mb-6">
+          <li>• Business-to-business transport</li>
+          <li>• Same-day or scheduled service</li>
+          <li>• Flexible pickup and drop-off</li>
+          <li>• Direct owner-operated service</li>
+        </ul>
+
+        <Link to="/request-pickup" className="text-orange-500 font-bold inline-flex items-center">
+          Request Quote
+          <ArrowRight className="ml-2" size={16} />
+        </Link>
+      </div>
+
+      <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2">Documents & Urgent Deliveries</h3>
+        <p className="text-gray-400 text-sm mb-4">Priority small-item transport</p>
+
+        <div className="mb-4">
+          <span className="text-3xl font-bold text-orange-500">$25+</span>
+        </div>
+
+        <ul className="space-y-2 text-sm text-gray-300 mb-6">
+          <li>• Envelopes, paperwork, checks</li>
+          <li>• Priority same-day delivery</li>
+          <li>• Time-sensitive transport</li>
+          <li>• Fast and direct handling</li>
+        </ul>
+
+        <Link to="/request-pickup" className="text-orange-500 font-bold inline-flex items-center">
+          Request Quote
+          <ArrowRight className="ml-2" size={16} />
+        </Link>
+      </div>
+    </div>
+
+    <div className="mt-8 text-center">
+      <p className="text-sm text-gray-400 italic">
+        Final pricing depends on size, weight, distance, urgency, and scheduling requirements.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Small Packages */}
       <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 hover:border-orange-500 transition-colors">
