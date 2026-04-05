@@ -546,7 +546,7 @@ export function RequestPickup() {
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
                       <MapPin className="text-white" size={20} />
                     </div>
-                    <h2 className="text-2xl font-bold text-white">Delivery Location</h2>
+                   <h2 className="text-2xl font-bold text-white">Drop-Off Location</h2>
                   </div>
 
                   <div className="grid grid-cols-1 gap-6">
