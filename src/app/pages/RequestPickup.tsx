@@ -227,21 +227,33 @@ export function RequestPickup() {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="serviceType"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
-                        Service Type *
-                      </label>
-                      <select
-                        id="serviceType"
-                        name="serviceType"
-                        value={formData.serviceType}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      >
+                    {isNonVehicleService && (
+  <div>
+    <label
+      htmlFor="itemType"
+      className="block text-sm font-bold text-gray-300 mb-2"
+    >
+      Item Type *
+    </label>
+
+    <select
+      id="itemType"
+      name="itemType"
+      value={formData.itemType}
+      onChange={handleChange}
+      required={isNonVehicleService}
+      className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+    >
+      <option value="">Select item type</option>
+      <option value="Business Items">Business Items</option>
+      <option value="Luggage / Personal Items">Luggage / Personal Items</option>
+      <option value="Documents">Documents</option>
+      <option value="Small Packages">Small Packages</option>
+      <option value="Auto Parts">Auto Parts</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+)}
                         <option value="">Select service type</option>
                         <option value="Local Vehicle Transport (0 to 50 miles)">
                           Local Vehicle Transport (0 to 50 miles)
