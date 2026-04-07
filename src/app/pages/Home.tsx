@@ -10,12 +10,43 @@ import {
   Car,
   Package,
   Briefcase,
+  Phone,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function Home() {
   return (
     <div className="bg-neutral-900">
+      {/* Top Contact Banner */}
+      <div className="bg-orange-500 text-white py-3 px-4 sm:px-6 lg:px-8 sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+          <div className="flex items-center gap-3">
+            <Phone className="text-white animate-pulse" size={20} />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+              <span className="font-bold text-lg">Call or Text:</span>
+              <div className="flex gap-2 items-center">
+                <a
+                  href="tel:4807428553"
+                  className="font-bold text-lg hover:underline"
+                >
+                  480-742-8553
+                </a>
+                <span className="hidden sm:inline text-white/80">|</span>
+                <a
+                  href="sms:4807428553"
+                  className="text-sm font-semibold hover:underline sm:hidden"
+                >
+                  Text Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <span className="text-sm font-semibold text-orange-100">
+            Fast response within 5–10 minutes
+          </span>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative bg-black text-white">
         <div className="absolute inset-0 opacity-50">
@@ -85,27 +116,21 @@ export default function Home() {
             <div>
               <div className="flex items-center justify-center mb-2">
                 <CheckCircle className="text-orange-500 mr-2" size={36} />
-                <div className="text-xl font-bold text-white">
-                  Owner-Operated
-                </div>
+                <div className="text-xl font-bold text-white">Owner-Operated</div>
               </div>
               <div className="text-gray-400 font-semibold">Service</div>
             </div>
             <div>
               <div className="flex items-center justify-center mb-2">
                 <Shield className="text-orange-500 mr-2" size={36} />
-                <div className="text-xl font-bold text-white">
-                  Fully Licensed
-                </div>
+                <div className="text-xl font-bold text-white">Fully Licensed</div>
               </div>
               <div className="text-gray-400 font-semibold">& Insured</div>
             </div>
             <div>
               <div className="flex items-center justify-center mb-2">
                 <Users className="text-orange-500 mr-2" size={36} />
-                <div className="text-xl font-bold text-white">
-                  Professional
-                </div>
+                <div className="text-xl font-bold text-white">Professional</div>
               </div>
               <div className="text-gray-400 font-semibold">Owner-Operator</div>
             </div>
@@ -125,10 +150,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Why Choose{" "}
-              <span className="text-orange-500">
-                Freedom Line Freight Express?
-              </span>
+              Why Choose <span className="text-orange-500">Freedom Line Freight Express?</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Your vehicle is transported directly to its destination with no
@@ -230,9 +252,7 @@ export default function Home() {
               <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold text-white mx-auto mb-6">
                 1
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Schedule Pickup
-              </h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Schedule Pickup</h3>
               <p className="text-gray-400 text-lg leading-relaxed">
                 I coordinate directly with your home, dealership, auction, shop,
                 or business location.
@@ -243,9 +263,7 @@ export default function Home() {
               <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold text-white mx-auto mb-6">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                In Transit Updates
-              </h3>
+              <h3 className="text-2xl font-bold text-white mb-4">In Transit Updates</h3>
               <p className="text-gray-400 text-lg leading-relaxed">
                 You receive direct communication during transport.
               </p>
@@ -355,40 +373,28 @@ export default function Home() {
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
               <h3 className="text-xl font-bold text-white mb-2">Local</h3>
               <p className="text-gray-400 mb-4">0–25 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">
-                $85
-              </div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">$85</div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
-              <h3 className="text-xl font-bold text-white mb-2">
-                Extended Local
-              </h3>
+              <h3 className="text-xl font-bold text-white mb-2">Extended Local</h3>
               <p className="text-gray-400 mb-4">25–50 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">
-                $140
-              </div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">$140</div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
               <h3 className="text-xl font-bold text-white mb-2">Regional</h3>
               <p className="text-gray-400 mb-4">50–150 Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">
-                $285
-              </div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">$285</div>
               <p className="text-gray-400">Starting at</p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
-              <h3 className="text-xl font-bold text-white mb-2">
-                Long Distance
-              </h3>
+              <h3 className="text-xl font-bold text-white mb-2">Long Distance</h3>
               <p className="text-gray-400 mb-4">150+ Miles</p>
-              <div className="text-4xl font-bold text-orange-500 mb-2">
-                Custom Quote
-              </div>
+              <div className="text-4xl font-bold text-orange-500 mb-2">Custom Quote</div>
               <p className="text-gray-400">Mileage-based pricing</p>
             </div>
           </div>
@@ -411,9 +417,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Get your instant mileage-based quote now. No obligation.
-          </p>
+          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">Get your instant mileage-based quote now. No obligation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/request-pickup"
