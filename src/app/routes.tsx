@@ -9,6 +9,7 @@ import Pricing from "./pages/Pricing";
 import { RequestPickup } from "./pages/RequestPickup";
 import AcceptQuote from "./pages/AcceptQuote";
 import PhoenixDelivery from "./pages/PhoenixDelivery";
+
 // Freedom Line routing configuration
 // Root layout component
 function RootLayout() {
@@ -70,9 +71,9 @@ export const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-  path: "phoenix-delivery",
-  element: <PhoenixDelivery />,
-},
+        path: "phoenix-vehicle-delivery",
+        element: <PhoenixDelivery />,
+      },
       {
         path: "pricing",
         element: <Pricing />,
@@ -83,7 +84,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  // Hidden page - not in main navigation
   {
     path: "/accept",
     element: <AcceptQuote />,
