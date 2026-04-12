@@ -116,26 +116,46 @@ export default function SanTanValleyDelivery() {
         </section>
          <div className="mt-12">
   <h2 className="mb-4 text-2xl font-bold text-orange-400">
-    Frequently Asked Questions
-  </h2>
+    {/* FAQ */}
+<section className="border-y border-neutral-800 bg-neutral-900">
+  <div className="mx-auto max-w-6xl px-6 py-14">
 
-  <div className="space-y-4 text-neutral-300">
-    <p>
-      <strong>Do you offer same-day vehicle delivery?</strong><br />
-      Yes, same-day and emergency delivery may be available depending on distance and scheduling.
-    </p>
+    <h2 className="mb-8 text-2xl font-bold text-orange-400 text-center">
+      Frequently Asked Questions
+    </h2>
 
-    <p>
-      <strong>Do you use trailers?</strong><br />
-      No, we provide direct drive-away service. Your vehicle is driven, not towed.
-    </p>
+    <div className="mx-auto max-w-3xl space-y-6">
 
-    <p>
-      <strong>What types of vehicles do you transport?</strong><br />
-      Cars, SUVs, and small trucks that run and drive.
-    </p>
+      <div>
+        <h3 className="font-semibold text-white">
+          Do you offer same-day vehicle delivery?
+        </h3>
+        <p className="text-neutral-300">
+          Yes, same-day and emergency delivery may be available depending on distance and scheduling.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold text-white">
+          Do you use trailers?
+        </h3>
+        <p className="text-neutral-300">
+          No, we provide direct drive-away service. Your vehicle is driven, not towed.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold text-white">
+          What types of vehicles do you transport?
+        </h3>
+        <p className="text-neutral-300">
+          Cars, SUVs, and small trucks that run and drive.
+        </p>
+      </div>
+
+    </div>
   </div>
-</div>
+</section>
         {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
