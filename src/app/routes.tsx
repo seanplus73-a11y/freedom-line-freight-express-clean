@@ -11,6 +11,7 @@ import AcceptQuote from "./pages/AcceptQuote";
 import PhoenixDelivery from "./pages/PhoenixDelivery";
 import MesaDelivery from "./pages/MesaDelivery";
 import ChandlerDelivery from "./pages/ChandlerDelivery";
+import GilbertDelivery from "./pages/GilbertDelivery";
 
 // Freedom Line routing configuration
 // Root layout component
@@ -83,6 +84,10 @@ export const router = createBrowserRouter([
       {
         path: "chandler-vehicle-delivery",
         element: <ChandlerDelivery />,
+      },
+      {
+        path: "gilbert-vehicle-delivery",
+        element: <GilbertDelivery />,
       },
       {
         path: "pricing",
