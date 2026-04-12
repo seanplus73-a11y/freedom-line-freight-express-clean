@@ -158,11 +158,10 @@ export default function PhoenixDelivery() {
     />
   </div>
 </div>
-        {/* SERVICE AREA + CONTACT */}
+      {/* SERVICE AREA + CONTACT */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
             <div className="grid gap-10 md:grid-cols-2">
-
               <div>
                 <h2 className="mb-4 text-2xl font-bold text-orange-400">
                   Areas We Serve Around Phoenix
@@ -198,12 +197,47 @@ export default function PhoenixDelivery() {
                   <p><strong>Website:</strong> flfreightco.com</p>
                 </div>
               </div>
+            </div>
 
+            {/* INTERNAL LINKING SEO BOOST */}
+            <div className="mt-12">
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Areas We Serve
+              </h2>
+
+              <p className="text-neutral-300">
+                We also provide vehicle pickup and delivery in nearby areas:
+                <a href="/phoenix-vehicle-delivery" className="text-orange-400 ml-1">Phoenix</a>,
+                <a href="/mesa-vehicle-delivery" className="text-orange-400 ml-1">Mesa</a>,
+                <a href="/chandler-vehicle-delivery" className="text-orange-400 ml-1">Chandler</a>,
+                <a href="/gilbert-vehicle-delivery" className="text-orange-400 ml-1">Gilbert</a>,
+                <a href="/queen-creek-vehicle-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
+                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
+              </p>
+            </div>
+
+            {/* MAP */}
+            <div className="mt-12 rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Phoenix Map
+              </h2>
+
+              <p className="mb-4 text-neutral-300">
+                Serving Phoenix and nearby communities with reliable vehicle pickup,
+                auto parts delivery, package delivery, and same-day transport.
+              </p>
+
+              <div className="overflow-hidden rounded-xl border border-neutral-800">
+                <iframe
+                  title="Phoenix Arizona Map"
+                  src="https://www.google.com/maps?q=Phoenix,AZ&output=embed"
+                  width="100%"
+                  height="320"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
         </section>
-
-      </main>
-    </>
-  );
-}
