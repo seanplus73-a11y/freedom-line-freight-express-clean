@@ -9,6 +9,7 @@ import Pricing from "./pages/Pricing";
 import { RequestPickup } from "./pages/RequestPickup";
 import AcceptQuote from "./pages/AcceptQuote";
 import PhoenixDelivery from "./pages/PhoenixDelivery";
+import MesaDelivery from "./pages/MesaDelivery";
 
 // Freedom Line routing configuration
 // Root layout component
@@ -73,6 +74,10 @@ export const router = createBrowserRouter([
       {
         path: "phoenix-vehicle-delivery",
         element: <PhoenixDelivery />,
+      },
+      {
+        path: "mesa-vehicle-delivery",
+        element: <MesaDelivery />,
       },
       {
         path: "pricing",
