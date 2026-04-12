@@ -2,7 +2,7 @@ export default function ChandlerDelivery() {
   return (
     <>
       <main className="min-h-screen bg-neutral-950 text-white">
-        
+
         {/* HERO */}
         <section className="border-b border-neutral-800">
           <div className="mx-auto max-w-6xl px-6 py-16">
@@ -34,57 +34,58 @@ export default function ChandlerDelivery() {
 
         {/* SERVICES */}
         <section>
-          <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-2">
-            
-            <div>
-              <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Fast Chandler Vehicle Delivery
-              </h2>
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <div className="grid gap-10 md:grid-cols-2">
 
-              <p className="mb-4 text-neutral-300">
-                Need a car moved across Chandler, picked up from a dealership,
-                delivered to a repair shop, or transported to your home?
-                Freedom Line Freight Express offers direct, flexible service
-                with fast response times.
-              </p>
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                  Fast Chandler Vehicle Delivery
+                </h2>
 
-              <p className="text-neutral-300">
-                We also provide time-sensitive delivery for auto parts,
-                packages, and documents. Same-day and emergency delivery
-                may be available depending on distance and scheduling.
-              </p>
+                <p className="mb-4 text-neutral-300">
+                  Need a car moved across Chandler, picked up from a dealership,
+                  delivered to a repair shop, or transported to your home?
+                  Freedom Line Freight Express offers direct, flexible service
+                  with fast response times.
+                </p>
+
+                <p className="text-neutral-300">
+                  We also provide time-sensitive delivery for auto parts,
+                  packages, and documents. Same-day and emergency delivery may
+                  be available depending on distance and scheduling.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+                <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                  Services Available in Chandler
+                </h2>
+
+                <ul className="space-y-3 text-neutral-200">
+                  <li>• Vehicle pickup & delivery (runs & drives only)</li>
+                  <li>• Car transport and drive-away service</li>
+                  <li>• Dealer and auction vehicle transport</li>
+                  <li>• Auto parts delivery</li>
+                  <li>• Packages and document delivery</li>
+                  <li>• Same-day and emergency delivery</li>
+                  <li>• Local and long-distance transport</li>
+                </ul>
+              </div>
+
             </div>
-
-            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-              <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Services Available in Chandler
-              </h2>
-
-              <ul className="space-y-3 text-neutral-200">
-                <li>• Vehicle pickup & delivery (runs & drives only)</li>
-                <li>• Car transport and drive-away service</li>
-                <li>• Dealer and auction vehicle transport</li>
-                <li>• Auto parts delivery</li>
-                <li>• Packages and document delivery</li>
-                <li>• Same-day and emergency delivery</li>
-                <li>• Local and long-distance transport</li>
-              </ul>
-            </div>
-
           </div>
         </section>
 
         {/* WHY US */}
         <section className="border-y border-neutral-800 bg-neutral-900">
           <div className="mx-auto max-w-6xl px-6 py-14">
-            
             <h2 className="mb-6 text-2xl font-bold text-orange-400">
               Why Choose Freedom Line Freight Express
             </h2>
 
             <div className="grid gap-6 md:grid-cols-3">
 
-              <div className="bg-neutral-950 border border-neutral-800 p-6 rounded-2xl">
+              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
                 <h3 className="mb-3 text-xl font-semibold">
                   Direct Drive-Away Service
                 </h3>
@@ -94,7 +95,7 @@ export default function ChandlerDelivery() {
                 </p>
               </div>
 
-              <div className="bg-neutral-950 border border-neutral-800 p-6 rounded-2xl">
+              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
                 <h3 className="mb-3 text-xl font-semibold">
                   Fast & Reliable
                 </h3>
@@ -104,7 +105,7 @@ export default function ChandlerDelivery() {
                 </p>
               </div>
 
-              <div className="bg-neutral-950 border border-neutral-800 p-6 rounded-2xl">
+              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
                 <h3 className="mb-3 text-xl font-semibold">
                   Owner-Operated Service
                 </h3>
@@ -117,64 +118,88 @@ export default function ChandlerDelivery() {
             </div>
           </div>
         </section>
-         <section>
-  <div className="mx-auto max-w-6xl px-6 py-14">
-    ...
-    
-    {/* INTERNAL LINKING SEO BOOST */}
-    <div className="mt-12">
-      <h2 className="mb-4 text-2xl font-bold text-orange-400">
-        Areas We Serve
-      </h2>
 
-      <p className="text-neutral-300">
-        We also provide vehicle pickup and delivery in nearby areas:
-        <a href="/phoenix-delivery" className="text-orange-400 ml-1">Phoenix</a>,
-        <a href="/mesa-delivery" className="text-orange-400 ml-1">Mesa</a>,
-        <a href="/chandler-delivery" className="text-orange-400 ml-1">Chandler</a>,
-        <a href="/gilbert-delivery" className="text-orange-400 ml-1">Gilbert</a>,
-        <a href="/queen-creek-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
-        <a href="/san-tan-valley-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
-      </p>
-    </div>
-
-  </div>
-</section>
-        {/* SERVICE AREA */}
+        {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
         <section>
-          <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-2">
+          <div className="mx-auto max-w-6xl px-6 py-14">
 
-            <div>
+            <div className="grid gap-10 md:grid-cols-2">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                  Areas We Serve in and Around Chandler
+                </h2>
+
+                <p className="mb-4 text-neutral-300">
+                  We serve customers in Chandler and nearby communities including
+                  South Chandler, Downtown Chandler, Phoenix, Mesa, Gilbert,
+                  Queen Creek, and San Tan Valley.
+                </p>
+
+                <p className="text-neutral-300">
+                  If you need a vehicle, auto parts, or documents delivered in
+                  or around the Chandler area, we can help with scheduled and
+                  urgent requests.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+                <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                  Request a Quote
+                </h2>
+
+                <p className="mb-4 text-neutral-300">
+                  Need dependable vehicle pickup and delivery in Chandler, AZ?
+                  Contact Freedom Line Freight Express for a fast quote and
+                  availability.
+                </p>
+
+                <div className="space-y-2 text-neutral-200">
+                  <p><strong>Text:</strong> 480-742-8553</p>
+                  <p><strong>Email:</strong> dispatch@flfreightco.com</p>
+                  <p><strong>Website:</strong> flfreightco.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* INTERNAL LINKING */}
+            <div className="mt-12">
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Chandler Service Area
+                Nearby Cities We Serve
               </h2>
 
-              <p className="mb-4 text-neutral-300">
-                We serve Chandler and nearby areas including South Chandler,
-                Downtown Chandler, Gilbert, Mesa, Queen Creek, and the
-                greater Phoenix metro area.
-              </p>
-
               <p className="text-neutral-300">
-                Whether you need vehicle transport or small freight delivery,
-                we offer flexible scheduling and dependable service.
+                We also provide vehicle pickup and delivery in nearby cities including:
+                <a href="/phoenix-vehicle-delivery" className="text-orange-400 ml-1">Phoenix</a>,
+                <a href="/mesa-vehicle-delivery" className="text-orange-400 ml-1">Mesa</a>,
+                <a href="/chandler-vehicle-delivery" className="text-orange-400 ml-1">Chandler</a>,
+                <a href="/gilbert-vehicle-delivery" className="text-orange-400 ml-1">Gilbert</a>,
+                <a href="/queen-creek-vehicle-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
+                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
               </p>
             </div>
 
-            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+            {/* MAP */}
+            <div className="mt-12 rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Contact Us
+                Chandler Map
               </h2>
 
               <p className="mb-4 text-neutral-300">
-                Need fast vehicle pickup and delivery in Chandler, AZ?
-                Contact Freedom Line Freight Express today.
+                Serving Chandler and nearby communities with reliable vehicle
+                pickup, auto parts delivery, package delivery, and same-day
+                transport.
               </p>
 
-              <div className="space-y-2 text-neutral-200">
-                <p><strong>Text:</strong> 480-742-8553</p>
-                <p><strong>Email:</strong> dispatch@flfreightco.com</p>
-                <p><strong>Website:</strong> flfreightco.com</p>
+              <div className="overflow-hidden rounded-xl border border-neutral-800">
+                <iframe
+                  title="Chandler Arizona Map"
+                  src="https://www.google.com/maps?q=Chandler,AZ&output=embed"
+                  width="100%"
+                  height="320"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
 
