@@ -133,6 +133,31 @@ export default function PhoenixDelivery() {
 
   </div>
 </section>
+        <section>
+  <div className="mx-auto max-w-6xl px-6 py-14">
+    <div className="grid gap-10 md:grid-cols-2">
+        <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+  <h2 className="mb-4 text-2xl font-bold text-orange-400">
+    Phoenix Map
+  </h2>
+
+  <p className="mb-4 text-neutral-300">
+    Serving Phoenix and nearby communities with reliable vehicle pickup,
+    auto parts delivery, package delivery, and same-day transport.
+  </p>
+
+  <div className="overflow-hidden rounded-xl border border-neutral-800">
+    <iframe
+      title="Phoenix Arizona Map"
+      src="https://www.google.com/maps?q=Phoenix,AZ&output=embed"
+      width="100%"
+      height="320"
+      style={{ border: 0 }}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+</div>
         {/* SERVICE AREA + CONTACT */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
