@@ -111,7 +111,7 @@ export default function PhoenixDelivery() {
             <div className="grid gap-10 md:grid-cols-2">
               <div>
                 <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Areas We Serve Around Phoenix
+                 Areas We Serve in and Around Phoenix
                 </h2>
 
                 <p className="mb-4 text-neutral-300">
@@ -149,11 +149,11 @@ export default function PhoenixDelivery() {
             {/* INTERNAL LINKING SEO BOOST */}
             <div className="mt-12">
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Areas We Serve
+               Nearby Cities We Serve
               </h2>
 
               <p className="text-neutral-300">
-                We also provide vehicle pickup and delivery in nearby areas:
+                We also provide vehicle pickup and delivery in nearby cities including:
                 <a
                   href="/phoenix-vehicle-delivery"
                   className="text-orange-400 ml-1"
