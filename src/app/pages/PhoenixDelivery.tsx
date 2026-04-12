@@ -2,7 +2,7 @@ export default function PhoenixDelivery() {
   return (
     <>
       <main className="min-h-screen bg-neutral-950 text-white">
-        {/* HERO SECTION */}
+        {/* HERO */}
         <section className="border-b border-neutral-800">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-400">
@@ -19,29 +19,38 @@ export default function PhoenixDelivery() {
               service for cars, SUVs, and small trucks that run and drive — no
               towing and no trailers.
             </p>
+
+            <div className="mt-6">
+              <a
+                href="/request-pickup"
+                className="rounded-md bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
+              >
+                Request Pickup
+              </a>
+            </div>
           </div>
         </section>
 
-        {/* SERVICES INTRO */}
+        {/* SERVICES */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid gap-10 md:grid-cols-2">
+            <div className="grid items-start gap-10 md:grid-cols-2">
               <div>
                 <h2 className="mb-4 text-2xl font-bold text-orange-400">
                   Fast Phoenix Vehicle Delivery
                 </h2>
 
                 <p className="mb-4 text-neutral-300">
-                  Whether you need a car moved across Phoenix, picked up from a
-                  dealership, delivered to a repair shop, or transported to a
-                  home or business, Freedom Line Freight Express offers direct,
-                  flexible service with clear communication.
+                  Need a car moved across Phoenix, picked up from a dealership,
+                  delivered to a repair shop, or transported to your home?
+                  Freedom Line Freight Express offers direct, flexible service
+                  with fast response times.
                 </p>
 
                 <p className="text-neutral-300">
-                  We also handle time-sensitive deliveries for auto parts,
+                  We also provide time-sensitive delivery for auto parts,
                   packages, and documents. Same-day and emergency delivery may
-                  be available depending on scheduling and distance.
+                  be available depending on distance and scheduling.
                 </p>
               </div>
 
@@ -64,66 +73,105 @@ export default function PhoenixDelivery() {
           </div>
         </section>
 
-        {/* WHY CHOOSE US */}
+        {/* WHY US */}
         <section className="border-y border-neutral-800 bg-neutral-900">
           <div className="mx-auto max-w-6xl px-6 py-14">
             <h2 className="mb-6 text-2xl font-bold text-orange-400">
-              Why Customers Choose Freedom Line Freight Express
+              Why Choose Freedom Line Freight Express
             </h2>
 
             <div className="grid gap-6 md:grid-cols-3">
               <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold">
+                <h3 className="mb-3 text-xl font-semibold text-white">
                   Direct Drive-Away Service
                 </h3>
                 <p className="text-neutral-300">
-                  Your vehicle is driven directly to its destination. No trailer
-                  delays and no towing for running vehicles.
+                  Your vehicle is driven directly to its destination with no
+                  trailer delays and no towing.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold">
-                  Fast Pickup & Clear Communication
+                <h3 className="mb-3 text-xl font-semibold text-white">
+                  Fast & Reliable
                 </h3>
                 <p className="text-neutral-300">
-                  We focus on dependable scheduling, quick response times, and
-                  easy communication throughout the delivery process.
+                  Quick pickups, dependable delivery, and clear communication
+                  every step of the way.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold">
-                  Owner-Operated and Reliable
+                <h3 className="mb-3 text-xl font-semibold text-white">
+                  Owner-Operated Service
                 </h3>
                 <p className="text-neutral-300">
-                  Freedom Line Freight Express is owner-operated, giving you
-                  personal service with attention to care, timing, and trust.
+                  Personal attention and trusted service from a local Arizona
+                  business you can rely on.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
+        {/* FAQ */}
+        <section className="border-y border-neutral-800 bg-neutral-900">
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <h2 className="mb-8 text-center text-2xl font-bold text-orange-400">
+              Frequently Asked Questions
+            </h2>
+
+            <div className="mx-auto max-w-3xl space-y-6">
+              <div>
+                <h3 className="font-semibold text-white">
+                  Do you offer same-day vehicle delivery?
+                </h3>
+                <p className="text-neutral-300">
+                  Yes, same-day and emergency delivery may be available
+                  depending on distance and scheduling.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-white">
+                  Do you use trailers?
+                </h3>
+                <p className="text-neutral-300">
+                  No, we provide direct drive-away service. Your vehicle is
+                  driven, not towed.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-white">
+                  What types of vehicles do you transport?
+                </h3>
+                <p className="text-neutral-300">
+                  Cars, SUVs, and small trucks that run and drive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICE AREA + CONTACT + LINKS + MAP */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid gap-10 md:grid-cols-2">
+            <div className="grid items-start gap-10 md:grid-cols-2">
               <div>
                 <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                 Areas We Serve in and Around Phoenix
+                  Areas We Serve in and Around Phoenix
                 </h2>
 
                 <p className="mb-4 text-neutral-300">
                   We serve customers in Phoenix and nearby communities including
-                  downtown Phoenix, North Phoenix, South Phoenix, Mesa,
-                  Chandler, Gilbert, Queen Creek, and San Tan Valley.
+                  Mesa, Chandler, Gilbert, Queen Creek, and San Tan Valley.
                 </p>
 
                 <p className="text-neutral-300">
                   If you need a vehicle, auto parts, or documents delivered in
-                  or around the Phoenix metro area, we can help with scheduled
-                  and urgent requests.
+                  or around the Phoenix area, we can help with scheduled and
+                  urgent requests.
                 </p>
               </div>
 
@@ -146,69 +194,31 @@ export default function PhoenixDelivery() {
               </div>
             </div>
 
-            {/* INTERNAL LINKING SEO BOOST */}
-            <div className="mt-12">
+            {/* INTERNAL LINKS */}
+            <div className="mx-auto mt-12 max-w-3xl text-center">
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
-               Nearby Cities We Serve
+                Nearby Cities We Serve
               </h2>
 
-              <p className="text-neutral-300">
-                We also provide vehicle pickup and delivery in nearby cities including:
-                <a
-                  href="/phoenix-vehicle-delivery"
-                  className="text-orange-400 ml-1"
-                >
-                  Phoenix
-                </a>
-                ,
-                <a
-                  href="/mesa-vehicle-delivery"
-                  className="text-orange-400 ml-1"
-                >
-                  Mesa
-                </a>
-                ,
-                <a
-                  href="/chandler-vehicle-delivery"
-                  className="text-orange-400 ml-1"
-                >
-                  Chandler
-                </a>
-                ,
-                <a
-                  href="/gilbert-vehicle-delivery"
-                  className="text-orange-400 ml-1"
-                >
-                  Gilbert
-                </a>
-                ,
-                <a
-                  href="/queen-creek-vehicle-delivery"
-                  className="text-orange-400 ml-1"
-                >
-                  Queen Creek
-                </a>
-                ,
-                <a
-                  href="/san-tan-valley-vehicle-delivery"
-                  className="text-orange-400 ml-1"
-                >
-                  San Tan Valley
-                </a>
-                .
+              <p className="leading-8 text-neutral-300">
+                <a href="/phoenix-vehicle-delivery" className="text-orange-400">Phoenix</a>,{" "}
+                <a href="/mesa-vehicle-delivery" className="text-orange-400">Mesa</a>,{" "}
+                <a href="/chandler-vehicle-delivery" className="text-orange-400">Chandler</a>,{" "}
+                <a href="/gilbert-vehicle-delivery" className="text-orange-400">Gilbert</a>,{" "}
+                <a href="/queen-creek-vehicle-delivery" className="text-orange-400">Queen Creek</a>,{" "}
+                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400">San Tan Valley</a>
               </p>
             </div>
 
             {/* MAP */}
-            <div className="mt-12 rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+            <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+              <h2 className="mb-4 text-center text-2xl font-bold text-orange-400">
                 Phoenix Map
               </h2>
 
-              <p className="mb-4 text-neutral-300">
+              <p className="mb-4 text-center text-neutral-300">
                 Serving Phoenix and nearby communities with reliable vehicle
-                pickup, auto parts delivery, package delivery, and same-day
-                transport.
+                pickup and delivery services.
               </p>
 
               <div className="overflow-hidden rounded-xl border border-neutral-800">
@@ -219,7 +229,6 @@ export default function PhoenixDelivery() {
                   height="320"
                   style={{ border: 0 }}
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
             </div>
