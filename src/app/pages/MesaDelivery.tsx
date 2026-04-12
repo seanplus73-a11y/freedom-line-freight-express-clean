@@ -121,87 +121,91 @@ export default function MesaDelivery() {
   <div className="mx-auto max-w-6xl px-6 py-14">
     ...
     
-  {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
-<section>
-  <div className="mx-auto max-w-6xl px-6 py-14">
-    <div className="grid gap-10 md:grid-cols-2">
-      <div>
-        <h2 className="mb-4 text-2xl font-bold text-orange-400">
-          Areas We Serve in and Around Mesa
-        </h2>
+ {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
+        <section>
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <div className="grid gap-10 md:grid-cols-2">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                  Areas We Serve in and Around Mesa
+                </h2>
 
-        <p className="mb-4 text-neutral-300">
-          We serve customers in Mesa and nearby communities including
-          East Mesa, West Mesa, Phoenix, Chandler, Gilbert,
-          Queen Creek, and San Tan Valley.
-        </p>
+                <p className="mb-4 text-neutral-300">
+                  We serve customers in Mesa and nearby communities including
+                  East Mesa, West Mesa, Phoenix, Chandler, Gilbert,
+                  Queen Creek, and San Tan Valley.
+                </p>
 
-        <p className="text-neutral-300">
-          If you need a vehicle, auto parts, or documents delivered in
-          or around the Mesa area, we can help with scheduled
-          and urgent requests.
-        </p>
-      </div>
+                <p className="text-neutral-300">
+                  If you need a vehicle, auto parts, or documents delivered in
+                  or around the Mesa area, we can help with scheduled
+                  and urgent requests.
+                </p>
+              </div>
 
-      <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-        <h2 className="mb-4 text-2xl font-bold text-orange-400">
-          Request a Quote
-        </h2>
+              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+                <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                  Request a Quote
+                </h2>
 
-        <p className="mb-4 text-neutral-300">
-          Need dependable vehicle pickup and delivery in Mesa, AZ?
-          Contact Freedom Line Freight Express for a fast quote and
-          availability.
-        </p>
+                <p className="mb-4 text-neutral-300">
+                  Need dependable vehicle pickup and delivery in Mesa, AZ?
+                  Contact Freedom Line Freight Express for a fast quote and
+                  availability.
+                </p>
 
-        <div className="space-y-2 text-neutral-200">
-          <p><strong>Text:</strong> 480-742-8553</p>
-          <p><strong>Email:</strong> dispatch@flfreightco.com</p>
-          <p><strong>Website:</strong> flfreightco.com</p>
-        </div>
-      </div>
-    </div>
+                <div className="space-y-2 text-neutral-200">
+                  <p><strong>Text:</strong> 480-742-8553</p>
+                  <p><strong>Email:</strong> dispatch@flfreightco.com</p>
+                  <p><strong>Website:</strong> flfreightco.com</p>
+                </div>
+              </div>
+            </div>
 
-    {/* INTERNAL LINKING SEO BOOST */}
-    <div className="mt-12">
-      <h2 className="mb-4 text-2xl font-bold text-orange-400">
-        Nearby Cities We Serve
-      </h2>
+            {/* INTERNAL LINKING SEO BOOST */}
+            <div className="mt-12">
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Nearby Cities We Serve
+              </h2>
 
-      <p className="text-neutral-300">
-        We also provide vehicle pickup and delivery in nearby cities including:
-        <a href="/phoenix-vehicle-delivery" className="text-orange-400 ml-1">Phoenix</a>,
-        <a href="/mesa-vehicle-delivery" className="text-orange-400 ml-1">Mesa</a>,
-        <a href="/chandler-vehicle-delivery" className="text-orange-400 ml-1">Chandler</a>,
-        <a href="/gilbert-vehicle-delivery" className="text-orange-400 ml-1">Gilbert</a>,
-        <a href="/queen-creek-vehicle-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
-        <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
-      </p>
-    </div>
+              <p className="text-neutral-300">
+                We also provide vehicle pickup and delivery in nearby cities including:
+                <a href="/phoenix-vehicle-delivery" className="text-orange-400 ml-1">Phoenix</a>,
+                <a href="/mesa-vehicle-delivery" className="text-orange-400 ml-1">Mesa</a>,
+                <a href="/chandler-vehicle-delivery" className="text-orange-400 ml-1">Chandler</a>,
+                <a href="/gilbert-vehicle-delivery" className="text-orange-400 ml-1">Gilbert</a>,
+                <a href="/queen-creek-vehicle-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
+                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
+              </p>
+            </div>
 
-    {/* MAP */}
-    <div className="mt-12 rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-      <h2 className="mb-4 text-2xl font-bold text-orange-400">
-        Mesa Map
-      </h2>
+            {/* MAP */}
+            <div className="mt-12 rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Mesa Map
+              </h2>
 
-      <p className="mb-4 text-neutral-300">
-        Serving Mesa and nearby communities with reliable vehicle
-        pickup, auto parts delivery, package delivery, and same-day
-        transport.
-      </p>
+              <p className="mb-4 text-neutral-300">
+                Serving Mesa and nearby communities with reliable vehicle
+                pickup, auto parts delivery, package delivery, and same-day
+                transport.
+              </p>
 
-      <div className="overflow-hidden rounded-xl border border-neutral-800">
-        <iframe
-          title="Mesa Arizona Map"
-          src="https://www.google.com/maps?q=Mesa,AZ&output=embed"
-          width="100%"
-          height="320"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+              <div className="overflow-hidden rounded-xl border border-neutral-800">
+                <iframe
+                  title="Mesa Arizona Map"
+                  src="https://www.google.com/maps?q=Mesa,AZ&output=embed"
+                  width="100%"
+                  height="320"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
