@@ -155,88 +155,85 @@ export default function SanTanValleyDelivery() {
 
         {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
         <section>
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid gap-10 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Areas We Serve in and Around San Tan Valley
-                </h2>
+  <div className="mx-auto max-w-6xl px-6 py-14">
+    <div className="grid items-start gap-10 md:grid-cols-2">
+      <div>
+        <h2 className="mb-4 text-2xl font-bold text-orange-400">
+          Areas We Serve in and Around San Tan Valley
+        </h2>
 
-                <p className="mb-4 text-neutral-300">
-                  We serve customers in San Tan Valley and nearby communities including
-                  Queen Creek, Florence, Gilbert, Mesa, Chandler, and the
-                  surrounding East Valley.
-                </p>
+        <p className="mb-4 text-neutral-300">
+          We serve customers in San Tan Valley and nearby communities including
+          Queen Creek, Florence, Gilbert, Mesa, Chandler, and the surrounding East Valley.
+        </p>
 
-                <p className="text-neutral-300">
-                  If you need a vehicle, auto parts, or documents delivered in
-                  or around the San Tan Valley area, we can help with scheduled
-                  and urgent requests.
-                </p>
-              </div>
+        <p className="text-neutral-300">
+          If you need a vehicle, auto parts, or documents delivered in or around the
+          San Tan Valley area, we can help with scheduled and urgent requests.
+        </p>
+      </div>
 
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Request a Quote
-                </h2>
+      <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6 md:max-w-md md:justify-self-end">
+        <h2 className="mb-4 text-2xl font-bold text-orange-400">
+          Request a Quote
+        </h2>
 
-                <p className="mb-4 text-neutral-300">
-                  Need dependable vehicle pickup and delivery in San Tan Valley, AZ?
-                  Contact Freedom Line Freight Express for a fast quote and
-                  availability.
-                </p>
+        <p className="mb-4 text-neutral-300">
+          Need dependable vehicle pickup and delivery in San Tan Valley, AZ?
+          Contact Freedom Line Freight Express for a fast quote and availability.
+        </p>
 
-                <div className="space-y-2 text-neutral-200">
-                  <p><strong>Text:</strong> 480-742-8553</p>
-                  <p><strong>Email:</strong> dispatch@flfreightco.com</p>
-                  <p><strong>Website:</strong> flfreightco.com</p>
-                </div>
-              </div>
-            </div>
+        <div className="space-y-2 text-neutral-200">
+          <p><strong>Text:</strong> 480-742-8553</p>
+          <p><strong>Email:</strong> dispatch@flfreightco.com</p>
+          <p><strong>Website:</strong> flfreightco.com</p>
+        </div>
+      </div>
+    </div>
 
-            {/* INTERNAL LINKING */}
-            <div className="mx-auto mt-12 max-w-4xl">
-              <h2 className="mb-4 text-2xl font-bold text-orange-400 text-center">
-                Nearby Cities We Serve
-              </h2>
+    {/* INTERNAL LINKING */}
+    <div className="mx-auto mt-12 max-w-3xl">
+      <h2 className="mb-4 text-2xl font-bold text-orange-400 text-center">
+        Nearby Cities We Serve
+      </h2>
 
-              <p className="text-center leading-8 text-neutral-300">
-                We also provide vehicle pickup and delivery in nearby cities including{" "}
-                <a href="/phoenix-vehicle-delivery" className="text-orange-400">Phoenix</a>,{" "}
-                <a href="/mesa-vehicle-delivery" className="text-orange-400">Mesa</a>,{" "}
-                <a href="/chandler-vehicle-delivery" className="text-orange-400">Chandler</a>,{" "}
-                <a href="/gilbert-vehicle-delivery" className="text-orange-400">Gilbert</a>,{" "}
-                <a href="/queen-creek-vehicle-delivery" className="text-orange-400">Queen Creek</a>, and{" "}
-                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400">San Tan Valley</a>.
-              </p>
-            </div>
+      <p className="text-center leading-8 text-neutral-300">
+        We also provide vehicle pickup and delivery in nearby cities including
+        <br className="hidden md:block" />
+        <a href="/phoenix-vehicle-delivery" className="text-orange-400 ml-1">Phoenix</a>,{" "}
+        <a href="/mesa-vehicle-delivery" className="text-orange-400">Mesa</a>,{" "}
+        <a href="/chandler-vehicle-delivery" className="text-orange-400">Chandler</a>,{" "}
+        <a href="/gilbert-vehicle-delivery" className="text-orange-400">Gilbert</a>,{" "}
+        <a href="/queen-creek-vehicle-delivery" className="text-orange-400">Queen Creek</a>, and{" "}
+        <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400">San Tan Valley</a>.
+      </p>
+    </div>
 
-            {/* MAP */}
-            <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-              <h2 className="mb-4 text-center text-2xl font-bold text-orange-400">
-                San Tan Valley Map
-              </h2>
+    {/* MAP */}
+    <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+      <h2 className="mb-4 text-center text-2xl font-bold text-orange-400">
+        San Tan Valley Map
+      </h2>
 
-              <p className="mb-4 text-center text-neutral-300">
-                Serving San Tan Valley and nearby communities with reliable vehicle
-                pickup, auto parts delivery, package delivery, and same-day transport.
-              </p>
+      <p className="mb-4 text-center text-neutral-300">
+        Serving San Tan Valley and nearby communities with reliable vehicle
+        pickup, auto parts delivery, package delivery, and same-day transport.
+      </p>
 
-              <div className="overflow-hidden rounded-xl border border-neutral-800">
-                <iframe
-                  title="San Tan Valley Arizona Map"
-                  src="https://www.google.com/maps?q=San+Tan+Valley,AZ&output=embed"
-                  width="100%"
-                  height="320"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
+      <div className="overflow-hidden rounded-xl border border-neutral-800">
+        <iframe
+          title="San Tan Valley Arizona Map"
+          src="https://www.google.com/maps?q=San+Tan+Valley,AZ&output=embed"
+          width="100%"
+          height="320"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </div>
+  </div>
+</section>
       </main>
     </>
   );
