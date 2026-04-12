@@ -2,7 +2,6 @@ export default function SanTanValleyDelivery() {
   return (
     <>
       <main className="min-h-screen bg-neutral-950 text-white">
-
         {/* HERO */}
         <section className="border-b border-neutral-800">
           <div className="mx-auto max-w-6xl px-6 py-16">
@@ -24,7 +23,7 @@ export default function SanTanValleyDelivery() {
             <div className="mt-6">
               <a
                 href="/request-pickup"
-                className="bg-orange-500 px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"
+                className="rounded-md bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
               >
                 Request Pickup
               </a>
@@ -35,7 +34,7 @@ export default function SanTanValleyDelivery() {
         {/* SERVICES */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid gap-10 md:grid-cols-2">
+            <div className="grid items-start gap-10 md:grid-cols-2">
               <div>
                 <h2 className="mb-4 text-2xl font-bold text-orange-400">
                   Fast San Tan Valley Vehicle Delivery
@@ -83,7 +82,7 @@ export default function SanTanValleyDelivery() {
 
             <div className="grid gap-6 md:grid-cols-3">
               <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold">
+                <h3 className="mb-3 text-xl font-semibold text-white">
                   Direct Drive-Away Service
                 </h3>
                 <p className="text-neutral-300">
@@ -93,7 +92,7 @@ export default function SanTanValleyDelivery() {
               </div>
 
               <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold">
+                <h3 className="mb-3 text-xl font-semibold text-white">
                   Fast & Reliable
                 </h3>
                 <p className="text-neutral-300">
@@ -103,7 +102,7 @@ export default function SanTanValleyDelivery() {
               </div>
 
               <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold">
+                <h3 className="mb-3 text-xl font-semibold text-white">
                   Owner-Operated Service
                 </h3>
                 <p className="text-neutral-300">
@@ -118,7 +117,7 @@ export default function SanTanValleyDelivery() {
         {/* FAQ */}
         <section className="border-y border-neutral-800 bg-neutral-900">
           <div className="mx-auto max-w-6xl px-6 py-14">
-            <h2 className="mb-8 text-2xl font-bold text-orange-400 text-center">
+            <h2 className="mb-8 text-center text-2xl font-bold text-orange-400">
               Frequently Asked Questions
             </h2>
 
@@ -128,7 +127,8 @@ export default function SanTanValleyDelivery() {
                   Do you offer same-day vehicle delivery?
                 </h3>
                 <p className="text-neutral-300">
-                  Yes, same-day and emergency delivery may be available depending on distance and scheduling.
+                  Yes, same-day and emergency delivery may be available
+                  depending on distance and scheduling.
                 </p>
               </div>
 
@@ -137,7 +137,8 @@ export default function SanTanValleyDelivery() {
                   Do you use trailers?
                 </h3>
                 <p className="text-neutral-300">
-                  No, we provide direct drive-away service. Your vehicle is driven, not towed.
+                  No, we provide direct drive-away service. Your vehicle is
+                  driven, not towed.
                 </p>
               </div>
 
@@ -153,15 +154,9 @@ export default function SanTanValleyDelivery() {
           </div>
         </section>
 
-        
-Sean Jackson <seanplus73@gmail.com>
-2:45 PM (0 minutes ago)
-to me
-
-{/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
+        {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
-
             <div className="grid items-start gap-10 md:grid-cols-2">
               <div>
                 <h2 className="mb-4 text-2xl font-bold text-orange-400">
@@ -169,9 +164,9 @@ to me
                 </h2>
 
                 <p className="mb-4 text-neutral-300">
-                  We serve customers in San Tan Valley and nearby communities including
-                  Queen Creek, Florence, Gilbert, Mesa, Chandler, and the
-                  surrounding East Valley.
+                  We serve customers in San Tan Valley and nearby communities
+                  including Queen Creek, Florence, Gilbert, Mesa, Chandler, and
+                  the surrounding East Valley.
                 </p>
 
                 <p className="text-neutral-300">
@@ -187,15 +182,21 @@ to me
                 </h2>
 
                 <p className="mb-4 text-neutral-300">
-                  Need dependable vehicle pickup and delivery in San Tan Valley, AZ?
-                  Contact Freedom Line Freight Express for a fast quote and
+                  Need dependable vehicle pickup and delivery in San Tan Valley,
+                  AZ? Contact Freedom Line Freight Express for a fast quote and
                   availability.
                 </p>
 
                 <div className="space-y-2 text-neutral-200">
-                  <p><strong>Text:</strong> 480-742-8553</p>
-                  <p><strong>Email:</strong> dispatch@flfreightco.com</p>
-                  <p><strong>Website:</strong> flfreightco.com</p>
+                  <p>
+                    <strong>Text:</strong> 480-742-8553
+                  </p>
+                  <p>
+                    <strong>Email:</strong> dispatch@flfreightco.com
+                  </p>
+                  <p>
+                    <strong>Website:</strong> flfreightco.com
+                  </p>
                 </div>
               </div>
             </div>
@@ -207,13 +208,44 @@ to me
               </h2>
 
               <p className="leading-8 text-neutral-300">
-                We also provide vehicle pickup and delivery in nearby cities including{" "}
-                <a href="/phoenix-vehicle-delivery" className="text-orange-400">Phoenix</a>,{" "}
-                <a href="/mesa-vehicle-delivery" className="text-orange-400">Mesa</a>,{" "}
-                <a href="/chandler-vehicle-delivery" className="text-orange-400">Chandler</a>,{" "}
-                <a href="/gilbert-vehicle-delivery" className="text-orange-400">Gilbert</a>,{" "}
-                <a href="/queen-creek-vehicle-delivery" className="text-orange-400">Queen Creek</a>, and{" "}
-                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400">San Tan Valley</a>.
+                We also provide vehicle pickup and delivery in nearby cities
+                including{" "}
+                <a
+                  href="/phoenix-vehicle-delivery"
+                  className="text-orange-400"
+                >
+                  Phoenix
+                </a>
+                ,{" "}
+                <a href="/mesa-vehicle-delivery" className="text-orange-400">
+                  Mesa
+                </a>
+                ,{" "}
+                <a
+                  href="/chandler-vehicle-delivery"
+                  className="text-orange-400"
+                >
+                  Chandler
+                </a>
+                ,{" "}
+                <a href="/gilbert-vehicle-delivery" className="text-orange-400">
+                  Gilbert
+                </a>
+                ,{" "}
+                <a
+                  href="/queen-creek-vehicle-delivery"
+                  className="text-orange-400"
+                >
+                  Queen Creek
+                </a>
+                , and{" "}
+                <a
+                  href="/san-tan-valley-vehicle-delivery"
+                  className="text-orange-400"
+                >
+                  San Tan Valley
+                </a>
+                .
               </p>
             </div>
 
@@ -224,8 +256,9 @@ to me
               </h2>
 
               <p className="mb-4 text-center text-neutral-300">
-                Serving San Tan Valley and nearby communities with reliable vehicle
-                pickup, auto parts delivery, package delivery, and same-day transport.
+                Serving San Tan Valley and nearby communities with reliable
+                vehicle pickup, auto parts delivery, package delivery, and
+                same-day transport.
               </p>
 
               <div className="overflow-hidden rounded-xl border border-neutral-800">
@@ -240,6 +273,9 @@ to me
                 />
               </div>
             </div>
-
           </div>
         </section>
+      </main>
+    </>
+  );
+}
