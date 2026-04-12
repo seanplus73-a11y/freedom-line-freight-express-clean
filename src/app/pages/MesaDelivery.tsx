@@ -117,7 +117,29 @@ export default function MesaDelivery() {
             </div>
           </div>
         </section>
+         <section>
+  <div className="mx-auto max-w-6xl px-6 py-14">
+    ...
+    
+    {/* INTERNAL LINKING SEO BOOST */}
+    <div className="mt-12">
+      <h2 className="mb-4 text-2xl font-bold text-orange-400">
+        Areas We Serve
+      </h2>
 
+      <p className="text-neutral-300">
+        We also provide vehicle pickup and delivery in nearby areas:
+        <a href="/phoenix-delivery" className="text-orange-400 ml-1">Phoenix</a>,
+        <a href="/mesa-delivery" className="text-orange-400 ml-1">Mesa</a>,
+        <a href="/chandler-delivery" className="text-orange-400 ml-1">Chandler</a>,
+        <a href="/gilbert-delivery" className="text-orange-400 ml-1">Gilbert</a>,
+        <a href="/queen-creek-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
+        <a href="/san-tan-valley-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
+      </p>
+    </div>
+
+  </div>
+</section>
         {/* SERVICE AREA */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-2">
