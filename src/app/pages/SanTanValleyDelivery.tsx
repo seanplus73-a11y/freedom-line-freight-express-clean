@@ -114,48 +114,45 @@ export default function SanTanValleyDelivery() {
             </div>
           </div>
         </section>
-         <div className="mt-12">
-  <h2 className="mb-4 text-2xl font-bold text-orange-400">
-    {/* FAQ */}
-<section className="border-y border-neutral-800 bg-neutral-900">
-  <div className="mx-auto max-w-6xl px-6 py-14">
 
-    <h2 className="mb-8 text-2xl font-bold text-orange-400 text-center">
-      Frequently Asked Questions
-    </h2>
+        {/* FAQ */}
+        <section className="border-y border-neutral-800 bg-neutral-900">
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <h2 className="mb-8 text-2xl font-bold text-orange-400 text-center">
+              Frequently Asked Questions
+            </h2>
 
-    <div className="mx-auto max-w-3xl space-y-6">
+            <div className="mx-auto max-w-3xl space-y-6">
+              <div>
+                <h3 className="font-semibold text-white">
+                  Do you offer same-day vehicle delivery?
+                </h3>
+                <p className="text-neutral-300">
+                  Yes, same-day and emergency delivery may be available depending on distance and scheduling.
+                </p>
+              </div>
 
-      <div>
-        <h3 className="font-semibold text-white">
-          Do you offer same-day vehicle delivery?
-        </h3>
-        <p className="text-neutral-300">
-          Yes, same-day and emergency delivery may be available depending on distance and scheduling.
-        </p>
-      </div>
+              <div>
+                <h3 className="font-semibold text-white">
+                  Do you use trailers?
+                </h3>
+                <p className="text-neutral-300">
+                  No, we provide direct drive-away service. Your vehicle is driven, not towed.
+                </p>
+              </div>
 
-      <div>
-        <h3 className="font-semibold text-white">
-          Do you use trailers?
-        </h3>
-        <p className="text-neutral-300">
-          No, we provide direct drive-away service. Your vehicle is driven, not towed.
-        </p>
-      </div>
+              <div>
+                <h3 className="font-semibold text-white">
+                  What types of vehicles do you transport?
+                </h3>
+                <p className="text-neutral-300">
+                  Cars, SUVs, and small trucks that run and drive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <div>
-        <h3 className="font-semibold text-white">
-          What types of vehicles do you transport?
-        </h3>
-        <p className="text-neutral-300">
-          Cars, SUVs, and small trucks that run and drive.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
         {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
