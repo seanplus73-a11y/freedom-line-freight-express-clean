@@ -2,7 +2,6 @@ export default function PhoenixDelivery() {
   return (
     <>
       <main className="min-h-screen bg-neutral-950 text-white">
-        
         {/* HERO SECTION */}
         <section className="border-b border-neutral-800">
           <div className="mx-auto max-w-6xl px-6 py-16">
@@ -27,7 +26,6 @@ export default function PhoenixDelivery() {
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
             <div className="grid gap-10 md:grid-cols-2">
-              
               <div>
                 <h2 className="mb-4 text-2xl font-bold text-orange-400">
                   Fast Phoenix Vehicle Delivery
@@ -62,7 +60,6 @@ export default function PhoenixDelivery() {
                   <li>• Local and long-distance transport</li>
                 </ul>
               </div>
-
             </div>
           </div>
         </section>
@@ -70,13 +67,11 @@ export default function PhoenixDelivery() {
         {/* WHY CHOOSE US */}
         <section className="border-y border-neutral-800 bg-neutral-900">
           <div className="mx-auto max-w-6xl px-6 py-14">
-            
             <h2 className="mb-6 text-2xl font-bold text-orange-400">
               Why Customers Choose Freedom Line Freight Express
             </h2>
 
             <div className="grid gap-6 md:grid-cols-3">
-
               <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
                 <h3 className="mb-3 text-xl font-semibold">
                   Direct Drive-Away Service
@@ -106,59 +101,11 @@ export default function PhoenixDelivery() {
                   personal service with attention to care, timing, and trust.
                 </p>
               </div>
-
             </div>
           </div>
         </section>
-     <section>
-  <div className="mx-auto max-w-6xl px-6 py-14">
-    ...
-    
-    {/* INTERNAL LINKING SEO BOOST */}
-    <div className="mt-12">
-      <h2 className="mb-4 text-2xl font-bold text-orange-400">
-        Areas We Serve
-      </h2>
 
-      <p className="text-neutral-300">
-        We also provide vehicle pickup and delivery in nearby areas:
-        <a href="/phoenix-delivery" className="text-orange-400 ml-1">Phoenix</a>,
-        <a href="/mesa-delivery" className="text-orange-400 ml-1">Mesa</a>,
-        <a href="/chandler-delivery" className="text-orange-400 ml-1">Chandler</a>,
-        <a href="/gilbert-delivery" className="text-orange-400 ml-1">Gilbert</a>,
-        <a href="/queen-creek-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
-        <a href="/san-tan-valley-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
-      </p>
-    </div>
-
-  </div>
-</section>
-        <section>
-  <div className="mx-auto max-w-6xl px-6 py-14">
-    <div className="grid gap-10 md:grid-cols-2">
-        <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-  <h2 className="mb-4 text-2xl font-bold text-orange-400">
-    Phoenix Map
-  </h2>
-
-  <p className="mb-4 text-neutral-300">
-    Serving Phoenix and nearby communities with reliable vehicle pickup,
-    auto parts delivery, package delivery, and same-day transport.
-  </p>
-
-  <div className="overflow-hidden rounded-xl border border-neutral-800">
-    <iframe
-      title="Phoenix Arizona Map"
-      src="https://www.google.com/maps?q=Phoenix,AZ&output=embed"
-      width="100%"
-      height="320"
-      style={{ border: 0 }}
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    />
-  </div>
-</div>
-      {/* SERVICE AREA + CONTACT */}
+        {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
             <div className="grid gap-10 md:grid-cols-2">
@@ -207,12 +154,48 @@ export default function PhoenixDelivery() {
 
               <p className="text-neutral-300">
                 We also provide vehicle pickup and delivery in nearby areas:
-                <a href="/phoenix-vehicle-delivery" className="text-orange-400 ml-1">Phoenix</a>,
-                <a href="/mesa-vehicle-delivery" className="text-orange-400 ml-1">Mesa</a>,
-                <a href="/chandler-vehicle-delivery" className="text-orange-400 ml-1">Chandler</a>,
-                <a href="/gilbert-vehicle-delivery" className="text-orange-400 ml-1">Gilbert</a>,
-                <a href="/queen-creek-vehicle-delivery" className="text-orange-400 ml-1">Queen Creek</a>,
-                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400 ml-1">San Tan Valley</a>.
+                <a
+                  href="/phoenix-vehicle-delivery"
+                  className="text-orange-400 ml-1"
+                >
+                  Phoenix
+                </a>
+                ,
+                <a
+                  href="/mesa-vehicle-delivery"
+                  className="text-orange-400 ml-1"
+                >
+                  Mesa
+                </a>
+                ,
+                <a
+                  href="/chandler-vehicle-delivery"
+                  className="text-orange-400 ml-1"
+                >
+                  Chandler
+                </a>
+                ,
+                <a
+                  href="/gilbert-vehicle-delivery"
+                  className="text-orange-400 ml-1"
+                >
+                  Gilbert
+                </a>
+                ,
+                <a
+                  href="/queen-creek-vehicle-delivery"
+                  className="text-orange-400 ml-1"
+                >
+                  Queen Creek
+                </a>
+                ,
+                <a
+                  href="/san-tan-valley-vehicle-delivery"
+                  className="text-orange-400 ml-1"
+                >
+                  San Tan Valley
+                </a>
+                .
               </p>
             </div>
 
@@ -223,8 +206,9 @@ export default function PhoenixDelivery() {
               </h2>
 
               <p className="mb-4 text-neutral-300">
-                Serving Phoenix and nearby communities with reliable vehicle pickup,
-                auto parts delivery, package delivery, and same-day transport.
+                Serving Phoenix and nearby communities with reliable vehicle
+                pickup, auto parts delivery, package delivery, and same-day
+                transport.
               </p>
 
               <div className="overflow-hidden rounded-xl border border-neutral-800">
@@ -241,3 +225,7 @@ export default function PhoenixDelivery() {
             </div>
           </div>
         </section>
+      </main>
+    </>
+  );
+}
