@@ -114,7 +114,28 @@ export default function SanTanValleyDelivery() {
             </div>
           </div>
         </section>
+         <div className="mt-12">
+  <h2 className="mb-4 text-2xl font-bold text-orange-400">
+    Frequently Asked Questions
+  </h2>
 
+  <div className="space-y-4 text-neutral-300">
+    <p>
+      <strong>Do you offer same-day vehicle delivery?</strong><br />
+      Yes, same-day and emergency delivery may be available depending on distance and scheduling.
+    </p>
+
+    <p>
+      <strong>Do you use trailers?</strong><br />
+      No, we provide direct drive-away service. Your vehicle is driven, not towed.
+    </p>
+
+    <p>
+      <strong>What types of vehicles do you transport?</strong><br />
+      Cars, SUVs, and small trucks that run and drive.
+    </p>
+  </div>
+</div>
         {/* SERVICE AREA + CONTACT + INTERNAL LINKS + MAP */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-14">
