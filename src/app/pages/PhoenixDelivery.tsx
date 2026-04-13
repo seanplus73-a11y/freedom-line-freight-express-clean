@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 export default function PhoenixDelivery() {
   return (
     <>
@@ -11,38 +12,38 @@ export default function PhoenixDelivery() {
     />
 
     {/* FAQ SCHEMA */}
-    <script type="application/ld+json">
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do you offer same-day vehicle delivery?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, same-day and emergency delivery may be available depending on distance and scheduling."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you use trailers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, we provide direct drive-away service. Your vehicle is driven, not towed."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What types of vehicles do you transport?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Cars, SUVs, and small trucks that run and drive."
-            }
-          }
-        ]
-      })}
-    </script>
+ <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you offer same-day vehicle delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, same-day and emergency delivery may be available depending on distance and scheduling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you use trailers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, we provide direct drive-away service. Your vehicle is driven, not towed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of vehicles do you transport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cars, SUVs, and small trucks that run and drive."
+        }
+      }
+    ]
+  })}
+</script>
   </Helmet>
       <main className="min-h-screen bg-neutral-950 text-white">
         {/* HERO */}
