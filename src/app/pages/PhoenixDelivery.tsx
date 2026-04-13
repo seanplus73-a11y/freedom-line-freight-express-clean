@@ -1,6 +1,49 @@
 export default function PhoenixDelivery() {
   return (
     <>
+      <>
+  <Helmet>
+    <title>Vehicle Pickup & Delivery in Phoenix, AZ | Freedom Line Freight</title>
+
+    <meta
+      name="description"
+      content="Reliable vehicle pickup and delivery in Phoenix, AZ. No towing. Direct drive-away service for cars, SUVs, and small trucks."
+    />
+
+    {/* FAQ SCHEMA */}
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you offer same-day vehicle delivery?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, same-day and emergency delivery may be available depending on distance and scheduling."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you use trailers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, we provide direct drive-away service. Your vehicle is driven, not towed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of vehicles do you transport?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cars, SUVs, and small trucks that run and drive."
+            }
+          }
+        ]
+      })}
+    </script>
+  </Helmet>
       <main className="min-h-screen bg-neutral-950 text-white">
         {/* HERO */}
         <section className="border-b border-neutral-800">
