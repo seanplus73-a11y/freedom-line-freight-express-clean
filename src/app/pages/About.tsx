@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle,
   Shield,
   MessageSquare,
-  MapPin,
   Clock3,
   Truck,
   BadgeCheck,
