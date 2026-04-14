@@ -16,7 +16,6 @@ import cleanVehicleDriveway from "@/assets/pexels-cleanvehicledriveway.jpg";
 import manHoldingBoxesByCar from "@/assets/pexels-Manholdingboxesbycar.jpg";
 import customerCommunication from "@/assets/pexels-customercommunication.jpg";
 import bridgeAtNight from "@/assets/pexels-bridgeatnight.jpg";
-
 export default function About() {
   const values = [
     {
