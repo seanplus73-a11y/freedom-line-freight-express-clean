@@ -107,7 +107,7 @@ export default function About() {
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0">
           <img
-            src="pexels-cleanvehicledriveway.jpg"
+            src="/images/about-clean-vehicle.jpg"
             alt="Clean vehicle in driveway"
             className="h-full w-full object-cover opacity-25"
           />
@@ -210,7 +210,7 @@ export default function About() {
         <div className="order-1 md:order-2">
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="public/images/pexels-cleanvehicledriveway.jpg"
+              src="/images/about-clean-vehicle.jpg"
               alt="Clean vehicle parked in driveway"
               className="h-full w-full object-cover"
             />
