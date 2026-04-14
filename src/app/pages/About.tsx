@@ -103,12 +103,11 @@ export default function About() {
 
   return (
     <div className="bg-[#111827] text-white">
-      {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0">
           <img
-            src="/images/about-clean-vehicle.jpg"
-            alt="Clean vehicle in driveway"
+            src="public/images/about-clean-vehicle.jpg"
+            alt="Clean vehicle parked in driveway"
             className="h-full w-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#111827]/95 via-[#111827]/88 to-[#111827]/92" />
@@ -149,7 +148,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* OUR STORY */}
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:px-8">
         <div className="order-2 md:order-1">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
@@ -210,7 +208,7 @@ export default function About() {
         <div className="order-1 md:order-2">
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="/images/about-clean-vehicle.jpg"
+              src="public/images/about-clean-vehicle.jpg"
               alt="Clean vehicle parked in driveway"
               className="h-full w-full object-cover"
             />
@@ -218,7 +216,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* WHO WE WORK WITH */}
       <section className="border-y border-white/10 bg-white/[0.03]">
         <div className="mx-auto max-w-7xl px-6 py-16 md:px-8">
           <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
@@ -242,12 +239,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* DELIVERY / SERVICE IMAGE + TEXT */}
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:px-8">
         <div>
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="/images/about-delivery-man.jpg"
+              src="public/images/about-delivery-man.jpg"
               alt="Direct delivery service with packages by vehicle"
               className="h-full w-full object-cover"
             />
@@ -293,7 +289,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* WHY CUSTOMERS CHOOSE */}
       <section className="bg-white/[0.03] border-y border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -333,7 +328,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* COMMUNICATION IMAGE SECTION */}
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
@@ -378,7 +372,7 @@ export default function About() {
         <div>
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="/images/about-customer-communication.jpg"
+              src="public/images/about-customer-communication.jpg"
               alt="Customer communication and support"
               className="h-full w-full object-cover"
             />
@@ -386,7 +380,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CORE VALUES */}
       <section className="bg-white/[0.03] border-y border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -420,7 +413,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* SERVICE AREA */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-8">
         <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0f172a] shadow-2xl">
           <div className="grid md:grid-cols-2">
@@ -459,7 +451,7 @@ export default function About() {
 
             <div className="min-h-[320px] md:min-h-full">
               <img
-                src="/images/about-bridge-night.jpg"
+                src="public/images/about-bridge-night.jpg"
                 alt="Arizona skyline and bridge at night"
                 className="h-full w-full object-cover"
               />
@@ -468,7 +460,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="border-t border-white/10 bg-[#f97316]">
         <div className="mx-auto max-w-6xl px-6 py-16 text-center md:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
