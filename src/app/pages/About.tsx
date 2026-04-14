@@ -107,7 +107,7 @@ export default function About() {
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0">
           <img
-            src="images\personal-vehicle-transport.jpg"
+            src="images/pexels-stasm4m-32976307.jpg"
             alt="Clean vehicle in driveway"
             className="h-full w-full object-cover opacity-25"
           />
