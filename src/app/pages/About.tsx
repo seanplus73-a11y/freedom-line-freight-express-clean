@@ -210,7 +210,7 @@ export default function About() {
         <div className="order-1 md:order-2">
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="/images/about-clean-vehicle.jpg"
+              src="public/images/pexels-cleanvehicledriveway.jpg"
               alt="Clean vehicle parked in driveway"
               className="h-full w-full object-cover"
             />
