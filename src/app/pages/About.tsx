@@ -488,21 +488,21 @@ export default function About() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              to="/request-pickup"
-              className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 text-base font-semibold text-[#f97316] shadow-lg transition hover:scale-[1.02]"
-            >
-              Get Instant Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+  <a
+    href="/request-pickup"
+    className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 text-base font-semibold text-[#f97316] shadow-lg transition hover:scale-[1.02]"
+  >
+    Get Instant Quote
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </a>
 
-            <Link
-              to="/pricing"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10"
-            >
-              View Pricing
-            </Link>
-          </div>
+  <a
+    href="/pricing"
+    className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10"
+  >
+    View Pricing
+  </a>
+</div>
         </div>
       </section>
     </div>
