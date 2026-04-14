@@ -106,7 +106,7 @@ export default function About() {
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0">
           <img
-            <img src="pexels-cleanvehicledriveway.jpg" alt="clean-vehicle">
+            <img src="cleanvehicledriveway.jpg" alt="clean-vehicle">
             className="h-full w-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#111827]/95 via-[#111827]/88 to-[#111827]/92" />
