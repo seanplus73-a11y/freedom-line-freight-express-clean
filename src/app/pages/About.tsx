@@ -1,491 +1,291 @@
-import {
-  ArrowRight,
-  CheckCircle,
-  Shield,
-  MessageSquare,
-  Clock3,
-  Truck,
-  BadgeCheck,
-  Phone,
-  Building2,
-  Package,
-  Car,
-} from "lucide-react";
+import { Link } from "react-router";
+import { CheckCircle, Award, Users, TrendingUp, Truck, Clock, MessageSquare, Car } from "lucide-react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function About() {
-  const values = [
-    {
-      icon: Shield,
-      title: "Integrity",
-      description:
-        "Clear pricing, honest communication, and dependable service from pickup to delivery.",
-    },
-    {
-      icon: BadgeCheck,
-      title: "Direct Responsibility",
-      description:
-        "No brokers, no random hand-offs, and no unnecessary third parties involved.",
-    },
-    {
-      icon: MessageSquare,
-      title: "Professional Care",
-      description:
-        "Every vehicle and delivery is handled carefully with direct updates along the way.",
-    },
-    {
-      icon: Clock3,
-      title: "Reliability",
-      description:
-        "Fast response times, on-time coordination, and service you can count on.",
-    },
-  ];
-
-  const whyChoose = [
-    {
-      icon: Truck,
-      title: "No Waiting for Carrier Routes",
-      description:
-        "Your vehicle is driven directly where it needs to go without waiting on large carrier schedules.",
-    },
-    {
-      icon: CheckCircle,
-      title: "No Loading or Unloading Delays",
-      description:
-        "No trailer loading, no transfer terminals, and no wasted time between stops.",
-    },
-    {
-      icon: Car,
-      title: "Focused Vehicle Handling",
-      description:
-        "Direct driver service means more attention, fewer delays, and a smoother experience.",
-    },
-    {
-      icon: Clock3,
-      title: "Same-Day or Next-Day Availability",
-      description:
-        "Fast turnaround for customers who need speed, urgency, and direct transport.",
-    },
-    {
-      icon: Phone,
-      title: "Direct Communication",
-      description:
-        "Call, text, relay, or email for real-time updates and straightforward coordination.",
-    },
-    {
-      icon: BadgeCheck,
-      title: "Owner-Operated Accountability",
-      description:
-        "You work directly with the business, not a call center or a chain of dispatchers.",
-    },
-  ];
-
-  const whoWeWorkWith = [
-    "Dealerships",
-    "Auto Repair Shops",
-    "Private Owners",
-    "Auctions",
-    "Small Businesses",
-    "Auto Parts Suppliers",
-  ];
-
-  const serviceAreas = [
-    "Phoenix",
-    "Mesa",
-    "Chandler",
-    "Gilbert",
-    "Queen Creek",
-    "San Tan Valley",
-    "Scottsdale",
-    "Tempe",
-    "Glendale",
-    "Peoria",
-  ];
-
   return (
-    <div className="bg-[#111827] text-white">
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0">
-          <img
-            <img src="cleanvehicledriveway.jpg" alt="clean-vehicle">
-            className="h-full w-full object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#111827]/95 via-[#111827]/88 to-[#111827]/92" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-28">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#f97316]">
-              About Freedom Line Freight Express
-            </p>
-
-            <h1 className="max-w-5xl text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
-              Fast, Direct Vehicle Delivery Across Arizona
-              <span className="block text-[#f97316]">
-                No Brokers. No Waiting. No Middlemen.
-              </span>
+    <div className="bg-neutral-900">
+      {/* Hero Section */}
+      <section className="relative bg-black text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Fast, Direct Vehicle Delivery Across Arizona — <span className="text-orange-500">No Waiting, No Middlemen</span>
             </h1>
-
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-              Freedom Line Freight Express was built for customers who want
-              direct, reliable transport without the delays of traditional
-              carriers. I personally focus on clear communication, careful
-              handling, and fast turnaround from pickup to delivery.
+            <p className="text-xl text-gray-300">
+              Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-3 text-sm">
-              <span className="rounded-full border border-[#f97316]/40 bg-[#f97316]/10 px-4 py-2 text-slate-100">
-                Owner-Operated
-              </span>
-              <span className="rounded-full border border-[#f97316]/40 bg-[#f97316]/10 px-4 py-2 text-slate-100">
-                Same-Day / Next-Day Available
-              </span>
-              <span className="rounded-full border border-[#f97316]/40 bg-[#f97316]/10 px-4 py-2 text-slate-100">
-                Direct Driver Communication
-              </span>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:px-8">
-        <div className="order-2 md:order-1">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
-            Our Story
-          </p>
-
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">
-            Built on a simple idea:
-            <span className="block mt-2 text-slate-100">
-              vehicle transport should be fast, direct, and stress-free.
-            </span>
-          </h2>
-
-          <div className="mt-8 space-y-6 text-lg leading-8 text-slate-300">
-            <p>
-              Instead of waiting days for large carriers or dealing with broker
-              delays, Freedom Line Freight Express focuses on direct service and
-              personal accountability.
-            </p>
-
-            <p>
-              I personally coordinate transport with homes, dealerships,
-              auctions, repair shops, and businesses that need speed, clear
-              communication, and dependable delivery.
-            </p>
-
-            <p className="font-semibold text-[#f97316]">
-              No trailers. No transfers. No unnecessary delays.
-            </p>
-
-            <p>
-              Based in Arizona, I provide reliable same-day and next-day vehicle
-              and delivery services for customers who prefer direct handling
-              from start to finish.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              "Locally Owned & Operated",
-              "Fully Insured Vehicle Transport",
-              "Direct Driver Communication",
-              "Fast Response Within 5–10 Minutes",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4"
-              >
-                <CheckCircle className="h-5 w-5 shrink-0 text-[#f97316]" />
-                <span className="text-sm font-medium text-slate-100">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="order-1 md:order-2">
-          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-            <img
-              src="/images/about-clean-vehicle.jpg"
-              alt="Clean vehicle parked in driveway"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-8">
-          <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
-            Who We Work With
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-slate-300">
-            Flexible service for personal customers and business clients across
-            Arizona.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            {whoWeWorkWith.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-[#f97316]/30 bg-[#f97316]/10 px-5 py-3 text-sm font-medium text-slate-100"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:px-8">
-        <div>
-          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-            <img
-              src="/images/about-delivery-man.jpg"
-              alt="Direct delivery service with packages by vehicle"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
-            Direct Delivery Service
-          </p>
-
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">
-            Vehicle transport and delivery service
-            <span className="block text-[#f97316]">without the carrier hassle.</span>
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-slate-300">
-            Freedom Line Freight Express is designed for customers who want
-            direct pickup and delivery instead of waiting through complicated
-            transport chains. That includes personal vehicle delivery, auto
-            parts transport, documents, and small business deliveries.
-          </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <Building2 className="h-6 w-6 text-[#f97316]" />
-              <h3 className="mt-3 text-lg font-semibold">Dealership & Auction Support</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-300">
-                Direct pickup and delivery for dealerships, auctions, sellers,
-                and related businesses.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <Package className="h-6 w-6 text-[#f97316]" />
-              <h3 className="mt-3 text-lg font-semibold">Auto Parts & Small Packages</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-300">
-                Fast local and regional delivery for parts, documents, and
-                smaller business shipments.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white/[0.03] border-y border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
-              Why Customers Choose Freedom Line Freight Express
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">
-              Direct service that saves time and removes the usual delays
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              Skip the broker chain and work directly with a service built
-              around speed, accountability, and clear updates.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {whyChoose.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-white/10 bg-[#111827]/80 p-6 shadow-lg"
-                >
-                  <div className="inline-flex rounded-2xl bg-[#f97316]/15 p-3">
-                    <Icon className="h-6 w-6 text-[#f97316]" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:px-8">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
-            Clear Communication
-          </p>
-
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">
-            Real updates. Real answers.
-            <span className="block text-[#f97316]">No guessing during transport.</span>
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-slate-300">
-            Communication matters. Customers should know what is happening with
-            their vehicle or delivery, when pickup is scheduled, and when to
-            expect arrival.
-          </p>
-
-          <p className="mt-4 text-lg leading-8 text-slate-300">
-            That is why Freedom Line Freight Express focuses on direct contact
-            by text, email, relay, or phone so you can get quick answers and
-            real-time coordination without confusion.
-          </p>
-
-          <div className="mt-8 grid gap-4">
-            {[
-              "Fast quote responses",
-              "Direct text, relay, phone, and email communication",
-              "Pickup and delivery coordination updates",
-              "Straightforward service with no broker runaround",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4"
-              >
-                <MessageSquare className="h-5 w-5 shrink-0 text-[#f97316]" />
-                <span className="text-sm font-medium text-slate-100">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-            <img
-              src="/images/about-customer-communication.jpg"
-              alt="Customer communication and support"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white/[0.03] border-y border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
-              Our Core Values
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">
-              The principles behind every pickup and delivery
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {values.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-white/10 bg-[#111827]/80 p-6"
-                >
-                  <div className="inline-flex rounded-2xl bg-[#f97316]/15 p-3">
-                    <Icon className="h-6 w-6 text-[#f97316]" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 md:px-8">
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0f172a] shadow-2xl">
-          <div className="grid md:grid-cols-2">
-            <div className="p-8 md:p-12">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f97316]">
-                Our Service Area
-              </p>
-
-              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">
-                Arizona-based service with nearby states available on request
+      {/* Story Section */}
+      <section className="py-20 bg-neutral-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Our <span className="text-orange-500">Story</span>
               </h2>
-
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Based in Arizona, Freedom Line Freight Express specializes in
-                reliable local and regional transport. Most service is centered
-                around Arizona, with nearby state requests handled based on
-                availability and route fit.
+              <p className="text-gray-300 mb-6 leading-relaxed text-lg">
+                Freedom Line Freight Express was built on a simple idea:
               </p>
-
-              <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {serviceAreas.map((area) => (
-                  <div
-                    key={area}
-                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100"
-                  >
-                    {area}
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 rounded-2xl border border-[#f97316]/30 bg-[#f97316]/10 p-4 text-sm text-slate-100">
-                Out-of-state transport is limited and based on scheduling and
-                availability.
+              <p className="text-white font-bold mb-6 leading-relaxed text-xl">
+                Vehicle transport should be fast, direct, and stress-free.
+              </p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Instead of waiting days for large carriers or dealing with brokers, I personally drive your vehicle directly to its destination.
+              </p>
+              <p className="text-orange-400 font-bold mb-6 leading-relaxed text-lg">
+                No trailers. No transfers. No delays.
+              </p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Based in Arizona, I focus on reliable, same-day and next-day vehicle delivery for individuals, dealerships, and businesses who need speed and clear communication.
+              </p>
+              <p className="text-gray-300 mb-8 leading-relaxed">
+                Every vehicle is handled with care, real-time updates, and direct accountability from pickup to delivery.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
+                  <span className="text-gray-300">Locally Owned & Operated</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
+                  <span className="text-gray-300">Fully Insured Vehicle Transport</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
+                  <span className="text-gray-300">Direct Driver Communication</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
+                  <span className="text-gray-300">Same-Day & Next-Day Delivery Available</span>
+                </div>
               </div>
             </div>
-
-            <div className="min-h-[320px] md:min-h-full">
-              <img
-                src="/images/about-bridge-night.jpg"
-                alt="Arizona skyline and bridge at night"
-                className="h-full w-full object-cover"
+            <div className="rounded-lg overflow-hidden border border-neutral-700 h-[400px] md:h-[500px]">
+              <ImageWithFallback
+                src="/images/our-story.jpg"
+                alt="Professional vehicle key handover and delivery service"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#f97316]">
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center md:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
-            Need fast, reliable delivery?
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-orange-50">
-            Skip the broker chain and work directly with Freedom Line Freight
-            Express for vehicle transport, parts delivery, and business
-            shipments across Arizona.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="/request-pickup"
-              className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 text-base font-semibold text-[#f97316] shadow-lg transition hover:scale-[1.02]"
-            >
-              Get Instant Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-
-            <a
-              href="/pricing"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10"
-            >
-              View Pricing
-            </a>
+      {/* Why Customers Choose Direct Driver Service */}
+      <section className="py-20 bg-neutral-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Customers Choose <span className="text-orange-500">Direct Driver Service</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Fast, direct delivery that saves you time and eliminates the hassles of traditional carriers.
+            </p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <Truck className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">No Waiting for Truck Routes</h3>
+              <p className="text-gray-400">
+                Your vehicle goes directly where it needs to go without waiting for carrier schedules or multi-stop routes.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <CheckCircle className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">No Loading or Unloading Delays</h3>
+              <p className="text-gray-400">
+                I drive your vehicle directly. No trailers, no ramps, no time wasted loading or unloading from carriers.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <Car className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">No Multiple Vehicles on One Trailer</h3>
+              <p className="text-gray-400">
+                Your vehicle is the only vehicle I'm transporting, ensuring focused attention and no shared transport delays.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <Clock className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Faster Delivery (Same Day or Next Day)</h3>
+              <p className="text-gray-400">
+                Same-day and next-day delivery options available for customers who need their vehicle fast.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <MessageSquare className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Direct Communication with Driver</h3>
+              <p className="text-gray-400">
+                Call or text me directly for real-time updates throughout the entire transport process.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
+              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <Award className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Owner-Operated Accountability</h3>
+              <p className="text-gray-400">
+                Direct accountability and personal responsibility for every vehicle from pickup to delivery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 bg-neutral-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our Core <span className="text-orange-500">Values</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              The principles that guide every delivery we make.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
+              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
+                <CheckCircle className="text-orange-500" size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Integrity</h3>
+              <p className="text-gray-400">
+                We believe in honest pricing, clear expectations, and delivering exactly what we promise. No hidden fees. No surprises.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
+              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
+                <Users className="text-orange-500" size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Direct Responsibility</h3>
+              <p className="text-gray-400">
+                Your vehicle is handled directly by us from pickup to drop-off. No brokers. No carrier networks. Just straightforward, accountable service.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
+              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
+                <Award className="text-orange-500" size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Professional Care</h3>
+              <p className="text-gray-400">
+                Every vehicle is treated with attention and respect, whether it is a sedan, SUV, small heavy-duty truck, or luxury vehicle.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
+              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
+                <TrendingUp className="text-orange-500" size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Reliability</h3>
+              <p className="text-gray-400">
+                We value punctuality, preparedness, and consistent communication. Every delivery matters, and every client deserves dependable service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area */}
+      <section className="py-20 bg-neutral-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our <span className="text-orange-500">Service Area</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Professional vehicle transport services in Arizona.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto bg-neutral-800 rounded-lg p-8 border-2 border-orange-500/30">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="flex items-center">
+                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-lg font-bold text-white">Arizona (Primary Service Area)</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-lg font-bold text-white">Nearby states available by request only</span>
+              </div>
+            </div>
+
+            <div className="bg-orange-900/20 border border-orange-500/50 p-4 rounded mb-6">
+              <p className="text-orange-100 text-sm font-semibold">
+                Out-of-state transport is limited and based on availability
+              </p>
+            </div>
+
+            <div className="border-t border-neutral-700 pt-6 text-center">
+              <p className="text-gray-300">
+                <strong className="text-white">Based in Arizona,</strong> I specialize in reliable local and regional vehicle transport throughout the state.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Licensed & Insured */}
+      <section className="py-20 bg-neutral-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Licensed & <span className="text-orange-500">Insured</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Operating with proper credentials and coverage for your peace of mind.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="bg-neutral-900 p-6 rounded-lg text-center border border-neutral-700">
+              <div className="font-bold text-white mb-2">Fully Insured</div>
+              <p className="text-sm text-gray-400">Comprehensive Coverage</p>
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg text-center border border-neutral-700">
+              <div className="font-bold text-white mb-2">Arizona Licensed</div>
+              <p className="text-sm text-gray-400">State Licensed Operations</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Work Directly With Freedom Line
+          </h2>
+          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
+            Trusted by individuals and dealerships across Arizona for reliable vehicle pickup and delivery.
+          </p>
+          <Link
+            to="/request-pickup"
+            className="inline-flex items-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
+          >
+            Request Vehicle Pickup
+          </Link>
         </div>
       </section>
     </div>
