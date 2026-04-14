@@ -106,7 +106,7 @@ export default function About() {
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0">
           <img
-            src="public/images/about-clean-vehicle.jpg"
+            src="/images/about-clean-vehicle.jpg"
             alt="Clean vehicle parked in driveway"
             className="h-full w-full object-cover opacity-25"
           />
@@ -208,7 +208,7 @@ export default function About() {
         <div className="order-1 md:order-2">
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="public/images/about-clean-vehicle.jpg"
+              src="/images/about-clean-vehicle.jpg"
               alt="Clean vehicle parked in driveway"
               className="h-full w-full object-cover"
             />
@@ -243,7 +243,7 @@ export default function About() {
         <div>
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="public/images/about-delivery-man.jpg"
+              src="/images/about-delivery-man.jpg"
               alt="Direct delivery service with packages by vehicle"
               className="h-full w-full object-cover"
             />
@@ -372,7 +372,7 @@ export default function About() {
         <div>
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src="public/images/about-customer-communication.jpg"
+              src="/images/about-customer-communication.jpg"
               alt="Customer communication and support"
               className="h-full w-full object-cover"
             />
@@ -451,7 +451,7 @@ export default function About() {
 
             <div className="min-h-[320px] md:min-h-full">
               <img
-                src="public/images/about-bridge-night.jpg"
+                src="/images/about-bridge-night.jpg"
                 alt="Arizona skyline and bridge at night"
                 className="h-full w-full object-cover"
               />
