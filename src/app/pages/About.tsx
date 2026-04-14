@@ -12,10 +12,6 @@ import {
   Car,
 } from "lucide-react";
 
-import cleanVehicleDriveway from "@/assets/pexels-cleanvehicledriveway.jpg";
-import manHoldingBoxesByCar from "@/assets/pexels-Manholdingboxesbycar.jpg";
-import customerCommunication from "@/assets/pexels-customercommunication.jpg";
-import bridgeAtNight from "@/assets/pexels-bridgeatnight.jpg";
 export default function About() {
   const values = [
     {
@@ -111,7 +107,7 @@ export default function About() {
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0">
           <img
-            src={cleanVehicleDriveway}
+            src="/images/about-clean-vehicle.jpg"
             alt="Clean vehicle in driveway"
             className="h-full w-full object-cover opacity-25"
           />
@@ -214,7 +210,7 @@ export default function About() {
         <div className="order-1 md:order-2">
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src={cleanVehicleDriveway}
+              src="/images/about-clean-vehicle.jpg"
               alt="Clean vehicle parked in driveway"
               className="h-full w-full object-cover"
             />
@@ -251,7 +247,7 @@ export default function About() {
         <div>
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src={manHoldingBoxesByCar}
+              src="/images/about-delivery-man.jpg"
               alt="Direct delivery service with packages by vehicle"
               className="h-full w-full object-cover"
             />
@@ -382,7 +378,7 @@ export default function About() {
         <div>
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             <img
-              src={customerCommunication}
+              src="/images/about-customer-communication.jpg"
               alt="Customer communication and support"
               className="h-full w-full object-cover"
             />
@@ -463,7 +459,7 @@ export default function About() {
 
             <div className="min-h-[320px] md:min-h-full">
               <img
-                src={bridgeAtNight}
+                src="/images/about-bridge-night.jpg"
                 alt="Arizona skyline and bridge at night"
                 className="h-full w-full object-cover"
               />
@@ -485,21 +481,21 @@ export default function About() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-  <a
-    href="/request-pickup"
-    className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 text-base font-semibold text-[#f97316] shadow-lg transition hover:scale-[1.02]"
-  >
-    Get Instant Quote
-    <ArrowRight className="ml-2 h-5 w-5" />
-  </a>
+            <a
+              href="/request-pickup"
+              className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 text-base font-semibold text-[#f97316] shadow-lg transition hover:scale-[1.02]"
+            >
+              Get Instant Quote
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
 
-  <a
-    href="/pricing"
-    className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10"
-  >
-    View Pricing
-  </a>
-</div>
+            <a
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10"
+            >
+              View Pricing
+            </a>
+          </div>
         </div>
       </section>
     </div>
