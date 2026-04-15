@@ -1,124 +1,108 @@
-import { Link } from "react-router";
 import { Mail, Phone, MapPin, Facebook } from "lucide-react";
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-black text-gray-400 border-t border-neutral-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="col-span-1">
-            <h3 className="text-white text-xl font-bold mb-4">Freedom Line</h3>
-            <p className="text-sm mb-3 text-gray-300">
-              Professional vehicle transport across the Southwest. Licensed, insured, and trusted by thousands.
+    <footer className="bg-[#111827] text-white border-t border-white/10">
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="grid gap-10 md:grid-cols-4">
+          {/* Brand */}
+          <div>
+            <h3 className="text-xl font-bold leading-tight">
+              <span className="text-white">Freedom Line</span>
+              <br />
+              <span className="text-[#f97316]">Freight Express</span>
+            </h3>
+            <p className="mt-4 text-sm text-gray-300 leading-6">
+              Professional vehicle transport across the Southwest. Licensed,
+              insured, and trusted by customers who want direct service.
             </p>
-            <div className="text-sm text-gray-300 leading-relaxed">
-              <p className="font-semibold text-white">Deaf-Owned & Operated Business</p>
-              <p>Committed to clear communication, reliability, and professional vehicle transport.</p>
-            </div>
+            <p className="mt-4 text-sm font-semibold text-gray-200">
+              Deaf-Owned &amp; Operated Business
+            </p>
+            <p className="mt-2 text-sm text-gray-300">
+              Committed to clear communication, reliability, and professional
+              vehicle transport.
+            </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link to="/" className="hover:text-orange-500 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-orange-500 transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="hover:text-orange-500 transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-orange-500 transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-orange-500 transition-colors">
-                  Contact
-                </Link>
-              </li>
+            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
+            <ul className="mt-4 space-y-3 text-sm text-gray-300">
+              <li><a href="/" className="hover:text-[#f97316] transition-colors">Home</a></li>
+              <li><a href="/services" className="hover:text-[#f97316] transition-colors">Services</a></li>
+              <li><a href="/pricing" className="hover:text-[#f97316] transition-colors">Pricing</a></li>
+              <li><a href="/about" className="hover:text-[#f97316] transition-colors">About Us</a></li>
+              <li><a href="/contact" className="hover:text-[#f97316] transition-colors">Contact</a></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link to="/services" className="hover:text-orange-500 transition-colors">
-                  Personal Transport
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-orange-500 transition-colors">
-                  Dealer Pickup
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-orange-500 transition-colors">
-                  Local Delivery
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-orange-500 transition-colors">
-                  Regional Transport
-                </Link>
-              </li>
+            <h4 className="text-lg font-semibold text-white">Services</h4>
+            <ul className="mt-4 space-y-3 text-sm text-gray-300">
+              <li>Personal Transport</li>
+              <li>Dealer Pickup</li>
+              <li>Local Delivery</li>
+              <li>Regional Transport</li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h4 className="text-white font-bold mb-4">Contact Freedom Line</h4>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start">
-                <MapPin size={20} className="mr-2 flex-shrink-0 mt-1 text-orange-500" />
-                <div className="text-sm">
+            <h4 className="text-lg font-semibold text-white">Contact Freedom Line</h4>
+
+            <div className="mt-4 space-y-5 text-sm text-gray-300">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-1 h-5 w-5 text-[#f97316]" />
+                <div>
                   <p className="font-semibold text-white">Based in Arizona</p>
                   <p>Primary service area: Arizona (statewide)</p>
                   <p>Nearby states available by request only</p>
-                  <p className="text-xs text-gray-400 mt-1">Out-of-state transport is limited and scheduled based on availability</p>
+                  <p>Out-of-state transport is limited and scheduled based on availability</p>
                 </div>
-              </li>
-              <li className="flex items-start">
-                <Phone size={20} className="mr-2 flex-shrink-0 mt-1 text-orange-500" />
-                <div className="text-sm">
-                  <div>Relay Phone: 480-919-8088</div>
-                  <div>Text: 480-742-8553</div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Phone className="mt-1 h-5 w-5 text-[#f97316]" />
+                <div>
+                  <p>Relay Phone: 480-919-8088</p>
+                  <p>Text: 480-742-8553</p>
                 </div>
-              </li>
-              <li className="flex items-center">
-                <Mail size={20} className="mr-2 flex-shrink-0 text-orange-500" />
-                <span className="text-sm">dispatch@flfreightco.com</span>
-              </li>
-            </ul>
+              </div>
 
-            {/* Social Media */}
-            <div className="flex space-x-4 mt-4">
-  <a
-    href="https://www.facebook.com/profile.php?id=61579349444532"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-orange-500 transition-colors"
-  >
-    <Facebook size={20} />
-  </a>
-</div>
+              <div className="flex items-start gap-3">
+                <Mail className="mt-1 h-5 w-5 text-[#f97316]" />
+                <div>
+                  <a
+                    href="mailto:dispatch@flfreightco.com"
+                    className="hover:text-[#f97316] transition-colors"
+                  >
+                    dispatch@flfreightco.com
+                  </a>
+                </div>
+              </div>
 
-        <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-sm text-white">
-          <p>&copy; 2026 Freedom Line Freight Express LLC. All Rights Reserved.</p>
+              <div className="flex space-x-4 pt-2">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61579349444532"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="text-gray-300 hover:text-[#f97316] transition-colors"
+                >
+                  <Facebook size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
+          © 2026 Freedom Line Freight Express LLC. All Rights Reserved.
         </div>
       </div>
     </footer>
   );
 }
+
