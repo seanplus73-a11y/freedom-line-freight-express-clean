@@ -1,8 +1,14 @@
 import { Mail, Phone, MapPin, Facebook } from "lucide-react";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-[#111827] text-white border-t border-white/10">
+      {/* footer content */}
+    </footer>
+  );
+}
+
+export default Footer;
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand */}
