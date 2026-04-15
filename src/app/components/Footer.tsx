@@ -105,7 +105,7 @@ export function Footer() {
 
               <div className="flex space-x-4 pt-2">
                 <a
-                  href="https://www.facebook.com/profile.php?id=61579349444532"
+                  href="https://www.facebook.com/flfexpress"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
