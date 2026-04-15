@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
@@ -105,18 +105,15 @@ export function Footer() {
 
             {/* Social Media */}
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="hover:text-orange-500 transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="hover:text-orange-500 transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="hover:text-orange-500 transition-colors">
-                <Facebook size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
+  <a
+    href="https://www.facebook.com/profile.php?id=61579349444532"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-orange-500 transition-colors"
+  >
+    <Facebook size={20} />
+  </a>
+</div>
 
         <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-sm text-white">
           <p>&copy; 2026 Freedom Line Freight Express LLC. All Rights Reserved.</p>
