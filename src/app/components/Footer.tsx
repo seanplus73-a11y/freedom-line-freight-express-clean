@@ -3,12 +3,6 @@ import { Mail, Phone, MapPin, Facebook } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-[#111827] text-white border-t border-white/10">
-      {/* footer content */}
-    </footer>
-  );
-}
-
-export default Footer;
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand */}
@@ -35,11 +29,31 @@ export default Footer;
           <div>
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="mt-4 space-y-3 text-sm text-gray-300">
-              <li><a href="/" className="hover:text-[#f97316] transition-colors">Home</a></li>
-              <li><a href="/services" className="hover:text-[#f97316] transition-colors">Services</a></li>
-              <li><a href="/pricing" className="hover:text-[#f97316] transition-colors">Pricing</a></li>
-              <li><a href="/about" className="hover:text-[#f97316] transition-colors">About Us</a></li>
-              <li><a href="/contact" className="hover:text-[#f97316] transition-colors">Contact</a></li>
+              <li>
+                <a href="/" className="hover:text-[#f97316] transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/services" className="hover:text-[#f97316] transition-colors">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="/pricing" className="hover:text-[#f97316] transition-colors">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:text-[#f97316] transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-[#f97316] transition-colors">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -111,3 +125,5 @@ export default Footer;
     </footer>
   );
 }
+
+export default Footer;
