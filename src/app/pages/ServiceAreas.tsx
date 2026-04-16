@@ -10,43 +10,49 @@ import {
 
 export default function ServiceAreas() {
   const areas = [
-    {
-      title: "Chandler, AZ",
-      path: "/chandler-delivery",
-      description:
-        "Same-day auto parts delivery, vehicle transport, and business delivery services in Chandler. Ideal for repair shops, mechanics, and dealerships that need fast, reliable service.",
-    },
-    {
-      title: "Gilbert, AZ",
-      path: "/gilbert-delivery",
-      description:
-        "Reliable local delivery in Gilbert for auto parts, vehicles, and business items. Direct pickup and drop-off with flexible scheduling.",
-    },
-    {
-      title: "Mesa, AZ",
-      path: "/mesa-delivery",
-      description:
-        "Auto parts delivery for repair shops and mechanics in Mesa. Same-day service available to help reduce delays and keep jobs moving.",
-    },
-    {
-      title: "Queen Creek / San Tan Valley, AZ",
-      path: "/queen-creek-delivery",
-      description:
-        "Local delivery support for customers needing dependable pickup and transport services in Queen Creek and San Tan Valley.",
-    },
-    {
-      title: "Phoenix Metro Area",
-      path: "/phoenix-delivery",
-      description:
-        "Flexible coverage across the Phoenix metro area for vehicles, parts, and business transport depending on route and availability.",
-    },
-    {
-      title: "Scottsdale, AZ",
-      path: "/service-areas", // temporary until you create page
-      description:
-        "Direct transport services for personal vehicles, parts, and business items in Scottsdale with careful handling and reliable scheduling.",
-    },
-  ];
+  {
+    title: "Chandler, AZ",
+    path: "/chandler-delivery",
+    description:
+      "Same-day auto parts delivery, vehicle transport, and business delivery services in Chandler. Ideal for repair shops, mechanics, and dealerships that need fast, reliable service.",
+  },
+  {
+    title: "Gilbert, AZ",
+    path: "/gilbert-delivery",
+    description:
+      "Reliable local delivery in Gilbert for auto parts, vehicles, and business items. Direct pickup and drop-off with flexible scheduling.",
+  },
+  {
+    title: "Mesa, AZ",
+    path: "/mesa-delivery",
+    description:
+      "Auto parts delivery for repair shops and mechanics in Mesa. Same-day service available to help reduce delays and keep jobs moving.",
+  },
+  {
+    title: "Queen Creek / San Tan Valley, AZ",
+    path: "/queen-creek-delivery",
+    description:
+      "Local delivery support for customers needing dependable pickup and transport services in Queen Creek and San Tan Valley.",
+  },
+  {
+    title: "Phoenix Metro Area",
+    path: "/phoenix-delivery",
+    description:
+      "Flexible coverage across the Phoenix metro area for vehicles, parts, and business transport depending on route and availability.",
+  },
+  {
+    title: "Scottsdale, AZ",
+    path: "/scottsdale-delivery",
+    description:
+      "Direct transport services for personal vehicles, auto parts, and business items in Scottsdale with careful handling and reliable scheduling.",
+  },
+  {
+    title: "Casa Grande, AZ",
+    path: "/casa-grande-delivery",
+    description:
+      "Reliable pickup and delivery services in Casa Grande for vehicles, auto parts, packages, and business transport with flexible scheduling.",
+  },
+];
 
   return (
     <div className="bg-neutral-900">
