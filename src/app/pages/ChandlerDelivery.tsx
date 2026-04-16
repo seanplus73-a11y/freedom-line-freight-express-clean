@@ -202,13 +202,13 @@ export default function ChandlerDelivery() {
               </h2>
 
               <p className="leading-8 text-neutral-300">
-                <a href="/phoenix-vehicle-delivery" className="text-orange-400">Phoenix</a>,{" "}
-                <a href="/mesa-vehicle-delivery" className="text-orange-400">Mesa</a>,{" "}
-                <a href="/chandler-vehicle-delivery" className="text-orange-400">Chandler</a>,{" "}
-                <a href="/gilbert-vehicle-delivery" className="text-orange-400">Gilbert</a>,{" "}
-                <a href="/queen-creek-vehicle-delivery" className="text-orange-400">Queen Creek</a>,{" "}
-                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400">San Tan Valley</a>
-              </p>
+  <a href="/phoenix-delivery" className="text-orange-400">Phoenix</a>,{" "}
+  <a href="/mesa-delivery" className="text-orange-400">Mesa</a>,{" "}
+  <a href="/chandler-delivery" className="text-orange-400">Chandler</a>,{" "}
+  <a href="/gilbert-delivery" className="text-orange-400">Gilbert</a>,{" "}
+  <a href="/queen-creek-delivery" className="text-orange-400">Queen Creek</a>,{" "}
+  <a href="/san-tan-valley-delivery" className="text-orange-400">San Tan Valley</a>
+</p>
             </div>
 
             {/* MAP */}
