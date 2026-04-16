@@ -53,22 +53,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-      {
-        path: "pricing",
-        element: <Pricing />,
-      },
-      {
-        path: "request-pickup",
-        element: <RequestPickup />,
-      },
-    ],
-  },
-  {
-    path: "/accept",
-    element: <AcceptQuote />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-]);
