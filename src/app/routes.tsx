@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet } from "react-router";
-import { Navbar } from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -15,39 +16,13 @@ import GilbertDelivery from "./pages/GilbertDelivery";
 import QueenCreekDelivery from "./pages/QueenCreekDelivery";
 import SanTanValleyDelivery from "./pages/SanTanValleyDelivery";
 import ServiceAreas from "./pages/ServiceAreas";
-// Freedom Line routing configuration
-// Root layout component
+
 function RootLayout() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-[#111827] text-white">
       <Navbar />
-      <main className="flex-grow">
+      <main>
         <Outlet />
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
-// 404 Not Found page
-function NotFound() {
-  return (
-    <div className="flex flex-col min-h-screen bg-neutral-900">
-      <Navbar />
-      <main className="flex-grow flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-6xl font-bold text-white mb-4">404</h1>
-          <h2 className="text-2xl font-semibold text-gray-300 mb-4">Page Not Found</h2>
-          <p className="text-gray-400 mb-8">
-            The page you're looking for doesn't exist.
-          </p>
-          <a
-            href="/"
-            className="inline-block bg-orange-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-600 transition-colors"
-          >
-            Go Home
-          </a>
-        </div>
       </main>
       <Footer />
     </div>
@@ -59,50 +34,25 @@ export const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "services",
-        element: <Services />,
-      },
-      {
-        path: "/service-areas",
-        element: <ServiceAreas />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "phoenix-vehicle-delivery",
-        element: <PhoenixDelivery />,
-      },
-      {
-        path: "mesa-vehicle-delivery",
-        element: <MesaDelivery />,
-      },
-      {
-        path: "chandler-vehicle-delivery",
-        element: <ChandlerDelivery />,
-      },
-      {
-        path: "gilbert-vehicle-delivery",
-        element: <GilbertDelivery />,
-      },
-      {
-        path: "queen-creek-vehicle-delivery",
-        element: <QueenCreekDelivery />,
-      },
-      {
-        path: "san-tan-valley-vehicle-delivery",
-        element: <SanTanValleyDelivery />,
-      },
+      { index: true, element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "services", element: <Services /> },
+      { path: "pricing", element: <Pricing /> },
+      { path: "contact", element: <Contact /> },
+      { path: "request-pickup", element: <RequestPickup /> },
+      { path: "accept-quote", element: <AcceptQuote /> },
+
+      { path: "service-areas", element: <ServiceAreas /> },
+
+      { path: "phoenix-delivery", element: <PhoenixDelivery /> },
+      { path: "mesa-delivery", element: <MesaDelivery /> },
+      { path: "chandler-delivery", element: <ChandlerDelivery /> },
+      { path: "gilbert-delivery", element: <GilbertDelivery /> },
+      { path: "queen-creek-delivery", element: <QueenCreekDelivery /> },
+      { path: "san-tan-valley-delivery", element: <SanTanValleyDelivery /> },
+    ],
+  },
+]);
       {
         path: "pricing",
         element: <Pricing />,
