@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import {
   ArrowRight,
   Truck,
@@ -10,43 +9,13 @@ import {
   Car,
   Package,
   Briefcase,
-  Phone,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function Home() {
   return (
     <div className="bg-neutral-900">
-      {/* Top Contact Banner */}
-      <div className="bg-orange-500 text-white py-3 px-4 sm:px-6 lg:px-8 sticky top-0 z-50 shadow-lg">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-          <div className="flex items-center gap-3">
-            <Phone className="text-white animate-pulse" size={20} />
-            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-              <span className="font-bold text-lg">Call or Text:</span>
-              <div className="flex gap-2 items-center">
-                <a
-                  href="tel:4807428553"
-                  className="font-bold text-lg hover:underline"
-                >
-                  480-742-8553
-                </a>
-                <span className="hidden sm:inline text-white/80">|</span>
-                <a
-                  href="sms:4807428553"
-                  className="text-sm font-semibold hover:underline sm:hidden"
-                >
-                  Text Now
-                </a>
-              </div>
-            </div>
-          </div>
-          <span className="text-sm font-semibold text-orange-100">
-            Fast response within 5–10 minutes
-          </span>
-        </div>
-      </div>
-
+      
       {/* Hero Section */}
       <section className="relative bg-black text-white">
         <div className="absolute inset-0 opacity-50">
