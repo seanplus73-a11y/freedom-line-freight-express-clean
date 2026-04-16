@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import {
   MapPin,
-  CheckCircle,
   ArrowRight,
   Car,
   Package,
@@ -10,60 +9,44 @@ import {
 } from "lucide-react";
 
 export default function ServiceAreas() {
- const areas = [
-  {
-    title: "Chandler, AZ",
-    path: "/chandler-delivery",
-    description:
-      "Same-day auto parts delivery, vehicle transport, and business delivery services in Chandler. Ideal for repair shops, mechanics, and dealerships that need fast, reliable service.",
-  },
-  {
-    title: "Gilbert, AZ",
-    path: "/gilbert-delivery",
-    description:
-      "Reliable local delivery in Gilbert for auto parts, vehicles, and business items. Direct pickup and drop-off with flexible scheduling.",
-  },
-  {
-    title: "Mesa, AZ",
-    path: "/mesa-delivery",
-    description:
-      "Auto parts delivery for repair shops and mechanics in Mesa. Same-day service available to help reduce delays and keep jobs moving.",
-  },
-  {
-    title: "Queen Creek / San Tan Valley, AZ",
-    path: "/queen-creek-delivery",
-    description:
-      "Local delivery support for customers needing dependable pickup and transport services in Queen Creek and San Tan Valley.",
-  },
-  {
-    title: "Phoenix Metro Area",
-    path: "/phoenix-delivery",
-    description:
-      "Flexible coverage across the Phoenix metro area for vehicles, parts, and business transport depending on route and availability.",
-  },
-  {
-    title: "Scottsdale, AZ",
-    path: "/service-areas", // temp until you create page
-    description:
-      "Direct transport services for personal vehicles, parts, and business items in Scottsdale with careful handling and reliable scheduling.",
-  },
-];
-  {areas.map((area, index) => (
-  <Link to={area.path} key={index} className="block group">
-    <div className="bg-neutral-900 border border-neutral-700 p-6 rounded-lg 
-      transition transform group-hover:-translate-y-1 
-      group-hover:border-orange-500 group-hover:shadow-lg cursor-pointer">
-
-      <MapPin className="text-orange-500 mb-4" size={28} />
-
-      <h3 className="text-xl font-bold text-white mb-2">
-        {area.title}
-      </h3>
-
-      <p className="text-gray-400">{area.description}</p>
-    </div>
-  </Link>
-))}
+  const areas = [
+    {
+      title: "Chandler, AZ",
+      path: "/chandler-delivery",
+      description:
+        "Same-day auto parts delivery, vehicle transport, and business delivery services in Chandler. Ideal for repair shops, mechanics, and dealerships that need fast, reliable service.",
+    },
+    {
+      title: "Gilbert, AZ",
+      path: "/gilbert-delivery",
+      description:
+        "Reliable local delivery in Gilbert for auto parts, vehicles, and business items. Direct pickup and drop-off with flexible scheduling.",
+    },
+    {
+      title: "Mesa, AZ",
+      path: "/mesa-delivery",
+      description:
+        "Auto parts delivery for repair shops and mechanics in Mesa. Same-day service available to help reduce delays and keep jobs moving.",
+    },
+    {
+      title: "Queen Creek / San Tan Valley, AZ",
+      path: "/queen-creek-delivery",
+      description:
+        "Local delivery support for customers needing dependable pickup and transport services in Queen Creek and San Tan Valley.",
+    },
+    {
+      title: "Phoenix Metro Area",
+      path: "/phoenix-delivery",
+      description:
+        "Flexible coverage across the Phoenix metro area for vehicles, parts, and business transport depending on route and availability.",
+    },
+    {
+      title: "Scottsdale, AZ",
+      path: "/service-areas", // temporary until you create page
+      description:
+        "Direct transport services for personal vehicles, parts, and business items in Scottsdale with careful handling and reliable scheduling.",
+    },
+  ];
 
   return (
     <div className="bg-neutral-900">
@@ -83,22 +66,21 @@ export default function ServiceAreas() {
         </div>
       </section>
 
-      {/* AREAS GRID */}
+      {/* AREAS GRID (FIXED CLICKABLE CARDS) */}
       <section className="py-20 bg-neutral-800">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {areas.map((area, index) => (
-            <div
-              key={index}
-              className="bg-neutral-900 border border-neutral-700 p-6 rounded-lg hover:border-orange-500 transition"
-            >
-              <MapPin className="text-orange-500 mb-4" size={28} />
+            <Link to={area.path} key={index} className="block group">
+              <div className="bg-neutral-900 border border-neutral-700 p-6 rounded-lg h-full transition transform group-hover:-translate-y-1 group-hover:border-orange-500 group-hover:shadow-lg cursor-pointer">
+                <MapPin className="text-orange-500 mb-4" size={28} />
 
-              <h3 className="text-xl font-bold text-white mb-2">
-                {area.title}
-              </h3>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {area.title}
+                </h3>
 
-              <p className="text-gray-400">{area.description}</p>
-            </div>
+                <p className="text-gray-400">{area.description}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -134,7 +116,7 @@ export default function ServiceAreas() {
         </div>
       </section>
 
-      {/* COMPETITOR POSITIONING */}
+      {/* COMPETITOR SECTION */}
       <section className="py-20 bg-neutral-800">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
