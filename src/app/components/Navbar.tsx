@@ -61,7 +61,7 @@ export default function Navbar() {
 
                 <div className="invisible absolute left-0 top-full mt-3 w-72 rounded-xl border border-white/10 bg-[#0f172a] p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
                   <Link
-                    to="/chandler-vehicle-delivery"
+                    to="/chandler-delivery"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
                   >
                     <Car className="mt-0.5 text-[#f97316]" size={18} />
@@ -203,7 +203,7 @@ export default function Navbar() {
               {mobileServicesOpen && (
                 <div className="ml-2 flex flex-col gap-2 border-l border-white/10 pl-3">
                   <Link
-                    to="/chandler-vehicle-delivery"
+                    to="/chandler-delivery"
                     onClick={() => setMobileOpen(false)}
                     className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-white/5"
                   >
