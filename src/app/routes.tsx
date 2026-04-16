@@ -14,7 +14,7 @@ import ChandlerDelivery from "./pages/ChandlerDelivery";
 import GilbertDelivery from "./pages/GilbertDelivery";
 import QueenCreekDelivery from "./pages/QueenCreekDelivery";
 import SanTanValleyDelivery from "./pages/SanTanValleyDelivery";
-
+import ServiceAreas from "./pages/ServiceAreas";
 // Freedom Line routing configuration
 // Root layout component
 function RootLayout() {
@@ -70,6 +70,10 @@ export const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
+      },
+      {
+        path: "/service-areas",
+        element: <ServiceAreas />,
       },
       {
         path: "contact",
