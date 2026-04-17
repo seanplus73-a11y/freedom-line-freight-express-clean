@@ -6,27 +6,29 @@ import {
   Package,
   Building2,
   Phone,
+  MapPin,
+  Truck,
 } from "lucide-react";
 
 export default function ChandlerAutoPartsDelivery() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
-      {/* Hero */}
+      {/* HERO */}
       <section className="border-b border-neutral-800 bg-neutral-950">
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
             Chandler, Arizona
           </p>
 
-          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
+          <h1 className="mb-6 max-w-4xl text-4xl font-bold leading-tight md:text-5xl">
             Same-Day Auto Parts Delivery in Chandler, AZ
           </h1>
 
           <p className="max-w-3xl text-lg leading-8 text-neutral-300">
-            Freedom Line Freight Express provides reliable auto parts delivery in
-            Chandler for repair shops, mechanics, dealerships, and local
-            businesses. We help keep jobs moving with direct pickup, fast local
-            delivery, and flexible scheduling.
+            Freedom Line Freight Express provides dependable same-day auto parts
+            delivery in Chandler for repair shops, mechanics, dealerships, and
+            local businesses. We help keep your shop moving with direct pickup,
+            fast local delivery, and flexible scheduling for urgent parts runs.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -39,113 +41,161 @@ export default function ChandlerAutoPartsDelivery() {
 
             <a
               href="sms:4807428553"
-              className="inline-flex items-center justify-center rounded-xl border border-orange-500 px-6 py-3 font-semibold text-orange-400 transition hover:bg-orange-500/10"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-orange-500 px-6 py-3 font-semibold text-orange-400 transition hover:bg-orange-500/10"
             >
+              <Phone size={18} />
               Text 480-742-8553
             </a>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-4">
+              <div className="mb-2 flex items-center gap-2 text-orange-400">
+                <Clock size={18} />
+                <span className="font-semibold">Fast Local Response</span>
+              </div>
+              <p className="text-sm leading-6 text-neutral-300">
+                Same-day support may be available depending on route and timing.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-4">
+              <div className="mb-2 flex items-center gap-2 text-orange-400">
+                <Wrench size={18} />
+                <span className="font-semibold">Built for Repair Shops</span>
+              </div>
+              <p className="text-sm leading-6 text-neutral-300">
+                Designed for mechanics, garages, and service departments.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-4">
+              <div className="mb-2 flex items-center gap-2 text-orange-400">
+                <Truck size={18} />
+                <span className="font-semibold">Direct Pickup & Delivery</span>
+              </div>
+              <p className="text-sm leading-6 text-neutral-300">
+                No unnecessary handoffs or confusing app-based routing.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-4">
+              <div className="mb-2 flex items-center gap-2 text-orange-400">
+                <Building2 size={18} />
+                <span className="font-semibold">Business-Friendly</span>
+              </div>
+              <p className="text-sm leading-6 text-neutral-300">
+                Reliable service for local businesses and repeat delivery needs.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Main Intro */}
+      {/* INTRO + SERVICES */}
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2">
         <div>
           <h2 className="mb-4 text-2xl font-bold text-orange-400">
-            Fast Parts Delivery for Repair Shops in Chandler
+            Fast Auto Parts Delivery for Repair Shops in Chandler
           </h2>
 
           <p className="mb-4 leading-8 text-neutral-300">
-            If your shop is waiting on brake pads, boxed parts, dealership
+            If your shop is waiting on brake pads, boxed parts, dealer-supplied
             items, small equipment, or urgent automotive supplies, Freedom Line
             Freight Express can help with direct local delivery in Chandler.
           </p>
 
+          <p className="mb-4 leading-8 text-neutral-300">
+            We work with repair shops, mechanics, dealerships, and business
+            customers who need dependable local support without the delays that
+            often come with app-based or multi-stop delivery services.
+          </p>
+
           <p className="leading-8 text-neutral-300">
-            We focus on same-day support for repair shops and business customers
-            who need dependable delivery instead of slow multi-stop app-based
-            service.
+            Whether you need a one-time urgent run or recurring shop support, we
+            focus on clear communication, flexible scheduling, and reliable
+            service throughout Chandler and nearby areas.
           </p>
         </div>
 
         <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
           <h2 className="mb-4 text-2xl font-bold text-orange-400">
-            Services Available in Chandler
+            Auto Parts Delivery Services in Chandler
           </h2>
 
           <ul className="space-y-3 text-neutral-300">
-            <li>• Same-day auto parts delivery</li>
-            <li>• Repair shop and mechanic support</li>
-            <li>• Dealer-to-shop parts runs</li>
-            <li>• Boxed items and equipment delivery</li>
-            <li>• Documents and small package transport</li>
-            <li>• Scheduled and urgent local delivery</li>
+            <li>• Same-day auto parts delivery in Chandler</li>
+            <li>• Urgent repair shop parts runs</li>
+            <li>• Dealership-to-shop delivery support</li>
+            <li>• Boxed items and small equipment transport</li>
+            <li>• Documents and small package delivery</li>
+            <li>• Scheduled local business delivery</li>
+            <li>• Flexible pickup and drop-off service</li>
           </ul>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* WHO WE HELP */}
       <section className="border-y border-neutral-800 bg-neutral-900">
         <div className="mx-auto max-w-6xl px-6 py-14">
           <h2 className="mb-8 text-center text-3xl font-bold text-white">
-            Why Chandler Businesses Choose Freedom Line Freight Express
+            Who We Help in Chandler
           </h2>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-              <Clock className="mb-4 text-orange-400" size={28} />
-              <h3 className="mb-3 text-xl font-semibold text-white">
-                Same-Day Availability
-              </h3>
-              <p className="text-neutral-300">
-                Fast response and local delivery options to help reduce downtime.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
               <Wrench className="mb-4 text-orange-400" size={28} />
               <h3 className="mb-3 text-xl font-semibold text-white">
-                Built for Mechanics
+                Repair Shops
               </h3>
               <p className="text-neutral-300">
-                Designed for repair shops, garages, and service departments that
-                need reliable parts runs.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-              <Package className="mb-4 text-orange-400" size={28} />
-              <h3 className="mb-3 text-xl font-semibold text-white">
-                Direct Pickup & Drop-Off
-              </h3>
-              <p className="text-neutral-300">
-                No unnecessary handoffs. Direct service helps keep deliveries
-                simple and dependable.
+                Fast parts runs to help reduce downtime and keep jobs moving.
               </p>
             </div>
 
             <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
               <Building2 className="mb-4 text-orange-400" size={28} />
               <h3 className="mb-3 text-xl font-semibold text-white">
-                Business-Friendly
+                Dealerships
               </h3>
               <p className="text-neutral-300">
-                Reliable service for repeat business needs, shop support, and
-                local delivery requests.
+                Local support for dealer parts movement and direct delivery.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
+              <Package className="mb-4 text-orange-400" size={28} />
+              <h3 className="mb-3 text-xl font-semibold text-white">
+                Parts Suppliers
+              </h3>
+              <p className="text-neutral-300">
+                Pickup and drop-off service for local business customers.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
+              <Truck className="mb-4 text-orange-400" size={28} />
+              <h3 className="mb-3 text-xl font-semibold text-white">
+                Business Customers
+              </h3>
+              <p className="text-neutral-300">
+                Reliable delivery for shop supplies, boxed items, and urgent
+                local requests.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Better than app-based */}
+      {/* WHY BETTER */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="mb-4 text-center text-3xl font-bold text-white">
-          Better Than App-Based Delivery for Auto Parts
+          Better Than App-Based Auto Parts Delivery
         </h2>
 
         <p className="mx-auto mb-10 max-w-3xl text-center leading-8 text-neutral-300">
-          Freedom Line Freight Express focuses on direct local transport for
-          auto parts, shop supplies, and business items in Chandler.
+          Freedom Line Freight Express focuses on direct local service in
+          Chandler for auto parts, business items, and urgent delivery support.
         </p>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -155,9 +205,9 @@ export default function ChandlerAutoPartsDelivery() {
             </h3>
             <ul className="space-y-3 text-neutral-300">
               <li>• Random driver availability</li>
-              <li>• Multi-stop delays</li>
-              <li>• Not built for repair shop workflows</li>
-              <li>• Less consistent business support</li>
+              <li>• Multi-stop routes and slower timing</li>
+              <li>• Not built around repair shop workflows</li>
+              <li>• Less consistent business communication</li>
             </ul>
           </div>
 
@@ -180,91 +230,171 @@ export default function ChandlerAutoPartsDelivery() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="mt-1 text-orange-400" size={18} />
-                <span>Same-day support may be available</span>
+                <span>Flexible scheduled and urgent support</span>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* SEO CONTENT BLOCK */}
       <section className="border-y border-neutral-800 bg-neutral-900">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <h2 className="mb-8 text-center text-3xl font-bold text-white">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="mx-auto max-w-3xl space-y-6">
+          <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <h3 className="font-semibold text-white">
-                Do you offer same-day auto parts delivery in Chandler?
-              </h3>
-              <p className="mt-2 text-neutral-300">
-                Yes, same-day delivery may be available depending on timing,
-                route, distance, and scheduling.
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Same-Day Parts Runs Across Chandler
+              </h2>
+
+              <p className="mb-4 leading-8 text-neutral-300">
+                We support local auto repair businesses in Chandler that need
+                quick delivery of parts, boxed items, paperwork, and essential
+                shop supplies. If a delayed part is slowing down a repair job,
+                we help reduce downtime with direct local pickup and delivery.
+              </p>
+
+              <p className="leading-8 text-neutral-300">
+                Same-day auto parts delivery in Chandler may be available based
+                on route, timing, and scheduling. Contact us to check
+                availability for urgent requests.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-white">
-                Who is this service for?
-              </h3>
-              <p className="mt-2 text-neutral-300">
-                Repair shops, mechanics, dealerships, local businesses, and
-                customers who need fast parts delivery in Chandler.
-              </p>
-            </div>
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Local Support for Shops, Mechanics, and Dealers
+              </h2>
 
-            <div>
-              <h3 className="font-semibold text-white">
-                What kinds of items can you deliver?
-              </h3>
-              <p className="mt-2 text-neutral-300">
-                Boxed auto parts, supplies, documents, small equipment, and
-                other local business items.
+              <p className="mb-4 leading-8 text-neutral-300">
+                Freedom Line Freight Express is a good fit for repair shops and
+                businesses looking for a dependable local partner for auto parts
+                delivery in Chandler. We focus on direct service, responsive
+                communication, and flexible support for recurring or urgent
+                delivery needs.
               </p>
-            </div>
 
-            <div>
-              <h3 className="font-semibold text-white">
-                How do I request delivery?
-              </h3>
-              <p className="mt-2 text-neutral-300">
-                You can text 480-742-8553 or use the request pickup form on the
-                website.
+              <p className="leading-8 text-neutral-300">
+                We also serve nearby areas including Mesa, Gilbert, Queen Creek,
+                San Tan Valley, and Phoenix depending on route and availability.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Nearby links */}
+      {/* FAQ */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-4 text-2xl font-bold text-orange-400">
-            Nearby Delivery Areas
-          </h2>
+        <h2 className="mb-8 text-center text-3xl font-bold text-white">
+          Frequently Asked Questions
+        </h2>
 
-          <p className="leading-8 text-neutral-300">
-            <a href="/mesa-delivery" className="text-orange-400 hover:underline">
-              Mesa
-            </a>,{" "}
-            <a href="/gilbert-delivery" className="text-orange-400 hover:underline">
-              Gilbert
-            </a>,{" "}
-            <a href="/phoenix-delivery" className="text-orange-400 hover:underline">
-              Phoenix
-            </a>,{" "}
-            <a href="/queen-creek-delivery" className="text-orange-400 hover:underline">
-              Queen Creek
-            </a>,{" "}
-            <a href="/san-tan-valley-delivery" className="text-orange-400 hover:underline">
-              San Tan Valley
-            </a>,{" "}
-            <a href="/service-areas" className="text-orange-400 hover:underline">
-              View All Service Areas
-            </a>
-          </p>
+        <div className="mx-auto max-w-3xl space-y-6">
+          <div>
+            <h3 className="font-semibold text-white">
+              Do you offer same-day auto parts delivery in Chandler?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              Yes, same-day service may be available depending on timing,
+              routing, distance, and scheduling.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white">
+              Who is this service for?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              Repair shops, mechanics, dealerships, suppliers, and business
+              customers in Chandler who need dependable local delivery support.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white">
+              What kinds of items can you deliver?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              Boxed auto parts, shop supplies, small equipment, documents, and
+              other local business items.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white">
+              How do I request a Chandler auto parts delivery?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              You can text 480-742-8553 or use the request pickup form on the
+              website to check availability.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white">
+              Do you only serve Chandler?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              No. We also serve nearby areas including Mesa, Gilbert, Queen
+              Creek, San Tan Valley, and parts of the Phoenix metro area.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* LINKS */}
+      <section className="border-y border-neutral-800 bg-neutral-900">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Nearby Delivery Areas
+              </h2>
+
+              <p className="leading-8 text-neutral-300">
+                <a href="/mesa-delivery" className="text-orange-400 hover:underline">
+                  Mesa
+                </a>,{" "}
+                <a href="/gilbert-delivery" className="text-orange-400 hover:underline">
+                  Gilbert
+                </a>,{" "}
+                <a href="/phoenix-delivery" className="text-orange-400 hover:underline">
+                  Phoenix
+                </a>,{" "}
+                <a href="/queen-creek-delivery" className="text-orange-400 hover:underline">
+                  Queen Creek
+                </a>,{" "}
+                <a href="/san-tan-valley-delivery" className="text-orange-400 hover:underline">
+                  San Tan Valley
+                </a>,{" "}
+                <a href="/service-areas" className="text-orange-400 hover:underline">
+                  View All Service Areas
+                </a>
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Contact Freedom Line Freight Express
+              </h2>
+
+              <div className="space-y-3 text-neutral-300">
+                <p className="flex items-start gap-2">
+                  <Phone className="mt-1 text-orange-400" size={18} />
+                  <span>Text: 480-742-8553</span>
+                </p>
+
+                <p className="flex items-start gap-2">
+                  <MapPin className="mt-1 text-orange-400" size={18} />
+                  <span>Serving Chandler and nearby Arizona areas</span>
+                </p>
+
+                <p>
+                  Use our request form to check same-day auto parts delivery
+                  availability in Chandler.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -276,8 +406,8 @@ export default function ChandlerAutoPartsDelivery() {
           </h2>
 
           <p className="mx-auto mb-8 max-w-2xl text-orange-50">
-            Get fast, direct local delivery support for repair shops,
-            dealerships, mechanics, and business customers.
+            Get direct local delivery support for repair shops, dealerships,
+            mechanics, and business customers in Chandler, Arizona.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
