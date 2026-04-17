@@ -1,5 +1,5 @@
-import { createBrowserRouter, Outlet } from "react-router";
-import Navbar from "./components/Navbar";
+import { createBrowserRouter, Outlet, Navigate } from "react-router";
+import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 
 import Home from "./pages/Home";
@@ -9,15 +9,17 @@ import { Contact } from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import { RequestPickup } from "./pages/RequestPickup";
 import AcceptQuote from "./pages/AcceptQuote";
+
 import PhoenixDelivery from "./pages/PhoenixDelivery";
 import MesaDelivery from "./pages/MesaDelivery";
 import ChandlerDelivery from "./pages/ChandlerDelivery";
 import GilbertDelivery from "./pages/GilbertDelivery";
 import QueenCreekDelivery from "./pages/QueenCreekDelivery";
 import SanTanValleyDelivery from "./pages/SanTanValleyDelivery";
-import ServiceAreas from "./pages/ServiceAreas";
 import ScottsdaleDelivery from "./pages/ScottsdaleDelivery";
 import CasaGrandeDelivery from "./pages/CasaGrandeDelivery";
+import ServiceAreas from "./pages/ServiceAreas";
+
 import ChandlerAutoPartsDelivery from "./pages/ChandlerAutoPartsDelivery";
 import GilbertAutoPartsDelivery from "./pages/GilbertAutoPartsDelivery";
 import MesaAutoPartsDelivery from "./pages/MesaAutoPartsDelivery";
@@ -25,6 +27,7 @@ import PhoenixAutoPartsDelivery from "./pages/PhoenixAutoPartsDelivery";
 import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
 import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery";
+
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -60,16 +63,18 @@ export const router = createBrowserRouter([
       { path: "san-tan-valley-delivery", element: <SanTanValleyDelivery /> },
       { path: "scottsdale-delivery", element: <ScottsdaleDelivery /> },
       { path: "casa-grande-delivery", element: <CasaGrandeDelivery /> },
+
       { path: "chandler-auto-parts-delivery", element: <ChandlerAutoPartsDelivery /> },
       { path: "gilbert-auto-parts-delivery", element: <GilbertAutoPartsDelivery /> },
       { path: "mesa-auto-parts-delivery", element: <MesaAutoPartsDelivery /> },
       { path: "phoenix-auto-parts-delivery", element: <PhoenixAutoPartsDelivery /> },
       { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
       { path: "queen-creek-auto-parts-delivery", element: <QueenCreekAutoPartsDelivery /> },
-      { path: "queen-creek-vehicle-delivery",element: <Navigate to="/queen-creek-delivery" replace />,
       { path: "san-tan-valley-auto-parts-delivery", element: <SanTanValleyAutoPartsDelivery /> },
-}
 
+      { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
+      { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
+      { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
     ],
   },
 ]);
