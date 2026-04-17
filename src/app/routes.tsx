@@ -19,6 +19,7 @@ import ServiceAreas from "./pages/ServiceAreas";
 import ScottsdaleDelivery from "./pages/ScottsdaleDelivery";
 import CasaGrandeDelivery from "./pages/CasaGrandeDelivery";
 import ChandlerAutoPartsDelivery from "./pages/ChandlerAutoPartsDelivery";
+import GilbertAutoPartsDelivery from "./pages/GilbertAutoPartsDelivery";
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -55,6 +56,7 @@ export const router = createBrowserRouter([
       { path: "scottsdale-delivery", element: <ScottsdaleDelivery /> },
       { path: "casa-grande-delivery", element: <CasaGrandeDelivery /> },
       { path: "chandler-auto-parts-delivery", element: <ChandlerAutoPartsDelivery /> },
+      { path: "gilbert-auto-parts-delivery", element: <GilbertAutoPartsDelivery /> },
     ],
   },
 ]);
