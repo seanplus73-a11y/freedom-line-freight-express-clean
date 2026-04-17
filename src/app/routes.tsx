@@ -23,6 +23,7 @@ import GilbertAutoPartsDelivery from "./pages/GilbertAutoPartsDelivery";
 import MesaAutoPartsDelivery from "./pages/MesaAutoPartsDelivery";
 import PhoenixAutoPartsDelivery from "./pages/PhoenixAutoPartsDelivery";
 import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
+import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -63,6 +64,7 @@ export const router = createBrowserRouter([
       { path: "mesa-auto-parts-delivery", element: <MesaAutoPartsDelivery /> },
       { path: "phoenix-auto-parts-delivery", element: <PhoenixAutoPartsDelivery /> },
       { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
+      { path: "queen-creek-auto-parts-delivery", element: <QueenCreekAutoPartsDelivery /> },
     ],
   },
 ]);
