@@ -65,6 +65,9 @@ export const router = createBrowserRouter([
       { path: "phoenix-auto-parts-delivery", element: <PhoenixAutoPartsDelivery /> },
       { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
       { path: "queen-creek-auto-parts-delivery", element: <QueenCreekAutoPartsDelivery /> },
+      { path: "queen-creek-vehicle-delivery",element: <Navigate to="/queen-creek-delivery" replace />,
+}
+
     ],
   },
 ]);
