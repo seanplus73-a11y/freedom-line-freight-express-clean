@@ -24,6 +24,7 @@ import MesaAutoPartsDelivery from "./pages/MesaAutoPartsDelivery";
 import PhoenixAutoPartsDelivery from "./pages/PhoenixAutoPartsDelivery";
 import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
+import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery";
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -66,6 +67,7 @@ export const router = createBrowserRouter([
       { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
       { path: "queen-creek-auto-parts-delivery", element: <QueenCreekAutoPartsDelivery /> },
       { path: "queen-creek-vehicle-delivery",element: <Navigate to="/queen-creek-delivery" replace />,
+      { path: "san-tan-valley-auto-parts-delivery", element: <SanTanValleyAutoPartsDelivery /> },
 }
 
     ],
