@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 export default function GilbertDelivery() {
   return (
     <>
@@ -195,6 +196,9 @@ export default function GilbertDelivery() {
             </div>
 
             {/* INTERNAL LINKS */}
+            <Link to="/gilbert-auto-parts-delivery">
+  Need auto parts delivered in Gilbert?
+</Link>
             <div className="mx-auto mt-12 max-w-3xl text-center">
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
                 Nearby Cities We Serve
