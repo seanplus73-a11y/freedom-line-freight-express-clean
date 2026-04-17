@@ -1,244 +1,310 @@
 import { Link } from "react-router";
+import {
+  Car,
+  Wrench,
+  Package,
+  Building2,
+  MapPin,
+  CheckCircle,
+  Phone,
+} from "lucide-react";
+
 export default function GilbertDelivery() {
   return (
-    <>
-      <main className="min-h-screen bg-neutral-950 text-white">
-        {/* HERO */}
-        <section className="border-b border-neutral-800">
-          <div className="mx-auto max-w-6xl px-6 py-16">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-400">
-              Gilbert, Arizona
+    <div className="min-h-screen bg-neutral-950 text-white">
+      {/* HERO */}
+      <section className="border-b border-neutral-800 bg-neutral-950">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-orange-400">
+            Gilbert, Arizona
+          </p>
+
+          <h1 className="mb-6 text-4xl font-bold md:text-5xl">
+            Vehicle Pickup, Auto Parts & Same-Day Delivery in Gilbert, AZ
+          </h1>
+
+          <p className="max-w-3xl text-lg leading-8 text-neutral-300">
+            Freedom Line Freight Express provides direct pickup and delivery in
+            Gilbert for vehicles, auto parts, packages, and business transport.
+            Same-day service may be available depending on route and scheduling.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Link
+              to="/request-pickup"
+              className="rounded-xl bg-orange-500 px-6 py-3 font-semibold hover:bg-orange-600"
+            >
+              Request Pickup
+            </Link>
+
+            <a
+              href="sms:4807428553"
+              className="flex items-center justify-center gap-2 rounded-xl border border-orange-500 px-6 py-3 text-orange-400 hover:bg-orange-500/10"
+            >
+              <Phone size={18} />
+              Text 480-742-8553
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2">
+        <div>
+          <h2 className="mb-4 text-2xl font-bold text-orange-400">
+            Reliable Delivery in Gilbert
+          </h2>
+
+          <p className="mb-4 text-neutral-300 leading-8">
+            We provide direct drive-away service for vehicles that run and
+            drive, along with auto parts delivery for repair shops,
+            dealerships, and local businesses in Gilbert.
+          </p>
+
+          <p className="text-neutral-300 leading-8">
+            Our service is built for customers who want fast, reliable transport
+            without using trailers or tow trucks.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+          <h2 className="mb-4 text-2xl font-bold text-orange-400">
+            Services Available
+          </h2>
+
+          <ul className="space-y-3 text-neutral-300">
+            <li>• Vehicle pickup & delivery (runs & drives)</li>
+            <li>• Auto parts delivery</li>
+            <li>• Packages & document delivery</li>
+            <li>• Business transport</li>
+            <li>• Same-day delivery when available</li>
+            <li>• Local & regional transport</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* SERVICE TYPES */}
+      <section className="border-y border-neutral-800 bg-neutral-900">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <h2 className="mb-10 text-center text-3xl font-bold">
+            Services Available in Gilbert
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="p-6 bg-neutral-950 rounded-2xl border border-neutral-800 text-center">
+              <Car className="mx-auto mb-3 text-orange-400" />
+              <h3 className="font-semibold">Vehicle Pickup</h3>
+              <p className="text-sm text-neutral-400">
+                Direct drive-away service for cars and SUVs.
+              </p>
+            </div>
+
+            <div className="p-6 bg-neutral-950 rounded-2xl border border-neutral-800 text-center">
+              <Wrench className="mx-auto mb-3 text-orange-400" />
+              <h3 className="font-semibold">Auto Parts</h3>
+              <p className="text-sm text-neutral-400">
+                Same-day parts delivery for shops and mechanics.
+              </p>
+            </div>
+
+            <div className="p-6 bg-neutral-950 rounded-2xl border border-neutral-800 text-center">
+              <Package className="mx-auto mb-3 text-orange-400" />
+              <h3 className="font-semibold">Packages</h3>
+              <p className="text-sm text-neutral-400">
+                Local delivery for small packages and equipment.
+              </p>
+            </div>
+
+            <div className="p-6 bg-neutral-950 rounded-2xl border border-neutral-800 text-center">
+              <Building2 className="mx-auto mb-3 text-orange-400" />
+              <h3 className="font-semibold">Business Transport</h3>
+              <p className="text-sm text-neutral-400">
+                Reliable delivery for local businesses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h2 className="text-center text-3xl font-bold mb-8">
+          Why Choose Us in Gilbert
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-neutral-900 p-6 rounded-2xl border border-neutral-800">
+            <h3 className="text-xl font-bold mb-4 text-orange-400">
+              Compared to App Delivery
+            </h3>
+            <ul className="text-neutral-300 space-y-2">
+              <li>• Random drivers</li>
+              <li>• Delays and multiple stops</li>
+              <li>• Not built for auto parts</li>
+            </ul>
+          </div>
+
+          <div className="bg-neutral-900 p-6 rounded-2xl border border-orange-500">
+            <h3 className="text-xl font-bold mb-4 text-orange-400">
+              Freedom Line Freight Express
+            </h3>
+            <ul className="space-y-2 text-neutral-200">
+              <li className="flex gap-2">
+                <CheckCircle size={16} /> Direct service
+              </li>
+              <li className="flex gap-2">
+                <CheckCircle size={16} /> Faster local delivery
+              </li>
+              <li className="flex gap-2">
+                <CheckCircle size={16} /> Built for businesses
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* AUTO PARTS CTA */}
+      <section className="bg-neutral-900 border-y border-neutral-800 py-14 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          Need Auto Parts Delivered?
+        </h2>
+
+        <p className="text-neutral-300 mb-6">
+          We provide fast local parts delivery in Gilbert.
+        </p>
+
+        <Link
+          to="/gilbert-auto-parts-delivery"
+          className="border border-orange-500 px-6 py-3 rounded-lg text-orange-400 hover:bg-orange-500/10"
+        >
+          View Gilbert Auto Parts Delivery
+        </Link>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h2 className="mb-8 text-center text-3xl font-bold text-white">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="mx-auto max-w-3xl space-y-6">
+          <div>
+            <h3 className="font-semibold text-white">
+              Do you offer same-day delivery in Gilbert?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              Same-day service may be available depending on the route,
+              distance, and scheduling.
             </p>
+          </div>
 
-            <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
-              Vehicle Pickup & Delivery in Gilbert, AZ
-            </h1>
-
-            <p className="max-w-3xl text-lg text-neutral-300">
-              Freedom Line Freight Express provides reliable vehicle pickup and
-              delivery in Gilbert, Arizona. We specialize in direct drive-away
-              service for cars, SUVs, and small trucks that run and drive — no
-              towing and no trailers.
+          <div>
+            <h3 className="font-semibold text-white">
+              Do you transport vehicles with trailers?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              No. We offer direct drive-away service for vehicles that run and
+              drive.
             </p>
-
-            <div className="mt-6">
-              <a
-                href="/request-pickup"
-                className="rounded-md bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
-              >
-                Request Pickup
-              </a>
-            </div>
           </div>
-        </section>
 
-        {/* SERVICES */}
-        <section>
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid items-start gap-10 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Fast Gilbert Vehicle Delivery
-                </h2>
-
-                <p className="mb-4 text-neutral-300">
-                  Need a car moved across Gilbert, picked up from a dealership,
-                  delivered to a repair shop, or transported to your home?
-                  Freedom Line Freight Express offers direct, flexible service
-                  with fast response times.
-                </p>
-
-                <p className="text-neutral-300">
-                  We also provide time-sensitive delivery for auto parts,
-                  packages, and documents. Same-day and emergency delivery may
-                  be available depending on distance and scheduling.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Services Available in Gilbert
-                </h2>
-
-                <ul className="space-y-3 text-neutral-200">
-                  <li>• Vehicle pickup & delivery (runs & drives only)</li>
-                  <li>• Car transport and drive-away service</li>
-                  <li>• Dealer and auction vehicle transport</li>
-                  <li>• Auto parts delivery</li>
-                  <li>• Packages and document delivery</li>
-                  <li>• Same-day and emergency delivery</li>
-                  <li>• Local and long-distance transport</li>
-                </ul>
-              </div>
-            </div>
+          <div>
+            <h3 className="font-semibold text-white">
+              What can you deliver in Gilbert?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              Vehicles, auto parts, packages, documents, and business items.
+            </p>
           </div>
-        </section>
 
-        {/* WHY US */}
-        <section className="border-y border-neutral-800 bg-neutral-900">
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <h2 className="mb-6 text-2xl font-bold text-orange-400">
-              Why Choose Freedom Line Freight Express
-            </h2>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold text-white">
-                  Direct Drive-Away Service
-                </h3>
-                <p className="text-neutral-300">
-                  Your vehicle is driven directly to its destination with no
-                  trailer delays and no towing.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold text-white">
-                  Fast & Reliable
-                </h3>
-                <p className="text-neutral-300">
-                  Quick pickups, dependable delivery, and clear communication
-                  every step of the way.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold text-white">
-                  Owner-Operated Service
-                </h3>
-                <p className="text-neutral-300">
-                  Personal attention and trusted service from a local Arizona
-                  business you can rely on.
-                </p>
-              </div>
-            </div>
+          <div>
+            <h3 className="font-semibold text-white">
+              How do I request service?
+            </h3>
+            <p className="mt-2 text-neutral-300">
+              You can use the request pickup form or text 480-742-8553 to ask
+              about availability.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* FAQ */}
-        <section className="border-y border-neutral-800 bg-neutral-900">
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <h2 className="mb-8 text-center text-2xl font-bold text-orange-400">
-              Frequently Asked Questions
-            </h2>
-
-            <div className="mx-auto max-w-3xl space-y-6">
-              <div>
-                <h3 className="font-semibold text-white">
-                  Do you offer same-day vehicle delivery?
-                </h3>
-                <p className="text-neutral-300">
-                  Yes, same-day and emergency delivery may be available
-                  depending on distance and scheduling.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-white">
-                  Do you use trailers?
-                </h3>
-                <p className="text-neutral-300">
-                  No, we provide direct drive-away service. Your vehicle is
-                  driven, not towed.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-white">
-                  What types of vehicles do you transport?
-                </h3>
-                <p className="text-neutral-300">
-                  Cars, SUVs, and small trucks that run and drive.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SERVICE AREA + CONTACT + LINKS + MAP */}
-        <section>
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid items-start gap-10 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Areas We Serve in and Around Gilbert
-                </h2>
-
-                <p className="mb-4 text-neutral-300">
-                  We serve customers in Gilbert and nearby communities including
-                  Mesa, Chandler, Queen Creek, San Tan Valley, and Phoenix.
-                </p>
-
-                <p className="text-neutral-300">
-                  If you need a vehicle, auto parts, or documents delivered in
-                  or around the Gilbert area, we can help with scheduled and
-                  urgent requests.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Request a Quote
-                </h2>
-
-                <p className="mb-4 text-neutral-300">
-                  Need dependable vehicle pickup and delivery in Gilbert, AZ?
-                  Contact Freedom Line Freight Express for a fast quote and
-                  availability.
-                </p>
-
-                <div className="space-y-2 text-neutral-200">
-                  <p><strong>Text:</strong> 480-742-8553</p>
-                  <p><strong>Email:</strong> dispatch@flfreightco.com</p>
-                  <p><strong>Website:</strong> flfreightco.com</p>
-                </div>
-              </div>
-            </div>
-
-            {/* INTERNAL LINKS */}
-            <Link to="/gilbert-auto-parts-delivery">
-  Need auto parts delivered in Gilbert?
-</Link>
-            <div className="mx-auto mt-12 max-w-3xl text-center">
+      {/* INTERNAL LINKS */}
+      <section className="border-y border-neutral-800 bg-neutral-900">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Nearby Cities We Serve
+                Nearby Delivery Areas
               </h2>
 
               <p className="leading-8 text-neutral-300">
-                <a href="/phoenix-vehicle-delivery" className="text-orange-400">Phoenix</a>,{" "}
-                <a href="/mesa-vehicle-delivery" className="text-orange-400">Mesa</a>,{" "}
-                <a href="/chandler-vehicle-delivery" className="text-orange-400">Chandler</a>,{" "}
-                <a href="/gilbert-vehicle-delivery" className="text-orange-400">Gilbert</a>,{" "}
-                <a href="/queen-creek-vehicle-delivery" className="text-orange-400">Queen Creek</a>,{" "}
-                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400">San Tan Valley</a>
+                <a href="/chandler-delivery" className="text-orange-400">
+                  Chandler
+                </a>,{" "}
+                <a href="/mesa-delivery" className="text-orange-400">
+                  Mesa
+                </a>,{" "}
+                <a href="/queen-creek-delivery" className="text-orange-400">
+                  Queen Creek
+                </a>,{" "}
+                <a href="/san-tan-valley-delivery" className="text-orange-400">
+                  San Tan Valley
+                </a>,{" "}
+                <a href="/phoenix-delivery" className="text-orange-400">
+                  Phoenix
+                </a>
               </p>
             </div>
 
-            {/* MAP */}
-            <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-              <h2 className="mb-4 text-center text-2xl font-bold text-orange-400">
-                Gilbert Map
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
+              <h2 className="mb-4 text-2xl font-bold text-orange-400">
+                Contact Freedom Line Freight Express
               </h2>
 
-              <p className="mb-4 text-center text-neutral-300">
-                Serving Gilbert and nearby communities with reliable vehicle
-                pickup and delivery services.
-              </p>
+              <div className="space-y-3 text-neutral-300">
+                <p className="flex items-start gap-2">
+                  <Phone className="mt-1 text-orange-400" size={18} />
+                  <span>Text: 480-742-8553</span>
+                </p>
 
-              <div className="overflow-hidden rounded-xl border border-neutral-800">
-                <iframe
-                  title="Gilbert Arizona Map"
-                  src="https://www.google.com/maps?q=Gilbert,AZ&output=embed"
-                  width="100%"
-                  height="320"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                />
+                <p className="flex items-start gap-2">
+                  <MapPin className="mt-1 text-orange-400" size={18} />
+                  <span>Serving Gilbert and nearby Arizona areas</span>
+                </p>
+
+                <p>
+                  Use our request form to check pickup and delivery availability
+                  in Gilbert.
+                </p>
               </div>
             </div>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-orange-500 py-14 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          Need Delivery in Gilbert?
+        </h2>
+
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Link
+            to="/request-pickup"
+            className="bg-white text-orange-600 px-6 py-3 rounded-xl font-semibold"
+          >
+            Request Pickup
+          </Link>
+
+          <a
+            href="sms:4807428553"
+            className="border border-white px-6 py-3 rounded-xl"
+          >
+            Text 480-742-8553
+          </a>
+        </div>
+      </section>
+    </div>
   );
 }
