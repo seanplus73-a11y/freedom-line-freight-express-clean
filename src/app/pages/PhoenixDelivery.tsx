@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 export default function PhoenixDelivery() {
   return (
     <>
@@ -195,6 +196,12 @@ export default function PhoenixDelivery() {
             </div>
 
             {/* INTERNAL LINKS */}
+            <Link
+  to="/phoenix-auto-parts-delivery"
+  className="inline-block rounded-lg border border-orange-500 px-5 py-3 font-semibold text-orange-400 transition hover:bg-orange-500/10"
+>
+  Need auto parts delivered in Phoenix?
+</Link>
             <div className="mx-auto mt-12 max-w-3xl text-center">
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
                 Nearby Cities We Serve
