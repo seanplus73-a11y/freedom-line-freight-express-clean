@@ -196,11 +196,14 @@ export default function ChandlerDelivery() {
             </div>
 
             {/* INTERNAL LINKS */}
+            <Link to="/chandler-auto-parts-delivery">
+  Need auto parts delivered in Chandler?
+</Link>
             <div className="mx-auto mt-12 max-w-3xl text-center">
               <h2 className="mb-4 text-2xl font-bold text-orange-400">
                 Nearby Cities We Serve
               </h2>
-
+             
               <p className="leading-8 text-neutral-300">
   <a href="/phoenix-delivery" className="text-orange-400">Phoenix</a>,{" "}
   <a href="/mesa-delivery" className="text-orange-400">Mesa</a>,{" "}
