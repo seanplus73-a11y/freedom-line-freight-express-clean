@@ -11,11 +11,28 @@ import {
   Package,
   Briefcase,
 } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    document.title =
+      "Freedom Line Freight Express | Vehicle Pickup & Delivery in Arizona";
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Freedom Line Freight Express provides vehicle pickup and delivery in Arizona, including San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and Phoenix."
+      );
+    }
+  }, []);
+
   return (
-    <div className="bg-neutral-900">
+    <div>
+      {/* Home page content */}
+    </div>
+  );
+}
       
       {/* Hero Section */}
       <section className="relative bg-black text-white">
