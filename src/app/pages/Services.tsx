@@ -13,28 +13,6 @@ import {
   Wrench,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { useEffect } from "react";
-
-export default function Services() {
-  useEffect(() => {
-    document.title =
-      "Services | Vehicle Pickup, Dealer Transfers & Auto Parts Delivery in Arizona";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Explore Freedom Line Freight Express services including vehicle pickup and delivery, dealer transfers, auction moves, auto parts delivery, and direct business transport in Arizona."
-      );
-    }
-  }, []);
-
-  return (
-    <div>
-      {/* Services page content */}
-    </div>
-  );
-}
 
 export default function Services() {
   const services = [
