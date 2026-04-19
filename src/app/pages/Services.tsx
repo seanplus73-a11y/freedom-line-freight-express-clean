@@ -144,6 +144,14 @@ description:
                       className="w-full h-full object-cover"
                     />
                   </div>
+                  <div id="business-transport" className="mt-10">
+  <h3 className="text-xl font-bold">
+    Direct Business Transport (Priority Service)
+  </h3>
+  <p>
+    Direct delivery support for dealerships and businesses.
+  </p>
+</div>
 
                   <div className="p-8">
                     <div className="bg-orange-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
