@@ -1,293 +1,332 @@
-import { Link } from "react-router";
-import { CheckCircle, Award, Users, TrendingUp, Truck, Clock, MessageSquare, Car } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { Helmet } from "react-helmet";
 
 export default function About() {
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    name: "Freedom Line Freight Express",
+    url: "https://www.flfreightco.com/about",
+    telephone: "+1-480-742-8553",
+    email: "dispatch@flfreightco.com",
+    areaServed: [
+      "San Tan Valley, AZ",
+      "Queen Creek, AZ",
+      "Gilbert, AZ",
+      "Chandler, AZ",
+      "Mesa, AZ",
+      "Phoenix, AZ",
+      "Arizona",
+    ],
+    description:
+      "Freedom Line Freight Express provides reliable vehicle pickup and delivery in Arizona. We personally drive vehicles for local and regional moves without trailers or towing.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Tan Valley",
+      addressRegion: "AZ",
+      addressCountry: "US",
+    },
+    serviceType: [
+      "Vehicle Pickup and Delivery",
+      "Dealer Transfers",
+      "Auction Vehicle Moves",
+      "Auto Parts Delivery",
+      "Business Transport",
+      "Documents and Small Packages Delivery",
+    ],
+  };
+
   return (
-    <div className="bg-neutral-900">
-      {/* Hero Section */}
-      <section className="relative bg-black text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Fast, Direct Vehicle Delivery Across Arizona — <span className="text-orange-500">No Waiting, No Middlemen</span>
-            </h1>
-            <p className="text-xl text-gray-300">
-              Your vehicle is driven directly to its destination with no trailers, no transfers, just fast and direct delivery.
-            </p>
-          </div>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>
+          About Freedom Line Freight Express | Vehicle Pickup & Delivery in Arizona
+        </title>
+        <meta
+          name="description"
+          content="Learn about Freedom Line Freight Express, an Arizona-based vehicle pickup and delivery company serving San Tan Valley, Queen Creek, Gilbert, Chandler, Phoenix, and nearby areas. We personally drive your vehicle safely—no trailer, no towing."
+        />
+        <meta
+          name="keywords"
+          content="vehicle pickup and delivery Arizona, car delivery service Arizona, vehicle transport San Tan Valley, Queen Creek vehicle delivery, Gilbert car delivery, Chandler vehicle pickup, Phoenix vehicle delivery, dealer transfer service Arizona, driveaway service Arizona"
+        />
+        <link rel="canonical" href="https://www.flfreightco.com/about" />
 
-      {/* Story Section */}
-      <section className="py-20 bg-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Our <span className="text-orange-500">Story</span>
-              </h2>
-              <p className="text-gray-300 mb-6 leading-relaxed text-lg">
-                Freedom Line Freight Express was built on a simple idea:
+        <meta
+          property="og:title"
+          content="About Freedom Line Freight Express | Vehicle Pickup & Delivery in Arizona"
+        />
+        <meta
+          property="og:description"
+          content="Arizona-based vehicle pickup and delivery service. We personally drive vehicles safely for local and regional moves—no trailer or towing."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.flfreightco.com/about" />
+        <meta property="og:image" content="https://www.flfreightco.com/og-image.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(businessSchema)}
+        </script>
+      </Helmet>
+
+      <div className="bg-[#0f172a] text-white">
+        {/* HERO */}
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80"
+              alt="Vehicle pickup and delivery service in Arizona"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[#0f172a]/75" />
+          </div>
+
+          <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
+            <div className="max-w-3xl">
+              <p className="mb-4 inline-block rounded-full border border-orange-400/40 bg-orange-500/10 px-4 py-1 text-sm text-orange-300">
+                Arizona Vehicle Pickup & Delivery
               </p>
-              <p className="text-white font-bold mb-6 leading-relaxed text-xl">
-                Vehicle transport should be fast, direct, and stress-free.
+
+              <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+                About{" "}
+                <span className="text-orange-500">Freedom Line Freight Express</span>
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-200 md:text-xl">
+                We provide reliable vehicle pickup and delivery in Arizona by
+                personally driving your car, SUV, or light truck to its destination.
+                No trailer. No towing. Just direct, careful service you can trust.
               </p>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Instead of waiting days for large carriers or dealing with brokers, I personally drive your vehicle directly to its destination.
-              </p>
-              <p className="text-orange-400 font-bold mb-6 leading-relaxed text-lg">
-                No trailers. No transfers. No delays.
-              </p>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Based in Arizona, I focus on reliable, same-day and next-day vehicle delivery for individuals, dealerships, and businesses who need speed and clear communication.
-              </p>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Every vehicle is handled with care, real-time updates, and direct accountability from pickup to delivery.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-300">Locally Owned & Operated</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-300">Fully Insured Vehicle Transport</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-300">Direct Driver Communication</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="text-orange-500 mr-3 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-300">Same-Day & Next-Day Delivery Available</span>
-                </div>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="/request-pickup"
+                  className="rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
+                >
+                  Request a Pickup
+                </a>
+                <a
+                  href="/services"
+                  className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+                >
+                  View Services
+                </a>
               </div>
             </div>
-            <div className="rounded-lg overflow-hidden border border-neutral-700 h-[400px] md:h-[500px]">
-              <ImageWithFallback
-                src="/images/our-story.jpg"
-                alt="Professional vehicle key handover and delivery service"
-                className="w-full h-full object-cover"
-              />
+          </div>
+        </section>
+
+        {/* TRUST BAR */}
+        <section className="border-y border-white/10 bg-[#111827]">
+          <div className="mx-auto grid max-w-7xl gap-4 px-6 py-6 md:grid-cols-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+              <p className="text-sm text-gray-400">Service Type</p>
+              <p className="mt-1 font-semibold text-white">Direct Driveaway Service</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+              <p className="text-sm text-gray-400">Coverage</p>
+              <p className="mt-1 font-semibold text-white">Local & Regional Arizona</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+              <p className="text-sm text-gray-400">Transport Style</p>
+              <p className="mt-1 font-semibold text-white">No Trailer. No Towing.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+              <p className="text-sm text-gray-400">Focus</p>
+              <p className="mt-1 font-semibold text-white">Safe, Clear, Reliable Service</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Why Customers Choose Direct Driver Service */}
-      <section className="py-20 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Customers Choose <span className="text-orange-500">Direct Driver Service</span>
+        {/* WHO WE ARE */}
+        <section className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+              Who We Are
+            </p>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              A hands-on Arizona delivery company built on trust
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Fast, direct delivery that saves you time and eliminates the hassles of traditional carriers.
+            <p className="mt-5 text-gray-300 leading-relaxed">
+              Freedom Line Freight Express is based in Arizona and focused on
+              dependable vehicle pickup and delivery for customers who need a
+              driver—not a tow truck or trailer carrier.
+            </p>
+            <p className="mt-4 text-gray-300 leading-relaxed">
+              We help with local and regional moves for personal vehicles, dealer
+              transfers, auction purchases, auto parts, and direct business
+              transport. Our goal is simple: make pickup and delivery easier,
+              safer, and more personal.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Truck className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">No Waiting for Truck Routes</h3>
-              <p className="text-gray-400">
-                Your vehicle goes directly where it needs to go without waiting for carrier schedules or multi-stop routes.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">No Loading or Unloading Delays</h3>
-              <p className="text-gray-400">
-                I drive your vehicle directly. No trailers, no ramps, no time wasted loading or unloading from carriers.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Car className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">No Multiple Vehicles on One Trailer</h3>
-              <p className="text-gray-400">
-                Your vehicle is the only vehicle I'm transporting, ensuring focused attention and no shared transport delays.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Clock className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Faster Delivery (Same Day or Next Day)</h3>
-              <p className="text-gray-400">
-                Same-day and next-day delivery options available for customers who need their vehicle fast.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <MessageSquare className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Direct Communication with Driver</h3>
-              <p className="text-gray-400">
-                Call or text me directly for real-time updates throughout the entire transport process.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
-              <div className="bg-orange-500 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Award className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Owner-Operated Accountability</h3>
-              <p className="text-gray-400">
-                Direct accountability and personal responsibility for every vehicle from pickup to delivery.
-              </p>
-            </div>
+          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
+              alt="Reliable car delivery and transport service"
+              className="h-full w-full object-cover"
+            />
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our Core <span className="text-orange-500">Values</span>
+        {/* WHAT MAKES US DIFFERENT */}
+        <section className="bg-[#111827] py-16">
+          <div className="mx-auto max-w-7xl px-6">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+              What Makes Us Different
+            </p>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Direct service with a personal touch
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              The principles that guide every delivery we make.
+
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <h3 className="text-xl font-semibold text-orange-400">
+                  Personally Driven
+                </h3>
+                <p className="mt-3 leading-relaxed text-gray-300">
+                  Your vehicle is personally driven to its destination instead of
+                  being hauled on a trailer.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <h3 className="text-xl font-semibold text-orange-400">
+                  Flexible Local & Regional Routes
+                </h3>
+                <p className="mt-3 leading-relaxed text-gray-300">
+                  We support short-distance and regional delivery needs across
+                  Arizona and nearby areas.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <h3 className="text-xl font-semibold text-orange-400">
+                  Clear Communication
+                </h3>
+                <p className="mt-3 leading-relaxed text-gray-300">
+                  We focus on simple communication, dependable scheduling, and a
+                  smooth customer experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* OWNER STORY */}
+        <section className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-2 md:items-center">
+          <div className="order-2 md:order-1 overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1200&q=80"
+              alt="Professional vehicle delivery service owner and transportation business"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          <div className="order-1 md:order-2">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+              Owner & Mission
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
-                <CheckCircle className="text-orange-500" size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Integrity</h3>
-              <p className="text-gray-400">
-                We believe in honest pricing, clear expectations, and delivering exactly what we promise. No hidden fees. No surprises.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
-                <Users className="text-orange-500" size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Direct Responsibility</h3>
-              <p className="text-gray-400">
-                Your vehicle is handled directly by us from pickup to drop-off. No brokers. No carrier networks. Just straightforward, accountable service.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
-                <Award className="text-orange-500" size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Professional Care</h3>
-              <p className="text-gray-400">
-                Every vehicle is treated with attention and respect, whether it is a sedan, SUV, small heavy-duty truck, or luxury vehicle.
-              </p>
-            </div>
-
-            <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
-              <div className="bg-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/20">
-                <TrendingUp className="text-orange-500" size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Reliability</h3>
-              <p className="text-gray-400">
-                We value punctuality, preparedness, and consistent communication. Every delivery matters, and every client deserves dependable service.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Area */}
-      <section className="py-20 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our <span className="text-orange-500">Service Area</span>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Built on hard work, reliability, and accessibility
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Professional vehicle transport services in Arizona.
+            <p className="mt-5 text-gray-300 leading-relaxed">
+              Freedom Line Freight Express was founded by Sean Jackson with a
+              mission to provide dependable delivery service with honesty,
+              professionalism, and care.
+            </p>
+            <p className="mt-4 text-gray-300 leading-relaxed">
+              As a deaf business owner, Sean values accessible communication and
+              strong customer service. The business is built to help people move
+              vehicles and important items with confidence.
             </p>
           </div>
+        </section>
 
-          <div className="max-w-4xl mx-auto bg-neutral-800 rounded-lg p-8 border-2 border-orange-500/30">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                <span className="text-lg font-bold text-white">Arizona (Primary Service Area)</span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="text-orange-500 mr-3 flex-shrink-0" size={20} />
-                <span className="text-lg font-bold text-white">Nearby states available by request only</span>
-              </div>
-            </div>
-
-            <div className="bg-orange-900/20 border border-orange-500/50 p-4 rounded mb-6">
-              <p className="text-orange-100 text-sm font-semibold">
-                Out-of-state transport is limited and based on availability
-              </p>
-            </div>
-
-            <div className="border-t border-neutral-700 pt-6 text-center">
-              <p className="text-gray-300">
-                <strong className="text-white">Based in Arizona,</strong> I specialize in reliable local and regional vehicle transport throughout the state.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Licensed & Insured */}
-      <section className="py-20 bg-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Licensed & <span className="text-orange-500">Insured</span>
+        {/* SERVICES SNAPSHOT */}
+        <section className="bg-[#111827] py-16">
+          <div className="mx-auto max-w-7xl px-6">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+              Services
+            </p>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              What we help move
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Operating with proper credentials and coverage for your peace of mind.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <div className="bg-neutral-900 p-6 rounded-lg text-center border border-neutral-700">
-              <div className="font-bold text-white mb-2">Fully Insured</div>
-              <p className="text-sm text-gray-400">Comprehensive Coverage</p>
-            </div>
-            <div className="bg-neutral-900 p-6 rounded-lg text-center border border-neutral-700">
-              <div className="font-bold text-white mb-2">Arizona Licensed</div>
-              <p className="text-sm text-gray-400">State Licensed Operations</p>
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                "Vehicle Pickup & Delivery",
+                "Dealer Transfers",
+                "Auction Vehicle Moves",
+                "Cars, SUVs & Light Trucks",
+                "Auto Parts Delivery",
+                "Documents & Small Packages",
+                "Direct Business Transport",
+                "Local Arizona Routes",
+                "Regional Moves",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 text-gray-200"
+                >
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Work Directly With Freedom Line
-          </h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-            Trusted by individuals and dealerships across Arizona for reliable vehicle pickup and delivery.
+        {/* SERVICE AREA SEO */}
+        <section className="mx-auto max-w-7xl px-6 py-16">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+            Service Area
           </p>
-          <Link
-            to="/request-pickup"
-            className="inline-flex items-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
-          >
-            Request Vehicle Pickup
-          </Link>
-        </div>
-      </section>
-    </div>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Proudly serving San Tan Valley, Queen Creek, Gilbert, Chandler, and beyond
+          </h2>
+
+          <div className="mt-6 max-w-4xl space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              Freedom Line Freight Express is based in Arizona and serves customers
+              looking for vehicle pickup and delivery in San Tan Valley, Queen
+              Creek, Gilbert, Chandler, Mesa, Phoenix, and surrounding areas.
+            </p>
+            <p>
+              Whether you need a local vehicle moved across town or a regional
+              delivery route planned carefully, we aim to provide a dependable
+              alternative for customers searching for car delivery service,
+              driveaway service, or direct vehicle transport in Arizona.
+            </p>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="relative overflow-hidden border-t border-white/10 bg-gradient-to-r from-[#111827] to-[#0f172a]">
+          <div className="mx-auto max-w-7xl px-6 py-16 text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Need a dependable vehicle pickup and delivery service?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-gray-300 leading-relaxed">
+              Get a custom mileage-based quote for your local or regional move.
+              We make the process simple, direct, and professional.
+            </p>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <a
+                href="/request-pickup"
+                className="rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
+              >
+                Request a Pickup
+              </a>
+              <a
+                href="/contact"
+                className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
