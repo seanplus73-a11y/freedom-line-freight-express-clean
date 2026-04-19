@@ -1,6 +1,9 @@
 import { RouterProvider } from 'react-router';
 import { router } from './routes';
 import { Toaster } from './components/ui/sonner';
+import About from "./pages/About";
+
+<Route path="/about" element={<About />} />
 
 // Freedom Line Freight Express Public Website - Production Build v2.0
 // This application serves the public-facing Freedom Line Freight Express website
