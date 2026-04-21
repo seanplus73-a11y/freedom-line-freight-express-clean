@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { createBrowserRouter, Outlet, Navigate } from "react-router";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
 
