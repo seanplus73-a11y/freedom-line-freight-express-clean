@@ -30,8 +30,6 @@ import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery
 import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
 import DriveCarToMechanic from "./pages/DriveCarToMechanic";
 
-<Route path="/drive-car-to-mechanic" element={<DriveCarToMechanic />} />
-
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -57,6 +55,8 @@ export const router = createBrowserRouter([
       { path: "request-pickup", element: <RequestPickup /> },
       { path: "accept-quote", element: <AcceptQuote /> },
 
+      { path: "drive-car-to-mechanic", element: <DriveCarToMechanic /> },
+
       { path: "service-areas", element: <ServiceAreas /> },
 
       { path: "phoenix-delivery", element: <PhoenixDelivery /> },
@@ -75,11 +75,11 @@ export const router = createBrowserRouter([
       { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
       { path: "queen-creek-auto-parts-delivery", element: <QueenCreekAutoPartsDelivery /> },
       { path: "san-tan-valley-auto-parts-delivery", element: <SanTanValleyAutoPartsDelivery /> },
+      { path: "casa-grande-auto-parts-delivery", element: <CasaGrandeAutoPartsDelivery /> },
 
       { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
-      { path: "casa-grande-auto-parts-delivery", element: <CasaGrandeAutoPartsDelivery /> },
     ],
   },
 ]);
