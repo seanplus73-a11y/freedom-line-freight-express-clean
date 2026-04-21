@@ -22,12 +22,12 @@ export default function Home() {
 
         <meta
           name="description"
-          content="Need someone to drive your car home or take it to the mechanic in Phoenix AZ? We personally drive your vehicle to your home, dealership, repair shop, or destination. No towing. Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and nearby Arizona areas."
+          content="Need someone to drive your car home or to the mechanic in Phoenix AZ? I personally drive your vehicle to your home, shop, dealership, or destination. No towing. Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and across Arizona."
         />
 
         <meta
           name="keywords"
-          content="drive my car home Phoenix AZ, someone to drive my car to mechanic, someone to drive my car, car driving service Phoenix, no towing vehicle delivery, vehicle pickup and delivery Arizona, drive your car home service"
+          content="drive my car home Phoenix AZ, someone to drive my car to mechanic, someone to drive my car, car driving service Arizona, no towing vehicle delivery, vehicle pickup and delivery Arizona, drive your car home service"
         />
 
         <link rel="canonical" href="https://www.flfreightco.com/" />
@@ -38,7 +38,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="We personally drive your car home, to the mechanic, dealership, or destination. No towing. Fast local Arizona service."
+          content="Need someone to drive your car home or to the mechanic? I personally drive your vehicle with no towing across Phoenix and nearby Arizona areas."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.flfreightco.com/" />
@@ -58,7 +58,7 @@ export default function Home() {
         />
         <meta
           name="twitter:description"
-          content="Need someone to drive your car home or to the mechanic? We personally drive your vehicle with no towing across Phoenix and nearby Arizona areas."
+          content="Need someone to drive your car home or to the mechanic? I personally drive your vehicle with no towing across Phoenix and nearby Arizona areas."
         />
         <meta
           name="twitter:image"
@@ -83,7 +83,7 @@ export default function Home() {
               "Arizona",
             ],
             description:
-              "Drive my car home and vehicle delivery service in Phoenix and across Arizona. We personally drive your vehicle to your home, mechanic, dealership, or destination. No towing or trailer.",
+              "Drive my car home and drive car to mechanic service in Phoenix and across Arizona. I personally drive your vehicle to your home, shop, dealership, or destination. No towing or trailer.",
             serviceType: [
               "Drive My Car Home Service",
               "Drive Car to Mechanic Service",
@@ -139,24 +139,31 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Drive My Car Home Service in Arizona{" "}
-                <span className="text-orange-500">
-                  We Personally Drive It. No Towing. No Waiting.
-                </span>
+                Drive My Car Home Service in Arizona
               </h1>
 
-              <p className="text-lg md:text-2xl mb-6 text-gray-300 leading-relaxed max-w-3xl">
-                Need someone to drive your car home or take it to the mechanic?
-                We provide fast, direct vehicle transport across Phoenix, San
-                Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and nearby
-                Arizona areas.
+              <p className="text-2xl md:text-3xl font-bold mb-6 text-orange-500 leading-tight max-w-3xl">
+                I Personally Drive It. No Towing. No Waiting.
               </p>
 
-              <p className="text-base md:text-lg mb-10 text-gray-400 leading-relaxed max-w-3xl">
-                We personally drive your vehicle to your home, dealership,
-                repair shop, family member, or destination. No trailer. No tow
-                truck. Just simple, owner-operated service with real-time
-                updates.
+              <p className="text-lg md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
+                Need your car at the shop but can’t take it yourself? I will
+                drive it there for you and treat it like my own.
+              </p>
+
+              <p className="text-lg md:text-xl mb-4 text-white font-semibold leading-relaxed max-w-3xl">
+                Need someone to drive your car home or to the mechanic? I can
+                help.
+              </p>
+
+              <p className="text-base md:text-lg mb-4 text-gray-400 leading-relaxed max-w-3xl">
+                Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler,
+                Mesa and across Arizona. No trailer. No tow truck. Just direct
+                door to door driving with real time updates.
+              </p>
+
+              <p className="text-base md:text-lg mb-10 text-gray-300 font-semibold leading-relaxed max-w-3xl">
+                Same day or next day availability in most areas.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -175,6 +182,10 @@ export default function Home() {
                   View Pricing
                 </Link>
               </div>
+
+              <p className="mt-4 text-sm md:text-base text-gray-300 font-medium">
+                Text 4807428553 for a fast response
+              </p>
             </div>
           </div>
         </section>
@@ -190,9 +201,9 @@ export default function Home() {
             </h2>
 
             <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              We help with real everyday situations like driving your car home,
-              taking your car to the mechanic, delivering it to a dealership, or
-              moving it to another location across Arizona.
+              I help with real everyday situations like driving your car home,
+              taking your car to the mechanic, delivering it to a dealership,
+              or moving it to another location across Arizona.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
@@ -212,14 +223,14 @@ export default function Home() {
                 </div>
                 <p className="text-gray-400 text-sm">
                   Need someone to drive your car to the mechanic or dealership?
-                  We can help.
+                  I can help.
                 </p>
               </div>
 
               <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
                 <div className="text-3xl mb-3">🚗</div>
                 <div className="text-xl font-bold mb-2">
-                  Dealer & Auction Trips
+                  Dealer and Auction Trips
                 </div>
                 <p className="text-gray-400 text-sm">
                   Pickup and delivery support for dealerships, auctions, buyers,
@@ -230,7 +241,7 @@ export default function Home() {
               <div className="bg-neutral-800 p-6 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors">
                 <div className="text-3xl mb-3">📦</div>
                 <div className="text-xl font-bold mb-2">
-                  Parts, Packages & Business Items
+                  Parts, Packages and Business Items
                 </div>
                 <p className="text-gray-400 text-sm">
                   Direct transport for auto parts, documents, packages, and
@@ -248,7 +259,7 @@ export default function Home() {
               <div>
                 <div className="flex items-center justify-center mb-2">
                   <CheckCircle className="text-orange-500 mr-2" size={32} />
-                  <div className="text-lg font-bold">Owner-Operated</div>
+                  <div className="text-lg font-bold">Owner Operated</div>
                 </div>
                 <div className="text-gray-400 font-semibold">Service</div>
               </div>
@@ -258,13 +269,13 @@ export default function Home() {
                   <Shield className="text-orange-500 mr-2" size={32} />
                   <div className="text-lg font-bold">Fully Licensed</div>
                 </div>
-                <div className="text-gray-400 font-semibold">& Insured</div>
+                <div className="text-gray-400 font-semibold">and Insured</div>
               </div>
 
               <div>
                 <div className="flex items-center justify-center mb-2">
                   <Clock className="text-orange-500 mr-2" size={32} />
-                  <div className="text-lg font-bold">Same-Day & On-Demand</div>
+                  <div className="text-lg font-bold">Same Day and On Demand</div>
                 </div>
                 <div className="text-gray-400 font-semibold">Service</div>
               </div>
@@ -318,7 +329,7 @@ export default function Home() {
                   No Tow Truck or Trailer Needed
                 </h3>
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  We personally drive your vehicle instead of loading it onto a
+                  I personally drive your vehicle instead of loading it onto a
                   trailer or waiting on large carrier routes.
                 </p>
               </div>
@@ -344,8 +355,7 @@ export default function Home() {
                   Focused Care for Your Vehicle
                 </h3>
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  Your car receives direct attention from pickup to drop-off
-                  across Arizona.
+                  Your car receives direct attention from pickup to drop off.
                 </p>
               </div>
 
@@ -354,7 +364,7 @@ export default function Home() {
                   <MessageSquare className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">
-                  Real-Time Communication
+                  Real Time Communication
                 </h3>
                 <p className="text-gray-400 text-lg leading-relaxed">
                   Call, text, or email directly for updates during the transport
@@ -367,7 +377,7 @@ export default function Home() {
                   <Shield className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">
-                  Fully Insured & Owner-Operated
+                  Fully Insured and Owner Operated
                 </h3>
                 <p className="text-gray-400 text-lg leading-relaxed">
                   Licensed, insured, and personally accountable on every trip.
@@ -393,7 +403,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Request Pickup</h3>
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  Tell us where the vehicle is and where it needs to go, whether
+                  Tell me where the vehicle is and where it needs to go, whether
                   that is your home, mechanic, dealership, or another location.
                 </p>
               </div>
@@ -404,8 +414,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Direct Transport</h3>
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  We personally drive your vehicle with direct communication and
-                  real-time updates.
+                  I personally drive your vehicle with direct communication and
+                  real time updates.
                 </p>
               </div>
 
@@ -416,7 +426,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-4">Safe Delivery</h3>
                 <p className="text-gray-400 text-lg leading-relaxed">
                   Your vehicle or item is delivered and condition is confirmed at
-                  drop-off.
+                  drop off.
                 </p>
               </div>
             </div>
@@ -428,12 +438,12 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Vehicle Transport &{" "}
+                Vehicle Transport and{" "}
                 <span className="text-orange-500">Courier Delivery Services</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Direct, owner-operated transport with no third-party drivers,
-                towing, or app-based delivery.
+                Direct, owner operated transport with no third party drivers,
+                towing, or app based delivery.
               </p>
             </div>
 
@@ -456,24 +466,26 @@ export default function Home() {
                 </h3>
                 <p className="text-gray-400">
                   Need someone to drive your car to the mechanic, repair shop,
-                  or dealership? We provide direct help.
+                  or dealership? I can help.
                 </p>
               </div>
 
               <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
                 <Shield className="text-orange-500 mx-auto mb-4" size={32} />
                 <h3 className="text-2xl font-bold mb-3">
-                  Dealership & Auction Transport
+                  Dealership and Auction Transport
                 </h3>
                 <p className="text-gray-400">
                   Direct pickup and transport for dealerships, auctions, and
-                  vehicle-related businesses.
+                  vehicle related businesses.
                 </p>
               </div>
 
               <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
                 <Package className="text-orange-500 mx-auto mb-4" size={32} />
-                <h3 className="text-2xl font-bold mb-3">Auto Parts Transport</h3>
+                <h3 className="text-2xl font-bold mb-3">
+                  Auto Parts Transport
+                </h3>
                 <p className="text-gray-400">
                   Direct pickup between shops, dealerships, warehouses, and
                   suppliers.
@@ -486,7 +498,7 @@ export default function Home() {
                   Direct Business Transport
                 </h3>
                 <p className="text-gray-400">
-                  Priority same-day transport for business items, documents, and
+                  Priority same day transport for business items, documents, and
                   small packages.
                 </p>
               </div>
@@ -494,10 +506,10 @@ export default function Home() {
               <div className="bg-neutral-800 p-10 rounded-lg border border-neutral-700 hover:border-orange-500 transition-colors text-center">
                 <Clock className="text-orange-500 mx-auto mb-4" size={32} />
                 <h3 className="text-2xl font-bold mb-3">
-                  Same-Day Courier Delivery
+                  Same Day Courier Delivery
                 </h3>
                 <p className="text-gray-400">
-                  On-demand local Arizona delivery for urgent items that cannot
+                  On demand local Arizona delivery for urgent items that cannot
                   wait.
                 </p>
               </div>
@@ -522,14 +534,14 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
               <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
                 <h3 className="text-xl font-bold mb-2">Local</h3>
-                <p className="text-gray-400 mb-4">0–25 Miles</p>
+                <p className="text-gray-400 mb-4">0 to 25 Miles</p>
                 <div className="text-4xl font-bold text-orange-500 mb-2">$85</div>
                 <p className="text-gray-400">Starting at</p>
               </div>
 
               <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
                 <h3 className="text-xl font-bold mb-2">Extended Local</h3>
-                <p className="text-gray-400 mb-4">25–50 Miles</p>
+                <p className="text-gray-400 mb-4">25 to 50 Miles</p>
                 <div className="text-4xl font-bold text-orange-500 mb-2">
                   $140
                 </div>
@@ -538,7 +550,7 @@ export default function Home() {
 
               <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
                 <h3 className="text-xl font-bold mb-2">Regional</h3>
-                <p className="text-gray-400 mb-4">50–150 Miles</p>
+                <p className="text-gray-400 mb-4">50 to 150 Miles</p>
                 <div className="text-4xl font-bold text-orange-500 mb-2">
                   $285
                 </div>
@@ -551,7 +563,7 @@ export default function Home() {
                 <div className="text-4xl font-bold text-orange-500 mb-2">
                   Custom Quote
                 </div>
-                <p className="text-gray-400">Mileage-based pricing</p>
+                <p className="text-gray-400">Mileage based pricing</p>
               </div>
             </div>
 
@@ -575,9 +587,9 @@ export default function Home() {
               <span className="text-orange-500">Near You</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Looking for someone to drive your car near you? We serve Phoenix,
+              Looking for someone to drive your car near you? I serve Phoenix,
               San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and nearby
-              Arizona communities with direct, owner-operated vehicle delivery.
+              Arizona communities with direct, owner operated vehicle delivery.
             </p>
           </div>
         </section>
@@ -589,7 +601,7 @@ export default function Home() {
               Need Your Car Driven Today?
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto font-semibold">
-              Get your instant mileage-based quote now. No obligation.
+              Get your instant mileage based quote now. No obligation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
