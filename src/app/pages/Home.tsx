@@ -99,16 +99,15 @@ export default function Home() {
       <div className="bg-neutral-900 text-white">
         {/* Hero */}
         <section className="relative overflow-hidden bg-neutral-950">
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-            <div className="max-w-4xl">
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
-                  <Clock className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold">
-                    Same Day Available
-                  </span>
-                </div>
+         <div className="absolute inset-0">
+  <img
+    src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    alt="Blue vehicle parked in driveway"
+    className="h-full w-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+</div>
 
                 <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
                   <Truck className="text-orange-500 mr-2" size={18} />
