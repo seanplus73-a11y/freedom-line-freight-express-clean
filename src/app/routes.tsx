@@ -88,6 +88,6 @@ export const router = createBrowserRouter([
       { path: "drive-my-car-home", element: <DriveMyCarHome /> },
       { path: "someone-to-drive-my-car", element: <SomeoneToDriveMyCar /> },
       { path:"/drive-my-car-home" element={<DriveMyCarHome />} />
-      <Route path="/drive-for-my-car" element={<DriveForMyCar />} />
+      { path:"/drive-for-my-car" element={<DriveForMyCar />} />
     ],
 ]);
