@@ -98,68 +98,71 @@ export default function Home() {
 
       <div className="bg-neutral-900 text-white">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-neutral-950">
-         <div className="absolute inset-0">
-  <img
-    src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-    alt="Blue vehicle parked in driveway"
-    className="h-full w-full object-cover"
-  />
+       <section className="relative overflow-hidden bg-neutral-950">
+  {/* Background */}
+  <div className="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      alt="Blue vehicle parked in driveway"
+      className="h-full w-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+  </div>
 
-  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-</div>
+  {/* Content (THIS WAS MISSING) */}
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+    <div className="max-w-4xl">
 
-                <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
-                  <Truck className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold">
-                    Direct Transport
-                  </span>
-                </div>
+      <div className="flex flex-wrap gap-4 mb-8">
+        <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
+          <Clock className="text-orange-500 mr-2" size={18} />
+          <span className="text-sm font-semibold">Same Day Available</span>
+        </div>
 
-                <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
-                  <CheckCircle className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold">No Waiting</span>
-                </div>
-              </div>
+        <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
+          <Truck className="text-orange-500 mr-2" size={18} />
+          <span className="text-sm font-semibold">Direct Transport</span>
+        </div>
 
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Same-Day Delivery & Vehicle Transport{" "}
-                <span className="text-orange-500">
-                  We Drive It. Not Tow. No Waiting. No Delays.
-                </span>
-              </h1>
+        <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
+          <CheckCircle className="text-orange-500 mr-2" size={18} />
+          <span className="text-sm font-semibold">No Waiting</span>
+        </div>
+      </div>
 
-              <p className="text-lg md:text-2xl mb-10 text-gray-300 leading-relaxed max-w-3xl">
-                Fast, direct transport for vehicles, auto parts, packages, and
-                business deliveries across Arizona. Owner-operated service with
-                real-time updates and same-day availability.
-              </p>
+      <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Same-Day Delivery & Vehicle Transport{" "}
+        <span className="text-orange-500">
+          We Drive It. Not Tow. No Waiting. No Delays.
+        </span>
+      </h1>
 
-              <p className="sr-only">
-                Same-day courier delivery Phoenix Arizona, vehicle transport
-                Arizona, auto parts delivery service, direct business transport,
-                same-day delivery service near me.
-              </p>
+      <p className="text-lg md:text-2xl mb-10 text-gray-300 leading-relaxed max-w-3xl">
+        Fast, direct transport for vehicles, auto parts, packages, and
+        business deliveries across Arizona. Owner-operated service with
+        real-time updates and same-day availability.
+      </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/request-pickup"
-                  className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
-                >
-                  Get Instant Quote
-                  <ArrowRight className="ml-2" size={22} />
-                </Link>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link
+          to="/request-pickup"
+          className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
+        >
+          Get Instant Quote
+          <ArrowRight className="ml-2" size={22} />
+        </Link>
 
-                <Link
-                  to="/pricing"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
-                >
-                  View Pricing
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Link
+          to="/pricing"
+          className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
+        >
+          View Pricing
+        </Link>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         {/* Business Clients */}
         <section className="py-20 bg-neutral-900 border-t border-neutral-800">
