@@ -32,6 +32,7 @@ import DriveCarToMechanic from "./pages/DriveCarToMechanic";
 import CarDeliveryService from "./pages/CarDeliveryService";
 import DriveMyCarHome from "./pages/DriveMyCarHome";
 import SomeoneToDriveMyCar from "./pages/SomeoneToDriveMyCar";
+import DriveMyCarHome from "./pages/DriveMyCarHome";
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -85,6 +86,7 @@ export const router = createBrowserRouter([
       { path: "car-delivery-service", element: <CarDeliveryService /> },
       { path: "drive-my-car-home", element: <DriveMyCarHome /> },
       { path: "someone-to-drive-my-car", element: <SomeoneToDriveMyCar /> },
+      { path:"/drive-my-car-home" element={<DriveMyCarHome />} />
     ],
   },
 ]);
