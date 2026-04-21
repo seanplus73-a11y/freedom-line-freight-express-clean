@@ -15,17 +15,87 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function Home() {
   return (
-    <div className="bg-neutral-900">
-      
-      {/* Hero Section */}
-      <section className="relative bg-black text-white">
-        <div className="absolute inset-0 opacity-50">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Professional vehicle transport service"
-            className="w-full h-full object-cover"
-          />
-        </div>
+    <>
+      <Helmet>
+        <title>Car Pickup & Delivery Service Phoenix AZ | We Drive Your Car For You</title>
+
+        <meta
+          name="description"
+          content="Need your car moved locally? We personally drive your vehicle to the shop, dealer, or home. No towing. Serving Phoenix, San Tan Valley, and all Arizona. Get a fast quote today."
+        />
+
+        <meta
+          name="keywords"
+          content="car pickup and delivery Phoenix AZ, vehicle delivery service Arizona, drive my car service Phoenix, no towing vehicle transport, local car delivery San Tan Valley, auto parts delivery Phoenix"
+        />
+
+        <link rel="canonical" href="https://www.flfreightco.com/" />
+
+        <meta
+          property="og:title"
+          content="Car Pickup & Delivery Service Phoenix AZ | We Drive Your Car For You"
+        />
+        <meta
+          property="og:description"
+          content="We personally drive your vehicle to the shop, dealer, or home. No towing. Serving Phoenix, San Tan Valley, and all Arizona."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.flfreightco.com/" />
+        <meta property="og:site_name" content="Freedom Line Freight Express" />
+        <meta
+          property="og:image"
+          content="https://www.flfreightco.com/og-image.jpg"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Car Pickup & Delivery Service Phoenix AZ | We Drive Your Car For You"
+        />
+        <meta
+          name="twitter:description"
+          content="Need your car moved locally? No towing. We personally drive your vehicle anywhere in Phoenix, San Tan Valley, and across Arizona."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.flfreightco.com/og-image.jpg"
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Freedom Line Freight Express",
+            url: "https://www.flfreightco.com/",
+            telephone: "+1-480-742-8553",
+            email: "dispatch@flfreightco.com",
+            areaServed: [
+              "Phoenix AZ",
+              "San Tan Valley AZ",
+              "Queen Creek AZ",
+              "Gilbert AZ",
+              "Mesa AZ",
+              "Arizona"
+            ],
+            description:
+              "Car pickup and delivery service in Phoenix and across Arizona. We personally drive your vehicle. No towing or trailer.",
+            serviceType: [
+              "Car Pickup and Delivery",
+              "Vehicle Delivery Service",
+              "Auto Parts Delivery",
+              "Local Delivery Service"
+            ],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "San Tan Valley",
+              addressRegion: "AZ",
+              addressCountry: "US"
+            }
+          })}
+        </script>
+      </Helmet>
+
+      <div className="bg-neutral-900">
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
           <div className="max-w-4xl">
@@ -530,6 +600,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }
-
