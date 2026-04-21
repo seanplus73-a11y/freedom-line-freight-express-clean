@@ -29,7 +29,7 @@ import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
 import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery";
 import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
 import DriveCarToMechanic from "./pages/DriveCarToMechanic";
-
+import CarDeliveryService from "./pages/CarDeliveryService";
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -80,6 +80,7 @@ export const router = createBrowserRouter([
       { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
+      { path: "car-delivery-service", element: <CarDeliveryService /> },
     ],
   },
 ]);
