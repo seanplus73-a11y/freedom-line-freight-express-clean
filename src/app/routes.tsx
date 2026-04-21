@@ -28,6 +28,9 @@ import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
 import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery";
 import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
+import DriveCarToMechanic from "./pages/DriveCarToMechanic";
+
+<Route path="/drive-car-to-mechanic" element={<DriveCarToMechanic />} />
 
 function RootLayout() {
   return (
