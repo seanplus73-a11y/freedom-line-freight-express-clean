@@ -28,12 +28,13 @@ import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
 import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery";
 import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
+
 import DriveCarToMechanic from "./pages/DriveCarToMechanic";
 import CarDeliveryService from "./pages/CarDeliveryService";
 import DriveMyCarHome from "./pages/DriveMyCarHome";
 import SomeoneToDriveMyCar from "./pages/SomeoneToDriveMyCar";
-import DriveMyCarHome from "./pages/DriveMyCarHome";
 import DriveForMyCar from "./pages/DriveForMyCar";
+
 function RootLayout() {
   return (
     <div className="min-h-screen bg-[#111827] text-white">
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
       { path: "accept-quote", element: <AcceptQuote /> },
 
       { path: "drive-car-to-mechanic", element: <DriveCarToMechanic /> },
+      { path: "car-delivery-service", element: <CarDeliveryService /> },
+      { path: "drive-my-car-home", element: <DriveMyCarHome /> },
+      { path: "someone-to-drive-my-car", element: <SomeoneToDriveMyCar /> },
+      { path: "drive-for-my-car", element: <DriveForMyCar /> },
 
       { path: "service-areas", element: <ServiceAreas /> },
 
@@ -84,10 +89,6 @@ export const router = createBrowserRouter([
       { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
-      { path: "car-delivery-service", element: <CarDeliveryService /> },
-      { path: "drive-my-car-home", element: <DriveMyCarHome /> },
-      { path: "someone-to-drive-my-car", element: <SomeoneToDriveMyCar /> },
-      { path:"/drive-my-car-home" element={<DriveMyCarHome />} />
-      { path:"/drive-for-my-car" element={<DriveForMyCar />} />
     ],
+  },
 ]);
