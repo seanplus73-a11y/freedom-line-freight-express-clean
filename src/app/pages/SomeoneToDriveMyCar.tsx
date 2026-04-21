@@ -428,22 +428,22 @@ export default function SomeoneToDriveMyCar() {
         </section>
 
         <section className="mx-auto max-w-7xl px-6 pb-20 md:px-10">
-          <div className="rounded-3xl border border-[#f97316]/20 bg-[#0f172a] p-8 md:p-10">
-            <div className="mx-auto max-w-4xl text-center">
-              <div className="mb-4 inline-flex rounded-full bg-[#f97316]/10 p-3">
-                <Briefcase className="h-6 w-6 text-[#f97316]" />
-              </div>
-              <h2 className="text-3xl font-extrabold text-white md:text-4xl">
-                Good SEO Match for Real Customer Searches
-              </h2>
-              <p className="mt-4 text-lg leading-8 text-gray-300">
-                This page supports broad search phrases like someone to drive my
-                car, while your other pages support more specific searches like
-                drive my car home and drive car to mechanic.
-              </p>
-            </div>
-          </div>
-        </section>
+  <div className="rounded-3xl border border-[#f97316]/20 bg-[#0f172a] p-8 md:p-10">
+    <div className="mx-auto max-w-4xl text-center">
+      <div className="mb-4 inline-flex rounded-full bg-[#f97316]/10 p-3">
+        <Briefcase className="h-6 w-6 text-[#f97316]" />
+      </div>
+      <h2 className="text-3xl font-extrabold text-white md:text-4xl">
+        Direct Help for Real Situations
+      </h2>
+      <p className="mt-4 text-lg leading-8 text-gray-300">
+        Whether you are busy at work, do not have a second driver, or just want a
+        simple way to move your vehicle, I can personally drive your car where it
+        needs to go with direct communication from pickup to drop off.
+      </p>
+    </div>
+  </div>
+</section>
       </div>
     </>
   );
