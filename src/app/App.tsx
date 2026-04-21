@@ -1,7 +1,7 @@
 import { RouterProvider } from 'react-router';
 import { router } from './routes';
 import { Toaster } from './components/ui/sonner';
-import { HelmetProvider } from "react-helmet-async";
+
 
 // Freedom Line Freight Express Public Website - Production Build v2.0
 // This application serves the public-facing Freedom Line Freight Express website
