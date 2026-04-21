@@ -12,7 +12,7 @@ import {
   Package,
   Briefcase,
 } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+
 
 export default function Home() {
   return (
@@ -96,79 +96,89 @@ export default function Home() {
         </script>
       </Helmet>
 
-      <div className="bg-neutral-900">
-        {/* Hero Section */}
-        <section className="relative bg-black text-white">
-          <div className="absolute inset-0 opacity-50">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Professional vehicle transport service"
-              className="w-full h-full object-cover"
-            />
-          </div>
+      <div className="bg-neutral-900 text-white">
+  {/* Hero Section */}
+  <section className="relative overflow-hidden">
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=80')",
+      }}
+    />
+    <div className="absolute inset-0 bg-black/65" />
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
-            <div className="max-w-4xl">
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500">
-                  <Clock className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold text-white">
-                    Same Day Available
-                  </span>
-                </div>
-                <div className="flex items-center bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500">
-                  <Truck className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold text-white">
-                    Direct Transport
-                  </span>
-                </div>
-                <div className="flex items-center bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500">
-                  <CheckCircle className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold text-white">
-                    No Waiting
-                  </span>
-                </div>
-              </div>
+    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+      {/* Top contact bar */}
+      <div className="mb-6 inline-flex flex-wrap items-center gap-3 bg-orange-500/90 text-white px-4 py-2 rounded-md text-sm font-semibold">
+        <span>Call or Text 480-742-8553</span>
+        <span className="hidden sm:inline">•</span>
+        <span>Fast response within 5–10 minutes</span>
+      </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                Same-Day Delivery & Vehicle Transport{" "}
-                <span className="text-orange-500">
-                  We Drive It. Not Tow. No Waiting. No Delays.
-                </span>
-              </h1>
+      {/* Trust badges */}
+      <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500/70">
+          <Clock className="text-orange-400 mr-2" size={18} />
+          <span className="text-sm font-semibold text-white">
+            Same-Day Available
+          </span>
+        </div>
 
-              <p className="text-xl md:text-2xl mb-10 text-gray-300 leading-relaxed max-w-3xl">
-                Fast, direct transport for vehicles, auto parts, packages, and
-                business deliveries across Arizona. Owner-operated service with
-                real-time updates and same-day availability.
-              </p>
+        <div className="flex items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500/70">
+          <Truck className="text-orange-400 mr-2" size={18} />
+          <span className="text-sm font-semibold text-white">
+            Direct Transport
+          </span>
+        </div>
 
-              <p className="sr-only">
-                Car pickup and delivery service in Phoenix Arizona, we drive your
-                car for you, no towing vehicle transport, local car delivery in
-                San Tan Valley, Queen Creek, Gilbert, Mesa, and auto parts
-                delivery across Arizona.
-              </p>
+        <div className="flex items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500/70">
+          <CheckCircle className="text-orange-400 mr-2" size={18} />
+          <span className="text-sm font-semibold text-white">
+            No Waiting
+          </span>
+        </div>
+      </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/request-pickup"
-                  className="inline-flex items-center justify-center bg-orange-500 text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
-                >
-                  Get Instant Quote
-                  <ArrowRight className="ml-2" size={24} />
-                </Link>
-                <Link
-                  to="/pricing"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
-                >
-                  View Pricing
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="max-w-4xl">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white">
+          Same-Day Delivery & Vehicle Transport
+          <span className="block text-orange-400 mt-2">
+            We Drive It. No Tow. No Waiting. No Delays.
+          </span>
+        </h1>
+
+        <p className="text-lg md:text-2xl text-gray-200 leading-relaxed max-w-3xl mb-8">
+          Fast, direct transport for vehicles, auto parts, packages, and
+          business deliveries across Arizona. Owner-operated service with
+          real-time updates and same-day availability.
+        </p>
+
+        <p className="sr-only">
+          Same-day courier delivery Phoenix Arizona, vehicle transport Arizona,
+          auto parts delivery service, direct business transport, same-day
+          delivery service near me.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            to="/request-pickup"
+            className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
+          >
+            Get Instant Quote
+            <ArrowRight className="ml-2" size={22} />
+          </Link>
+
+          <Link
+            to="/pricing"
+            className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
+          >
+            View Pricing
+          </Link>
+        </div>
+      </div>
+    </div>
+  </section>
 
         {/* Business Clients Section */}
         <section className="py-20 bg-neutral-900 border-t border-neutral-800">
