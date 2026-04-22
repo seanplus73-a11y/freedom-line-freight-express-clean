@@ -8,7 +8,7 @@ export default function QueenCreekAutoPartsDelivery() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="photo/2019/03/29/04/35/tools-4088531_1280.jpg"
+            src="public/images/tools-4088531_1280.jpg"
             alt="Auto parts delivery service in Queen Creek Arizona"
             className="h-full w-full object-cover"
           />
