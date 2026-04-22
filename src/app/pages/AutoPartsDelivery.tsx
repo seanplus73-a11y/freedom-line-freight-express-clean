@@ -9,7 +9,7 @@ export default function AutoPartsDelivery() {
           className="h-[420px] md:h-[460px] w-full bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=1600&auto=format&fit=crop')",
+            "url('https://images.unsplash.com/photo-1581093458791-9d2f4b7b7c2b?q=80&w=1600&auto=format&fit=crop')",
           }}
         />
 
