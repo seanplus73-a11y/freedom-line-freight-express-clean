@@ -69,6 +69,9 @@ export const router = createBrowserRouter([
       { path: "drive-my-car-home", element: <DriveMyCarHome /> },
       { path: "someone-to-drive-my-car", element: <SomeoneToDriveMyCar /> },
       { path: "drive-for-my-car", element: <DriveForMyCar /> },
+      { path: "drive-for-hire-car", element: <DriveForHireCar /> },
+      { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
+      { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
 
       { path: "service-areas", element: <ServiceAreas /> },
 
@@ -81,6 +84,7 @@ export const router = createBrowserRouter([
       { path: "scottsdale-delivery", element: <ScottsdaleDelivery /> },
       { path: "casa-grande-delivery", element: <CasaGrandeDelivery /> },
 
+      { path: "auto-parts-delivery", element: <AutoPartsDelivery /> },
       { path: "chandler-auto-parts-delivery", element: <ChandlerAutoPartsDelivery /> },
       { path: "gilbert-auto-parts-delivery", element: <GilbertAutoPartsDelivery /> },
       { path: "mesa-auto-parts-delivery", element: <MesaAutoPartsDelivery /> },
@@ -93,12 +97,6 @@ export const router = createBrowserRouter([
       { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
-      { path: "drive-for-hire-car", element: <DriveForHireCar /> },
-      { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
-
-      { path: "auto-parts-delivery", element: <AutoPartsDelivery /> },
-      { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
-   }
     ],
   },
 ]);
