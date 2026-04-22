@@ -181,7 +181,7 @@ export default function Home() {
               </div>
 
               <p className="mt-4 text-sm md:text-base text-gray-300 font-medium">
-               Text 4807428553 for a fast quote.
+               
               </p>
             </div>
           </div>
