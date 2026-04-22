@@ -4,52 +4,54 @@ import { Link } from "react-router";
 export default function AutoPartsDelivery() {
   return (
     <div className="bg-[#0f172a] text-white">
-      <section className="relative overflow-hidden">
-        <div
-          className="h-[420px] md:h-[480px] w-full bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('/images/auto-parts-store.jpg')",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/55"></div>
+    <section className="relative overflow-hidden">
+  {/* Background Image */}
+  <div
+    className="h-[420px] md:h-[480px] w-full bg-cover bg-center"
+    style={{
+      backgroundImage: "url('/images/auto-parts-store.jpg')",
+    }}
+  />
 
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-6xl px-6 w-full">
-            <div className="max-w-3xl">
-              <p className="text-orange-400 text-sm md:text-base font-semibold tracking-wide mb-3 uppercase">
-                Arizona Auto Parts Delivery
-              </p>
+  {/* Blur + overlay (KEY FIX) */}
+  <div className="absolute inset-0 backdrop-blur-[2px] bg-black/50"></div>
 
-              <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
-                Auto Parts Delivery Service in San Tan Valley, AZ
-              </h1>
+  {/* Content */}
+  <div className="absolute inset-0 flex items-center">
+    <div className="mx-auto max-w-6xl px-6 w-full">
+      <div className="max-w-3xl">
+        <p className="text-orange-400 text-sm font-semibold mb-3 uppercase">
+          Arizona Auto Parts Delivery
+        </p>
 
-              <p className="text-gray-100 text-base md:text-lg leading-7 max-w-2xl mb-6">
-                Fast and reliable auto parts delivery for repair shops,
-                dealerships, suppliers, and local businesses. Same day and
-                scheduled delivery across San Tan Valley and nearby areas.
-              </p>
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
+          Auto Parts Delivery Service in San Tan Valley, AZ
+        </h1>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/request-pickup"
-                  className="inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 font-semibold text-white hover:bg-orange-600 transition"
-                >
-                  Request Delivery
-                </Link>
+        <p className="text-gray-100 text-base md:text-lg mb-6">
+          Fast and reliable auto parts delivery for repair shops, dealerships,
+          suppliers, and local businesses. Same day and scheduled delivery.
+        </p>
 
-                <a
-                  href="sms:4807428553"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-orange-400 px-6 py-3 font-semibold text-orange-300 hover:bg-orange-500 hover:text-white transition"
-                >
-                  <Phone size={18} />
-                  Text 480-742-8553
-                </a>
-              </div>
-            </div>
-          </div>
+        <div className="flex gap-4">
+          <a
+            href="/request-pickup"
+            className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold"
+          >
+            Request Delivery
+          </a>
+
+          <a
+            href="sms:4807428553"
+            className="border border-orange-400 px-6 py-3 rounded-lg text-orange-300 hover:bg-orange-500 hover:text-white transition"
+          >
+            Text 480-742-8553
+          </a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
       </section>
 
       <section className="py-16">
