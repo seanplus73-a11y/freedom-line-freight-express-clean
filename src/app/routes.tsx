@@ -37,6 +37,7 @@ import DriveForMyCar from "./pages/DriveForMyCar";
 import DriveForHireCar from "./pages/DriveForHireCar";
 import PersonalDriverForMyCar from "./pages/PersonalDriverForMyCar";
 import AutoPartsDelivery from "./pages/AutoPartsDelivery";
+import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
 
 function RootLayout() {
   return (
@@ -97,7 +98,7 @@ export const router = createBrowserRouter([
       {
   path: "/auto-parts-delivery",
   element: <AutoPartsDelivery />,
-        {path="/drive-my-car-to-dealer" element={<DriveMyCarToDealer />} />
+      { path: "/drive-my-car-to-dealer", element: <DriveMyCarToDealer /> }
 }
     ],
   },
