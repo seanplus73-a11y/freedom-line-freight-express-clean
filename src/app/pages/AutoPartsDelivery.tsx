@@ -10,7 +10,7 @@ export default function AutoPartsDelivery() {
         <div
           className="h-[420px] md:h-[480px] w-full bg-cover bg-center"
           style={{
-            backgroundImage: "http://localhost:5173/images/auto-parts-store.jpg",
+            backgroundImage: "jelleke-vanooteghem-MohB4LCIPyM-unsplash.jpg",
           }}
         />
 
