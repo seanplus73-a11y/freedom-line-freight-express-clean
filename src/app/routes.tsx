@@ -35,6 +35,7 @@ import DriveMyCarHome from "./pages/DriveMyCarHome";
 import SomeoneToDriveMyCar from "./pages/SomeoneToDriveMyCar";
 import DriveForMyCar from "./pages/DriveForMyCar";
 import DriveForHireCar from "./pages/DriveForHireCar";
+import PersonalDriverForMyCar from "./pages/PersonalDriverForMyCar";
 
 function RootLayout() {
   return (
@@ -91,6 +92,7 @@ export const router = createBrowserRouter([
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
       { path: "drive-for-hire-car", element: <DriveForHireCar /> },
+      { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
     ],
   },
 ]);
