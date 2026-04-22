@@ -8,9 +8,9 @@ export default function AutoPartsDelivery() {
      <section
   className="relative px-6 py-20 bg-cover bg-center"
   style={{
-    backgroundImage:
-      "url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1600&auto=format&fit=crop')",
-  }}
+  backgroundImage:
+    "url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1600&auto=format&fit=crop')",
+}}
 >
   {/* DARK OVERLAY */}
   <div className="absolute inset-0 bg-black/70"></div>
