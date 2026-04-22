@@ -139,16 +139,15 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Drive My Car Home Service in Arizona
+               Arizona Vehicle Pickup & Delivery Service
               </h1>
 
               <p className="text-2xl md:text-3xl font-bold mb-6 text-orange-500 leading-tight max-w-3xl">
-                I Personally Drive It. No Towing. No Waiting.
+                No Towing. No Waiting. I Personally Drive It.
               </p>
 
               <p className="text-lg md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
-                Need your car at the shop but can’t take it yourself? I will
-                drive it there for you and treat it like my own.
+                Need your car moved but can’t do it yourself? I’ll safely drive it for you door to door.
               </p>
 
               <p className="text-lg md:text-xl mb-4 text-white font-semibold leading-relaxed max-w-3xl">
@@ -157,9 +156,7 @@ export default function Home() {
               </p>
 
               <p className="text-base md:text-lg mb-4 text-gray-400 leading-relaxed max-w-3xl">
-                Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler,
-                Mesa and across Arizona. No trailer. No tow truck. Just direct
-                door to door driving with real time updates.
+               Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa and all Arizona. No trailer. No trailer. No tow truck. Just direct owner operated service with real time updates.
               </p>
 
               <p className="text-base md:text-lg mb-10 text-gray-300 font-semibold leading-relaxed max-w-3xl">
@@ -184,7 +181,7 @@ export default function Home() {
               </div>
 
               <p className="mt-4 text-sm md:text-base text-gray-300 font-medium">
-                Text 4807428553 for a fast response
+               Text 4807428553 for a fast quote.
               </p>
             </div>
           </div>
