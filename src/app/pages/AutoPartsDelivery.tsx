@@ -1,22 +1,19 @@
 import { Phone } from "lucide-react";
+import { Link } from "react-router";
 
 export default function AutoPartsDelivery() {
   return (
     <div className="bg-[#0f172a] text-white">
-      {/* HERO SECTION */}
       <section className="relative overflow-hidden">
         <div
-          className="h-[420px] md:h-[460px] w-full bg-cover bg-center"
+          className="h-[420px] md:h-[480px] w-full bg-cover bg-center"
           style={{
             backgroundImage:
-            "url('https://images.unsplash.com/photo-1581093458791-9d2f4b7b7c2b?q=80&w=1600&auto=format&fit=crop')",
+              "url('/images/auto-parts-store.jpg')",
           }}
         />
+        <div className="absolute inset-0 bg-black/55"></div>
 
-        {/* overlay */}
-        <div className="absolute inset-0 bg-black/45"></div>
-
-        {/* content */}
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto max-w-6xl px-6 w-full">
             <div className="max-w-3xl">
@@ -35,12 +32,12 @@ export default function AutoPartsDelivery() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <a
-                  href="/request-pickup"
+                <Link
+                  to="/request-pickup"
                   className="inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 font-semibold text-white hover:bg-orange-600 transition"
                 >
                   Request Delivery
-                </a>
+                </Link>
 
                 <a
                   href="sms:4807428553"
@@ -55,7 +52,6 @@ export default function AutoPartsDelivery() {
         </div>
       </section>
 
-      {/* MAIN CONTENT */}
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-4xl">
