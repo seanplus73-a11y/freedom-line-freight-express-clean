@@ -147,16 +147,15 @@ export default function Home() {
               </p>
 
               <p className="text-lg md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
-                Need your car moved but can’t do it yourself? I’ll safely drive it for you door to door.
+                Need your car moved but can’t do it yourself? I will safely drive it for you door to door.
               </p>
 
               <p className="text-lg md:text-xl mb-4 text-white font-semibold leading-relaxed max-w-3xl">
-                Need someone to drive your car home or to the mechanic? I can
-                help.
+                Whether it’s going home, to the mechanic, dealership, or a family member, I handle it personally from start to finish.
               </p>
 
               <p className="text-base md:text-lg mb-4 text-gray-400 leading-relaxed max-w-3xl">
-               Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa and all Arizona. No trailer. No trailer. No tow truck. Just direct owner operated service with real time updates.
+               Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and across Arizona. No trailer. No tow truck. Just direct owner operated service with real time updates.
               </p>
 
               <p className="text-base md:text-lg mb-10 text-gray-300 font-semibold leading-relaxed max-w-3xl">
@@ -181,6 +180,7 @@ export default function Home() {
               </div>
 
               <p className="mt-4 text-sm md:text-base text-gray-300 font-medium">
+                Fully insured. Trusted local service.
                
               </p>
             </div>
