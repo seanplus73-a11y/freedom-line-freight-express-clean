@@ -5,50 +5,53 @@ export default function AutoPartsDelivery() {
   return (
     <div className="bg-[#0f172a] text-white">
       {/* HERO */}
-      <section className="relative h- md:h- w-full overflow-hidden">
-        {/* Background Image */}
-        <img
-          src="https://images.unsplash.com/photo-1619642751034-765df7c58e?q=80&w=2070"
-          alt="Auto parts delivery van loading boxes"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      <section className="relative h-[420px] md:h-[480px] w-full overflow-hidden">
+  <img
+    src="public/images/auto-parts-store.jpg"
+    alt="Auto parts store shelves"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30"></div>
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/25"></div>
 
-        {/* Content */}
-        <div className="relative mx-auto flex h-full max-w-6xl items-center px-6">
-          <div className="max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase text-orange-400">
-              Arizona Parts Courier Service
-            </p>
+  <div className="relative mx-auto flex h-full max-w-6xl items-center px-6">
+    <div className="max-w-3xl">
+      <p className="mb-3 text-sm font-semibold uppercase text-orange-400">
+        Arizona Parts Courier Service
+      </p>
 
-            <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
-              Same-Day Auto Parts Delivery in San Tan Valley & Phoenix Metro
-            </h1>
+      <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
+        Same Day Auto Parts Delivery in San Tan Valley and Phoenix Metro
+      </h1>
 
-            <p className="mb-6 text-base text-gray-100 md:text-lg">
-              Skip the wait. I personally deliver parts between shops, dealers, suppliers,
-              and customers — no warehouse delays, no missed ETAs. Scheduled or urgent runs available.
-            </p>
+      <p className="mb-6 text-base text-gray-100 md:text-lg">
+        Skip the wait. I personally deliver parts between shops, dealers, suppliers,
+        and customers. Scheduled and urgent runs available.
+      </p>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Link
-                to="/request-pickup"
-                className="rounded-lg bg-orange-500 px-6 py-3 text-center font-semibold hover:bg-orange-600"
-              >
-                Request Delivery
-              </Link>
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+        <Link
+          to="/request-pickup"
+          className="rounded-lg bg-orange-500 px-6 py-3 text-center font-semibold hover:bg-orange-600"
+        >
+          Request Delivery
+        </Link>
 
-              <a
-                href="sms:4807428553"
-                className="flex items-center justify-center gap-2 rounded-lg border border-orange-400 px-6 py-3 text-orange-300 transition hover:bg-orange-500 hover:text-white"
-              >
-                <Phone size={18} />
-                Text 480-742-8553
-              </a>
-            </div>
+        <a
+          href="sms:4807428553"
+          className="flex items-center justify-center gap-2 rounded-lg border border-orange-400 px-6 py-3 text-orange-300 transition hover:bg-orange-500 hover:text-white"
+        >
+          <Phone size={18} />
+          Text 480-742-8553
+        </a>
+      </div>
 
+      <p className="mt-4 flex items-center gap-2 text-sm font-medium text-green-400">
+        <Clock size={16} /> Most local runs delivered fast
+      </p>
+    </div>
+  </div>
+</section>
             <p className="mt-4 flex items-center gap-2 text-sm font-medium text-green-400">
               <Clock size={16} /> Most local runs delivered in under 2 hours
             </p>
