@@ -8,12 +8,11 @@ export default function DriveForHireCar() {
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-          Driver for Hire for Your Car in Arizona
+          Hire a Driver to Drive Your Car in Arizona
         </h1>
 
         <p className="mt-6 text-lg text-gray-300 max-w-3xl mx-auto">
-          Need a driver for hire for your own car? I personally drive your vehicle
-          where it needs to go without towing, trailers, or confusing handoffs.
+         Need someone to drive your car? I personally pick up and drive your vehicle to its destination. No towing, No trailers, no waiting.
         </p>
 
         <p className="mt-4 text-base text-gray-400 max-w-2xl mx-auto">
