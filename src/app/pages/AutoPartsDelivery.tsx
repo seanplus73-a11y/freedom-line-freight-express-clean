@@ -6,13 +6,15 @@ export default function AutoPartsDelivery() {
     <div className="bg-[#0f172a] text-white">
 
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div
-          className="h-[420px] md:h-[480px] w-full bg-cover bg-center"
-          style={{
-            backgroundImage: "jelleke-vanooteghem-MohB4LCIPyM-unsplash.jpg",
-          }}
-        />
+      <div
+  className="h-[420px] md:h-[480px] w-full bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?q=80&w=1600')",
+  }}
+/>
+
+<div className="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
 
         {/* overlay */}
         <div className="absolute inset-0 backdrop-blur-[2px] bg-black/50"></div>
