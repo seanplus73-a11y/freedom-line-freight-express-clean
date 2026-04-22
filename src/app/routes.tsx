@@ -95,11 +95,10 @@ export const router = createBrowserRouter([
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
       { path: "drive-for-hire-car", element: <DriveForHireCar /> },
       { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
-      {
-  path: "/auto-parts-delivery",
-  element: <AutoPartsDelivery />,
-      { path: "/drive-my-car-to-dealer", element: <DriveMyCarToDealer /> }
-}
+
+      { path: "auto-parts-delivery", element: <AutoPartsDelivery /> },
+      { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
+   }
     ],
   },
 ]);
