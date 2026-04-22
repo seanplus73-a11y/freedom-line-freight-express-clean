@@ -5,42 +5,47 @@ export default function AutoPartsDelivery() {
     <div className="bg-[#0f172a] text-white">
 
       {/* HERO SECTION */}
-      <section className="px-6 py-16 max-w-6xl mx-auto">
-        <p className="text-orange-400 uppercase tracking-wide text-sm mb-3">
-          Arizona Auto Parts Delivery
-        </p>
+     <section
+  className="relative px-6 py-20 bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1600&auto=format&fit=crop')",
+  }}
+>
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-black/70"></div>
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-          Auto Parts Delivery Service in San Tan Valley, AZ
-        </h1>
+  <div className="relative max-w-6xl mx-auto">
+    <p className="text-orange-400 uppercase tracking-wide text-sm mb-3">
+      Arizona Auto Parts Delivery
+    </p>
 
-        <p className="text-gray-300 text-lg max-w-2xl mb-6">
-          Freedom Line Freight Express provides fast and reliable auto parts delivery 
-          in San Tan Valley and nearby cities. I help repair shops, dealerships, and 
-          businesses get parts delivered quickly without delays.
-        </p>
+    <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+      Auto Parts Delivery Service in San Tan Valley, AZ
+    </h1>
 
-        <p className="text-gray-400 max-w-2xl mb-8">
-          Need a part picked up from a supplier or delivered to a shop? I offer direct 
-          local delivery with dependable service across the Phoenix metro area.
-        </p>
+    <p className="text-gray-300 text-lg max-w-2xl mb-6">
+      Fast and reliable auto parts delivery for repair shops, dealerships, and
+      businesses.
+    </p>
 
-        <div className="flex flex-wrap gap-4">
-          <Link
-            to="/request-pickup"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold"
-          >
-            Request Delivery
-          </Link>
+    <div className="flex flex-wrap gap-4">
+      <Link
+        to="/request-pickup"
+        className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold"
+      >
+        Request Delivery
+      </Link>
 
-          <a
-            href="sms:4807428553"
-            className="border border-orange-400 text-orange-400 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg font-semibold"
-          >
-            Text 480-742-8553
-          </a>
-        </div>
-      </section>
+      <a
+        href="sms:4807428553"
+        className="border border-orange-400 text-orange-400 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg font-semibold"
+      >
+        Text 480-742-8553
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* SECTION */}
       <section className="px-6 py-12 max-w-6xl mx-auto">
