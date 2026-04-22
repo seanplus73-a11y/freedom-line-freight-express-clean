@@ -1,16 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
   <loc>https://www.flfreightco.com/</loc>
-  <lastmod>2026-04-12T04:06:06+00:00</lastmod>
 </url>
 
+<url>
+  <loc>https://www.flfreightco.com/services</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/pricing</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/contact</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/request-pickup</loc>
+</url>
+
+<!-- SERVICE PAGES -->
+<url>
+  <loc>https://www.flfreightco.com/drive-car-to-mechanic</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/car-delivery-service</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/drive-my-car-home</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/someone-to-drive-my-car</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/drive-for-my-car</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/drive-for-hire-car</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/personal-driver-for-my-car</loc>
+</url>
+
+<!-- CITY PAGES -->
+<url>
+  <loc>https://www.flfreightco.com/phoenix-delivery</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/mesa-delivery</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/chandler-delivery</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/gilbert-delivery</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/queen-creek-delivery</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/san-tan-valley-delivery</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/scottsdale-delivery</loc>
+</url>
+
+<url>
+  <loc>https://www.flfreightco.com/casa-grande-delivery</loc>
+</url>
 
 </urlset>
