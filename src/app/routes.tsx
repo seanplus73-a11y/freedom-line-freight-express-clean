@@ -97,6 +97,7 @@ export const router = createBrowserRouter([
       {
   path: "/auto-parts-delivery",
   element: <AutoPartsDelivery />,
+        {path="/drive-my-car-to-dealer" element={<DriveMyCarToDealer />} />
 }
     ],
   },
