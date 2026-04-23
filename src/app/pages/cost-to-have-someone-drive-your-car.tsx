@@ -1,27 +1,33 @@
-import { Phone } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
-export default function CostToDriveCar() {
+export default function CostToHaveSomeoneDriveYourCar() {
   return (
-    <main className="bg-[#0f172a] text-white min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 py-12">
+    <div className="bg-[#0f172a] text-white min-h-screen px-6 py-12">
+      <div className="max-w-4xl mx-auto">
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        {/* TITLE */}
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">
           How Much Does It Cost to Have Someone Drive Your Car?
         </h1>
 
+        {/* INTRO (SEO BOOST) */}
         <p className="text-gray-300 text-lg mb-6 leading-8">
-          If you need to move your car without using a tow truck or trailer,
-          you might be wondering how much it costs to have someone drive your car.
-          The answer depends on distance, timing, and vehicle type, but in many cases,
-          this option is more affordable and safer than towing.
+          Looking for the cost to have someone drive your car in Arizona? 
+          Whether you need a vehicle moved to a mechanic, dealership, or another city, 
+          this guide breaks down pricing, what affects the cost, and how to get a fast quote.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
+        <p className="text-gray-300 mb-10">
+          If you need to move your car without using a tow truck or trailer, 
+          hiring someone to drive your vehicle is often a safer and more affordable option.
+        </p>
+
+        {/* COST SECTION */}
+        <h2 className="text-2xl font-semibold mb-4">
           Average Cost to Have Someone Drive Your Car
         </h2>
 
-        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-6">
+        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-8">
           <li>0 to 25 miles: around $75 to $100</li>
           <li>25 to 50 miles: around $120 to $150</li>
           <li>50 to 150 miles: around $200 to $300</li>
@@ -29,41 +35,50 @@ export default function CostToDriveCar() {
         </ul>
 
         <p className="text-gray-300 mb-6">
-          Example routes:
+          These prices depend on distance, scheduling, and vehicle type. 
+          Local deliveries are usually the most affordable.
         </p>
 
-        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-6">
+        {/* EXAMPLES */}
+        <h3 className="text-xl font-semibold mb-3">
+          Example Routes
+        </h3>
+
+        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-10">
           <li>Phoenix to Mesa: around $85</li>
+          <li>Phoenix to Scottsdale: around $95</li>
           <li>Phoenix to Tucson: around $250 to $350</li>
-          <li>Longer trips depend on flexibility and scheduling</li>
+          <li>Longer trips depend on scheduling and flexibility</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
+        {/* FACTORS */}
+        <h2 className="text-2xl font-semibold mb-4">
           What Affects the Price?
         </h2>
 
-        <div className="space-y-4 text-gray-300">
-          <p><strong>Distance:</strong> Longer trips cost more, but per-mile cost is usually lower.</p>
+        <div className="space-y-3 text-gray-300 mb-10">
+          <p><strong>Distance:</strong> Longer trips cost more, but per-mile cost is lower.</p>
           <p><strong>Vehicle Type:</strong> Larger or specialty vehicles may cost more.</p>
-          <p><strong>Timing:</strong> Same-day or urgent requests may increase price slightly.</p>
-          <p><strong>Locations:</strong> Remote pickup or drop-off areas can affect pricing.</p>
+          <p><strong>Timing:</strong> Same-day or urgent requests may increase price.</p>
+          <p><strong>Locations:</strong> Remote pickup or drop-off areas may add cost.</p>
         </div>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
+        {/* TOWING */}
+        <h2 className="text-2xl font-semibold mb-4">
           Is It Cheaper Than Towing?
         </h2>
 
-        <p className="text-gray-300 mb-6">
-          In many cases, yes. Towing can cost more for longer distances and requires loading
-          and unloading. Having someone drive your car keeps it on the road and often reduces
-          handling risks and delays.
+        <p className="text-gray-300 mb-10">
+          In many cases, yes. Towing requires loading, unloading, and equipment fees. 
+          Having someone drive your car keeps it on the road and reduces handling risks.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
+        {/* WHEN TO USE */}
+        <h2 className="text-2xl font-semibold mb-4">
           When Should You Use This Service?
         </h2>
 
-        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-6">
+        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-10">
           <li>Taking your car to a mechanic or dealership</li>
           <li>Moving a vehicle to family or another location</li>
           <li>Buying or selling a car locally</li>
@@ -71,40 +86,74 @@ export default function CostToDriveCar() {
           <li>Same-day delivery needs</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
+        {/* SAFETY */}
+        <h2 className="text-2xl font-semibold mb-4">
           Is It Safe to Let Someone Drive Your Car?
         </h2>
 
-        <p className="text-gray-300 mb-6">
-          Yes, when handled by a reliable and experienced driver. With owner-operated service,
-          your vehicle is handled directly, with communication from pickup to delivery.
+        <p className="text-gray-300 mb-10">
+          Yes, when handled by a reliable and experienced driver. 
+          With owner-operated service, your vehicle is handled directly with clear communication 
+          from pickup to delivery.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
+        {/* SERVICE AREA */}
+        <h2 className="text-2xl font-semibold mb-4">
           Service Areas
         </h2>
 
-        <p className="text-gray-300 mb-6">
-          Serving Phoenix, Mesa, Chandler, Gilbert, Queen Creek, San Tan Valley,
-          Scottsdale, Casa Grande, and surrounding Arizona areas.
+        <p className="text-gray-300 mb-10">
+          Serving Phoenix, Mesa, Chandler, Gilbert, Queen Creek, San Tan Valley, Scottsdale, 
+          Casa Grande, and surrounding Arizona areas for vehicle pickup and delivery services.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
-          Get a Fast Quote
+        {/* INTERNAL LINKS (SEO BOOST) */}
+        <h2 className="text-2xl font-semibold mb-4">
+          Related Services
         </h2>
 
-        <p className="text-gray-300 mb-6">
-          To get an exact price, send your pickup location, drop-off location,
-          vehicle type, and whether it is drivable.
-        </p>
+        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-10">
+          <li><Link to="/drive-my-car-home" className="text-orange-400">Drive My Car Home</Link></li>
+          <li><Link to="/car-delivery-service" className="text-orange-400">Car Delivery Service</Link></li>
+          <li><Link to="/request-pickup" className="text-orange-400">Request a Pickup</Link></li>
+        </ul>
 
-        <div className="bg-orange-500 text-black p-6 rounded-xl text-center font-semibold text-lg mb-10">
-          <div className="flex items-center justify-center gap-2">
-            <Phone className="h-5 w-5" />
-            Text 4807428553 for a fast quote
-          </div>
+        {/* FAQ */}
+        <h2 className="text-2xl font-semibold mb-4">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-4 text-gray-300 mb-10">
+          <p>
+            <strong>Can someone legally drive my car for me?</strong><br />
+            Yes, as long as they have permission and a valid driver’s license.
+          </p>
+
+          <p>
+            <strong>Is this cheaper than shipping a car?</strong><br />
+            Yes, for local and regional distances, it is often more affordable.
+          </p>
+
+          <p>
+            <strong>Do I need insurance?</strong><br />
+            Your vehicle should already be insured. Always confirm coverage before transport.
+          </p>
         </div>
 
+        {/* CTA */}
+        <div className="bg-orange-500 text-black p-6 rounded-xl text-center mb-10">
+          <p className="text-lg font-semibold mb-2">
+            Get a Fast Quote
+          </p>
+          <p className="mb-4">
+            Text your pickup and drop-off details for a quick price.
+          </p>
+          <a href="sms:4807428553" className="font-bold text-lg">
+            Text 480-742-8553
+          </a>
+        </div>
+
+        {/* BUTTON */}
         <div className="text-center">
           <Link
             to="/request-pickup"
@@ -115,6 +164,6 @@ export default function CostToDriveCar() {
         </div>
 
       </div>
-    </main>
+    </div>
   );
 }
