@@ -30,6 +30,9 @@ export default function Services() {
       ],
       link: "/drive-my-car-home",
     },
+    <Link to="/drive-my-car-to-mechanic-near-me" className="text-orange-400">
+  Need your car taken to a mechanic?
+</Link>
     {
       icon: Building2,
       title: "Dealer and Auction Pickup",
