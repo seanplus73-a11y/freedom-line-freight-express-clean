@@ -1,247 +1,346 @@
+import {
+  Phone,
+  CheckCircle2,
+  CarFront,
+  Package,
+  Truck,
+  Shield,
+  Clock,
+  MapPin,
+} from "lucide-react";
 import { Link } from "react-router";
+
 export default function MesaDelivery() {
   return (
-    <>
-      <main className="min-h-screen bg-neutral-950 text-white">
-        {/* HERO */}
-        <section className="border-b border-neutral-800">
-          <div className="mx-auto max-w-6xl px-6 py-16">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-400">
-              Mesa, Arizona
+    <div className="bg-[#0f172a] text-white">
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/mesa-delivery.jpg')",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="max-w-3xl">
+            <div className="mb-5 flex flex-wrap gap-3">
+              <span className="rounded-full border border-orange-400/60 bg-black/40 px-4 py-2 text-sm font-semibold text-orange-300">
+                Same Day Available
+              </span>
+              <span className="rounded-full border border-orange-400/60 bg-black/40 px-4 py-2 text-sm font-semibold text-orange-300">
+                No Towing Needed
+              </span>
+              <span className="rounded-full border border-orange-400/60 bg-black/40 px-4 py-2 text-sm font-semibold text-orange-300">
+                Direct Local Service
+              </span>
+            </div>
+
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-orange-400">
+              Mesa Arizona Delivery Service
             </p>
 
-            <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
-              Vehicle Pickup & Delivery in Mesa, AZ
+            <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
+              Vehicle Pickup and Delivery Service in Mesa AZ
             </h1>
 
-            <p className="max-w-3xl text-lg text-neutral-300">
-              Freedom Line Freight Express provides reliable vehicle pickup and
-              delivery in Mesa, Arizona. We specialize in direct drive-away
-              service for cars, SUVs, and small trucks that run and drive — no
-              towing and no trailers.
+            <p className="mb-6 text-lg leading-8 text-gray-200">
+              Need someone to move your car in Mesa without using a tow truck or
+              trailer? I personally drive vehicles where they need to go with
+              direct pickup and drop off service.
             </p>
 
-            <div className="mt-6">
-              <a
-                href="/request-pickup"
-                className="rounded-md bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
+            <p className="mb-8 text-base leading-8 text-gray-300 md:text-lg">
+              I also provide auto parts delivery, document delivery, and small
+              business transport across Mesa and the East Valley. Fast local
+              service with real time updates.
+            </p>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link
+                to="/request-pickup"
+                className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-8 py-4 text-base font-semibold text-white transition hover:bg-orange-600"
               >
                 Request Pickup
+              </Link>
+
+              <a
+                href="sms:4807428553"
+                className="inline-flex items-center justify-center gap-3 rounded-xl border border-orange-400 px-8 py-4 text-base font-semibold text-orange-300 transition hover:bg-orange-500 hover:text-white"
+              >
+                <Phone className="h-5 w-5" />
+                Text 4807428553
+              </a>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-300">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-green-400" />
+                Licensed and insured
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-green-400" />
+                Real time updates
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-[#111827] py-6">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-3">
+          <div className="flex items-center gap-3">
+            <CarFront className="h-5 w-5 text-orange-400" />
+            <div>
+              <p className="font-semibold">Personally driven vehicles</p>
+              <p className="text-sm text-gray-400">
+                No towing or trailer needed
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Clock className="h-5 w-5 text-orange-400" />
+            <div>
+              <p className="font-semibold">Fast local response</p>
+              <p className="text-sm text-gray-400">
+                Same day and next day scheduling
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Shield className="h-5 w-5 text-orange-400" />
+            <div>
+              <p className="font-semibold">Protected during transport</p>
+              <p className="text-sm text-gray-400">
+                Careful handling from pickup to drop off
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-10 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              Delivery Services Available in Mesa
+            </h2>
+            <p className="leading-8 text-gray-300">
+              I provide direct local delivery for vehicles, auto parts, small
+              packages, and business items across Mesa. Simple service, clear
+              communication, and dependable local transport.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+              <div className="mb-4 inline-flex rounded-xl bg-orange-500/15 p-3">
+                <CarFront className="h-6 w-6 text-orange-400" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold">Vehicle Pickup</h3>
+              <p className="leading-7 text-gray-300">
+                I personally drive cars, SUVs, and light vehicles to a mechanic,
+                dealership, family member, or new location in Mesa.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+              <div className="mb-4 inline-flex rounded-xl bg-orange-500/15 p-3">
+                <Truck className="h-6 w-6 text-orange-400" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold">Auto Parts Delivery</h3>
+              <p className="leading-7 text-gray-300">
+                Fast local delivery for repair shops, dealers, suppliers, and
+                businesses needing parts moved quickly and directly.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+              <div className="mb-4 inline-flex rounded-xl bg-orange-500/15 p-3">
+                <Package className="h-6 w-6 text-orange-400" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold">Business Items</h3>
+              <p className="leading-7 text-gray-300">
+                Documents, small equipment, and local business transport with
+                flexible pickup and drop off scheduling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-10 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              Why People Choose This Service
+            </h2>
+            <p className="leading-8 text-gray-300">
+              This service is a good fit when you need help moving a vehicle but
+              do not want the hassle of towing. It is also useful for dealerships,
+              repair shops, and local businesses that need direct transport.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+              <h3 className="mb-5 text-2xl font-bold">Good For</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Getting your car to a mechanic or dealership</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Moving a car to family or a new location</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Buying or selling a car locally</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Auto parts and local business transport</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-orange-500/30 bg-orange-500/10 p-8">
+              <h3 className="mb-5 text-2xl font-bold">What You Get</h3>
+              <ul className="space-y-3 text-gray-200">
+                <li>Owner operated direct service</li>
+                <li>No towing or trailers</li>
+                <li>Flexible same day and scheduled options</li>
+                <li>Real time updates during transport</li>
+                <li>Licensed and insured handling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-10 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              Simple Distance Based Pricing
+            </h2>
+            <p className="leading-8 text-gray-300">
+              Clear starting rates based on mileage. Final quote may vary
+              depending on timing, route, and service details.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+              <p className="mb-2 text-sm text-gray-400">Local</p>
+              <h3 className="mb-2 text-2xl font-bold">0 to 25 miles</h3>
+              <p className="mb-4 text-4xl font-bold text-orange-400">$85</p>
+              <p className="text-sm leading-6 text-gray-400">
+                Great for nearby mechanic or dealer trips
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+              <p className="mb-2 text-sm text-gray-400">Extended</p>
+              <h3 className="mb-2 text-2xl font-bold">25 to 50 miles</h3>
+              <p className="mb-4 text-4xl font-bold text-orange-400">$140</p>
+              <p className="text-sm leading-6 text-gray-400">
+                Best for metro Mesa and East Valley transport
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+              <p className="mb-2 text-sm text-gray-400">Regional</p>
+              <h3 className="mb-2 text-2xl font-bold">50 to 150 miles</h3>
+              <p className="mb-4 text-4xl font-bold text-orange-400">$285</p>
+              <p className="text-sm leading-6 text-gray-400">
+                Good for longer Arizona city to city runs
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-orange-500/30 bg-orange-500/10 p-7">
+              <p className="mb-2 text-sm text-orange-200">Long Distance</p>
+              <h3 className="mb-2 text-2xl font-bold">150 plus miles</h3>
+              <p className="mb-4 text-3xl font-bold text-white">Custom Quote</p>
+              <p className="text-sm leading-6 text-orange-100">
+                Best for custom routes and statewide delivery
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+              <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold">
+                <MapPin className="h-6 w-6 text-orange-400" />
+                Service Area
+              </h2>
+              <p className="leading-8 text-gray-300">
+                Serving Mesa, Phoenix, Gilbert, Chandler, Queen Creek, San Tan
+                Valley, Scottsdale, Tempe, and surrounding Arizona areas.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+              <h2 className="mb-4 text-2xl font-bold">What Is Included</h2>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Door to door pickup and drop off</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Secure vehicle and item handling</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Direct communication throughout transport</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
+                  <span>Owner operated service with flexible scheduling</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="rounded-3xl bg-orange-500 px-8 py-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+              Need delivery service in Mesa today
+            </h2>
+            <p className="mx-auto mb-8 max-w-2xl text-base text-orange-50">
+              Text me your pickup and drop off location for a fast quote and
+              availability.
+            </p>
+
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                to="/request-pickup"
+                className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-orange-600 transition hover:bg-orange-50"
+              >
+                Request Pickup
+              </Link>
+
+              <a
+                href="sms:4807428553"
+                className="inline-flex items-center justify-center rounded-xl border border-white px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-orange-600"
+              >
+                Text 4807428553
               </a>
             </div>
           </div>
-        </section>
-
-        {/* SERVICES */}
-        <section>
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid items-start gap-10 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Fast Mesa Vehicle Delivery
-                </h2>
-
-                <p className="mb-4 text-neutral-300">
-                  Need a car moved across Mesa, picked up from a dealership,
-                  delivered to a repair shop, or transported to your home?
-                  Freedom Line Freight Express offers direct, flexible service
-                  with fast response times.
-                </p>
-
-                <p className="text-neutral-300">
-                  We also provide time-sensitive delivery for auto parts,
-                  packages, and documents. Same-day and emergency delivery may
-                  be available depending on distance and scheduling.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Services Available in Mesa
-                </h2>
-
-                <ul className="space-y-3 text-neutral-200">
-                  <li>• Vehicle pickup & delivery (runs & drives only)</li>
-                  <li>• Car transport and drive-away service</li>
-                  <li>• Dealer and auction vehicle transport</li>
-                  <li>• Auto parts delivery</li>
-                  <li>• Packages and document delivery</li>
-                  <li>• Same-day and emergency delivery</li>
-                  <li>• Local and long-distance transport</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* WHY US */}
-        <section className="border-y border-neutral-800 bg-neutral-900">
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <h2 className="mb-6 text-2xl font-bold text-orange-400">
-              Why Choose Freedom Line Freight Express
-            </h2>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold text-white">
-                  Direct Drive-Away Service
-                </h3>
-                <p className="text-neutral-300">
-                  Your vehicle is driven directly to its destination with no
-                  trailer delays and no towing.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold text-white">
-                  Fast & Reliable
-                </h3>
-                <p className="text-neutral-300">
-                  Quick pickups, dependable delivery, and clear communication
-                  every step of the way.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-                <h3 className="mb-3 text-xl font-semibold text-white">
-                  Owner-Operated Service
-                </h3>
-                <p className="text-neutral-300">
-                  Personal attention and trusted service from a local Arizona
-                  business you can rely on.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="border-y border-neutral-800 bg-neutral-900">
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <h2 className="mb-8 text-center text-2xl font-bold text-orange-400">
-              Frequently Asked Questions
-            </h2>
-
-            <div className="mx-auto max-w-3xl space-y-6">
-              <div>
-                <h3 className="font-semibold text-white">
-                  Do you offer same-day vehicle delivery?
-                </h3>
-                <p className="text-neutral-300">
-                  Yes, same-day and emergency delivery may be available
-                  depending on distance and scheduling.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-white">
-                  Do you use trailers?
-                </h3>
-                <p className="text-neutral-300">
-                  No, we provide direct drive-away service. Your vehicle is
-                  driven, not towed.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-white">
-                  What types of vehicles do you transport?
-                </h3>
-                <p className="text-neutral-300">
-                  Cars, SUVs, and small trucks that run and drive.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SERVICE AREA + CONTACT + LINKS + MAP */}
-        <section>
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid items-start gap-10 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Areas We Serve in and Around Mesa
-                </h2>
-
-                <p className="mb-4 text-neutral-300">
-                  We serve customers in Mesa and nearby communities including
-                  Phoenix, Chandler, Gilbert, Queen Creek, and San Tan Valley.
-                </p>
-
-                <p className="text-neutral-300">
-                  If you need a vehicle, auto parts, or documents delivered in
-                  or around the Mesa area, we can help with scheduled and urgent
-                  requests.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-                <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                  Request a Quote
-                </h2>
-
-                <p className="mb-4 text-neutral-300">
-                  Need dependable vehicle pickup and delivery in Mesa, AZ?
-                  Contact Freedom Line Freight Express for a fast quote and
-                  availability.
-                </p>
-
-                <div className="space-y-2 text-neutral-200">
-                  <p><strong>Text:</strong> 480-742-8553</p>
-                  <p><strong>Email:</strong> dispatch@flfreightco.com</p>
-                  <p><strong>Website:</strong> flfreightco.com</p>
-                </div>
-              </div>
-            </div>
-
-            {/* INTERNAL LINKS */}
-            <Link
-  to="/mesa-auto-parts-delivery"
-  className="inline-block rounded-lg border border-orange-500 px-5 py-3 font-semibold text-orange-400 transition hover:bg-orange-500/10"
->
-  Need auto parts delivered in Mesa?
-</Link>
-            <div className="mx-auto mt-12 max-w-3xl text-center">
-              <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Nearby Cities We Serve
-              </h2>
-
-              <p className="leading-8 text-neutral-300">
-                <a href="/phoenix-vehicle-delivery" className="text-orange-400">Phoenix</a>,{" "}
-                <a href="/mesa-vehicle-delivery" className="text-orange-400">Mesa</a>,{" "}
-                <a href="/chandler-vehicle-delivery" className="text-orange-400">Chandler</a>,{" "}
-                <a href="/gilbert-vehicle-delivery" className="text-orange-400">Gilbert</a>,{" "}
-                <a href="/queen-creek-vehicle-delivery" className="text-orange-400">Queen Creek</a>,{" "}
-                <a href="/san-tan-valley-vehicle-delivery" className="text-orange-400">San Tan Valley</a>
-              </p>
-            </div>
-
-            {/* MAP */}
-            <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-              <h2 className="mb-4 text-center text-2xl font-bold text-orange-400">
-                Mesa Map
-              </h2>
-
-              <p className="mb-4 text-center text-neutral-300">
-                Serving Mesa and nearby communities with reliable vehicle pickup
-                and delivery services.
-              </p>
-
-              <div className="overflow-hidden rounded-xl border border-neutral-800">
-                <iframe
-                  title="Mesa Arizona Map"
-                  src="https://www.google.com/maps?q=Mesa,AZ&output=embed"
-                  width="100%"
-                  height="320"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+    </div>
   );
 }
