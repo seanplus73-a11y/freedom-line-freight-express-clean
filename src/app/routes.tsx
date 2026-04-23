@@ -41,6 +41,7 @@ import DriveForHireCar from "./pages/DriveForHireCar";
 import PersonalDriverForMyCar from "./pages/PersonalDriverForMyCar";
 import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
 import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
+import CanSomeoneDriveMyCarForMe from "./pages/can-someone-drive-my-car-for-me";
 
 function RootLayout() {
   return (
@@ -75,8 +76,14 @@ export const router = createBrowserRouter([
       { path: "drive-for-hire-car", element: <DriveForHireCar /> },
       { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
       { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
-      { path: "cost-to-have-someone-drive-your-car", element: <CostToDriveCar /> },
-
+{
+  path: "/cost-to-have-someone-drive-your-car",
+  element: <CostToHaveSomeoneDriveYourCar />,
+},
+{
+  path: "/can-someone-drive-my-car-for-me",
+  element: <CanSomeoneDriveMyCarForMe />,
+},
       { path: "service-areas", element: <ServiceAreas /> },
 
       { path: "phoenix-delivery", element: <PhoenixDelivery /> },
