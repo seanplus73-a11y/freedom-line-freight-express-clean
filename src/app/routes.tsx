@@ -18,16 +18,19 @@ import QueenCreekDelivery from "./pages/QueenCreekDelivery";
 import SanTanValleyDelivery from "./pages/SanTanValleyDelivery";
 import ScottsdaleDelivery from "./pages/ScottsdaleDelivery";
 import CasaGrandeDelivery from "./pages/CasaGrandeDelivery";
+import TempeDelivery from "./pages/TempeDelivery";
 import ServiceAreas from "./pages/ServiceAreas";
 
+import AutoPartsDelivery from "./pages/AutoPartsDelivery";
+import PhoenixAutoPartsDelivery from "./pages/PhoenixAutoPartsDelivery";
+import MesaAutoPartsDelivery from "./pages/MesaAutoPartsDelivery";
 import ChandlerAutoPartsDelivery from "./pages/ChandlerAutoPartsDelivery";
 import GilbertAutoPartsDelivery from "./pages/GilbertAutoPartsDelivery";
-import MesaAutoPartsDelivery from "./pages/MesaAutoPartsDelivery";
-import PhoenixAutoPartsDelivery from "./pages/PhoenixAutoPartsDelivery";
-import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
 import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery";
+import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
+import TempeAutoPartsDelivery from "./pages/TempeAutoPartsDelivery";
 
 import DriveCarToMechanic from "./pages/DriveCarToMechanic";
 import CarDeliveryService from "./pages/CarDeliveryService";
@@ -36,10 +39,7 @@ import SomeoneToDriveMyCar from "./pages/SomeoneToDriveMyCar";
 import DriveForMyCar from "./pages/DriveForMyCar";
 import DriveForHireCar from "./pages/DriveForHireCar";
 import PersonalDriverForMyCar from "./pages/PersonalDriverForMyCar";
-import AutoPartsDelivery from "./pages/AutoPartsDelivery";
 import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
-import TempeDelivery from "./pages/TempeDelivery";
-import TempeAutoPartsDelivery from "./pages/TempeAutoPartsDelivery";
 import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
 
 function RootLayout() {
@@ -75,6 +75,7 @@ export const router = createBrowserRouter([
       { path: "drive-for-hire-car", element: <DriveForHireCar /> },
       { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
       { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
+      { path: "cost-to-have-someone-drive-your-car", element: <CostToDriveCar /> },
 
       { path: "service-areas", element: <ServiceAreas /> },
 
@@ -86,27 +87,22 @@ export const router = createBrowserRouter([
       { path: "san-tan-valley-delivery", element: <SanTanValleyDelivery /> },
       { path: "scottsdale-delivery", element: <ScottsdaleDelivery /> },
       { path: "casa-grande-delivery", element: <CasaGrandeDelivery /> },
+      { path: "tempe-delivery", element: <TempeDelivery /> },
 
       { path: "auto-parts-delivery", element: <AutoPartsDelivery /> },
+      { path: "phoenix-auto-parts-delivery", element: <PhoenixAutoPartsDelivery /> },
+      { path: "mesa-auto-parts-delivery", element: <MesaAutoPartsDelivery /> },
       { path: "chandler-auto-parts-delivery", element: <ChandlerAutoPartsDelivery /> },
       { path: "gilbert-auto-parts-delivery", element: <GilbertAutoPartsDelivery /> },
-      { path: "mesa-auto-parts-delivery", element: <MesaAutoPartsDelivery /> },
-      { path: "phoenix-auto-parts-delivery", element: <PhoenixAutoPartsDelivery /> },
-      { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
       { path: "queen-creek-auto-parts-delivery", element: <QueenCreekAutoPartsDelivery /> },
       { path: "san-tan-valley-auto-parts-delivery", element: <SanTanValleyAutoPartsDelivery /> },
+      { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
       { path: "casa-grande-auto-parts-delivery", element: <CasaGrandeAutoPartsDelivery /> },
+      { path: "tempe-auto-parts-delivery", element: <TempeAutoPartsDelivery /> },
 
       { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
-      { path: "tempe-delivery", element: <TempeDelivery /> },
-      { path: "tempe-auto-parts-delivery", element: <TempeAutoPartsDelivery /> },
-      {
-  path: "/cost-to-have-someone-drive-your-car",
-  element: <CostToDriveCar />,
-},
-},
     ],
   },
 ]);
