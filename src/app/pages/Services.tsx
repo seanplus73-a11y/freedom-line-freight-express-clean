@@ -12,7 +12,6 @@ import {
   Package,
   Wrench,
   Briefcase,
-  FileText,
 } from "lucide-react";
 
 export default function Services() {
@@ -30,9 +29,6 @@ export default function Services() {
       ],
       link: "/drive-my-car-home",
     },
-    <Link to="/drive-my-car-to-mechanic-near-me" className="text-orange-400">
-  Need your car taken to a mechanic?
-</Link>
     {
       icon: Building2,
       title: "Dealer and Auction Pickup",
@@ -209,6 +205,7 @@ export default function Services() {
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {mainServices.map((service) => {
               const Icon = service.icon;
+
               return (
                 <div
                   key={service.title}
@@ -226,7 +223,10 @@ export default function Services() {
 
                   <ul className="mb-6 space-y-3">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-gray-300">
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3 text-gray-300"
+                      >
                         <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-orange-400" />
                         <span>{feature}</span>
                       </li>
