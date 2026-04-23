@@ -38,6 +38,8 @@ import DriveForHireCar from "./pages/DriveForHireCar";
 import PersonalDriverForMyCar from "./pages/PersonalDriverForMyCar";
 import AutoPartsDelivery from "./pages/AutoPartsDelivery";
 import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
+import TempeDelivery from "./pages/TempeDelivery";
+import TempeAutoPartsDelivery from "./pages/TempeAutoPartsDelivery";
 
 function RootLayout() {
   return (
@@ -97,6 +99,8 @@ export const router = createBrowserRouter([
       { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
+      { path: "tempe-delivery", element: <TempeDelivery /> },
+      { path: "tempe-auto-parts-delivery", element: <TempeAutoPartsDelivery /> },
     ],
   },
 ]);
