@@ -40,6 +40,7 @@ import AutoPartsDelivery from "./pages/AutoPartsDelivery";
 import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
 import TempeDelivery from "./pages/TempeDelivery";
 import TempeAutoPartsDelivery from "./pages/TempeAutoPartsDelivery";
+import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
 
 function RootLayout() {
   return (
@@ -101,6 +102,11 @@ export const router = createBrowserRouter([
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
       { path: "tempe-delivery", element: <TempeDelivery /> },
       { path: "tempe-auto-parts-delivery", element: <TempeAutoPartsDelivery /> },
+      {
+  path: "/cost-to-have-someone-drive-your-car",
+  element: <CostToDriveCar />,
+},
+},
     ],
   },
 ]);
