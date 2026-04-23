@@ -76,16 +76,9 @@ export const router = createBrowserRouter([
       { path: "drive-for-hire-car", element: <DriveForHireCar /> },
       { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
       { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
-{
-  path: "/cost-to-have-someone-drive-your-car",
-  element: <CostToHaveSomeoneDriveYourCar />,
-},
-{
-  path: "/can-someone-drive-my-car-for-me",
-  element: <CanSomeoneDriveMyCarForMe />,
-},
+      { path: "cost-to-have-someone-drive-your-car", element: <CostToDriveCar /> },
+      { path: "can-someone-drive-my-car-for-me", element: <CanSomeoneDriveMyCarForMe /> },
       { path: "service-areas", element: <ServiceAreas /> },
-
       { path: "phoenix-delivery", element: <PhoenixDelivery /> },
       { path: "mesa-delivery", element: <MesaDelivery /> },
       { path: "chandler-delivery", element: <ChandlerDelivery /> },
