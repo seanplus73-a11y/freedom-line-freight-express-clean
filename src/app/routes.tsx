@@ -43,8 +43,6 @@ import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
 import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
 import CanSomeoneDriveMyCarForMe from "./pages/can-someone-drive-my-car-for-me";
 import DriveMyCarToMechanicNearMe from "./pages/drive-my-car-to-mechanic-near-me";
-import BusinessTransport from "./pages/BusinessTransport";
-import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
 
 
 function RootLayout() {
@@ -108,8 +106,7 @@ export const router = createBrowserRouter([
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
       { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
-      { path: "business-transport", element: <BusinessTransport /> },
-      { path: "package-document-delivery", element: <PackageDocumentDelivery /> },
+      
     ],
   },
 ]);
