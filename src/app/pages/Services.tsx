@@ -43,18 +43,19 @@ export default function Services() {
       link: "/drive-my-car-to-dealer",
     },
     {
-      icon: Wrench,
-      title: "Auto Parts Transport",
-      description:
-        "Direct pickup and transport of auto parts between shops, dealerships, warehouses, and customers. Ideal for urgent and high value parts that require reliable same day service.",
-      features: [
-        "Engines, transmissions, and large parts",
-        "Repair shop and dealership transport",
-        "Same day service available",
-        "Handled directly with no middleman",
-      ],
-      link: "/auto-parts-delivery",
-    {
+  icon: Wrench,
+  title: "Auto Parts Transport",
+  description:
+    "Direct pickup and transport of auto parts between shops, dealerships, warehouses, and customers. Ideal for urgent and high value parts that require reliable same day service.",
+  features: [
+    "Engines, transmissions, and large parts",
+    "Repair shop and dealership transport",
+    "Same day service available",
+    "Handled directly with no middleman",
+  ],
+  link: "/auto-parts-delivery",
+},
+{
   icon: Briefcase,
   title: "Direct Business Transport",
   description:
