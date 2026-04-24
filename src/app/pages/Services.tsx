@@ -54,8 +54,8 @@ export default function Services() {
         "Handled directly with no middleman",
       ],
       link: "/auto-parts-delivery",
-    },
-      icon: Briefcase,
+    {
+  icon: Briefcase,
   title: "Direct Business Transport",
   description:
     "Direct priority transport for business items, documents, and equipment across Arizona. Handled personally for speed, security, and reliability.",
