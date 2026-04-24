@@ -106,7 +106,7 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    to="/request-pickup"
+                    to="/package-document-delivery"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
                   >
                     <Building2 className="mt-0.5 text-[#f97316]" size={18} />
