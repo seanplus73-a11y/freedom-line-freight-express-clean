@@ -55,32 +55,31 @@ export default function Services() {
       ],
       link: "/auto-parts-delivery",
     },
-    {
       icon: Briefcase,
-      title: "Direct Business Transport",
-      description:
-        "Direct priority transport for business items, documents, and equipment across Arizona. Handled personally for speed, security, and reliability.",
-      features: [
-        "Business to business transport",
-        "Priority same day service available",
-        "Flexible pickup and drop off times",
-        "Handled directly by owner",
-      ],
-      link: "/services",
-    },
-    {
-      icon: Package,
-      title: "Documents and Small Packages",
-      description:
-        "Direct local delivery for documents, small boxes, important items, and time sensitive deliveries across the Valley.",
-      features: [
-        "Small package delivery",
-        "Time sensitive local runs",
-        "Direct local transport",
-        "Simple reliable service",
-      ],
-      link: "/services",
-    },
+  title: "Direct Business Transport",
+  description:
+    "Direct priority transport for business items, documents, and equipment across Arizona. Handled personally for speed, security, and reliability.",
+  features: [
+    "Business to business transport",
+    "Priority same day service available",
+    "Flexible pickup and drop off times",
+    "Handled directly by owner",
+  ],
+  link: "/business-transport",
+},
+{
+  icon: Package,
+  title: "Documents and Small Packages",
+  description:
+    "Direct local delivery for documents, small boxes, important items, and time sensitive deliveries across the Valley.",
+  features: [
+    "Small package delivery",
+    "Time sensitive local runs",
+    "Direct local transport",
+    "Simple reliable service",
+  ],
+  link: "/package-document-delivery",
+},
     {
       icon: Map,
       title: "Regional Arizona Transport",
