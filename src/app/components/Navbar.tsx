@@ -18,7 +18,6 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* Top Contact Bar */}
       <div className="bg-[#f97316] text-white">
         <div className="mx-auto max-w-7xl px-4 py-3 flex flex-col sm:flex-row items-center justify-center gap-2 text-center text-sm sm:text-base font-semibold">
           <div className="flex items-center gap-2">
@@ -32,11 +31,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Nav */}
       <div className="border-b border-white/10 bg-[#111827] text-white">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
             <Link to="/" className="leading-tight">
               <div className="text-xl font-bold">
                 <span className="text-white">Freedom Line</span>
@@ -45,21 +42,21 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8 font-semibold">
               <Link to="/" className="hover:text-[#f97316]">
                 Home
               </Link>
 
-              {/* Services Dropdown */}
               <div className="relative group">
-                <button className="flex items-center gap-1 hover:text-[#f97316]">
+                <button
+                  type="button"
+                  className="flex items-center gap-1 hover:text-[#f97316]"
+                >
                   Services
                   <ChevronDown size={16} />
                 </button>
 
                 <div className="invisible absolute left-0 top-full mt-3 w-72 rounded-xl border border-white/10 bg-[#0f172a] p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                  
                   <Link
                     to="/chandler-delivery"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
@@ -91,7 +88,7 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    to="/request-pickup"
+                    to="/package-document-delivery"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
                   >
                     <Package className="mt-0.5 text-[#f97316]" size={18} />
@@ -106,7 +103,7 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    to="/package-document-delivery"
+                    to="/request-pickup"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
                   >
                     <Building2 className="mt-0.5 text-[#f97316]" size={18} />
@@ -139,7 +136,6 @@ export default function Navbar() {
               </Link>
             </nav>
 
-            {/* Desktop CTA */}
             <div className="hidden lg:block">
               <Link
                 to="/request-pickup"
@@ -149,26 +145,26 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
+              type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2"
+              aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Nav */}
         {mobileOpen && (
           <div className="lg:hidden bg-[#111827] border-t border-white/10">
             <div className="px-4 py-4 flex flex-col gap-2">
-
               <Link to="/" onClick={() => setMobileOpen(false)}>
                 Home
               </Link>
 
               <button
+                type="button"
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                 className="flex justify-between py-2"
               >
@@ -178,38 +174,59 @@ export default function Navbar() {
 
               {mobileServicesOpen && (
                 <div className="ml-2 flex flex-col gap-2">
-
-                  <Link to="/chandler-delivery">
+                  <Link
+                    to="/chandler-delivery"
+                    onClick={() => setMobileOpen(false)}
+                  >
                     Vehicle Pickup and Delivery
                   </Link>
 
-                  <Link to="/chandler-auto-parts-delivery">
+                  <Link
+                    to="/chandler-auto-parts-delivery"
+                    onClick={() => setMobileOpen(false)}
+                  >
                     Auto Parts Delivery
                   </Link>
 
-                  <Link to="/request-pickup">
+                  <Link
+                    to="/package-document-delivery"
+                    onClick={() => setMobileOpen(false)}
+                  >
                     Packages and Documents
                   </Link>
 
-                  <Link to="/request-pickup">
+                  <Link
+                    to="/request-pickup"
+                    onClick={() => setMobileOpen(false)}
+                  >
                     Business Transport
                   </Link>
-
                 </div>
               )}
 
-              <Link to="/service-areas">Areas We Serve</Link>
-              <Link to="/pricing">Pricing</Link>
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/service-areas" onClick={() => setMobileOpen(false)}>
+                Areas We Serve
+              </Link>
+
+              <Link to="/pricing" onClick={() => setMobileOpen(false)}>
+                Pricing
+              </Link>
+
+              <Link to="/about" onClick={() => setMobileOpen(false)}>
+                About
+              </Link>
+
+              <Link to="/contact" onClick={() => setMobileOpen(false)}>
+                Contact
+              </Link>
 
               <Link
                 to="/request-pickup"
+                onClick={() => setMobileOpen(false)}
                 className="mt-2 bg-[#f97316] text-white px-4 py-3 text-center rounded-lg font-bold"
               >
                 Get Quote
               </Link>
-
             </div>
           </div>
         )}
