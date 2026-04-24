@@ -66,7 +66,7 @@ export default function Services() {
     "Flexible pickup and drop off times",
     "Handled directly by owner",
   ],
-  link: "/business-transport",
+ link: "/request-pickup",
 },
 {
   icon: Package,
@@ -79,7 +79,7 @@ export default function Services() {
     "Direct local transport",
     "Simple reliable service",
   ],
-  link: "/package-document-delivery",
+  link: "/request-pickup",
 },
     {
       icon: Map,
