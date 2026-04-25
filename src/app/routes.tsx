@@ -44,6 +44,7 @@ import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
 import CanSomeoneDriveMyCarForMe from "./pages/can-someone-drive-my-car-for-me";
 import DriveMyCarToMechanicNearMe from "./pages/drive-my-car-to-mechanic-near-me";
 import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
+import BusinessTransport from "./pages/BusinessTransport";
 
 
 function RootLayout() {
@@ -108,6 +109,7 @@ export const router = createBrowserRouter([
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
       { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
       { path: "package-document-delivery", element: <PackageDocumentDelivery /> },
+      { path: "business-transport", element: <BusinessTransport /> },
       
     ],
   },
