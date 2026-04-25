@@ -1,20 +1,31 @@
 import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
 import {
-  FaCar,
-  FaClock,
-  FaShieldAlt,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaCheckCircle,
-  FaStore,
-  FaTools,
-  FaFileAlt,
-  FaRoute,
-  FaHome,
-  FaArrowRight,
-} from "react-icons/fa";
-
+  Car,
+  Clock,
+  ShieldCheck,
+  Phone,
+  MapPin,
+  CheckCircle,
+  Store,
+  Wrench,
+  FileText,
+  Route,
+  Home,
+  ArrowRight,
+} from "lucide-react";
+  FaCar → Car
+FaClock → Clock
+FaShieldAlt → ShieldCheck
+FaPhone → Phone
+FaMapMarkerAlt → MapPin
+FaCheckCircle → CheckCircle
+FaStore → Store
+FaTools → Wrench
+FaFileAlt → FileText
+FaRoute → Route
+FaHome → Home
+FaArrowRight → ArrowRight
 export default function ChandlerDelivery() {
   const businessSchema = {
     "@context": "https://schema.org",
@@ -359,7 +370,7 @@ export default function ChandlerDelivery() {
 
             <div className="grid gap-6 md:grid-cols-3">
               <div className={cardClass}>
-                <FaCar className="text-4xl text-[#f97316] mb-4" />
+                <Car className="text-[#f97316] mb-4" size={40} />
                 <h3 className="mb-3 text-xl font-bold">Direct Drive-Away</h3>
                 <p className="text-gray-400 leading-relaxed">
                   Your vehicle is driven directly to its destination. No trailer
