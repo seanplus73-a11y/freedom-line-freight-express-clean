@@ -14,18 +14,7 @@ import {
   Home,
   ArrowRight,
 } from "lucide-react";
-  FaCar → Car
-FaClock → Clock
-FaShieldAlt → ShieldCheck
-FaPhone → Phone
-FaMapMarkerAlt → MapPin
-FaCheckCircle → CheckCircle
-FaStore → Store
-FaTools → Wrench
-FaFileAlt → FileText
-FaRoute → Route
-FaHome → Home
-FaArrowRight → ArrowRight
+
 export default function ChandlerDelivery() {
   const businessSchema = {
     "@context": "https://schema.org",
@@ -135,32 +124,17 @@ export default function ChandlerDelivery() {
           name="description"
           content="Chandler AZ vehicle pickup and delivery. Direct drive-away service for cars, SUVs, and small trucks that run and drive. No towing, no trailers. Same-day available depending on route."
         />
-        <link
-          rel="canonical"
-          href="https://www.flfreightco.com/chandler-delivery"
-        />
-        <meta
-          property="og:title"
-          content="Vehicle Pickup and Delivery in Chandler AZ"
-        />
+        <link rel="canonical" href="https://www.flfreightco.com/chandler-delivery" />
+        <meta property="og:title" content="Vehicle Pickup and Delivery in Chandler AZ" />
         <meta
           property="og:description"
           content="Direct drive-away service for vehicles in Chandler. No towing. No trailers. Fast, reliable, owner-operated service."
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://www.flfreightco.com/chandler-delivery"
-        />
-        <script type="application/ld+json">
-          {JSON.stringify(businessSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <meta property="og:url" content="https://www.flfreightco.com/chandler-delivery" />
+        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <main className="min-h-screen bg-[#0b0f19] text-white overflow-hidden">
@@ -174,7 +148,7 @@ export default function ChandlerDelivery() {
 
           <div className="relative mx-auto max-w-6xl">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm mb-7">
-              <FaMapMarkerAlt className="text-[#f97316]" />
+              <MapPin className="text-[#f97316]" size={18} />
               Chandler Arizona Vehicle Delivery
             </div>
 
@@ -188,35 +162,20 @@ export default function ChandlerDelivery() {
             </p>
 
             <p className="max-w-4xl text-lg text-gray-400 mb-6">
-              Freedom Line Freight Express provides direct drive-away service
-              for cars, SUVs, and small trucks in Chandler. If it runs and
-              drives, I can help move it from dealer to home, auction to shop,
-              repair shop to customer, or across town.
+              Freedom Line Freight Express provides direct drive-away service for cars, SUVs, and small trucks in Chandler. If it runs and drives, I can help move it from dealer to home, auction to shop, repair shop to customer, or across town.
             </p>
 
             <p className="max-w-4xl text-gray-400 mb-10">
-              Serving Chandler areas including Downtown Chandler, Ocotillo, Sun
-              Lakes, Chandler Heights, and nearby routes to Gilbert, Mesa,
-              Tempe, Queen Creek, and Phoenix.
+              Serving Chandler areas including Downtown Chandler, Ocotillo, Sun Lakes, Chandler Heights, and nearby routes to Gilbert, Mesa, Tempe, Queen Creek, and Phoenix.
             </p>
 
             <div className="flex flex-wrap gap-4 text-gray-300 text-sm mb-10">
-              <span className="flex items-center gap-2">
-                <FaCheckCircle className="text-[#f97316]" />
-                No towing
-              </span>
-              <span className="flex items-center gap-2">
-                <FaCheckCircle className="text-[#f97316]" />
-                No trailer
-              </span>
-              <span className="flex items-center gap-2">
-                <FaCheckCircle className="text-[#f97316]" />
-                Direct drive-away
-              </span>
-              <span className="flex items-center gap-2">
-                <FaCheckCircle className="text-[#f97316]" />
-                Text updates
-              </span>
+              {["No towing", "No trailer", "Direct drive-away", "Text updates"].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <CheckCircle className="text-[#f97316]" size={16} />
+                  {item}
+                </span>
+              ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -225,14 +184,14 @@ export default function ChandlerDelivery() {
                 className="inline-flex items-center justify-center bg-[#f97316] px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-orange-500/20"
               >
                 Get Chandler Quote in 5 to 10 Minutes
-                <FaArrowRight className="ml-2" />
+                <ArrowRight className="ml-2" size={20} />
               </Link>
 
               <a
                 href="sms:4807428553"
                 className="inline-flex items-center justify-center border border-[#f97316] text-[#f97316] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#f97316] hover:text-white hover:-translate-y-1 transition-all duration-300"
               >
-                <FaPhone className="mr-2" />
+                <Phone className="mr-2" size={20} />
                 Text 480-742-8553
               </a>
             </div>
@@ -253,21 +212,15 @@ export default function ChandlerDelivery() {
                 </h2>
 
                 <p className="mb-4 text-gray-300 text-lg">
-                  Need a car moved from Chandler Auto Mall to your driveway?
-                  Picked up from an auction and delivered to a shop? Moved from
-                  a seller to a buyer?
+                  Need a car moved from Chandler Auto Mall to your driveway? Picked up from an auction and delivered to a shop? Moved from a seller to a buyer?
                 </p>
 
                 <p className="mb-6 text-gray-400">
-                  I specialize in direct point-to-point drive-away for
-                  operational vehicles. No waiting for a full trailer load. No
-                  confusing handoffs. Your vehicle is driven directly where it
-                  needs to go.
+                  I specialize in direct point-to-point drive-away for operational vehicles. No waiting for a full trailer load. No confusing handoffs. Your vehicle is driven directly where it needs to go.
                 </p>
 
                 <p className="text-gray-400">
-                  Most local Chandler deliveries start around $85 depending on
-                  distance, route, service type, and schedule availability.
+                  Most local Chandler deliveries start around $85 depending on distance, route, service type, and schedule availability.
                 </p>
               </div>
 
@@ -287,7 +240,7 @@ export default function ChandlerDelivery() {
                     "Same-day local delivery when available",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <FaCheckCircle className="text-[#f97316] mt-1 shrink-0" />
+                      <CheckCircle className="text-[#f97316] mt-1 shrink-0" size={18} />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -295,8 +248,7 @@ export default function ChandlerDelivery() {
 
                 <div className="mt-6 rounded-xl bg-[#f97316]/10 border border-[#f97316]/30 p-5">
                   <p className="text-gray-300">
-                    Vehicle transport is for operable vehicles only. Vehicle
-                    must run, drive, steer, and stop safely.
+                    Vehicle transport is for operable vehicles only. Vehicle must run, drive, steer, and stop safely.
                   </p>
                 </div>
               </div>
@@ -314,36 +266,32 @@ export default function ChandlerDelivery() {
                 Who Uses Chandler Vehicle Delivery?
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                This service is built for customers and businesses that need a
-                vehicle moved directly, safely, and without towing.
+                This service is built for customers and businesses that need a vehicle moved directly, safely, and without towing.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className={cardClass}>
-                <FaHome className="text-[#f97316] mb-4 text-4xl" />
+                <Home className="text-[#f97316] mb-4" size={40} />
                 <h3 className="font-bold text-xl mb-3">Car Buyers</h3>
                 <p className="text-gray-400">
-                  Bought a vehicle and need it delivered to your home, shop, or
-                  another local address.
+                  Bought a vehicle and need it delivered to your home, shop, or another local address.
                 </p>
               </div>
 
               <div className={cardClass}>
-                <FaTools className="text-[#f97316] mb-4 text-4xl" />
+                <Wrench className="text-[#f97316] mb-4" size={40} />
                 <h3 className="font-bold text-xl mb-3">Repair Shops</h3>
                 <p className="text-gray-400">
-                  Move customer vehicles between shops, homes, dealerships, or
-                  inspection locations.
+                  Move customer vehicles between shops, homes, dealerships, or inspection locations.
                 </p>
               </div>
 
               <div className={cardClass}>
-                <FaStore className="text-[#f97316] mb-4 text-4xl" />
+                <Store className="text-[#f97316] mb-4" size={40} />
                 <h3 className="font-bold text-xl mb-3">Dealerships</h3>
                 <p className="text-gray-400">
-                  Help with dealer trades, customer delivery, auction pickup,
-                  and local inventory movement.
+                  Help with dealer trades, customer delivery, auction pickup, and local inventory movement.
                 </p>
               </div>
             </div>
@@ -363,8 +311,7 @@ export default function ChandlerDelivery() {
               </h2>
 
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Not a broker. Not a random app driver. You work directly with
-                me.
+                Not a broker. Not a random app driver. You work directly with me.
               </p>
             </div>
 
@@ -373,26 +320,23 @@ export default function ChandlerDelivery() {
                 <Car className="text-[#f97316] mb-4" size={40} />
                 <h3 className="mb-3 text-xl font-bold">Direct Drive-Away</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Your vehicle is driven directly to its destination. No trailer
-                  transfers, no lot storage, and no towing.
+                  Your vehicle is driven directly to its destination. No trailer transfers, no lot storage, and no towing.
                 </p>
               </div>
 
               <div className={cardClass}>
-                <FaClock className="text-4xl text-[#f97316] mb-4" />
+                <Clock className="text-[#f97316] mb-4" size={40} />
                 <h3 className="mb-3 text-xl font-bold">Fast and Flexible</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Quick Chandler pickups, dependable scheduling, and clear text
-                  updates from pickup to drop off.
+                  Quick Chandler pickups, dependable scheduling, and clear text updates from pickup to drop off.
                 </p>
               </div>
 
               <div className={cardClass}>
-                <FaShieldAlt className="text-4xl text-[#f97316] mb-4" />
+                <ShieldCheck className="text-[#f97316] mb-4" size={40} />
                 <h3 className="mb-3 text-xl font-bold">Owner-Operated</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Local Arizona business. Deaf-owned. Clear written
-                  communication and personal accountability.
+                  Local Arizona business. Deaf-owned. Clear written communication and personal accountability.
                 </p>
               </div>
             </div>
@@ -412,9 +356,7 @@ export default function ChandlerDelivery() {
                 </h2>
 
                 <p className="text-gray-400 mb-6 text-lg">
-                  Vehicle delivery is the main service, but I can also help with
-                  local business transport, auto parts, documents, and small
-                  packages when schedule and route allow.
+                  Vehicle delivery is the main service, but I can also help with local business transport, auto parts, documents, and small packages when schedule and route allow.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -423,7 +365,7 @@ export default function ChandlerDelivery() {
                     className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
                   >
                     Chandler auto parts delivery
-                    <FaArrowRight className="ml-2" />
+                    <ArrowRight className="ml-2" size={18} />
                   </Link>
 
                   <Link
@@ -431,23 +373,22 @@ export default function ChandlerDelivery() {
                     className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
                   >
                     Package and document delivery
-                    <FaArrowRight className="ml-2" />
+                    <ArrowRight className="ml-2" size={18} />
                   </Link>
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className={cardClass}>
-                  <FaTools className="text-[#f97316] mb-4 text-3xl" />
+                  <Wrench className="text-[#f97316] mb-4" size={32} />
                   <h3 className="font-bold text-lg mb-2">Auto Parts</h3>
                   <p className="text-gray-400">
-                    Parts pickup and delivery for shops, mechanics, and
-                    customers.
+                    Parts pickup and delivery for shops, mechanics, and customers.
                   </p>
                 </div>
 
                 <div className={cardClass}>
-                  <FaFileAlt className="text-[#f97316] mb-4 text-3xl" />
+                  <FileText className="text-[#f97316] mb-4" size={32} />
                   <h3 className="font-bold text-lg mb-2">Documents</h3>
                   <p className="text-gray-400">
                     Contracts, paperwork, forms, and time-sensitive documents.
@@ -455,7 +396,7 @@ export default function ChandlerDelivery() {
                 </div>
 
                 <div className={cardClass}>
-                  <FaRoute className="text-[#f97316] mb-4 text-3xl" />
+                  <Route className="text-[#f97316] mb-4" size={32} />
                   <h3 className="font-bold text-lg mb-2">Local Routes</h3>
                   <p className="text-gray-400">
                     Chandler to Mesa, Gilbert, Queen Creek, Tempe, or Phoenix.
@@ -463,7 +404,7 @@ export default function ChandlerDelivery() {
                 </div>
 
                 <div className={cardClass}>
-                  <FaStore className="text-[#f97316] mb-4 text-3xl" />
+                  <Store className="text-[#f97316] mb-4" size={32} />
                   <h3 className="font-bold text-lg mb-2">Business Support</h3>
                   <p className="text-gray-400">
                     Direct pickup and delivery for local business needs.
@@ -496,13 +437,8 @@ export default function ChandlerDelivery() {
                   a: "Cars, SUVs, and small trucks that run and drive. The vehicle must start, stop, steer safely, and be road ready for drive-away service.",
                 },
               ].map((faq) => (
-                <div
-                  key={faq.q}
-                  className="bg-[#0b0f19] p-6 rounded-xl border border-white/10"
-                >
-                  <h3 className="font-bold text-lg text-white mb-3">
-                    {faq.q}
-                  </h3>
+                <div key={faq.q} className="bg-[#0b0f19] p-6 rounded-xl border border-white/10">
+                  <h3 className="font-bold text-lg text-white mb-3">{faq.q}</h3>
                   <p className="text-gray-400 leading-relaxed">{faq.a}</p>
                 </div>
               ))}
@@ -519,20 +455,15 @@ export default function ChandlerDelivery() {
                 </p>
 
                 <h2 className="mb-6 text-3xl md:text-5xl font-extrabold">
-                  Serving <span className="text-[#f97316]">Chandler</span> and
-                  the East Valley
+                  Serving <span className="text-[#f97316]">Chandler</span> and the East Valley
                 </h2>
 
                 <p className="mb-4 text-gray-300 text-lg">
-                  Based in San Tan Valley, I run in Chandler and nearby
-                  communities including Phoenix, Mesa, Gilbert, Queen Creek,
-                  Tempe, Sun Lakes, Ocotillo, and Scottsdale.
+                  Based in San Tan Valley, I run in Chandler and nearby communities including Phoenix, Mesa, Gilbert, Queen Creek, Tempe, Sun Lakes, Ocotillo, and Scottsdale.
                 </p>
 
                 <p className="text-gray-400 mb-8">
-                  Need a vehicle, auto parts, package, or documents moved in or
-                  around Chandler? I handle scheduled pickups and urgent
-                  same-day requests when available.
+                  Need a vehicle, auto parts, package, or documents moved in or around Chandler? I handle scheduled pickups and urgent same-day requests when available.
                 </p>
 
                 <div className="flex flex-wrap gap-3 text-sm text-gray-300">
@@ -547,10 +478,7 @@ export default function ChandlerDelivery() {
                     "Tempe",
                     "Phoenix",
                   ].map((area) => (
-                    <span
-                      key={area}
-                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2"
-                    >
+                    <span key={area} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
                       {area}
                     </span>
                   ))}
@@ -563,14 +491,12 @@ export default function ChandlerDelivery() {
                 </h2>
 
                 <p className="mb-6 text-gray-300">
-                  Get a fast quote for vehicle pickup and delivery in Chandler
-                  AZ. Most quotes are reviewed quickly when you send the pickup
-                  and drop off details.
+                  Get a fast quote for vehicle pickup and delivery in Chandler AZ. Most quotes are reviewed quickly when you send the pickup and drop off details.
                 </p>
 
                 <div className="space-y-4 text-gray-300 mb-8">
                   <p className="flex items-center gap-3">
-                    <FaPhone className="text-[#f97316]" />
+                    <Phone className="text-[#f97316]" size={18} />
                     <span>Text: 480-742-8553</span>
                   </p>
                   <p>Email: dispatch@flfreightco.com</p>
@@ -592,47 +518,17 @@ export default function ChandlerDelivery() {
               </h2>
 
               <p className="flex flex-wrap justify-center gap-4 text-gray-300">
-                <Link
-                  to="/phoenix-delivery"
-                  className="hover:text-[#f97316] transition-colors"
-                >
-                  Phoenix
-                </Link>
+                <Link to="/phoenix-delivery" className="hover:text-[#f97316] transition-colors">Phoenix</Link>
                 <span>•</span>
-                <Link
-                  to="/mesa-delivery"
-                  className="hover:text-[#f97316] transition-colors"
-                >
-                  Mesa
-                </Link>
+                <Link to="/mesa-delivery" className="hover:text-[#f97316] transition-colors">Mesa</Link>
                 <span>•</span>
-                <Link
-                  to="/gilbert-delivery"
-                  className="hover:text-[#f97316] transition-colors"
-                >
-                  Gilbert
-                </Link>
+                <Link to="/gilbert-delivery" className="hover:text-[#f97316] transition-colors">Gilbert</Link>
                 <span>•</span>
-                <Link
-                  to="/queen-creek-delivery"
-                  className="hover:text-[#f97316] transition-colors"
-                >
-                  Queen Creek
-                </Link>
+                <Link to="/queen-creek-delivery" className="hover:text-[#f97316] transition-colors">Queen Creek</Link>
                 <span>•</span>
-                <Link
-                  to="/san-tan-valley-delivery"
-                  className="hover:text-[#f97316] transition-colors"
-                >
-                  San Tan Valley
-                </Link>
+                <Link to="/san-tan-valley-delivery" className="hover:text-[#f97316] transition-colors">San Tan Valley</Link>
                 <span>•</span>
-                <Link
-                  to="/business-transport"
-                  className="hover:text-[#f97316] transition-colors"
-                >
-                  Business Transport
-                </Link>
+                <Link to="/business-transport" className="hover:text-[#f97316] transition-colors">Business Transport</Link>
               </p>
             </div>
 
@@ -642,8 +538,7 @@ export default function ChandlerDelivery() {
               </h2>
 
               <p className="mb-6 text-center text-gray-400">
-                Direct drive-away service throughout Chandler and surrounding
-                East Valley communities.
+                Direct drive-away service throughout Chandler and surrounding East Valley communities.
               </p>
 
               <div className="overflow-hidden rounded-xl border border-white/10">
@@ -670,8 +565,7 @@ export default function ChandlerDelivery() {
             </h2>
 
             <p className="text-orange-100 text-lg mb-8">
-              Skip towing and trailer delays. Get direct drive-away pickup with
-              clear text communication.
+              Skip towing and trailer delays. Get direct drive-away pickup with clear text communication.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -680,7 +574,7 @@ export default function ChandlerDelivery() {
                 className="inline-flex items-center justify-center bg-white text-[#f97316] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300"
               >
                 Request Chandler Pickup
-                <FaArrowRight className="ml-2" />
+                <ArrowRight className="ml-2" size={20} />
               </Link>
 
               <a
