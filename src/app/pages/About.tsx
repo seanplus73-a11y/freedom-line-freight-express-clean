@@ -1,3 +1,8 @@
+import { Helmet } from "react-helmet";
+<Helmet>
+  <title>About Freedom Line Freight Express | Arizona Car Delivery Service</title>
+  <meta name="description" content="Learn about Freedom Line Freight Express, an Arizona-based car delivery and vehicle pickup service. No towing. Direct driveaway transport across Phoenix, Gilbert, Chandler, and more." />
+</Helmet>
 export default function About() {
   return (
     <div className="bg-[#0f172a] text-white">
@@ -19,17 +24,15 @@ export default function About() {
             </p>
 
             <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              About{" "}
-              <span className="text-orange-500">
-                Freedom Line Freight Express
-              </span>
-            </h1>
+  About Freedom Line Freight Express | Arizona Car Delivery Service
+</h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-200 md:text-xl">
-              We provide reliable vehicle pickup and delivery in Arizona by
-              personally driving your car, SUV, or light truck to its
-              destination. No trailer. No towing. Just direct, careful service
-              you can trust.
+             We provide reliable<a href="/car-delivery-service" className="text-orange-400 underline">
+  car delivery service
+</a> and vehicle pickup and delivery in Arizona, specializing in car delivery service, driveaway service, and direct vehicle transport without towing or trailers.
+
+We personally drive your car, SUV, or light truck to its destination. No trailer. No towing. Just direct, careful service you can trust.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -117,6 +120,13 @@ export default function About() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
             What Makes Us Different
           </p>
+          <ul className="mt-6 space-y-2 text-gray-300">
+  <li>• No towing or trailer transport</li>
+  <li>• Direct vehicle pickup and delivery</li>
+  <li>• Same day or next day service available</li>
+  <li>• Serving Phoenix, Gilbert, Chandler, Mesa, and surrounding Arizona areas</li>
+  <li>• Owner operated for reliable and accountable service</li>
+</ul>
           <h2 className="text-3xl font-bold md:text-4xl">
             Direct service with a personal touch
           </h2>
@@ -178,9 +188,9 @@ export default function About() {
             professionalism, and care.
           </p>
           <p className="mt-4 leading-relaxed text-gray-300">
-            As a deaf business owner, Sean values accessible communication and
-            strong customer service. The business is built to help people move
-            vehicles and important items with confidence.
+           As a deaf business owner, Sean values clear and accessible communication. Customers can easily connect through text, email, or relay services, ensuring a smooth and stress-free experience.
+
+Freedom Line Freight Express is built on trust, reliability, and direct communication — something many large transport companies cannot provide.
           </p>
         </div>
       </section>
@@ -242,6 +252,30 @@ export default function About() {
         </div>
       </section>
 
+      <section className="bg-[#111827] py-16">
+  <div className="mx-auto max-w-7xl px-6">
+    <h2 className="text-3xl font-bold md:text-4xl">Frequently Asked Questions</h2>
+
+    <div className="mt-8 space-y-6 text-gray-300">
+      <div>
+        <h3 className="font-semibold text-white">Do you tow vehicles?</h3>
+        <p>No. We personally drive your vehicle. No trailers or tow trucks are used.</p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold text-white">What areas do you serve?</h3>
+        <p>Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and surrounding Arizona areas.</p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold text-white">How fast is delivery?</h3>
+        <p>Same day or next day service is available for most local and regional deliveries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
       {/* CTA */}
       <section className="relative overflow-hidden border-t border-white/10 bg-gradient-to-r from-[#111827] to-[#0f172a]">
         <div className="mx-auto max-w-7xl px-6 py-16 text-center">
