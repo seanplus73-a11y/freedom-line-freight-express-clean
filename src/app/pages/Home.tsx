@@ -20,12 +20,10 @@ export default function Home() {
   Same Day Vehicle Delivery Phoenix AZ | No Towing | FLF Express
 </title>
 
-        <meta
-          <meta
+      <meta
   name="description"
-  content="Need vehicle pickup or car delivery in Phoenix AZ? Freedom Line Freight Express personally drives your vehicle with no towing or trailer. Same day service available in Phoenix, Queen Creek, San Tan Valley, Gilbert, Chandler, Mesa, and nearby Arizona areas."
+  content="Need vehicle pickup or car delivery in Phoenix AZ? Freedom Line Freight Express personally drives your vehicle with no towing or trailer. Same day service available."
 />
-
         <meta
           name="keywords"
           content="drive my car home Phoenix AZ, someone to drive my car to mechanic, someone to drive my car, car driving service Arizona, no towing vehicle delivery, vehicle pickup and delivery Arizona, drive your car home service"
