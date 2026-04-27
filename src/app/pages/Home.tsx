@@ -16,14 +16,15 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>
-          Drive My Car Home Service Phoenix AZ | Freedom Line Freight Express
-        </title>
+       <title>
+  Same Day Vehicle Delivery Phoenix AZ | No Towing | FLF Express
+</title>
 
         <meta
-          name="description"
-          content="Need someone to drive your car home or to the mechanic in Phoenix AZ? I personally drive your vehicle to your home, shop, dealership, or destination. No towing. Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and across Arizona."
-        />
+          <meta
+  name="description"
+  content="Need vehicle pickup or car delivery in Phoenix AZ? Freedom Line Freight Express personally drives your vehicle with no towing or trailer. Same day service available in Phoenix, Queen Creek, San Tan Valley, Gilbert, Chandler, Mesa, and nearby Arizona areas."
+/>
 
         <meta
           name="keywords"
@@ -590,6 +591,50 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        {/* FAQ */}
+<section className="py-24 bg-neutral-800 border-t border-neutral-700">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        Frequently Asked <span className="text-orange-500">Questions</span>
+      </h2>
+    </div>
+
+    <div className="space-y-6">
+      {[
+        {
+          q: "Do you tow vehicles?",
+          a: "No. Freedom Line Freight Express does not tow or use trailers. I personally drive the vehicle directly to the destination.",
+        },
+        {
+          q: "Do you offer same day vehicle delivery?",
+          a: "Same day or next day service is available depending on schedule, route, distance, and vehicle condition.",
+        },
+        {
+          q: "What areas do you serve?",
+          a: "I serve Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and nearby Arizona areas.",
+        },
+        {
+          q: "What vehicles do you transport?",
+          a: "I transport operable cars, SUVs, and small light duty vehicles that are safe and legal to drive.",
+        },
+        {
+          q: "Are you insured?",
+          a: "Yes. Freedom Line Freight Express carries commercial auto coverage for transport services.",
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-neutral-900 p-6 rounded-lg border border-neutral-700"
+        >
+          <h3 className="text-xl font-bold mb-2 text-white">{item.q}</h3>
+          <p className="text-gray-300 leading-relaxed">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* CTA */}
         <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
