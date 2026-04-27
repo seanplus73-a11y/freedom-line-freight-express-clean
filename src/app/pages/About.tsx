@@ -1,11 +1,17 @@
 import { Helmet } from "react-helmet";
-<Helmet>
-  <title>About Freedom Line Freight Express | Arizona Car Delivery Service</title>
-  <meta name="description" content="Learn about Freedom Line Freight Express, an Arizona-based car delivery and vehicle pickup service. No towing. Direct driveaway transport across Phoenix, Gilbert, Chandler, and more." />
-</Helmet>
+
 export default function About() {
   return (
-    <div className="bg-[#0f172a] text-white">
+    <>
+      <Helmet>
+        <title>About Freedom Line Freight Express | Arizona Car Delivery Service</title>
+        <meta
+          name="description"
+          content="Learn about Freedom Line Freight Express, an Arizona-based car delivery and vehicle pickup service. No towing. Direct driveaway transport across Phoenix, Gilbert, Chandler, and more."
+        />
+      </Helmet>
+
+      <div className="bg-[#0f172a] text-white">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -28,9 +34,9 @@ export default function About() {
 </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-200 md:text-xl">
-             We provide reliable<a href="/car-delivery-service" className="text-orange-400 underline">
+             We provide reliable <a href="/car-delivery-service" className="text-orange-400 underline">
   car delivery service
-</a> and vehicle pickup and delivery in Arizona, specializing in car delivery service, driveaway service, and direct vehicle transport without towing or trailers.
+</a>{" "} and vehicle pickup and delivery in Arizona, specializing in car delivery service, driveaway service, and direct vehicle transport without towing or trailers.
 
 We personally drive your car, SUV, or light truck to its destination. No trailer. No towing. Just direct, careful service you can trust.
             </p>
@@ -303,6 +309,7 @@ Freedom Line Freight Express is built on trust, reliability, and direct communic
           </div>
         </div>
       </section>
-    </div>
+         </div>
+    </>
   );
 }
