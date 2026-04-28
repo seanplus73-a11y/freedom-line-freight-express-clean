@@ -64,13 +64,12 @@ export default function ChandlerAutoPartsDelivery() {
                 Request Delivery
               </Link>
 
-              <a
-                href="sms:4807428553"
-                className="inline-flex items-center justify-center gap-3 rounded-xl border border-orange-400 px-8 py-4 text-base font-semibold text-orange-300 transition hover:bg-orange-500 hover:text-white"
-              >
-                <Phone className="h-5 w-5" />
-                Text 4807428553
-              </a>
+             <Link
+  to="/contact"
+  className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+>
+  Text Me to Book
+</Link>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-300">
@@ -339,12 +338,12 @@ export default function ChandlerAutoPartsDelivery() {
                 Request Delivery
               </Link>
 
-              <a
-                href="sms:4807428553"
-                className="inline-flex items-center justify-center rounded-xl border border-white px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-orange-600"
-              >
-                Text 4807428553
-              </a>
+             <Link
+  to="/contact"
+  className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+>
+  Text Me for Quote
+</Link>
             </div>
           </div>
         </div>
