@@ -6,10 +6,7 @@ import {
   ChevronDown,
   Phone,
   Car,
-  Wrench,
   Package,
-  Building2,
-  MapPin,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -22,11 +19,11 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-4 py-3 flex flex-col sm:flex-row items-center justify-center gap-2 text-center text-sm sm:text-base font-semibold">
           <div className="flex items-center gap-2">
             <Phone size={16} />
-            <span>Call or Text: 480-742-8553</span>
+            <span>Text Only: 480-742-8553</span>
           </div>
           <span className="hidden sm:inline">|</span>
           <span className="text-white/90">
-            Fast response within 5–10 minutes
+            Fast response within 5 to 10 minutes
           </span>
         </div>
       </div>
@@ -58,61 +55,31 @@ export default function Navbar() {
 
                 <div className="invisible absolute left-0 top-full mt-3 w-72 rounded-xl border border-white/10 bg-[#0f172a] p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
                   <Link
-                    to="/chandler-delivery"
+                    to="/pricing"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
                   >
                     <Car className="mt-0.5 text-[#f97316]" size={18} />
                     <div>
                       <div className="font-semibold text-white">
-                        Vehicle Pickup and Delivery
+                        Vehicle Delivery
                       </div>
                       <div className="text-sm text-gray-400">
-                        Direct drive-away service for cars and small trucks
+                        Dealer transfers, auction pickups, and customer delivery
                       </div>
                     </div>
                   </Link>
 
                   <Link
-                    to="/chandler-auto-parts-delivery"
-                    className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
-                  >
-                    <Wrench className="mt-0.5 text-[#f97316]" size={18} />
-                    <div>
-                      <div className="font-semibold text-white">
-                        Auto Parts Delivery
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        Same-day delivery for repair shops and mechanics
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to="/package-document-delivery"
+                    to="/courier"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
                   >
                     <Package className="mt-0.5 text-[#f97316]" size={18} />
                     <div>
                       <div className="font-semibold text-white">
-                        Packages and Documents
+                        Courier Service
                       </div>
                       <div className="text-sm text-gray-400">
-                        Local delivery for packages and documents
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to="/business-transport"
-                    className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
-                  >
-                    <Building2 className="mt-0.5 text-[#f97316]" size={18} />
-                    <div>
-                      <div className="font-semibold text-white">
-                        Business Transport
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        Direct delivery support for businesses and shops
+                        Auto parts, documents, and business deliveries
                       </div>
                     </div>
                   </Link>
@@ -138,7 +105,7 @@ export default function Navbar() {
 
             <div className="hidden lg:block">
               <Link
-                to="/request-pickup"
+                to="/contact"
                 className="bg-[#f97316] px-5 py-3 rounded-lg font-bold text-white hover:bg-orange-500"
               >
                 Get Quote
@@ -173,33 +140,25 @@ export default function Navbar() {
               </button>
 
               {mobileServicesOpen && (
-                <div className="ml-2 flex flex-col gap-2">
+                <div className="ml-2 flex flex-col gap-3 py-2 text-gray-300">
                   <Link
-                    to="/chandler-delivery"
-                    onClick={() => setMobileOpen(false)}
+                    to="/pricing"
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
                   >
-                    Vehicle Pickup and Delivery
+                    Vehicle Delivery
                   </Link>
 
                   <Link
-                    to="/chandler-auto-parts-delivery"
-                    onClick={() => setMobileOpen(false)}
+                    to="/courier"
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
                   >
-                    Auto Parts Delivery
-                  </Link>
-
-                  <Link
-                    to="/package-document-delivery"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    Packages and Documents
-                  </Link>
-
-                  <Link
-                    to="/request-pickup"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    Business Transport
+                    Courier Service
                   </Link>
                 </div>
               )}
@@ -221,7 +180,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                to="/request-pickup"
+                to="/contact"
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 bg-[#f97316] text-white px-4 py-3 text-center rounded-lg font-bold"
               >
