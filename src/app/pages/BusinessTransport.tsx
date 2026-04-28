@@ -129,13 +129,12 @@ export default function BusinessTransport() {
                 <ArrowRight className="ml-2" size={20} />
               </Link>
 
-              <a
-                href="sms:4807428553"
-                className="inline-flex items-center justify-center border border-[#f97316] text-[#f97316] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#f97316] hover:text-white hover:-translate-y-1 transition-all duration-300"
-              >
-                <MessageSquare className="mr-2" size={20} />
-                Text 480-742-8553
-              </a>
+              <Link
+  to="/contact"
+  className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+>
+  Text Me to Book
+</Link>
             </div>
           </div>
         </section>
@@ -474,13 +473,12 @@ export default function BusinessTransport() {
                 Request Business Transport
                 <ArrowRight className="ml-2" size={20} />
               </Link>
-
-              <a
-                href="sms:4807428553"
-                className="inline-flex items-center justify-center bg-black/20 text-white border border-white/40 px-8 py-4 rounded-xl font-bold hover:bg-black/30 transition-all duration-300"
-              >
-                Text 480-742-8553
-              </a>
+<Link
+  to="/contact"
+  className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+>
+  Text Me for Quote
+</Link>
             </div>
           </div>
         </section>
