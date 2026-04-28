@@ -101,100 +101,100 @@ export default function Home() {
       </Helmet>
 
       <div className="bg-neutral-900 text-white">
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-neutral-950">
-          <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwdmVoaWNsZSUyMHBhcmtlZCUyMHJlc2lkZW50aWFsJTIwZHJpdmV3YXklMjBtb2RrbilMjBob3VzZXxlbnwxfHx8fDE3NzE2NDg2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="Blue vehicle parked in driveway"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-          </div>
+      {/* Hero */}
+<section className="relative overflow-hidden bg-neutral-950">
+  <div className="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1770289711980-c7663e18bb16?auto=format&fit=crop&w=1080&q=80"
+      alt="Vehicle delivery service Arizona"
+      className="h-full w-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+  </div>
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-            <div className="max-w-4xl">
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
-                  <Clock className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold">
-                    Same Day Available
-                  </span>
-                </div>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+    <div className="max-w-4xl">
 
-                <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
-                  <Truck className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold">
-                    No Towing Needed
-                  </span>
-                </div>
+      <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Arizona Vehicle Delivery
+        <br />
+        <span className="text-orange-500">
+          We Drive It. No Towing. No Trailers.
+        </span>
+      </h1>
 
-                <div className="flex items-center bg-black/60 px-4 py-2 rounded-full border border-orange-500">
-                  <CheckCircle className="text-orange-500 mr-2" size={18} />
-                  <span className="text-sm font-semibold">
-                    Direct Transport
-                  </span>
-                </div>
-              </div>
+      <p className="text-lg md:text-2xl mb-6 text-gray-300 max-w-3xl">
+        I help dealerships, repair shops, and businesses move vehicles fast.
+        Auction pickups, lot transfers, and customer deliveries — handled directly by me.
+      </p>
 
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-               Arizona Vehicle Pickup & Delivery Service
-              </h1>
+      <p className="text-base md:text-lg mb-6 text-white font-semibold">
+        Owner operator. Based in Queen Creek. Serving Phoenix metro and statewide Arizona.
+      </p>
 
-              <p className="text-2xl md:text-3xl font-bold mb-6 text-orange-500 leading-tight max-w-3xl">
-                No Towing. No Waiting. I Personally Drive It.
-              </p>
+      <p className="text-base md:text-lg mb-10 text-gray-300">
+        Fully insured. On time. All communication by text — fast, clear, and reliable.
+      </p>
 
-              <p className="text-lg md:text-2xl mb-4 text-gray-300 leading-relaxed max-w-3xl">
-                Need your car moved but can’t do it yourself? I will safely drive it for you door to door.
-              </p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a
+          href="sms:4807428553"
+          className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
+        >
+          📱 Text Me to Book
+        </a>
 
-              <p className="text-lg md:text-xl mb-4 text-white font-semibold leading-relaxed max-w-3xl">
-                Whether it’s going home, to the mechanic, dealership, or a family member, I handle it personally from start to finish.
-              </p>
+        <Link
+          to="/pricing"
+          className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
+        >
+          View Pricing
+        </Link>
+      </div>
 
-              <p className="text-base md:text-lg mb-4 text-gray-400 leading-relaxed max-w-3xl">
-               Serving Phoenix, San Tan Valley, Queen Creek, Gilbert, Chandler, Mesa, and across Arizona. No trailer. No tow truck. Just direct owner operated service with real time updates.
-              </p>
+      <p className="mt-4 text-sm text-gray-300">
+        First time clients welcome. Fast response by text.
+      </p>
 
-              <p className="text-base md:text-lg mb-10 text-gray-300 font-semibold leading-relaxed max-w-3xl">
-                Same day or next day availability in most areas.
-              </p>
+    </div>
+  </div>
+</section>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/request-pickup"
-                  className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
-                >
-                  Get Instant Quote
-                  <ArrowRight className="ml-2" size={22} />
-                </Link>
+        <section className="py-16 bg-neutral-900 text-center">
+  <div className="max-w-4xl mx-auto px-4">
+    <h2 className="text-3xl font-bold mb-4">
+      Simple, Reliable Vehicle Moves
+    </h2>
 
-                <Link
-                  to="/pricing"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
-                >
-                  View Pricing
-                </Link>
-              </div>
+    <p className="text-gray-300 text-lg mb-6">
+      I personally handle every delivery. No third party drivers. No confusion.
+    </p>
 
-              <p className="mt-4 text-sm md:text-base text-gray-300 font-medium">
-                $1M commercial auto coverage. Protected from pickup to delivery every mile.
-               
-              </p>
-            </div>
-          </div>
-        </section>
+    <div className="grid md:grid-cols-3 gap-6 text-left">
+      <div>
+        <h3 className="font-bold text-white">Dealership Transfers</h3>
+        <p className="text-gray-400">Move vehicles between lots or customers</p>
+      </div>
+
+      <div>
+        <h3 className="font-bold text-white">Auction Pickups</h3>
+        <p className="text-gray-400">Fast pickup and delivery from auctions</p>
+      </div>
+
+      <div>
+        <h3 className="font-bold text-white">Repair Shop Moves</h3>
+        <p className="text-gray-400">Customer vehicles picked up or returned</p>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Main Service Intro */}
         <section className="py-20 bg-neutral-900 border-t border-neutral-800">
           <div className="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Need{" "}
-              <span className="text-orange-500">
-                Someone to Drive Your Car?
-              </span>
-            </h2>
+           <h2 className="text-4xl md:text-5xl font-bold mb-6">
+  Built for <span className="text-orange-500">Dealerships & Repair Shops</span>
+</h2>
 
             <p className="text-xl text-gray-300 max-w-4xl mx-auto">
               I help with real everyday situations like driving your car home,
