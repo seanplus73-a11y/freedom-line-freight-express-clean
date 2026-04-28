@@ -207,12 +207,15 @@ export default function Home() {
               </div>
             </div>
 
-           <Link
+  <Link
   to="/contact"
   className="inline-flex items-center justify-center bg-orange-500 text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
 >
   Text Me to Get Started
 </Link>
+
+          </div>
+        </section>
 
         {/* Trust Bar */}
         <section className="bg-neutral-900 py-12 border-b border-neutral-800">
