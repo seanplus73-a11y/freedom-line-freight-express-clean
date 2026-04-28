@@ -241,19 +241,17 @@ export function Contact() {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                      href="sms:4807428553?body=Hi Sean, I need a vehicle delivery quote. Pickup location: Delivery location: Vehicle type: Preferred date/time:"
-                      className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold hover:bg-orange-600 transition-colors"
-                    >
-                      Vehicle Delivery Quote
-                    </a>
+                   <a
+  href="sms:4807428553?body=Hi Sean,%0A%0AI need a vehicle delivery quote.%0A%0APickup location:%0ADelivery location:%0AVehicle type:%0APreferred date/time:"
+>
+  Vehicle Delivery Quote
+</a>
 
                     <a
-                      href="sms:4807428553?body=Hi Sean, I need a courier delivery quote. Pickup location: Delivery location: Item type: Preferred date/time:"
-                      className="inline-flex items-center justify-center bg-neutral-800 border border-orange-500 text-white px-8 py-4 rounded-md font-bold hover:bg-neutral-700 transition-colors"
-                    >
-                      Courier Delivery Quote
-                    </a>
+  href="sms:4807428553?body=Hi Sean,%0A%0AI need a courier delivery quote.%0A%0APickup location:%0ADelivery location:%0AItem type:%0APreferred date/time:"
+>
+  Courier Delivery Quote
+</a>
                   </div>
 
                   <p className="text-sm text-gray-400 mt-4">
