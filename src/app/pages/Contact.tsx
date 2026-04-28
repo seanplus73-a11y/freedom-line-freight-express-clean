@@ -1,5 +1,15 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Check, AlertCircle, Package, Car } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Check,
+  AlertCircle,
+  Package,
+  Car,
+  MessageSquare,
+} from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -18,7 +28,9 @@ export function Contact() {
   const [error, setError] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData({
       ...formData,
@@ -32,42 +44,38 @@ export function Contact() {
     setError("");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      // Debug: Check response
-      console.log('Response status:', response.status);
-      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
-      
-      // Check if response is JSON
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
+      const contentType = response.headers.get("content-type");
+
+      if (!contentType || !contentType.includes("application/json")) {
         const text = await response.text();
-        console.error('Non-JSON response:', text.substring(0, 500));
-        throw new Error('Server returned invalid response. Please try again or contact me directly.');
+        console.error("Non-JSON response:", text.substring(0, 500));
+        throw new Error(
+          "Server returned invalid response. Please try again or contact me directly."
+        );
       }
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit form');
+        throw new Error(data.error || "Failed to submit form");
       }
 
-      console.log('Contact form success:', data);
       setIsSubmitted(true);
-      
-      // Track successful form submission in Google Analytics
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'form_submit', {
-          form_name: 'contact'
+
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "form_submit", {
+          form_name: "contact",
         });
       }
-      
+
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({
@@ -81,10 +89,12 @@ export function Contact() {
           message: "",
         });
       }, 5000);
-
     } catch (err: any) {
-      console.error('Contact form error:', err);
-      setError(err.message || 'Failed to submit form. Please try again or contact me directly.');
+      console.error("Contact form error:", err);
+      setError(
+        err.message ||
+          "Failed to submit form. Please try again or contact me directly."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -99,11 +109,15 @@ export function Contact() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Contact <span className="text-orange-500">Freedom Line</span>
             </h1>
+
             <p className="text-xl text-gray-300 mb-4">
-              Call via relay, text, or email. I personally respond to vehicle transport and local delivery inquiries.
+              Text is preferred for fastest response. Relay service and email
+              are also available.
             </p>
+
             <p className="text-lg text-orange-400 font-bold max-w-3xl">
-              Sedans, SUVs, light-duty trucks, luggage, small packages, documents, and auto parts.
+              Owner operated vehicle delivery and courier support across
+              Arizona.
             </p>
           </div>
         </div>
@@ -118,19 +132,23 @@ export function Contact() {
               <h2 className="text-2xl font-bold text-white mb-6">
                 Contact Information
               </h2>
+
               <p className="text-gray-400 mb-8">
-                Have a question or ready to schedule a pickup? I'm here to help.
+                Need a vehicle moved or a courier delivery? Send the details and
+                I will respond as soon as possible.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-orange-500/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 border border-orange-500/20">
-                    <Phone className="text-orange-500" size={24} />
+                    <MessageSquare className="text-orange-500" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white mb-1">Phone (Relay Service)</h3>
-                    <p className="text-gray-300">480-919-8088</p>
-                    <p className="text-gray-400 text-sm">Relay service supported</p>
+                    <h3 className="font-bold text-white mb-1">Text Only</h3>
+                    <p className="text-gray-300">480-742-8553</p>
+                    <p className="text-gray-400 text-sm">
+                      Fastest response by text
+                    </p>
                   </div>
                 </div>
 
@@ -139,9 +157,13 @@ export function Contact() {
                     <Phone className="text-orange-500" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white mb-1">Text Number</h3>
-                    <p className="text-gray-300">480-742-8553</p>
-                    <p className="text-gray-400 text-sm">Text preferred for fastest response</p>
+                    <h3 className="font-bold text-white mb-1">
+                      Relay Service
+                    </h3>
+                    <p className="text-gray-300">480-919-8088</p>
+                    <p className="text-gray-400 text-sm">
+                      Relay service supported
+                    </p>
                   </div>
                 </div>
 
@@ -162,7 +184,9 @@ export function Contact() {
                   <div>
                     <h3 className="font-bold text-white mb-1">Service Area</h3>
                     <p className="text-gray-300">Based in Arizona</p>
-                    <p className="text-gray-300">Serving Arizona and nearby regional routes</p>
+                    <p className="text-gray-300">
+                      Phoenix metro and statewide Arizona
+                    </p>
                   </div>
                 </div>
               </div>
@@ -170,8 +194,8 @@ export function Contact() {
               <div className="mt-8 p-6 bg-neutral-900 rounded-lg border border-neutral-700">
                 <h3 className="font-bold text-white mb-3">Business Hours</h3>
                 <div className="space-y-1 text-sm text-gray-300">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM</p>
+                  <p>Monday to Friday: 9:00 AM to 6:00 PM</p>
+                  <p>Saturday: 10:00 AM to 4:00 PM</p>
                   <p>Sunday: Closed</p>
                 </div>
               </div>
@@ -180,12 +204,23 @@ export function Contact() {
                 <h3 className="font-bold text-white mb-3">What I Handle</h3>
                 <div className="space-y-3 text-sm text-gray-300">
                   <div className="flex items-start">
-                    <Car className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={18} />
-                    <span>Sedans, SUVs, small heavy-duty trucks, and luxury vehicles</span>
+                    <Car
+                      className="text-orange-500 mr-3 flex-shrink-0 mt-0.5"
+                      size={18}
+                    />
+                    <span>
+                      Cars, SUVs, small light duty trucks, and luxury vehicles
+                    </span>
                   </div>
+
                   <div className="flex items-start">
-                    <Package className="text-orange-500 mr-3 flex-shrink-0 mt-0.5" size={18} />
-                    <span>Luggage, small packages, documents, and auto parts</span>
+                    <Package
+                      className="text-orange-500 mr-3 flex-shrink-0 mt-0.5"
+                      size={18}
+                    />
+                    <span>
+                      Auto parts, business items, documents, and small packages
+                    </span>
                   </div>
                 </div>
               </div>
@@ -194,8 +229,30 @@ export function Contact() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-neutral-900 p-8 rounded-lg border border-neutral-700">
+                {/* Fast Text Box */}
+                <div className="bg-orange-500/10 border border-orange-500/40 rounded-lg p-6 mb-8 text-center">
+                  <h2 className="text-2xl font-bold text-white mb-3">
+                    Fastest Response by Text
+                  </h2>
+
+                  <p className="text-gray-300 mb-5">
+                    Prefer a quick quote? Tap below to text me directly.
+                  </p>
+
+                  <a
+                    href="sms:4807428553?body=Hi Sean, I need a vehicle delivery quote."
+                    className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold hover:bg-orange-600 transition-colors"
+                  >
+                    Tap to Text Me
+                  </a>
+
+                  <p className="text-sm text-gray-400 mt-4">
+                    Text only: 480-742-8553
+                  </p>
+                </div>
+
                 <h2 className="text-2xl font-bold text-white mb-6">
-                  Send Me a <span className="text-orange-500">Message</span>
+                  Send Me Your <span className="text-orange-500">Details</span>
                 </h2>
 
                 {isSubmitted ? (
@@ -203,26 +260,38 @@ export function Contact() {
                     <div className="text-green-400 mb-4">
                       <Check size={56} className="mx-auto" />
                     </div>
+
                     <h3 className="text-2xl font-bold mb-3">Message Sent!</h3>
+
                     <p className="text-lg">
-                      Thank you for contacting me. I'll respond within a few hours during business hours.
+                      Thank you for contacting me. I will review your details
+                      and respond as soon as possible during business hours.
                     </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {error && (
                       <div className="bg-red-900/30 border border-red-600 text-red-100 p-4 rounded-lg flex items-start">
-                        <AlertCircle className="text-red-400 mr-3 flex-shrink-0 mt-0.5" size={20} />
+                        <AlertCircle
+                          className="text-red-400 mr-3 flex-shrink-0 mt-0.5"
+                          size={20}
+                        />
                         <div>
                           <p className="font-bold mb-1">Submission Error</p>
                           <p className="text-sm">{error}</p>
                           <p className="text-sm mt-2">
                             You can also reach me directly at{" "}
-                            <a href="mailto:dispatch@flfreightco.com" className="underline text-orange-400">
+                            <a
+                              href="mailto:dispatch@flfreightco.com"
+                              className="underline text-orange-400"
+                            >
                               dispatch@flfreightco.com
-                            </a>
-                            {" "}or text{" "}
-                            <a href="sms:480-742-8553" className="underline text-orange-400">
+                            </a>{" "}
+                            or text{" "}
+                            <a
+                              href="sms:4807428553?body=Hi Sean, I need help with vehicle delivery."
+                              className="underline text-orange-400"
+                            >
                               480-742-8553
                             </a>
                           </p>
@@ -289,25 +358,25 @@ export function Contact() {
                           placeholder="john@example.com"
                         />
                       </div>
-                    </div>
 
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-bold text-white mb-2"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        disabled={isSubmitting}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
-                        placeholder="(555) 123-4567"
-                      />
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-bold text-white mb-2"
+                        >
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
+                          placeholder="(555) 123-4567"
+                        />
+                      </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -365,7 +434,7 @@ export function Contact() {
                         onChange={handleChange}
                         disabled={isSubmitting}
                         className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
-                        placeholder="e.g., Sedan, SUV, F-250, luggage, documents, small package, auto parts"
+                        placeholder="Sedan, SUV, F-250, auto parts, documents, small package"
                       />
                     </div>
 
@@ -385,7 +454,7 @@ export function Contact() {
                         disabled={isSubmitting}
                         rows={6}
                         className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white disabled:opacity-50"
-                        placeholder="Tell me about your transport or delivery needs..."
+                        placeholder="Tell me pickup details, delivery details, timing, vehicle condition, or courier item details..."
                       />
                     </div>
 
@@ -395,12 +464,10 @@ export function Contact() {
                       className="w-full bg-orange-500 text-white px-8 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
-                        <>
-                          <span className="animate-pulse">Sending...</span>
-                        </>
+                        <span className="animate-pulse">Sending...</span>
                       ) : (
                         <>
-                          Send Message
+                          Send Details
                           <Send className="ml-2" size={20} />
                         </>
                       )}
@@ -420,10 +487,16 @@ export function Contact() {
             <h2 className="text-3xl font-bold text-white mb-4">
               My <span className="text-orange-500">Service Area</span>
             </h2>
+
             <div className="text-lg text-gray-300 max-w-3xl mx-auto space-y-1">
-              <p className="font-semibold text-white">Primary service area: Arizona (statewide)</p>
+              <p className="font-semibold text-white">
+                Primary service area: Arizona statewide
+              </p>
               <p>Nearby states available by request only</p>
-              <p className="text-sm text-gray-400">Out-of-state transport is limited and scheduled based on availability</p>
+              <p className="text-sm text-gray-400">
+                Out of state delivery is limited and scheduled based on
+                availability
+              </p>
             </div>
           </div>
 
@@ -431,30 +504,55 @@ export function Contact() {
             <div className="bg-neutral-800 rounded-lg border border-orange-500/30 p-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
                 <div className="flex items-center justify-center">
-                  <Check className="text-orange-500 mr-3 flex-shrink-0" size={24} />
-                  <span className="text-xl font-bold text-orange-500">Arizona (Statewide)</span>
+                  <Check
+                    className="text-orange-500 mr-3 flex-shrink-0"
+                    size={24}
+                  />
+                  <span className="text-xl font-bold text-orange-500">
+                    Arizona Statewide
+                  </span>
                 </div>
+
                 <div className="flex items-center justify-center">
-                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
+                  <Check
+                    className="text-gray-500 mr-3 flex-shrink-0"
+                    size={20}
+                  />
                   <span className="text-lg text-gray-300">Nevada</span>
                 </div>
+
                 <div className="flex items-center justify-center">
-                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
+                  <Check
+                    className="text-gray-500 mr-3 flex-shrink-0"
+                    size={20}
+                  />
                   <span className="text-lg text-gray-300">New Mexico</span>
                 </div>
+
                 <div className="flex items-center justify-center">
-                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
+                  <Check
+                    className="text-gray-500 mr-3 flex-shrink-0"
+                    size={20}
+                  />
                   <span className="text-lg text-gray-300">Utah</span>
                 </div>
+
                 <div className="flex items-center justify-center sm:col-span-2 md:col-span-2">
-                  <Check className="text-gray-500 mr-3 flex-shrink-0" size={20} />
-                  <span className="text-lg text-gray-300">Southern California</span>
+                  <Check
+                    className="text-gray-500 mr-3 flex-shrink-0"
+                    size={20}
+                  />
+                  <span className="text-lg text-gray-300">
+                    Southern California
+                  </span>
                 </div>
               </div>
 
               <div className="border-t border-neutral-700 pt-6 text-center">
                 <p className="text-gray-300">
-                  Based in Arizona, we specialize in reliable local and regional vehicle transport, with limited out-of-state service available by request.
+                  Based in Arizona, I specialize in reliable local and regional
+                  vehicle delivery, with limited out of state service available
+                  by request.
                 </p>
               </div>
             </div>
