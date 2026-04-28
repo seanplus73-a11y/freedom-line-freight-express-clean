@@ -45,6 +45,7 @@ import CanSomeoneDriveMyCarForMe from "./pages/can-someone-drive-my-car-for-me";
 import DriveMyCarToMechanicNearMe from "./pages/drive-my-car-to-mechanic-near-me";
 import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
 import BusinessTransport from "./pages/BusinessTransport";
+import Courier from "./pages/Courier";
 
 
 function RootLayout() {
@@ -110,6 +111,7 @@ export const router = createBrowserRouter([
       { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
       { path: "package-document-delivery", element: <PackageDocumentDelivery /> },
       { path: "business-transport", element: <BusinessTransport /> },
+      { path:"courier" element={<Courier />} />
       
     ],
   },
