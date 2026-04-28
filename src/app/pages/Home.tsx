@@ -393,10 +393,11 @@ export default function Home() {
 
             <div className="text-center">
              <Link
+ <Link
   to="/contact"
-  className="inline-flex items-center justify-center bg-orange-500 text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
+  className="inline-flex items-center justify-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
 >
-  Text for Quote
+  Text Me Now
 </Link>
             </div>
           </div>
@@ -477,12 +478,12 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="sms:4807428553"
-                className="inline-flex items-center justify-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
-              >
-                Text Me Now
-              </a>
+              <Link
+  to="/contact"
+  className="inline-flex items-center justify-center bg-white text-orange-600 px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
+>
+  Text Me Now
+</Link>
 
               <Link
                 to="/request-pickup"
