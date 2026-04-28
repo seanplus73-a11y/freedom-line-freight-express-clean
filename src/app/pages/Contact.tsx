@@ -236,15 +236,25 @@ export function Contact() {
                   </h2>
 
                   <p className="text-gray-300 mb-5">
-                    Prefer a quick quote? Tap below to text me directly.
+                    Choose the service you need. Your phone will open a text
+                    message with the right starter details.
                   </p>
 
-                  <a
-                    href="sms:4807428553?body=Hi Sean, I need a vehicle delivery quote."
-                    className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold hover:bg-orange-600 transition-colors"
-                  >
-                    Tap to Text Me
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                      href="sms:4807428553?body=Hi Sean, I need a vehicle delivery quote. Pickup location: Delivery location: Vehicle type: Preferred date/time:"
+                      className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold hover:bg-orange-600 transition-colors"
+                    >
+                      Vehicle Delivery Quote
+                    </a>
+
+                    <a
+                      href="sms:4807428553?body=Hi Sean, I need a courier delivery quote. Pickup location: Delivery location: Item type: Preferred date/time:"
+                      className="inline-flex items-center justify-center bg-neutral-800 border border-orange-500 text-white px-8 py-4 rounded-md font-bold hover:bg-neutral-700 transition-colors"
+                    >
+                      Courier Delivery Quote
+                    </a>
+                  </div>
 
                   <p className="text-sm text-gray-400 mt-4">
                     Text only: 480-742-8553
