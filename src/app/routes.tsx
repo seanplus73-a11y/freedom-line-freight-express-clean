@@ -46,6 +46,7 @@ import DriveMyCarToMechanicNearMe from "./pages/drive-my-car-to-mechanic-near-me
 import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
 import BusinessTransport from "./pages/BusinessTransport";
 import Courier from "./pages/Courier";
+import VehicleDelivery from "./pages/VehicleDelivery";
 
 
 function RootLayout() {
@@ -115,7 +116,10 @@ export const router = createBrowserRouter([
   path: "/courier",
   element: <Courier />,
 }
-      
+      {
+  path: "/vehicle-delivery",
+  element: <VehicleDelivery />,
+},
     ],
   },
 ]);
