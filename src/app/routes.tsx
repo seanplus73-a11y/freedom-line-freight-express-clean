@@ -112,14 +112,9 @@ export const router = createBrowserRouter([
       { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
       { path: "package-document-delivery", element: <PackageDocumentDelivery /> },
       { path: "business-transport", element: <BusinessTransport /> },
-      {
-  path: "/courier",
-  element: <Courier />,
-}
-      {
-  path: "/vehicle-delivery",
-  element: <VehicleDelivery />,
-},
+      {path: "/courier",element: <Courier />,}
+      {path: "/vehicle-delivery",element: <VehicleDelivery />,},
+       
     ],
   },
 ]);
