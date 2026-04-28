@@ -145,12 +145,12 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="sms:4807428553"
-                  className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
-                >
-                  📱 Text Me to Book
-                </a>
+              <Link
+  to="/contact"
+  className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
+>
+  Text Me to Book
+</Link>
 
                 <Link
                   to="/request-pickup"
