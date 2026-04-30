@@ -47,6 +47,7 @@ import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
 import BusinessTransport from "./pages/BusinessTransport";
 import Courier from "./pages/Courier";
 import VehicleDelivery from "./pages/VehicleDelivery";
+import ThankYou from "./pages/ThankYou";
 
 
 function RootLayout() {
@@ -114,6 +115,7 @@ export const router = createBrowserRouter([
       { path: "business-transport", element: <BusinessTransport /> },
       { path: "courier", element: <Courier /> },
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
+      { path: "/thank-you" element={<ThankYou />} />
        
     ],
   },
