@@ -1,333 +1,591 @@
 import { Link } from "react-router";
+import { Helmet } from "react-helmet-async";
 import {
   Car,
-  Wrench,
-  Package,
-  Building2,
+  Clock,
+  ShieldCheck,
+  Phone,
   MapPin,
   CheckCircle,
-  Phone,
+  Store,
+  Wrench,
+  FileText,
+  Route,
+  Home,
+  ArrowRight,
 } from "lucide-react";
 
 export default function ScottsdaleDelivery() {
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Freedom Line Freight Express",
+    image: "https://www.flfreightco.com/logo.png",
+    url: "https://www.flfreightco.com/scottsdale-delivery",
+    telephone: "+1-480-742-8553",
+    email: "dispatch@flfreightco.com",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Tan Valley",
+      addressRegion: "AZ",
+      postalCode: "85144",
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Scottsdale",
+      containedIn: { "@type": "State", name: "Arizona" },
+    },
+    description:
+      "Direct drive-away vehicle pickup and delivery service in Scottsdale, AZ. Cars, SUVs, and small trucks that run and drive. No trailers, no towing. Same-day available depending on route and schedule.",
+    openingHours: "Mo-Su 07:00-19:00",
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Vehicle Pickup and Delivery Service",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Freedom Line Freight Express",
+    },
+    areaServed: { "@type": "City", name: "Scottsdale" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Scottsdale Delivery Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Car Drive-Away Service Scottsdale",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Dealer Vehicle Delivery Scottsdale",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Auto Parts Delivery Scottsdale",
+          },
+        },
+      ],
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you offer same-day vehicle delivery in Scottsdale?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Same-day vehicle pickup and delivery in Scottsdale, AZ may be available depending on distance, schedule, and route availability. Text 480-742-8553 for current availability.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you use trailers or tow trucks in Scottsdale?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Freedom Line Freight Express provides direct drive-away service only. Your vehicle is driven directly to its destination. No towing and no trailers.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What types of vehicles do you transport in Scottsdale?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "I transport cars, SUVs, and small trucks that run and drive. Vehicles must be safe to operate with working brakes, steering, and proper road readiness.",
+        },
+      },
+    ],
+  };
+
+  const cardClass =
+    "rounded-2xl border border-white/10 bg-[#111827]/90 p-7 hover:border-[#f97316] hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] hover:-translate-y-1 transition-all duration-300";
+
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
-      {/* HERO */}
-      <section className="border-b border-neutral-800 bg-neutral-950">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-orange-400">
-            Scottsdale, Arizona
-          </p>
+    <>
+      <Helmet>
+        <title>
+          Vehicle Pickup and Delivery Scottsdale AZ | Freedom Line Freight Express
+        </title>
+        <meta
+          name="description"
+          content="Scottsdale AZ vehicle pickup and delivery. Direct drive-away service for cars, SUVs, and small trucks that run and drive. No towing, no trailers. Same-day available depending on route."
+        />
+        <link rel="canonical" href="https://www.flfreightco.com/scottsdale-delivery" />
+        <meta property="og:title" content="Vehicle Pickup and Delivery in Scottsdale AZ" />
+        <meta
+          property="og:description"
+          content="Direct drive-away service for vehicles in Scottsdale. No towing. No trailers. Fast, reliable, owner-operated service."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.flfreightco.com/scottsdale-delivery" />
+        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
 
-          <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-            Vehicle Pickup, Auto Parts & Same-Day Delivery in Scottsdale, AZ
-          </h1>
+      <main className="min-h-screen bg-[#0b0f19] text-white overflow-hidden">
+        <section className="bg-[#f97316] text-black text-center py-2 text-sm font-semibold">
+          Scottsdale same-day pickup available depending on schedule and route
+        </section>
 
-          <p className="max-w-3xl text-lg leading-8 text-neutral-300">
-            Freedom Line Freight Express provides direct pickup and delivery in
-            Scottsdale for vehicles, auto parts, packages, and business items.
-            Same-day service may be available depending on route and scheduling.
-          </p>
+        <header className="relative overflow-hidden border-b border-white/10 px-6 py-24">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/15 via-transparent to-black" />
+          <div className="absolute top-10 right-10 w-[420px] h-[420px] bg-[#f97316]/20 rounded-full blur-3xl" />
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
-              to="/request-pickup"
-              className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
-            >
-              Request Pickup
-            </Link>
-
-            <a
-              href="sms:4807428553"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-orange-500 px-6 py-3 font-semibold text-orange-400 transition hover:bg-orange-500/10"
-            >
-              <Phone size={18} />
-              Text 480-742-8553
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2">
-        <div>
-          <h2 className="mb-4 text-2xl font-bold text-orange-400">
-            Reliable Delivery in Scottsdale
-          </h2>
-
-          <p className="mb-4 leading-8 text-neutral-300">
-            We provide direct drive-away service for vehicles that run and
-            drive, along with auto parts delivery for repair shops,
-            dealerships, and local businesses in Scottsdale.
-          </p>
-
-          <p className="leading-8 text-neutral-300">
-            Our service is flexible, fast, and designed for customers who need
-            reliable transport without using trailers or tow trucks.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-          <h2 className="mb-4 text-2xl font-bold text-orange-400">
-            Services Available in Scottsdale
-          </h2>
-
-          <ul className="space-y-3 text-neutral-300">
-            <li>• Vehicle pickup and delivery (runs & drives)</li>
-            <li>• Auto parts delivery</li>
-            <li>• Packages and document delivery</li>
-            <li>• Business-to-business transport</li>
-            <li>• Same-day and scheduled delivery</li>
-            <li>• Local and regional transport</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* SERVICE ICONS */}
-      <section className="border-y border-neutral-800 bg-neutral-900">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <h2 className="mb-10 text-center text-3xl font-bold text-white">
-            Delivery Services for Scottsdale Customers
-          </h2>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center">
-              <Car className="mx-auto mb-4 text-orange-400" size={30} />
-              <h3 className="mb-2 text-xl font-semibold">Vehicle Pickup</h3>
-              <p className="text-sm text-neutral-300">
-                Direct drive-away service for cars, SUVs, and small trucks.
-              </p>
+          <div className="relative mx-auto max-w-6xl">
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm mb-7">
+              <MapPin className="text-[#f97316]" size={18} />
+              Scottsdale Arizona Vehicle Delivery
             </div>
 
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center">
-              <Wrench className="mx-auto mb-4 text-orange-400" size={30} />
-              <h3 className="mb-2 text-xl font-semibold">Auto Parts Delivery</h3>
-              <p className="text-sm text-neutral-300">
-                Fast local delivery support for shops, mechanics, and businesses.
-              </p>
-            </div>
+            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+              Vehicle Pickup and Delivery in{" "}
+              <span className="text-[#f97316]">Scottsdale AZ</span>
+            </h1>
 
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center">
-              <Package className="mx-auto mb-4 text-orange-400" size={30} />
-              <h3 className="mb-2 text-xl font-semibold">Packages & Documents</h3>
-              <p className="text-sm text-neutral-300">
-                Dependable transport for boxed items, equipment, and paperwork.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center">
-              <Building2 className="mx-auto mb-4 text-orange-400" size={30} />
-              <h3 className="mb-2 text-xl font-semibold">Business Transport</h3>
-              <p className="text-sm text-neutral-300">
-                Reliable delivery support for local businesses and commercial needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="mb-8 text-center text-3xl font-bold text-white">
-          Why Choose Freedom Line Freight Express in Scottsdale
-        </h2>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-            <h3 className="mb-4 text-2xl font-bold text-orange-400">
-              Better Than App-Based Delivery
-            </h3>
-
-            <ul className="space-y-3 text-neutral-300">
-              <li>• Direct service instead of random drivers</li>
-              <li>• Better fit for auto parts and business deliveries</li>
-              <li>• Flexible communication and scheduling</li>
-              <li>• More dependable local support</li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-orange-500 bg-neutral-900 p-6">
-            <h3 className="mb-4 text-2xl font-bold text-orange-400">
-              Freedom Line Freight Express
-            </h3>
-
-            <ul className="space-y-3 text-neutral-200">
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-1 text-orange-400" size={18} />
-                <span>Owner-operated service</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-1 text-orange-400" size={18} />
-                <span>Direct pickup and delivery</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-1 text-orange-400" size={18} />
-                <span>Same-day availability may be possible</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-1 text-orange-400" size={18} />
-                <span>Built for customers and local businesses</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* AUTO PARTS CTA */}
-      <section className="border-y border-neutral-800 bg-neutral-900">
-        <div className="mx-auto max-w-4xl px-6 py-14 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-white">
-            Need Auto Parts Delivered in Scottsdale?
-          </h2>
-
-          <p className="mx-auto mb-8 max-w-2xl text-neutral-300 leading-8">
-            We also offer same-day auto parts delivery support for repair shops,
-            mechanics, dealerships, and business customers in Scottsdale.
-          </p>
-
-          <Link
-            to="/scottsdale-auto-parts-delivery"
-            className="inline-block rounded-lg border border-orange-500 px-5 py-3 font-semibold text-orange-400 transition hover:bg-orange-500/10"
-          >
-            View Scottsdale Auto Parts Delivery
-          </Link>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="mb-8 text-center text-3xl font-bold text-white">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="mx-auto max-w-3xl space-y-6">
-          <div>
-            <h3 className="font-semibold text-white">
-              Do you offer same-day delivery in Scottsdale?
-            </h3>
-            <p className="mt-2 text-neutral-300">
-              Same-day service may be available depending on the route, distance,
-              and scheduling.
+            <p className="max-w-3xl text-xl md:text-2xl text-gray-200 mb-4 font-semibold">
+              Need a car moved safely without towing or trailers?
             </p>
-          </div>
 
-          <div>
-            <h3 className="font-semibold text-white">
-              Do you transport vehicles with trailers?
-            </h3>
-            <p className="mt-2 text-neutral-300">
-              No. We offer direct drive-away service for vehicles that run and drive.
+            <p className="max-w-4xl text-lg text-gray-400 mb-6">
+              Freedom Line Freight Express provides direct drive-away service for cars, SUVs, and small trucks in Scottsdale. If it runs and drives, I can help move it from dealer to home, auction to shop, repair shop to customer, or across town.
             </p>
-          </div>
 
-          <div>
-            <h3 className="font-semibold text-white">
-              What can you deliver in Scottsdale?
-            </h3>
-            <p className="mt-2 text-neutral-300">
-              Vehicles, auto parts, packages, documents, and business items.
+            <p className="max-w-4xl text-gray-400 mb-10">
+              Serving Scottsdale areas including Old Town Scottsdale, North Scottsdale, Scottsdale Airpark, McCormick Ranch, Gainey Ranch, Kierland, and nearby routes to Phoenix, Tempe, Mesa, and Paradise Valley.
             </p>
-          </div>
 
-          <div>
-            <h3 className="font-semibold text-white">
-              How do I request service?
-            </h3>
-            <p className="mt-2 text-neutral-300">
-              You can use the request pickup form or text 480-742-8553 to ask
-              about availability.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERNAL LINKS */}
-      <section className="border-y border-neutral-800 bg-neutral-900">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Nearby Delivery Areas
-              </h2>
-
-              <p className="leading-8 text-neutral-300">
-                <a href="/phoenix-delivery" className="text-orange-400 hover:underline">
-                  Phoenix
-                </a>,{" "}
-                <a href="/mesa-delivery" className="text-orange-400 hover:underline">
-                  Mesa
-                </a>,{" "}
-                <a href="/chandler-delivery" className="text-orange-400 hover:underline">
-                  Chandler
-                </a>,{" "}
-                <a href="/gilbert-delivery" className="text-orange-400 hover:underline">
-                  Gilbert
-                </a>,{" "}
-                <a href="/queen-creek-delivery" className="text-orange-400 hover:underline">
-                  Queen Creek
-                </a>,{" "}
-                <a href="/service-areas" className="text-orange-400 hover:underline">
-                  View All Service Areas
-                </a>
-              </p>
+            <div className="flex flex-wrap gap-4 text-gray-300 text-sm mb-10">
+              {["No towing", "No trailer", "Direct drive-away", "Text updates"].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <CheckCircle className="text-[#f97316]" size={16} />
+                  {item}
+                </span>
+              ))}
             </div>
 
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-              <h2 className="mb-4 text-2xl font-bold text-orange-400">
-                Contact Freedom Line Freight Express
-              </h2>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/request-pickup"
+                className="inline-flex items-center justify-center bg-[#f97316] px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-orange-500/20"
+              >
+                Get Scottsdale Quote in 5 to 10 Minutes
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
 
-              <div className="space-y-3 text-neutral-300">
-                <p className="flex items-start gap-2">
-                  <Phone className="mt-1 text-orange-400" size={18} />
-                  <span>Text: 480-742-8553</span>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Text Me to Book
+              </Link>
+            </div>
+          </div>
+        </header>
+
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Scottsdale drive-away service
                 </p>
 
-                <p className="flex items-start gap-2">
-                  <MapPin className="mt-1 text-orange-400" size={18} />
-                  <span>Serving Scottsdale and nearby Arizona areas</span>
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold leading-tight">
+                  Fast Scottsdale Vehicle{" "}
+                  <span className="text-[#f97316]">Drive-Away Service</span>
+                </h2>
+
+                <p className="mb-4 text-gray-300 text-lg">
+                  Need a car moved from Old Town Scottsdale, Scottsdale Airpark, a repair shop, a dealership, auction pickup, or a private seller?
                 </p>
 
-                <p>
-                  Use our request form to check pickup and delivery availability
-                  in Scottsdale.
+                <p className="mb-6 text-gray-400">
+                  I specialize in direct point-to-point drive-away for operational vehicles. No waiting for a full trailer load. No confusing handoffs. Your vehicle is driven directly where it needs to go.
+                </p>
+
+                <p className="text-gray-400">
+                  Most local Scottsdale deliveries start around $85 depending on distance, route, service type, and schedule availability.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  Scottsdale Services
+                </h2>
+
+                <ul className="space-y-4 text-gray-300">
+                  {[
+                    "Vehicle pickup and delivery for cars, SUVs, and small trucks",
+                    "Dealer and auction vehicle transport",
+                    "Car buyer and seller delivery",
+                    "Repair shop vehicle movement",
+                    "Auto parts delivery",
+                    "Packages and document delivery",
+                    "Same-day local delivery when available",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="text-[#f97316] mt-1 shrink-0" size={18} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 rounded-xl bg-[#f97316]/10 border border-[#f97316]/30 p-5">
+                  <p className="text-gray-300">
+                    Vehicle transport is for operable vehicles only. Vehicle must run, drive, steer, and stop safely.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Who this helps
+              </p>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Who Uses Scottsdale Vehicle Delivery?
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                This service is built for customers and businesses that need a vehicle moved directly, safely, and without towing.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className={cardClass}>
+                <Home className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Car Buyers</h3>
+                <p className="text-gray-400">
+                  Bought a vehicle and need it delivered to your home, shop, or another local address.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Wrench className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Repair Shops</h3>
+                <p className="text-gray-400">
+                  Move customer vehicles between shops, homes, dealerships, or inspection locations.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Store className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Dealerships</h3>
+                <p className="text-gray-400">
+                  Help with dealer trades, customer delivery, auction pickup, and local inventory movement.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-orange-500">
-        <div className="mx-auto max-w-6xl px-6 py-14 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-white">
-            Need Pickup or Delivery in Scottsdale?
-          </h2>
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Why choose us
+              </p>
 
-          <p className="mx-auto mb-8 max-w-2xl text-orange-50">
-            Get direct local support for vehicles, auto parts, packages, and
-            business transport in Scottsdale, Arizona.
-          </p>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Why Scottsdale Chooses{" "}
+                <span className="text-[#f97316]">Freedom Line</span>
+              </h2>
 
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              to="/request-pickup"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-orange-600 transition hover:bg-neutral-100"
-            >
-              Request Pickup
-            </Link>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Not a broker. Not a random app driver. You work directly with me.
+              </p>
+            </div>
 
-            <a
-              href="sms:4807428553"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-            >
-              <Phone size={18} />
-              Text 480-742-8553
-            </a>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className={cardClass}>
+                <Car className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Direct Drive-Away</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Your vehicle is driven directly to its destination. No trailer transfers, no lot storage, and no towing.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Clock className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Fast and Flexible</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Quick Scottsdale pickups, dependable scheduling, and clear text updates from pickup to drop off.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <ShieldCheck className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Owner-Operated</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Local Arizona business. Deaf-owned. Clear written communication and personal accountability.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Also available
+                </p>
+
+                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                  More Local Delivery Options in Scottsdale
+                </h2>
+
+                <p className="text-gray-400 mb-6 text-lg">
+                  Vehicle delivery is the main service, but I can also help with local business transport, auto parts, documents, and small packages when schedule and route allow.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/scottsdale-auto-parts-delivery"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    Scottsdale auto parts delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
+
+                  <Link
+                    to="/package-document-delivery"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    Package and document delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className={cardClass}>
+                  <Wrench className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Auto Parts</h3>
+                  <p className="text-gray-400">
+                    Parts pickup and delivery for shops, mechanics, and customers.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <FileText className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Documents</h3>
+                  <p className="text-gray-400">
+                    Contracts, paperwork, forms, and time-sensitive documents.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Route className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Local Routes</h3>
+                  <p className="text-gray-400">
+                    Scottsdale to Phoenix, Tempe, Mesa, Paradise Valley, or North Scottsdale.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Store className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Business Support</h3>
+                  <p className="text-gray-400">
+                    Direct pickup and delivery for local business needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-white/10 bg-[#111827] py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="mb-12 text-center text-3xl md:text-5xl font-extrabold">
+              Scottsdale Vehicle Delivery{" "}
+              <span className="text-[#f97316]">FAQ</span>
+            </h2>
+
+            <div className="mx-auto max-w-3xl space-y-6">
+              {[
+                {
+                  q: "Do you offer same-day vehicle delivery in Scottsdale?",
+                  a: "Yes. Same-day and emergency delivery may be available depending on distance, schedule, and route availability. Text 480-742-8553 with pickup and drop off addresses for the fastest quote.",
+                },
+                {
+                  q: "Do you use trailers or tow trucks in Scottsdale?",
+                  a: "No. Freedom Line Freight Express provides direct drive-away service only. Your car, SUV, or small truck is driven directly to its destination. No towing and no trailers.",
+                },
+                {
+                  q: "What types of vehicles do you transport in Scottsdale?",
+                  a: "Cars, SUVs, and small trucks that run and drive. The vehicle must start, stop, steer safely, and be road ready for drive-away service.",
+                },
+              ].map((faq) => (
+                <div key={faq.q} className="bg-[#0b0f19] p-6 rounded-xl border border-white/10">
+                  <h3 className="font-bold text-lg text-white mb-3">{faq.q}</h3>
+                  <p className="text-gray-400 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Service area
+                </p>
+
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold">
+                  Serving <span className="text-[#f97316]">Scottsdale</span> and nearby routes
+                </h2>
+
+                <p className="mb-4 text-gray-300 text-lg">
+                  Based in San Tan Valley, I run in Scottsdale and nearby areas including Old Town Scottsdale, North Scottsdale, Scottsdale Airpark, McCormick Ranch, Gainey Ranch, Kierland, and Paradise Valley routes.
+                </p>
+
+                <p className="text-gray-400 mb-8">
+                  Need a vehicle, auto parts, package, or documents moved in or around Scottsdale? I handle scheduled pickups and urgent same-day requests when available.
+                </p>
+
+                <div className="flex flex-wrap gap-3 text-sm text-gray-300">
+                  {[
+                    "Old Town Scottsdale",
+                    "North Scottsdale",
+                    "Scottsdale Airpark",
+                    "McCormick Ranch",
+                    "Gainey Ranch",
+                    "Kierland",
+                    "South Scottsdale",
+                    "DC Ranch",
+                    "Paradise Valley Routes",
+                  ].map((area) => (
+                    <span key={area} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  Request a Scottsdale Quote
+                </h2>
+
+                <p className="mb-6 text-gray-300">
+                  Get a fast quote for vehicle pickup and delivery in Scottsdale AZ. Most quotes are reviewed quickly when you send the pickup and drop off details.
+                </p>
+
+                <div className="space-y-4 text-gray-300 mb-8">
+                  <p className="flex items-center gap-3">
+                    <Phone className="text-[#f97316]" size={18} />
+                    <span>Text: 480-742-8553</span>
+                  </p>
+                  <p>Email: dispatch@flfreightco.com</p>
+                  <p>Website: flfreightco.com</p>
+                </div>
+
+                <Link
+                  to="/request-pickup"
+                  className="block w-full text-center bg-[#f97316] px-6 py-4 rounded-xl font-bold hover:bg-orange-500 transition-all"
+                >
+                  Get Free Scottsdale Quote
+                </Link>
+              </div>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl text-center">
+              <h2 className="mb-6 text-2xl font-bold text-white">
+                Nearby Cities We Serve
+              </h2>
+
+              <p className="flex flex-wrap justify-center gap-4 text-gray-300">
+                <Link to="/phoenix-delivery" className="hover:text-[#f97316] transition-colors">Phoenix</Link>
+                <span>•</span>
+                <Link to="/tempe-delivery" className="hover:text-[#f97316] transition-colors">Tempe</Link>
+                <span>•</span>
+                <Link to="/mesa-delivery" className="hover:text-[#f97316] transition-colors">Mesa</Link>
+                <span>•</span>
+                <Link to="/chandler-delivery" className="hover:text-[#f97316] transition-colors">Chandler</Link>
+                <span>•</span>
+                <Link to="/gilbert-delivery" className="hover:text-[#f97316] transition-colors">Gilbert</Link>
+                <span>•</span>
+                <Link to="/queen-creek-delivery" className="hover:text-[#f97316] transition-colors">Queen Creek</Link>
+              </p>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-[#111827] p-8">
+              <h2 className="mb-4 text-center text-2xl font-bold text-white">
+                Scottsdale Arizona Service Map
+              </h2>
+
+              <p className="mb-6 text-center text-gray-400">
+                Direct drive-away service throughout Scottsdale and nearby communities.
+              </p>
+
+              <div className="overflow-hidden rounded-xl border border-white/10">
+                <iframe
+                  title="Scottsdale Arizona Map"
+                  src="https://www.google.com/maps?q=Scottsdale,AZ&output=embed"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative bg-[#f97316] py-24 text-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+
+          <div className="relative max-w-4xl mx-auto px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5">
+              Need a Vehicle Delivered in Scottsdale?
+            </h2>
+
+            <p className="text-orange-100 text-lg mb-8">
+              Skip towing and trailer delays. Get direct drive-away pickup with clear text communication.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                to="/request-pickup"
+                className="inline-flex items-center justify-center bg-white text-[#f97316] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300"
+              >
+                Request Scottsdale Pickup
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Text Me for Quote
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
