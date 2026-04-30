@@ -1,317 +1,591 @@
 import { Link } from "react-router";
-import { Phone, Car, Wrench, Package, Briefcase, CheckCircle, Clock, Shield } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import {
+  Car,
+  Clock,
+  ShieldCheck,
+  Phone,
+  MapPin,
+  CheckCircle,
+  Store,
+  Wrench,
+  FileText,
+  Route,
+  Home,
+  ArrowRight,
+} from "lucide-react";
 
 export default function QueenCreekDelivery() {
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Freedom Line Freight Express",
+    image: "https://www.flfreightco.com/logo.png",
+    url: "https://www.flfreightco.com/queen-creek-delivery",
+    telephone: "+1-480-742-8553",
+    email: "dispatch@flfreightco.com",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Tan Valley",
+      addressRegion: "AZ",
+      postalCode: "85144",
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Queen Creek",
+      containedIn: { "@type": "State", name: "Arizona" },
+    },
+    description:
+      "Direct drive-away vehicle pickup and delivery service in Queen Creek, AZ. Cars, SUVs, and small trucks that run and drive. No trailers, no towing. Same-day available depending on route and schedule.",
+    openingHours: "Mo-Su 07:00-19:00",
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Vehicle Pickup and Delivery Service",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Freedom Line Freight Express",
+    },
+    areaServed: { "@type": "City", name: "Queen Creek" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Queen Creek Delivery Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Car Drive-Away Service Queen Creek",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Dealer Vehicle Delivery Queen Creek",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Auto Parts Delivery Queen Creek",
+          },
+        },
+      ],
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you offer same-day vehicle delivery in Queen Creek?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Same-day vehicle pickup and delivery in Queen Creek, AZ may be available depending on distance, schedule, and route availability. Text 480-742-8553 for current availability.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you use trailers or tow trucks in Queen Creek?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Freedom Line Freight Express provides direct drive-away service only. Your vehicle is driven directly to its destination. No towing and no trailers.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What types of vehicles do you transport in Queen Creek?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "I transport cars, SUVs, and small trucks that run and drive. Vehicles must be safe to operate with working brakes, steering, and proper road readiness.",
+        },
+      },
+    ],
+  };
+
+  const cardClass =
+    "rounded-2xl border border-white/10 bg-[#111827]/90 p-7 hover:border-[#f97316] hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] hover:-translate-y-1 transition-all duration-300";
+
   return (
-    <div className="bg-[#0f172a] text-white">
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"
-            alt="Vehicle pickup and delivery service in Queen Creek Arizona"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/35"></div>
-        </div>
+    <>
+      <Helmet>
+        <title>
+          Vehicle Pickup and Delivery Queen Creek AZ | Freedom Line Freight Express
+        </title>
+        <meta
+          name="description"
+          content="Queen Creek AZ vehicle pickup and delivery. Direct drive-away service for cars, SUVs, and small trucks that run and drive. No towing, no trailers. Same-day available depending on route."
+        />
+        <link rel="canonical" href="https://www.flfreightco.com/queen-creek-delivery" />
+        <meta property="og:title" content="Vehicle Pickup and Delivery in Queen Creek AZ" />
+        <meta
+          property="og:description"
+          content="Direct drive-away service for vehicles in Queen Creek. No towing. No trailers. Fast, reliable, owner-operated service."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.flfreightco.com/queen-creek-delivery" />
+        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
 
-        <div className="relative mx-auto flex min-h-[460px] max-w-6xl items-center px-6 py-16">
-          <div className="max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-400">
-              Queen Creek, Arizona
-            </p>
+      <main className="min-h-screen bg-[#0b0f19] text-white overflow-hidden">
+        <section className="bg-[#f97316] text-black text-center py-2 text-sm font-semibold">
+          Queen Creek same-day pickup available depending on schedule and route
+        </section>
 
-            <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
-              Vehicle Pickup and Delivery Service in Queen Creek, AZ
+        <header className="relative overflow-hidden border-b border-white/10 px-6 py-24">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/15 via-transparent to-black" />
+          <div className="absolute top-10 right-10 w-[420px] h-[420px] bg-[#f97316]/20 rounded-full blur-3xl" />
+
+          <div className="relative mx-auto max-w-6xl">
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm mb-7">
+              <MapPin className="text-[#f97316]" size={18} />
+              Queen Creek Arizona Vehicle Delivery
+            </div>
+
+            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+              Vehicle Pickup and Delivery in{" "}
+              <span className="text-[#f97316]">Queen Creek AZ</span>
             </h1>
 
-            <p className="mb-6 text-base text-gray-100 md:text-lg leading-7">
-              Freedom Line Freight Express provides direct vehicle pickup and delivery in Queen Creek.
-              I also help with auto parts, packages, documents, and business transport with fast local service.
+            <p className="max-w-3xl text-xl md:text-2xl text-gray-200 mb-4 font-semibold">
+              Need a car moved safely without towing or trailers?
             </p>
 
-            <p className="mb-6 text-base text-gray-200 leading-7">
-              Need someone to drive your car to a mechanic, dealership, or home in Queen Creek?
-              I provide direct drive away vehicle delivery with no towing and no trailers.
+            <p className="max-w-4xl text-lg text-gray-400 mb-6">
+              Freedom Line Freight Express provides direct drive-away service for cars, SUVs, and small trucks in Queen Creek. If it runs and drives, I can help move it from dealer to home, auction to shop, repair shop to customer, or across town.
             </p>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <p className="max-w-4xl text-gray-400 mb-10">
+              Serving Queen Creek areas including Downtown Queen Creek, Queen Creek Marketplace, Schnepf Farms area, Encanterra area, Sossaman Estates, and nearby routes to San Tan Valley, Gilbert, Chandler, Mesa, and Phoenix.
+            </p>
+
+            <div className="flex flex-wrap gap-4 text-gray-300 text-sm mb-10">
+              {["No towing", "No trailer", "Direct drive-away", "Text updates"].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <CheckCircle className="text-[#f97316]" size={16} />
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/request-pickup"
-                className="rounded-lg bg-orange-500 px-6 py-3 text-center font-semibold hover:bg-orange-600"
+                className="inline-flex items-center justify-center bg-[#f97316] px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-orange-500/20"
               >
-                Request Pickup
+                Get Queen Creek Quote in 5 to 10 Minutes
+                <ArrowRight className="ml-2" size={20} />
               </Link>
 
-              <a
-                href="sms:4807428553"
-                className="flex items-center justify-center gap-2 rounded-lg border border-orange-400 px-6 py-3 text-orange-300 transition hover:bg-orange-500 hover:text-white"
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
               >
-                <Phone size={18} />
-                Text 480-742-8553
-              </a>
-            </div>
-
-            <p className="mt-4 flex items-center gap-2 text-sm font-medium text-green-400">
-              <Clock size={16} />
-              Same day or next day service available in most areas
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* TRUST BAR */}
-      <section className="border-b border-slate-800 bg-slate-900/50 py-8">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 sm:grid-cols-3">
-          <div className="flex items-center gap-3">
-            <Car className="h-6 w-6 text-orange-400" />
-            <div>
-              <p className="font-semibold">No Towing or Trailer</p>
-              <p className="text-sm text-gray-400">Vehicles are personally driven</p>
+                Text Me to Book
+              </Link>
             </div>
           </div>
+        </header>
 
-          <div className="flex items-center gap-3">
-            <Clock className="h-6 w-6 text-orange-400" />
-            <div>
-              <p className="font-semibold">Real Time Updates</p>
-              <p className="text-sm text-gray-400">Direct communication from pickup to delivery</p>
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Queen Creek drive-away service
+                </p>
+
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold leading-tight">
+                  Fast Queen Creek Vehicle{" "}
+                  <span className="text-[#f97316]">Drive-Away Service</span>
+                </h2>
+
+                <p className="mb-4 text-gray-300 text-lg">
+                  Need a car moved from a Queen Creek repair shop, dealership, private seller, home, or service appointment?
+                </p>
+
+                <p className="mb-6 text-gray-400">
+                  I specialize in direct point-to-point drive-away for operational vehicles. No waiting for a full trailer load. No confusing handoffs. Your vehicle is driven directly where it needs to go.
+                </p>
+
+                <p className="text-gray-400">
+                  Most local Queen Creek deliveries start around $85 depending on distance, route, service type, and schedule availability.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  Queen Creek Services
+                </h2>
+
+                <ul className="space-y-4 text-gray-300">
+                  {[
+                    "Vehicle pickup and delivery for cars, SUVs, and small trucks",
+                    "Dealer and auction vehicle transport",
+                    "Car buyer and seller delivery",
+                    "Repair shop vehicle movement",
+                    "Auto parts delivery",
+                    "Packages and document delivery",
+                    "Same-day local delivery when available",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="text-[#f97316] mt-1 shrink-0" size={18} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 rounded-xl bg-[#f97316]/10 border border-[#f97316]/30 p-5">
+                  <p className="text-gray-300">
+                    Vehicle transport is for operable vehicles only. Vehicle must run, drive, steer, and stop safely.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
+        </section>
 
-          <div className="flex items-center gap-3">
-            <Shield className="h-6 w-6 text-orange-400" />
-            <div>
-              <p className="font-semibold">$1M Commercial Coverage</p>
-              <p className="text-sm text-gray-400">Protected while in transit</p>
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Who this helps
+              </p>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Who Uses Queen Creek Vehicle Delivery?
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                This service is built for customers and businesses that need a vehicle moved directly, safely, and without towing.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className={cardClass}>
+                <Home className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Car Buyers</h3>
+                <p className="text-gray-400">
+                  Bought a vehicle and need it delivered to your home, shop, or another local address.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Wrench className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Repair Shops</h3>
+                <p className="text-gray-400">
+                  Move customer vehicles between shops, homes, dealerships, or inspection locations.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Store className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Dealerships</h3>
+                <p className="text-gray-400">
+                  Help with dealer trades, customer delivery, auction pickup, and local inventory movement.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* INTRO */}
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-8 lg:grid-cols-[1.25fr_0.95fr]">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-              <h2 className="mb-4 text-2xl font-bold text-orange-400 md:text-3xl">
-                Reliable Delivery in Queen Creek
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Why choose us
+              </p>
+
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Why Queen Creek Chooses{" "}
+                <span className="text-[#f97316]">Freedom Line</span>
               </h2>
 
-              <p className="mb-4 leading-7 text-gray-300">
-                I provide direct drive away service for vehicles that run and drive, along with
-                local delivery for auto parts, small packages, and business items in Queen Creek.
-              </p>
-
-              <p className="mb-4 leading-7 text-gray-300">
-                If you are searching for vehicle delivery near me or someone to drive my car in Queen Creek,
-                Freedom Line Freight Express provides fast local service you can trust.
-              </p>
-
-              <p className="leading-7 text-gray-300">
-                My service is built for customers who want simple, reliable transport without
-                tow trucks, trailers, or confusing handoffs. I personally handle the job from start to finish.
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Not a broker. Not a random app driver. You work directly with me.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-              <h2 className="mb-4 text-2xl font-bold text-orange-400">Services Available</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className={cardClass}>
+                <Car className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Direct Drive-Away</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Your vehicle is driven directly to its destination. No trailer transfers, no lot storage, and no towing.
+                </p>
+              </div>
 
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Vehicle pickup and delivery for cars and SUVs that run and drive</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Drive your car to the mechanic, dealership, or service center</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Drive your vehicle home safely when you cannot do it yourself</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Auto parts delivery for shops, mechanics, and local businesses</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Packages, documents, and direct business transport</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Same day and regional transport when available</span>
-                </li>
-              </ul>
+              <div className={cardClass}>
+                <Clock className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Fast and Flexible</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Quick Queen Creek pickups, dependable scheduling, and clear text updates from pickup to drop off.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <ShieldCheck className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Owner-Operated</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Local Arizona business. Deaf-owned. Clear written communication and personal accountability.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SERVICE CARDS */}
-      <section className="border-y border-white/10 bg-white/5 py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-3xl font-bold md:text-4xl">
-            Services Available in Queen Creek
-          </h2>
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Also available
+                </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Car className="mx-auto h-8 w-8 text-orange-400" />
-              <h3 className="mt-4 text-xl font-bold">Vehicle Pickup</h3>
-              <p className="mt-3 text-gray-300">
-                Direct vehicle delivery for cars and SUVs without towing.
-              </p>
-            </div>
+                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                  More Local Delivery Options in Queen Creek
+                </h2>
 
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Wrench className="mx-auto h-8 w-8 text-orange-400" />
-              <h3 className="mt-4 text-xl font-bold">Mechanic Trips</h3>
-              <p className="mt-3 text-gray-300">
-                Direct drop off to repair shops, dealerships, and service centers.
-              </p>
-            </div>
+                <p className="text-gray-400 mb-6 text-lg">
+                  Vehicle delivery is the main service, but I can also help with local business transport, auto parts, documents, and small packages when schedule and route allow.
+                </p>
 
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Package className="mx-auto h-8 w-8 text-orange-400" />
-              <h3 className="mt-4 text-xl font-bold">Auto Parts</h3>
-              <p className="mt-3 text-gray-300">
-                Same day parts delivery for shops, suppliers, and mechanics.
-              </p>
-            </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/queen-creek-auto-parts-delivery"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    Queen Creek auto parts delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
 
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Briefcase className="mx-auto h-8 w-8 text-orange-400" />
-              <h3 className="mt-4 text-xl font-bold">Business Transport</h3>
-              <p className="mt-3 text-gray-300">
-                Direct local transport for business items, documents, and priority deliveries.
-              </p>
+                  <Link
+                    to="/package-document-delivery"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    Package and document delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className={cardClass}>
+                  <Wrench className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Auto Parts</h3>
+                  <p className="text-gray-400">
+                    Parts pickup and delivery for shops, mechanics, and customers.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <FileText className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Documents</h3>
+                  <p className="text-gray-400">
+                    Contracts, paperwork, forms, and time-sensitive documents.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Route className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Local Routes</h3>
+                  <p className="text-gray-400">
+                    Queen Creek to San Tan Valley, Gilbert, Chandler, Mesa, or Phoenix.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Store className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Business Support</h3>
+                  <p className="text-gray-400">
+                    Direct pickup and delivery for local business needs.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* LOCAL SEO TEXT */}
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-5xl">
-            <h2 className="mb-4 text-2xl font-bold text-orange-400 md:text-3xl">
-              Local Vehicle Delivery in Queen Creek
+        <section className="border-y border-white/10 bg-[#111827] py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="mb-12 text-center text-3xl md:text-5xl font-extrabold">
+              Queen Creek Vehicle Delivery{" "}
+              <span className="text-[#f97316]">FAQ</span>
             </h2>
 
-            <p className="mb-5 leading-7 text-gray-300">
-              Many local customers need help moving a vehicle to a repair shop, dealership,
-              family member, home, or another location around town. Instead of arranging a tow,
-              I personally drive the vehicle when it runs and drives. That gives customers
-              a direct and simple option for local transport in Queen Creek.
-            </p>
-
-            <p className="mb-5 leading-7 text-gray-300">
-              This service is helpful for busy families, senior drivers, repair shops,
-              dealerships, and anyone who needs dependable local vehicle pickup and delivery.
-              It is also a strong fit for customers searching online for someone to drive my car,
-              drive my car to the mechanic, or vehicle pickup near me.
-            </p>
-
-            <p className="mb-5 leading-7 text-gray-300">
-              I serve Queen Creek neighborhoods and nearby areas including San Tan Valley,
-              Gilbert, Chandler, Mesa, Florence, and Phoenix. Many customers in these areas
-              use our Queen Creek vehicle pickup and delivery service for fast and reliable transport.
-            </p>
-
-            <p className="leading-7 text-gray-300">
-              Learn more about our{" "}
-              <Link to="/auto-parts-delivery" className="font-semibold text-orange-400 hover:text-orange-300">
-                auto parts delivery service
-              </Link>{" "}
-              and{" "}
-              <Link to="/services" className="font-semibold text-orange-400 hover:text-orange-300">
-                full service options
-              </Link>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="pb-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
-            Queen Creek Delivery FAQ
-          </h2>
-
-          <div className="grid gap-6">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-bold text-orange-400">
-                Do you offer vehicle pickup in Queen Creek?
-              </h3>
-              <p className="mt-3 leading-7 text-gray-300">
-                Yes. I provide direct vehicle pickup and delivery throughout Queen Creek
-                and nearby areas for vehicles that run and drive.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-bold text-orange-400">
-                Do you tow vehicles?
-              </h3>
-              <p className="mt-3 leading-7 text-gray-300">
-                No. I personally drive vehicles that run and drive. I do not use a tow truck
-                and I do not use a trailer.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-bold text-orange-400">
-                Can you drive my car to the mechanic in Queen Creek?
-              </h3>
-              <p className="mt-3 leading-7 text-gray-300">
-                Yes. That is one of the most common requests. I can drive your vehicle
-                to a mechanic, dealership, or service appointment.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-bold text-orange-400">
-                How fast is delivery?
-              </h3>
-              <p className="mt-3 leading-7 text-gray-300">
-                Many local deliveries can be completed same day or next day depending on
-                route, scheduling, and availability.
-              </p>
+            <div className="mx-auto max-w-3xl space-y-6">
+              {[
+                {
+                  q: "Do you offer same-day vehicle delivery in Queen Creek?",
+                  a: "Yes. Same-day and emergency delivery may be available depending on distance, schedule, and route availability. Text 480-742-8553 with pickup and drop off addresses for the fastest quote.",
+                },
+                {
+                  q: "Do you use trailers or tow trucks in Queen Creek?",
+                  a: "No. Freedom Line Freight Express provides direct drive-away service only. Your car, SUV, or small truck is driven directly to its destination. No towing and no trailers.",
+                },
+                {
+                  q: "What types of vehicles do you transport in Queen Creek?",
+                  a: "Cars, SUVs, and small trucks that run and drive. The vehicle must start, stop, steer safely, and be road ready for drive-away service.",
+                },
+              ].map((faq) => (
+                <div key={faq.q} className="bg-[#0b0f19] p-6 rounded-xl border border-white/10">
+                  <h3 className="font-bold text-lg text-white mb-3">{faq.q}</h3>
+                  <p className="text-gray-400 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="bg-orange-500 py-14">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-extrabold text-white md:text-4xl">
-            Need Delivery in Queen Creek?
-          </h2>
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Service area
+                </p>
 
-          <p className="mt-4 text-lg text-white/90">
-            Request pickup today or text for fast local service.
-          </p>
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold">
+                  Serving <span className="text-[#f97316]">Queen Creek</span> and nearby routes
+                </h2>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              to="/request-pickup"
-              className="rounded-xl bg-white px-6 py-4 font-bold text-[#0f172a] transition hover:bg-slate-100"
-            >
-              Request Pickup
-            </Link>
+                <p className="mb-4 text-gray-300 text-lg">
+                  Based in San Tan Valley, I run Queen Creek delivery routes including Downtown Queen Creek, Queen Creek Marketplace, Schnepf Farms area, Encanterra area, Sossaman Estates, and nearby Queen Creek communities.
+                </p>
 
-            <a
-              href="sms:4807428553"
-              className="rounded-xl border border-white px-6 py-4 font-bold text-white transition hover:bg-white/10"
-            >
-              Text 480-742-8553
-            </a>
+                <p className="text-gray-400 mb-8">
+                  Need a vehicle, auto parts, package, or documents moved in or around Queen Creek? I handle scheduled pickups and urgent same-day requests when available.
+                </p>
+
+                <div className="flex flex-wrap gap-3 text-sm text-gray-300">
+                  {[
+                    "Downtown Queen Creek",
+                    "Queen Creek Marketplace",
+                    "Schnepf Farms Area",
+                    "Encanterra Area",
+                    "Sossaman Estates",
+                    "Hastings Farms",
+                    "Montelena",
+                    "Meridian",
+                    "San Tan Valley Routes",
+                  ].map((area) => (
+                    <span key={area} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  Request a Queen Creek Quote
+                </h2>
+
+                <p className="mb-6 text-gray-300">
+                  Get a fast quote for vehicle pickup and delivery in Queen Creek AZ. Most quotes are reviewed quickly when you send the pickup and drop off details.
+                </p>
+
+                <div className="space-y-4 text-gray-300 mb-8">
+                  <p className="flex items-center gap-3">
+                    <Phone className="text-[#f97316]" size={18} />
+                    <span>Text: 480-742-8553</span>
+                  </p>
+                  <p>Email: dispatch@flfreightco.com</p>
+                  <p>Website: flfreightco.com</p>
+                </div>
+
+                <Link
+                  to="/request-pickup"
+                  className="block w-full text-center bg-[#f97316] px-6 py-4 rounded-xl font-bold hover:bg-orange-500 transition-all"
+                >
+                  Get Free Queen Creek Quote
+                </Link>
+              </div>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl text-center">
+              <h2 className="mb-6 text-2xl font-bold text-white">
+                Nearby Cities We Serve
+              </h2>
+
+              <p className="flex flex-wrap justify-center gap-4 text-gray-300">
+                <Link to="/phoenix-delivery" className="hover:text-[#f97316] transition-colors">Phoenix</Link>
+                <span>•</span>
+                <Link to="/mesa-delivery" className="hover:text-[#f97316] transition-colors">Mesa</Link>
+                <span>•</span>
+                <Link to="/gilbert-delivery" className="hover:text-[#f97316] transition-colors">Gilbert</Link>
+                <span>•</span>
+                <Link to="/chandler-delivery" className="hover:text-[#f97316] transition-colors">Chandler</Link>
+                <span>•</span>
+                <Link to="/san-tan-valley-delivery" className="hover:text-[#f97316] transition-colors">San Tan Valley</Link>
+                <span>•</span>
+                <Link to="/tempe-delivery" className="hover:text-[#f97316] transition-colors">Tempe</Link>
+              </p>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-[#111827] p-8">
+              <h2 className="mb-4 text-center text-2xl font-bold text-white">
+                Queen Creek Arizona Service Map
+              </h2>
+
+              <p className="mb-6 text-center text-gray-400">
+                Direct drive-away service throughout Queen Creek and nearby East Valley communities.
+              </p>
+
+              <div className="overflow-hidden rounded-xl border border-white/10">
+                <iframe
+                  title="Queen Creek Arizona Map"
+                  src="https://www.google.com/maps?q=Queen%20Creek,AZ&output=embed"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        <section className="relative bg-[#f97316] py-24 text-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+
+          <div className="relative max-w-4xl mx-auto px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5">
+              Need a Vehicle Delivered in Queen Creek?
+            </h2>
+
+            <p className="text-orange-100 text-lg mb-8">
+              Skip towing and trailer delays. Get direct drive-away pickup with clear text communication.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                to="/request-pickup"
+                className="inline-flex items-center justify-center bg-white text-[#f97316] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300"
+              >
+                Request Queen Creek Pickup
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Text Me for Quote
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
