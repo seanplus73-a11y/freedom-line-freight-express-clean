@@ -115,7 +115,7 @@ export const router = createBrowserRouter([
       { path: "business-transport", element: <BusinessTransport /> },
       { path: "courier", element: <Courier /> },
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
-      { path: "/thank-you" element={<ThankYou />} />
+      { path: "/thank-you", element: <ThankYou /> }
        
     ],
   },
