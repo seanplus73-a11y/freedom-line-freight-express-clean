@@ -1,346 +1,591 @@
-import {
-  Phone,
-  CheckCircle2,
-  CarFront,
-  Package,
-  Truck,
-  Shield,
-  Clock,
-  MapPin,
-} from "lucide-react";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet-async";
+import {
+  Car,
+  Clock,
+  ShieldCheck,
+  Phone,
+  MapPin,
+  CheckCircle,
+  Store,
+  Wrench,
+  FileText,
+  Route,
+  Home,
+  ArrowRight,
+} from "lucide-react";
 
 export default function TempeDelivery() {
-  return (
-    <div className="bg-[#0f172a] text-white">
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/tempe-delivery.jpg')",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/70" />
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Freedom Line Freight Express",
+    image: "https://www.flfreightco.com/logo.png",
+    url: "https://www.flfreightco.com/tempe-delivery",
+    telephone: "+1-480-742-8553",
+    email: "dispatch@flfreightco.com",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Tan Valley",
+      addressRegion: "AZ",
+      postalCode: "85144",
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Tempe",
+      containedIn: { "@type": "State", name: "Arizona" },
+    },
+    description:
+      "Direct drive-away vehicle pickup and delivery service in Tempe, AZ. Cars, SUVs, and small trucks that run and drive. No trailers, no towing. Same-day available depending on route and schedule.",
+    openingHours: "Mo-Su 07:00-19:00",
+  };
 
-        <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <div className="mb-5 flex flex-wrap gap-3">
-              <span className="rounded-full border border-orange-400/60 bg-black/40 px-4 py-2 text-sm font-semibold text-orange-300">
-                Same Day Available
-              </span>
-              <span className="rounded-full border border-orange-400/60 bg-black/40 px-4 py-2 text-sm font-semibold text-orange-300">
-                No Towing Needed
-              </span>
-              <span className="rounded-full border border-orange-400/60 bg-black/40 px-4 py-2 text-sm font-semibold text-orange-300">
-                Direct Local Service
-              </span>
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Vehicle Pickup and Delivery Service",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Freedom Line Freight Express",
+    },
+    areaServed: { "@type": "City", name: "Tempe" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Tempe Delivery Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Car Drive-Away Service Tempe",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Dealer Vehicle Delivery Tempe",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Auto Parts Delivery Tempe",
+          },
+        },
+      ],
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you offer same-day vehicle delivery in Tempe?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Same-day vehicle pickup and delivery in Tempe, AZ may be available depending on distance, schedule, and route availability. Text 480-742-8553 for current availability.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you use trailers or tow trucks in Tempe?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Freedom Line Freight Express provides direct drive-away service only. Your vehicle is driven directly to its destination. No towing and no trailers.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What types of vehicles do you transport in Tempe?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "I transport cars, SUVs, and small trucks that run and drive. Vehicles must be safe to operate with working brakes, steering, and proper road readiness.",
+        },
+      },
+    ],
+  };
+
+  const cardClass =
+    "rounded-2xl border border-white/10 bg-[#111827]/90 p-7 hover:border-[#f97316] hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] hover:-translate-y-1 transition-all duration-300";
+
+  return (
+    <>
+      <Helmet>
+        <title>
+          Vehicle Pickup and Delivery Tempe AZ | Freedom Line Freight Express
+        </title>
+        <meta
+          name="description"
+          content="Tempe AZ vehicle pickup and delivery. Direct drive-away service for cars, SUVs, and small trucks that run and drive. No towing, no trailers. Same-day available depending on route."
+        />
+        <link rel="canonical" href="https://www.flfreightco.com/tempe-delivery" />
+        <meta property="og:title" content="Vehicle Pickup and Delivery in Tempe AZ" />
+        <meta
+          property="og:description"
+          content="Direct drive-away service for vehicles in Tempe. No towing. No trailers. Fast, reliable, owner-operated service."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.flfreightco.com/tempe-delivery" />
+        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
+
+      <main className="min-h-screen bg-[#0b0f19] text-white overflow-hidden">
+        <section className="bg-[#f97316] text-black text-center py-2 text-sm font-semibold">
+          Tempe same-day pickup available depending on schedule and route
+        </section>
+
+        <header className="relative overflow-hidden border-b border-white/10 px-6 py-24">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/15 via-transparent to-black" />
+          <div className="absolute top-10 right-10 w-[420px] h-[420px] bg-[#f97316]/20 rounded-full blur-3xl" />
+
+          <div className="relative mx-auto max-w-6xl">
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm mb-7">
+              <MapPin className="text-[#f97316]" size={18} />
+              Tempe Arizona Vehicle Delivery
             </div>
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-orange-400">
-              Tempe Arizona Delivery Service
-            </p>
-
-            <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
-              Vehicle Pickup and Delivery Service in Tempe AZ
+            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+              Vehicle Pickup and Delivery in{" "}
+              <span className="text-[#f97316]">Tempe AZ</span>
             </h1>
 
-            <p className="mb-6 text-lg leading-8 text-gray-200">
-              Need someone to move your car in Tempe without using a tow truck
-              or trailer? I personally drive vehicles where they need to go with
-              direct pickup and drop off service.
+            <p className="max-w-3xl text-xl md:text-2xl text-gray-200 mb-4 font-semibold">
+              Need a car moved safely without towing or trailers?
             </p>
 
-            <p className="mb-8 text-base leading-8 text-gray-300 md:text-lg">
-              I also provide auto parts delivery, document delivery, and small
-              business transport across Tempe and surrounding East Valley areas.
-              Fast local service with real time updates.
+            <p className="max-w-4xl text-lg text-gray-400 mb-6">
+              Freedom Line Freight Express provides direct drive-away service for cars, SUVs, and small trucks in Tempe. If it runs and drives, I can help move it from dealer to home, auction to shop, repair shop to customer, or across town.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <p className="max-w-4xl text-gray-400 mb-10">
+              Serving Tempe areas including Downtown Tempe, ASU, Tempe Marketplace, South Tempe, Kiwanis Park, and nearby routes to Phoenix, Mesa, Scottsdale, Chandler, and Gilbert.
+            </p>
+
+            <div className="flex flex-wrap gap-4 text-gray-300 text-sm mb-10">
+              {["No towing", "No trailer", "Direct drive-away", "Text updates"].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <CheckCircle className="text-[#f97316]" size={16} />
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/request-pickup"
-                className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-8 py-4 text-base font-semibold text-white transition hover:bg-orange-600"
+                className="inline-flex items-center justify-center bg-[#f97316] px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-orange-500/20"
               >
-                Request Pickup
+                Get Tempe Quote in 5 to 10 Minutes
+                <ArrowRight className="ml-2" size={20} />
               </Link>
 
-              <a
-                href="sms:4807428553"
-                className="inline-flex items-center justify-center gap-3 rounded-xl border border-orange-400 px-8 py-4 text-base font-semibold text-orange-300 transition hover:bg-orange-500 hover:text-white"
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
               >
-                <Phone className="h-5 w-5" />
-                Text 4807428553
-              </a>
+                Text Me to Book
+              </Link>
             </div>
+          </div>
+        </header>
 
-            <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-300">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-400" />
-                Licensed and insured
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Tempe drive-away service
+                </p>
+
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold leading-tight">
+                  Fast Tempe Vehicle{" "}
+                  <span className="text-[#f97316]">Drive-Away Service</span>
+                </h2>
+
+                <p className="mb-4 text-gray-300 text-lg">
+                  Need a car moved from Tempe Marketplace, ASU, a repair shop, a dealership, or a private seller?
+                </p>
+
+                <p className="mb-6 text-gray-400">
+                  I specialize in direct point-to-point drive-away for operational vehicles. No waiting for a full trailer load. No confusing handoffs. Your vehicle is driven directly where it needs to go.
+                </p>
+
+                <p className="text-gray-400">
+                  Most local Tempe deliveries start around $85 depending on distance, route, service type, and schedule availability.
+                </p>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-400" />
-                Real time updates
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  Tempe Services
+                </h2>
+
+                <ul className="space-y-4 text-gray-300">
+                  {[
+                    "Vehicle pickup and delivery for cars, SUVs, and small trucks",
+                    "Dealer and auction vehicle transport",
+                    "Car buyer and seller delivery",
+                    "Repair shop vehicle movement",
+                    "Auto parts delivery",
+                    "Packages and document delivery",
+                    "Same-day local delivery when available",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="text-[#f97316] mt-1 shrink-0" size={18} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 rounded-xl bg-[#f97316]/10 border border-[#f97316]/30 p-5">
+                  <p className="text-gray-300">
+                    Vehicle transport is for operable vehicles only. Vehicle must run, drive, steer, and stop safely.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="border-b border-white/10 bg-[#111827] py-6">
-        <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-3">
-          <div className="flex items-center gap-3">
-            <CarFront className="h-5 w-5 text-orange-400" />
-            <div>
-              <p className="font-semibold">Personally driven vehicles</p>
-              <p className="text-sm text-gray-400">
-                No towing or trailer needed
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Who this helps
               </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Clock className="h-5 w-5 text-orange-400" />
-            <div>
-              <p className="font-semibold">Fast local response</p>
-              <p className="text-sm text-gray-400">
-                Same day and next day scheduling
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Shield className="h-5 w-5 text-orange-400" />
-            <div>
-              <p className="font-semibold">Protected during transport</p>
-              <p className="text-sm text-gray-400">
-                Careful handling from pickup to drop off
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-10 max-w-3xl">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Delivery Services Available in Tempe
-            </h2>
-            <p className="leading-8 text-gray-300">
-              I provide direct local delivery for vehicles, auto parts, small
-              packages, and business items across Tempe. Simple service, clear
-              communication, and dependable local transport.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <div className="mb-4 inline-flex rounded-xl bg-orange-500/15 p-3">
-                <CarFront className="h-6 w-6 text-orange-400" />
-              </div>
-              <h3 className="mb-3 text-xl font-bold">Vehicle Pickup</h3>
-              <p className="leading-7 text-gray-300">
-                I personally drive cars, SUVs, and light vehicles to a mechanic,
-                dealership, family member, or new location in Tempe.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <div className="mb-4 inline-flex rounded-xl bg-orange-500/15 p-3">
-                <Truck className="h-6 w-6 text-orange-400" />
-              </div>
-              <h3 className="mb-3 text-xl font-bold">Auto Parts Delivery</h3>
-              <p className="leading-7 text-gray-300">
-                Fast local delivery for repair shops, dealers, suppliers, and
-                businesses needing parts moved quickly and directly.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <div className="mb-4 inline-flex rounded-xl bg-orange-500/15 p-3">
-                <Package className="h-6 w-6 text-orange-400" />
-              </div>
-              <h3 className="mb-3 text-xl font-bold">Business Items</h3>
-              <p className="leading-7 text-gray-300">
-                Documents, small equipment, and local business transport with
-                flexible pickup and drop off scheduling.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-10 max-w-3xl">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Why People Choose This Service
-            </h2>
-            <p className="leading-8 text-gray-300">
-              This service is a good fit when you need help moving a vehicle but
-              do not want the hassle of towing. It is also useful for dealerships,
-              repair shops, and local businesses that need direct transport.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-              <h3 className="mb-5 text-2xl font-bold">Good For</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Getting your car to a mechanic or dealership</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Moving a car to family or a new location</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Buying or selling a car locally</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Auto parts and local business transport</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-orange-500/30 bg-orange-500/10 p-8">
-              <h3 className="mb-5 text-2xl font-bold">What You Get</h3>
-              <ul className="space-y-3 text-gray-200">
-                <li>Owner operated direct service</li>
-                <li>No towing or trailers</li>
-                <li>Flexible same day and scheduled options</li>
-                <li>Real time updates during transport</li>
-                <li>Licensed and insured handling</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-10 max-w-3xl">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Simple Distance Based Pricing
-            </h2>
-            <p className="leading-8 text-gray-300">
-              Clear starting rates based on mileage. Final quote may vary
-              depending on timing, route, and service details.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <p className="mb-2 text-sm text-gray-400">Local</p>
-              <h3 className="mb-2 text-2xl font-bold">0 to 25 miles</h3>
-              <p className="mb-4 text-4xl font-bold text-orange-400">$85</p>
-              <p className="text-sm leading-6 text-gray-400">
-                Great for nearby mechanic or dealer trips
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <p className="mb-2 text-sm text-gray-400">Extended</p>
-              <h3 className="mb-2 text-2xl font-bold">25 to 50 miles</h3>
-              <p className="mb-4 text-4xl font-bold text-orange-400">$140</p>
-              <p className="text-sm leading-6 text-gray-400">
-                Best for metro Tempe and East Valley transport
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <p className="mb-2 text-sm text-gray-400">Regional</p>
-              <h3 className="mb-2 text-2xl font-bold">50 to 150 miles</h3>
-              <p className="mb-4 text-4xl font-bold text-orange-400">$285</p>
-              <p className="text-sm leading-6 text-gray-400">
-                Good for longer Arizona city to city runs
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-orange-500/30 bg-orange-500/10 p-7">
-              <p className="mb-2 text-sm text-orange-200">Long Distance</p>
-              <h3 className="mb-2 text-2xl font-bold">150 plus miles</h3>
-              <p className="mb-4 text-3xl font-bold text-white">Custom Quote</p>
-              <p className="text-sm leading-6 text-orange-100">
-                Best for custom routes and statewide delivery
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-              <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold">
-                <MapPin className="h-6 w-6 text-orange-400" />
-                Service Area
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Who Uses Tempe Vehicle Delivery?
               </h2>
-              <p className="leading-8 text-gray-300">
-                Serving Tempe, Phoenix, Mesa, Chandler, Gilbert, Scottsdale,
-                Queen Creek, San Tan Valley, and surrounding Arizona areas.
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                This service is built for customers and businesses that need a vehicle moved directly, safely, and without towing.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-              <h2 className="mb-4 text-2xl font-bold">What Is Included</h2>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Door to door pickup and drop off</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Secure vehicle and item handling</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Direct communication throughout transport</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-orange-400" />
-                  <span>Owner operated service with flexible scheduling</span>
-                </li>
-              </ul>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className={cardClass}>
+                <Home className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Car Buyers</h3>
+                <p className="text-gray-400">
+                  Bought a vehicle and need it delivered to your home, shop, or another local address.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Wrench className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Repair Shops</h3>
+                <p className="text-gray-400">
+                  Move customer vehicles between shops, homes, dealerships, or inspection locations.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Store className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Dealerships</h3>
+                <p className="text-gray-400">
+                  Help with dealer trades, customer delivery, auction pickup, and local inventory movement.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="border-t border-white/10 py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="rounded-3xl bg-orange-500 px-8 py-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-              Need delivery service in Tempe today
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Why choose us
+              </p>
+
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Why Tempe Chooses{" "}
+                <span className="text-[#f97316]">Freedom Line</span>
+              </h2>
+
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Not a broker. Not a random app driver. You work directly with me.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className={cardClass}>
+                <Car className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Direct Drive-Away</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Your vehicle is driven directly to its destination. No trailer transfers, no lot storage, and no towing.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Clock className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Fast and Flexible</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Quick Tempe pickups, dependable scheduling, and clear text updates from pickup to drop off.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <ShieldCheck className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Owner-Operated</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Local Arizona business. Deaf-owned. Clear written communication and personal accountability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Also available
+                </p>
+
+                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                  More Local Delivery Options in Tempe
+                </h2>
+
+                <p className="text-gray-400 mb-6 text-lg">
+                  Vehicle delivery is the main service, but I can also help with local business transport, auto parts, documents, and small packages when schedule and route allow.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/courier"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    Tempe auto parts delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
+
+                  <Link
+                    to="/package-document-delivery"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    Package and document delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className={cardClass}>
+                  <Wrench className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Auto Parts</h3>
+                  <p className="text-gray-400">
+                    Parts pickup and delivery for shops, mechanics, and customers.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <FileText className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Documents</h3>
+                  <p className="text-gray-400">
+                    Contracts, paperwork, forms, and time-sensitive documents.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Route className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Local Routes</h3>
+                  <p className="text-gray-400">
+                    Tempe to Mesa, Chandler, Scottsdale, Phoenix, or Gilbert.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Store className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Business Support</h3>
+                  <p className="text-gray-400">
+                    Direct pickup and delivery for local business needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-white/10 bg-[#111827] py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="mb-12 text-center text-3xl md:text-5xl font-extrabold">
+              Tempe Vehicle Delivery{" "}
+              <span className="text-[#f97316]">FAQ</span>
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-base text-orange-50">
-              Text me your pickup and drop off location for a fast quote and
-              availability.
+
+            <div className="mx-auto max-w-3xl space-y-6">
+              {[
+                {
+                  q: "Do you offer same-day vehicle delivery in Tempe?",
+                  a: "Yes. Same-day and emergency delivery may be available depending on distance, schedule, and route availability. Text 480-742-8553 with pickup and drop off addresses for the fastest quote.",
+                },
+                {
+                  q: "Do you use trailers or tow trucks in Tempe?",
+                  a: "No. Freedom Line Freight Express provides direct drive-away service only. Your car, SUV, or small truck is driven directly to its destination. No towing and no trailers.",
+                },
+                {
+                  q: "What types of vehicles do you transport in Tempe?",
+                  a: "Cars, SUVs, and small trucks that run and drive. The vehicle must start, stop, steer safely, and be road ready for drive-away service.",
+                },
+              ].map((faq) => (
+                <div key={faq.q} className="bg-[#0b0f19] p-6 rounded-xl border border-white/10">
+                  <h3 className="font-bold text-lg text-white mb-3">{faq.q}</h3>
+                  <p className="text-gray-400 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Service area
+                </p>
+
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold">
+                  Serving <span className="text-[#f97316]">Tempe</span> and the East Valley
+                </h2>
+
+                <p className="mb-4 text-gray-300 text-lg">
+                  Based in San Tan Valley, I run in Tempe and nearby communities including Phoenix, Mesa, Scottsdale, Chandler, Gilbert, Queen Creek, ASU, and South Tempe.
+                </p>
+
+                <p className="text-gray-400 mb-8">
+                  Need a vehicle, auto parts, package, or documents moved in or around Tempe? I handle scheduled pickups and urgent same-day requests when available.
+                </p>
+
+                <div className="flex flex-wrap gap-3 text-sm text-gray-300">
+                  {[
+                    "Downtown Tempe",
+                    "ASU",
+                    "Tempe Marketplace",
+                    "South Tempe",
+                    "Kiwanis Park",
+                    "Mesa",
+                    "Scottsdale",
+                    "Chandler",
+                    "Phoenix",
+                  ].map((area) => (
+                    <span key={area} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  Request a Tempe Quote
+                </h2>
+
+                <p className="mb-6 text-gray-300">
+                  Get a fast quote for vehicle pickup and delivery in Tempe AZ. Most quotes are reviewed quickly when you send the pickup and drop off details.
+                </p>
+
+                <div className="space-y-4 text-gray-300 mb-8">
+                  <p className="flex items-center gap-3">
+                    <Phone className="text-[#f97316]" size={18} />
+                    <span>Text: 480-742-8553</span>
+                  </p>
+                  <p>Email: dispatch@flfreightco.com</p>
+                  <p>Website: flfreightco.com</p>
+                </div>
+
+                <Link
+                  to="/request-pickup"
+                  className="block w-full text-center bg-[#f97316] px-6 py-4 rounded-xl font-bold hover:bg-orange-500 transition-all"
+                >
+                  Get Free Tempe Quote
+                </Link>
+              </div>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl text-center">
+              <h2 className="mb-6 text-2xl font-bold text-white">
+                Nearby Cities We Serve
+              </h2>
+
+              <p className="flex flex-wrap justify-center gap-4 text-gray-300">
+                <Link to="/phoenix-delivery" className="hover:text-[#f97316] transition-colors">Phoenix</Link>
+                <span>•</span>
+                <Link to="/mesa-delivery" className="hover:text-[#f97316] transition-colors">Mesa</Link>
+                <span>•</span>
+                <Link to="/gilbert-delivery" className="hover:text-[#f97316] transition-colors">Gilbert</Link>
+                <span>•</span>
+                <Link to="/chandler-delivery" className="hover:text-[#f97316] transition-colors">Chandler</Link>
+                <span>•</span>
+                <Link to="/queen-creek-delivery" className="hover:text-[#f97316] transition-colors">Queen Creek</Link>
+                <span>•</span>
+                <Link to="/san-tan-valley-delivery" className="hover:text-[#f97316] transition-colors">San Tan Valley</Link>
+              </p>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-[#111827] p-8">
+              <h2 className="mb-4 text-center text-2xl font-bold text-white">
+                Tempe Arizona Service Map
+              </h2>
+
+              <p className="mb-6 text-center text-gray-400">
+                Direct drive-away service throughout Tempe and surrounding East Valley communities.
+              </p>
+
+              <div className="overflow-hidden rounded-xl border border-white/10">
+                <iframe
+                  title="Tempe Arizona Map"
+                  src="https://www.google.com/maps?q=Tempe,AZ&output=embed"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative bg-[#f97316] py-24 text-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+
+          <div className="relative max-w-4xl mx-auto px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5">
+              Need a Vehicle Delivered in Tempe?
+            </h2>
+
+            <p className="text-orange-100 text-lg mb-8">
+              Skip towing and trailer delays. Get direct drive-away pickup with clear text communication.
             </p>
 
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 to="/request-pickup"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-orange-600 transition hover:bg-orange-50"
+                className="inline-flex items-center justify-center bg-white text-[#f97316] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300"
               >
-                Request Pickup
+                Request Tempe Pickup
+                <ArrowRight className="ml-2" size={20} />
               </Link>
 
-              <a
-                href="sms:4807428553"
-                className="inline-flex items-center justify-center rounded-xl border border-white px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-orange-600"
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
               >
-                Text 4807428553
-              </a>
+                Text Me for Quote
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </main>
+    </>
   );
 }
