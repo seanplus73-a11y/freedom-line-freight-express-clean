@@ -1,318 +1,591 @@
 import { Link } from "react-router";
-import { Car, Wrench, Package, Briefcase, CheckCircle, Phone } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import {
+  Car,
+  Clock,
+  ShieldCheck,
+  Phone,
+  MapPin,
+  CheckCircle,
+  Store,
+  Wrench,
+  FileText,
+  Route,
+  Home,
+  ArrowRight,
+} from "lucide-react";
 
 export default function SanTanValleyDelivery() {
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Freedom Line Freight Express",
+    image: "https://www.flfreightco.com/logo.png",
+    url: "https://www.flfreightco.com/san-tan-valley-delivery",
+    telephone: "+1-480-742-8553",
+    email: "dispatch@flfreightco.com",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Tan Valley",
+      addressRegion: "AZ",
+      postalCode: "85144",
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "San Tan Valley",
+      containedIn: { "@type": "State", name: "Arizona" },
+    },
+    description:
+      "Direct drive-away vehicle pickup and delivery service in San Tan Valley, AZ. Cars, SUVs, and small trucks that run and drive. No trailers, no towing. Same-day available depending on route and schedule.",
+    openingHours: "Mo-Su 07:00-19:00",
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Vehicle Pickup and Delivery Service",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Freedom Line Freight Express",
+    },
+    areaServed: { "@type": "City", name: "San Tan Valley" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "San Tan Valley Delivery Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Car Drive-Away Service San Tan Valley",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Dealer Vehicle Delivery San Tan Valley",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Auto Parts Delivery San Tan Valley",
+          },
+        },
+      ],
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you offer same-day vehicle delivery in San Tan Valley?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Same-day vehicle pickup and delivery in San Tan Valley, AZ may be available depending on distance, schedule, and route availability. Text 480-742-8553 for current availability.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you use trailers or tow trucks in San Tan Valley?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Freedom Line Freight Express provides direct drive-away service only. Your vehicle is driven directly to its destination. No towing and no trailers.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What types of vehicles do you transport in San Tan Valley?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "I transport cars, SUVs, and small trucks that run and drive. Vehicles must be safe to operate with working brakes, steering, and proper road readiness.",
+        },
+      },
+    ],
+  };
+
+  const cardClass =
+    "rounded-2xl border border-white/10 bg-[#111827]/90 p-7 hover:border-[#f97316] hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] hover:-translate-y-1 transition-all duration-300";
+
   return (
-    <main className="bg-[#0b0f19] text-white">
-      {/* HERO */}
-      <section className="border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 md:py-24">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-orange-500">
-            San Tan Valley, Arizona
-          </p>
+    <>
+      <Helmet>
+        <title>
+          Vehicle Pickup and Delivery San Tan Valley AZ | Freedom Line Freight Express
+        </title>
+        <meta
+          name="description"
+          content="San Tan Valley AZ vehicle pickup and delivery. Direct drive-away service for cars, SUVs, and small trucks that run and drive. No towing, no trailers. Same-day available depending on route."
+        />
+        <link rel="canonical" href="https://www.flfreightco.com/san-tan-valley-delivery" />
+        <meta property="og:title" content="Vehicle Pickup and Delivery in San Tan Valley AZ" />
+        <meta
+          property="og:description"
+          content="Direct drive-away service for vehicles in San Tan Valley. No towing. No trailers. Fast, reliable, owner-operated service."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.flfreightco.com/san-tan-valley-delivery" />
+        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
 
-          <h1 className="max-w-5xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
-            Vehicle Pickup and Delivery Service in San Tan Valley, AZ
-          </h1>
+      <main className="min-h-screen bg-[#0b0f19] text-white overflow-hidden">
+        <section className="bg-[#f97316] text-black text-center py-2 text-sm font-semibold">
+          San Tan Valley same-day pickup available depending on schedule and route
+        </section>
 
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300 md:text-xl">
-            Freedom Line Freight Express provides direct vehicle pickup and delivery in
-            San Tan Valley. I also offer auto parts delivery, packages, documents, and
-            business transport with fast local service.
-          </p>
+        <header className="relative overflow-hidden border-b border-white/10 px-6 py-24">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/15 via-transparent to-black" />
+          <div className="absolute top-10 right-10 w-[420px] h-[420px] bg-[#f97316]/20 rounded-full blur-3xl" />
 
-          <p className="mt-6 max-w-4xl text-lg font-semibold leading-8 text-white">
-            Need someone to drive your car to a mechanic, dealership, or home in San Tan
-            Valley? I provide direct drive away vehicle delivery with no towing and no trailers.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
-              to="/request-pickup"
-              className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-6 py-4 text-base font-bold text-white transition hover:bg-orange-600"
-            >
-              Request Pickup
-            </Link>
-
-            <a
-              href="sms:4807428553"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-orange-500 px-6 py-4 text-base font-bold text-orange-400 transition hover:bg-orange-500/10"
-            >
-              <Phone className="h-5 w-5" />
-              Text 480-742-8553
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="mx-auto max-w-7xl px-6 py-14 md:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.9fr]">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h2 className="text-3xl font-bold text-orange-500">
-              Reliable Delivery in San Tan Valley
-            </h2>
-
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              I provide direct drive away service for vehicles that run and drive, along
-              with auto parts delivery for repair shops, dealerships, and local businesses
-              in San Tan Valley.
-            </p>
-
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              If you are searching for vehicle delivery near me or someone to drive my car
-              in San Tan Valley, Freedom Line Freight Express provides fast local service
-              you can trust.
-            </p>
-
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              My service is built for customers who want reliable transport without using
-              tow trucks or trailers. I personally handle the job from pickup to delivery.
-            </p>
-
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              I serve San Tan Valley neighborhoods including Johnson Ranch, Circle Cross
-              Ranch, Skyline Ranch, Rancho Bella Vista, and nearby communities in Queen
-              Creek and Florence.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h2 className="text-3xl font-bold text-orange-500">Services Available</h2>
-
-            <ul className="mt-6 space-y-4 text-lg text-slate-300">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Vehicle pickup and delivery for cars, SUVs, and light vehicles that run and drive</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Auto parts delivery for shops, mechanics, and dealerships</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Packages and document delivery</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Business to business transport</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Same day or next day service when available</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Local and regional Arizona transport</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICE CARDS */}
-      <section className="border-y border-white/10 bg-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-14 md:px-8">
-          <h2 className="text-center text-3xl font-bold text-white md:text-4xl">
-            Services Available in San Tan Valley
-          </h2>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Car className="mx-auto h-8 w-8 text-orange-500" />
-              <h3 className="mt-4 text-2xl font-bold text-white">Vehicle Pickup</h3>
-              <p className="mt-3 text-slate-300">
-                Direct drive away service for vehicles that run and drive.
-              </p>
+          <div className="relative mx-auto max-w-6xl">
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm mb-7">
+              <MapPin className="text-[#f97316]" size={18} />
+              San Tan Valley Arizona Vehicle Delivery
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Wrench className="mx-auto h-8 w-8 text-orange-500" />
-              <h3 className="mt-4 text-2xl font-bold text-white">Auto Parts</h3>
-              <p className="mt-3 text-slate-300">
-                Same day local parts delivery for shops, mechanics, and dealerships.
-              </p>
-            </div>
+            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+              Vehicle Pickup and Delivery in{" "}
+              <span className="text-[#f97316]">San Tan Valley AZ</span>
+            </h1>
 
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Package className="mx-auto h-8 w-8 text-orange-500" />
-              <h3 className="mt-4 text-2xl font-bold text-white">Packages</h3>
-              <p className="mt-3 text-slate-300">
-                Fast local delivery for small packages, documents, and urgent items.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-[#101522] p-6 text-center">
-              <Briefcase className="mx-auto h-8 w-8 text-orange-500" />
-              <h3 className="mt-4 text-2xl font-bold text-white">Business Transport</h3>
-              <p className="mt-3 text-slate-300">
-                Reliable delivery support for local businesses and professional clients.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE */}
-      <section className="mx-auto max-w-7xl px-6 py-14 md:px-8">
-        <h2 className="text-center text-3xl font-bold text-white md:text-4xl">
-          Why Choose Us in San Tan Valley
-        </h2>
-
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h3 className="text-2xl font-bold text-orange-500">Compared to App Delivery</h3>
-            <ul className="mt-6 space-y-4 text-lg text-slate-300">
-              <li>Random drivers</li>
-              <li>Delays and multiple stops</li>
-              <li>Not built for vehicle pickup</li>
-              <li>Not ideal for auto parts or direct transport</li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-orange-500 bg-orange-500/5 p-8">
-            <h3 className="text-2xl font-bold text-orange-400">Freedom Line Freight Express</h3>
-            <ul className="mt-6 space-y-4 text-lg text-slate-200">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Direct service from pickup to delivery</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>No towing and no trailer</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Faster local delivery for San Tan Valley customers</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 text-orange-500" />
-                <span>Built for businesses, repair shops, and local residents</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* LOCAL SEO TEXT */}
-      <section className="border-y border-white/10 bg-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-14 md:px-8">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="text-3xl font-bold text-orange-500">
-              Local Vehicle Delivery in San Tan Valley
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-slate-300">
-              Many local customers need help moving a vehicle to a repair shop, dealership,
-              family member, home, or another location in town. Instead of arranging a tow,
-              I personally drive the vehicle when it runs and drives. That gives customers a
-              direct and simple option for local transport.
+            <p className="max-w-3xl text-xl md:text-2xl text-gray-200 mb-4 font-semibold">
+              Need a car moved safely without towing or trailers?
             </p>
 
-            <p className="mt-6 text-lg leading-8 text-slate-300">
-              This service is useful for busy families, senior drivers, repair shops,
-              dealerships, and anyone who needs dependable local vehicle pickup and delivery
-              in San Tan Valley. It is also a good fit for customers searching online for
-              someone to drive my car, drive my car to the mechanic, or vehicle pickup near me.
+            <p className="max-w-4xl text-lg text-gray-400 mb-6">
+              Freedom Line Freight Express provides direct drive-away service for cars, SUVs, and small trucks in San Tan Valley. If it runs and drives, I can help move it from dealer to home, auction to shop, repair shop to customer, or across town.
             </p>
 
-            <p className="mt-6 text-lg leading-8 text-slate-300">
-              Nearby service areas include Queen Creek, Gilbert, Chandler, Mesa, Florence,
-              and Phoenix. Many customers in these areas use our San Tan Valley vehicle
-              pickup and delivery service for fast and reliable transport.
+            <p className="max-w-4xl text-gray-400 mb-10">
+              Serving San Tan Valley areas including Johnson Ranch, Circle Cross Ranch, Skyline Ranch, Rancho Bella Vista, Copper Basin, Castlegate, and nearby routes to Queen Creek, Florence, Gilbert, Mesa, and Phoenix.
             </p>
 
-            <p className="mt-6 text-lg leading-8 text-slate-300">
-              Learn more about our{" "}
-              <Link to="/auto-parts-delivery" className="font-semibold text-orange-400 hover:text-orange-300">
-                auto parts delivery service
-              </Link>{" "}
-              and{" "}
-              <Link to="/services" className="font-semibold text-orange-400 hover:text-orange-300">
-                full service options
+            <div className="flex flex-wrap gap-4 text-gray-300 text-sm mb-10">
+              {["No towing", "No trailer", "Direct drive-away", "Text updates"].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <CheckCircle className="text-[#f97316]" size={16} />
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/request-pickup"
+                className="inline-flex items-center justify-center bg-[#f97316] px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-orange-500/20"
+              >
+                Get San Tan Valley Quote in 5 to 10 Minutes
+                <ArrowRight className="ml-2" size={20} />
               </Link>
-              .
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Text Me to Book
+              </Link>
+            </div>
+          </div>
+        </header>
+
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  San Tan Valley drive-away service
+                </p>
+
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold leading-tight">
+                  Fast San Tan Valley Vehicle{" "}
+                  <span className="text-[#f97316]">Drive-Away Service</span>
+                </h2>
+
+                <p className="mb-4 text-gray-300 text-lg">
+                  Need a car moved from a San Tan Valley home, repair shop, dealership, private seller, or service appointment?
+                </p>
+
+                <p className="mb-6 text-gray-400">
+                  I specialize in direct point-to-point drive-away for operational vehicles. No waiting for a full trailer load. No confusing handoffs. Your vehicle is driven directly where it needs to go.
+                </p>
+
+                <p className="text-gray-400">
+                  Most local San Tan Valley deliveries start around $85 depending on distance, route, service type, and schedule availability.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  San Tan Valley Services
+                </h2>
+
+                <ul className="space-y-4 text-gray-300">
+                  {[
+                    "Vehicle pickup and delivery for cars, SUVs, and small trucks",
+                    "Dealer and auction vehicle transport",
+                    "Car buyer and seller delivery",
+                    "Repair shop vehicle movement",
+                    "Auto parts delivery",
+                    "Packages and document delivery",
+                    "Same-day local delivery when available",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="text-[#f97316] mt-1 shrink-0" size={18} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 rounded-xl bg-[#f97316]/10 border border-[#f97316]/30 p-5">
+                  <p className="text-gray-300">
+                    Vehicle transport is for operable vehicles only. Vehicle must run, drive, steer, and stop safely.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Who this helps
+              </p>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Who Uses San Tan Valley Vehicle Delivery?
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                This service is built for customers and businesses that need a vehicle moved directly, safely, and without towing.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className={cardClass}>
+                <Home className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Car Buyers</h3>
+                <p className="text-gray-400">
+                  Bought a vehicle and need it delivered to your home, shop, or another local address.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Wrench className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Repair Shops</h3>
+                <p className="text-gray-400">
+                  Move customer vehicles between shops, homes, dealerships, or inspection locations.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Store className="text-[#f97316] mb-4" size={40} />
+                <h3 className="font-bold text-xl mb-3">Dealerships</h3>
+                <p className="text-gray-400">
+                  Help with dealer trades, customer delivery, auction pickup, and local inventory movement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#111827]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-14">
+              <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                Why choose us
+              </p>
+
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Why San Tan Valley Chooses{" "}
+                <span className="text-[#f97316]">Freedom Line</span>
+              </h2>
+
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Not a broker. Not a random app driver. You work directly with me.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className={cardClass}>
+                <Car className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Direct Drive-Away</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Your vehicle is driven directly to its destination. No trailer transfers, no lot storage, and no towing.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <Clock className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Fast and Flexible</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Quick San Tan Valley pickups, dependable scheduling, and clear text updates from pickup to drop off.
+                </p>
+              </div>
+
+              <div className={cardClass}>
+                <ShieldCheck className="text-[#f97316] mb-4" size={40} />
+                <h3 className="mb-3 text-xl font-bold">Owner-Operated</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Local Arizona business. Deaf-owned. Clear written communication and personal accountability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Also available
+                </p>
+
+                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                  More Local Delivery Options in San Tan Valley
+                </h2>
+
+                <p className="text-gray-400 mb-6 text-lg">
+                  Vehicle delivery is the main service, but I can also help with local business transport, auto parts, documents, and small packages when schedule and route allow.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/san-tan-valley-auto-parts-delivery"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    San Tan Valley auto parts delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
+
+                  <Link
+                    to="/package-document-delivery"
+                    className="inline-flex items-center text-[#f97316] font-bold hover:text-orange-400"
+                  >
+                    Package and document delivery
+                    <ArrowRight className="ml-2" size={18} />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className={cardClass}>
+                  <Wrench className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Auto Parts</h3>
+                  <p className="text-gray-400">
+                    Parts pickup and delivery for shops, mechanics, and customers.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <FileText className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Documents</h3>
+                  <p className="text-gray-400">
+                    Contracts, paperwork, forms, and time-sensitive documents.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Route className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Local Routes</h3>
+                  <p className="text-gray-400">
+                    San Tan Valley to Queen Creek, Florence, Gilbert, Mesa, Chandler, or Phoenix.
+                  </p>
+                </div>
+
+                <div className={cardClass}>
+                  <Store className="text-[#f97316] mb-4" size={32} />
+                  <h3 className="font-bold text-lg mb-2">Business Support</h3>
+                  <p className="text-gray-400">
+                    Direct pickup and delivery for local business needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-white/10 bg-[#111827] py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="mb-12 text-center text-3xl md:text-5xl font-extrabold">
+              San Tan Valley Vehicle Delivery{" "}
+              <span className="text-[#f97316]">FAQ</span>
+            </h2>
+
+            <div className="mx-auto max-w-3xl space-y-6">
+              {[
+                {
+                  q: "Do you offer same-day vehicle delivery in San Tan Valley?",
+                  a: "Yes. Same-day and emergency delivery may be available depending on distance, schedule, and route availability. Text 480-742-8553 with pickup and drop off addresses for the fastest quote.",
+                },
+                {
+                  q: "Do you use trailers or tow trucks in San Tan Valley?",
+                  a: "No. Freedom Line Freight Express provides direct drive-away service only. Your car, SUV, or small truck is driven directly to its destination. No towing and no trailers.",
+                },
+                {
+                  q: "What types of vehicles do you transport in San Tan Valley?",
+                  a: "Cars, SUVs, and small trucks that run and drive. The vehicle must start, stop, steer safely, and be road ready for drive-away service.",
+                },
+              ].map((faq) => (
+                <div key={faq.q} className="bg-[#0b0f19] p-6 rounded-xl border border-white/10">
+                  <h3 className="font-bold text-lg text-white mb-3">{faq.q}</h3>
+                  <p className="text-gray-400 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#0b0f19]">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid items-start gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
+                  Service area
+                </p>
+
+                <h2 className="mb-6 text-3xl md:text-5xl font-extrabold">
+                  Serving <span className="text-[#f97316]">San Tan Valley</span> and nearby routes
+                </h2>
+
+                <p className="mb-4 text-gray-300 text-lg">
+                  Based in San Tan Valley, I run local delivery routes throughout Johnson Ranch, Circle Cross Ranch, Skyline Ranch, Rancho Bella Vista, Copper Basin, Castlegate, and nearby San Tan Valley communities.
+                </p>
+
+                <p className="text-gray-400 mb-8">
+                  Need a vehicle, auto parts, package, or documents moved in or around San Tan Valley? I handle scheduled pickups and urgent same-day requests when available.
+                </p>
+
+                <div className="flex flex-wrap gap-3 text-sm text-gray-300">
+                  {[
+                    "Johnson Ranch",
+                    "Circle Cross Ranch",
+                    "Skyline Ranch",
+                    "Rancho Bella Vista",
+                    "Copper Basin",
+                    "Castlegate",
+                    "Pecan Creek",
+                    "Florence Routes",
+                    "Queen Creek Routes",
+                  ].map((area) => (
+                    <span key={area} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className={cardClass}>
+                <h2 className="mb-6 text-2xl font-bold text-[#f97316]">
+                  Request a San Tan Valley Quote
+                </h2>
+
+                <p className="mb-6 text-gray-300">
+                  Get a fast quote for vehicle pickup and delivery in San Tan Valley AZ. Most quotes are reviewed quickly when you send the pickup and drop off details.
+                </p>
+
+                <div className="space-y-4 text-gray-300 mb-8">
+                  <p className="flex items-center gap-3">
+                    <Phone className="text-[#f97316]" size={18} />
+                    <span>Text: 480-742-8553</span>
+                  </p>
+                  <p>Email: dispatch@flfreightco.com</p>
+                  <p>Website: flfreightco.com</p>
+                </div>
+
+                <Link
+                  to="/request-pickup"
+                  className="block w-full text-center bg-[#f97316] px-6 py-4 rounded-xl font-bold hover:bg-orange-500 transition-all"
+                >
+                  Get Free San Tan Valley Quote
+                </Link>
+              </div>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl text-center">
+              <h2 className="mb-6 text-2xl font-bold text-white">
+                Nearby Cities We Serve
+              </h2>
+
+              <p className="flex flex-wrap justify-center gap-4 text-gray-300">
+                <Link to="/queen-creek-delivery" className="hover:text-[#f97316] transition-colors">Queen Creek</Link>
+                <span>•</span>
+                <Link to="/gilbert-delivery" className="hover:text-[#f97316] transition-colors">Gilbert</Link>
+                <span>•</span>
+                <Link to="/mesa-delivery" className="hover:text-[#f97316] transition-colors">Mesa</Link>
+                <span>•</span>
+                <Link to="/chandler-delivery" className="hover:text-[#f97316] transition-colors">Chandler</Link>
+                <span>•</span>
+                <Link to="/phoenix-delivery" className="hover:text-[#f97316] transition-colors">Phoenix</Link>
+                <span>•</span>
+                <Link to="/casa-grande-delivery" className="hover:text-[#f97316] transition-colors">Casa Grande</Link>
+              </p>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-[#111827] p-8">
+              <h2 className="mb-4 text-center text-2xl font-bold text-white">
+                San Tan Valley Arizona Service Map
+              </h2>
+
+              <p className="mb-6 text-center text-gray-400">
+                Direct drive-away service throughout San Tan Valley and nearby East Valley communities.
+              </p>
+
+              <div className="overflow-hidden rounded-xl border border-white/10">
+                <iframe
+                  title="San Tan Valley Arizona Map"
+                  src="https://www.google.com/maps?q=San%20Tan%20Valley,AZ&output=embed"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative bg-[#f97316] py-24 text-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+
+          <div className="relative max-w-4xl mx-auto px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5">
+              Need a Vehicle Delivered in San Tan Valley?
+            </h2>
+
+            <p className="text-orange-100 text-lg mb-8">
+              Skip towing and trailer delays. Get direct drive-away pickup with clear text communication.
             </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                to="/request-pickup"
+                className="inline-flex items-center justify-center bg-white text-[#f97316] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300"
+              >
+                Request San Tan Valley Pickup
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-md font-bold hover:bg-orange-600 transition-colors"
+              >
+                Text Me for Quote
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-7xl px-6 py-14 md:px-8">
-        <h2 className="text-center text-3xl font-bold text-white md:text-4xl">
-          San Tan Valley Delivery FAQ
-        </h2>
-
-        <div className="mx-auto mt-10 grid max-w-5xl gap-6">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-xl font-bold text-orange-500">
-              Do you offer vehicle pickup in San Tan Valley?
-            </h3>
-            <p className="mt-3 text-lg leading-8 text-slate-300">
-              Yes. I provide direct vehicle pickup and delivery throughout San Tan Valley
-              and nearby areas for vehicles that run and drive.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-xl font-bold text-orange-500">
-              Do you tow vehicles?
-            </h3>
-            <p className="mt-3 text-lg leading-8 text-slate-300">
-              No. I personally drive vehicles that run and drive. I do not use a tow truck
-              and I do not use a trailer.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-xl font-bold text-orange-500">
-              Do you deliver auto parts in San Tan Valley?
-            </h3>
-            <p className="mt-3 text-lg leading-8 text-slate-300">
-              Yes. I offer local auto parts delivery for repair shops, mechanics,
-              dealerships, and business customers.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-xl font-bold text-orange-500">
-              How fast is delivery?
-            </h3>
-            <p className="mt-3 text-lg leading-8 text-slate-300">
-              Many local deliveries can be completed same day or next day depending on
-              route, scheduling, and availability.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-orange-500 py-14 text-center">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-3xl font-extrabold text-white md:text-4xl">
-            Need Delivery in San Tan Valley?
-          </h2>
-          <p className="mt-4 text-lg text-white/90">
-            Request pickup today or text for fast local service.
-          </p>
-
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              to="/request-pickup"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-4 text-base font-bold text-[#0b0f19] transition hover:bg-slate-100"
-            >
-              Request Pickup
-            </Link>
-
-            <a
-              href="sms:4807428553"
-              className="inline-flex items-center justify-center rounded-xl border border-white px-6 py-4 text-base font-bold text-white transition hover:bg-white/10"
-            >
-              Text 480-742-8553
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
