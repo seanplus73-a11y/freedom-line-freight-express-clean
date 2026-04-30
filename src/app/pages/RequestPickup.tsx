@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { useState } from "react";
 import {
   Car,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 export function RequestPickup() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     customerName: "",
     companyName: "",
@@ -103,7 +105,7 @@ export function RequestPickup() {
         throw new Error(errorMessage + detailsMessage);
       }
 
-      setIsSubmitted(true);
+   navigate("/thank-you");
 
       if (data.success && typeof window !== "undefined" && (window as any).gtag) {
         (window as any).gtag("event", "quote_submit", {
