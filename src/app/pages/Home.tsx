@@ -180,7 +180,7 @@ export default function Home() {
                   to="/request-pickup"
                   className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
                 >
-                  Request Pickup Quote
+                  Request Pickup Details
                   <ArrowRight className="ml-2" size={22} />
                 </Link>
               </div>
@@ -575,7 +575,7 @@ export default function Home() {
                 to="/request-pickup"
                 className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-orange-600 transition-colors"
               >
-                Request Pickup Quote
+                Request Pickup Details
                 <ArrowRight className="ml-2" size={24} />
               </Link>
             </div>
