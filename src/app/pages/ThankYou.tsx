@@ -1,7 +1,7 @@
 import { CheckCircle, Shield, MessageSquare, Clock, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
-export function ThankYou() {
+export default function ThankYou() {
   return (
     <div className="bg-neutral-900 min-h-screen">
 
