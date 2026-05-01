@@ -34,14 +34,14 @@ export default function ThankYou() {
 
           {/* CTA TEXT */}
           <div className="mb-8">
-            <a
-              href="sms:+14807428553"
-              className="group inline-flex items-center gap-3 bg-orange-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-orange-600 transition-all duration-300 hover:scale-105"
-            >
-              <MessageSquare size={28} />
-              Text Me Now for Faster Response
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
-            </a>
+            <Link
+  to="/contact"
+  className="group inline-flex items-center gap-3 bg-orange-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-orange-600 transition-all duration-300 hover:scale-105"
+>
+  <MessageSquare size={28} />
+  Contact Me for Faster Response
+  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
+</Link>
 
             <p className="text-sm text-gray-400 mt-3">
               Fastest way to reach me
@@ -53,10 +53,13 @@ export default function ThankYou() {
             <a
               href="tel:+14807428553"
               className="inline-flex items-center gap-2 border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300"
-            >
-              <Phone size={20} />
-              Call 480 742 8553
-            </a>
+           <Link
+  to="/contact"
+  className="inline-flex items-center gap-2 border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300"
+>
+  <Phone size={20} />
+  Go to Contact Page
+</Link>
           </div>
 
         </div>
@@ -177,12 +180,13 @@ export default function ThankYou() {
           <a
             href="sms:+14807428553"
             className="inline-flex items-center gap-2 bg-white text-orange-600 px-8 py-4 rounded-xl font-bold text-lg"
-          >
-            <MessageSquare size={20} />
-            Text 480 742 8553
-          </a>
-
-        </div>
+          <Link
+  to="/contact"
+  className="inline-flex items-center gap-2 border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300"
+>
+  <Phone size={20} />
+  Go to Contact Page
+</Link>
       </section>
 
       {/* LINKS */}
