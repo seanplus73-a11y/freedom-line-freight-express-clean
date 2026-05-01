@@ -549,18 +549,26 @@ export default function Home() {
         <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Need a Vehicle, Part, or Business Item Delivered?
-            </h2>
-            <p className="text-xl text-orange-100 mb-8 font-semibold">
-              Send the pickup and delivery details and I’ll review your route.
-            </p>
+  Need a Vehicle, Auto Parts, or Business Items Delivered in Phoenix or Arizona?
+</h2>
+
+<p className="text-xl text-orange-100 mb-6 font-semibold">
+  Direct owner operated vehicle delivery, auto parts delivery, and business transport across Phoenix and Arizona. No towing. No trailers. Fast text updates.
+</p>
+
+<p className="text-sm text-orange-100 mb-6">
+  Serving Phoenix? 
+  <Link to="/phoenix-delivery" className="underline font-semibold ml-1">
+    View Phoenix vehicle delivery details
+  </Link>
+</p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors"
               >
-                Contact for Quote
+                Get a Fast Quote
               </Link>
 
               <Link
