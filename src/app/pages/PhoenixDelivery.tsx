@@ -32,25 +32,41 @@ export default function PhoenixDelivery() {
       postalCode: "85144",
       addressCountry: "US",
     },
-    areaServed: {
-      "@type": "City",
-      name: "Phoenix",
-      containedIn: { "@type": "State", name: "Arizona" },
-    },
+    areaServed: [
+      "Phoenix AZ",
+      "Mesa AZ",
+      "Chandler AZ",
+      "Gilbert AZ",
+      "Scottsdale AZ",
+      "Queen Creek AZ",
+      "San Tan Valley AZ",
+    ],
     description:
-      "Direct drive-away vehicle pickup and delivery service in Phoenix, AZ. Cars, SUVs, and small trucks that run and drive. No trailers, no towing. Same-day available depending on route and schedule.",
+      "Phoenix AZ vehicle pickup and delivery service. Direct drive-away for cars, SUVs, and small trucks. No towing, no trailers, owner-operated service, and fast text updates.",
     openingHours: "Mo-Su 07:00-19:00",
   };
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    name: "Phoenix Vehicle Pickup and Delivery",
     serviceType: "Vehicle Pickup and Delivery Service",
     provider: {
       "@type": "LocalBusiness",
       name: "Freedom Line Freight Express",
+      telephone: "+1-480-742-8553",
+      url: "https://www.flfreightco.com",
     },
-    areaServed: { "@type": "City", name: "Phoenix" },
+    areaServed: {
+      "@type": "City",
+      name: "Phoenix",
+      containedIn: {
+        "@type": "State",
+        name: "Arizona",
+      },
+    },
+    description:
+      "Direct drive-away vehicle delivery in Phoenix AZ for dealerships, repair shops, auctions, private sellers, and local customers. No towing and no trailers.",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Phoenix Delivery Services",
@@ -59,7 +75,7 @@ export default function PhoenixDelivery() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Car Drive-Away Service Phoenix",
+            name: "Vehicle Delivery Phoenix AZ",
           },
         },
         {
@@ -89,7 +105,7 @@ export default function PhoenixDelivery() {
         name: "Do you offer same-day vehicle delivery in Phoenix?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Same-day vehicle pickup and delivery in Phoenix, AZ may be available depending on distance, schedule, and route availability. Text 480-742-8553 for current availability.",
+          text: "Yes. Same-day vehicle pickup and delivery in Phoenix AZ may be available depending on distance, schedule, route, and vehicle condition. Text 480-742-8553 for current availability.",
         },
       },
       {
@@ -122,19 +138,34 @@ export default function PhoenixDelivery() {
         </title>
         <meta
           name="description"
-          content="Phoenix AZ vehicle pickup and delivery. Direct drive-away service for cars, SUVs, and small trucks that run and drive. No towing, no trailers. Same-day available depending on route."
+          content="Phoenix AZ vehicle pickup and delivery. Direct drive-away service for cars, SUVs, and small trucks. No towing. No trailers. Owner-operated and fully insured."
         />
-        <link rel="canonical" href="https://www.flfreightco.com/phoenix-delivery" />
-        <meta property="og:title" content="Vehicle Pickup and Delivery in Phoenix AZ" />
+        <link
+          rel="canonical"
+          href="https://www.flfreightco.com/phoenix-delivery"
+        />
+        <meta
+          property="og:title"
+          content="Vehicle Pickup and Delivery in Phoenix AZ"
+        />
         <meta
           property="og:description"
-          content="Direct drive-away service for vehicles in Phoenix. No towing. No trailers. Fast, reliable, owner-operated service."
+          content="Direct drive-away vehicle delivery in Phoenix AZ. No towing. No trailers. Owner-operated service with fast text updates."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.flfreightco.com/phoenix-delivery" />
-        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <meta
+          property="og:url"
+          content="https://www.flfreightco.com/phoenix-delivery"
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(businessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <main className="min-h-screen bg-[#0b0f19] text-white overflow-hidden">
@@ -162,15 +193,65 @@ export default function PhoenixDelivery() {
             </p>
 
             <p className="max-w-4xl text-lg text-gray-400 mb-6">
-              Freedom Line Freight Express provides direct drive-away service for cars, SUVs, and small trucks in Phoenix. If it runs and drives, I can help move it from dealer to home, auction to shop, repair shop to customer, or across town.
+              Freedom Line Freight Express provides direct drive-away service
+              for cars, SUVs, and small trucks in Phoenix AZ. If it runs and
+              drives, I can help move it from dealer to home, auction to shop,
+              repair shop to customer, or across town.
+            </p>
+
+            <p className="max-w-4xl text-gray-400 mb-6">
+              Looking for vehicle delivery Phoenix AZ? I provide direct
+              drive-away service without towing, trailers, brokers, or confusing
+              handoffs.
+            </p>
+
+            <p className="max-w-4xl text-gray-400 mb-6">
+              Serving Phoenix areas including Downtown Phoenix, Sky Harbor
+              Airport, Arcadia, Maryvale, Ahwatukee, Camelback Corridor, North
+              Phoenix, and South Phoenix.
             </p>
 
             <p className="max-w-4xl text-gray-400 mb-10">
-              Serving Phoenix areas including Downtown Phoenix, Sky Harbor Airport, Arcadia, Maryvale, Ahwatukee, Camelback Corridor, North Phoenix, and South Phoenix.
+              Also serving nearby areas like{" "}
+              <Link
+                to="/mesa-delivery"
+                className="text-[#f97316] underline font-semibold"
+              >
+                Mesa
+              </Link>
+              ,{" "}
+              <Link
+                to="/chandler-delivery"
+                className="text-[#f97316] underline font-semibold"
+              >
+                Chandler
+              </Link>
+              ,{" "}
+              <Link
+                to="/gilbert-delivery"
+                className="text-[#f97316] underline font-semibold"
+              >
+                Gilbert
+              </Link>
+              , and{" "}
+              <Link
+                to="/scottsdale-delivery"
+                className="text-[#f97316] underline font-semibold"
+              >
+                Scottsdale
+              </Link>
+              .
             </p>
 
             <div className="flex flex-wrap gap-4 text-gray-300 text-sm mb-10">
-              {["No towing", "No trailer", "Direct drive-away", "Text updates"].map((item) => (
+              {[
+                "No towing",
+                "No trailer",
+                "Direct drive-away",
+                "Fully insured",
+                "Owner operated",
+                "Text updates",
+              ].map((item) => (
                 <span key={item} className="flex items-center gap-2">
                   <CheckCircle className="text-[#f97316]" size={16} />
                   {item}
@@ -194,6 +275,12 @@ export default function PhoenixDelivery() {
                 Text Me to Book
               </Link>
             </div>
+
+            <div className="mt-6 text-gray-300 text-sm space-y-1">
+              <p>✔ Fully insured</p>
+              <p>✔ Owner operated service</p>
+              <p>✔ Clear text communication and Deaf-friendly service</p>
+            </div>
           </div>
         </header>
 
@@ -211,15 +298,28 @@ export default function PhoenixDelivery() {
                 </h2>
 
                 <p className="mb-4 text-gray-300 text-lg">
-                  Need a car moved from Sky Harbor Airport, a repair shop, a dealership, auction pickup, or a private seller?
+                  Need a car moved from Sky Harbor Airport, a repair shop, a
+                  dealership, auction pickup, or a private seller?
                 </p>
 
                 <p className="mb-6 text-gray-400">
-                  I specialize in direct point-to-point drive-away for operational vehicles. No waiting for a full trailer load. No confusing handoffs. Your vehicle is driven directly where it needs to go.
+                  I specialize in direct point-to-point drive-away for
+                  operational vehicles. No waiting for a full trailer load. No
+                  confusing handoffs. Your vehicle is driven directly where it
+                  needs to go.
+                </p>
+
+                <p className="mb-6 text-gray-400">
+                  Local Phoenix AZ vehicle delivery is available for
+                  dealerships, repair shops, auctions, car buyers, private
+                  sellers, and customers who need simple vehicle movement
+                  without towing.
                 </p>
 
                 <p className="text-gray-400">
-                  Most local Phoenix deliveries start around $85 depending on distance, route, service type, and schedule availability.
+                  Most local Phoenix deliveries start around $85 depending on
+                  distance, route, service type, timing, and schedule
+                  availability.
                 </p>
               </div>
 
@@ -239,7 +339,10 @@ export default function PhoenixDelivery() {
                     "Same-day local delivery when available",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="text-[#f97316] mt-1 shrink-0" size={18} />
+                      <CheckCircle
+                        className="text-[#f97316] mt-1 shrink-0"
+                        size={18}
+                      />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -247,7 +350,8 @@ export default function PhoenixDelivery() {
 
                 <div className="mt-6 rounded-xl bg-[#f97316]/10 border border-[#f97316]/30 p-5">
                   <p className="text-gray-300">
-                    Vehicle transport is for operable vehicles only. Vehicle must run, drive, steer, and stop safely.
+                    Vehicle transport is for operable vehicles only. Vehicle
+                    must run, drive, steer, and stop safely.
                   </p>
                 </div>
               </div>
@@ -265,7 +369,8 @@ export default function PhoenixDelivery() {
                 Who Uses Phoenix Vehicle Delivery?
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                This service is built for customers and businesses that need a vehicle moved directly, safely, and without towing.
+                This service is built for customers and businesses that need a
+                vehicle moved directly, safely, and without towing.
               </p>
             </div>
 
@@ -274,7 +379,8 @@ export default function PhoenixDelivery() {
                 <Home className="text-[#f97316] mb-4" size={40} />
                 <h3 className="font-bold text-xl mb-3">Car Buyers</h3>
                 <p className="text-gray-400">
-                  Bought a vehicle and need it delivered to your home, shop, airport, or another local address.
+                  Bought a vehicle and need it delivered to your home, shop,
+                  airport, or another local address.
                 </p>
               </div>
 
@@ -282,7 +388,8 @@ export default function PhoenixDelivery() {
                 <Wrench className="text-[#f97316] mb-4" size={40} />
                 <h3 className="font-bold text-xl mb-3">Repair Shops</h3>
                 <p className="text-gray-400">
-                  Move customer vehicles between shops, homes, dealerships, or inspection locations.
+                  Move customer vehicles between shops, homes, dealerships, or
+                  inspection locations.
                 </p>
               </div>
 
@@ -290,7 +397,8 @@ export default function PhoenixDelivery() {
                 <Store className="text-[#f97316] mb-4" size={40} />
                 <h3 className="font-bold text-xl mb-3">Dealerships</h3>
                 <p className="text-gray-400">
-                  Help with dealer trades, customer delivery, auction pickup, and local inventory movement.
+                  Help with dealer trades, customer delivery, auction pickup,
+                  and local inventory movement.
                 </p>
               </div>
             </div>
@@ -310,7 +418,8 @@ export default function PhoenixDelivery() {
               </h2>
 
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Not a broker. Not a random app driver. You work directly with me.
+                Not a broker. Not a random app driver. You work directly with
+                me.
               </p>
             </div>
 
@@ -319,7 +428,8 @@ export default function PhoenixDelivery() {
                 <Car className="text-[#f97316] mb-4" size={40} />
                 <h3 className="mb-3 text-xl font-bold">Direct Drive-Away</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Your vehicle is driven directly to its destination. No trailer transfers, no lot storage, and no towing.
+                  Your vehicle is driven directly to its destination. No trailer
+                  transfers, no lot storage, and no towing.
                 </p>
               </div>
 
@@ -327,7 +437,8 @@ export default function PhoenixDelivery() {
                 <Clock className="text-[#f97316] mb-4" size={40} />
                 <h3 className="mb-3 text-xl font-bold">Fast and Flexible</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Quick Phoenix pickups, dependable scheduling, and clear text updates from pickup to drop off.
+                  Quick Phoenix pickups, dependable scheduling, and clear text
+                  updates from pickup to drop off.
                 </p>
               </div>
 
@@ -335,7 +446,8 @@ export default function PhoenixDelivery() {
                 <ShieldCheck className="text-[#f97316] mb-4" size={40} />
                 <h3 className="mb-3 text-xl font-bold">Owner-Operated</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Local Arizona business. Deaf-owned. Clear written communication and personal accountability.
+                  Local Arizona business. Deaf-owned. Clear written
+                  communication and personal accountability.
                 </p>
               </div>
             </div>
@@ -355,7 +467,9 @@ export default function PhoenixDelivery() {
                 </h2>
 
                 <p className="text-gray-400 mb-6 text-lg">
-                  Vehicle delivery is the main service, but I can also help with local business transport, auto parts, documents, and small packages when schedule and route allow.
+                  Vehicle delivery is the main service, but I can also help
+                  with local business transport, auto parts, documents, and
+                  small packages when schedule and route allow.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -382,7 +496,8 @@ export default function PhoenixDelivery() {
                   <Wrench className="text-[#f97316] mb-4" size={32} />
                   <h3 className="font-bold text-lg mb-2">Auto Parts</h3>
                   <p className="text-gray-400">
-                    Parts pickup and delivery for shops, mechanics, and customers.
+                    Parts pickup and delivery for shops, mechanics, and
+                    customers.
                   </p>
                 </div>
 
@@ -398,7 +513,8 @@ export default function PhoenixDelivery() {
                   <Route className="text-[#f97316] mb-4" size={32} />
                   <h3 className="font-bold text-lg mb-2">Local Routes</h3>
                   <p className="text-gray-400">
-                    Phoenix to Sky Harbor, Downtown, Arcadia, Maryvale, Ahwatukee, or North Phoenix.
+                    Phoenix to Sky Harbor, Downtown, Arcadia, Maryvale,
+                    Ahwatukee, or North Phoenix.
                   </p>
                 </div>
 
@@ -436,8 +552,13 @@ export default function PhoenixDelivery() {
                   a: "Cars, SUVs, and small trucks that run and drive. The vehicle must start, stop, steer safely, and be road ready for drive-away service.",
                 },
               ].map((faq) => (
-                <div key={faq.q} className="bg-[#0b0f19] p-6 rounded-xl border border-white/10">
-                  <h3 className="font-bold text-lg text-white mb-3">{faq.q}</h3>
+                <div
+                  key={faq.q}
+                  className="bg-[#0b0f19] p-6 rounded-xl border border-white/10"
+                >
+                  <h3 className="font-bold text-lg text-white mb-3">
+                    {faq.q}
+                  </h3>
                   <p className="text-gray-400 leading-relaxed">{faq.a}</p>
                 </div>
               ))}
@@ -454,15 +575,21 @@ export default function PhoenixDelivery() {
                 </p>
 
                 <h2 className="mb-6 text-3xl md:text-5xl font-extrabold">
-                  Serving <span className="text-[#f97316]">Phoenix</span> and nearby routes
+                  Serving <span className="text-[#f97316]">Phoenix</span> and
+                  nearby routes
                 </h2>
 
                 <p className="mb-4 text-gray-300 text-lg">
-                  Based in San Tan Valley, I run Phoenix vehicle delivery routes including Downtown Phoenix, Sky Harbor Airport, Arcadia, Maryvale, Ahwatukee, Camelback Corridor, North Phoenix, and South Phoenix.
+                  Based in San Tan Valley, I run Phoenix vehicle delivery routes
+                  including Downtown Phoenix, Sky Harbor Airport, Arcadia,
+                  Maryvale, Ahwatukee, Camelback Corridor, North Phoenix, and
+                  South Phoenix.
                 </p>
 
                 <p className="text-gray-400 mb-8">
-                  Need a vehicle, auto parts, package, or documents moved in Phoenix? I handle scheduled pickups and urgent same-day requests when available.
+                  Need a vehicle, auto parts, package, or documents moved in
+                  Phoenix? I handle scheduled pickups and urgent same-day
+                  requests when available.
                 </p>
 
                 <div className="flex flex-wrap gap-3 text-sm text-gray-300">
@@ -477,7 +604,10 @@ export default function PhoenixDelivery() {
                     "South Phoenix",
                     "Central Phoenix",
                   ].map((area) => (
-                    <span key={area} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                    <span
+                      key={area}
+                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2"
+                    >
                       {area}
                     </span>
                   ))}
@@ -490,7 +620,9 @@ export default function PhoenixDelivery() {
                 </h2>
 
                 <p className="mb-6 text-gray-300">
-                  Get a fast quote for vehicle pickup and delivery in Phoenix AZ. Most quotes are reviewed quickly when you send the pickup and drop off details.
+                  Get a fast quote for vehicle pickup and delivery in Phoenix
+                  AZ. Most quotes are reviewed quickly when you send the pickup
+                  and drop off details.
                 </p>
 
                 <div className="space-y-4 text-gray-300 mb-8">
@@ -517,17 +649,61 @@ export default function PhoenixDelivery() {
               </h2>
 
               <p className="flex flex-wrap justify-center gap-4 text-gray-300">
-                <Link to="/tempe-delivery" className="hover:text-[#f97316] transition-colors">Tempe</Link>
+                <Link
+                  to="/"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  Arizona Delivery Home
+                </Link>
                 <span>•</span>
-                <Link to="/mesa-delivery" className="hover:text-[#f97316] transition-colors">Mesa</Link>
+                <Link
+                  to="/service-areas"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  All Service Areas
+                </Link>
                 <span>•</span>
-                <Link to="/scottsdale-delivery" className="hover:text-[#f97316] transition-colors">Scottsdale</Link>
+                <Link
+                  to="/tempe-delivery"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  Tempe
+                </Link>
                 <span>•</span>
-                <Link to="/chandler-delivery" className="hover:text-[#f97316] transition-colors">Chandler</Link>
+                <Link
+                  to="/mesa-delivery"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  Mesa
+                </Link>
                 <span>•</span>
-                <Link to="/gilbert-delivery" className="hover:text-[#f97316] transition-colors">Gilbert</Link>
+                <Link
+                  to="/scottsdale-delivery"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  Scottsdale
+                </Link>
                 <span>•</span>
-                <Link to="/queen-creek-delivery" className="hover:text-[#f97316] transition-colors">Queen Creek</Link>
+                <Link
+                  to="/chandler-delivery"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  Chandler
+                </Link>
+                <span>•</span>
+                <Link
+                  to="/gilbert-delivery"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  Gilbert
+                </Link>
+                <span>•</span>
+                <Link
+                  to="/queen-creek-delivery"
+                  className="hover:text-[#f97316] transition-colors"
+                >
+                  Queen Creek
+                </Link>
               </p>
             </div>
 
@@ -537,7 +713,8 @@ export default function PhoenixDelivery() {
               </h2>
 
               <p className="mb-6 text-center text-gray-400">
-                Direct drive-away service throughout Phoenix and nearby Phoenix routes.
+                Direct drive-away service throughout Phoenix and nearby Phoenix
+                routes.
               </p>
 
               <div className="overflow-hidden rounded-xl border border-white/10">
@@ -564,7 +741,8 @@ export default function PhoenixDelivery() {
             </h2>
 
             <p className="text-orange-100 text-lg mb-8">
-              Skip towing and trailer delays. Get direct drive-away pickup with clear text communication.
+              Skip towing and trailer delays. Get direct drive-away pickup with
+              clear text communication.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
