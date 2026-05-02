@@ -173,7 +173,7 @@ export default function Home() {
                   to="/contact"
                   className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
                 >
-                  Contact for Quote
+                 Text for Quick Quote
                 </Link>
 
                 <Link
@@ -535,6 +535,18 @@ export default function Home() {
                 [
                   "Do you offer same day service?",
                   "Same day or next day service may be available depending on schedule, distance, route, and service type.",
+                ],
+                [
+                 "How can I get a car delivered today in Phoenix?",
+                 "Text Freedom Line Freight Express with the pickup location, delivery location, vehicle details, and timing. Same day vehicle delivery may be available depending on schedule and distance.",
+                ],
+                [
+                 "Is there a way to move a car without towing?",
+                 "Yes. Freedom Line Freight Express offers drive away vehicle delivery. The vehicle is driven directly instead of being towed or loaded on a trailer.",
+                ],
+                [
+                 "Why choose Freedom Line Freight Express over a broker?",
+                 "You work directly with an owner operator. There is no third party handoff, no app dispatch, and no random driver.",
                 ],
               ].map(([q, a]) => (
                 <div key={q} className="bg-neutral-950 p-6 rounded-lg border border-neutral-800">
