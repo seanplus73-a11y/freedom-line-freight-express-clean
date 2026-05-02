@@ -571,13 +571,7 @@ export default function Home() {
                   "Same day or next day service may be available depending on schedule, distance, route, and service type.",
                 ],
                 [
-                 "How can I get a car delivered today in Phoenix?",
-                 "Text Freedom Line Freight Express with the pickup location, delivery location, vehicle details, and timing. Same day vehicle delivery may be available depending on schedule and distance.",
-                ],
-                [
-                 "Is there a way to move a car without towing?",
-                 "Yes. Freedom Line Freight Express offers drive away vehicle delivery. The vehicle is driven directly instead of being towed or loaded on a trailer.",
-                ],
+                 
                 [
                  "Why choose Freedom Line Freight Express over a broker?",
                  "You work directly with an owner operator. There is no third party handoff, no app dispatch, and no random driver.",
