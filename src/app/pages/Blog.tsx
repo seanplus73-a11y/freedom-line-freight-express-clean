@@ -1,80 +1,93 @@
-import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, FileText } from "lucide-react";
-
-const posts = [
-  {
-    title: "Phoenix Vehicle Delivery Same Day No Towing Service",
-    description:
-      "Learn how same-day vehicle delivery works in Phoenix AZ without towing or trailers.",
-    url: "/blog/phoenix-vehicle-delivery-same-day",
-  },
-  {
-    title: "What Is Vehicle Delivery Service in Arizona?",
-    description:
-      "A simple guide explaining drive-away vehicle delivery for cars, SUVs, and small trucks.",
-    url: "/blog/what-is-vehicle-delivery-service",
-  },
-  {
-    title: "How Dealerships Move Cars Fast Without Towing",
-    description:
-      "How dealerships use direct vehicle delivery for faster customer service and inventory movement.",
-    url: "/blog/dealerships-move-cars-without-towing",
-  },
-];
+import { Link } from "react-router";
+import { getAllPosts } from "./blogUtils";
+import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
 
 export default function Blog() {
+  const posts = getAllPosts();
+
   return (
     <>
       <Helmet>
-        <title>Arizona Delivery Blog | Freedom Line Freight Express</title>
+        <title>Blog | Freedom Line Freight Express</title>
         <meta
           name="description"
-          content="Helpful delivery guides for Phoenix vehicle delivery, auto parts delivery, document courier service, and key and title runner service in Arizona."
+          content="Tips, guides, and insights on vehicle delivery, auto transport, and logistics in the Phoenix Arizona area from Freedom Line Freight Express."
         />
         <link rel="canonical" href="https://www.flfreightco.com/blog" />
       </Helmet>
 
-      <main className="min-h-screen bg-[#0b0f19] text-white">
-        <section className="px-6 py-24 border-b border-white/10">
-          <div className="mx-auto max-w-6xl">
-            <p className="text-[#f97316] font-bold uppercase tracking-widest mb-3">
-              FLF Express Blog
-            </p>
+      <main className="bg-neutral-950 text-white min-h-screen">
 
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-              Arizona Delivery Guides
-            </h1>
-
-            <p className="max-w-3xl text-gray-400 text-lg">
-              Helpful articles about vehicle delivery, auto parts courier
-              service, document delivery, and key and title runner service in
-              Phoenix and nearby Arizona cities.
-            </p>
+        {/* HERO */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-neutral-950 via-neutral-900 to-black py-20">
+          <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-orange-500/10 blur-3xl" />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+            <div className="max-w-3xl">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-orange-500 bg-black/50 px-4 py-2 text-sm font-semibold">
+                <Tag className="text-orange-500" size={16} />
+                Freedom Line Blog
+              </div>
+              <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+                Vehicle Transport Tips and{" "}
+                <span className="text-orange-500">Arizona Guides</span>
+              </h1>
+              <p className="text-lg text-gray-300">
+                Helpful articles on vehicle delivery, auto transport, and getting
+                the most out of your car in the Phoenix metro area.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="px-6 py-20">
-          <div className="mx-auto max-w-6xl grid md:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <Link
-                key={post.url}
-                to={post.url}
-                className="rounded-2xl border border-white/10 bg-[#111827] p-7 hover:border-[#f97316] hover:-translate-y-1 transition-all"
-              >
-                <FileText className="text-[#f97316] mb-4" size={36} />
-
-                <h2 className="text-xl font-bold mb-3">{post.title}</h2>
-
-                <p className="text-gray-400 mb-5">{post.description}</p>
-
-                <span className="inline-flex items-center text-[#f97316] font-bold">
-                  Read article <ArrowRight className="ml-2" size={18} />
-                </span>
-              </Link>
-            ))}
+        {/* POSTS GRID */}
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {posts.length === 0 ? (
+              <div className="text-center py-20 text-gray-500">
+                No posts yet. Check back soon!
+              </div>
+            ) : (
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {posts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group rounded-xl border border-neutral-800 bg-neutral-900 p-6 hover:border-orange-500 hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                  >
+                    {post.category && (
+                      <span className="mb-3 inline-block self-start rounded-full bg-orange-500/10 border border-orange-500/30 px-3 py-1 text-xs font-semibold text-orange-400">
+                        {post.category}
+                      </span>
+                    )}
+                    <h2 className="mb-3 text-xl font-bold text-white group-hover:text-orange-400 transition-colors leading-snug">
+                      {post.title}
+                    </h2>
+                    <p className="mb-4 text-gray-400 text-sm leading-relaxed flex-1">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-gray-500 mt-auto pt-4 border-t border-neutral-800">
+                      <div className="flex items-center gap-3">
+                        <span className="flex items-center gap-1">
+                          <Calendar size={12} className="text-orange-500" />
+                          {post.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock size={12} className="text-orange-500" />
+                          {post.readTime} min read
+                        </span>
+                      </div>
+                      <span className="flex items-center gap-1 text-orange-400 font-medium">
+                        Read <ArrowRight size={12} />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </section>
+
       </main>
     </>
   );
