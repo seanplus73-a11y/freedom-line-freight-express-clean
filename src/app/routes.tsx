@@ -1,5 +1,5 @@
 import { createBrowserRouter, Outlet } from "react-router";
-import { Navbar } from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,7 +8,7 @@ import { Contact } from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import { RequestPickup } from "./pages/RequestPickup";
 import AcceptQuote from "./pages/AcceptQuote";
-import { ThankYou } from "./pages/ThankYou";
+import ThankYou from "./pages/ThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 
