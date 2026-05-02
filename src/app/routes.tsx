@@ -49,8 +49,10 @@ import Courier from "./pages/Courier";
 import VehicleDelivery from "./pages/VehicleDelivery";
 import ThankYou from "./pages/ThankYou";
 import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
-import Blog from "./pages/Blog";
 
+// Blog
+import Blog from "./pages/blog/Blog";
+import BlogPost from "./pages/blog/BlogPost";
 
 function RootLayout() {
   return (
@@ -87,7 +89,9 @@ export const router = createBrowserRouter([
       { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
       { path: "cost-to-have-someone-drive-your-car", element: <CostToDriveCar /> },
       { path: "can-someone-drive-my-car-for-me", element: <CanSomeoneDriveMyCarForMe /> },
+      { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
       { path: "service-areas", element: <ServiceAreas /> },
+
       { path: "phoenix-delivery", element: <PhoenixDelivery /> },
       { path: "mesa-delivery", element: <MesaDelivery /> },
       { path: "chandler-delivery", element: <ChandlerDelivery /> },
@@ -112,16 +116,17 @@ export const router = createBrowserRouter([
       { path: "chandler-vehicle-delivery", element: <Navigate to="/chandler-delivery" replace /> },
       { path: "queen-creek-vehicle-delivery", element: <Navigate to="/queen-creek-delivery" replace /> },
       { path: "san-tan-valley-vehicle-delivery", element: <Navigate to="/san-tan-valley-delivery" replace /> },
-      { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
+
       { path: "package-document-delivery", element: <PackageDocumentDelivery /> },
       { path: "business-transport", element: <BusinessTransport /> },
       { path: "courier", element: <Courier /> },
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
-      { path: "courier", element: <Courier /> },
-      { path: "vehicle-delivery", element: <VehicleDelivery /> },
       { path: "thank-you", element: <ThankYou /> },
       { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
-      { path: "/blog",element: <Blog />,},
+
+      // Blog routes
+      { path: "blog", element: <Blog /> },
+      { path: "blog/:slug", element: <BlogPost /> },
     ],
   },
 ]);
