@@ -501,12 +501,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-20 bg-black border-y border-neutral-800">
+       <section className="py-20 bg-black border-y border-neutral-800">
   <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-12">
       <h2 className="text-4xl md:text-5xl font-bold mb-4">
-  Quick Answers for <span className="text-orange-500">Arizona Delivery</span>
-</h2>
+        Quick Answers for <span className="text-orange-500">Arizona Delivery</span>
+      </h2>
       <p className="text-xl text-gray-300">
         Direct answers about same day vehicle delivery, drive away service, and auto parts delivery in Arizona.
       </p>
@@ -514,22 +514,20 @@ export default function Home() {
 
     <div className="grid md:grid-cols-3 gap-6">
       {[
-     [
-  {
-    q: "How does vehicle delivery work?",
-    a: "Freedom Line Freight Express provides direct drive away vehicle delivery. I pick up the vehicle and drive it directly to the destination with no towing or trailers.",
-  },
-  {
-    q: "Can I move a car without towing?",
-    a: "Yes. Vehicles are driven directly instead of being towed or loaded on a trailer.",
-  },
-  {
-    q: "Do you deliver auto parts and business items?",
-    a: "Yes. Auto parts, documents, and business items can be delivered across Phoenix and Arizona depending on route and schedule.",
-  },
-]
-      ].map((item) => (
-        <div key={item.q} className={cardClass}>
+        {
+          q: "How does vehicle delivery work?",
+          a: "Freedom Line Freight Express provides direct drive away vehicle delivery. I pick up the vehicle and drive it directly to the destination with no towing or trailers.",
+        },
+        {
+          q: "Can I move a car without towing?",
+          a: "Yes. Vehicles are driven directly instead of being towed or loaded on a trailer.",
+        },
+        {
+          q: "Do you deliver auto parts and business items?",
+          a: "Yes. Auto parts, documents, and business items can be delivered across Phoenix and Arizona depending on route and schedule.",
+        },
+      ].map((item, index) => (
+        <div key={index} className={cardClass}>
           <h3 className="text-xl font-bold mb-3 text-orange-500">{item.q}</h3>
           <p className="text-gray-300 leading-relaxed">{item.a}</p>
         </div>
