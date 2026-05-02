@@ -52,7 +52,7 @@ import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
 
 // Blog
 import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+
 
 function RootLayout() {
   return (
@@ -126,7 +126,7 @@ export const router = createBrowserRouter([
 
       // Blog routes
       { path: "blog", element: <Blog /> },
-      { path: "blog/:slug", element: <BlogPost /> },
+      
     ],
   },
 ]);
