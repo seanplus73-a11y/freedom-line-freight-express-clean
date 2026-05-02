@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+mport { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
@@ -10,7 +10,7 @@ import {
   Clock,
   CheckCircle,
 } from "lucide-react";
-import { getAllBlogPosts, getFeaturedPost, getRegularPosts } from "../data/blogPostsContent";
+import { getAllBlogPosts, getFeaturedPost, getRegularPosts } from "../data/blogPostsContent.tsx";
 
 // Icon mapping
 const iconMap: { [key: string]: any } = {
