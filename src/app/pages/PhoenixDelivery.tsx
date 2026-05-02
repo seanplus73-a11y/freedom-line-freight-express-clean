@@ -631,7 +631,7 @@ export default function PhoenixDelivery() {
                 </p>
 
                 <p className="text-gray-400 mb-8">
-                  Need a vehicle, auto parts, package, or documents moved in
+                  Need a vehicle, auto parts, package, or documents delivered in
                   Phoenix? I handle scheduled pickups and urgent same-day
                   requests when available.
                 </p>
