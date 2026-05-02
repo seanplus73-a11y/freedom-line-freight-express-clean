@@ -529,6 +529,53 @@ export default function PhoenixDelivery() {
             </div>
           </div>
         </section>
+        <section className="py-20 bg-[#0b0f19]">
+  <div className="mx-auto max-w-6xl px-6">
+    <div className="text-center mb-14">
+      <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+        Phoenix Vehicle Delivery
+        <span className="text-[#f97316]"> Quick Answers</span>
+      </h2>
+
+      <p className="text-gray-400 max-w-2xl mx-auto">
+        Direct answers to common Phoenix vehicle delivery questions
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      <div className={cardClass}>
+        <h3 className="font-bold text-lg mb-3 text-[#f97316]">
+          How can I get a car delivered today in Phoenix?
+        </h3>
+        <p className="text-gray-400">
+          Same day vehicle delivery in Phoenix may be available depending on
+          schedule and distance. Send pickup location, delivery location, and
+          vehicle details by text for a fast quote.
+        </p>
+      </div>
+
+      <div className={cardClass}>
+        <h3 className="font-bold text-lg mb-3 text-[#f97316]">
+          Can I move a car without towing in Phoenix?
+        </h3>
+        <p className="text-gray-400">
+          Yes. Drive-away vehicle delivery means the car is driven directly
+          instead of being towed or loaded on a trailer.
+        </p>
+      </div>
+
+      <div className={cardClass}>
+        <h3 className="font-bold text-lg mb-3 text-[#f97316]">
+          Do you deliver auto parts in Phoenix?
+        </h3>
+        <p className="text-gray-400">
+          Yes. Auto parts, documents, and business items can be delivered across
+          Phoenix depending on route and schedule.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         <section className="border-y border-white/10 bg-[#111827] py-20">
           <div className="mx-auto max-w-6xl px-6">
