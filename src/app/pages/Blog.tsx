@@ -1,4 +1,4 @@
-mport { Link } from "react-router";
+import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
