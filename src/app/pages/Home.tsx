@@ -91,6 +91,36 @@ export default function Home() {
       ],
     },
   };
+  const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do you tow vehicles?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Vehicle delivery is drive-away only. I personally drive operable vehicles directly to the destination.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I move a car without towing?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Vehicles are driven directly instead of being towed or loaded on a trailer.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you deliver auto parts and business items?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Auto parts, documents, and business items can be delivered across Phoenix and Arizona depending on route and schedule.",
+      },
+    },
+  ],
+};
 
   const cardClass =
     "bg-neutral-900 p-7 rounded-xl border border-neutral-800 hover:border-orange-500 hover:-translate-y-1 transition-all duration-300";
@@ -113,6 +143,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <div className="bg-neutral-950 text-white">
