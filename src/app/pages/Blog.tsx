@@ -1,4 +1,4 @@
-mport { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router";
 import { getAllPosts } from "./blogUtils";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
@@ -92,3 +92,5 @@ export default function Blog() {
     </>
   );
 }
+
+
