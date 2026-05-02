@@ -116,10 +116,10 @@ export const router = createBrowserRouter([
       { path: "business-transport", element: <BusinessTransport /> },
       { path: "courier", element: <Courier /> },
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
-      { path: "/thank-you", element: <ThankYou /> }
-      {path: "/arizona-delivery-guide",element: <ArizonaDeliveryGuide /> },
-];
-       
+      { path: "courier", element: <Courier /> },
+      { path: "vehicle-delivery", element: <VehicleDelivery /> },
+      { path: "thank-you", element: <ThankYou /> },
+      { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
     ],
   },
 ]);
