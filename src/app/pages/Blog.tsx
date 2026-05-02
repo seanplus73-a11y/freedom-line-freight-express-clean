@@ -10,40 +10,19 @@ import {
   Clock,
   CheckCircle,
 } from "lucide-react";
+import { getAllBlogPosts, getFeaturedPost, getRegularPosts } from "../data/blogPostsContent";
 
-const posts = [
-  {
-    title: "Phoenix Vehicle Delivery Same Day No Towing Service",
-    description:
-      "Learn how same-day vehicle delivery works in Phoenix AZ without towing or trailers.",
-    url: "/blog/phoenix-vehicle-delivery-same-day",
-    category: "Vehicle Delivery",
-    icon: Car,
-    featured: true,
-  },
-  {
-    title: "What Is Vehicle Delivery Service in Arizona?",
-    description:
-      "A simple guide explaining drive-away vehicle delivery for cars, SUVs, and small trucks.",
-    url: "/blog/what-is-vehicle-delivery-service",
-    category: "Guide",
-    icon: FileText,
-    featured: false,
-  },
-  {
-    title: "How Dealerships Move Cars Fast Without Towing",
-    description:
-      "How dealerships use direct vehicle delivery for faster customer service and inventory movement.",
-    url: "/blog/dealerships-move-cars-without-towing",
-    category: "Dealerships",
-    icon: KeyRound,
-    featured: false,
-  },
-];
+// Icon mapping
+const iconMap: { [key: string]: any } = {
+  Car,
+  FileText,
+  KeyRound,
+  Wrench,
+};
 
 export default function Blog() {
-  const featuredPost = posts.find((post) => post.featured);
-  const regularPosts = posts.filter((post) => !post.featured);
+  const featuredPost = getFeaturedPost();
+  const regularPosts = getRegularPosts();
 
   return (
     <>
@@ -130,7 +109,7 @@ export default function Blog() {
               </div>
 
               <Link
-                to={featuredPost.url}
+                to={`/blog/${featuredPost.slug}`}
                 className="group grid gap-8 rounded-3xl border border-white/10 bg-[#0b0f19] p-8 md:grid-cols-[1.2fr_0.8fr] hover:border-[#f97316] hover:shadow-[0_0_35px_rgba(249,115,22,0.18)] transition-all"
               >
                 <div>
@@ -153,7 +132,10 @@ export default function Blog() {
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#f97316]/20 to-black p-8 flex flex-col justify-between">
-                  <Car className="text-[#f97316] mb-8" size={56} />
+                  {(() => {
+                    const Icon = iconMap[featuredPost.icon] || Car;
+                    return <Icon className="text-[#f97316] mb-8" size={56} />;
+                  })()}
 
                   <div>
                     <p className="text-gray-300 font-semibold mb-3">
@@ -189,12 +171,12 @@ export default function Blog() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {regularPosts.map((post) => {
-                const Icon = post.icon;
+                const Icon = iconMap[post.icon] || FileText;
 
                 return (
                   <Link
-                    key={post.url}
-                    to={post.url}
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
                     className="group rounded-2xl border border-white/10 bg-[#111827] p-7 hover:border-[#f97316] hover:shadow-[0_0_30px_rgba(249,115,22,0.16)] hover:-translate-y-1 transition-all"
                   >
                     <div className="mb-5 flex items-center justify-between gap-4">
