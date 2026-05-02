@@ -49,6 +49,7 @@ import Courier from "./pages/Courier";
 import VehicleDelivery from "./pages/VehicleDelivery";
 import ThankYou from "./pages/ThankYou";
 import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
+import Blog from "./pages/Blog";
 
 
 function RootLayout() {
@@ -120,6 +121,7 @@ export const router = createBrowserRouter([
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
       { path: "thank-you", element: <ThankYou /> },
       { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
+      { path: "/blog",element: <Blog />,},
     ],
   },
 ]);
