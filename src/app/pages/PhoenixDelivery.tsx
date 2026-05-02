@@ -627,10 +627,7 @@ export default function PhoenixDelivery() {
                 </h2>
 
                 <p className="mb-4 text-gray-300 text-lg">
-                  Based in San Tan Valley, I run Phoenix vehicle delivery routes
-                  including Downtown Phoenix, Sky Harbor Airport, Arcadia,
-                  Maryvale, Ahwatukee, Camelback Corridor, North Phoenix, and
-                  South Phoenix.
+                  Based in San Tan Valley, I run Phoenix vehicle delivery routes and surrounding Arizona cities including Mesa, Chandler, Gilbert, Scottsdale, Tempe, Queen Creek, and Downtown Phoenix, Sky Harbor Airport, Arcadia, Maryvale, Ahwatukee, Camelback Corridor, North Phoenix, and South Phoenix.
                 </p>
 
                 <p className="text-gray-400 mb-8">
@@ -692,10 +689,14 @@ export default function PhoenixDelivery() {
 
             <div className="mx-auto mt-16 max-w-4xl text-center">
               <h2 className="mb-6 text-2xl font-bold text-white">
-                Nearby Cities We Serve
-              </h2>
+  Nearby Cities We Serve
+</h2>
 
-              <p className="flex flex-wrap justify-center gap-4 text-gray-300">
+<p className="mb-6 text-gray-300 text-center max-w-2xl mx-auto">
+  I provide vehicle delivery, auto parts courier service, and drive away transport across Phoenix and nearby cities including Mesa, Chandler, Gilbert, Scottsdale, Tempe, and Queen Creek. Services are available for dealerships, repair shops, and individuals needing fast, direct delivery.
+</p>
+
+<p className="flex flex-wrap justify-center gap-4 text-gray-300">
                 <Link
                   to="/"
                   className="hover:text-[#f97316] transition-colors"
