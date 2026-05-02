@@ -501,6 +501,40 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="py-20 bg-black border-y border-neutral-800">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        Quick Answers for <span className="text-orange-500">Phoenix Delivery</span>
+      </h2>
+      <p className="text-xl text-gray-300">
+        Direct answers about same day vehicle delivery, drive away service, and auto parts delivery in Arizona.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      {[
+        {
+          q: "How can I get a car delivered today in Phoenix?",
+          a: "Freedom Line Freight Express offers same day vehicle delivery in Phoenix when schedule and distance allow. Text pickup location, delivery location, vehicle details, and preferred time for a quick quote.",
+        },
+        {
+          q: "Can I move a car without towing?",
+          a: "Yes. Freedom Line Freight Express provides drive away vehicle delivery. The vehicle is driven directly instead of being towed or loaded on a trailer.",
+        },
+        {
+          q: "Do you deliver auto parts in Phoenix?",
+          a: "Yes. Freedom Line Freight Express delivers auto parts, documents, and business items across Phoenix metro and nearby Arizona cities.",
+        },
+      ].map((item) => (
+        <div key={item.q} className={cardClass}>
+          <h3 className="text-xl font-bold mb-3 text-orange-500">{item.q}</h3>
+          <p className="text-gray-300 leading-relaxed">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
         <section className="py-24 bg-neutral-900 border-y border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
