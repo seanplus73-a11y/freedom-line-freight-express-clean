@@ -546,37 +546,35 @@ export default function Home() {
 
             <div className="space-y-6">
               {[
-                [
-                  "Do you tow vehicles?",
-                  "No. Vehicle delivery is drive-away only. I personally drive operable vehicles directly to the destination.",
-                ],
-                [
-                  "What vehicles do you move?",
-                  "I move cars, SUVs, and small trucks that run and drive safely. I do not tow vehicles or use trailers.",
-                ],
-                [
-                  "Do you deliver auto parts?",
-                  "Yes. I can deliver auto parts, documents, business items, and small packages depending on route and schedule.",
-                ],
-                [
-                  "Do you work with dealerships and repair shops?",
-                  "Yes. I help dealerships, repair shops, and businesses with vehicle moves, parts runs, and direct delivery support.",
-                ],
-                [
-                  "How do you communicate?",
-                  "Text or email only. This keeps communication fast, clear, and documented.",
-                ],
-                [
-                  "Do you offer same day service?",
-                  "Same day or next day service may be available depending on schedule, distance, route, and service type.",
-                ],
-                [
-                 
-                [
-                 "Why choose Freedom Line Freight Express over a broker?",
-                 "You work directly with an owner operator. There is no third party handoff, no app dispatch, and no random driver.",
-                ],
-              ].map(([q, a]) => (
+  [
+    "Do you tow vehicles?",
+    "No. Vehicle delivery is drive-away only. I personally drive operable vehicles directly to the destination.",
+  ],
+  [
+    "What vehicles do you move?",
+    "I move cars, SUVs, and small trucks that run and drive safely. I do not tow vehicles or use trailers.",
+  ],
+  [
+    "Do you deliver auto parts?",
+    "Yes. I can deliver auto parts, documents, business items, and small packages depending on route and schedule.",
+  ],
+  [
+    "Do you work with dealerships and repair shops?",
+    "Yes. I help dealerships, repair shops, and businesses with vehicle moves, parts runs, and direct delivery support.",
+  ],
+  [
+    "How do you communicate?",
+    "Text or email only. This keeps communication fast, clear, and documented.",
+  ],
+  [
+    "Do you offer same day service?",
+    "Same day or next day service may be available depending on schedule, distance, route, and service type.",
+  ],
+  [
+    "Why choose Freedom Line Freight Express over a broker?",
+    "You work directly with an owner operator. There is no third party handoff, no app dispatch, and no random driver.",
+  ],
+].map(([q, a]) => (
                 <div key={q} className="bg-neutral-950 p-6 rounded-lg border border-neutral-800">
                   <h3 className="text-xl font-bold mb-2">{q}</h3>
                   <p className="text-gray-300 leading-relaxed">{a}</p>
