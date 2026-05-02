@@ -514,7 +514,7 @@ export default function Home() {
 
     <div className="grid md:grid-cols-3 gap-6">
       {[
-       [
+     [
   {
     q: "How does vehicle delivery work?",
     a: "Freedom Line Freight Express provides direct drive away vehicle delivery. I pick up the vehicle and drive it directly to the destination with no towing or trailers.",
