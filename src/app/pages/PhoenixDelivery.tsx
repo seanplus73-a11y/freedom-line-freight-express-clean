@@ -635,6 +635,16 @@ export default function PhoenixDelivery() {
                   Phoenix? I handle scheduled pickups and urgent same-day
                   requests when available.
                 </p>
+                <p className="mt-4 text-gray-300">
+  Want to understand how fast delivery works in Arizona?{" "}
+  <Link
+    to="/arizona-delivery-guide"
+    className="text-orange-500 hover:underline"
+  >
+    Read our Arizona delivery guide
+  </Link>
+  .
+</p>
 
                 <div className="flex flex-wrap gap-3 text-sm text-gray-300">
                   {[
@@ -753,6 +763,13 @@ export default function PhoenixDelivery() {
                   Queen Creek
                 </Link>
               </p>
+              <span>•</span>
+<Link
+  to="/arizona-delivery-guide"
+  className="hover:text-[#f97316] transition-colors"
+>
+  Delivery Guide
+</Link>
             </div>
 
             <div className="mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-[#111827] p-8">
