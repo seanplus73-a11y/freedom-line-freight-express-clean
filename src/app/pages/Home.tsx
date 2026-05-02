@@ -226,6 +226,9 @@ export default function Home() {
                 <Link to="/courier" className="hover:text-orange-500 underline">
                   Courier Service
                 </Link>
+                <Link to="/arizona-delivery-guide" className="hover:text-orange-500 underline">
+  Arizona Delivery Guide
+</Link>
               </div>
 
               <p className="mt-5 text-sm text-gray-300">
