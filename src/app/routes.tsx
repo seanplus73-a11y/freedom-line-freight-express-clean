@@ -51,8 +51,8 @@ import ThankYou from "./pages/ThankYou";
 import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
 
 // Blog
-import Blog from "./pages/blog/Blog";
-import BlogPost from "./pages/blog/BlogPost";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function RootLayout() {
   return (
