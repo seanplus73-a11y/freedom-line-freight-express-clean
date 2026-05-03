@@ -1,6 +1,6 @@
 import { useParams, Navigate, Link } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowLeft, ArrowRight, MessageSquare, Phone } from "lucide-react";
 
 // Blog post data interface
 interface BlogPostData {
@@ -498,7 +498,31 @@ export default function BlogPost() {
         <link rel="canonical" href={`https://www.flfreightco.com/blog/${post.slug}`} />
       </Helmet>
 
-      <main className="min-h-screen bg-[#0b0f19] text-white">
+      <main className="min-h-screen bg-[#0b0f19] text-white pb-24">
+        {/* Sticky Contact Bar */}
+<div className="fixed bottom-0 left-0 z-50 w-full border-t border-white/10 bg-[#111827]/95 backdrop-blur">
+  <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
+    <a
+      href="sms:4807428553"
+      className="flex-1 rounded-xl bg-[#f97316] px-4 py-3 text-center font-bold text-white hover:bg-orange-500"
+    >
+      <span className="inline-flex items-center justify-center gap-2">
+        <MessageSquare size={18} />
+        Text Now
+      </span>
+    </a>
+
+    <a
+      href="tel:4807428553"
+      className="flex-1 rounded-xl border border-white/20 bg-white px-4 py-3 text-center font-bold text-[#111827] hover:bg-gray-100"
+    >
+      <span className="inline-flex items-center justify-center gap-2">
+        <Phone size={18} />
+        Call Now
+      </span>
+    </a>
+  </div>
+</div>
         {/* Back to Blog */}
         <section className="border-b border-white/10 bg-[#111827] px-6 py-6">
           <div className="mx-auto max-w-4xl">
@@ -557,11 +581,11 @@ export default function BlogPost() {
                     <ArrowRight size={20} />
                   </Link>
                   <a
-                    href="sms:+14804772400"
+                    href="sms:+14807428553"
                     className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-[#f97316] transition-all"
                   >
                     <MessageSquare size={20} />
-                    Text: (480) 477-2400
+                    Text: (480) 742 8553
                   </a>
                 </div>
                 <p className="text-orange-100 mt-6 text-sm">
