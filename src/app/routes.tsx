@@ -12,6 +12,9 @@ import ThankYou from "./pages/ThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import PhoenixDelivery from "./pages/PhoenixDelivery";
+import MesaDelivery from "./pages/MesaDelivery";
+import ChandlerDelivery from "./pages/ChandlerDelivery";
+
 
 
 // Freedom Line routing configuration
@@ -68,6 +71,9 @@ export const router = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "blog/:slug", element: <BlogPost /> },
       { path: "phoenix-delivery", element: <PhoenixDelivery /> },
+      { path: "mesa-delivery", element: <MesaDelivery /> },
+      { path: "chandler-delivery", element: <ChandlerDelivery /> },
+
 
     ],
   },
