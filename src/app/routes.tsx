@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from "react-router";
+import { createBrowserRouter, Outlet, Navigate } from "react-router";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import Home from "./pages/Home";
@@ -21,6 +21,21 @@ import ScottsdaleDelivery from "./pages/ScottsdaleDelivery";
 import CasaGrandeDelivery from "./pages/CasaGrandeDelivery";
 import TempeDelivery from "./pages/TempeDelivery";
 import ServiceAreas from "./pages/ServiceAreas";
+import AutoPartsDelivery from "./pages/AutoPartsDelivery";
+import PhoenixAutoPartsDelivery from "./pages/PhoenixAutoPartsDelivery";
+import MesaAutoPartsDelivery from "./pages/MesaAutoPartsDelivery";
+import ChandlerAutoPartsDelivery from "./pages/ChandlerAutoPartsDelivery";
+import GilbertAutoPartsDelivery from "./pages/GilbertAutoPartsDelivery";
+import QueenCreekAutoPartsDelivery from "./pages/QueenCreekAutoPartsDelivery";
+import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery";
+import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
+import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
+import TempeAutoPartsDelivery from "./pages/TempeAutoPartsDelivery";
+
+
+
+
+
 
 
 
@@ -93,6 +108,31 @@ export const router = createBrowserRouter([
       { path: "casa-grande-delivery", element: <CasaGrandeDelivery /> },
       { path: "tempe-delivery", element: <TempeDelivery /> },
       { path: "service-areas", element: <ServiceAreas /> },
+      
+      { path: "auto-parts-delivery", element: <AutoPartsDelivery /> },
+      { path: "phoenix-auto-parts-delivery", element: <PhoenixAutoPartsDelivery /> },
+      { path: "mesa-auto-parts-delivery", element: <MesaAutoPartsDelivery /> },
+      { path: "chandler-auto-parts-delivery", element: <ChandlerAutoPartsDelivery /> },
+      { path: "gilbert-auto-parts-delivery", element: <GilbertAutoPartsDelivery /> },
+      { path: "queen-creek-auto-parts-delivery", element: <QueenCreekAutoPartsDelivery /> },
+      { path: "san-tan-valley-auto-parts-delivery", element: <SanTanValleyAutoPartsDelivery /> },
+      { path: "scottsdale-auto-parts-delivery", element: <ScottsdaleAutoPartsDelivery /> },
+      { path: "casa-grande-auto-parts-delivery", element: <CasaGrandeAutoPartsDelivery /> },
+      { path: "tempe-auto-parts-delivery", element: <TempeAutoPartsDelivery /> },
+
+      { path: "phoenix-delivery", element: <Navigate to="/phoenix-vehicle-delivery" replace /> },
+      { path: "mesa-delivery", element: <Navigate to="/mesa-vehicle-delivery" replace /> },
+      { path: "chandler-delivery", element: <Navigate to="/chandler-vehicle-delivery" replace /> },
+      { path: "gilbert-delivery", element: <Navigate to="/gilbert-vehicle-delivery" replace /> },
+      { path: "queen-creek-delivery", element: <Navigate to="/queen-creek-vehicle-delivery" replace /> },
+      { path: "san-tan-valley-delivery", element: <Navigate to="/san-tan-valley-vehicle-delivery" replace /> },
+      { path: "scottsdale-delivery", element: <Navigate to="/scottsdale-vehicle-delivery" replace /> },
+      { path: "tempe-delivery", element: <Navigate to="/tempe-vehicle-delivery" replace /> },
+      { path: "casa-grande-delivery", element: <Navigate to="/casa-grande-vehicle-delivery" replace /> },
+
+
+
+
 
 
 
