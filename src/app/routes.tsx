@@ -11,6 +11,8 @@ import AcceptQuote from "./pages/AcceptQuote";
 import ThankYou from "./pages/ThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import PhoenixDelivery from "./pages/PhoenixDelivery";
+
 
 // Freedom Line routing configuration
 // Root layout component
@@ -65,6 +67,8 @@ export const router = createBrowserRouter([
       { path: "thank-you", element: <ThankYou /> },
       { path: "blog", element: <Blog /> },
       { path: "blog/:slug", element: <BlogPost /> },
+      { path: "phoenix-delivery", element: <PhoenixDelivery /> },
+
     ],
   },
   // Hidden page - not in main navigation
