@@ -31,6 +31,14 @@ import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery
 import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
 import TempeAutoPartsDelivery from "./pages/TempeAutoPartsDelivery";
+import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
+import BusinessTransport from "./pages/BusinessTransport";
+import Courier from "./pages/Courier";
+import VehicleDelivery from "./pages/VehicleDelivery";
+import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
+
+
+
 
 
 
@@ -129,6 +137,14 @@ export const router = createBrowserRouter([
       { path: "scottsdale-delivery", element: <Navigate to="/scottsdale-vehicle-delivery" replace /> },
       { path: "tempe-delivery", element: <Navigate to="/tempe-vehicle-delivery" replace /> },
       { path: "casa-grande-delivery", element: <Navigate to="/casa-grande-vehicle-delivery" replace /> },
+      
+      { path: "package-document-delivery", element: <PackageDocumentDelivery /> },
+      { path: "business-transport", element: <BusinessTransport /> },
+      { path: "courier", element: <Courier /> },
+      { path: "vehicle-delivery", element: <VehicleDelivery /> },
+      { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
+
+
 
 
 
