@@ -14,6 +14,19 @@ import BlogPost from "./pages/BlogPost";
 import PhoenixDelivery from "./pages/PhoenixDelivery";
 import MesaDelivery from "./pages/MesaDelivery";
 import ChandlerDelivery from "./pages/ChandlerDelivery";
+import GilbertDelivery from "./pages/GilbertDelivery";
+import QueenCreekDelivery from "./pages/QueenCreekDelivery";
+import SanTanValleyDelivery from "./pages/SanTanValleyDelivery";
+import ScottsdaleDelivery from "./pages/ScottsdaleDelivery";
+import CasaGrandeDelivery from "./pages/CasaGrandeDelivery";
+import TempeDelivery from "./pages/TempeDelivery";
+import ServiceAreas from "./pages/ServiceAreas";
+
+
+
+
+ 
+
 
 
 
@@ -73,6 +86,18 @@ export const router = createBrowserRouter([
       { path: "phoenix-delivery", element: <PhoenixDelivery /> },
       { path: "mesa-delivery", element: <MesaDelivery /> },
       { path: "chandler-delivery", element: <ChandlerDelivery /> },
+      { path: "gilbert-delivery", element: <GilbertDelivery /> },
+      { path: "queen-creek-delivery", element: <QueenCreekDelivery /> },
+      { path: "san-tan-valley-delivery", element: <SanTanValleyDelivery /> },
+      { path: "scottsdale-delivery", element: <ScottsdaleDelivery /> },
+      { path: "casa-grande-delivery", element: <CasaGrandeDelivery /> },
+      { path: "tempe-delivery", element: <TempeDelivery /> },
+      { path: "service-areas", element: <ServiceAreas /> },
+
+
+
+
+      
 
 
     ],
