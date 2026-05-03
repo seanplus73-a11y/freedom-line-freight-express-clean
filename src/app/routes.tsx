@@ -36,6 +36,24 @@ import BusinessTransport from "./pages/BusinessTransport";
 import Courier from "./pages/Courier";
 import VehicleDelivery from "./pages/VehicleDelivery";
 import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
+import CarDeliveryService from "./pages/CarDeliveryService";
+import DriveCarToMechanic from "./pages/DriveCarToMechanic";
+import DriveMyCarHome from "./pages/DriveMyCarHome";
+import SomeoneToDriveMyCar from "./pages/SomeoneToDriveMyCar";
+import DriveForMyCar from "./pages/DriveForMyCar";
+import DriveForHireCar from "./pages/DriveForHireCar";
+import PersonalDriverForMyCar from "./pages/PersonalDriverForMyCar";
+import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
+import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
+import CanSomeoneDriveMyCarForMe from "./pages/can-someone-drive-my-car-for-me";
+import DriveMyCarToMechanicNearMe from "./pages/drive-my-car-to-mechanic-near-me";
+
+
+
+
+
+
+
 
 
 
@@ -143,6 +161,25 @@ export const router = createBrowserRouter([
       { path: "courier", element: <Courier /> },
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
       { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
+
+      { path: "car-delivery-service", element: <CarDeliveryService /> },
+      { path: "drive-car-to-mechanic", element: <DriveCarToMechanic /> },
+      { path: "drive-my-car-home", element: <DriveMyCarHome /> },
+      { path: "someone-to-drive-my-car", element: <SomeoneToDriveMyCar /> },
+      { path: "drive-for-my-car", element: <DriveForMyCar /> },
+      { path: "drive-for-hire-car", element: <DriveForHireCar /> },
+      { path: "personal-driver-for-my-car", element: <PersonalDriverForMyCar /> },
+      { path: "drive-my-car-to-dealer", element: <DriveMyCarToDealer /> },
+      { path: "cost-to-have-someone-drive-your-car", element: <CostToDriveCar /> },
+      { path: "can-someone-drive-my-car-for-me", element: <CanSomeoneDriveMyCarForMe /> },
+      { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
+
+
+
+
+
+
+
 
 
 
