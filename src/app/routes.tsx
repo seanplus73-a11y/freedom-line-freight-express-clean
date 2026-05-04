@@ -47,6 +47,7 @@ import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
 import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
 import CanSomeoneDriveMyCarForMe from "./pages/can-someone-drive-my-car-for-me";
 import DriveMyCarToMechanicNearMe from "./pages/drive-my-car-to-mechanic-near-me";
+import AutoTransportPhoenix from "./pages/AutoTransportPhoenix";
 
 
 
@@ -173,6 +174,8 @@ export const router = createBrowserRouter([
       { path: "cost-to-have-someone-drive-your-car", element: <CostToDriveCar /> },
       { path: "can-someone-drive-my-car-for-me", element: <CanSomeoneDriveMyCarForMe /> },
       { path: "drive-my-car-to-mechanic-near-me", element: <DriveMyCarToMechanicNearMe /> },
+
+      { path: "auto-transport-phoenix", element: <AutoTransportPhoenix /> },
 
 
 
