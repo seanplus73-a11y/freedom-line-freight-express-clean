@@ -133,8 +133,8 @@ export default function VehicleDeliveryPhoenix() {
   const steps = [
     {
       number: "01",
-      title: "Text Your Details",
-      desc: "Send pickup address, delivery address, and vehicle type to 480-742-8553.",
+     title: "Contact Us",
+desc: "Call, text, or request a quote online with your pickup address, delivery address, and vehicle type.",
     },
     {
       number: "02",
@@ -426,7 +426,7 @@ export default function VehicleDeliveryPhoenix() {
 
             <div className="mt-12 rounded-xl border border-orange-500/30 bg-orange-500/5 p-6 text-center">
               <p className="text-white font-semibold mb-2">
-                Ready to get started? Text us your details right now.
+               Ready to get started? Call, text, or request a quote online.
               </p>
               <a
                 href="tel:4807428553"
@@ -592,22 +592,22 @@ export default function VehicleDeliveryPhoenix() {
               Same day drive-away delivery available across Phoenix metro.
             </p>
             <p className="mb-10 text-orange-100">
-              Text pickup address, delivery address, and vehicle type for a fast quote.
+              Call, text, or request a quote online with your pickup and delivery details for a fast response.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 to="/request-pickup"
                 className="inline-flex items-center justify-center rounded-md bg-white px-8 py-4 text-lg font-bold text-orange-600 hover:bg-gray-100 transition-colors"
               >
-                Request Delivery
+                Get Quote Online
                 <ArrowRight className="ml-2" size={22} />
               </Link>
               <a
                 href="tel:4807428553"
                 className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
               >
-                <Phone className="mr-2" size={20} />
-               Call, text, or request a quote online — we respond fast.
+               <Phone className="mr-2" size={20} />
+Call 480-742-8553
               </a>
             </div>
           </div>
