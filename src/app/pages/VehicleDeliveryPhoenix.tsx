@@ -46,7 +46,7 @@ export default function VehicleDeliveryPhoenix() {
       "Casa Grande AZ",
     ],
     description:
-      "Same day vehicle delivery in Phoenix. We drive your car directly to its destination — no towing, no trailers. Owner-operated, fully insured drive-away delivery service.",
+      "Same day vehicle delivery in Phoenix. We drive your car directly to its destination. No towing, no trailers. Owner-operated, fully insured drive-away delivery service.",
   };
 
   const faqSchema = {
@@ -307,25 +307,19 @@ desc: "Call, text, or request a quote online with your pickup address, delivery 
                   Vehicle Delivery?
                 </h2>
                 <p className="mb-5 text-gray-300 leading-relaxed text-lg">
-                  Drive-away delivery means a professional driver picks up your vehicle
-                  and drives it directly to its destination — exactly like you would,
-                  except you do not have to be there.
+                 Drive away delivery means a professional driver picks up your vehicle and drives it directly to its destination, just like you would, except you do not have to be there.
                 </p>
                 <p className="mb-5 text-gray-400 leading-relaxed">
-                  There is no tow truck strapping your car to a flatbed. No enclosed
-                  trailer loading your vehicle for a cross-country haul. Just a trusted,
-                  insured driver behind the wheel getting your car where it needs to go.
+                  There is no tow truck and no flatbed. No enclosed trailer moving your vehicle across the country. Just a trusted, insured driver behind the wheel getting your car where it needs to go.
                 </p>
                 <p className="mb-8 text-gray-400 leading-relaxed">
-                  For local moves in Phoenix — to a mechanic, dealer, auction, or private
-                  buyer — drive-away delivery is faster, more affordable, and more personal
-                  than any other option.
+                 For local moves in Phoenix to a mechanic, dealer, auction, or private buyer, drive away delivery is the fastest and most affordable way to move your vehicle without the hassle of towing or trailers.
                 </p>
                 <Link
                   to="/request-pickup"
                   className="inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600 transition-colors"
                 >
-                  Get Started <ArrowRight size={18} />
+                  Get Quote Online <ArrowRight size={18} />
                 </Link>
               </div>
 
