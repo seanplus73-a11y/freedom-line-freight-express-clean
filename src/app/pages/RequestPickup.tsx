@@ -14,12 +14,14 @@ import {
 
 export function RequestPickup() {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     customerName: "",
     companyName: "",
     customerEmail: "",
     customerPhone: "",
     serviceType: "",
+    conciergeServiceType: "",
     vehicleMake: "",
     vehicleModel: "",
     vehicleYear: "",
@@ -45,6 +47,7 @@ export function RequestPickup() {
   const [error, setError] = useState("");
 
   const vehicleServiceTypes = [
+    "Vehicle Concierge Services",
     "Local Vehicle Transport (0 to 50 miles)",
     "Regional Vehicle Transport (50 to 150 miles)",
     "Long Distance Vehicle Transport (Interstate)",
@@ -60,7 +63,37 @@ export function RequestPickup() {
   ];
 
   const isVehicleService = vehicleServiceTypes.includes(formData.serviceType);
+  const isConciergeService = formData.serviceType === "Vehicle Concierge Services";
   const isNonVehicleService = nonVehicleServiceTypes.includes(formData.serviceType);
+
+  const resetForm = () => {
+    setFormData({
+      customerName: "",
+      companyName: "",
+      customerEmail: "",
+      customerPhone: "",
+      serviceType: "",
+      conciergeServiceType: "",
+      vehicleMake: "",
+      vehicleModel: "",
+      vehicleYear: "",
+      vinNumber: "",
+      vehicleCondition: "Runs and Drives (Fully Operable)",
+      itemType: "",
+      itemDetails: "",
+      pickupAddress: "",
+      pickupCity: "",
+      pickupState: "",
+      pickupZip: "",
+      dropoffAddress: "",
+      dropoffCity: "",
+      dropoffState: "",
+      dropoffZip: "",
+      preferredPickupDate: "",
+      notes: "",
+      operableConfirmation: false,
+    });
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -88,6 +121,7 @@ export function RequestPickup() {
       });
 
       const contentType = response.headers.get("content-type");
+
       if (!contentType || !contentType.includes("application/json")) {
         const text = await response.text();
         console.error("Non-JSON response:", text.substring(0, 500));
@@ -105,7 +139,7 @@ export function RequestPickup() {
         throw new Error(errorMessage + detailsMessage);
       }
 
-   navigate("/thank-you");
+      navigate("/thank-you");
 
       if (data.success && typeof window !== "undefined" && (window as any).gtag) {
         (window as any).gtag("event", "quote_submit", {
@@ -116,31 +150,7 @@ export function RequestPickup() {
 
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({
-          customerName: "",
-          companyName: "",
-          customerEmail: "",
-          customerPhone: "",
-          serviceType: "",
-          vehicleMake: "",
-          vehicleModel: "",
-          vehicleYear: "",
-          vinNumber: "",
-          vehicleCondition: "Runs and Drives (Fully Operable)",
-          itemType: "",
-          itemDetails: "",
-          pickupAddress: "",
-          pickupCity: "",
-          pickupState: "",
-          pickupZip: "",
-          dropoffAddress: "",
-          dropoffCity: "",
-          dropoffState: "",
-          dropoffZip: "",
-          preferredPickupDate: "",
-          notes: "",
-          operableConfirmation: false,
-        });
+        resetForm();
       }, 5000);
     } catch (err: any) {
       console.error("Quote form error:", err);
@@ -160,20 +170,22 @@ export function RequestPickup() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Request <span className="text-orange-500">Pickup & Transport</span>
             </h1>
+
             <p className="text-xl text-gray-300 mb-4">
-              Request a quote for vehicle transport, auto parts transport, or direct business
-              transport. Fill out the form below and I&apos;ll review your route, service type,
-              and details.
+              Request a quote for vehicle transport, vehicle concierge services,
+              auto parts transport, or direct business transport. Fill out the form
+              below and I&apos;ll review your route, service type, and details.
             </p>
+
             <p className="text-lg text-orange-400 font-bold">
-              Sedans, SUVs, small heavy-duty trucks, luggage, personal items, documents, small
-              packages, and auto parts.
+              Vehicle delivery, car wash pickup and return, oil change runs, tire
+              service pickup, documents, small packages, and auto parts.
             </p>
 
             <div className="mt-6 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
-                Vehicle transport is for operable vehicles only. Your vehicle is driven directly to
-                its destination with no trailers, no transfers, and no unnecessary delays.
+                Vehicle services are for operable vehicles only. Your vehicle is driven
+                directly with no trailers, no transfers, and no unnecessary delays.
               </p>
             </div>
           </div>
@@ -190,8 +202,8 @@ export function RequestPickup() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Request Submitted!</h3>
                 <p className="text-lg">
-                  Thank you for your request. I&apos;ll review the details and respond with your
-                  quote as soon as possible.
+                  Thank you for your request. I&apos;ll review the details and respond
+                  with your quote as soon as possible.
                 </p>
               </div>
             ) : (
@@ -229,6 +241,7 @@ export function RequestPickup() {
                       >
                         Service Type *
                       </label>
+
                       <select
                         id="serviceType"
                         name="serviceType"
@@ -238,6 +251,9 @@ export function RequestPickup() {
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       >
                         <option value="">Select service type</option>
+                        <option value="Vehicle Concierge Services">
+                          Vehicle Concierge Services
+                        </option>
                         <option value="Local Vehicle Transport (0 to 50 miles)">
                           Local Vehicle Transport (0 to 50 miles)
                         </option>
@@ -262,7 +278,45 @@ export function RequestPickup() {
                       </select>
                     </div>
 
-                    {isVehicleService ? (
+                    {isConciergeService ? (
+                      <div>
+                        <label
+                          htmlFor="conciergeServiceType"
+                          className="block text-sm font-bold text-gray-300 mb-2"
+                        >
+                          Concierge Service Needed *
+                        </label>
+
+                        <select
+                          id="conciergeServiceType"
+                          name="conciergeServiceType"
+                          value={formData.conciergeServiceType}
+                          onChange={handleChange}
+                          required={isConciergeService}
+                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        >
+                          <option value="">Select concierge service</option>
+                          <option value="Car Wash Pickup and Return">
+                            Car Wash Pickup and Return
+                          </option>
+                          <option value="Oil Change Pickup and Return">
+                            Oil Change Pickup and Return
+                          </option>
+                          <option value="Tire Service Pickup and Return">
+                            Tire Service Pickup and Return
+                          </option>
+                          <option value="Dealership Service Appointment">
+                            Dealership Service Appointment
+                          </option>
+                          <option value="Senior Vehicle Assistance">
+                            Senior Vehicle Assistance
+                          </option>
+                          <option value="Other Vehicle Concierge Service">
+                            Other Vehicle Concierge Service
+                          </option>
+                        </select>
+                      </div>
+                    ) : isVehicleService ? (
                       <div>
                         <label
                           htmlFor="vehicleCondition"
@@ -270,6 +324,7 @@ export function RequestPickup() {
                         >
                           Vehicle Condition *
                         </label>
+
                         <select
                           id="vehicleCondition"
                           name="vehicleCondition"
@@ -282,6 +337,7 @@ export function RequestPickup() {
                             Runs and Drives (Fully Operable)
                           </option>
                         </select>
+
                         <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
                       </div>
                     ) : isNonVehicleService ? (
@@ -292,6 +348,7 @@ export function RequestPickup() {
                         >
                           Item Type *
                         </label>
+
                         <select
                           id="itemType"
                           name="itemType"
@@ -324,24 +381,23 @@ export function RequestPickup() {
                       <h2 className="text-2xl font-bold text-white">Transport Item Information</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-6">
-                      <div>
-                        <label
-                          htmlFor="itemDetails"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          Item Details
-                        </label>
-                        <textarea
-                          id="itemDetails"
-                          name="itemDetails"
-                          value={formData.itemDetails}
-                          onChange={handleChange}
-                          rows={4}
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="Describe items, quantity, size, weight, and any special handling requirements."
-                        />
-                      </div>
+                    <div>
+                      <label
+                        htmlFor="itemDetails"
+                        className="block text-sm font-bold text-gray-300 mb-2"
+                      >
+                        Item Details
+                      </label>
+
+                      <textarea
+                        id="itemDetails"
+                        name="itemDetails"
+                        value={formData.itemDetails}
+                        onChange={handleChange}
+                        rows={4}
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        placeholder="Describe items, quantity, size, weight, and any special handling requirements."
+                      />
                     </div>
                   </div>
                 )}
@@ -352,9 +408,10 @@ export function RequestPickup() {
                       <h3 className="text-xl font-bold text-orange-400 mb-2">
                         Important: Operable Vehicles Only
                       </h3>
+
                       <p className="text-orange-100 text-lg">
-                        Your vehicle is driven directly to its destination with no trailers, no
-                        transfers, and no unnecessary delays.
+                        Vehicle must start, steer, brake, and drive safely. This is a
+                        drive-away service only with no towing and no trailers.
                       </p>
                     </div>
 
@@ -373,6 +430,7 @@ export function RequestPickup() {
                         >
                           Make *
                         </label>
+
                         <input
                           type="text"
                           id="vehicleMake"
@@ -392,6 +450,7 @@ export function RequestPickup() {
                         >
                           Model *
                         </label>
+
                         <input
                           type="text"
                           id="vehicleModel"
@@ -411,6 +470,7 @@ export function RequestPickup() {
                         >
                           Year *
                         </label>
+
                         <input
                           type="number"
                           id="vehicleYear"
@@ -432,6 +492,7 @@ export function RequestPickup() {
                         >
                           VIN Number
                         </label>
+
                         <input
                           type="text"
                           id="vinNumber"
@@ -462,6 +523,7 @@ export function RequestPickup() {
                       >
                         Street Address *
                       </label>
+
                       <input
                         type="text"
                         id="pickupAddress"
@@ -482,6 +544,7 @@ export function RequestPickup() {
                         >
                           City *
                         </label>
+
                         <input
                           type="text"
                           id="pickupCity"
@@ -501,6 +564,7 @@ export function RequestPickup() {
                         >
                           State *
                         </label>
+
                         <input
                           type="text"
                           id="pickupState"
@@ -520,6 +584,7 @@ export function RequestPickup() {
                         >
                           ZIP Code *
                         </label>
+
                         <input
                           type="text"
                           id="pickupZip"
@@ -540,8 +605,16 @@ export function RequestPickup() {
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
                       <MapPin className="text-white" size={20} />
                     </div>
-                    <h2 className="text-2xl font-bold text-white">Drop-Off Location</h2>
+                    <h2 className="text-2xl font-bold text-white">
+                      {isConciergeService ? "Return Location" : "Drop-Off Location"}
+                    </h2>
                   </div>
+
+                  <p className="text-sm text-gray-400 mb-4">
+                    {isConciergeService
+                      ? "For vehicle concierge, this is where the vehicle should be returned after the service is completed."
+                      : "Enter the destination where the vehicle, item, or delivery should be dropped off."}
+                  </p>
 
                   <div className="grid grid-cols-1 gap-6">
                     <div>
@@ -551,6 +624,7 @@ export function RequestPickup() {
                       >
                         Street Address *
                       </label>
+
                       <input
                         type="text"
                         id="dropoffAddress"
@@ -559,7 +633,7 @@ export function RequestPickup() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="456 Oak Avenue"
+                        placeholder={isConciergeService ? "Return address" : "456 Oak Avenue"}
                       />
                     </div>
 
@@ -571,6 +645,7 @@ export function RequestPickup() {
                         >
                           City *
                         </label>
+
                         <input
                           type="text"
                           id="dropoffCity"
@@ -579,7 +654,7 @@ export function RequestPickup() {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="Tucson"
+                          placeholder="Phoenix"
                         />
                       </div>
 
@@ -590,6 +665,7 @@ export function RequestPickup() {
                         >
                           State *
                         </label>
+
                         <input
                           type="text"
                           id="dropoffState"
@@ -609,6 +685,7 @@ export function RequestPickup() {
                         >
                           ZIP Code *
                         </label>
+
                         <input
                           type="text"
                           id="dropoffZip"
@@ -617,7 +694,7 @@ export function RequestPickup() {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="85701"
+                          placeholder="85001"
                         />
                       </div>
                     </div>
@@ -640,6 +717,7 @@ export function RequestPickup() {
                       >
                         Full Name *
                       </label>
+
                       <input
                         type="text"
                         id="customerName"
@@ -659,6 +737,7 @@ export function RequestPickup() {
                       >
                         Company Name
                       </label>
+
                       <input
                         type="text"
                         id="companyName"
@@ -677,6 +756,7 @@ export function RequestPickup() {
                       >
                         Email *
                       </label>
+
                       <input
                         type="email"
                         id="customerEmail"
@@ -696,6 +776,7 @@ export function RequestPickup() {
                       >
                         Phone *
                       </label>
+
                       <input
                         type="tel"
                         id="customerPhone"
@@ -714,6 +795,7 @@ export function RequestPickup() {
                   <label htmlFor="notes" className="block text-sm font-bold text-gray-300 mb-2">
                     Additional Notes
                   </label>
+
                   <textarea
                     id="notes"
                     name="notes"
@@ -721,7 +803,11 @@ export function RequestPickup() {
                     onChange={handleChange}
                     rows={4}
                     className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    placeholder="Special instructions, gate codes, route details, or anything else I should know"
+                    placeholder={
+                      isConciergeService
+                        ? "Tell me the service provider if you already picked one, appointment time, car wash location, oil change shop, tire shop, dealership, key instructions, gate code, or anything else I should know"
+                        : "Special instructions, gate codes, route details, or anything else I should know"
+                    }
                   />
                 </div>
 
@@ -732,6 +818,7 @@ export function RequestPickup() {
                   >
                     Preferred Pickup Date (Optional)
                   </label>
+
                   <input
                     type="date"
                     id="preferredPickupDate"
@@ -740,6 +827,7 @@ export function RequestPickup() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
+
                   <p className="text-sm text-gray-400 mt-2">
                     This helps with scheduling and route planning. It is a preferred date only.
                   </p>
@@ -757,11 +845,13 @@ export function RequestPickup() {
                         required={isVehicleService}
                         className="mt-1 w-5 h-5 text-orange-500 bg-neutral-900 border-neutral-600 rounded focus:ring-orange-500 focus:ring-2 flex-shrink-0"
                       />
+
                       <label htmlFor="operableConfirmation" className="ml-3 block">
                         <span className="text-white font-bold text-lg">
-                          I confirm the vehicle starts, steers, brakes, and drives safely. Operable
-                          vehicles only. *
+                          I confirm the vehicle starts, steers, brakes, and drives safely.
+                          Operable vehicles only. *
                         </span>
+
                         <p className="text-gray-300 mt-2">
                           Vehicle must be fully operable, road legal, and safe to drive.
                         </p>
@@ -784,7 +874,6 @@ export function RequestPickup() {
         </div>
       </section>
 
-      {/* Info Section */}
       <section className="py-16 bg-black border-t border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -792,7 +881,9 @@ export function RequestPickup() {
               <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="text-white" size={32} />
               </div>
+
               <h3 className="text-xl font-bold text-white mb-2">Fast Response</h3>
+
               <p className="text-gray-400">
                 Quick review and response to quote requests during business hours.
               </p>
@@ -802,9 +893,11 @@ export function RequestPickup() {
               <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="text-white" size={32} />
               </div>
+
               <h3 className="text-xl font-bold text-white mb-2">Fully Insured</h3>
+
               <p className="text-gray-400">
-                Vehicle transport is fully insured during pickup, transport, and delivery.
+                Vehicle pickup, return service, and direct transport are handled carefully.
               </p>
             </div>
 
@@ -812,9 +905,11 @@ export function RequestPickup() {
               <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="text-white" size={32} />
               </div>
+
               <h3 className="text-xl font-bold text-white mb-2">Direct Service</h3>
+
               <p className="text-gray-400">
-                Owner-operated service with direct communication and careful handling.
+                Owner operated service with direct communication and careful handling.
               </p>
             </div>
           </div>
