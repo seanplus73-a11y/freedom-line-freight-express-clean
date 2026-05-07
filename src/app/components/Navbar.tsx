@@ -7,6 +7,7 @@ import {
   MessageSquare,
   Car,
   Package,
+  Sparkles,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -99,6 +100,21 @@ export default function Navbar() {
 
                 </div>
               </div>
+
+              <Link
+  to="/vehicle-concierge"
+  className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
+>
+  <Sparkles className="mt-0.5 text-[#f97316]" size={18} />
+  <div>
+    <div className="font-semibold text-white">
+      Vehicle Concierge Services
+    </div>
+    <div className="text-sm text-gray-400">
+      Car wash pickup, oil change runs, tire service pickup, and convenience vehicle assistance
+    </div>
+  </div>
+</Link>
 
               <Link
                 to="/service-areas"
@@ -202,6 +218,17 @@ export default function Navbar() {
                   </Link>
 
                 </div>
+
+            <Link
+  to="/vehicle-concierge"
+  onClick={() => {
+    setMobileOpen(false);
+    setMobileServicesOpen(false);
+  }}
+  className="py-2 hover:text-[#f97316] transition-colors"
+>
+  Vehicle Concierge Services
+</Link>
               )}
 
               <Link
