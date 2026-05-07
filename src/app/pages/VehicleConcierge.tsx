@@ -419,9 +419,7 @@ export default function VehicleConcierge() {
               <h3 className="font-bold text-white mb-3">What is included in the service cost?</h3>
               <p className="text-sm text-gray-400 leading-relaxed mb-4">
                 The pricing above covers pickup, transport, and return of your vehicle.
-                The actual service cost — car wash, oil change, tire rotation, dealership
-                visit, or any other service — is separate and paid directly by you to
-                the service provider.
+The actual service cost such as car wash, oil change, tire rotation, dealership visit, or any other service is separate and paid directly by you to the service provider.
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
@@ -498,10 +496,10 @@ export default function VehicleConcierge() {
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
                     We have a special appreciation for our senior customers. Getting
-                    a car to a service appointment can be stressful and inconvenient.
-                    Our vehicle concierge removes that burden completely. We handle
-                    everything with patience and clear communication — text preferred
-                    for all updates.
+a car to a service appointment can be stressful and inconvenient.
+Our vehicle concierge removes that burden completely. We handle
+everything with patience and clear communication with text preferred
+for all updates.
                   </p>
                 </div>
 
