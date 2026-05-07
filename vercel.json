@@ -3,39 +3,30 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-
   "redirects": [
     {
-  "source": "/:path*",
-  "has": [
-    {
-      "type": "host",
-      "value": "flfreightco.com"
-    }
-  ],
-  "destination": "https://www.flfreightco.com/:path*",
-  "permanent": true
-}
-    {
-      "source": "https://flfreightco.com/:path*",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "flfreightco.com"
+        }
+      ],
       "destination": "https://www.flfreightco.com/:path*",
       "permanent": true
     }
   ],
-
   "rewrites": [
     {
       "source": "/((?!api).*)",
       "destination": "/index.html"
     }
   ],
-
   "functions": {
     "api/**/*.ts": {
       "maxDuration": 30
     }
   },
-
   "env": {
     "NODE_ENV": "production"
   }
