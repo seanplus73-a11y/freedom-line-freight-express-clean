@@ -8,7 +8,6 @@ import {
   CheckCircle,
   ArrowRight,
   Phone,
-  MapPin,
   Star,
   Wrench,
   Droplets,
@@ -69,7 +68,7 @@ export default function VehicleConcierge() {
         name: "Do you offer vehicle concierge for seniors in Phoenix?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Freedom Line Freight Express offers vehicle concierge specifically for seniors who need help getting their car to service appointments. We handle the entire process so you do not have to.",
+          text: "Yes. Freedom Line Freight Express offers vehicle concierge for seniors who need help getting their car to service appointments. We handle the pickup and return process.",
         },
       },
       {
@@ -93,7 +92,7 @@ export default function VehicleConcierge() {
         name: "Is your vehicle concierge service insured?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Freedom Line Freight Express is fully insured for every vehicle concierge job. Your car is in safe hands from pickup to return.",
+          text: "Yes. Freedom Line Freight Express is a fully insured business for vehicle pickup and return services.",
         },
       },
     ],
@@ -151,7 +150,7 @@ export default function VehicleConcierge() {
     {
       step: "4",
       title: "Returned to Your Door",
-      desc: "Your vehicle is driven back to you clean, serviced, and ready to go. Simple as that.",
+      desc: "Your vehicle is driven back to you clean, serviced, and ready to go.",
     },
   ];
 
@@ -190,18 +189,15 @@ export default function VehicleConcierge() {
       </Helmet>
 
       <main className="bg-neutral-950 text-white min-h-screen">
-
-        {/* HERO */}
         <section className="relative overflow-hidden bg-gradient-to-br from-neutral-950 via-neutral-900 to-black py-24">
           <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
           <div className="absolute left-0 bottom-0 h-64 w-64 rounded-full bg-orange-500/5 blur-3xl" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
             <div className="max-w-4xl">
-
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500 bg-black/50 px-4 py-2 text-sm font-semibold">
                 <Sparkles className="text-orange-500" size={16} />
-                New Convenience Service — Phoenix Metro
+                New Convenience Service Phoenix Metro
               </div>
 
               <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
@@ -220,7 +216,7 @@ export default function VehicleConcierge() {
               </p>
 
               <p className="mb-8 text-orange-400 font-bold text-xl">
-                📞 Text or call: 480-742-8553
+                Text Only: 480-742-8553
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -231,13 +227,14 @@ export default function VehicleConcierge() {
                   Request Concierge Service
                   <ArrowRight className="ml-2" size={22} />
                 </Link>
+
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-black transition-colors"
                 >
                   <Phone className="mr-2" size={20} />
-                  Call 480-742-8553
-               </Link>
+                  Text 480-742-8553
+                </Link>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-4 text-sm text-gray-300">
@@ -259,15 +256,14 @@ export default function VehicleConcierge() {
           </div>
         </section>
 
-        {/* TRUST BAR */}
         <section className="border-y border-neutral-800 bg-black py-10">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { icon: Car, label: "We Drive Your Car", sub: "You stay home" },
-                { icon: ShieldCheck, label: "Fully Insured", sub: "Every single job" },
-                { icon: Clock, label: "Same Day Available", sub: "When you need it fast" },
-                { icon: Star, label: "Owner Operated", sub: "Deaf-owned local business" },
+                { icon: ShieldCheck, label: "Fully Insured", sub: "Vehicle pickup and return" },
+                { icon: Clock, label: "Same Day Available", sub: "When schedule allows" },
+                { icon: Star, label: "Owner Operated", sub: "Deaf owned local business" },
               ].map(({ icon: Icon, label, sub }) => (
                 <div key={label} className="flex items-center gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-orange-500/10 border border-orange-500/20">
@@ -283,13 +279,11 @@ export default function VehicleConcierge() {
           </div>
         </section>
 
-        {/* SERVICES */}
         <section className="py-20 bg-neutral-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
-                Vehicle Concierge{" "}
-                <span className="text-orange-500">Services</span>
+                Vehicle Concierge <span className="text-orange-500">Services</span>
               </h2>
               <p className="mx-auto max-w-2xl text-lg text-gray-300">
                 We handle the driving so you can focus on your day. Here is what
@@ -314,13 +308,11 @@ export default function VehicleConcierge() {
           </div>
         </section>
 
-        {/* HOW IT WORKS */}
         <section className="py-20 bg-neutral-900 border-y border-neutral-800">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
-                How Vehicle Concierge{" "}
-                <span className="text-orange-500">Works</span>
+                How Vehicle Concierge <span className="text-orange-500">Works</span>
               </h2>
               <p className="text-lg text-gray-300">
                 Four simple steps and your car is handled without you going anywhere.
@@ -335,9 +327,6 @@ export default function VehicleConcierge() {
                   </div>
                   <h3 className="mb-2 font-bold text-white">{title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed">{desc}</p>
-                  {parseInt(step) < 4 && (
-                    <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-56px)] h-0.5 bg-orange-500/30" />
-                  )}
                 </div>
               ))}
             </div>
@@ -346,24 +335,22 @@ export default function VehicleConcierge() {
               <p className="text-white font-semibold mb-2">
                 Ready to get started? Text us your details right now.
               </p>
-              <a
-               to="/contact"
+              <Link
+                to="/contact"
                 className="text-orange-400 font-bold text-lg hover:text-orange-300 transition-colors"
               >
-                📞 Text or call: 480-742-8553
-              </a>
+                Text Only: 480-742-8553
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* WHO IT IS FOR */}
         <section className="py-20 bg-neutral-950">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 items-center">
               <div>
                 <h2 className="mb-6 text-3xl font-bold md:text-4xl leading-tight">
-                  Who Is Vehicle Concierge{" "}
-                  <span className="text-orange-500">For?</span>
+                  Who Is Vehicle Concierge <span className="text-orange-500">For?</span>
                 </h2>
                 <p className="mb-8 text-gray-300 leading-relaxed text-lg">
                   Anyone who values their time and does not want to spend it sitting
@@ -398,10 +385,10 @@ export default function VehicleConcierge() {
 
                 <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-7">
                   <h3 className="mb-3 text-xl font-bold text-white">
-                    Deaf-Owned Business
+                    Deaf Owned Business
                   </h3>
                   <p className="text-gray-400 leading-relaxed">
-                    Freedom Line Freight Express is a deaf-owned and operated business.
+                    Freedom Line Freight Express is a deaf owned and operated business.
                     We communicate primarily by text which means you always have a
                     written record of every update, pickup time, and delivery
                     confirmation. Clear and reliable from start to finish.
@@ -412,13 +399,11 @@ export default function VehicleConcierge() {
           </div>
         </section>
 
-        {/* FAQ */}
         <section className="py-20 bg-neutral-900 border-y border-neutral-800">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
-                Frequently Asked{" "}
-                <span className="text-orange-500">Questions</span>
+                Frequently Asked <span className="text-orange-500">Questions</span>
               </h2>
             </div>
             <div className="space-y-5">
@@ -429,7 +414,7 @@ export default function VehicleConcierge() {
                 },
                 {
                   q: "Do you offer vehicle concierge for seniors in Phoenix?",
-                  a: "Yes. We offer vehicle concierge specifically for seniors who need help getting their car to service appointments. We handle the entire process with patience and clear text communication.",
+                  a: "Yes. We offer vehicle concierge for seniors who need help getting their car to service appointments. We handle the entire process with patience and clear text communication.",
                 },
                 {
                   q: "How much does vehicle concierge cost in Phoenix?",
@@ -441,7 +426,7 @@ export default function VehicleConcierge() {
                 },
                 {
                   q: "Is your vehicle concierge service insured?",
-                  a: a: "Yes. Freedom Line Freight Express is a fully insured business for vehicle pickup and return services.",
+                  a: "Yes. Freedom Line Freight Express is a fully insured business for vehicle pickup and return services.",
                 },
                 {
                   q: "Do I need to be home when you pick up my car?",
@@ -460,7 +445,6 @@ export default function VehicleConcierge() {
           </div>
         </section>
 
-        {/* SERVICE AREAS */}
         <section className="py-16 bg-neutral-950">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-4 text-2xl font-bold md:text-4xl">
@@ -483,7 +467,6 @@ export default function VehicleConcierge() {
           </div>
         </section>
 
-        {/* RELATED PAGES */}
         <section className="py-10 bg-neutral-900 border-t border-neutral-800">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-gray-500">
@@ -510,7 +493,6 @@ export default function VehicleConcierge() {
           </div>
         </section>
 
-        {/* FINAL CTA */}
         <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-4 text-4xl font-black md:text-5xl">
@@ -530,8 +512,8 @@ export default function VehicleConcierge() {
                 Request Concierge Service
                 <ArrowRight className="ml-2" size={22} />
               </Link>
-              <a
-               to="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
               >
                 <Phone className="mr-2" size={20} />
@@ -540,7 +522,6 @@ export default function VehicleConcierge() {
             </div>
           </div>
         </section>
-
       </main>
     </>
   );
