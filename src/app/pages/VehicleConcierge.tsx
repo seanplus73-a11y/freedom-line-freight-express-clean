@@ -618,18 +618,21 @@ for all updates.
           </div>
         </section>
 
-        {/* FINAL CTA */}
+           {/* FINAL CTA */}
         <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-4 text-4xl font-black md:text-5xl">
               Ready to Try Vehicle Concierge?
             </h2>
+
             <p className="mb-2 text-xl font-semibold text-orange-100">
               We pick up your car, handle the service, and return it to your door.
             </p>
+
             <p className="mb-10 text-orange-100">
               Text us your location and what service your car needs for a fast quote.
             </p>
+
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 to="/contact"
@@ -637,19 +640,19 @@ for all updates.
               >
                 Request Concierge Service
                 <ArrowRight className="ml-2" size={22} />
-             <Link
-  to="/contact"
-  className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
->
-  <Phone className="mr-2" size={20} />
-  Text 480-742-8553
-</Link>
+              </Link>
 
-</div>
-</div>
-</section>
-
-</main>
-</>
-);
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
+              >
+                <Phone className="mr-2" size={20} />
+                Text 480-742-8553
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 }
