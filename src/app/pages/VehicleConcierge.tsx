@@ -231,13 +231,13 @@ export default function VehicleConcierge() {
                   Request Concierge Service
                   <ArrowRight className="ml-2" size={22} />
                 </Link>
-                <a
-                  href="tel:4807428553"
-                  className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-black transition-colors"
-                >
-                  <Phone className="mr-2" size={20} />
-                  Call 480-742-8553
-                </a>
+                <Link
+  to="/contact"
+  className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-black transition-colors"
+>
+  <Phone className="mr-2" size={20} />
+  Text 480-742-8553
+</Link>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-4 text-sm text-gray-300">
@@ -346,12 +346,12 @@ export default function VehicleConcierge() {
               <p className="text-white font-semibold mb-2">
                 Ready to get started? Text us your details right now.
               </p>
-              <a
-                href="tel:4807428553"
-                className="text-orange-400 font-bold text-lg hover:text-orange-300 transition-colors"
-              >
-                📞 Text only: 480-742-8553
-              </a>
+             <Link
+  to="/contact"
+  className="text-orange-400 font-bold text-lg hover:text-orange-300 transition-colors"
+>
+  Text or call: 480-742-8553
+</Link>
             </div>
           </div>
         </section>
@@ -451,13 +451,13 @@ The actual service cost such as car wash, oil change, tire rotation, dealership 
                     Text me and I will give you an exact quote before anything is confirmed.
                   </p>
                 </div>
-                <a
-                  href="tel:4807428553"
-                  className="flex-shrink-0 inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600 transition-colors"
-                >
-                  <Phone size={16} />
-                  Text for Quote
-                </a>
+               <Link
+  to="/contact"
+  className="flex-shrink-0 inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600 transition-colors"
+>
+  <Phone size={16} />
+  Text for Quote
+</Link>
               </div>
             </div>
           </div>
@@ -636,20 +636,19 @@ for all updates.
               >
                 Request Concierge Service
                 <ArrowRight className="ml-2" size={22} />
-              </Link>
-              <a
-                href="tel:4807428553"
-                className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
-              >
-                <Phone className="mr-2" size={20} />
-                Text 480-742-8553
-              </a>
-            </div>
-          </div>
-        </section>
+             <Link
+  to="/contact"
+  className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
+>
+  <Phone className="mr-2" size={20} />
+  Text 480-742-8553
+</Link>
 
-      </main>
-    </>
-  );
+</div>
+</div>
+</section>
+
+</main>
+</>
+);
 }
-
