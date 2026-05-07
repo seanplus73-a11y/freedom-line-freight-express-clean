@@ -224,16 +224,17 @@ export default function VehicleConcierge() {
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center rounded-md bg-orange-500 px-8 py-4 text-lg font-bold text-white hover:bg-orange-600 transition-colors"
-                >
-                  Request Concierge Service
-                  <ArrowRight className="ml-2" size={22} />
-                </Link>
-                <Link
+              <Link
   to="/contact"
-  className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-black transition-colors"
+  className="inline-flex items-center justify-center rounded-md bg-white px-8 py-4 text-lg font-bold text-orange-600 hover:bg-gray-100 transition-colors"
+>
+  Request Concierge Service
+  <ArrowRight className="ml-2" size={22} />
+</Link>
+
+<Link
+  to="/contact"
+  className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
 >
   <Phone className="mr-2" size={20} />
   Text 480-742-8553
