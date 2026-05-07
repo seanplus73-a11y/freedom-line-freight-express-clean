@@ -6,10 +6,16 @@
 
   "redirects": [
     {
-      "source": "http://flfreightco.com/:path*",
-      "destination": "https://www.flfreightco.com/:path*",
-      "permanent": true
-    },
+  "source": "/:path*",
+  "has": [
+    {
+      "type": "host",
+      "value": "flfreightco.com"
+    }
+  ],
+  "destination": "https://www.flfreightco.com/:path*",
+  "permanent": true
+}
     {
       "source": "https://flfreightco.com/:path*",
       "destination": "https://www.flfreightco.com/:path*",
