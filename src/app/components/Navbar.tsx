@@ -51,7 +51,10 @@ export default function Navbar() {
             {/* DESKTOP NAV */}
             <nav className="hidden lg:flex items-center gap-8 font-semibold">
 
-              <Link to="/" className="hover:text-[#f97316] transition-colors">
+              <Link
+                to="/"
+                className="hover:text-[#f97316] transition-colors"
+              >
                 Home
               </Link>
 
@@ -68,6 +71,7 @@ export default function Navbar() {
 
                 <div className="invisible absolute left-0 top-full mt-3 w-72 rounded-xl border border-white/10 bg-[#0f172a] p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
 
+                  {/* VEHICLE DELIVERY */}
                   <Link
                     to="/pricing"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
@@ -83,6 +87,7 @@ export default function Navbar() {
                     </div>
                   </Link>
 
+                  {/* COURIER */}
                   <Link
                     to="/courier"
                     className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
@@ -98,23 +103,24 @@ export default function Navbar() {
                     </div>
                   </Link>
 
+                  {/* VEHICLE CONCIERGE */}
+                  <Link
+                    to="/vehicle-concierge"
+                    className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
+                  >
+                    <Sparkles className="mt-0.5 text-[#f97316]" size={18} />
+                    <div>
+                      <div className="font-semibold text-white">
+                        Vehicle Concierge Services
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        Car wash pickup, oil change runs, tire service pickup, and convenience vehicle assistance
+                      </div>
+                    </div>
+                  </Link>
+
                 </div>
               </div>
-
-              <Link
-  to="/vehicle-concierge"
-  className="flex items-start gap-3 rounded-lg px-4 py-3 hover:bg-white/5"
->
-  <Sparkles className="mt-0.5 text-[#f97316]" size={18} />
-  <div>
-    <div className="font-semibold text-white">
-      Vehicle Concierge Services
-    </div>
-    <div className="text-sm text-gray-400">
-      Car wash pickup, oil change runs, tire service pickup, and convenience vehicle assistance
-    </div>
-  </div>
-</Link>
 
               <Link
                 to="/service-areas"
@@ -217,18 +223,18 @@ export default function Navbar() {
                     Courier Service
                   </Link>
 
-                </div>
+                  <Link
+                    to="/vehicle-concierge"
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                    className="py-2 hover:text-[#f97316] transition-colors"
+                  >
+                    Vehicle Concierge Services
+                  </Link>
 
-            <Link
-  to="/vehicle-concierge"
-  onClick={() => {
-    setMobileOpen(false);
-    setMobileServicesOpen(false);
-  }}
-  className="py-2 hover:text-[#f97316] transition-colors"
->
-  Vehicle Concierge Services
-</Link>
+                </div>
               )}
 
               <Link
