@@ -231,13 +231,13 @@ export default function VehicleConcierge() {
                   Request Concierge Service
                   <ArrowRight className="ml-2" size={22} />
                 </Link>
-                <a
+                <Link
                   to="/contact"
                   className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-black transition-colors"
                 >
                   <Phone className="mr-2" size={20} />
                   Call 480-742-8553
-                </a>
+               </Link>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-4 text-sm text-gray-300">
@@ -441,7 +441,7 @@ export default function VehicleConcierge() {
                 },
                 {
                   q: "Is your vehicle concierge service insured?",
-                  a: "Yes. Freedom Line Freight Express is Fully insured business for vehicle pickup and return services.
+                  a: a: "Yes. Freedom Line Freight Express is a fully insured business for vehicle pickup and return services.",
                 },
                 {
                   q: "Do I need to be home when you pick up my car?",
@@ -536,7 +536,7 @@ export default function VehicleConcierge() {
               >
                 <Phone className="mr-2" size={20} />
                 Text 480-742-8553
-              </a>
+              </Link>
             </div>
           </div>
         </section>
