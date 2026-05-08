@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet, Navigate } from "react-router";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -11,6 +12,7 @@ import AcceptQuote from "./pages/AcceptQuote";
 import ThankYou from "./pages/ThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+
 import PhoenixDelivery from "./pages/PhoenixDelivery";
 import MesaDelivery from "./pages/MesaDelivery";
 import ChandlerDelivery from "./pages/ChandlerDelivery";
@@ -21,6 +23,7 @@ import ScottsdaleDelivery from "./pages/ScottsdaleDelivery";
 import CasaGrandeDelivery from "./pages/CasaGrandeDelivery";
 import TempeDelivery from "./pages/TempeDelivery";
 import ServiceAreas from "./pages/ServiceAreas";
+
 import AutoPartsDelivery from "./pages/AutoPartsDelivery";
 import PhoenixAutoPartsDelivery from "./pages/PhoenixAutoPartsDelivery";
 import MesaAutoPartsDelivery from "./pages/MesaAutoPartsDelivery";
@@ -31,11 +34,13 @@ import SanTanValleyAutoPartsDelivery from "./pages/SanTanValleyAutoPartsDelivery
 import ScottsdaleAutoPartsDelivery from "./pages/ScottsdaleAutoPartsDelivery";
 import CasaGrandeAutoPartsDelivery from "./pages/CasaGrandeAutoPartsDelivery";
 import TempeAutoPartsDelivery from "./pages/TempeAutoPartsDelivery";
+
 import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
 import BusinessTransport from "./pages/BusinessTransport";
 import Courier from "./pages/Courier";
 import VehicleDelivery from "./pages/VehicleDelivery";
 import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
+
 import CarDeliveryService from "./pages/CarDeliveryService";
 import DriveCarToMechanic from "./pages/DriveCarToMechanic";
 import DriveMyCarHome from "./pages/DriveMyCarHome";
@@ -47,42 +52,18 @@ import DriveMyCarToDealer from "./pages/DriveMyCarToDealer";
 import CostToDriveCar from "./pages/cost-to-have-someone-drive-your-car";
 import CanSomeoneDriveMyCarForMe from "./pages/can-someone-drive-my-car-for-me";
 import DriveMyCarToMechanicNearMe from "./pages/drive-my-car-to-mechanic-near-me";
+
 import AutoTransportPhoenix from "./pages/AutoTransportPhoenix";
 import VehicleDeliveryPhoenix from "./pages/VehicleDeliveryPhoenix";
 import CarTransportPhoenix from "./pages/CarTransportPhoenix";
 import VehicleConcierge from "./pages/VehicleConcierge";
 import VehicleConciergePhoenix from "./pages/VehicleConciergePhoenix";
 import CarWashPickupServicePhoenix from "./pages/CarWashPickupServicePhoenix";
-import OilChangePickupServicePhoenix from "./OilChangePickupServicePhoenix";
+import OilChangePickupServicePhoenix from "./pages/OilChangePickupServicePhoenix";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-// Freedom Line routing configuration
-// Root layout component
 function RootLayout() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-grow">
         <Outlet />
@@ -92,21 +73,22 @@ function RootLayout() {
   );
 }
 
-// 404 Not Found page
 function NotFound() {
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-900">
+    <div className="flex min-h-screen flex-col bg-neutral-900">
       <Navbar />
-      <main className="flex-grow flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-6xl font-bold text-white mb-4">404</h1>
-          <h2 className="text-2xl font-semibold text-gray-300 mb-4">Page Not Found</h2>
-          <p className="text-gray-400 mb-8">
-            The page you're looking for doesn't exist.
+      <main className="flex flex-grow items-center justify-center">
+        <div className="px-4 text-center">
+          <h1 className="mb-4 text-6xl font-bold text-white">404</h1>
+          <h2 className="mb-4 text-2xl font-semibold text-gray-300">
+            Page Not Found
+          </h2>
+          <p className="mb-8 text-gray-400">
+            The page you are looking for does not exist.
           </p>
           <a
             href="/"
-            className="inline-block bg-orange-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-600 transition-colors"
+            className="inline-block rounded-md bg-orange-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-orange-600"
           >
             Go Home
           </a>
@@ -123,14 +105,17 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <Home /> },
+
       { path: "about", element: <About /> },
       { path: "services", element: <Services /> },
       { path: "pricing", element: <Pricing /> },
       { path: "contact", element: <Contact /> },
       { path: "request-pickup", element: <RequestPickup /> },
       { path: "thank-you", element: <ThankYou /> },
+
       { path: "blog", element: <Blog /> },
       { path: "blog/:slug", element: <BlogPost /> },
+
       { path: "phoenix-delivery", element: <PhoenixDelivery /> },
       { path: "mesa-delivery", element: <MesaDelivery /> },
       { path: "chandler-delivery", element: <ChandlerDelivery /> },
@@ -141,7 +126,7 @@ export const router = createBrowserRouter([
       { path: "casa-grande-delivery", element: <CasaGrandeDelivery /> },
       { path: "tempe-delivery", element: <TempeDelivery /> },
       { path: "service-areas", element: <ServiceAreas /> },
-      
+
       { path: "auto-parts-delivery", element: <AutoPartsDelivery /> },
       { path: "phoenix-auto-parts-delivery", element: <PhoenixAutoPartsDelivery /> },
       { path: "mesa-auto-parts-delivery", element: <MesaAutoPartsDelivery /> },
@@ -153,16 +138,6 @@ export const router = createBrowserRouter([
       { path: "casa-grande-auto-parts-delivery", element: <CasaGrandeAutoPartsDelivery /> },
       { path: "tempe-auto-parts-delivery", element: <TempeAutoPartsDelivery /> },
 
-      { path: "phoenix-delivery", element: <Navigate to="/phoenix-vehicle-delivery" replace /> },
-      { path: "mesa-delivery", element: <Navigate to="/mesa-vehicle-delivery" replace /> },
-      { path: "chandler-delivery", element: <Navigate to="/chandler-vehicle-delivery" replace /> },
-      { path: "gilbert-delivery", element: <Navigate to="/gilbert-vehicle-delivery" replace /> },
-      { path: "queen-creek-delivery", element: <Navigate to="/queen-creek-vehicle-delivery" replace /> },
-      { path: "san-tan-valley-delivery", element: <Navigate to="/san-tan-valley-vehicle-delivery" replace /> },
-      { path: "scottsdale-delivery", element: <Navigate to="/scottsdale-vehicle-delivery" replace /> },
-      { path: "tempe-delivery", element: <Navigate to="/tempe-vehicle-delivery" replace /> },
-      { path: "casa-grande-delivery", element: <Navigate to="/casa-grande-vehicle-delivery" replace /> },
-      
       { path: "package-document-delivery", element: <PackageDocumentDelivery /> },
       { path: "business-transport", element: <BusinessTransport /> },
       { path: "courier", element: <Courier /> },
@@ -184,33 +159,12 @@ export const router = createBrowserRouter([
       { path: "auto-transport-phoenix", element: <AutoTransportPhoenix /> },
       { path: "vehicle-delivery-phoenix", element: <VehicleDeliveryPhoenix /> },
       { path: "car-transport-phoenix", element: <CarTransportPhoenix /> },
-      { path: "vehicle-concierge",element: <VehicleConcierge />,},
+      { path: "vehicle-concierge", element: <VehicleConcierge /> },
       { path: "vehicle-concierge-phoenix", element: <VehicleConciergePhoenix /> },
-      { path: "car-wash-pickup-service-phoenix", element: <CarWashPickupServicePhoenix /> }
-      { path: "/oil-change-pickup-service-phoenix", element: <OilChangePickupServicePhoenix />, },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
+      { path: "car-wash-pickup-service-phoenix", element: <CarWashPickupServicePhoenix /> },
+      { path: "oil-change-pickup-service-phoenix", element: <OilChangePickupServicePhoenix /> },
     ],
   },
-  // Hidden page - not in main navigation
   {
     path: "/accept",
     element: <AcceptQuote />,
