@@ -232,14 +232,14 @@ export default function CarWashPickupServicePhoenix() {
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
-                  to="/contact"
+                  to="/request-pickup"
                   className="inline-flex items-center justify-center rounded-md bg-orange-500 px-8 py-4 text-lg font-bold text-white hover:bg-orange-600 transition-colors"
                 >
                   Schedule Pickup
                   <ArrowRight className="ml-2" size={22} />
                 </Link>
                 <Link
-                  to="/contact"
+                  to="/request-pickup"
                   className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-black transition-colors"
                 >
                   <Phone className="mr-2" size={20} />
@@ -323,7 +323,7 @@ export default function CarWashPickupServicePhoenix() {
                 Ready to get your car picked up and washed today?
               </p>
               <Link
-                to="/contact"
+                to="/request-pickup"
                 className="inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600 transition-colors"
               >
                 <Phone size={16} />
@@ -522,7 +522,7 @@ export default function CarWashPickupServicePhoenix() {
                   </p>
                 </div>
                 <Link
-                  to="/contact"
+                  to="/request-pickup"
                   className="flex-shrink-0 inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600 transition-colors"
                 >
                   <Phone size={16} />
@@ -698,14 +698,14 @@ export default function CarWashPickupServicePhoenix() {
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                to="/contact"
+                to="/request-pickup"
                 className="inline-flex items-center justify-center rounded-md bg-white px-8 py-4 text-lg font-bold text-orange-600 hover:bg-gray-100 transition-colors"
               >
                 Schedule Pickup
                 <ArrowRight className="ml-2" size={22} />
               </Link>
               <Link
-                to="/contact"
+                to="/request-pickup"
                 className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
               >
                 <Phone className="mr-2" size={20} />
