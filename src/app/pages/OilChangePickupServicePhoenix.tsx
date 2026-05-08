@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import {
   ArrowRight,
   CheckCircle,
+  Car,
   Clock,
   Shield,
   MapPin,
@@ -233,14 +234,14 @@ export default function OilChangePickupServicePhoenix() {
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
-                  to="/contact"
+                  to="/request-pickup"
                   className="inline-flex items-center justify-center rounded-md bg-orange-500 px-8 py-4 text-lg font-bold text-white hover:bg-orange-600 transition-colors"
                 >
                   Schedule Oil Change Pickup
                   <ArrowRight className="ml-2" size={22} />
                 </Link>
                 <Link
-                  to="/contact"
+                  to="/request-pickup"
                   className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-black transition-colors"
                 >
                   <Phone className="mr-2" size={20} />
@@ -324,7 +325,7 @@ export default function OilChangePickupServicePhoenix() {
                 Oil change overdue? Text us and we will handle it today.
               </p>
               <Link
-                to="/contact"
+                to="/request-pickup"
                 className="inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600 transition-colors"
               >
                 <Phone size={16} />
@@ -383,8 +384,8 @@ export default function OilChangePickupServicePhoenix() {
                   in Phoenix
                 </h2>
                 <p className="mb-6 text-gray-300 leading-relaxed text-lg">
-                 We are not affiliated with any specific oil change provider. We simply take your car to
-
+                  You choose the shop. We do the driving. We are not affiliated with
+                  any specific oil change provider — we simply take your car to
                   wherever you prefer and bring it back when done.
                 </p>
                 <p className="mb-8 text-gray-400 leading-relaxed">
@@ -587,7 +588,7 @@ export default function OilChangePickupServicePhoenix() {
                   </p>
                 </div>
                 <Link
-                  to="/contact"
+                  to="/request-pickup"
                   className="flex-shrink-0 inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600 transition-colors"
                 >
                   <Phone size={16} />
@@ -639,7 +640,10 @@ export default function OilChangePickupServicePhoenix() {
                   even more here than it does elsewhere.
                 </p>
                 <p className="mb-5 text-gray-400 leading-relaxed">
-                  Skipping or delaying oil changes in Arizona heat can lead to sludge buildup, engine wear, and costly repairs. Staying on top of your maintenance schedule is not just good practice in Phoenix. It is essential for protecting your vehicle.
+                  Skipping or delaying oil changes in Arizona heat can lead to
+                  sludge buildup, engine wear, and costly repairs. Staying on top
+                  of your maintenance schedule is not just good practice in Phoenix —
+                  it is essential for protecting your vehicle.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
                   Our recurring oil change pickup service makes it easy to stay on
@@ -763,14 +767,14 @@ export default function OilChangePickupServicePhoenix() {
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                to="/contact"
+                to="/request-pickup"
                 className="inline-flex items-center justify-center rounded-md bg-white px-8 py-4 text-lg font-bold text-orange-600 hover:bg-gray-100 transition-colors"
               >
                 Schedule Oil Change Pickup
                 <ArrowRight className="ml-2" size={22} />
               </Link>
               <Link
-                to="/contact"
+                to="/request-pickup"
                 className="inline-flex items-center justify-center rounded-md border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-orange-600 transition-colors"
               >
                 <Phone className="mr-2" size={20} />
