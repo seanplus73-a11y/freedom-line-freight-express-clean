@@ -51,6 +51,7 @@ import AutoTransportPhoenix from "./pages/AutoTransportPhoenix";
 import VehicleDeliveryPhoenix from "./pages/VehicleDeliveryPhoenix";
 import CarTransportPhoenix from "./pages/CarTransportPhoenix";
 import VehicleConcierge from "./pages/VehicleConcierge";
+import VehicleConciergePhoenix from "./pages/VehicleConciergePhoenix";
 
 
 
@@ -182,6 +183,7 @@ export const router = createBrowserRouter([
       { path: "vehicle-delivery-phoenix", element: <VehicleDeliveryPhoenix /> },
       { path: "car-transport-phoenix", element: <CarTransportPhoenix /> },
       { path: "vehicle-concierge",element: <VehicleConcierge />,},
+      { path: "vehicle-concierge-phoenix", element: <VehicleConciergePhoenix /> },
 
 
 
