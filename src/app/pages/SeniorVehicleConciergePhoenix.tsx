@@ -167,7 +167,7 @@ export default function SeniorVehicleConciergePhoenix() {
     {
       icon: MessageSquare,
       title: "Text Based Communication",
-      desc: "As a deaf-owned business we communicate entirely by text. Every update, pickup time, and return confirmation arrives in writing — clear and easy to read for seniors and family members.",
+      desc: "As a deaf-owned business we communicate entirely by text. Every update, pickup time, and return confirmation arrives in writing clear and easy to read for seniors and family members.",
     },
     {
       icon: HeartHandshake,
@@ -182,7 +182,7 @@ export default function SeniorVehicleConciergePhoenix() {
     {
       icon: Star,
       title: "Owner Operated",
-      desc: "Sean handles every job personally. You are never dealing with a random contractor or dispatcher — always the same trusted owner.",
+      desc: "Sean handles every job personally. You are never dealing with a random contractor or dispatcher always the same trusted owner.",
     },
   ];
 
@@ -238,7 +238,7 @@ export default function SeniorVehicleConciergePhoenix() {
                 Freedom Line Freight Express provides trusted vehicle concierge service
                 for seniors across Phoenix metro. We pick up your car from your home,
                 take it to any service provider you choose car wash, mechanic, oil
-                change, or dealership — and return it to your door when done.
+                change, or dealership and return it to your door when done.
                 No driving. No waiting. No hassle.
               </p>
 
