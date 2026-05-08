@@ -61,7 +61,7 @@ export default function SeniorVehicleConciergePhoenix() {
         name: "What is senior vehicle concierge service in Phoenix?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Senior vehicle concierge means we come to your home, pick up your car, take it to any service provider you need car wash, mechanic, oil change, or dealership and return it to your door when done. Seniors never have to drive or arrange a ride.",
+          text: "Senior vehicle concierge means we come to your home, pick up your car, take it to any service provider you need — car wash, mechanic, oil change, or dealership — and return it to your door when done. Seniors never have to drive or arrange a ride.",
         },
       },
       {
@@ -167,7 +167,7 @@ export default function SeniorVehicleConciergePhoenix() {
     {
       icon: MessageSquare,
       title: "Text Based Communication",
-      desc: "As a deaf-owned business we communicate entirely by text. Every update, pickup time, and return confirmation arrives in writing clear and easy to read for seniors and family members.",
+      desc: "As a deaf-owned business we communicate entirely by text. Every update, pickup time, and return confirmation arrives in writing — clear and easy to read for seniors and family members.",
     },
     {
       icon: HeartHandshake,
@@ -182,7 +182,7 @@ export default function SeniorVehicleConciergePhoenix() {
     {
       icon: Star,
       title: "Owner Operated",
-      desc: "Sean handles every job personally. You are never dealing with a random contractor or dispatcher always the same trusted owner.",
+      desc: "Sean handles every job personally. You are never dealing with a random contractor or dispatcher — always the same trusted owner.",
     },
   ];
 
@@ -223,7 +223,7 @@ export default function SeniorVehicleConciergePhoenix() {
 
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500 bg-black/50 px-4 py-2 text-sm font-semibold">
                 <HeartHandshake className="text-orange-500" size={16} />
-                Senior Vehicle Concierge Phoenix Metro
+                Senior Vehicle Concierge — Phoenix Metro
               </div>
 
               <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
@@ -237,8 +237,8 @@ export default function SeniorVehicleConciergePhoenix() {
               <p className="mb-6 max-w-3xl text-lg leading-relaxed text-gray-300 md:text-xl">
                 Freedom Line Freight Express provides trusted vehicle concierge service
                 for seniors across Phoenix metro. We pick up your car from your home,
-                take it to any service provider you choose car wash, mechanic, oil
-                change, or dealership and return it to your door when done.
+                take it to any service provider you choose — car wash, mechanic, oil
+                change, or dealership — and return it to your door when done.
                 No driving. No waiting. No hassle.
               </p>
 
@@ -502,7 +502,7 @@ export default function SeniorVehicleConciergePhoenix() {
                 Freedom Line Freight Express is a deaf-owned and operated business.
                 We communicate entirely by text which is actually a significant advantage
                 for senior vehicle concierge. Every pickup confirmation, update, and
-                return notification arrives in writing making it easy for seniors to
+                return notification arrives in writing — making it easy for seniors to
                 read at their own pace and for family members to stay informed from
                 anywhere. No phone tag, no confusion, just clear written communication
                 from start to finish.
@@ -621,7 +621,7 @@ export default function SeniorVehicleConciergePhoenix() {
                   that dependency completely.
                 </p>
                 <p className="mb-5 text-gray-400 leading-relaxed">
-                  We serve seniors across all of Phoenix metro, Scottsdale, Mesa,
+                  We serve seniors across all of Phoenix metro — Scottsdale, Mesa,
                   Chandler, Gilbert, Queen Creek, Tempe, San Tan Valley, Casa Grande
                   and surrounding areas. Whether it is a routine oil change or a trip
                   to the dealership for warranty work we handle every car service trip
@@ -640,7 +640,7 @@ export default function SeniorVehicleConciergePhoenix() {
                 </h2>
                 <p className="mb-5 text-gray-300 leading-relaxed">
                   If you have a senior parent in Phoenix and you worry about whether
-                  their car is getting the maintenance it needs our service gives
+                  their car is getting the maintenance it needs — our service gives
                   you a simple, reliable solution. You text us from anywhere, we handle
                   the entire trip, and you know it is taken care of.
                 </p>
@@ -674,7 +674,7 @@ export default function SeniorVehicleConciergePhoenix() {
               {[
                 {
                   q: "What is senior vehicle concierge service in Phoenix?",
-                  a: "We pick up a senior's car from their home, take it to any service provider they choose car wash, mechanic, oil change, or dealership  and return it to their door when done. Seniors never have to drive or arrange rides.",
+                  a: "We pick up a senior's car from their home, take it to any service provider they choose — car wash, mechanic, oil change, or dealership — and return it to their door when done. Seniors never have to drive or arrange rides.",
                 },
                 {
                   q: "Is this service designed specifically for seniors?",
@@ -787,6 +787,12 @@ export default function SeniorVehicleConciergePhoenix() {
                 Text 480-742-8553
               </Link>
             </div>
+              <p className="mt-6 text-orange-100 text-sm">
+                Just have a quick question?{" "}
+                <Link to="/contact" className="underline font-semibold hover:text-white transition-colors">
+                  Contact us here
+                </Link>
+              </p>
           </div>
         </section>
 
@@ -794,3 +800,4 @@ export default function SeniorVehicleConciergePhoenix() {
     </>
   );
 }
+
