@@ -1,211 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+ 
   <!-- MAIN PAGES -->
   <url>
     <loc>https://www.flfreightco.com/</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/services</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/pricing</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/contact</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/request-pickup</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/about</loc>
   </url>
-
+ 
   <!-- CORE SERVICE PAGES -->
   <url>
     <loc>https://www.flfreightco.com/drive-car-to-mechanic</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/drive-my-car-to-dealer</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/car-delivery-service</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/drive-my-car-home</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/someone-to-drive-my-car</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/drive-for-my-car</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/drive-for-hire-car</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/personal-driver-for-my-car</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/auto-parts-delivery</loc>
   </url>
-
+ 
   <!-- CITY DELIVERY PAGES -->
   <url>
     <loc>https://www.flfreightco.com/phoenix-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/mesa-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/chandler-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/gilbert-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/queen-creek-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/san-tan-valley-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/scottsdale-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/casa-grande-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/tempe-delivery</loc>
   </url>
-
+ 
   <!-- CITY AUTO PARTS PAGES -->
   <url>
     <loc>https://www.flfreightco.com/phoenix-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/mesa-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/gilbert-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/chandler-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/queen-creek-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/san-tan-valley-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/scottsdale-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/casa-grande-auto-parts-delivery</loc>
   </url>
-
+ 
   <url>
     <loc>https://www.flfreightco.com/tempe-auto-parts-delivery</loc>
   </url>
+ 
+  <!-- ADDITIONAL SERVICE PAGES -->
   <url>
-  <loc>https://www.flfreightco.com/cost-to-have-someone-drive-your-car</loc>
-</url>
-  <url>
-  <loc>https://www.flfreightco.com/can-someone-drive-my-car-for-me</loc>
-</url>
-  <url>
-  <loc>https://www.flfreightco.com/drive-my-car-to-mechanic-near-me</loc>
-</url>
-  <url>
-  <loc>https://www.flfreightco.com/courier</loc>
-</url>
-
-<url>
-  <loc>https://www.flfreightco.com/vehicle-delivery</loc>
-</url>
-  <url>
-  <loc>https://www.flfreightco.com/blog</loc>
-</url>
-
-<url>
-  <loc>https://www.flfreightco.com/blog/phoenix-vehicle-delivery-same-day</loc>
-</url>
-
-<url>
-  <loc>https://www.flfreightco.com/blog/what-is-vehicle-delivery-service</loc>
-</url>
-
-<url>
-  <loc>https://www.flfreightco.com/blog/dealerships-move-cars-without-towing</loc>
-</url>
-  
-  <url>
-  <loc>https://www.flfreightco.com/arizona-delivery-guide</loc>
+    <loc>https://www.flfreightco.com/cost-to-have-someone-drive-your-car</loc>
   </url>
-  
+ 
   <url>
-  <loc>https://www.flfreightco.com/service-area</loc>
+    <loc>https://www.flfreightco.com/can-someone-drive-my-car-for-me</loc>
   </url>
-
-  <!-- Thank You Page -->
-<url>
-  <loc>https://www.flfreightco.com/thank-you</loc>
-  </url>
-
+ 
   <url>
-    <loc>https://www.flfreightco.com/car-transport-phoenix</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://www.flfreightco.com/drive-my-car-to-mechanic-near-me</loc>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/courier</loc>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-delivery</loc>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/arizona-delivery-guide</loc>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/service-area</loc>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/thank-you</loc>
+  </url>
+ 
+  <!-- BLOG PAGES -->
+  <url>
+    <loc>https://www.flfreightco.com/blog</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
-
+ 
   <url>
-    <loc>https://www.flfreightco.com/vehicle-delivery-phoenix</loc>
-    <lastmod>2026-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.flfreightco.com/blog/phoenix-vehicle-delivery-same-day</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
+ 
+  <url>
+    <loc>https://www.flfreightco.com/blog/what-is-vehicle-delivery-service</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/blog/dealerships-move-cars-without-towing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+ 
+  <!-- PHOENIX SEO PAGES -->
   <url>
     <loc>https://www.flfreightco.com/auto-transport-phoenix</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
+ 
   <url>
-  <loc>https://www.flfreightco.com/vehicle-concierge</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
-
+    <loc>https://www.flfreightco.com/vehicle-delivery-phoenix</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/car-transport-phoenix</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+  <!-- VEHICLE CONCIERGE PAGES -->
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-concierge</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-concierge-phoenix</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/senior-vehicle-concierge-phoenix</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/car-wash-pickup-service-phoenix</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/oil-change-pickup-service-phoenix</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/mechanic-pickup-service-phoenix</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+ 
+  <url>
+    <loc>https://www.flfreightco.com/dealership-pickup-service-phoenix</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+ 
 </urlset>
+ 
