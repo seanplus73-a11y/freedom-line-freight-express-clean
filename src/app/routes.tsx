@@ -187,7 +187,10 @@ export const router = createBrowserRouter([
       { path: "vehicle-concierge",element: <VehicleConcierge />,},
       { path: "vehicle-concierge-phoenix", element: <VehicleConciergePhoenix /> },
       { path: "car-wash-pickup-service-phoenix", element: <CarWashPickupServicePhoenix /> }
-      { path: "oil-change-pickup-service-phoenix", element: <OilChangePickupServicePhoenix />, },
+      {
+  path: "/oil-change-pickup-service-phoenix",
+  element: <OilChangePickupServicePhoenix />,
+},
 
 
 
