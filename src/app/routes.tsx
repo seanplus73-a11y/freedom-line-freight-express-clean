@@ -61,6 +61,7 @@ import VehicleConciergePhoenix from "./pages/VehicleConciergePhoenix";
 import CarWashPickupServicePhoenix from "./pages/CarWashPickupServicePhoenix";
 import OilChangePickupServicePhoenix from "./pages/OilChangePickupServicePhoenix";
 import MechanicPickupServicePhoenix from "./pages/MechanicPickupServicePhoenix";
+import SeniorVehicleConciergePhoenix from "./pages/SeniorVehicleConciergePhoenix";
 
 function RootLayout() {
   return (
@@ -165,6 +166,7 @@ export const router = createBrowserRouter([
       { path: "car-wash-pickup-service-phoenix", element: <CarWashPickupServicePhoenix /> },
       { path: "oil-change-pickup-service-phoenix", element: <OilChangePickupServicePhoenix /> },
       { path: "mechanic-pickup-service-phoenix", element: <MechanicPickupServicePhoenix /> },
+      { path: "senior-vehicle-concierge-phoenix", element: <SeniorVehicleConciergePhoenix /> },
     ],
   },
   {
