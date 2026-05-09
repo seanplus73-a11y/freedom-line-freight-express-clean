@@ -66,6 +66,7 @@ import DealershipPickupServicePhoenix from "./pages/DealershipPickupServicePhoen
 import VehicleConciergeQueenCreek from "./pages/VehicleConciergeQueenCreek";
 import VehicleConciergeGilbert from "./pages/VehicleConciergeGilbert";
 import VehicleConciergeChandler from "./pages/VehicleConciergeChandler";
+import VehicleConciergeMesa from "./pages/VehicleConciergeMesa";
 
 function RootLayout() {
   return (
@@ -175,6 +176,7 @@ export const router = createBrowserRouter([
       { path: "vehicle-concierge-queen-creek", element: <VehicleConciergeQueenCreek /> },
       { path: "vehicle-concierge-gilbert", element: <VehicleConciergeGilbert /> },
       { path: "vehicle-concierge-chandler", element: <VehicleConciergeChandler /> },
+      { path: "vehicle-concierge-mesa", element: <VehicleConciergeMesa /> },
     ],
   },
   {
