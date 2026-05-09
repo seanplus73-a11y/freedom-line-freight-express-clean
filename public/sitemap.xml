@@ -287,6 +287,13 @@
   <changefreq>weekly</changefreq>
   <priority>0.85</priority>
 </url>
+
+ <url>
+  <loc>https://www.flfreightco.com/vehicle-concierge-mesa</loc>
+  <lastmod>2026-05-08</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
  
 </urlset>
  
