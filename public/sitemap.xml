@@ -173,26 +173,58 @@
   <!-- BLOG PAGES -->
   <url>
     <loc>https://www.flfreightco.com/blog</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
  
   <url>
     <loc>https://www.flfreightco.com/blog/phoenix-vehicle-delivery-same-day</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
  
   <url>
     <loc>https://www.flfreightco.com/blog/what-is-vehicle-delivery-service</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
  
   <url>
     <loc>https://www.flfreightco.com/blog/dealerships-move-cars-without-towing</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flfreightco.com/blog/arizona-vehicle-delivery-guide</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flfreightco.com/blog/direct-vehicle-delivery-vs-towing-arizona</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flfreightco.com/blog/same-day-vehicle-delivery-phoenix</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flfreightco.com/blog/arizona-business-vehicle-delivery-services</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
  
   <!-- PHOENIX SEO PAGES -->
@@ -268,46 +300,46 @@
   </url>
 
   <url>
-  <loc>https://www.flfreightco.com/vehicle-concierge-queen-creek</loc>
-  <lastmod>2026-05-07</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.flfreightco.com/vehicle-concierge-queen-creek</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
- <url>
-  <loc>https://www.flfreightco.com/vehicle-concierge-gilbert</loc>
-  <lastmod>2026-05-08</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-concierge-gilbert</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
- <url>
-  <loc>https://www.flfreightco.com/vehicle-concierge-chandler</loc>
-  <lastmod>2026-05-08</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-concierge-chandler</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
- <url>
-  <loc>https://www.flfreightco.com/vehicle-concierge-mesa</loc>
-  <lastmod>2026-05-08</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-concierge-mesa</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
- <url>
-  <loc>https://www.flfreightco.com/vehicle-concierge-scottsdale</loc>
-  <lastmod>2026-05-08</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-concierge-scottsdale</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
- <url>
-  <loc>https://www.flfreightco.com/vehicle-concierge-tempe</loc>
-  <lastmod>2026-05-08</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
+  <url>
+    <loc>https://www.flfreightco.com/vehicle-concierge-tempe</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
  
 </urlset>
  
