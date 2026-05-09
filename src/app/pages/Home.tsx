@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export default function Home() {
-  
+
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -63,65 +63,54 @@ export default function Home() {
       itemListElement: [
         {
           "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Vehicle Delivery",
-          },
+          itemOffered: { "@type": "Service", name: "Vehicle Delivery" },
         },
         {
           "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Auto Parts Delivery",
-          },
+          itemOffered: { "@type": "Service", name: "Auto Parts Delivery" },
         },
         {
           "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Document Delivery",
-          },
+          itemOffered: { "@type": "Service", name: "Document Delivery" },
         },
         {
           "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Business Transport",
-          },
+          itemOffered: { "@type": "Service", name: "Business Transport" },
         },
       ],
     },
   };
+
   const faqSchema = {
-  "@context": "https://schema.org", 
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do you tow vehicles?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Vehicle delivery is drive-away only. I personally drive operable vehicles directly to the destination.",
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you tow vehicles?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Vehicle delivery is drive-away only. I personally drive operable vehicles directly to the destination.",
+        },
       },
-    },
-    {
-      "@type": "Question",
-      name: "Can I move a car without towing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Vehicles are driven directly instead of being towed or loaded on a trailer.",
+      {
+        "@type": "Question",
+        name: "Can I move a car without towing?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Vehicles are driven directly instead of being towed or loaded on a trailer.",
+        },
       },
-    },
-    {
-      "@type": "Question",
-      name: "Do you deliver auto parts and business items?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Auto parts, documents, and business items can be delivered across Phoenix and Arizona depending on route and schedule.",
+      {
+        "@type": "Question",
+        name: "Do you deliver auto parts and business items?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Auto parts, documents, and business items can be delivered across Phoenix and Arizona depending on route and schedule.",
+        },
       },
-    },
-  ],
-};
+    ],
+  };
 
   const cardClass =
     "bg-neutral-900 p-7 rounded-xl border border-neutral-800 hover:border-orange-500 hover:-translate-y-1 transition-all duration-300";
@@ -129,13 +118,13 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Phoenix & Arizona Vehicle Delivery Service | Freedom Line Freight Express</title>
+        <title>Phoenix and Arizona Vehicle Delivery Service | Freedom Line Freight Express</title>
         <meta
           name="description"
           content="Phoenix and Arizona vehicle delivery service. Direct drive-away for cars, SUVs, and small trucks. No towing, no trailers. Auto parts, documents, and business delivery available."
         />
         <link rel="canonical" href="https://www.flfreightco.com/" />
-        <meta property="og:title" content="Phoenix & Arizona Vehicle Delivery Service" />
+        <meta property="og:title" content="Phoenix and Arizona Vehicle Delivery Service" />
         <meta
           property="og:description"
           content="Direct vehicle pickup and delivery across Phoenix metro and Arizona. No towing. No trailers. Owner operated and fully insured."
@@ -148,6 +137,8 @@ export default function Home() {
       </Helmet>
 
       <div className="bg-neutral-950 text-white">
+
+        {/* HERO */}
         <section className="relative overflow-hidden bg-neutral-950">
           <div className="absolute inset-0">
             <img
@@ -177,7 +168,7 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Phoenix & Arizona Vehicle Delivery Service
+                Phoenix and Arizona Vehicle Delivery Service
                 <br />
                 <span className="text-orange-500">
                   We Drive It. No Towing. No Trailers.
@@ -205,9 +196,8 @@ export default function Home() {
                   to="/contact"
                   className="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors"
                 >
-                 Text for Quick Quote
+                  Text for Quick Quote
                 </Link>
-
                 <Link
                   to="/request-pickup"
                   className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-black transition-colors"
@@ -228,8 +218,8 @@ export default function Home() {
                   Courier Service
                 </Link>
                 <Link to="/arizona-delivery-guide" className="hover:text-orange-500 underline">
-  Arizona Delivery Guide
-</Link>
+                  Arizona Delivery Guide
+                </Link>
               </div>
 
               <p className="mt-5 text-sm text-gray-300">
@@ -239,17 +229,16 @@ export default function Home() {
           </div>
         </section>
 
+        {/* BUILT FOR BUSINESSES */}
         <section className="py-16 bg-black border-y border-neutral-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Built for <span className="text-orange-500">Dealers, Shops & Businesses</span>
+              Built for <span className="text-orange-500">Dealers, Shops and Businesses</span>
             </h2>
-
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
               I help businesses save time by handling direct local deliveries without sending
               staff across town.
             </p>
-
             <div className="grid md:grid-cols-4 gap-6 text-left">
               {[
                 {
@@ -298,6 +287,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TRUST BAR */}
         <section className="bg-neutral-900 py-12 border-b border-neutral-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -317,6 +307,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* SERVICES AVAILABLE */}
         <section className="py-24 bg-neutral-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
@@ -327,7 +318,6 @@ export default function Home() {
                 Direct local transport for vehicles, auto parts, documents, and business items.
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {[
                 {
@@ -384,6 +374,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* PHOENIX SECTION */}
         <section className="py-20 bg-neutral-900 border-y border-neutral-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
@@ -411,7 +402,6 @@ export default function Home() {
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
               </div>
-
               <div className="bg-neutral-950 p-8 rounded-xl border border-orange-500/40">
                 <h3 className="text-2xl font-bold text-orange-500 mb-5">
                   Popular Phoenix Routes
@@ -436,12 +426,12 @@ export default function Home() {
           </div>
         </section>
 
+        {/* HOW IT WORKS */}
         <section className="py-24 bg-neutral-950">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-14">
               How It <span className="text-orange-500">Works</span>
             </h2>
-
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 ["1", "Text the Details", "Send pickup location, delivery location, item or vehicle info, and timing."],
@@ -460,6 +450,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* PRICING */}
         <section className="py-24 bg-neutral-900 border-y border-neutral-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
@@ -471,13 +462,12 @@ export default function Home() {
                 route, timing, service type, and details.
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-10">
               {[
                 ["Local", "0 to 25 miles", "$85"],
                 ["Extended Local", "25 to 50 miles", "$125"],
                 ["Regional", "50 to 150 miles", "$250"],
-                ["Long Distance", "150+ miles", "Custom"],
+                ["Long Distance", "150 plus miles", "Custom"],
               ].map(([name, miles, price]) => (
                 <div
                   key={name}
@@ -490,7 +480,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
             <div className="text-center">
               <Link
                 to="/pricing"
@@ -503,6 +492,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* SERVICE AREAS */}
         <section className="py-20 bg-neutral-950">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -512,7 +502,6 @@ export default function Home() {
               Queen Creek, San Tan Valley, Gilbert, Chandler, Mesa, Phoenix,
               Scottsdale, Tempe, Casa Grande, and nearby Arizona communities.
             </p>
-
             <div className="flex flex-wrap justify-center gap-4 text-gray-300">
               {[
                 ["Phoenix", "/phoenix-delivery"],
@@ -536,41 +525,43 @@ export default function Home() {
             </div>
           </div>
         </section>
-       <section className="py-20 bg-black border-y border-neutral-800">
-  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
-        Quick Answers for <span className="text-orange-500">Arizona Delivery</span>
-      </h2>
-      <p className="text-xl text-gray-300">
-        Direct answers about same day vehicle delivery, drive away service, and auto parts delivery in Arizona.
-      </p>
-    </div>
 
-    <div className="grid md:grid-cols-3 gap-6">
-      {[
-        {
-          q: "How does vehicle delivery work?",
-          a: "Freedom Line Freight Express provides direct drive away vehicle delivery. I pick up the vehicle and drive it directly to the destination with no towing or trailers.",
-        },
-        {
-          q: "Can I move a car without towing?",
-          a: "Yes. Vehicles are driven directly instead of being towed or loaded on a trailer.",
-        },
-        {
-          q: "Do you deliver auto parts and business items?",
-          a: "Yes. Auto parts, documents, and business items can be delivered across Phoenix and Arizona depending on route and schedule.",
-        },
-      ].map((item, index) => (
-        <div key={index} className={cardClass}>
-          <h3 className="text-xl font-bold mb-3 text-orange-500">{item.q}</h3>
-          <p className="text-gray-300 leading-relaxed">{item.a}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+        {/* QUICK ANSWERS */}
+        <section className="py-20 bg-black border-y border-neutral-800">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Quick Answers for <span className="text-orange-500">Arizona Delivery</span>
+              </h2>
+              <p className="text-xl text-gray-300">
+                Direct answers about same day vehicle delivery, drive away service, and auto parts delivery in Arizona.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  q: "How does vehicle delivery work?",
+                  a: "Freedom Line Freight Express provides direct drive away vehicle delivery. I pick up the vehicle and drive it directly to the destination with no towing or trailers.",
+                },
+                {
+                  q: "Can I move a car without towing?",
+                  a: "Yes. Vehicles are driven directly instead of being towed or loaded on a trailer.",
+                },
+                {
+                  q: "Do you deliver auto parts and business items?",
+                  a: "Yes. Auto parts, documents, and business items can be delivered across Phoenix and Arizona depending on route and schedule.",
+                },
+              ].map((item) => (
+                <div key={item.q} className={cardClass}>
+                  <h3 className="text-xl font-bold mb-3 text-orange-500">{item.q}</h3>
+                  <p className="text-gray-300 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
+        {/* FAQ */}
         <section className="py-24 bg-neutral-900 border-y border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -578,38 +569,37 @@ export default function Home() {
                 Frequently Asked <span className="text-orange-500">Questions</span>
               </h2>
             </div>
-
             <div className="space-y-6">
               {[
-  [
-    "Do you tow vehicles?",
-    "No. Vehicle delivery is drive-away only. I personally drive operable vehicles directly to the destination.",
-  ],
-  [
-    "What vehicles do you move?",
-    "I move cars, SUVs, and small trucks that run and drive safely. I do not tow vehicles or use trailers.",
-  ],
-  [
-    "Do you deliver auto parts?",
-    "Yes. I can deliver auto parts, documents, business items, and small packages depending on route and schedule.",
-  ],
-  [
-    "Do you work with dealerships and repair shops?",
-    "Yes. I help dealerships, repair shops, and businesses with vehicle moves, parts runs, and direct delivery support.",
-  ],
-  [
-    "How do you communicate?",
-    "Text or email only. This keeps communication fast, clear, and documented.",
-  ],
-  [
-    "Do you offer same day service?",
-    "Same day or next day service may be available depending on schedule, distance, route, and service type.",
-  ],
-  [
-    "Why choose Freedom Line Freight Express over a broker?",
-    "You work directly with an owner operator. There is no third party handoff, no app dispatch, and no random driver.",
-  ],
-].map(([q, a]) => (
+                [
+                  "Do you tow vehicles?",
+                  "No. Vehicle delivery is drive-away only. I personally drive operable vehicles directly to the destination.",
+                ],
+                [
+                  "What vehicles do you move?",
+                  "I move cars, SUVs, and small trucks that run and drive safely. I do not tow vehicles or use trailers.",
+                ],
+                [
+                  "Do you deliver auto parts?",
+                  "Yes. I can deliver auto parts, documents, business items, and small packages depending on route and schedule.",
+                ],
+                [
+                  "Do you work with dealerships and repair shops?",
+                  "Yes. I help dealerships, repair shops, and businesses with vehicle moves, parts runs, and direct delivery support.",
+                ],
+                [
+                  "How do you communicate?",
+                  "Text or email only. This keeps communication fast, clear, and documented.",
+                ],
+                [
+                  "Do you offer same day service?",
+                  "Same day or next day service may be available depending on schedule, distance, route, and service type.",
+                ],
+                [
+                  "Why choose Freedom Line Freight Express over a broker?",
+                  "You work directly with an owner operator. There is no third party handoff, no app dispatch, and no random driver.",
+                ],
+              ].map(([q, a]) => (
                 <div key={q} className="bg-neutral-950 p-6 rounded-lg border border-neutral-800">
                   <h3 className="text-xl font-bold mb-2">{q}</h3>
                   <p className="text-gray-300 leading-relaxed">{a}</p>
@@ -619,23 +609,45 @@ export default function Home() {
           </div>
         </section>
 
+        {/* EMAIL SIGNUP — WHITE BOX */}
         <section className="py-20 bg-neutral-950 border-t border-neutral-800">
-  <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    
-    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-      Get Delivery <span className="text-orange-500">Updates</span>
-    </h2>
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Get Delivery <span className="text-orange-500">Updates</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-10">
+              Stay informed about vehicle delivery updates, service availability, and exclusive offers.
+            </p>
+            <div className="bg-white rounded-2xl p-8 shadow-2xl">
+              <h3 className="text-3xl font-bold text-neutral-900 mb-3">
+                Stay Updated
+              </h3>
+              <p className="text-neutral-700 mb-6">
+                Enter your email to receive Arizona vehicle delivery updates, availability, and special offers.
+              </p>
+              <form className="max-w-md mx-auto">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-3 rounded-lg border-2 border-neutral-300 focus:border-orange-500 focus:outline-none text-neutral-900"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-orange-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors whitespace-nowrap"
+                  >
+                    Keep Me Updated
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
 
-    <p className="text-xl text-gray-300 mb-8">
-      Sign up for vehicle delivery updates, service availability, and special offers from Freedom Line Freight Express.
-    </p>
-
-  <div className="ml-embedded" data-form="uetHIV"></div>
-
-  </div>
-<section className="py-24 bg-neutral-900 border-y border-neutral-800">
+        {/* BLOG */}
+        <section className="py-24 bg-neutral-900 border-y border-neutral-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
             <div className="text-center mb-14">
               <p className="text-orange-500 font-bold uppercase tracking-widest mb-3">
                 Arizona Delivery Blog
@@ -647,24 +659,23 @@ export default function Home() {
                 Tips and guides for vehicle delivery, concierge services, and local Arizona transport.
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {[
                 {
-                  title: "Fast and Safe Vehicle Delivery in Arizona",
+                  title: "Fast and Safe Vehicle Delivery in Arizona: A Complete Guide",
                   description: "Learn how to safely and quickly deliver vehicles, auto parts, and packages across Phoenix and Arizona.",
                   slug: "/blog/arizona-vehicle-delivery-guide",
                   category: "Guide",
                 },
                 {
                   title: "Why Direct Vehicle Delivery Is Better Than Towing in Arizona",
-                  description: "Discover why direct vehicle delivery is safer, faster, and more affordable than towing across Phoenix Metro.",
+                  description: "Discover why direct vehicle delivery is safer, faster, and more affordable than towing across Phoenix metro.",
                   slug: "/blog/direct-vehicle-delivery-vs-towing-arizona",
                   category: "Vehicle Delivery",
                 },
                 {
                   title: "Same Day Vehicle Delivery in Phoenix for Dealers and Repair Shops",
-                  description: "Same day vehicle delivery serving dealerships and auto repair shops across Phoenix Metro. No towing. No trailers.",
+                  description: "Same day vehicle delivery serving dealerships and auto repair shops across Phoenix metro. No towing. No trailers.",
                   slug: "/blog/same-day-vehicle-delivery-phoenix",
                   category: "Dealerships",
                 },
@@ -696,7 +707,6 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-
             <div className="text-center mt-10">
               <Link
                 to="/blog"
@@ -706,30 +716,24 @@ export default function Home() {
                 <ArrowRight className="ml-2" size={20} />
               </Link>
             </div>
-
           </div>
         </section>
 
-          
-</section>
-
+        {/* FINAL CTA */}
         <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-  Need a Vehicle, Auto Parts, or Business Items Delivered in Phoenix or Arizona?
-</h2>
-
-<p className="text-xl text-orange-100 mb-6 font-semibold">
-  Direct owner operated vehicle delivery, auto parts delivery, and business transport across Phoenix and Arizona. No towing. No trailers. Fast text updates.
-</p>
-
-<p className="text-sm text-orange-100 mb-6">
-  Serving Phoenix? 
-  <Link to="/phoenix-delivery" className="underline font-semibold ml-1">
-    View Phoenix vehicle delivery details
-  </Link>
-</p>
-
+              Need a Vehicle, Auto Parts, or Business Items Delivered in Phoenix or Arizona?
+            </h2>
+            <p className="text-xl text-orange-100 mb-6 font-semibold">
+              Direct owner operated vehicle delivery, auto parts delivery, and business transport across Phoenix and Arizona. No towing. No trailers. Fast text updates.
+            </p>
+            <p className="text-sm text-orange-100 mb-6">
+              Serving Phoenix?{" "}
+              <Link to="/phoenix-delivery" className="underline font-semibold">
+                View Phoenix vehicle delivery details
+              </Link>
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
@@ -737,7 +741,6 @@ export default function Home() {
               >
                 Get a Fast Quote
               </Link>
-
               <Link
                 to="/request-pickup"
                 className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-orange-600 transition-colors"
@@ -748,6 +751,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
       </div>
     </>
   );
