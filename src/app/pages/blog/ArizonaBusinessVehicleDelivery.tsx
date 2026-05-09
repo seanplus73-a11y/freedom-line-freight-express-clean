@@ -225,10 +225,10 @@ export default function ArizonaBusinessVehicleDelivery() {
                 Request Pickup
               </a>
               <a
-                href="sms:4807428553"
+                href="/contact"
                 className="inline-block border border-orange-500 text-orange-400 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-black"
               >
-                Text Us: 480-742-8553
+                Contact Us
               </a>
             </div>
           </div>
