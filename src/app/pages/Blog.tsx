@@ -54,6 +54,39 @@ const blogPosts: BlogPostMeta[] = [
     category: "Auto Parts",
     icon: "Wrench",
     featured: false,
+
+    {
+  slug: "arizona-vehicle-delivery-guide",
+  title: "Fast and Safe Vehicle Delivery in Arizona",
+  description: "Learn how to safely and quickly deliver vehicles, auto parts, and packages across Phoenix and Arizona. Same day delivery tips and guide.",
+  category: "Guide",
+  icon: "Car",
+  featured: false,
+},
+{
+  slug: "direct-vehicle-delivery-vs-towing-arizona",
+  title: "Why Direct Vehicle Delivery Is Better Than Towing in Arizona",
+  description: "Discover why direct vehicle delivery is safer, faster, and more affordable than towing across Phoenix, Queen Creek, Gilbert, Chandler, and Mesa.",
+  category: "Vehicle Delivery",
+  icon: "Car",
+  featured: false,
+},
+{
+  slug: "same-day-vehicle-delivery-phoenix",
+  title: "Same Day Vehicle Delivery in Phoenix for Dealers and Repair Shops",
+  description: "Same day vehicle delivery serving car dealerships and auto repair shops across Phoenix Metro. Owner operated. No towing. No trailers.",
+  category: "Dealerships",
+  icon: "KeyRound",
+  featured: false,
+},
+{
+  slug: "arizona-business-vehicle-delivery-services",
+  title: "How Arizona Businesses Use Vehicle Delivery Services to Save Time",
+  description: "How small businesses, repair shops, and dealerships in Phoenix Arizona use vehicle concierge services to save time and serve customers better.",
+  category: "Business",
+  icon: "Wrench",
+  featured: false,
+},
   },
 ];
 
