@@ -633,6 +633,84 @@ export default function Home() {
   <div class="ml-embedded" data-form="uetHIV"></div>
 
   </div>
+<section className="py-24 bg-neutral-900 border-y border-neutral-800">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div className="text-center mb-14">
+              <p className="text-orange-500 font-bold uppercase tracking-widest mb-3">
+                Arizona Delivery Blog
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Helpful <span className="text-orange-500">Delivery Guides</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Tips and guides for vehicle delivery, concierge services, and local Arizona transport.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[
+                {
+                  title: "Fast and Safe Vehicle Delivery in Arizona",
+                  description: "Learn how to safely and quickly deliver vehicles, auto parts, and packages across Phoenix and Arizona.",
+                  slug: "/blog/arizona-vehicle-delivery-guide",
+                  category: "Guide",
+                },
+                {
+                  title: "Why Direct Vehicle Delivery Is Better Than Towing in Arizona",
+                  description: "Discover why direct vehicle delivery is safer, faster, and more affordable than towing across Phoenix Metro.",
+                  slug: "/blog/direct-vehicle-delivery-vs-towing-arizona",
+                  category: "Vehicle Delivery",
+                },
+                {
+                  title: "Same Day Vehicle Delivery in Phoenix for Dealers and Repair Shops",
+                  description: "Same day vehicle delivery serving dealerships and auto repair shops across Phoenix Metro. No towing. No trailers.",
+                  slug: "/blog/same-day-vehicle-delivery-phoenix",
+                  category: "Dealerships",
+                },
+                {
+                  title: "How Arizona Businesses Use Vehicle Delivery Services to Save Time",
+                  description: "How small businesses, repair shops, and dealerships in Phoenix use vehicle concierge services to save time.",
+                  slug: "/blog/arizona-business-vehicle-delivery-services",
+                  category: "Business",
+                },
+              ].map((post) => (
+                <Link
+                  key={post.slug}
+                  to={post.slug}
+                  className="group bg-neutral-950 p-7 rounded-xl border border-neutral-800 hover:border-orange-500 hover:-translate-y-1 transition-all duration-300"
+                >
+                  <span className="inline-block bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-bold px-3 py-1 rounded-full mb-4">
+                    {post.category}
+                  </span>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-orange-500 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed mb-4">
+                    {post.description}
+                  </p>
+                  <span className="inline-flex items-center text-orange-500 font-bold">
+                    Read article
+                    <ArrowRight className="ml-2" size={16} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Link
+                to="/blog"
+                className="inline-flex items-center justify-center border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-500 hover:text-white transition-colors"
+              >
+                View All Blog Posts
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+            </div>
+
+          </div>
+        </section>
+
+          
 </section>
 
         <section className="bg-gradient-to-r from-orange-600 to-orange-500 py-20">
