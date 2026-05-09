@@ -39,8 +39,6 @@ import PackageDocumentDelivery from "./pages/PackageDocumentDelivery";
 import BusinessTransport from "./pages/BusinessTransport";
 import Courier from "./pages/Courier";
 import VehicleDelivery from "./pages/VehicleDelivery";
-import ArizonaDeliveryGuide from "./pages/ArizonaDeliveryGuide";
-
 import CarDeliveryService from "./pages/CarDeliveryService";
 import DriveCarToMechanic from "./pages/DriveCarToMechanic";
 import DriveMyCarHome from "./pages/DriveMyCarHome";
@@ -69,6 +67,7 @@ import VehicleConciergeChandler from "./pages/VehicleConciergeChandler";
 import VehicleConciergeMesa from "./pages/VehicleConciergeMesa";
 import VehicleConciergeScottsdale from "./pages/VehicleConciergeScottsdale";
 import VehicleConciergeTempe from "./pages/VehicleConciergeTempe";
+import ArizonaDeliveryGuide from "./pages/blog/ArizonaDeliveryGuide";
 import DirectDeliveryVsTowing from "./pages/blog/DirectDeliveryVsTowing";
 import SameDayVehicleDeliveryPhoenix from "./pages/blog/SameDayVehicleDeliveryPhoenix";
 import ArizonaBusinessVehicleDelivery from "./pages/blog/ArizonaBusinessVehicleDelivery";
@@ -154,8 +153,7 @@ export const router = createBrowserRouter([
       { path: "business-transport", element: <BusinessTransport /> },
       { path: "courier", element: <Courier /> },
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
-      { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
-
+      
       { path: "car-delivery-service", element: <CarDeliveryService /> },
       { path: "drive-car-to-mechanic", element: <DriveCarToMechanic /> },
       { path: "drive-my-car-home", element: <DriveMyCarHome /> },
@@ -184,9 +182,10 @@ export const router = createBrowserRouter([
       { path: "vehicle-concierge-mesa", element: <VehicleConciergeMesa /> },
       { path: "vehicle-concierge-scottsdale", element: <VehicleConciergeScottsdale /> },
       { path: "vehicle-concierge-tempe", element: <VehicleConciergeTempe /> },
-      { path: "/blog/direct-vehicle-delivery-vs-towing-arizona", element: <DirectDeliveryVsTowing /> },
-      { path: "/blog/same-day-vehicle-delivery-phoenix", element: <SameDayVehicleDeliveryPhoenix /> },
-      { path: "/blog/arizona-business-vehicle-delivery-services", element: <ArizonaBusinessVehicleDelivery /> },
+      { path: "blog/arizona-vehicle-delivery-guide", element: <ArizonaDeliveryGuide /> },
+      { path: "blog/direct-vehicle-delivery-vs-towing-arizona", element: <DirectDeliveryVsTowing /> },
+      { path: "blog/same-day-vehicle-delivery-phoenix", element: <SameDayVehicleDeliveryPhoenix /> },
+      { path: "blog/arizona-business-vehicle-delivery-services", element: <ArizonaBusinessVehicleDelivery /> },
     ],
   },
   {
