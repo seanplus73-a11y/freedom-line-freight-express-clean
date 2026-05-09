@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router";
+import { useEffect } from "react";
 import {
   ArrowRight,
   Shield,
@@ -15,6 +16,12 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  
+  useEffect(() => {
+  if (window.ml) {
+    window.ml("accounts", "2331899", "uetHIV", "load");
+  }
+}, [])
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -630,9 +637,10 @@ export default function Home() {
     </p>
 
     <div
-      className="ml-embedded"
-      data-form="uetHIV"
-    ></div>
+  className="ml-embedded"
+  data-form="uetHIV"
+  data-load-on-view="true"
+></div>
 
   </div>
 </section>
