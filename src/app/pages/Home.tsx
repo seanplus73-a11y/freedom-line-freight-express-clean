@@ -630,7 +630,7 @@ export default function Home() {
       Sign up for vehicle delivery updates, service availability, and special offers from Freedom Line Freight Express.
     </p>
 
-    <div
+   <div
   className="ml-embedded"
   data-form="uetHIV"
   data-load-on-view="true"
