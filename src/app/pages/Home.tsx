@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router";
-import { useEffect } from "react";
 import {
   ArrowRight,
   Shield,
@@ -17,11 +16,6 @@ import {
 
 export default function Home() {
   
-  useEffect(() => {
-  if (window.ml) {
-    window.ml("accounts", "2331899", "uetHIV", "load");
-  }
-}, [])
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -99,7 +93,7 @@ export default function Home() {
     },
   };
   const faqSchema = {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org", 
   "@type": "FAQPage",
   mainEntity: [
     {
