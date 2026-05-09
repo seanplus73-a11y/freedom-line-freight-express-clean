@@ -186,6 +186,7 @@ export const router = createBrowserRouter([
       { path: "blog/direct-vehicle-delivery-vs-towing-arizona", element: <DirectDeliveryVsTowing /> },
       { path: "blog/same-day-vehicle-delivery-phoenix", element: <SameDayVehicleDeliveryPhoenix /> },
       { path: "blog/arizona-business-vehicle-delivery-services", element: <ArizonaBusinessVehicleDelivery /> },
+      { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
     ],
   },
   {
