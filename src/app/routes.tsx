@@ -69,6 +69,9 @@ import VehicleConciergeChandler from "./pages/VehicleConciergeChandler";
 import VehicleConciergeMesa from "./pages/VehicleConciergeMesa";
 import VehicleConciergeScottsdale from "./pages/VehicleConciergeScottsdale";
 import VehicleConciergeTempe from "./pages/VehicleConciergeTempe";
+import DirectDeliveryVsTowing from "./pages/blog/DirectDeliveryVsTowing";
+import SameDayVehicleDeliveryPhoenix from "./pages/blog/SameDayVehicleDeliveryPhoenix";
+import ArizonaBusinessVehicleDelivery from "./pages/blog/ArizonaBusinessVehicleDelivery";
 
 function RootLayout() {
   return (
@@ -181,6 +184,9 @@ export const router = createBrowserRouter([
       { path: "vehicle-concierge-mesa", element: <VehicleConciergeMesa /> },
       { path: "vehicle-concierge-scottsdale", element: <VehicleConciergeScottsdale /> },
       { path: "vehicle-concierge-tempe", element: <VehicleConciergeTempe /> },
+      { path: "/blog/direct-vehicle-delivery-vs-towing-arizona", element: <DirectDeliveryVsTowing /> },
+      { path: "/blog/same-day-vehicle-delivery-phoenix", element: <SameDayVehicleDeliveryPhoenix /> },
+      { path: "/blog/arizona-business-vehicle-delivery-services", element: <ArizonaBusinessVehicleDelivery /> },
     ],
   },
   {
