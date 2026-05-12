@@ -570,9 +570,9 @@ export default function Home() {
                   Be one of our first customers and leave us a review
                 </p>
                 <p className="text-gray-400 text-base leading-relaxed">
-                  We are just getting started in Phoenix. Give us a try and if we do a
-                  great job, an honest Google review means the world to a new small
-                  business.
+                  We are based in Queen Creek and just getting started serving the Phoenix
+                  metro area. Give us a try and if we do a great job, an honest Google
+                  review means the world to a new small business.
                 </p>
               </div>
               <a
