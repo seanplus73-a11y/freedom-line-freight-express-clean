@@ -576,7 +576,7 @@ export default function Home() {
                 </p>
               </div>
               <a
-                href="https://maps.google.com/search/Freedom+Line+Freight+Express"
+                href="https://g.page/r/CZbmUVGVv9PgEAE/review"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-shrink-0 inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold text-base transition-colors"
