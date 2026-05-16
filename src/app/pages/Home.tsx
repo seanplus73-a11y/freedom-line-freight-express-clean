@@ -199,7 +199,7 @@ export default function Home() {
               alt="Phoenix Arizona vehicle concierge and delivery service"
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/10" />
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
