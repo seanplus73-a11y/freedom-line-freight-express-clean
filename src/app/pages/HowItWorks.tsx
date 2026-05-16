@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 const steps = [
   {
@@ -258,36 +259,76 @@ export default function HowItWorks() {
             fontFamily: "'Helvetica Neue', sans-serif",
             fontSize: 14,
             color: "#888",
-            marginBottom: 20,
+            marginBottom: 24,
           }}
         >
           Ready to get started?
         </p>
-        <a
-          href="tel:+1XXXXXXXXXX"
+        <div
           style={{
-            display: "inline-block",
-            background: "#1a1a1a",
-            color: "#f9f7f4",
-            fontFamily: "'Courier New', monospace",
-            fontSize: 13,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            padding: "16px 40px",
-            borderRadius: 2,
-            textDecoration: "none",
-            transition: "background 0.2s ease",
+            display: "flex",
+            flexDirection: "row",
+            gap: 16,
+            justifyContent: "center",
+            flexWrap: "wrap",
           }}
-          onMouseEnter={(e) =>
-            ((e.target as HTMLElement).style.background = "#c0392b")
-          }
-          onMouseLeave={(e) =>
-            ((e.target as HTMLElement).style.background = "#1a1a1a")
-          }
         >
-          📞 Call or Text to Book
-        </a>
+          <Link
+            to="/contact"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#f97316",
+              color: "#fff",
+              fontFamily: "'Helvetica Neue', sans-serif",
+              fontSize: 16,
+              fontWeight: 700,
+              padding: "16px 36px",
+              borderRadius: 6,
+              textDecoration: "none",
+              transition: "background 0.2s ease",
+            }}
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLElement).style.background = "#ea6c0a")
+            }
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLElement).style.background = "#f97316")
+            }
+          >
+            📞 Text for Quick Quote
+          </Link>
+          <Link
+            to="/request-pickup"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "transparent",
+              color: "#1a1a1a",
+              border: "2px solid #1a1a1a",
+              fontFamily: "'Helvetica Neue', sans-serif",
+              fontSize: 16,
+              fontWeight: 700,
+              padding: "16px 36px",
+              borderRadius: 6,
+              textDecoration: "none",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "#1a1a1a";
+              (e.currentTarget as HTMLElement).style.color = "#f9f7f4";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+              (e.currentTarget as HTMLElement).style.color = "#1a1a1a";
+            }}
+          >
+            Request Pickup Details →
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
+
