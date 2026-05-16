@@ -71,7 +71,7 @@ import ArizonaDeliveryGuide from "./pages/blog/ArizonaDeliveryGuide";
 import DirectDeliveryVsTowing from "./pages/blog/DirectDeliveryVsTowing";
 import SameDayVehicleDeliveryPhoenix from "./pages/blog/SameDayVehicleDeliveryPhoenix";
 import ArizonaBusinessVehicleDelivery from "./pages/blog/ArizonaBusinessVehicleDelivery";
-import HowItWorks from "@/components/HowItWorks";
+import HowItWorks from "../components/HowItWorks.tsx"
 
 function RootLayout() {
   return (
