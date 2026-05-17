@@ -40,11 +40,13 @@ export function RequestPickup() {
     preferredPickupDate: "",
     notes: "",
     operableConfirmation: false,
+    smsConsent: false,
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [smsConsentTouched, setSmsConsentTouched] = useState(false);
 
   const vehicleServiceTypes = [
     "Vehicle Concierge Services",
@@ -92,14 +94,15 @@ export function RequestPickup() {
       preferredPickupDate: "",
       notes: "",
       operableConfirmation: false,
+      smsConsent: false,
     });
+    setSmsConsentTouched(false);
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
-
     setFormData({
       ...formData,
       [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
@@ -108,15 +111,19 @@ export function RequestPickup() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSmsConsentTouched(true);
+
+    if (!formData.smsConsent) {
+      return;
+    }
+
     setIsSubmitting(true);
     setError("");
 
     try {
       const response = await fetch("/api/quote", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
@@ -170,18 +177,15 @@ export function RequestPickup() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Request <span className="text-orange-500">Pickup & Transport</span>
             </h1>
-
             <p className="text-xl text-gray-300 mb-4">
               Request a quote for vehicle transport, vehicle concierge services,
               auto parts transport, or direct business transport. Fill out the form
               below and I&apos;ll review your route, service type, and details.
             </p>
-
             <p className="text-lg text-orange-400 font-bold">
               Vehicle delivery, car wash pickup and return, oil change runs, tire
               service pickup, documents, small packages, and auto parts.
             </p>
-
             <div className="mt-6 bg-orange-900/30 border-l-4 border-orange-500 p-4 rounded">
               <p className="text-orange-100 font-semibold text-lg">
                 Vehicle services are for operable vehicles only. Your vehicle is driven
@@ -210,10 +214,7 @@ export function RequestPickup() {
               <form onSubmit={handleSubmit} className="space-y-10">
                 {error && (
                   <div className="bg-red-900/30 border border-red-600 text-red-100 p-4 rounded-lg flex items-start">
-                    <AlertCircle
-                      className="text-red-400 mr-3 flex-shrink-0 mt-0.5"
-                      size={20}
-                    />
+                    <AlertCircle className="text-red-400 mr-3 flex-shrink-0 mt-0.5" size={20} />
                     <div>
                       <p className="font-bold mb-1">Submission Error</p>
                       <p className="text-sm whitespace-pre-line">{error}</p>
@@ -221,6 +222,7 @@ export function RequestPickup() {
                   </div>
                 )}
 
+                {/* ── SERVICE INFORMATION ── */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -235,13 +237,9 @@ export function RequestPickup() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label
-                        htmlFor="serviceType"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
+                      <label htmlFor="serviceType" className="block text-sm font-bold text-gray-300 mb-2">
                         Service Type *
                       </label>
-
                       <select
                         id="serviceType"
                         name="serviceType"
@@ -251,42 +249,24 @@ export function RequestPickup() {
                         className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                       >
                         <option value="">Select service type</option>
-                        <option value="Vehicle Concierge Services">
-                          Vehicle Concierge Services
-                        </option>
-                        <option value="Local Vehicle Transport (0 to 50 miles)">
-                          Local Vehicle Transport (0 to 50 miles)
-                        </option>
-                        <option value="Regional Vehicle Transport (50 to 150 miles)">
-                          Regional Vehicle Transport (50 to 150 miles)
-                        </option>
-                        <option value="Long Distance Vehicle Transport (Interstate)">
-                          Long Distance Vehicle Transport (Interstate)
-                        </option>
+                        <option value="Vehicle Concierge Services">Vehicle Concierge Services</option>
+                        <option value="Local Vehicle Transport (0 to 50 miles)">Local Vehicle Transport (0 to 50 miles)</option>
+                        <option value="Regional Vehicle Transport (50 to 150 miles)">Regional Vehicle Transport (50 to 150 miles)</option>
+                        <option value="Long Distance Vehicle Transport (Interstate)">Long Distance Vehicle Transport (Interstate)</option>
                         <option value="Dealer or Auction Pickup">Dealer or Auction Pickup</option>
-                        <option value="Private Party Vehicle Transport">
-                          Private Party Vehicle Transport
-                        </option>
-                        <option value="Direct Business Transport">
-                          Direct Business Transport
-                        </option>
+                        <option value="Private Party Vehicle Transport">Private Party Vehicle Transport</option>
+                        <option value="Direct Business Transport">Direct Business Transport</option>
                         <option value="Luggage Transport">Luggage Transport</option>
-                        <option value="Documents & Small Packages">
-                          Documents & Small Packages
-                        </option>
+                        <option value="Documents & Small Packages">Documents & Small Packages</option>
                         <option value="Auto Parts Transport">Auto Parts Transport</option>
                       </select>
                     </div>
 
                     {isConciergeService ? (
                       <div>
-                        <label
-                          htmlFor="conciergeServiceType"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
+                        <label htmlFor="conciergeServiceType" className="block text-sm font-bold text-gray-300 mb-2">
                           Concierge Service Needed *
                         </label>
-
                         <select
                           id="conciergeServiceType"
                           name="conciergeServiceType"
@@ -296,35 +276,19 @@ export function RequestPickup() {
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                         >
                           <option value="">Select concierge service</option>
-                          <option value="Car Wash Pickup and Return">
-                            Car Wash Pickup and Return
-                          </option>
-                          <option value="Oil Change Pickup and Return">
-                            Oil Change Pickup and Return
-                          </option>
-                          <option value="Tire Service Pickup and Return">
-                            Tire Service Pickup and Return
-                          </option>
-                          <option value="Dealership Service Appointment">
-                            Dealership Service Appointment
-                          </option>
-                          <option value="Senior Vehicle Assistance">
-                            Senior Vehicle Assistance
-                          </option>
-                          <option value="Other Vehicle Concierge Service">
-                            Other Vehicle Concierge Service
-                          </option>
+                          <option value="Car Wash Pickup and Return">Car Wash Pickup and Return</option>
+                          <option value="Oil Change Pickup and Return">Oil Change Pickup and Return</option>
+                          <option value="Tire Service Pickup and Return">Tire Service Pickup and Return</option>
+                          <option value="Dealership Service Appointment">Dealership Service Appointment</option>
+                          <option value="Senior Vehicle Assistance">Senior Vehicle Assistance</option>
+                          <option value="Other Vehicle Concierge Service">Other Vehicle Concierge Service</option>
                         </select>
                       </div>
                     ) : isVehicleService ? (
                       <div>
-                        <label
-                          htmlFor="vehicleCondition"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
+                        <label htmlFor="vehicleCondition" className="block text-sm font-bold text-gray-300 mb-2">
                           Vehicle Condition *
                         </label>
-
                         <select
                           id="vehicleCondition"
                           name="vehicleCondition"
@@ -333,22 +297,15 @@ export function RequestPickup() {
                           required={isVehicleService}
                           className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                         >
-                          <option value="Runs and Drives (Fully Operable)">
-                            Runs and Drives (Fully Operable)
-                          </option>
+                          <option value="Runs and Drives (Fully Operable)">Runs and Drives (Fully Operable)</option>
                         </select>
-
                         <p className="text-sm text-gray-400 mt-1">Operable vehicles only</p>
                       </div>
                     ) : isNonVehicleService ? (
                       <div>
-                        <label
-                          htmlFor="itemType"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
+                        <label htmlFor="itemType" className="block text-sm font-bold text-gray-300 mb-2">
                           Item Type *
                         </label>
-
                         <select
                           id="itemType"
                           name="itemType"
@@ -372,6 +329,7 @@ export function RequestPickup() {
                   </div>
                 </div>
 
+                {/* ── NON-VEHICLE ITEM DETAILS ── */}
                 {isNonVehicleService && (
                   <div>
                     <div className="flex items-center mb-6">
@@ -380,15 +338,10 @@ export function RequestPickup() {
                       </div>
                       <h2 className="text-2xl font-bold text-white">Transport Item Information</h2>
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="itemDetails"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
+                      <label htmlFor="itemDetails" className="block text-sm font-bold text-gray-300 mb-2">
                         Item Details
                       </label>
-
                       <textarea
                         id="itemDetails"
                         name="itemDetails"
@@ -402,111 +355,46 @@ export function RequestPickup() {
                   </div>
                 )}
 
+                {/* ── VEHICLE INFORMATION ── */}
                 {isVehicleService && (
                   <div>
                     <div className="mb-8 bg-orange-900/20 border border-orange-500 p-6 rounded-lg">
                       <h3 className="text-xl font-bold text-orange-400 mb-2">
                         Important: Operable Vehicles Only
                       </h3>
-
                       <p className="text-orange-100 text-lg">
                         Vehicle must start, steer, brake, and drive safely. This is a
                         drive-away service only with no towing and no trailers.
                       </p>
                     </div>
-
                     <div className="flex items-center mb-6">
                       <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
                         <Car className="text-white" size={20} />
                       </div>
                       <h2 className="text-2xl font-bold text-white">Vehicle Information</h2>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label
-                          htmlFor="vehicleMake"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          Make *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="vehicleMake"
-                          name="vehicleMake"
-                          value={formData.vehicleMake}
-                          onChange={handleChange}
-                          required={isVehicleService}
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="Toyota, Ford, Honda"
-                        />
+                        <label htmlFor="vehicleMake" className="block text-sm font-bold text-gray-300 mb-2">Make *</label>
+                        <input type="text" id="vehicleMake" name="vehicleMake" value={formData.vehicleMake} onChange={handleChange} required={isVehicleService} className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Toyota, Ford, Honda" />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="vehicleModel"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          Model *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="vehicleModel"
-                          name="vehicleModel"
-                          value={formData.vehicleModel}
-                          onChange={handleChange}
-                          required={isVehicleService}
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="Camry, Accord, F-250"
-                        />
+                        <label htmlFor="vehicleModel" className="block text-sm font-bold text-gray-300 mb-2">Model *</label>
+                        <input type="text" id="vehicleModel" name="vehicleModel" value={formData.vehicleModel} onChange={handleChange} required={isVehicleService} className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Camry, Accord, F-250" />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="vehicleYear"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          Year *
-                        </label>
-
-                        <input
-                          type="number"
-                          id="vehicleYear"
-                          name="vehicleYear"
-                          value={formData.vehicleYear}
-                          onChange={handleChange}
-                          required={isVehicleService}
-                          min="1900"
-                          max="2027"
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="2020"
-                        />
+                        <label htmlFor="vehicleYear" className="block text-sm font-bold text-gray-300 mb-2">Year *</label>
+                        <input type="number" id="vehicleYear" name="vehicleYear" value={formData.vehicleYear} onChange={handleChange} required={isVehicleService} min="1900" max="2027" className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="2020" />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="vinNumber"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          VIN Number
-                        </label>
-
-                        <input
-                          type="text"
-                          id="vinNumber"
-                          name="vinNumber"
-                          value={formData.vinNumber}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="1HGCM82633A004352"
-                        />
+                        <label htmlFor="vinNumber" className="block text-sm font-bold text-gray-300 mb-2">VIN Number</label>
+                        <input type="text" id="vinNumber" name="vinNumber" value={formData.vinNumber} onChange={handleChange} className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="1HGCM82633A004352" />
                       </div>
                     </div>
                   </div>
                 )}
 
+                {/* ── PICKUP LOCATION ── */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -514,92 +402,29 @@ export function RequestPickup() {
                     </div>
                     <h2 className="text-2xl font-bold text-white">Pickup Location</h2>
                   </div>
-
                   <div className="grid grid-cols-1 gap-6">
                     <div>
-                      <label
-                        htmlFor="pickupAddress"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
-                        Street Address *
-                      </label>
-
-                      <input
-                        type="text"
-                        id="pickupAddress"
-                        name="pickupAddress"
-                        value={formData.pickupAddress}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="123 Main Street"
-                      />
+                      <label htmlFor="pickupAddress" className="block text-sm font-bold text-gray-300 mb-2">Street Address *</label>
+                      <input type="text" id="pickupAddress" name="pickupAddress" value={formData.pickupAddress} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="123 Main Street" />
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
-                        <label
-                          htmlFor="pickupCity"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          City *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="pickupCity"
-                          name="pickupCity"
-                          value={formData.pickupCity}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="Phoenix"
-                        />
+                        <label htmlFor="pickupCity" className="block text-sm font-bold text-gray-300 mb-2">City *</label>
+                        <input type="text" id="pickupCity" name="pickupCity" value={formData.pickupCity} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Phoenix" />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="pickupState"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          State *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="pickupState"
-                          name="pickupState"
-                          value={formData.pickupState}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="AZ"
-                        />
+                        <label htmlFor="pickupState" className="block text-sm font-bold text-gray-300 mb-2">State *</label>
+                        <input type="text" id="pickupState" name="pickupState" value={formData.pickupState} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="AZ" />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="pickupZip"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          ZIP Code *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="pickupZip"
-                          name="pickupZip"
-                          value={formData.pickupZip}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="85001"
-                        />
+                        <label htmlFor="pickupZip" className="block text-sm font-bold text-gray-300 mb-2">ZIP Code *</label>
+                        <input type="text" id="pickupZip" name="pickupZip" value={formData.pickupZip} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="85001" />
                       </div>
                     </div>
                   </div>
                 </div>
 
+                {/* ── DROP-OFF LOCATION ── */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -609,98 +434,34 @@ export function RequestPickup() {
                       {isConciergeService ? "Return Location" : "Drop-Off Location"}
                     </h2>
                   </div>
-
                   <p className="text-sm text-gray-400 mb-4">
                     {isConciergeService
                       ? "For vehicle concierge, this is where the vehicle should be returned after the service is completed."
                       : "Enter the destination where the vehicle, item, or delivery should be dropped off."}
                   </p>
-
                   <div className="grid grid-cols-1 gap-6">
                     <div>
-                      <label
-                        htmlFor="dropoffAddress"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
-                        Street Address *
-                      </label>
-
-                      <input
-                        type="text"
-                        id="dropoffAddress"
-                        name="dropoffAddress"
-                        value={formData.dropoffAddress}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder={isConciergeService ? "Return address" : "456 Oak Avenue"}
-                      />
+                      <label htmlFor="dropoffAddress" className="block text-sm font-bold text-gray-300 mb-2">Street Address *</label>
+                      <input type="text" id="dropoffAddress" name="dropoffAddress" value={formData.dropoffAddress} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder={isConciergeService ? "Return address" : "456 Oak Avenue"} />
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
-                        <label
-                          htmlFor="dropoffCity"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          City *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="dropoffCity"
-                          name="dropoffCity"
-                          value={formData.dropoffCity}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="Phoenix"
-                        />
+                        <label htmlFor="dropoffCity" className="block text-sm font-bold text-gray-300 mb-2">City *</label>
+                        <input type="text" id="dropoffCity" name="dropoffCity" value={formData.dropoffCity} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Phoenix" />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="dropoffState"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          State *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="dropoffState"
-                          name="dropoffState"
-                          value={formData.dropoffState}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="AZ"
-                        />
+                        <label htmlFor="dropoffState" className="block text-sm font-bold text-gray-300 mb-2">State *</label>
+                        <input type="text" id="dropoffState" name="dropoffState" value={formData.dropoffState} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="AZ" />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="dropoffZip"
-                          className="block text-sm font-bold text-gray-300 mb-2"
-                        >
-                          ZIP Code *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="dropoffZip"
-                          name="dropoffZip"
-                          value={formData.dropoffZip}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                          placeholder="85001"
-                        />
+                        <label htmlFor="dropoffZip" className="block text-sm font-bold text-gray-300 mb-2">ZIP Code *</label>
+                        <input type="text" id="dropoffZip" name="dropoffZip" value={formData.dropoffZip} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="85001" />
                       </div>
                     </div>
                   </div>
                 </div>
 
+                {/* ── CONTACT INFORMATION ── */}
                 <div>
                   <div className="flex items-center mb-6">
                     <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
@@ -708,94 +469,31 @@ export function RequestPickup() {
                     </div>
                     <h2 className="text-2xl font-bold text-white">Your Contact Information</h2>
                   </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label
-                        htmlFor="customerName"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
-                        Full Name *
-                      </label>
-
-                      <input
-                        type="text"
-                        id="customerName"
-                        name="customerName"
-                        value={formData.customerName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="John Doe"
-                      />
+                      <label htmlFor="customerName" className="block text-sm font-bold text-gray-300 mb-2">Full Name *</label>
+                      <input type="text" id="customerName" name="customerName" value={formData.customerName} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="John Doe" />
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="companyName"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
-                        Company Name
-                      </label>
-
-                      <input
-                        type="text"
-                        id="companyName"
-                        name="companyName"
-                        value={formData.companyName}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="ABC Company"
-                      />
+                      <label htmlFor="companyName" className="block text-sm font-bold text-gray-300 mb-2">Company Name</label>
+                      <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="ABC Company" />
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="customerEmail"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
-                        Email *
-                      </label>
-
-                      <input
-                        type="email"
-                        id="customerEmail"
-                        name="customerEmail"
-                        value={formData.customerEmail}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="john@example.com"
-                      />
+                      <label htmlFor="customerEmail" className="block text-sm font-bold text-gray-300 mb-2">Email *</label>
+                      <input type="email" id="customerEmail" name="customerEmail" value={formData.customerEmail} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="john@example.com" />
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="customerPhone"
-                        className="block text-sm font-bold text-gray-300 mb-2"
-                      >
-                        Phone *
-                      </label>
-
-                      <input
-                        type="tel"
-                        id="customerPhone"
-                        name="customerPhone"
-                        value={formData.customerPhone}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        placeholder="(555) 123-4567"
-                      />
+                      <label htmlFor="customerPhone" className="block text-sm font-bold text-gray-300 mb-2">Phone *</label>
+                      <input type="tel" id="customerPhone" name="customerPhone" value={formData.customerPhone} onChange={handleChange} required className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="(555) 123-4567" />
                     </div>
                   </div>
                 </div>
 
+                {/* ── NOTES ── */}
                 <div>
                   <label htmlFor="notes" className="block text-sm font-bold text-gray-300 mb-2">
                     Additional Notes
                   </label>
-
                   <textarea
                     id="notes"
                     name="notes"
@@ -811,14 +509,11 @@ export function RequestPickup() {
                   />
                 </div>
 
+                {/* ── PREFERRED DATE ── */}
                 <div>
-                  <label
-                    htmlFor="preferredPickupDate"
-                    className="block text-sm font-bold text-gray-300 mb-2"
-                  >
+                  <label htmlFor="preferredPickupDate" className="block text-sm font-bold text-gray-300 mb-2">
                     Preferred Pickup Date (Optional)
                   </label>
-
                   <input
                     type="date"
                     id="preferredPickupDate"
@@ -827,12 +522,12 @@ export function RequestPickup() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
-
                   <p className="text-sm text-gray-400 mt-2">
                     This helps with scheduling and route planning. It is a preferred date only.
                   </p>
                 </div>
 
+                {/* ── OPERABLE CONFIRMATION (vehicle only) ── */}
                 {isVehicleService && (
                   <div className="bg-neutral-700/50 p-6 rounded-lg border-2 border-orange-500/50">
                     <div className="flex items-start">
@@ -845,13 +540,11 @@ export function RequestPickup() {
                         required={isVehicleService}
                         className="mt-1 w-5 h-5 text-orange-500 bg-neutral-900 border-neutral-600 rounded focus:ring-orange-500 focus:ring-2 flex-shrink-0"
                       />
-
                       <label htmlFor="operableConfirmation" className="ml-3 block">
                         <span className="text-white font-bold text-lg">
                           I confirm the vehicle starts, steers, brakes, and drives safely.
                           Operable vehicles only. *
                         </span>
-
                         <p className="text-gray-300 mt-2">
                           Vehicle must be fully operable, road legal, and safe to drive.
                         </p>
@@ -860,20 +553,97 @@ export function RequestPickup() {
                   </div>
                 )}
 
+                {/* ── SMS CONSENT ── */}
+                <div className="bg-neutral-700/30 p-6 rounded-lg border border-neutral-600">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <input
+                        type="checkbox"
+                        id="smsConsent"
+                        name="smsConsent"
+                        checked={formData.smsConsent}
+                        onChange={handleChange}
+                        className="sr-only"
+                      />
+                      <label
+                        htmlFor="smsConsent"
+                        className={`
+                          w-5 h-5 rounded border-2 flex items-center justify-center cursor-pointer transition-all duration-200
+                          ${formData.smsConsent
+                            ? "bg-orange-500 border-orange-500"
+                            : smsConsentTouched && !formData.smsConsent
+                            ? "bg-neutral-900 border-red-500"
+                            : "bg-neutral-900 border-neutral-500 hover:border-orange-500"
+                          }
+                        `}
+                        style={{ display: "flex", width: "20px", height: "20px" }}
+                      >
+                        {formData.smsConsent && (
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </label>
+                    </div>
+
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        By submitting this form, I agree to receive SMS text messages from{" "}
+                        <span className="text-white font-semibold">Freedom Line Freight Express</span>{" "}
+                        including pickup scheduling, delivery updates, quote responses, and customer
+                        support. Message and data rates may apply. Message frequency varies. Reply{" "}
+                        <strong className="text-white">STOP</strong> to opt out at any time or{" "}
+                        <strong className="text-white">HELP</strong> for assistance.{" "}
+                        <span className="text-orange-500">*</span>
+                      </p>
+                      <p className="text-xs text-gray-500 mt-2">
+                        Your number is never sold or shared with third parties.
+                      </p>
+
+                      {smsConsentTouched && !formData.smsConsent && (
+                        <p className="text-sm text-red-400 mt-2 flex items-center gap-1.5">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <circle cx="7" cy="7" r="6.5" stroke="#f87171" />
+                            <path d="M7 4v3M7 9.5v.5" stroke="#f87171" strokeWidth="1.5" strokeLinecap="round" />
+                          </svg>
+                          Please agree to SMS updates to submit your request.
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── SUBMIT BUTTON ── */}
                 <button
                   type="submit"
-                  className="relative z-50 w-full bg-orange-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isSubmitting}
+                  className={`
+                    relative z-50 w-full px-8 py-4 rounded-md font-bold text-lg
+                    transition-colors flex items-center justify-center
+                    disabled:opacity-50 disabled:cursor-not-allowed
+                    ${formData.smsConsent
+                      ? "bg-orange-500 hover:bg-orange-600 text-white"
+                      : "bg-neutral-700 text-neutral-400 cursor-not-allowed"
+                    }
+                  `}
                 >
                   {isSubmitting ? "Submitting..." : "Get Quote"}
                   <Send className="ml-2" size={20} />
                 </button>
+
+                {!formData.smsConsent && (
+                  <p className="text-center text-sm text-gray-500 -mt-6">
+                    Please check the SMS consent box above to enable submission.
+                  </p>
+                )}
+
               </form>
             )}
           </div>
         </div>
       </section>
 
+      {/* ── TRUST SECTION ── */}
       <section className="py-16 bg-black border-t border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -881,36 +651,22 @@ export function RequestPickup() {
               <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="text-white" size={32} />
               </div>
-
               <h3 className="text-xl font-bold text-white mb-2">Fast Response</h3>
-
-              <p className="text-gray-400">
-                Quick review and response to quote requests during business hours.
-              </p>
+              <p className="text-gray-400">Quick review and response to quote requests during business hours.</p>
             </div>
-
             <div>
               <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="text-white" size={32} />
               </div>
-
               <h3 className="text-xl font-bold text-white mb-2">Fully Insured</h3>
-
-              <p className="text-gray-400">
-                Vehicle pickup, return service, and direct transport are handled carefully.
-              </p>
+              <p className="text-gray-400">Vehicle pickup, return service, and direct transport are handled carefully.</p>
             </div>
-
             <div>
               <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="text-white" size={32} />
               </div>
-
               <h3 className="text-xl font-bold text-white mb-2">Direct Service</h3>
-
-              <p className="text-gray-400">
-                Owner operated service with direct communication and careful handling.
-              </p>
+              <p className="text-gray-400">Owner operated service with direct communication and careful handling.</p>
             </div>
           </div>
         </div>
@@ -918,3 +674,4 @@ export function RequestPickup() {
     </div>
   );
 }
+
