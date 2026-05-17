@@ -67,6 +67,7 @@ import VehicleConciergeChandler from "./pages/VehicleConciergeChandler";
 import VehicleConciergeMesa from "./pages/VehicleConciergeMesa";
 import VehicleConciergeScottsdale from "./pages/VehicleConciergeScottsdale";
 import VehicleConciergeTempe from "./pages/VehicleConciergeTempe";
+import KeyTitleDeliveryPhoenix from "./pages/KeyTitleDeliveryPhoenix";
 import ArizonaDeliveryGuide from "./pages/blog/ArizonaDeliveryGuide";
 import DirectDeliveryVsTowing from "./pages/blog/DirectDeliveryVsTowing";
 import SameDayVehicleDeliveryPhoenix from "./pages/blog/SameDayVehicleDeliveryPhoenix";
@@ -154,7 +155,7 @@ export const router = createBrowserRouter([
       { path: "business-transport", element: <BusinessTransport /> },
       { path: "courier", element: <Courier /> },
       { path: "vehicle-delivery", element: <VehicleDelivery /> },
-      
+
       { path: "car-delivery-service", element: <CarDeliveryService /> },
       { path: "drive-car-to-mechanic", element: <DriveCarToMechanic /> },
       { path: "drive-my-car-home", element: <DriveMyCarHome /> },
@@ -183,12 +184,13 @@ export const router = createBrowserRouter([
       { path: "vehicle-concierge-mesa", element: <VehicleConciergeMesa /> },
       { path: "vehicle-concierge-scottsdale", element: <VehicleConciergeScottsdale /> },
       { path: "vehicle-concierge-tempe", element: <VehicleConciergeTempe /> },
+      { path: "key-title-delivery-phoenix", element: <KeyTitleDeliveryPhoenix /> },
       { path: "blog/arizona-vehicle-delivery-guide", element: <ArizonaDeliveryGuide /> },
       { path: "blog/direct-vehicle-delivery-vs-towing-arizona", element: <DirectDeliveryVsTowing /> },
       { path: "blog/same-day-vehicle-delivery-phoenix", element: <SameDayVehicleDeliveryPhoenix /> },
       { path: "blog/arizona-business-vehicle-delivery-services", element: <ArizonaBusinessVehicleDelivery /> },
       { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
-      { path: "how-it-works", element: <HowItWorks /> }
+      { path: "how-it-works", element: <HowItWorks /> },
     ],
   },
   {
@@ -200,3 +202,4 @@ export const router = createBrowserRouter([
     element: <NotFound />,
   },
 ]);
+
