@@ -25,6 +25,10 @@
   <url>
     <loc>https://www.flfreightco.com/about</loc>
   </url>
+
+  <url>
+    <loc>https://www.flfreightco.com/how-it-works</loc>
+  </url>
  
   <!-- CORE SERVICE PAGES -->
   <url>
@@ -340,6 +344,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <!-- KEY AND TITLE DELIVERY -->
+  <url>
+    <loc>https://www.flfreightco.com/key-title-delivery-phoenix</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
  
 </urlset>
- 
