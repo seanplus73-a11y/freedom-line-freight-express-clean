@@ -73,6 +73,8 @@ import DirectDeliveryVsTowing from "./pages/blog/DirectDeliveryVsTowing";
 import SameDayVehicleDeliveryPhoenix from "./pages/blog/SameDayVehicleDeliveryPhoenix";
 import ArizonaBusinessVehicleDelivery from "./pages/blog/ArizonaBusinessVehicleDelivery";
 import HowItWorks from "./pages/HowItWorks";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 function RootLayout() {
   return (
@@ -191,6 +193,8 @@ export const router = createBrowserRouter([
       { path: "blog/arizona-business-vehicle-delivery-services", element: <ArizonaBusinessVehicleDelivery /> },
       { path: "arizona-delivery-guide", element: <ArizonaDeliveryGuide /> },
       { path: "how-it-works", element: <HowItWorks /> },
+      { path: "privacy-policy", element: <PrivacyPolicy /> },
+      { path: "terms", element: <Terms /> },
     ],
   },
   {
