@@ -71,7 +71,6 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-lg font-semibold text-white">Contact Freedom Line</h4>
-
             <div className="mt-4 space-y-5 text-sm text-gray-300">
               <div className="flex items-start gap-3">
                 <MapPin className="mt-1 h-5 w-5 text-[#f97316]" />
@@ -118,7 +117,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
+        {/* SMS Disclaimer */}
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-gray-500">
+          By providing your phone number you agree to receive SMS messages from Freedom Line
+          Freight Express LLC. Reply <span className="text-gray-400 font-medium">STOP</span> to
+          opt out or <span className="text-gray-400 font-medium">HELP</span> for assistance.
+          Msg &amp; data rates may apply.
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-3 text-center text-sm text-gray-400">
           © 2026 Freedom Line Freight Express LLC. All Rights Reserved.
         </div>
       </div>
@@ -127,3 +135,4 @@ export function Footer() {
 }
 
 export default Footer;
+
