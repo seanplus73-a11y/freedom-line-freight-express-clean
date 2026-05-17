@@ -54,6 +54,17 @@ export function Footer() {
                   Contact
                 </a>
               </li>
+              {/* ── Legal links added for Twilio compliance ── */}
+              <li>
+                <a href="/privacy-policy" className="hover:text-[#f97316] transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms" className="hover:text-[#f97316] transition-colors">
+                  Terms of Service
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -120,9 +131,23 @@ export function Footer() {
         {/* SMS Disclaimer */}
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-gray-500">
           By providing your phone number you agree to receive SMS messages from Freedom Line
-          Freight Express LLC. Reply <span className="text-gray-400 font-medium">STOP</span> to
-          opt out or <span className="text-gray-400 font-medium">HELP</span> for assistance.
-          Msg &amp; data rates may apply.
+          Freight Express LLC. Reply{" "}
+          <span className="text-gray-400 font-medium">STOP</span> to opt out or{" "}
+          <span className="text-gray-400 font-medium">HELP</span> for assistance.
+          Msg &amp; data rates may apply.{" "}
+          <a
+            href="/privacy-policy"
+            className="text-gray-400 hover:text-[#f97316] underline underline-offset-2 transition-colors"
+          >
+            Privacy Policy
+          </a>
+          {" · "}
+          <a
+            href="/terms"
+            className="text-gray-400 hover:text-[#f97316] underline underline-offset-2 transition-colors"
+          >
+            Terms of Service
+          </a>
         </div>
 
         {/* Copyright */}
